@@ -3,6 +3,77 @@
 <section xml:id="sec-sets-of-real-numbers" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Sets of Real Numbers</title>
 
-  <!-- Template section: add content here. -->
+  <introduction>
+    <p>
+      We begin by introducing a central class of subsets of <m>\R</m>: intervals.
+      These sets will appear repeatedly in limits, continuity, and topology on the real line.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-intervals">
+    <title>Intervals</title>
+
+    <definition xml:id="def-interval">
+      <statement>
+        <p>
+          A subset <m>I\subseteq\R</m> is an <term>interval</term><idx>interval</idx> if it has at least two points and,
+          whenever <m>x,y\in I</m> with <m>x&lt;z&lt;y</m>, one has <m>z\in I</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <proposition xml:id="prop-interval-cardinality-r">
+      <statement>
+        <p>
+          Every nondegenerate interval <m>I\subseteq\R</m> has cardinality <m>|\R|</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Every such interval <m>I</m> contains an open interval <m>(a,b)</m> and is a subset
+          of <m>\R</m>.  It is enough to show <m>|(a,b)|=|\R|</m>.  The map
+          <m>x\mapsto (x-c)/r</m> with <m>c=(a+b)/2</m>, <m>r=(b-a)/2</m>, is a bijection
+          <m>(a,b)\to(-1,1)</m>.  Also <m>t\mapsto\tan(\pi t/2)</m> is a bijection
+          <m>(-1,1)\to\R</m>.  Hence <m>|(a,b)|=|\R|</m>, so <m>|I|=|\R|</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-intersection-intervals">
+      <statement>
+        <p>
+          The intersection of two intervals is either empty, a singleton, or an interval.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Let <m>I,J</m> be intervals.  If <m>I\cap J</m> has fewer than two points, it is empty
+          or a singleton.  Otherwise choose <m>x&lt;y</m> in <m>I\cap J</m>.  Since <m>I</m> and <m>J</m>
+          are intervals, every <m>z</m> with <m>x&lt;z&lt;y</m> belongs to both, so
+          <m>z\in I\cap J</m>.  Thus <m>I\cap J</m> is an interval.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-union-overlapping-intervals">
+      <statement>
+        <p>
+          The union of two overlapping intervals is an interval.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Let intervals <m>I,J</m> satisfy <m>I\cap J\ne\varnothing</m>, and choose
+          <m>a\in I\cap J</m>.  Take <m>x&lt;y</m> in <m>I\cup J</m>.  If both are in the same
+          interval, then every point between them is in that interval and hence in <m>I\cup J</m>.
+          Otherwise, after relabeling, <m>x\in I\setminus J</m> and <m>y\in J\setminus I</m>.
+          If <m>a&lt;x</m>, then <m>x\in[a,y]\subseteq J</m>, contradiction.  If <m>y&lt;a</m>, then
+          <m>y\in[x,a]\subseteq I</m>, contradiction.  So <m>x\le a\le y</m>.  Then
+          <m>[x,a]\subseteq I</m> and <m>[a,y]\subseteq J</m>, hence <m>[x,y]\subseteq I\cup J</m>.
+          Therefore <m>I\cup J</m> is an interval.
+        </p>
+      </proof>
+    </proposition>
+  </subsection>
 
 </section>

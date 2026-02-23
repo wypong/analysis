@@ -2,4 +2,223 @@
 
 <appendix xml:id="ap-cardinality" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Cardinality</title>
+
+  <section xml:id="sec-cardinality-subsets-real">
+    <title>Cardinality</title>
+
+    <p>
+      For sets <m>A,B</m>, <m>|A|=|B|</m> means there is a bijection between
+      them. In that case, we say that <m>A</m> and <m>B</m> have the same
+      <term>cardinality</term><idx>cardinality</idx>. We write <m>|A| \le |B|</m> if there is
+      an injection <m>A \to B</m>.  A set <m>A</m> is <term>countably
+      infinite</term><idx>countably infinite</idx> if <m>|A|=|\N|</m>. A set is <term>countable</term><idx>countable</idx>
+      if it is either finite or countably infinite.
+    </p>
+
+    <p>
+      We begin with standard countable models that will be reused in later proofs.
+    </p>
+
+    <proposition xml:id="prop-n-plus-zero-countable">
+      <statement>
+        <p>
+          The set <m>\N\cup\{0\}</m> is countable.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          The map <m>f:\N\to \N\cup\{0\}</m>, <m>f(n)=n-1</m>, is bijective, with inverse
+          <m>g(m)=m+1</m>.  Hence <m>|\N\cup\{0\}|=|\N|</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-n-times-two-countable">
+      <statement>
+        <p>
+          The set <m>\N\times\{0,1\}</m> is countable.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Define <m>F:\N\times\{0,1\}\to\N</m> by <m>F(n,0)=2n</m> and <m>F(n,1)=2n-1</m>.
+          This is bijective, so <m>|\N\times\{0,1\}|=|\N|</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-n-square-countable">
+      <statement>
+        <p>
+          The set <m>\N^2</m> is countable.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          For each <m>s\in\N</m>, the diagonal <m>D_s=\{(m,n)\in\N^2:m+n=s\}</m> is finite.
+          Also <m>\N^2=\bigcup_{s\ge2}D_s</m>.  Enumerating each diagonal in increasing order
+          of <m>s</m> gives an enumeration of <m>\N^2</m>, so <m>\N^2</m> is countable.
+        </p>
+      </proof>
+    </proposition>
+
+    <p>
+      The next theorem is the main comparison tool.
+    </p>
+
+    <theorem xml:id="thm-cantor-bernstein-schroder">
+      <title>Cantor-Bernstein-Schroder</title>
+      <statement>
+        <p>
+          If <m>|A|\le |B|</m> and <m>|B|\le |A|</m>, then <m>|A|=|B|</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <proposition xml:id="prop-countable-union-countable">
+      <statement>
+        <p>
+          A countable union of countable sets is countable.
+        </p>
+      </statement> <proof>
+        <p>
+	  Let <m>A_1,A_2,\ldots</m> be a countable family (indexed by
+	  <m>\N</m>) of countable sets.  For <m>a\in\bigcup_{j\in\N}A_j</m>,
+	  let <m>j(a)</m> be the least index with <m>a\in A_{j(a)}</m>.
+	  Then <m>a\mapsto (a,j(a))</m> is an injection into
+	  <m>\bigcup_j(A_j\times\{j\})</m>.  For each <m>j</m>, choose an
+	  injection <m>f_j:A_j\to\N</m>.  Then <m>(a,j)\mapsto (f_j(a),j)</m>
+	  injects <m>\bigcup_j(A_j\times\{j\})</m> into <m>\N^2</m>.
+	  Since <m>\N^2</m> is countable, the union is countable.
+	</p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-q-countable">
+      <statement>
+        <p>
+          The set <m>\Q</m> is countable (hence <m>\Z</m> is countable).
+        </p>
+      </statement>
+      <proof>
+        <p>
+          The map <m>n\mapsto n/1</m> gives an injection <m>\N\to\Q</m>, so
+          <m>|\N|\le |\Q|</m>.  For the reverse inequality, map <m>r\in\Q</m> to
+          <m>(m,n)\in\Z\times\N</m> where <m>r=m/n</m> in lowest terms and <m>n&gt;0</m>.
+          This is injective, and <m>\Z\times\N</m> is countable (as a countable union of countable sets),
+          so <m>|\Q|\le |\N|</m>.  By <xref ref="thm-cantor-bernstein-schroder"/>, <m>|\Q|=|\N|</m>.
+        </p>
+      </proof>
+    </proposition>
+
+        <p>
+          Let <m>X</m> be a set and let <m>A\subseteq X</m>.  The
+          <term>indicator function</term><idx>indicator function</idx> of <m>A</m> in <m>X</m>,
+          denoted <m>1_A^X</m> (or <m>1_A</m> when <m>X</m> is understood), is the map
+          <m>1_A^X:X\to\{0,1\}</m> defined by
+          <m>
+            1_A^X(x)=
+            \begin{cases}
+              1,&amp;\text{if }x\in A,\\ 0,&amp;\text{if }x\notin A.
+            \end{cases}
+          </m>
+        </p>
+
+    <p>
+      For any set <m>X</m>, indicator functions give a bijection
+      <m>\mathcal{P}(X)\cong 2^X</m>, where <m>2^X</m> is the set of maps <m>X\to\{0,1\}</m>.
+    </p>
+
+    <theorem xml:id="thm-cantor-power-set">
+      <title>Cantor</title>
+      <statement>
+        <p>
+          For every set <m>X</m>, <m>|X| &lt; |2^X|</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          The map <m>x\mapsto 1_{\{x\}}</m> is an injection <m>X\to2^X</m>.  To show there is no
+          surjection <m>X\to2^X</m>, suppose <m>\Phi:X\to2^X</m> is surjective.  Define
+          <m>d:X\to\{0,1\}</m> by <m>d(x)=1-\Phi(x)(x)</m>.  Since <m>\Phi</m> is surjective,
+          <m>d=\Phi(a)</m> for some <m>a\in X</m>.  Evaluating at <m>a</m> gives
+          <m>\Phi(a)(a)=1-\Phi(a)(a)</m>, impossible.  Hence <m>|X|&lt;|2^X|</m>.
+        </p>
+      </proof>
+    </theorem>
+
+    <corollary xml:id="cor-r-uncountable">
+      <statement>
+        <p>
+          The real line <m>\R</m> is uncountable.
+        </p>
+      </statement> <proof>
+        <p>
+          By <xref ref="thm-cantor-power-set"/>,
+          <m>|\N|&lt;|2^{\N}|</m>.  Define <m>\Psi:2^{\N}\to\R</m> by
+          <m>\Psi((a_k)_{k\ge1})=\sum_{k\ge1}a_k/10^k</m>.  If <m>a\ne
+          b</m>, let <m>n</m> be the first index with <m>a_n\ne b_n</m>.
+          Then <m>|\Psi(a)-\Psi(b)|\ge 10^{-n}(1-1/9)&gt;0</m>, so <m>\Psi</m>
+          is injective.  Therefore <m>|2^{\N}|\le |\R|</m>, and thus <m>\R</m>
+          cannot be countable.
+        </p>
+      </proof>
+    </corollary>
+
+    <proposition xml:id="prop-irrationals-uncountable">
+      <statement>
+        <p>
+          The irrational numbers <m>\R\setminus\Q</m> are uncountable.
+        </p>
+      </statement> <proof>
+        <p>
+          If <m>\R\setminus\Q</m> were countable, then
+          <m>\R=(\R\setminus\Q)\cup\Q</m> would be a union of two countable
+          sets, hence countable, contradicting <xref ref="cor-r-uncountable"/>.
+        </p>
+      </proof>
+    </proposition>
+
+  </section>
+
+  <section xml:id="sec-cardinality-exercises">
+    <title>Exercises</title>
+
+    <ol>
+      <li><p>Show that <m>\N^2\cup\{(0,0)\}</m> is countable.</p></li>
+      <li><p>Show that any subset of a countable set is countable.</p></li>
+      <li><p>Show that <m>(0,1)</m> and <m>\R</m> have the same cardinality by constructing an explicit bijection.</p></li>
+      <li><p>Show that the intersection of two intervals is empty, a singleton, or an interval.</p></li>
+      <li><p>Show that the union of two overlapping intervals is an interval.</p></li>
+    </ol>
+  </section>
+
+  <section xml:id="sec-cardinality-references">
+    <title>References and Further Reading</title>
+
+    <ul>
+      <li>
+        <p>
+          Maxwell Rosenlicht, <em>Introduction to Analysis</em>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Keith G. Binmore, <em>Mathematical Analysis: A Straightforward Approach</em>.
+        </p>
+      </li>
+      <li>
+        <p>
+          A proof of the Cantor-Schroder-Bernstein theorem:
+          <url href="https://www-users.cse.umn.edu/~garrett/m/algebra/cantor_schroeder_bernstein.pdf">Garrett lecture note</url>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Another proof of the Cantor-Schroder-Bernstein theorem:
+          <url href="https://math.uchicago.edu/~tghyde/Hyde%20--%20A%20dynamical%20proof%20of%20the%20Cantor-Bernstein%20theorem.pdf">Hyde, dynamical proof note</url>.
+        </p>
+      </li>
+    </ul>
+  </section>
 </appendix>
