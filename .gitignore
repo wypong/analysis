@@ -16,6 +16,9 @@ generated-assets
 # don't track the executables.ptx file
 executables.ptx
 
+# local agent instructions should remain local
+AGENTS.md
+
 # don't track node packages
 node_modules
 
