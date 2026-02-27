@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<references xml:id="references-general">
+  <biblio xml:id="biblio-rosenlicht-intro" type="raw">
+    Maxwell Rosenlicht, <title>Introduction to Analysis</title>.
+  </biblio>
+
+  <biblio xml:id="biblio-rudin-pma" type="raw">
+    Walter Rudin, <title>Principles of Mathematical Analysis</title>.
+  </biblio>
+
+  <biblio xml:id="biblio-binmore-analysis" type="raw">
+    Keith G. Binmore, <title>Mathematical Analysis: A Straightforward Approach</title>.
+  </biblio>
+
+  <biblio xml:id="biblio-garrett-csb" type="raw">
+    Paul Garrett, <title>A Proof of the Cantor-Schroeder-Bernstein Theorem</title>.
+    <url href="https://www-users.cse.umn.edu/~garrett/m/algebra/cantor_schroeder_bernstein.pdf">Online lecture note</url>.
+  </biblio>
+
+  <biblio xml:id="biblio-hyde-csb" type="raw">
+    Trevor Hyde, <title>A Dynamical Proof of the Cantor-Bernstein Theorem</title>.
+    <url href="https://math.uchicago.edu/~tghyde/Hyde%20--%20A%20dynamical%20proof%20of%20the%20Cantor-Bernstein%20theorem.pdf">Online note</url>.
+  </biblio>
+</references>

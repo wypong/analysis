@@ -10,6 +10,7 @@
 
   <xi:include href="ap-cardinality.ptx" />
   <xi:include href="ap-axioms-of-real-numbers.ptx" />
+  <xi:include href="references.ptx" />
 
   <!-- <solutions divisional="hint"> <title>Selected Hints</title> </solutions> -->
 

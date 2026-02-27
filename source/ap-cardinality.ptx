@@ -75,6 +75,11 @@
       </statement>
     </theorem>
 
+    <p>
+      Proofs of <xref ref="thm-cantor-bernstein-schroder"/> can be found in
+      <xref ref="biblio-garrett-csb"/> and <xref ref="biblio-hyde-csb"/>.
+    </p>
+
     <proposition xml:id="prop-countable-union-countable">
       <statement>
         <p>
@@ -193,32 +198,4 @@
     </ol>
   </section>
 
-  <section xml:id="sec-cardinality-references">
-    <title>References and Further Reading</title>
-
-    <ul>
-      <li>
-        <p>
-          Maxwell Rosenlicht, <em>Introduction to Analysis</em>.
-        </p>
-      </li>
-      <li>
-        <p>
-          Keith G. Binmore, <em>Mathematical Analysis: A Straightforward Approach</em>.
-        </p>
-      </li>
-      <li>
-        <p>
-          A proof of the Cantor-Schroder-Bernstein theorem:
-          <url href="https://www-users.cse.umn.edu/~garrett/m/algebra/cantor_schroeder_bernstein.pdf">Garrett lecture note</url>.
-        </p>
-      </li>
-      <li>
-        <p>
-          Another proof of the Cantor-Schroder-Bernstein theorem:
-          <url href="https://math.uchicago.edu/~tghyde/Hyde%20--%20A%20dynamical%20proof%20of%20the%20Cantor-Bernstein%20theorem.pdf">Hyde, dynamical proof note</url>.
-        </p>
-      </li>
-    </ul>
-  </section>
 </appendix>

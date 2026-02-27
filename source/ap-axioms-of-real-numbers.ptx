@@ -2,4 +2,163 @@
 
 <appendix xml:id="ap-axioms-of-real-numbers" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Axioms of Real Numbers</title>
+
+  <section xml:id="sec-axioms-foundations">
+    <title>Foundations and Consequences</title>
+
+    <subsection xml:id="subsec-axioms-ordered-field">
+      <title>Ordered-Field Axioms</title>
+
+      <p>
+        We start with a set <m>\R</m> with two operations <m>+</m> and <m>\cdot</m>, and a subset
+        <m>\R_{+}\subseteq \R</m>. We call this an <term>ordered field</term><idx>ordered field</idx>
+        when the following hold.
+      </p>
+
+      <ol>
+        <li>
+          <p>
+            <m>+</m> and <m>\cdot</m> are commutative and associative, and
+            <m>a(b+c)=ab+ac</m> for all <m>a,b,c\in\R</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            There are distinct elements <m>0,1\in\R</m> such that
+            <m>a+0=a</m> and <m>a\cdot 1=a</m> for all <m>a\in\R</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Every <m>a\in\R</m> has an additive inverse <m>-a</m> with
+            <m>a+(-a)=0</m>, and every nonzero <m>a\in\R</m> has a multiplicative inverse
+            <m>a^{-1}</m> with <m>a\cdot a^{-1}=1</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The set <m>\R_{+}</m> is closed under addition and multiplication.
+          </p>
+        </li>
+        <li>
+          <p>
+            For each <m>a\in\R</m>, exactly one of <m>a=0</m>, <m>a\in\R_{+}</m>,
+            <m>-a\in\R_{+}</m> holds.
+          </p>
+        </li>
+      </ol>
+
+      <p>
+        We define <m>a&lt;b</m> if and only if <m>b-a\in\R_{+}</m>, and
+        <m>a\le b</m> if and only if <m>a&lt;b</m> or <m>a=b</m>.
+      </p>
+
+      <p>
+        To characterize the real numbers, we add the <term>least upper bound
+        property</term><idx>least upper bound property</idx>: every nonempty subset of
+        <m>\R</m> that is bounded above has a least upper bound in <m>\R</m>.
+        An ordered field with this property is a <term>complete ordered
+        field</term><idx>complete ordered field</idx>.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-axioms-isomorphism-reference">
+      <title>Uniqueness Up to Isomorphism</title>
+
+      <p>
+        A standard theorem says that any two complete ordered fields are
+        isomorphic (as ordered fields). This is the precise sense in which
+        there is only one real number system up to isomorphism.
+      </p>
+
+      <p>
+        Reference: <xref ref="biblio-rosenlicht-intro"/>, Chapter II, end of
+        Section 4 (after the proof of existence of square roots), where he
+        states that Properties I-VII determine the real number system up to a
+        unique one-to-one correspondence preserving sums and products.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-axioms-immediate-consequences">
+      <title>Immediate Consequences of the Axioms</title>
+
+      <p>
+        The next results are typical short derivations from the axioms
+        (compare <xref ref="biblio-rosenlicht-intro"/>, Chapter II, Sections 1-2).
+      </p>
+
+      <proposition xml:id="prop-axioms-identity-inverse-uniqueness">
+        <statement>
+          <p>
+            The additive identity and multiplicative identity are unique.
+            For each <m>a\in\R</m>, the additive inverse <m>-a</m> is unique; if
+            <m>a\ne0</m>, then the multiplicative inverse <m>a^{-1}</m> is unique.
+          </p>
+        </statement>
+        <proof>
+          <p>
+            If <m>0,0'</m> are additive identities, then
+            <m>0=0+0'=0'</m>. The same argument gives uniqueness of <m>1</m>.
+            If <m>b,c</m> both satisfy <m>a+b=0</m> and <m>a+c=0</m>, then
+            <m>b=b+0=b+(a+c)=(b+a)+c=0+c=c</m>. The multiplicative case is identical
+            for <m>a\ne0</m>.
+          </p>
+        </proof>
+      </proposition>
+
+      <proposition xml:id="prop-axioms-basic-algebra-consequences">
+        <statement>
+          <p>
+            For every <m>a,b\in\R</m>:
+            <m>a\cdot0=0</m>, <m>(-1)a=-a</m>, and
+            <m>(-a)(-b)=ab</m>.
+          </p>
+        </statement>
+        <proof>
+          <p>
+            Since <m>0+0=0</m>, distributivity gives
+            <m>a\cdot0=a(0+0)=a\cdot0+a\cdot0</m>. Adding <m>-(a\cdot0)</m> to both
+            sides yields <m>a\cdot0=0</m>.
+          </p>
+          <p>
+            Next, <m>((-1)+1)a=(-1)a+a=0\cdot a=0</m>, so <m>(-1)a</m> is an additive
+            inverse of <m>a</m>; by uniqueness, <m>(-1)a=-a</m>.
+          </p>
+          <p>
+            Then <m>(-a)(-b)=((-1)a)((-1)b)=((-1)(-1))ab</m>. Also
+            <m>((-1)+1)(-1)=0</m> gives <m>(-1)(-1)+(-1)=0</m>, hence
+            <m>(-1)(-1)=1</m>. Therefore <m>(-a)(-b)=ab</m>.
+          </p>
+        </proof>
+      </proposition>
+
+      <proposition xml:id="prop-axioms-basic-order-consequences">
+        <statement>
+          <p>
+            If <m>a&lt;b</m>, then <m>a+c&lt;b+c</m> for every <m>c\in\R</m>.
+            If <m>a&lt;b</m> and <m>0&lt;c</m>, then <m>ac&lt;bc</m>.
+            Also, <m>a^2\ge0</m> for every <m>a\in\R</m>.
+          </p>
+        </statement>
+        <proof>
+          <p>
+            If <m>a&lt;b</m>, then <m>b-a\in\R_{+}</m>. But
+            <m>(b+c)-(a+c)=b-a\in\R_{+}</m>, so <m>a+c&lt;b+c</m>.
+          </p>
+          <p>
+            If additionally <m>0&lt;c</m>, then <m>c\in\R_{+}</m> and
+            <m>b-a\in\R_{+}</m>. Closure of <m>\R_{+}</m> under multiplication gives
+            <m>c(b-a)=bc-ac\in\R_{+}</m>, hence <m>ac&lt;bc</m>.
+          </p>
+          <p>
+            For <m>a\in\R</m>, exactly one of <m>a=0</m>, <m>a\in\R_{+}</m>,
+            <m>-a\in\R_{+}</m> holds. If <m>a=0</m>, then <m>a^2=0</m>. Otherwise
+            either <m>a^2\in\R_{+}</m> or <m>(-a)^2\in\R_{+}</m>, and
+            <m>(-a)^2=a^2</m>. Thus <m>a^2</m> is never negative, i.e. <m>a^2\ge0</m>.
+          </p>
+        </proof>
+      </proposition>
+    </subsection>
+  </section>
+
 </appendix>
