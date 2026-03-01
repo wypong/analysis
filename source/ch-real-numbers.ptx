@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-chapter-title" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The Real Numbers</title>
+
+  <!-- include sections -->
+  <xi:include href="sec-sets-of-real-numbers.ptx" />
+  <xi:include href="sec-the-completeness-axiom.ptx" />
+
+  <exercises xml:id="ex-ch1">
+    <title>Exercises</title>
+
+    <exercise xml:id="ex-ch1-upper-lower-bounds">
+      <statement>
+        <p>
+          Let <m>A = \{1-1/n : n\in\N\}</m>. Find all upper bounds of
+          <m>A</m> and all lower bounds of <m>A</m>. Is <m>A</m> bounded?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-ch1-union-intersection-bounded">
+      <statement>
+        <p>
+          Give an example of bounded sets <m>A_n\subseteq\R</m> (<m>n\in\N</m>)
+          such that <m>\bigcup_{n=1}^{\infty}A_n</m> is not bounded.
+          Give an example of two non-empty sets bounded above whose intersection
+          is empty.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-ch1-interval-membership">
+      <statement>
+        <p>
+          For each set, decide whether it is an interval. Justify your answer.
+        </p>
+        <ul>
+          <li><m>\Q\cap(0,1)</m></li>
+          <li><m>[0,1)\cup\{2\}</m></li>
+          <li><m>\{x\in\R : x^2\lt 2\}</m></li>
+          <li><m>\{x\in\R : x\le 3\}</m></li>
+        </ul>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-ch1-intersection-intervals">
+      <statement>
+        <p>
+          Compute the intersection of the two intervals
+          <m>I = (-2,5]</m> and <m>J=[1,\infty)</m>, and express your answer
+          in interval notation.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-ch1-union-overlap-vs-disjoint">
+      <statement>
+        <p>
+          Give one example of two intervals whose union is an interval, and
+          one example of two intervals whose union is not an interval.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-ch1-bijection-open-interval">
+      <statement>
+        <p>
+          Let <m>a\lt b</m>. Define <m>f:(a,b)\to(-1,1)</m> by
+          <m>f(x)=\dfrac{x-c}{r}</m>, where <m>c=(a+b)/2</m> and
+          <m>r=(b-a)/2</m>. Show that <m>f</m> is a bijection.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-ch1-countability-intervals">
+      <statement>
+        <p>
+          Is each of the following sets finite, countably infinite, or
+          uncountable?
+        </p>
+        <ul>
+          <li><m>\N</m></li>
+          <li><m>(0,1)\cap\Q</m></li>
+          <li><m>(0,1)</m></li>
+          <li><m>\R\setminus\Q</m></li>
+        </ul>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-ch1-completeness-infimum-equivalent">
+      <statement>
+        <p>
+          Prove that the least upper bound property is equivalent to:
+          every non-empty subset of <m>\R</m> that is bounded below has an
+          infimum.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-ch1-completeness-n-unbounded">
+      <statement>
+        <p>
+          Prove that <m>\N</m> is not bounded above in <m>\R</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-ch1-completeness-q-not-complete">
+      <statement>
+        <p>
+          Let <m>A=\{q\in\Q:q&gt;0,\ q^2&lt;2\}</m>. Show that <m>A</m> is non-empty
+          and bounded above in <m>\Q</m>, but has no supremum in <m>\Q</m>.
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
+
+</chapter>

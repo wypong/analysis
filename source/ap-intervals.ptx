@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<appendix xml:id="ap-intervals" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Intervals</title>
+
+  <section xml:id="sec-intervals">
+    <title>Intervals</title>
+
+    <p>
+      An <term>interval</term> <idx><h>interval</h> </idx> is a subset of
+      <m>\R</m> of one of the following forms, where
+      <m>a,b \in \R</m> and <m>a \le b</m>:
+    </p>
+
+    <ul>
+      <li><m>(a,b):=\{x\in\R \colon a\lt x\lt b\}</m></li>
+      <li><m>[a,b]:=\{x\in\R \colon a\le x\le b\}</m></li>
+      <li><m>(a,b]:=\{x\in\R \colon a\lt x\le b\}</m></li>
+      <li><m>[a,b):=\{x\in\R \colon a\le x\lt b\}</m></li>
+      <li><m>(a,\infty):=\{x\in\R \colon a\lt x\}</m></li>
+      <li><m>[a,\infty):=\{x\in\R \colon a\le x\}</m></li>
+      <li><m>(-\infty,b):=\{x\in\R \colon x\lt b\}</m></li>
+      <li><m>(-\infty,b]:=\{x\in\R \colon x\le b\}</m></li>
+      <li><m>\R=(-\infty,\infty)</m></li>
+    </ul>
+
+    <p>
+      When <m>a=b</m>, the interval <m>(a,b)</m> is the empty set and <m>[a,b]
+      = \{a\}</m>. A <term>nondegenerate interval</term> is an interval with
+      at least two points.
+    </p>
+    <p>
+      An interval <m>I</m> contains every point between any two of its
+      elements. In other words, <m>[x,y] \subseteq I</m> whenever <m>x,y \in
+      I</m> with <m>x \le y</m>. Conversely, any subset of <m>\R</m> with
+      this property is an interval.
+    </p>
+
+    <proposition xml:id="prop-interval-cardinality-r">
+      <statement>
+        <p>
+          Every nondegenerate interval <m>I\subseteq\R</m> has cardinality
+          <m>|\R|</m>. In particular, it is uncountable.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Every such interval <m>I</m> contains an open interval
+          <m>(a,b)</m> and is a subset of <m>\R</m>.  It is enough to
+          show <m>|(a,b)|=|\R|</m>.  The map <m>x\mapsto (x-c)/r</m>
+          with <m>c=(a+b)/2</m>, <m>r=(b-a)/2</m>, is a bijection
+          <m>(a,b)\to(-1,1)</m>.  Also <m>t\mapsto\tan(\pi t/2)</m> is
+          a bijection <m>(-1,1)\to\R</m>.  Hence <m>|(a,b)|=|\R|</m>,
+          so <m>|I|=|\R|</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-intersection-intervals">
+      <statement>
+        <p>
+          The intersection of two intervals is an interval.
+        </p>
+      </statement>
+
+      <proof>
+        <p> Let <m>I,J</m> be intervals. Since <m>\emptyset</m> and singletons
+        are intervals, we may assume <m>I \cap J</m> has at least two points
+        <m>x&lt;y</m>. Since <m>I</m> and <m>J</m> are intervals, <m>[x,y]</m>
+        is a subset of both <m>I</m> and <m>J</m>, and hence of <m>I\cap J</m>.
+        Thus, <m>I\cap J</m> is an interval.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-union-overlapping-intervals">
+      <statement>
+        <p>
+          The union of two overlapping intervals is an interval.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Let <m>I,J</m> be two overlapping intervals, and pick <m>a \in I
+          \cap J</m>. If <m>I \cup J</m> is a singleton, then we are done.
+          Otherwise, we can take <m>x \lt y</m> in <m>I \cup J</m>. We must
+          show <m>[x,y] \subseteq I \cup J</m>. If both <m>x</m> and <m>y</m>
+          lie in the same interval, then <m>[x,y]</m> is a subset of that
+          interval, hence of <m>I \cup J</m>. Otherwise, after relabeling
+          we may assume <m>x \in I \setminus J</m> and <m>y \in J \setminus
+          I</m>. If <m>a \lt x</m>, then <m>x \in [a,y] \subseteq J</m>,
+          a contradiction. If <m>y \lt a</m>, then <m>y \in [x,a] \subseteq
+          I</m>, a contradiction. Therefore <m>x \le a \le y</m>. Then we
+          have <m>[x,a] \subseteq I</m> and <m>[a,y] \subseteq J</m>. Hence
+          <m>[x,y]=[x,a]\cup[a,y]\subseteq I\cup J</m>, so <m>I\cup J</m>
+          is an interval.
+        </p>
+      </proof>
+    </proposition>
+  </section>
+
+</appendix>

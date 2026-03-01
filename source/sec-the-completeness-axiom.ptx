@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-completeness-axiom" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The Completeness Axiom</title>
+
+  <introduction>
+    <p>
+      This section develops the
+      <term>completeness axiom</term><idx><h>completeness axiom</h></idx>
+      for <m>\R</m> and a few standard consequences.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-completeness-axiom-statement">
+    <title>Least Upper Bound Property</title>
+
+    <p>
+      The real numbers satisfy the following axiom.
+    </p>
+
+    <axiom xml:id="ax-least-upper-bound-property">
+      <title>Least Upper Bound Property</title>
+      <statement>
+        <p>
+          Every non-empty subset of <m>\R</m> that is bounded above has a
+          supremum in <m>\R</m>.
+        </p>
+      </statement>
+    </axiom>
+
+    <proposition xml:id="prop-completeness-infimum-equivalent">
+      <statement>
+        <p>
+          The least upper bound property is equivalent to:
+          every non-empty subset of <m>\R</m> that is bounded below has an
+          infimum in <m>\R</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Assume the least upper bound property. Let <m>A\subseteq\R</m> be
+          non-empty and bounded below. Then <m>-A</m> is non-empty and bounded
+          above, so <m>s:=\sup(-A)</m> exists. We claim <m>-s=\inf A</m>.
+          For <m>a\in A</m>, we have <m>-a\in -A</m>, hence <m>-a\le s</m>,
+          so <m>-s\le a</m>. Thus <m>-s</m> is a lower bound of <m>A</m>.
+          If <m>l</m> is any lower bound of <m>A</m>, then <m>-l</m> is an upper
+          bound of <m>-A</m>, so <m>s\le -l</m>, i.e. <m>l\le -s</m>. Therefore
+          <m>-s</m> is the greatest lower bound of <m>A</m>.
+        </p>
+
+        <p>
+          Conversely, assume every non-empty bounded-below subset of <m>\R</m>
+          has an infimum. Let <m>B\subseteq\R</m> be non-empty and bounded above.
+          Then <m>-B</m> is non-empty and bounded below, so <m>m:=\inf(-B)</m>
+          exists. The same argument shows <m>-m=\sup B</m>. Hence the least
+          upper bound property holds.
+        </p>
+      </proof>
+    </proposition>
+
+    <exercise xml:id="ex-sec-completeness-sup-monotone">
+        <statement>
+          <p>
+            Suppose <m>\emptyset\ne A\subseteq B\subseteq\R</m> and
+            <m>B</m> is bounded above. Prove <m>\sup A\le\sup B</m>.
+          </p>
+        </statement>
+      </exercise>
+  </subsection>
+
+  <subsection xml:id="subsec-completeness-consequences">
+    <title>Consequences</title>
+
+    <proposition xml:id="prop-n-unbounded-above">
+      <statement>
+        <p>
+          The set <m>\N</m> is not bounded above in <m>\R</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Suppose <m>\N</m> were bounded above. By the least upper bound
+          property, <m>u:=\sup\N</m> exists. Since <m>u-1&lt;u</m>, the number
+          <m>u-1</m> cannot be an upper bound of <m>\N</m>. So there is
+          <m>n\in\N</m> with <m>u-1&lt;n</m>. Then <m>u&lt;n+1</m>, and
+          <m>n+1\in\N</m>, contradicting that <m>u</m> is an upper bound.
+        </p>
+      </proof>
+    </proposition>
+
+    <theorem xml:id="thm-positive-square-root-existence">
+      <title>Existence of Positive Square Roots</title>
+      <statement>
+        <p>
+          For each <m>a&gt;0</m>, there exists a unique <m>u&gt;0</m> such that
+          <m>u^2=a</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Uniqueness is immediate because <m>x\mapsto x^2</m> is strictly
+          increasing on <m>(0,\infty)</m>.
+        </p>
+
+        <p>
+          For existence, define
+          <m>S=\{x\in\R : x&gt;0,\ x^2\le a\}</m>. The set is non-empty:
+          if <m>a\ge 1</m>, then <m>1\in S</m>; if <m>0&lt;a&lt;1</m>, then
+          <m>a\in S</m>. It is bounded above by <m>M=\max\{a,1\}</m>, since
+          <m>x&gt;M</m> implies <m>x^2&gt;a</m>. By completeness, <m>u:=\sup S</m>
+          exists.
+        </p>
+
+        <p>
+          If <m>u^2&lt;a</m>, then for sufficiently small <m>\varepsilon&gt;0</m>,
+          we still have <m>(u+\varepsilon)^2\le a</m>, so <m>u+\varepsilon\in S</m>,
+          contradicting that <m>u</m> is an upper bound of <m>S</m>. If
+          <m>u^2&gt;a</m>, then for sufficiently small <m>\varepsilon&gt;0</m>,
+          <m>(u-\varepsilon)^2&gt;a</m>; then every <m>x\in S</m> satisfies
+          <m>x\le u-\varepsilon</m>, so <m>u-\varepsilon</m> is an upper bound
+          of <m>S</m>, contradicting leastness of <m>u</m>. Hence
+          <m>u^2=a</m>.
+        </p>
+      </proof>
+    </theorem>
+
+    <p>
+      A standard comparison example is the ordered field
+      <m>\Q</m>: the set <m>\{q\in\Q:q&gt;0,\ q^2&lt;2\}</m> is non-empty and bounded
+      above in <m>\Q</m>, but it has no supremum in <m>\Q</m>. So <m>\Q</m> does
+      not satisfy the least upper bound property.
+    </p>
+  </subsection>
+
+</section>

@@ -1,21 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-sets-of-real-numbers" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Sets of Real Numbers</title>
+<title>Sets of Real Numbers</title>
 
-  <introduction>
-    <p>
-      Let <m>A,B\subseteq\R</m> and <m>c\in\R</m>. We use the following set
-      operations:
-    </p>
-    <ul>
-      <li><m>A+B:=\{a+b : a\in A,\ b\in B\}</m></li>
-      <li><m>AB:=\{ab : a\in A,\ b\in B\}</m></li>
+  <introduction>    
+  <p>
+      We use <m>\R</m> to denote the set of real numbers. For
+      <m>A,B\subseteq\R</m> and <m>c\in\R</m>, we define:
+  </p>
+  <ul>
+      <li><m>A+B:=\{a+b : a\in A,\ b\in B\}</m></li> 
+
+      <li><m>AB:=\{ab :
+      a\in A,\ b\in B\}</m></li> 
+
       <li><m>cA:=\{c\}A=\{ca : a\in A\}</m></li>
     </ul>
-    <p>
+  <p>
       In particular, <m>-A=\{-a : a\in A\}=\{a : -a\in A\}</m>.
-    </p>
+  </p>
+
+  <p>
+    Some subsets of <m>\R</m> that we will encounter often are:
+  </p>
+  <ul>
+    <li>The set of natural numbers <m>\N = \{1,2,3, \ldots\}</m></li>
+    <li>The set of integers <m>\Z = \{0,\pm 1, \pm 2, \ldots\} = \N \cup
+    \{0\} \cup -\N</m>.</li>
+    <li>
+    The set of rational numbers 
+    <m>\Q = \{m/n \colon m, n \in \Z, n \neq 0\}</m>.
+    </li>
+  </ul>
   </introduction>
 
   <subsection xml:id="subsec-bounded-subsets">
@@ -24,14 +40,14 @@
     <p>
       A real number <m>b</m> is an <term>upper bound</term><idx><h>upper
       bound</h></idx> (resp. a <term>lower bound</term><idx><h>lower
-      bound</h></idx>) of a set of real numbers <m>A</m> if <m>b \ge a</m>
+      bound</h></idx>) of a set <m>A\subseteq\R</m> if <m>b \ge a</m>
       (resp. <m>b \le a</m>) for every <m>a \in A</m>. Note that <m>b</m>
       is an upper bound of <m>A</m> if and only if <m>-b</m> is a lower
       bound of <m>-A</m>.
     </p>
 
     <p>
-      A set of real numbers <m>A</m> is <term>bounded
+      A set <m>A\subseteq\R</m> is <term>bounded
       above</term><idx><h>bounded</h><h>above</h></idx> (resp. <term>bounded
       below</term><idx><h>bounded</h><h>below</h></idx>) if it
       has an upper bound (resp. a lower bound). We say <m>A</m> is
@@ -42,13 +58,15 @@
     <example xml:id="eg-bounded-subsets-examples">
       <statement>
         <ul>
-	  <li>
-	    The interval <m>(0,1)</m> is bounded since, for example, it is
-	    bounded above by <m>1</m> and bounded below by <m>0</m>.
-	  </li>
+		  <li>
+		    The interval <m>(0,1)</m> is bounded; for example, it is
+		    bounded above by <m>1</m> and bounded below by <m>0</m>.
+		  </li>
 
-	  <li> The set <m>\{x^{-1} \colon x \lt 0\}</m> is bounded below,
-	  for example by <m>0</m>, but not bounded above.  </li>
+	  <li>
+	    The set <m>\{x^{-1} \colon x \lt 0\}</m> is bounded above, for
+	    example by <m>0</m>, but not bounded below.
+	  </li>
 
 	  <li>
 	  <m>\Z</m> is neither bounded below nor above.
@@ -63,135 +81,88 @@
     </example>
 
     <p>
-	If <m>b</m> is an upper bound of <m>A</m>, then it is also an upper
-	bound of every subset of <m>A</m>. Consequently, an arbitrary
-	intersection of sets bounded above is again bounded above. Suppose
-	<m>A</m> and <m>A'</m> are bounded above by <m>a</m> and <m>a'</m>,
-	respectively. Then <m>A \cup A'</m> is bounded above by
-	<m>\max\{a,a'\}</m>. Thus, a finite union of sets bounded above is
-	bounded above. Likewise, the collection of subsets of <m>\R</m> that
-	are bounded below (resp. bounded) is closed under arbitrary
-	intersection and finite union. In particular, every finite set of
-	real numbers is bounded.
+      If <m>b</m> is an upper bound of <m>A</m>, then it is also an upper
+      bound of every subset of <m>A</m>. Consequently, an arbitrary
+      intersection of sets bounded above is again bounded above. Suppose
+      <m>A</m> and <m>A'</m> are bounded above by <m>a</m> and <m>a'</m>,
+      respectively. Then <m>A \cup A'</m> is bounded above by
+      <m>\max\{a,a'\}</m>. Thus, a finite union of sets bounded above is
+      bounded above.
+    </p>
+    <p>
+      Likewise, the collection of subsets of <m>\R</m> that
+      are bounded below (resp. bounded) is closed under arbitrary
+      intersection and finite union. In particular, every finite set of
+      real numbers is bounded.
     </p>
 
     <proposition xml:id="prop-bounded-iff-abs-bound">
       <statement>
         <p>
-          A set <m>A \subseteq \R</m> is bounded if and only if there exists
-          <m>M\in\R</m> such that <m>|a|\le M</m> for all <m>a\in A</m>.
-        </p>
-      </statement> 
-      <proof>
-	<p>
-	  If <m>|a|\le M</m> for all <m>a\in A</m>, then <m>-M\le a\le M</m>
-	  for all <m>a\in A</m>. Hence <m>A</m> is bounded below by <m>-M</m>
-	  and bounded above by <m>M</m>.
-	</p> 
-
-	<p>
-	  Conversely, if <m>A</m> is bounded, then so is <m>-A</m>. Hence
-	  <m>A \cup -A</m> is bounded, and therefore its subset <m>|A|</m> is
-	  bounded as well. Let <m>M</m> be an upper bound of <m>|A|</m>. Then
-	  <m>|a|\le M</m> for all <m>a\in A</m>.
+	  A set <m>A \subseteq \R</m> is bounded if and only if there exists
+	  <m>M \ge 0</m> such that <m>A \subseteq [-M,M]</m>.
 	</p>
+      </statement> 
+
+      <proof>
+        <p>
+          One implication is immediate: if <m>A \subseteq [-M,M]</m>, then
+          <m>A</m> is bounded. For the other implication, suppose <m>A</m> is
+          bounded. Then so is <m>-A</m>. Hence <m>A \cup -A</m> is bounded
+          above, say by <m>M</m>. Then <m>|a| = \max\{a,-a\} \le M</m> for all
+          <m>a\in A</m>, so <m>A \subseteq [-M,M]</m>.
+        </p>
       </proof>
     </proposition>
-  </subsection>
-
-  <subsection xml:id="subsec-intervals">
-    <title>Intervals</title>
-    
-    <p>
-      An interval is a subset of <m>\R</m> of one of the following forms
-      (<m>a \le b \in \R</m>):
-    </p>
-
-    <ul>
-      <li><m>(a,b):=\{x\in\R \colon a\lt x\lt b\}</m></li>
-      <li><m>[a,b]:=\{x\in\R \colon a\le x\le b\}</m></li>
-      <li><m>(a,b]:=\{x\in\R \colon a\lt x\le b\}</m></li>
-      <li><m>[a,b):=\{x\in\R \colon a\le x\lt b\}</m></li>
-      <li><m>(a,\infty):=\{x\in\R \colon a\lt x\}</m></li>
-      <li><m>[a,\infty):=\{x\in\R \colon a\le x\}</m></li>
-      <li><m>(-\infty,b):=\{x\in\R \colon x\lt b\}</m></li>
-      <li><m>(-\infty,b]:=\{x\in\R \colon x\le b\}</m></li>
-      <li><m>\R=(-\infty,\infty)</m></li>
-    </ul>
-    
 
     <p>
-      An interval <m>I</m> contains every point between any two of its
-      elements. In other words, <m>[x,y] \subseteq I</m> whenever <m>x,y \in
-      I</m> with <m>x \le y</m>. Conversely, any subset of <m>\R</m> with
-      this property is an interval. A <term>nondegenerate interval</term>
-      is an interval with at least two points.
+      A <term>supremum</term><idx><h>supremum</h></idx> of a set
+      <m>A\subseteq\R</m>, denoted by <m>\sup A</m>, is the least upper bound
+      of <m>A</m>. In other words, <m>u=\sup A</m> if <m>u</m> is an upper
+      bound of <m>A</m> and <m>u\le b</m> for every upper bound <m>b</m>
+      of <m>A</m>. Dually, an <term>infimum</term><idx><h>infimum</h></idx>
+      of <m>A</m>, denoted by <m>\inf A</m>, is the greatest lower bound
+      of <m>A</m>. In other words, <m>\ell=\inf A</m> if <m>\ell</m> is a
+      lower bound of <m>A</m> and every lower bound of <m>A</m> is at most
+      <m>\ell</m>. It is clear that <m>\sup A</m> (likewise <m>\inf A</m>),
+      if it exists, is unique.
     </p>
 
-    <proposition xml:id="prop-interval-cardinality-r">
+    <p>
+      A useful reformulation is: <m>u=\sup A</m> if and only if <m>u</m>
+      is an upper bound of <m>A</m> and for every <m>\varepsilon&gt;0</m>
+      there exists <m>a\in A</m> with <m>u-\varepsilon&lt;a\le u</m>.
+    </p>
+
+    <example xml:id="eg-inf-and-sup">
       <statement>
-        <p>
-	  Every nondegenerate interval <m>I\subseteq\R</m> has cardinality
-	  <m>|\R|</m>. In particular, it is uncountable.
-	</p>
-      </statement> 
+	<ul>
+			  <li>
+			  The set of upper bounds and the set of lower bounds of <m>(0,1)</m>
+			  are <m>[1,\infty)</m> and <m>(-\infty,0]</m>, respectively. Hence
+			  <m>\sup(0,1) = 1</m> and <m>\inf(0,1) = 0</m>.  </li>
 
-      <proof>
-	<p>
-	  Every such interval <m>I</m> contains an open interval
-	  <m>(a,b)</m> and is a subset of <m>\R</m>.  It is enough to
-	  show <m>|(a,b)|=|\R|</m>.  The map <m>x\mapsto (x-c)/r</m>
-	  with <m>c=(a+b)/2</m>, <m>r=(b-a)/2</m>, is a bijection
-	  <m>(a,b)\to(-1,1)</m>.  Also <m>t\mapsto\tan(\pi t/2)</m> is
-	  a bijection <m>(-1,1)\to\R</m>.  Hence <m>|(a,b)|=|\R|</m>,
-	  so <m>|I|=|\R|</m>.
-	</p>
-      </proof>
-    </proposition>
+		  <li>
+		  The set of upper bounds and the set of lower bounds of
+		  <m>H:=\{x^{-1}\colon x \lt 0\}</m> are <m>[0,\infty)</m> and the
+		  empty set, respectively. Hence <m>\sup H = 0</m> and
+		  <m>\inf H</m> does not exist.
+		  </li>
 
-    <proposition xml:id="prop-intersection-intervals">
-      <statement>
-        <p>
-          The intersection of two intervals is an interval.
-        </p>
-      </statement> 
+	  <li>
+	  <m>\Z</m> has neither a supremum nor an infimum.
+	  </li>
 
-      <proof>
-	<p> Let <m>I,J</m> be intervals. Since <m>\emptyset</m> and singletons
-	are intervals, we may assume <m>I \cap J</m> has at least two points
-	<m>x&lt;y</m>. Since <m>I</m> and <m>J</m> are intervals, <m>[x,y]</m>
-	is a subset of both <m>I</m> and <m>J</m>, and hence of <m>I\cap J</m>.
-	Thus, <m>I\cap J</m> is an interval.
-	</p>
-      </proof>
-
-      </proposition>
-
-    <proposition xml:id="prop-union-overlapping-intervals">
-      <statement>
-        <p>
-          The union of two overlapping intervals is an interval.
-        </p>
-      </statement> 
-
-      <proof>
-	<p>
-	  Let <m>I,J</m> be two overlapping intervals, and pick <m>a \in I
-	  \cap J</m>. If <m>I \cup J</m> is a singleton, then we are done.
-	  Otherwise, we can take <m>x \lt y</m> in <m>I \cup J</m>. We must
-	  show <m>[x,y] \subseteq I \cup J</m>. If both <m>x</m> and <m>y</m>
-	  lie in the same interval, then <m>[x,y]</m> is a subset of that
-	  interval, hence of <m>I \cup J</m>. Otherwise, after relabeling
-	  we may assume <m>x \in I \setminus J</m> and <m>y \in J \setminus
-	  I</m>. If <m>a \lt x</m>, then <m>x \in [a,y] \subseteq J</m>,
-	  a contradiction. If <m>y \lt a</m>, then <m>y \in [x,a] \subseteq
-	  I</m>, a contradiction. Therefore <m>x \le a \le y</m>. Then we
-	  have <m>[x,a] \subseteq I</m> and <m>[a,y] \subseteq J</m>. Hence
-	  <m>[x,y]=[x,a]\cup[a,y]\subseteq I\cup J</m>, so <m>I\cup J</m>
-	  is an interval.
-	</p>
-      </proof>
-    </proposition>
+		  <li>
+		    The set of upper bounds and the set of lower bounds of
+		    <m>\emptyset</m> are both <m>\R</m>. Conventionally, we write
+		    <m>\sup \emptyset = -\infty</m> and
+		    <m>\inf \emptyset = +\infty</m>. Note that neither
+		    <m>\sup \emptyset</m> nor <m>\inf \emptyset</m> exists in
+		    <m>\R</m>.
+		  </li>
+	</ul>
+      </statement>
+    </example>
   </subsection>
-
 </section>
