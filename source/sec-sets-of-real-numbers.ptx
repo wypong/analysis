@@ -57,15 +57,15 @@
 
     <example xml:id="eg-bounded-subsets-examples">
       <statement>
-        <ul>
-		  <li>
-		    The interval <m>(0,1)</m> is bounded; for example, it is
-		    bounded above by <m>1</m> and bounded below by <m>0</m>.
-		  </li>
+	<ul>
+	    <li>
+		The interval <m>(0,1)</m> is bounded; for example, it is
+		bounded above by <m>1</m> and bounded below by <m>0</m>.
+	    </li>
 
 	  <li>
-	    The set <m>\{x^{-1} \colon x \lt 0\}</m> is bounded above, for
-	    example by <m>0</m>, but not bounded below.
+	    The set <m>\{x^{-1} \colon x \lt 0\}</m> is bounded above,
+	    for example by <m>0</m>, but not bounded below.
 	  </li>
 
 	  <li>
@@ -137,10 +137,11 @@
     <example xml:id="eg-inf-and-sup">
       <statement>
 	<ul>
-			  <li>
-			  The set of upper bounds and the set of lower bounds of <m>(0,1)</m>
-			  are <m>[1,\infty)</m> and <m>(-\infty,0]</m>, respectively. Hence
-			  <m>\sup(0,1) = 1</m> and <m>\inf(0,1) = 0</m>.  </li>
+	   <li>
+	      The set of upper bounds and the set of lower bounds of
+	      <m>(0,1)</m> are <m>[1,\infty)</m> and <m>(-\infty,0]</m>,
+	      respectively. Hence <m>\sup(0,1) = 1</m> and <m>\inf(0,1)
+	      = 0</m>.	</li>
 
 		  <li>
 		  The set of upper bounds and the set of lower bounds of
