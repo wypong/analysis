@@ -1,76 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec-completeness-axiom" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec-completeness-axiom"
+xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>The Completeness Axiom</title>
-
   <introduction>
     <p>
-      This section develops the
-      <term>completeness axiom</term><idx><h>completeness axiom</h></idx>
-      for <m>\R</m> and a few standard consequences.
-    </p>
-  </introduction>
-
-  <subsection xml:id="subsec-completeness-axiom-statement">
-    <title>Least Upper Bound Property</title>
-
-    <p>
-      The real numbers satisfy the following axiom.
-    </p>
+      The following axiom is what sets the real field apart from other
+      ordered fields.
+    </p> 
 
     <axiom xml:id="ax-least-upper-bound-property">
-      <title>Least Upper Bound Property</title>
+      <title>The Completeness Axiom of <m>\R</m></title> 
+
       <statement>
         <p>
-          Every non-empty subset of <m>\R</m> that is bounded above has a
+          Every non-empty set of real numbers that is bounded above has a
           supremum in <m>\R</m>.
         </p>
       </statement>
-    </axiom>
+      </axiom> 
 
-    <proposition xml:id="prop-completeness-infimum-equivalent">
+      <p>
+        For an ordered set, the <term>least upper bound property</term>
+        <idx><h>least upper bound property</h></idx> means:
+        every non-empty subset that is bounded above has a least upper bound
+        (that is, a supremum) in the set.
+        So the completeness axiom says that <m>\R</m>, with its usual order,
+        has the least upper bound property.
+      </p>
+   </introduction>
+
+  <subsection xml:id="subsec-completeness-consequences">
+    <title>Consequences</title> <proposition
+    xml:id="prop-completeness-infimum-equivalent">
       <statement>
         <p>
-          The least upper bound property is equivalent to:
-          every non-empty subset of <m>\R</m> that is bounded below has an
-          infimum in <m>\R</m>.
+          The completeness axiom of <m>\R</m> is equivalent to: every
+          non-empty subset of <m>\R</m> that is bounded below has an infimum
+          in <m>\R</m>.
         </p>
       </statement>
 
       <proof>
         <p>
-          Assume the least upper bound property. Let <m>A\subseteq\R</m> be
-          non-empty and bounded below. Then <m>-A</m> is non-empty and bounded
-          above, so <m>s:=\sup(-A)</m> exists. We claim <m>-s=\inf A</m>.
-          For <m>a\in A</m>, we have <m>-a\in -A</m>, hence <m>-a\le s</m>,
-          so <m>-s\le a</m>. Thus <m>-s</m> is a lower bound of <m>A</m>.
-          If <m>l</m> is any lower bound of <m>A</m>, then <m>-l</m> is an upper
-          bound of <m>-A</m>, so <m>s\le -l</m>, i.e. <m>l\le -s</m>. Therefore
-          <m>-s</m> is the greatest lower bound of <m>A</m>.
-        </p>
+          Let <m>A\subseteq\R</m> be non-empty and bounded below. Then
+          <m>-A</m> is non-empty and bounded above, so <m>s:=\sup(-A)</m>
+          exists. We claim <m>-s=\inf A</m>.  For <m>a\in A</m>, we have
+          <m>-a\in -A</m>, hence <m>-a\le s</m>, so <m>-s\le a</m>. Thus
+          <m>-s</m> is a lower bound of <m>A</m>.  If <m>l</m> is any lower
+          bound of <m>A</m>, then <m>-l</m> is an upper bound of <m>-A</m>,
+          so <m>s\le -l</m>, i.e. <m>l\le -s</m>. Therefore <m>-s</m> is
+          the greatest lower bound of <m>A</m>.
+        </p> 
 
-        <p>
-          Conversely, assume every non-empty bounded-below subset of <m>\R</m>
-          has an infimum. Let <m>B\subseteq\R</m> be non-empty and bounded above.
-          Then <m>-B</m> is non-empty and bounded below, so <m>m:=\inf(-B)</m>
-          exists. The same argument shows <m>-m=\sup B</m>. Hence the least
-          upper bound property holds.
+	<p>
+          Conversely, assume every non-empty bounded-below subset of
+          <m>\R</m> has an infimum. Let <m>B\subseteq\R</m> be non-empty
+          and bounded above.  Then <m>-B</m> is non-empty and bounded below,
+          so <m>m:=\inf(-B)</m> exists. The same argument shows <m>-m=\sup
+          B</m>. Hence the least upper bound property holds.
         </p>
       </proof>
     </proposition>
 
+
     <exercise xml:id="ex-sec-completeness-sup-monotone">
         <statement>
           <p>
-            Suppose <m>\emptyset\ne A\subseteq B\subseteq\R</m> and
-            <m>B</m> is bounded above. Prove <m>\sup A\le\sup B</m>.
+            Suppose <m>\emptyset\ne A\subseteq B\subseteq\R</m> and that
+            <m>B</m> is bounded above. Show that
+            <me>\inf B \le \inf A \le \sup A \le \sup B.</me>
           </p>
         </statement>
       </exercise>
-  </subsection>
-
-  <subsection xml:id="subsec-completeness-consequences">
-    <title>Consequences</title>
 
     <proposition xml:id="prop-n-unbounded-above">
       <statement>
@@ -129,9 +131,10 @@
 
     <p>
       A standard comparison example is the ordered field
-      <m>\Q</m>: the set <m>\{q\in\Q:q&gt;0,\ q^2&lt;2\}</m> is non-empty and bounded
-      above in <m>\Q</m>, but it has no supremum in <m>\Q</m>. So <m>\Q</m> does
-      not satisfy the least upper bound property.
+      <m>\Q</m>:
+      the set <m>\{q\in\Q:q&gt;0,\ q^2&lt;2\}</m> is non-empty and bounded above
+      in <m>\Q</m>, but it has no supremum in <m>\Q</m>.
+      Therefore <m>\Q</m> does not satisfy the least upper bound property.
     </p>
   </subsection>
 
