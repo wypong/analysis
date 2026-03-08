@@ -74,20 +74,158 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         </statement>
       </exercise>
 
+        <p>
+          An ordered field is
+          <term>Archimedean</term><idx><h>Archimedean</h></idx> if for every
+          <m>x</m> in the field there exists <m>n \in \N</m> such that <m>x
+          &lt; n</m>.
+        </p>
+
     <proposition xml:id="prop-n-unbounded-above">
       <statement>
         <p>
-          The set <m>\N</m> is not bounded above in <m>\R</m>.
+          The ordered field <m>\R</m> is Archimedean.
         </p>
       </statement>
 
       <proof>
         <p>
-          Suppose <m>\N</m> were bounded above. By the least upper bound
-          property, <m>u:=\sup\N</m> exists. Since <m>u-1&lt;u</m>, the number
-          <m>u-1</m> cannot be an upper bound of <m>\N</m>. So there is
-          <m>n\in\N</m> with <m>u-1&lt;n</m>. Then <m>u&lt;n+1</m>, and
-          <m>n+1\in\N</m>, contradicting that <m>u</m> is an upper bound.
+          By the definition above, it suffices to show that for every
+          <m>x \in \R</m> there exists <m>n \in \N</m> such that <m>x &lt; n</m>.
+        </p>
+        <p>
+          Suppose instead that some <m>x \in \R</m> were an upper bound for
+          <m>\N</m>. Then <m>\N</m> would be non-empty and bounded above, so by
+          the least upper bound property, <m>u:=\sup\N</m> would exist. Since
+          <m>u-1&lt;u</m>, the number <m>u-1</m> cannot be an upper bound of
+          <m>\N</m>. So there is <m>n\in\N</m> with <m>u-1&lt;n</m>. Then
+          <m>u&lt;n+1</m>, and <m>n+1\in\N</m>, contradicting that <m>u</m> is
+          an upper bound of <m>\N</m>.
+        </p>
+        <p>
+          Therefore <m>\N</m> is not bounded above in <m>\R</m>, and hence
+          <m>\R</m> is Archimedean.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-archimedean-property">
+      <statement>
+        <p>
+          For any <m>x \in \R</m> and any <m>\varepsilon &gt; 0</m>, there
+          exists <m>N \in \N</m> such that <m>N\varepsilon &gt; x</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Since <m>\varepsilon &gt; 0</m>, the number <m>x/\varepsilon</m> is
+          real. By <xref ref="prop-n-unbounded-above"/>, there exists
+          <m>N \in \N</m> such that <m>N &gt; x/\varepsilon</m>. Multiplying by
+          <m>\varepsilon</m> gives <m>N\varepsilon &gt; x</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-reciprocal-archimedean">
+      <statement>
+        <p>
+          For any <m>\varepsilon &gt; 0</m>, there exists <m>n \in \N</m> such
+          that <m>1/n &lt; \varepsilon</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Apply <xref ref="prop-archimedean-property"/> with <m>x=1</m>. Then
+          there exists <m>n \in \N</m> such that <m>n\varepsilon &gt; 1</m>.
+          Since <m>n&gt;0</m>, dividing by <m>n\varepsilon</m> yields
+          <m>1/n &lt; \varepsilon</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-integer-part">
+      <statement>
+        <p>
+          For any <m>x \in \R</m>, there exists <m>n \in \Z</m> such that
+          <m>n \le x &lt; n+1</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          By <xref ref="prop-n-unbounded-above"/>, there exists <m>N \in \N</m>
+          such that <m>N &gt; |x|</m>. Then <m>-N &lt; x &lt; N</m>.
+        </p>
+        <p>
+          Consider the finite set
+          <me>S=\{-N,-N+1,\dots,0,\dots,N\}\subseteq\Z.</me>
+          Since <m>-N \le x</m>, the set of integers in <m>S</m> that are at
+          most <m>x</m> is non-empty. Let <m>n</m> be the largest such integer.
+        </p>
+        <p>
+          Then <m>n \le x</m>. Also <m>n \ne N</m>, because <m>x &lt; N</m>.
+          Hence <m>n+1 \in S</m>. By maximality of <m>n</m>, the integer
+          <m>n+1</m> cannot satisfy <m>n+1 \le x</m>. Therefore
+          <m>x &lt; n+1</m>, and so <m>n \le x &lt; n+1</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-integer-between-reals">
+      <statement>
+        <p>
+          For any <m>x,y \in \R</m>, if <m>y-x &gt; 1</m>, then there exists
+          <m>m \in \Z</m> such that <m>x \le m &lt; y</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          By <xref ref="prop-integer-part"/>, there exists <m>n \in \Z</m>
+          such that <m>n \le x &lt; n+1</m>.
+        </p>
+        <p>
+          If <m>y \le n+1</m>, then
+          <me>n \le x &lt; y \le n+1,</me>
+          so <m>y-x &lt; (n+1)-n = 1</m>, contradicting the hypothesis.
+          Therefore <m>n+1 &lt; y</m>.
+        </p>
+        <p>
+          Let <m>m=n+1</m>. Then <m>m \in \Z</m> and
+          <m>x &lt; m &lt; y</m>. In particular, <m>x \le m &lt; y</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <p>
+	A subset <m>D</m> of <m>\R</m> is <term>dense</term> <idx> <h>dense</h>
+	</idx> if between any two real numbers lies an element of <m>D</m>.
+    </p> 
+
+    <proposition xml:id="prop-q-dense-in-r">
+      <statement>
+	<p>
+	  The set <m>\Q</m> is dense in <m>\R</m>.
+	</p>
+      </statement>
+
+      <proof>
+        <p>
+          Let <m>x,y \in \R</m> with <m>x&lt;y</m>. Then <m>y-x&gt;0</m>, so by
+          <xref ref="prop-archimedean-property"/> there exists <m>N \in \N</m>
+          such that <m>N(y-x)&gt;1</m>.
+        </p>
+        <p>
+          Applying <xref ref="prop-integer-between-reals"/> to the numbers
+          <m>Nx</m> and <m>Ny</m>, we obtain an integer <m>m</m> such that
+          <m>Nx &lt; m &lt; Ny</m>.
+        </p>
+        <p>
+          Since <m>N&gt;0</m>, dividing by <m>N</m> gives
+          <m>x &lt; m/N &lt; y</m>. Because <m>m/N \in \Q</m>, this proves that
+          <m>\Q</m> is dense in <m>\R</m>.
         </p>
       </proof>
     </proposition>
