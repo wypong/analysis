@@ -36,6 +36,55 @@
       this property is an interval.
     </p>
 
+    <proposition xml:id="prop-classification-of-intervals">
+      <statement>
+        <p>
+          Every interval in <m>\R</m> is one of the nine forms listed above.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Let <m>I \subseteq \R</m> be an interval. If <m>I=\emptyset</m>,
+          then <m>I=(0,0)</m>. If <m>I=\{a\}</m> is a singleton, then
+          <m>I=[a,a]</m>. So we may assume that <m>I</m> is nondegenerate.
+        </p>
+        <p>
+          First suppose that <m>I</m> is bounded below but not bounded above.
+          Let <m>a=\inf I</m>. If <m>z&gt;a</m>, then <m>z</m> is not a lower
+          bound of <m>I</m>, so there is <m>x \in I</m> with <m>x&lt;z</m>.
+          Since <m>I</m> is not bounded above, there is also <m>y \in I</m>
+          with <m>z&lt;y</m>. Because <m>I</m> is an interval and
+          <m>x&lt;z&lt;y</m>, we get <m>z \in I</m>. Thus
+          <m>(a,\infty)\subseteq I</m>. On the other hand, no element of
+          <m>I</m> can be less than <m>a</m>. Hence <m>I=(a,\infty)</m> or
+          <m>I=[a,\infty)</m>, according as <m>a \notin I</m> or
+          <m>a \in I</m>.
+        </p>
+        <p>
+          The case when <m>I</m> is bounded above but not bounded below is
+          similar: if <m>b=\sup I</m>, then
+          <m>I=(-\infty,b)</m> or <m>I=(-\infty,b]</m>.
+        </p>
+        <p>
+          If <m>I</m> is neither bounded below nor bounded above, then for
+          every <m>z \in \R</m> we can choose <m>x,y \in I</m> with
+          <m>x&lt;z&lt;y</m>. Hence <m>z \in I</m>, so <m>I=\R</m>.
+        </p>
+        <p>
+          Finally, suppose that <m>I</m> is bounded below and above. Let
+          <m>a=\inf I</m> and <m>b=\sup I</m>. Since <m>I</m> is nondegenerate,
+          we have <m>a&lt;b</m>. If <m>a&lt;z&lt;b</m>, then <m>z</m> is neither
+          a lower bound nor an upper bound of <m>I</m>. So there exist
+          <m>x,y \in I</m> with <m>x&lt;z&lt;y</m>. Therefore <m>z \in I</m>.
+          Thus <m>(a,b)\subseteq I</m>. Also every element of <m>I</m> lies in
+          <m>[a,b]</m>. Consequently, <m>I</m> is one of
+          <m>(a,b), [a,b], (a,b], [a,b)</m>, according to whether
+          <m>a</m> and <m>b</m> belong to <m>I</m>.
+        </p>
+      </proof>
+    </proposition>
+
     <proposition xml:id="prop-interval-cardinality-r">
       <statement>
         <p>
