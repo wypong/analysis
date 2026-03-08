@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-sequences" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Sequences</title>
+
+  <subsection xml:id="subsec-sequences-definitions">
+    <title>Definitions</title>
+
+    <p>
+      An <term>infinite sequence</term><idx><h>sequence</h><h>infinite</h></idx>
+      is a function whose domain is <m>\N</m>. Since we will only consider
+      infinite sequences here, we simply call them <term>sequences</term>.
+    </p>
+
+    <p>
+      If <m>x</m> is a sequence, we write <m>x_n</m> for its value at
+      <m>n\in\N</m> and call <m>x_n</m> the <term><m>n</m>-th
+      term</term><idx><h>term</h><h>of a sequence</h></idx> of the sequence.
+      We denote the sequence by <m>(x_n)</m>.
+    </p>
+
+    <p>
+      Since a real sequence is just a function <m>\N\to\R</m>, notions such
+      as <term>bounded above</term>, <term>bounded below</term>,
+      <term>bounded</term>, <term>increasing</term>, and
+      <term>decreasing</term> apply exactly as they do for functions.
+    </p>
+
+    <example xml:id="eg-basic-sequences">
+      <statement>
+        <ul>
+          <li><m>(1/n)</m> is decreasing and bounded.</li>
+          <li><m>(n)</m> is increasing and bounded below, but not bounded above.</li>
+          <li><m>((-1)^n)</m> is bounded, but neither increasing nor decreasing.</li>
+        </ul>
+      </statement>
+    </example>
+
+    <proposition xml:id="prop-monotone-sequence-basic-bounds">
+      <statement>
+        <p>
+          Every increasing sequence is bounded below, and every decreasing
+          sequence is bounded above. A sequence is constant if and only if it
+          is both increasing and decreasing.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          If <m>(x_n)</m> is increasing, then <m>x_1\le x_n</m> for all
+          <m>n</m>, so <m>x_1</m> is a lower bound. The decreasing case is
+          similar.
+        </p>
+        <p>
+          Every constant sequence is clearly both increasing and decreasing.
+          Conversely, if <m>(x_n)</m> is both increasing and decreasing, then
+          for <m>m\le n</m> we have both <m>x_m\le x_n</m> and
+          <m>x_n\le x_m</m>, hence <m>x_m=x_n</m>. So all terms are equal.
+        </p>
+      </proof>
+    </proposition>
+
+    <p>
+      A real sequence <m>(x_n)</m> is called <term>null</term><idx>null sequence</idx>
+      if for every <m>\varepsilon&gt;0</m> there exists <m>N\in\N</m> such
+      that
+      <me>|x_n|&lt;\varepsilon \quad\text{for all } n\ge N.</me>
+    </p>
+
+    <p>
+      Equivalently, <m>(x_n)</m> is null if for every <m>\varepsilon&gt;0</m>,
+      the inequality <m>|x_n|&lt;\varepsilon</m> holds for all but finitely
+      many <m>n</m>.
+    </p>
+
+    <example xml:id="eg-one-over-n-null">
+      <statement>
+        <p>
+          The sequence <m>(1/n)</m> is null.
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      We say that a sequence <m>(x_n)</m>
+      <term>converges</term><idx>convergent sequence</idx> to
+      <m>L\in\R</m>, written <m>x_n\to L</m>, if the sequence
+      <m>(x_n-L)</m> is null. In that case <m>L</m> is called the
+      <term>limit</term><idx>limit of a sequence</idx> of the sequence.
+      A sequence is <term>divergent</term><idx>divergent sequence</idx> if it
+      does not converge.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-sequences-fundamental-results">
+    <title>Fundamental Results</title>
+
+    <proposition xml:id="prop-null-sequence-basic-operations">
+      <statement>
+        <p>
+          Let <m>(x_n)</m> and <m>(y_n)</m> be real sequences.
+        </p>
+        <ol>
+          <li><p><m>(x_n)</m> is null if and only if <m>(-x_n)</m> is null if and only if <m>(|x_n|)</m> is null.</p></li>
+          <li><p>If <m>(x_n)</m> is null and <m>(y_n)</m> is bounded, then <m>(x_ny_n)</m> is null.</p></li>
+          <li><p>If <m>(x_n)</m> and <m>(y_n)</m> are null, then <m>(x_n+y_n)</m> is null.</p></li>
+        </ol>
+      </statement>
+      <proof>
+        <p>
+          For (1), note that <m>|-x_n|=|x_n|</m>, so the three conditions are
+          equivalent.
+        </p>
+        <p>
+          For (2), choose <m>B\ge0</m> with <m>|y_n|\le B</m> for all
+          <m>n</m>. If <m>B=0</m>, then <m>y_n=0</m> for all <m>n</m> and the
+          conclusion is immediate. If <m>B&gt;0</m> and <m>\varepsilon&gt;0</m>,
+          choose <m>N</m> so that <m>|x_n|&lt;\varepsilon/B</m> for all
+          <m>n\ge N</m>. Then <m>|x_ny_n|\le B|x_n|&lt;\varepsilon</m> for all
+          <m>n\ge N</m>.
+        </p>
+        <p>
+          For (3), given <m>\varepsilon&gt;0</m>, choose <m>N_1,N_2</m> so that
+          <m>|x_n|&lt;\varepsilon/2</m> for <m>n\ge N_1</m> and
+          <m>|y_n|&lt;\varepsilon/2</m> for <m>n\ge N_2</m>. Then for
+          <m>n\ge \max\{N_1,N_2\}</m>, the triangle inequality gives
+          <m>|x_n+y_n|\le |x_n|+|y_n|&lt;\varepsilon</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-convergent-sequence-unique-limit">
+      <statement>
+        <p>
+          A convergent sequence has a unique limit.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Suppose <m>x_n\to L</m> and <m>x_n\to L'</m>. Then
+          <m>(L-x_n)</m> and <m>(x_n-L')</m> are null sequences, so by
+          <xref ref="prop-null-sequence-basic-operations"/> their sum
+          <m>(L-L')</m> is also null.
+        </p>
+        <p>
+          A constant sequence is null only when its constant value is zero.
+          Therefore <m>L-L'=0</m>, so <m>L=L'</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-convergent-sequence-bounded">
+      <statement>
+        <p>
+          Every convergent sequence is bounded.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Suppose <m>x_n\to L</m>. Taking <m>\varepsilon=1</m>, there exists
+          <m>N\in\N</m> such that <m>|x_n-L|&lt;1</m> for all <m>n\ge N</m>.
+          By the reverse triangle inequality,
+          <m>|x_n|-|L|\le \bigl||x_n|-|L|\bigr|\le |x_n-L|&lt;1</m>, so
+          <m>|x_n|&lt;|L|+1</m> for all <m>n\ge N</m>.
+        </p>
+        <p>
+          Hence
+          <m>
+            |x_n|\le
+            B:=\max\{|x_1|,\dots,|x_N|,|L|+1\}
+          </m>
+          for every <m>n</m>, so <m>(x_n)</m> is bounded.
+        </p>
+      </proof>
+    </proposition>
+
+    <theorem xml:id="thm-monotone-convergence">
+      <title>Monotone Convergence Theorem</title>
+      <statement>
+        <p>
+          Every bounded increasing sequence converges to the supremum of its
+          set of terms, and every bounded decreasing sequence converges to the
+          infimum of its set of terms.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          We prove the increasing case. Let
+          <m>S=\{x_n:n\in\N\}</m>. Since <m>(x_n)</m> is bounded above and
+          <m>S</m> is nonempty, the completeness axiom gives
+          <m>s:=\sup S</m>.
+        </p>
+        <p>
+          Let <m>\varepsilon&gt;0</m>. Then <m>s-\varepsilon</m> is not an
+          upper bound of <m>S</m>, so there exists <m>N</m> with
+          <m>s-\varepsilon&lt;x_N</m>. Because the sequence is increasing,
+          <m>s-\varepsilon&lt;x_N\le x_n\le s</m> for all <m>n\ge N</m>.
+          Therefore <m>|x_n-s|&lt;\varepsilon</m> for all <m>n\ge N</m>, so
+          <m>x_n\to s</m>.
+        </p>
+        <p>
+          The decreasing case follows by applying the same argument to
+          <m>(-x_n)</m>, or by a direct dual proof using infima.
+        </p>
+      </proof>
+    </theorem>
+
+    <p>
+      The next proposition shows that the usual algebraic operations on
+      convergent sequences again produce convergent sequences, and that taking
+      limits commutes with these operations.
+    </p>
+
+    <proposition xml:id="prop-limit-laws-sequences">
+      <statement>
+        <p>
+          Suppose <m>a_n\to A</m> and <m>b_n\to B</m>. Then:
+        </p>
+        <ol>
+          <li><p><m>a_n+b_n\to A+B</m>,</p></li>
+          <li><p><m>a_nb_n\to AB</m>,</p></li>
+          <li><p><m>1/a_n\to 1/A</m>, provided <m>A\ne0</m> and <m>a_n\ne0</m> for all sufficiently large <m>n</m>.</p></li>
+        </ol>
+      </statement>
+      <proof>
+        <p>
+          Since <m>(a_n-A)</m> and <m>(b_n-B)</m> are null,
+          <xref ref="prop-null-sequence-basic-operations"/> gives
+          <m>(a_n+b_n-(A+B))=((a_n-A)+(b_n-B))</m> null. Hence
+          <m>a_n+b_n\to A+B</m>.
+        </p>
+        <p>
+          Also
+          <m>
+            a_nb_n-AB
+            = a_n(b_n-B) + (a_n-A)B.
+          </m>
+          By <xref ref="prop-convergent-sequence-bounded"/>, the sequence
+          <m>(a_n)</m> is bounded. Therefore <m>(a_n(b_n-B))</m> is null, and
+          since the constant sequence <m>(B)</m> is bounded,
+          <m>((a_n-A)B)</m> is also null.
+          Their sum is null, so <m>a_nb_n\to AB</m>.
+        </p>
+        <p>
+          For the reciprocal, choose <m>N_0</m> such that
+          <m>|a_n-A|&lt;|A|/2</m> for all <m>n\ge N_0</m>. Then for
+          <m>n\ge N_0</m>,
+          <m>|a_n|\ge |A|-|a_n-A|&gt;|A|/2</m>, so in particular
+          <m>a_n\ne0</m>. Hence
+          <m>
+            \left|\frac1{a_n}-\frac1A\right|
+            = \frac{|a_n-A|}{|a_n||A|}
+            \le \frac{2}{|A|^2}|a_n-A|.
+          </m>
+          Since <m>(a_n-A)</m> is null, it follows that <m>1/a_n\to 1/A</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-squeeze-lemma">
+      <title>Squeeze Lemma</title>
+      <statement>
+        <p>
+          Suppose <m>a_n\le x_n\le b_n</m> for all <m>n\in\N</m> and
+          <m>a_n\to L</m>, <m>b_n\to L</m>. Then <m>x_n\to L</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Let <m>\varepsilon&gt;0</m>. Since <m>a_n\to L</m> and
+          <m>b_n\to L</m>, there exists <m>N</m> such that for all
+          <m>n\ge N</m> we have
+          <m>-\varepsilon&lt;a_n-L&lt;\varepsilon</m> and
+          <m>-\varepsilon&lt;b_n-L&lt;\varepsilon</m>.
+        </p>
+        <p>
+          Using <m>a_n-L\le x_n-L\le b_n-L</m>, we obtain
+          <m>-\varepsilon&lt;x_n-L&lt;\varepsilon</m> for all <m>n\ge N</m>.
+          Therefore <m>x_n\to L</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-sequences-approximate-sup-inf">
+      <statement>
+        <p>
+          Let <m>S\subseteq\R</m> be nonempty.
+          If <m>S</m> is bounded above, then there exists an increasing
+          sequence <m>(x_n)</m> in <m>S</m> such that <m>x_n\to \sup S</m>.
+          If <m>S</m> is bounded below, then there exists a decreasing
+          sequence <m>(y_n)</m> in <m>S</m> such that <m>y_n\to \inf S</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          We prove the bounded-below case. Let <m>a=\inf S</m>. If
+          <m>a\in S</m>, then the constant sequence <m>y_n=a</m> has the
+          required properties.
+        </p>
+        <p>
+          Now assume <m>a\notin S</m>. Choose <m>y_1\in S</m>. Inductively,
+          suppose <m>y_k\in S</m> has been chosen. Since
+          <m>a&lt;(a+y_k)/2&lt;y_k</m>, the number <m>(a+y_k)/2</m> is not a
+          lower bound of <m>S</m>. Thus there exists <m>y_{k+1}\in S</m> with
+          <m>a&lt;y_{k+1}&lt;(a+y_k)/2&lt;y_k</m>.
+        </p>
+        <p>
+          This constructs a decreasing sequence in <m>S</m> with
+          <m>0&lt;y_{n+1}-a&lt;(y_n-a)/2</m> for all <m>n</m>. By induction,
+          <m>0&lt;y_n-a\le (y_1-a)/2^{n-1}</m>. Since the right-hand side tends
+          to <m>0</m>, the squeeze lemma gives <m>y_n\to a=\inf S</m>.
+        </p>
+        <p>
+          The bounded-above case is proved similarly, or by applying the
+          bounded-below case to <m>-S</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-limit-preserves-nonnegativity">
+      <statement>
+        <p>
+          If <m>x_n\to L</m> and <m>x_n\ge0</m> for all <m>n</m>, then
+          <m>L\ge0</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Suppose instead that <m>L&lt;0</m>. Then for every <m>n</m>,
+          <m>x_n-L\ge -L=|L|</m>, so <m>|x_n-L|\ge |L|&gt;0</m>. This
+          contradicts <m>x_n\to L</m>. Therefore <m>L\ge0</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <corollary xml:id="cor-limit-preserves-order">
+      <statement>
+        <p>
+          If <m>x_n\to x</m>, <m>y_n\to y</m>, and <m>x_n\le y_n</m> for all
+          <m>n</m>, then <m>x\le y</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          The sequence <m>(y_n-x_n)</m> converges to <m>y-x</m> by
+          <xref ref="prop-limit-laws-sequences"/>, and each term is
+          nonnegative. Hence <m>y-x\ge0</m> by
+          <xref ref="prop-limit-preserves-nonnegativity"/>, so <m>x\le y</m>.
+        </p>
+      </proof>
+    </corollary>
+  </subsection>
+
+  <subsection xml:id="subsec-sequences-subsequences">
+    <title>Subsequences</title>
+
+    <p>
+      A <term>subsequence</term><idx>subsequence</idx> of a sequence
+      <m>(x_n)</m> is a sequence of the form <m>(x_{n_k})</m>, where
+      <m>(n_k)</m> is a strictly increasing sequence of natural numbers.
+    </p>
+
+    <proposition xml:id="prop-sequences-finite-changes">
+      <statement>
+        <p>
+          If two sequences differ in only finitely many terms, then they have
+          the same convergence behavior. More precisely, either both diverge,
+          or both converge and have the same limit.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Suppose <m>x_n=y_n</m> for all <m>n\ge N_0</m>. If <m>x_n\to L</m>
+          and <m>\varepsilon&gt;0</m>, choose <m>N\ge N_0</m> such that
+          <m>|x_n-L|&lt;\varepsilon</m> for all <m>n\ge N</m>. Then
+          <m>|y_n-L|=|x_n-L|&lt;\varepsilon</m> for all <m>n\ge N</m>, so
+          <m>y_n\to L</m>.
+        </p>
+        <p>
+          The converse is identical. Therefore the two sequences have the same
+          convergence behavior.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-subsequence-of-convergent-sequence">
+      <statement>
+        <p>
+          Every subsequence of a convergent sequence converges to the same
+          limit.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Suppose <m>x_n\to L</m> and <m>(x_{n_k})</m> is a subsequence.
+          Since <m>(n_k)</m> is strictly increasing, we have <m>n_k\ge k</m>
+          for every <m>k</m>.
+        </p>
+        <p>
+          Let <m>\varepsilon&gt;0</m>. Choose <m>N</m> such that
+          <m>|x_n-L|&lt;\varepsilon</m> for all <m>n\ge N</m>. If
+          <m>k\ge N</m>, then <m>n_k\ge k\ge N</m>, so
+          <m>|x_{n_k}-L|&lt;\varepsilon</m>. Hence <m>x_{n_k}\to L</m>.
+        </p>
+      </proof>
+    </proposition>
+  </subsection>
+
+</section>

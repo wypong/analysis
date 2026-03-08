@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-sequences" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Sequences</title>
+
+  <xi:include href="sec-sequences.ptx" />
+
+  <exercises xml:id="ex-ch2">
+    <title>Exercises</title>
+
+    <exercise xml:id="ex-sequences-null-basic">
+      <statement>
+        <p>
+          Prove directly from the definition that <m>(1/n)</m> is a null
+          sequence.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-sequences-monotone-bounded-convergent">
+      <statement>
+        <p>
+          Let <m>x_n=1-1/n</m>. Show that <m>(x_n)</m> is increasing and
+          converges. Find its limit.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-sequences-squeeze">
+      <statement>
+        <p>
+          Use the squeeze lemma to prove that
+          <m>\sin(n)/n\to 0</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-sequences-subsequence-divergent-example">
+      <statement>
+        <p>
+          Give a divergent sequence that has a convergent subsequence.
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
+</chapter>

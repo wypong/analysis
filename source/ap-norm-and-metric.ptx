@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<appendix xml:id="ap-norm-and-metric" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Norm and Metric</title>
+
+  <section xml:id="sec-norm-and-metric-euclidean">
+    <title>Euclidean Norm on <m>\R^n</m></title>
+    <shorttitle>Euclidean Norm on R^n</shorttitle>
+
+    <p>
+      For vectors <m>x=(x_1,\dots,x_n)</m> and <m>y=(y_1,\dots,y_n)</m> in
+      <m>\R^n</m>, their <term>dot product</term><idx>dot product</idx> is
+      <m>x\cdot y=\sum_{i=1}^n x_i y_i</m>.
+      It is symmetric and bilinear.
+    </p>
+
+    <p>
+      The <term>Euclidean norm</term><idx>Euclidean norm</idx> of
+      <m>x\in\R^n</m> is
+      <m>\|x\|=\sqrt{x\cdot x}</m>.
+      From the definition we immediately get
+      <m>\|x\|\ge 0</m>,
+      <m>\|x\|=0</m> if and only if <m>x=0</m>, and
+      <m>\|ax\|=|a|\,\|x\|</m> for every <m>a\in\R</m>.
+      When <m>n=1</m>, the norm is just the absolute value:
+      <m>\|x\|=|x|</m>.
+    </p>
+
+    <theorem xml:id="thm-cauchy-schwarz-rn">
+      <title>Cauchy-Schwarz</title>
+      <statement>
+        <p>
+          For all <m>x,y\in\R^n</m>,
+          <m>|x\cdot y|\le \|x\|\,\|y\|</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          If <m>x=0</m>, then both sides are zero, so there is nothing to
+          prove. Assume <m>x\ne0</m>. For each <m>t\in\R</m>,
+          <m>\|y-tx\|^2\ge0</m>. Expanding gives
+          <m>
+            0\le \|y-tx\|^2
+            = (y-tx)\cdot(y-tx)
+            = \|y\|^2 - 2t(x\cdot y) + t^2\|x\|^2.
+          </m>
+        </p>
+        <p>
+          This quadratic polynomial in <m>t</m> is never negative, so its
+          discriminant is at most zero:
+          <m>
+            4(x\cdot y)^2 - 4\|x\|^2\|y\|^2 \le 0.
+          </m>
+          Hence
+          <m>(x\cdot y)^2\le\|x\|^2\|y\|^2</m>, and taking square roots gives
+          <m>|x\cdot y|\le \|x\|\,\|y\|</m>.
+        </p>
+      </proof>
+    </theorem>
+
+    <proposition xml:id="prop-triangle-inequality-rn">
+      <statement>
+        <p>
+          For all <m>x,y\in\R^n</m>,
+          <m>\|x+y\|\le \|x\|+\|y\|</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          By bilinearity and <xref ref="thm-cauchy-schwarz-rn"/>,
+          <m>
+            \|x+y\|^2
+            = (x+y)\cdot(x+y)
+            = \|x\|^2 + 2(x\cdot y) + \|y\|^2
+            \le \|x\|^2 + 2\|x\|\,\|y\| + \|y\|^2
+            = (\|x\|+\|y\|)^2.
+          </m>
+          Since both sides are nonnegative, taking square roots gives
+          <m>\|x+y\|\le \|x\|+\|y\|</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-reverse-triangle-inequality-rn">
+      <statement>
+        <p>
+          For all <m>x,y\in\R^n</m>,
+          <m>|\|x\|-\|y\||\le \|x-y\|</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          By <xref ref="prop-triangle-inequality-rn"/>,
+          <m>\|x\|=\|y+(x-y)\|\le\|y\|+\|x-y\|</m>, so
+          <m>\|x\|-\|y\|\le\|x-y\|</m>.
+          Interchanging <m>x</m> and <m>y</m> gives
+          <m>\|y\|-\|x\|\le\|x-y\|</m>.
+          Therefore <m>|\|x\|-\|y\||\le \|x-y\|</m>.
+        </p>
+      </proof>
+    </proposition>
+  </section>
+
+  <section xml:id="sec-norm-and-metric-metrics">
+    <title>Metrics</title>
+
+    <p>
+      Let <m>X</m> be a set. A function <m>d:X\times X\to\R</m> is called a
+      <term>metric</term><idx>metric</idx> on <m>X</m> if, for all
+      <m>x,y,z\in X</m>, the following hold:
+    </p>
+
+    <ol>
+      <li><p><m>d(x,y)\ge 0</m>.</p></li>
+      <li><p><m>d(x,y)=0</m> if and only if <m>x=y</m>.</p></li>
+      <li><p><m>d(x,y)=d(y,x)</m>.</p></li>
+      <li><p><m>d(x,z)\le d(x,y)+d(y,z)</m>.</p></li>
+    </ol>
+
+    <p>
+      For <m>x,y\in\R^n</m>, define the <term>Euclidean distance</term><idx>Euclidean distance</idx> by
+      <m>d(x,y)=\|x-y\|</m>.
+    </p>
+
+    <proposition xml:id="prop-euclidean-distance-metric">
+      <statement>
+        <p>
+          The Euclidean distance is a metric on <m>\R^n</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Since norms are nonnegative, <m>d(x,y)=\|x-y\|\ge0</m>.
+          Also <m>d(x,y)=0</m> if and only if <m>\|x-y\|=0</m>, which happens
+          if and only if <m>x-y=0</m>, that is, <m>x=y</m>.
+        </p>
+        <p>
+          Symmetry follows from
+          <m>d(x,y)=\|x-y\|=\|-(y-x)\|=|-1|\,\|y-x\|=\|y-x\|=d(y,x)</m>.
+        </p>
+        <p>
+          For the triangle inequality,
+          <m>
+            d(x,z)=\|x-z\|=\|(x-y)+(y-z)\|
+            \le \|x-y\|+\|y-z\|
+            = d(x,y)+d(y,z),
+          </m>
+          by <xref ref="prop-triangle-inequality-rn"/>.
+          Therefore <m>d</m> is a metric.
+        </p>
+      </proof>
+    </proposition>
+  </section>
+
+  <section xml:id="sec-norm-and-metric-exercises">
+    <title>Exercises</title>
+
+    <ol>
+      <li><p>Show directly from the definition that for <m>x=(x_1,\dots,x_n)\in\R^n</m>, one has <m>\|x\|=0</m> if and only if <m>x=0</m>.</p></li>
+      <li><p>Let <m>x,y\in\R^n</m>. Show that if <m>x\cdot y=0</m>, then <m>\|x+y\|^2=\|x\|^2+\|y\|^2</m>.</p></li>
+      <li><p>Prove that for all <m>x,y\in\R^n</m>, <m>\bigl|\,\|x\|-\|y\|\,\bigr|\le \|x-y\| \le \|x\|+\|y\|</m>.</p></li>
+      <li><p>For <m>x,y\in\R</m>, the Euclidean distance on <m>\R</m> is <m>d(x,y)=|x-y|</m>. Verify the four metric axioms in this case.</p></li>
+    </ol>
+  </section>
+
+</appendix>
