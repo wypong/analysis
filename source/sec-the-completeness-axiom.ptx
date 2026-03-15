@@ -22,64 +22,23 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
 
       <p>
         For an ordered set, the <term>least upper bound property</term>
-        <idx><h>least upper bound property</h></idx> means:
-        every non-empty subset that is bounded above has a least upper bound
-        (that is, a supremum) in the set.
-        So the completeness axiom says that <m>\R</m>, with its usual order,
-        has the least upper bound property.
+        <idx><h>least upper bound property</h></idx> means that every
+        nonempty subset that is bounded above has a least upper bound, that
+        is, a supremum, in the set. Thus, the completeness axiom says that
+        <m>\R</m>, with its usual order, has the least upper bound property.
+        Dually, this is equivalent to saying that every nonempty subset of
+        <m>\R</m> that is bounded below has an infimum in <m>\R</m>; see
+        <xref ref="ex-ch1-completeness-infimum-equivalent"/>.
       </p>
    </introduction>
 
   <subsection xml:id="subsec-completeness-consequences">
-    <title>Consequences</title> <proposition
-    xml:id="prop-completeness-infimum-equivalent">
-      <statement>
-        <p>
-          The completeness axiom of <m>\R</m> is equivalent to: every
-          non-empty subset of <m>\R</m> that is bounded below has an infimum
-          in <m>\R</m>.
-        </p>
-      </statement>
-
-      <proof>
-        <p>
-          Let <m>A\subseteq\R</m> be non-empty and bounded below. Then
-          <m>-A</m> is non-empty and bounded above, so <m>s:=\sup(-A)</m>
-          exists. We claim <m>-s=\inf A</m>.  For <m>a\in A</m>, we have
-          <m>-a\in -A</m>, hence <m>-a\le s</m>, so <m>-s\le a</m>. Thus
-          <m>-s</m> is a lower bound of <m>A</m>.  If <m>l</m> is any lower
-          bound of <m>A</m>, then <m>-l</m> is an upper bound of <m>-A</m>,
-          so <m>s\le -l</m>, i.e. <m>l\le -s</m>. Therefore <m>-s</m> is
-          the greatest lower bound of <m>A</m>.
-        </p> 
-
-	<p>
-          Conversely, assume every non-empty bounded-below subset of
-          <m>\R</m> has an infimum. Let <m>B\subseteq\R</m> be non-empty
-          and bounded above.  Then <m>-B</m> is non-empty and bounded below,
-          so <m>m:=\inf(-B)</m> exists. The same argument shows <m>-m=\sup
-          B</m>. Hence the least upper bound property holds.
-        </p>
-      </proof>
-    </proposition>
-
-
-    <exercise xml:id="ex-sec-completeness-sup-monotone">
-        <statement>
-          <p>
-            Suppose <m>\emptyset\ne A\subseteq B\subseteq\R</m> and that
-            <m>B</m> is bounded above. Show that
-            <me>\inf B \le \inf A \le \sup A \le \sup B.</me>
-          </p>
-        </statement>
-      </exercise>
-
-        <p>
-          An ordered field is
-          <term>Archimedean</term><idx><h>Archimedean</h></idx> if for every
-          <m>x</m> in the field there exists <m>n \in \N</m> such that <m>x
-          &lt; n</m>.
-        </p>
+    <title>Consequences</title>
+    <p>
+      An ordered field is <term>Archimedean</term>
+      <idx><h>Archimedean</h></idx> if for every <m>x</m> in the field there
+      exists <m>n \in \N</m> such that <m>x &lt; n</m>.
+    </p>
 
     <proposition xml:id="prop-n-unbounded-above">
       <statement>

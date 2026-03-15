@@ -7,9 +7,12 @@
     <title>Definitions</title>
 
     <p>
-      An <term>infinite sequence</term><idx><h>sequence</h><h>infinite</h></idx>
-      is a function whose domain is <m>\N</m>. Since we will only consider
-      infinite sequences here, we simply call them <term>sequences</term>.
+      In this book, an <term>infinite
+      sequence</term><idx><h>sequence</h><h>infinite</h></idx> is a
+      function whose domain has the same order type as <m>(\N, \le)</m>.
+      Since we will only consider infinite sequences here, we simply call
+      them <term>sequences</term>. We often regard real numbers as constant
+      sequences.
     </p>
 
     <p>
@@ -20,10 +23,16 @@
     </p>
 
     <p>
-      Since a real sequence is just a function <m>\N\to\R</m>, notions such
-      as <term>bounded above</term>, <term>bounded below</term>,
-      <term>bounded</term>, <term>increasing</term>, and
-      <term>decreasing</term> apply exactly as they do for functions.
+      Since a real sequence is just a function <m>\N\to\R</m>,
+      notions such as <term>bounded above</term>, <term>bounded
+      below</term>, <term>bounded</term>, <term>increasing</term>, and
+      <term>decreasing</term> apply exactly as they do for functions. An
+      increasing (resp. a decreasing) sequence is bounded below (resp. above)
+      by its first term. A sequence is <term>constant</term> if and only
+      if it is both increasing and decreasing. We say that <m>(x_n)</m> is
+      <term>strictly increasing</term> if <m>x_m \lt x_n</m> whenever <m>m
+      \lt n</m>. The concept <term>strictly decreasing</term> is defined
+      similarly.
     </p>
 
     <example xml:id="eg-basic-sequences">
@@ -36,34 +45,11 @@
       </statement>
     </example>
 
-    <proposition xml:id="prop-monotone-sequence-basic-bounds">
-      <statement>
-        <p>
-          Every increasing sequence is bounded below, and every decreasing
-          sequence is bounded above. A sequence is constant if and only if it
-          is both increasing and decreasing.
-        </p>
-      </statement>
-      <proof>
-        <p>
-          If <m>(x_n)</m> is increasing, then <m>x_1\le x_n</m> for all
-          <m>n</m>, so <m>x_1</m> is a lower bound. The decreasing case is
-          similar.
-        </p>
-        <p>
-          Every constant sequence is clearly both increasing and decreasing.
-          Conversely, if <m>(x_n)</m> is both increasing and decreasing, then
-          for <m>m\le n</m> we have both <m>x_m\le x_n</m> and
-          <m>x_n\le x_m</m>, hence <m>x_m=x_n</m>. So all terms are equal.
-        </p>
-      </proof>
-    </proposition>
-
     <p>
-      A real sequence <m>(x_n)</m> is called <term>null</term><idx>null sequence</idx>
-      if for every <m>\varepsilon&gt;0</m> there exists <m>N\in\N</m> such
-      that
-      <me>|x_n|&lt;\varepsilon \quad\text{for all } n\ge N.</me>
+      A real sequence <m>(x_n)</m> is called <term>null</term><idx>null
+      sequence</idx> if for every <m>\varepsilon&gt;0</m> there exists
+      <m>N\in\N</m> such that <me>|x_n|&lt;\varepsilon \quad\text{for all }
+      n\ge N.</me>
     </p>
 
     <p>
@@ -81,13 +67,14 @@
     </example>
 
     <p>
-      We say that a sequence <m>(x_n)</m>
-      <term>converges</term><idx>convergent sequence</idx> to
-      <m>L\in\R</m>, written <m>x_n\to L</m>, if the sequence
-      <m>(x_n-L)</m> is null. In that case <m>L</m> is called the
-      <term>limit</term><idx>limit of a sequence</idx> of the sequence.
-      A sequence is <term>divergent</term><idx>divergent sequence</idx> if it
-      does not converge.
+      We say that a sequence <m>(x_n)</m> <term>converges</term><idx>convergent
+      sequence</idx> to <m>L\in\R</m>, written <m>x_n\to L</m> or
+      <m>\lim_n x_n = L</m>, if the sequence <m>(x_n-L)</m> is null. In that
+      case <m>L</m> is called a <term>limit</term><idx>limit of a
+      sequence</idx> of the sequence. A sequence is <term>convergent</term>
+      <idx>convergent sequence</idx> if it has a limit. A sequence is
+      <term>divergent</term><idx>divergent sequence</idx> if it does not
+      converge.
     </p>
   </subsection>
 
@@ -100,30 +87,36 @@
           Let <m>(x_n)</m> and <m>(y_n)</m> be real sequences.
         </p>
         <ol>
-          <li><p><m>(x_n)</m> is null if and only if <m>(-x_n)</m> is null if and only if <m>(|x_n|)</m> is null.</p></li>
-          <li><p>If <m>(x_n)</m> is null and <m>(y_n)</m> is bounded, then <m>(x_ny_n)</m> is null.</p></li>
-          <li><p>If <m>(x_n)</m> and <m>(y_n)</m> are null, then <m>(x_n+y_n)</m> is null.</p></li>
+          <li><p><m>(x_n)</m> is null if and only if <m>(-x_n)</m> is null if
+          and only if <m>(|x_n|)</m> is null.</p></li>
+          <li><p>If <m>(x_n)</m> is null and <m>(y_n)</m> is bounded, then
+          <m>(x_ny_n)</m> is null.</p></li>
+          <li><p>If <m>(x_n)</m> and <m>(y_n)</m> are null, then
+          <m>(x_n+y_n)</m> is null.</p></li>
         </ol>
-      </statement>
+      </statement> 
+
       <proof>
         <p>
-          For (1), note that <m>|-x_n|=|x_n|</m>, so the three conditions are
-          equivalent.
+          For (1), note that <m>|-x_n|=|x_n|</m>, so the three conditions
+          are equivalent.
         </p>
+
         <p>
-          For (2), choose <m>B\ge0</m> with <m>|y_n|\le B</m> for all
-          <m>n</m>. If <m>B=0</m>, then <m>y_n=0</m> for all <m>n</m> and the
-          conclusion is immediate. If <m>B&gt;0</m> and <m>\varepsilon&gt;0</m>,
-          choose <m>N</m> so that <m>|x_n|&lt;\varepsilon/B</m> for all
-          <m>n\ge N</m>. Then <m>|x_ny_n|\le B|x_n|&lt;\varepsilon</m> for all
-          <m>n\ge N</m>.
+          For (2), choose <m>B \gt 0</m> with <m>|y_n|\le B</m> for all
+          <m>n</m>. For any <m>\varepsilon \gt 0</m>, <m>|x_n| \lt
+          \varepsilon</m> and hence <m>|x_n y_n| \le B|x_n| \le
+          B\varepsilon</m> for all but finitely many <m>n</m>. Since
+          <m>\varepsilon \gt 0</m> is arbitrary, so is <m>B\varepsilon</m>.
+          This shows that the sequence <m>(x_ny_n)</m> is null.
         </p>
+
         <p>
-          For (3), given <m>\varepsilon&gt;0</m>, choose <m>N_1,N_2</m> so that
-          <m>|x_n|&lt;\varepsilon/2</m> for <m>n\ge N_1</m> and
-          <m>|y_n|&lt;\varepsilon/2</m> for <m>n\ge N_2</m>. Then for
-          <m>n\ge \max\{N_1,N_2\}</m>, the triangle inequality gives
-          <m>|x_n+y_n|\le |x_n|+|y_n|&lt;\varepsilon</m>.
+          For (3), given <m>\varepsilon&gt;0</m>, choose <m>N_1,N_2</m>
+          so that <m>|x_n|&lt;\varepsilon/2</m> for <m>n\ge N_1</m> and
+          <m>|y_n|&lt;\varepsilon/2</m> for <m>n\ge N_2</m>. Then for <m>n\ge
+          \max\{N_1,N_2\}</m>, the triangle inequality gives <m>|x_n+y_n|\le
+          |x_n|+|y_n|&lt;\varepsilon</m>.
         </p>
       </proof>
     </proposition>
@@ -156,19 +149,15 @@
       </statement>
       <proof>
         <p>
-          Suppose <m>x_n\to L</m>. Taking <m>\varepsilon=1</m>, there exists
-          <m>N\in\N</m> such that <m>|x_n-L|&lt;1</m> for all <m>n\ge N</m>.
-          By the reverse triangle inequality,
-          <m>|x_n|-|L|\le \bigl||x_n|-|L|\bigr|\le |x_n-L|&lt;1</m>, so
-          <m>|x_n|&lt;|L|+1</m> for all <m>n\ge N</m>.
+          Suppose <m>x_n\to L</m>. Then there exists <m>N\in\N</m> such that
+          whenever <m>n \ge N</m>, <m>|x_n-L|&lt;1</m>, and so by the triangle
+          inequality,
+          <me>|x_n| \lt |x_n-L| + |L| \lt 1+|L|.</me>
         </p>
         <p>
-          Hence
-          <m>
-            |x_n|\le
-            B:=\max\{|x_1|,\dots,|x_N|,|L|+1\}
-          </m>
-          for every <m>n</m>, so <m>(x_n)</m> is bounded.
+          Hence <m>
+            |x_n|\le B:=\max\{|x_1|,\dots,|x_N|,|L|+1\}
+          </m> for every <m>n</m>, so <m>(x_n)</m> is bounded.
         </p>
       </proof>
     </proposition>
@@ -178,25 +167,30 @@
       <statement>
         <p>
           Every bounded increasing sequence converges to the supremum of its
-          set of terms, and every bounded decreasing sequence converges to the
-          infimum of its set of terms.
+          set of terms, and every bounded decreasing sequence converges to
+          the infimum of its set of terms.
         </p>
       </statement>
       <proof>
         <p>
-          We prove the increasing case. Let
-          <m>S=\{x_n:n\in\N\}</m>. Since <m>(x_n)</m> is bounded above and
-          <m>S</m> is nonempty, the completeness axiom gives
-          <m>s:=\sup S</m>.
+          We prove the increasing case. In this case, the set of terms
+          <m>S=\{x_n:n\in\N\}</m> is bounded above and nonempty; let <m>s</m>
+          be its supremum.
         </p>
+
         <p>
-          Let <m>\varepsilon&gt;0</m>. Then <m>s-\varepsilon</m> is not an
+          For any <m>\varepsilon&gt;0</m>, <m>s-\varepsilon</m> is not an
           upper bound of <m>S</m>, so there exists <m>N</m> with
           <m>s-\varepsilon&lt;x_N</m>. Because the sequence is increasing,
-          <m>s-\varepsilon&lt;x_N\le x_n\le s</m> for all <m>n\ge N</m>.
+          whenever <m>n \ge N</m>,
+          <me>
+            s-\varepsilon&lt;x_N\le x_n\le s \lt s + \varepsilon.
+          </me>
+
           Therefore <m>|x_n-s|&lt;\varepsilon</m> for all <m>n\ge N</m>, so
           <m>x_n\to s</m>.
         </p>
+
         <p>
           The decreasing case follows by applying the same argument to
           <m>(-x_n)</m>, or by a direct dual proof using infima.
@@ -218,7 +212,8 @@
         <ol>
           <li><p><m>a_n+b_n\to A+B</m>,</p></li>
           <li><p><m>a_nb_n\to AB</m>,</p></li>
-          <li><p><m>1/a_n\to 1/A</m>, provided <m>A\ne0</m> and <m>a_n\ne0</m> for all sufficiently large <m>n</m>.</p></li>
+          <li><p><m>1/a_n\to 1/A</m>, provided <m>A\ne0</m> and <m>a_n\ne0</m>
+          for all sufficiently large <m>n</m>.</p></li>
         </ol>
       </statement>
       <proof>
@@ -348,16 +343,6 @@
         </p>
       </proof>
     </corollary>
-  </subsection>
-
-  <subsection xml:id="subsec-sequences-subsequences">
-    <title>Subsequences</title>
-
-    <p>
-      A <term>subsequence</term><idx>subsequence</idx> of a sequence
-      <m>(x_n)</m> is a sequence of the form <m>(x_{n_k})</m>, where
-      <m>(n_k)</m> is a strictly increasing sequence of natural numbers.
-    </p>
 
     <proposition xml:id="prop-sequences-finite-changes">
       <statement>
@@ -381,7 +366,16 @@
         </p>
       </proof>
     </proposition>
+  </subsection>
 
+  <subsection xml:id="subsec-sequences-subsequences">
+    <title>Subsequences</title>
+
+    <p>
+      A <term>subsequence</term><idx>subsequence</idx> of a sequence
+      <m>(x_n)</m> is a sequence of the form <m>(x_{n_k})</m>, where
+      <m>(n_k)</m> is a strictly increasing sequence of natural numbers.
+    </p>
     <proposition xml:id="prop-subsequence-of-convergent-sequence">
       <statement>
         <p>
@@ -404,5 +398,4 @@
       </proof>
     </proposition>
   </subsection>
-
 </section>

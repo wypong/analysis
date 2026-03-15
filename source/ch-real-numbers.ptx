@@ -44,6 +44,16 @@
       </statement>
     </exercise>
 
+    <exercise xml:id="ex-sec-completeness-sup-monotone">
+      <statement>
+        <p>
+          Suppose <m>A</m> is a nonempty subset of a bounded set
+          <m>B\subseteq\R</m>. Show that
+          <me>\inf B \le \inf A \le \sup A \le \sup B.</me>
+        </p>
+      </statement>
+    </exercise>
+
     <exercise xml:id="ex-ch1-intersection-intervals">
       <statement>
         <p>

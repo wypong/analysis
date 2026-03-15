@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec-sets-of-real-numbers" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec-sets-of-real-numbers"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+
 <title>Sets of Real Numbers</title>
 
-  <introduction>    
+  <introduction>
   <p>
       We use <m>\R</m> to denote the set of real numbers. For
       <m>A,B\subseteq\R</m> and <m>c\in\R</m>, we define:
   </p>
-  <ul>
-      <li><m>A+B:=\{a+b : a\in A,\ b\in B\}</m></li> 
 
-      <li><m>AB:=\{ab :
-      a\in A,\ b\in B\}</m></li> 
+  <ul>
+      <li><m>A+B:=\{a+b : a\in A,\ b\in B\}</m></li>
+
+      <li><m>AB:=\{ab : a\in A,\ b\in B\}</m></li>
 
       <li><m>cA:=\{c\}A=\{ca : a\in A\}</m></li>
     </ul>
@@ -21,7 +23,7 @@
   </p>
 
   <p>
-    Some subsets of <m>\R</m> that we will encounter often are:
+    Some subsets of <m>\R</m> that we will encounter frequently are:
   </p>
   <ul>
     <li>The set of natural numbers <m>\N = \{1,2,3, \ldots\}</m></li>
@@ -39,11 +41,14 @@
 
     <p>
       A real number <m>b</m> is an <term>upper bound</term><idx><h>upper
-      bound</h></idx> (resp. a <term>lower bound</term><idx><h>lower
-      bound</h></idx>) of a set <m>A\subseteq\R</m> if <m>b \ge a</m>
-      (resp. <m>b \le a</m>) for every <m>a \in A</m>. Note that <m>b</m>
-      is an upper bound of <m>A</m> if and only if <m>-b</m> is a lower
-      bound of <m>-A</m>.
+      bound</h></idx><idx><h>bound</h><h>upper</h></idx> (resp. a <term>lower
+      bound</term><idx><h>lower bound</h></idx>) of a set <m>A</m> of real
+      numbers if <m>b \ge a</m> (resp. <m>b \le a</m>) for every <m>a \in
+      A</m>. We write <m>\ub(A)</m> and <m>\lb(A)</m> for the sets of upper
+      bounds and lower bounds of <m>A</m>, respectively. It is
+      straightforward to check that <m>-\ub(A) = \lb(-A)</m>. In other words,
+      <m>b</m> is an upper bound of <m>A</m> if and only if <m>-b</m> is a
+      lower bound of <m>-A</m>.
     </p>
 
     <p>
@@ -52,8 +57,11 @@
       below</term><idx><h>bounded</h><h>below</h></idx>) if it
       has an upper bound (resp. a lower bound). We say <m>A</m> is
       <term>bounded</term><idx><h>bounded</h></idx> if it is both bounded
-      above and bounded below.
-     </p>
+      above and bounded below. A real-valued function is
+      <term>bounded</term> (resp. bounded above, bounded below) if its range
+      is bounded (resp. bounded above, bounded below).
+      <idx><h>function</h><h>bounded</h></idx>
+    </p>
 
     <example xml:id="eg-bounded-subsets-examples">
       <statement>
@@ -64,12 +72,16 @@
 	    </li>
 
 	  <li>
-	    The set <m>\{x^{-1} \colon x \lt 0\}</m> is bounded above,
-	    for example by <m>0</m>, but not bounded below.
+	    The set <m>\{1/x \colon x \gt 0\}</m> is bounded below by
+	    <m>0</m>, but it is not bounded above.
 	  </li>
 
 	  <li>
 	  <m>\Z</m> is neither bounded below nor above.
+	  </li>
+
+	  <li>
+	  Every finite set of real numbers is bounded.
 	  </li>
 
 	  <li>
@@ -81,19 +93,14 @@
     </example>
 
     <p>
-      If <m>b</m> is an upper bound of <m>A</m>, then it is also an upper
-      bound of every subset of <m>A</m>. Consequently, an arbitrary
-      intersection of sets bounded above is again bounded above. Suppose
-      <m>A</m> and <m>A'</m> are bounded above by <m>a</m> and <m>a'</m>,
-      respectively. Then <m>A \cup A'</m> is bounded above by
-      <m>\max\{a,a'\}</m>. Thus, a finite union of sets bounded above is
-      bounded above.
-    </p>
-    <p>
-      Likewise, the collection of subsets of <m>\R</m> that
-      are bounded below (resp. bounded) is closed under arbitrary
-      intersection and finite union. In particular, every finite set of
-      real numbers is bounded.
+      An upper bound of a set is also an upper bound of every subset of that
+      set. Therefore, an intersection of sets that are bounded above is again
+      bounded above. If <m>a</m> and <m>a'</m> are upper bounds of <m>A</m>
+      and <m>A'</m>, respectively, then <m>\max\{a,a'\}</m> is an upper bound
+      of <m>A \cup A'</m>. Thus, a finite union of sets bounded above is
+      bounded above. Likewise, the family of subsets of <m>\R</m> that are
+      bounded below (resp. bounded) is closed under arbitrary intersections
+      and finite unions.
     </p>
 
     <proposition xml:id="prop-bounded-iff-abs-bound">
@@ -143,12 +150,12 @@
 	      respectively. Hence <m>\sup(0,1) = 1</m> and <m>\inf(0,1)
 	      = 0</m>.	</li>
 
-		  <li>
-		  The set of upper bounds and the set of lower bounds of
-		  <m>H:=\{x^{-1}\colon x \lt 0\}</m> are <m>[0,\infty)</m> and the
-		  empty set, respectively. Hence <m>\sup H = 0</m> and
-		  <m>\inf H</m> does not exist.
-		  </li>
+	   <li>
+	     The set of upper bounds and the set of lower bounds of
+	     <m>H:=\{1/x \colon x \lt 0\}</m> are <m>[0,\infty)</m> and the
+	     empty set, respectively. Hence <m>\sup H = 0</m> and <m>\inf H</m>
+	     does not exist.
+	   </li>
 
 	  <li>
 	  <m>\Z</m> has neither a supremum nor an infimum.
