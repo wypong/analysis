@@ -7,23 +7,18 @@
     <title>Definitions</title>
 
     <p>
-      In this book, an <term>infinite
-      sequence</term><idx><h>sequence</h><h>infinite</h></idx> is a
-      function whose domain has the same order type as <m>(\N, \le)</m>.
-      Since we will only consider infinite sequences here, we simply call
-      them <term>sequences</term>. We often regard real numbers as constant
-      sequences.
+      An <term>infinite
+      sequence</term><idx><h>sequence</h><h>infinite</h></idx> is a function
+      whose domain is, up to order isomorphism, the ordered set <m>(\N,
+      \le)</m>. Since we will only consider infinite sequences here, we
+      simply call them <term>sequences</term>.  If <m>x</m> is a sequence, we
+      write <m>x_n</m> for its value at <m>n\in\N</m> and call <m>x_n</m> the
+      <term><m>n</m>-th term</term><idx><h>term</h><h>of a sequence</h></idx>
+      of the sequence.  We denote the sequence by <m>(x_n)</m>.
     </p>
 
     <p>
-      If <m>x</m> is a sequence, we write <m>x_n</m> for its value at
-      <m>n\in\N</m> and call <m>x_n</m> the <term><m>n</m>-th
-      term</term><idx><h>term</h><h>of a sequence</h></idx> of the sequence.
-      We denote the sequence by <m>(x_n)</m>.
-    </p>
-
-    <p>
-      Since a real sequence is just a function <m>\N\to\R</m>,
+      Since a real sequence is a function from <m>\N</m> to <m>\R</m>,
       notions such as <term>bounded above</term>, <term>bounded
       below</term>, <term>bounded</term>, <term>increasing</term>, and
       <term>decreasing</term> apply exactly as they do for functions. An
@@ -32,7 +27,7 @@
       if it is both increasing and decreasing. We say that <m>(x_n)</m> is
       <term>strictly increasing</term> if <m>x_m \lt x_n</m> whenever <m>m
       \lt n</m>. The concept <term>strictly decreasing</term> is defined
-      similarly.
+      similarly. We often regard real numbers as constant sequences.
     </p>
 
     <example xml:id="eg-basic-sequences">
@@ -69,17 +64,117 @@
     <p>
       We say that a sequence <m>(x_n)</m> <term>converges</term><idx>convergent
       sequence</idx> to <m>L\in\R</m>, written <m>x_n\to L</m> or
-      <m>\lim_n x_n = L</m>, if the sequence <m>(x_n-L)</m> is null. In that
-      case <m>L</m> is called a <term>limit</term><idx>limit of a
+      <m>\lim_n x_n = L</m>, if the sequence <m>(x_n-L)</m> is null. In
+      that case <m>L</m> is called a <term>limit</term><idx>limit of a
       sequence</idx> of the sequence. A sequence is <term>convergent</term>
       <idx>convergent sequence</idx> if it has a limit. A sequence is
       <term>divergent</term><idx>divergent sequence</idx> if it does not
       converge.
     </p>
+
+    <example xml:id="eg-sequences-k-tails">
+      <statement>
+        <p>
+          Here are a few examples of tails:
+        </p>
+        <ul>
+          <li>
+            If <m>x_n=n</m>, then the 0-tail is <m>(n)</m>, the 1-tail is
+            <m>(n+1)</m>, and the 3-tail is <m>(n+3)</m>.
+          </li>
+          <li>
+            If <m>x_n=1/n</m>, then the 2-tail is <m>(1/(n+2))</m>.
+          </li>
+          <li>
+            If <m>x_n=(-1)^n</m>, then the 1-tail is <m>((-1)^{n+1})</m>,
+            while the 2-tail is <m>((-1)^{n+2})=((-1)^n)</m>.
+          </li>
+        </ul>
+      </statement>
+    </example>
+
+    <p>
+          Different tails of the same sequence need not be equal, but the next
+          proposition shows that they always have the same convergence
+          behavior.
+    </p>
+
+    <proposition xml:id="prop-sequences-tail">
+      <statement>
+        <p>
+          A sequence and any of its tails have the same convergence
+          behavior. More precisely, either both diverge, or both converge
+          and have the same limit.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Suppose <m>x_n \to L</m> and <m>K \ge 0</m>. Then for any
+          <m>\varepsilon \gt 0</m>, there exists <m>N \in \N</m> such that
+          <m>|x_n - L| \lt \varepsilon</m> for all <m>n \ge N</m>. But if
+          <m>n \ge N</m>, then so is <m>n+K</m>. Therefore,
+          <m>|x_{n+K} - L| \lt \varepsilon</m> for all <m>n \ge N</m>. This
+          shows that <m>x_{n+K} \to L</m>.
+        </p>
+
+        <p>
+          Suppose <m>(x_n)</m> is divergent but a tail of <m>(x_n)</m>
+          converges, say <m>x_{n+K} \to L</m> for some <m>L</m> and
+          <m>K \ge 0</m>. Then for any <m>\varepsilon \gt 0</m>, there
+          exists <m>N \in \N</m> such that <m>|x_{m+K} - L| \lt
+          \varepsilon</m> whenever <m>m \ge N</m>. But that means whenever
+          <m>n \ge N+K</m>, we have <m>|x_n - L| \lt \varepsilon</m>. This
+          shows that <m>x_n \to L</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <p>
+      The following corollary is now clear.
+    </p>
+
+    <corollary xml:id="cor-sequences-finite-changes">
+    <statement>
+    <p>
+      If a tail of one sequence is equal to a tail of another sequence, then
+      the two sequences have the same convergence behavior.
+      </p>
+    </statement>
+    </corollary>
   </subsection>
 
   <subsection xml:id="subsec-sequences-fundamental-results">
     <title>Fundamental Results</title>
+
+    <p> Before going through some fundamental results about sequences, we
+    introduce a handy shorthand: Instead of saying "there exists <m>N</m>
+    such that for all <m>n \ge N</m>", we often suppress the reference
+    to <m>N</m> (which may depend on other quantities) and say one of the
+    following phrases: </p>
+
+    <ul>
+      <li>for all sufficiently large <m>n</m>,</li>
+      <li>for all but finitely many <m>n</m>,</li>
+      <li>for all <m>n \gg 0</m>,</li>
+      <li>for all <m>n \sim \infty</m>.</li>
+    </ul>
+
+    <p>
+      With this convention, the statement that <m>(x_n)</m> is null becomes:
+      for every <m>\varepsilon \gt 0</m>, we have <m>|x_n| \lt
+      \varepsilon</m> for all <m>n \gg 0</m>.
+    </p>
+
+    <p>
+      For <m>K \ge 0</m>, the <term><m>K</m>-tail</term><idx><h>tail</h><h>K-tail</h></idx>
+      of a sequence <m>(x_n)</m> is the sequence <m>(x_{n+K})</m>. So, the
+      0-tail of a sequence is the sequence itself. A <term>tail</term><idx>tail
+      of a sequence</idx> of a sequence is simply a <m>K</m>-tail for some
+      <m>K \ge 0</m>.
+    </p>
+
+
 
     <proposition xml:id="prop-null-sequence-basic-operations">
       <statement>
@@ -343,29 +438,6 @@
         </p>
       </proof>
     </corollary>
-
-    <proposition xml:id="prop-sequences-finite-changes">
-      <statement>
-        <p>
-          If two sequences differ in only finitely many terms, then they have
-          the same convergence behavior. More precisely, either both diverge,
-          or both converge and have the same limit.
-        </p>
-      </statement>
-      <proof>
-        <p>
-          Suppose <m>x_n=y_n</m> for all <m>n\ge N_0</m>. If <m>x_n\to L</m>
-          and <m>\varepsilon&gt;0</m>, choose <m>N\ge N_0</m> such that
-          <m>|x_n-L|&lt;\varepsilon</m> for all <m>n\ge N</m>. Then
-          <m>|y_n-L|=|x_n-L|&lt;\varepsilon</m> for all <m>n\ge N</m>, so
-          <m>y_n\to L</m>.
-        </p>
-        <p>
-          The converse is identical. Therefore the two sequences have the same
-          convergence behavior.
-        </p>
-      </proof>
-    </proposition>
   </subsection>
 
   <subsection xml:id="subsec-sequences-subsequences">
