@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-convergence-tests-for-sequences"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+  
+<title>Convergence Tests for Sequences</title>
+
+  <introduction>
+    <p>
+      In this section we study geometric sequences, sequences of the form
+      <m>c^{1/n}</m>, and the ratio test. These results will be useful for
+      deciding convergence of other sequences.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-sequences-geometric">
+    <title>Geometric Sequences</title>
+
+    <p>
+      We begin with sequences of the form <m>(c^n)</m> for <m>c&gt;0</m>.
+      The cases <m>c=0</m> and <m>c=1</m> are constant sequences, so the
+      interesting behavior occurs when <m>0&lt;c&lt;1</m> or <m>c&gt;1</m>.
+    </p>
+
+    <proposition xml:id="prop-geometric-sequence-test">
+      <statement>
+        <p>
+          The sequence <m>(c^n)</m> is null if <m>0&lt;c&lt;1</m>, and
+          diverges to <m>+\infty</m> if <m>c&gt;1</m>.
+        </p>      
+      </statement>
+
+      <proof>
+        <p>
+          First suppose <m>0&lt;c&lt;1</m>. Then
+          <me>c&gt;c^2&gt;c^3&gt;\cdots&gt;0.</me> Hence <m>(c^n)</m> is
+          decreasing and bounded below, so it converges by
+          <xref ref="thm-monotone-convergence"/>. Let <m>L</m> be its limit.
+        </p>
+
+        <p>
+          The tail <m>(c^{n+1})</m> has the same limit as <m>(c^n)</m> by
+          <xref ref="prop-sequences-tail"/>. On the other hand,
+          <m>c^{n+1}=c\cdot c^n</m>, so <xref ref="prop-limit-laws-sequences"/>
+          gives <m>c^{n+1}\to cL</m>. Therefore <m>cL=L</m>. Since
+          <m>1-c\ne0</m>, we obtain <m>L(1-c)=0</m>, and hence <m>L=0</m>.
+        </p>
+
+        <p>
+          Now suppose <m>c&gt;1</m>. Then <m>0&lt;1/c&lt;1</m>, so the
+          first case gives <m>(1/c)^n\to 0</m>. For any <m>B&gt;0</m>, since
+          <m>(1/c)^n\to 0</m>, we have <m>(1/c)^n&lt;1/B</m> for all
+          sufficiently large <m>n</m>. Equivalently, <m>c^n&gt;B</m> for all
+          sufficiently large <m>n</m>. Thus <m>c^n\to +\infty</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <example xml:id="eg-geometric-sequence-negative-base">
+      <statement>
+        <p>
+          If <m>-1&lt;c&lt;0</m>, then <m>|c|&lt;1</m>, so
+          <m>(|c|^n)\to 0</m> by
+          <xref ref="prop-geometric-sequence-test"/>. Since
+          <m>-|c|^n\le c^n\le |c|^n</m>,
+          <xref ref="prop-squeeze-lemma"/> gives <m>c^n\to 0</m>. For
+          example, <m>((-1/2)^n)</m> converges to <m>0</m>.
+        </p>
+        <p>
+          In contrast, <m>((-1)^n)</m> does not converge, because its odd
+          terms are <m>-1</m> and its even terms are <m>1</m>.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-sequences-nth-root">
+    <title><m>n</m>-th Root</title>
+
+    <proposition xml:id="prop-nth-root-sequence-test">
+      <statement>
+        <p>
+          For every <m>c&gt;0</m>, the sequence <m>(c^{1/n})</m> converges to
+          <m>1</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          First suppose <m>c\ge 1</m>. Then
+          <me>c \ge c^{1/2} \ge c^{1/3} \ge \cdots \ge 1.</me>
+          Thus <m>(c^{1/n})</m> is decreasing and bounded below, so it
+          converges by <xref ref="thm-monotone-convergence"/>. Let <m>L</m>
+          be its limit.
+        </p>
+
+        <p>
+          Every term satisfies <m>c^{1/n}\ge 1</m>, so <m>L\ge 1</m> by
+          <xref ref="prop-limit-preserves-nonnegativity"/> applied to the
+          sequence <m>(c^{1/n}-1)</m>. The subsequence <m>(c^{1/(2n)})</m>
+          also converges to <m>L</m> by
+          <xref ref="prop-subsequence-of-convergent-sequence"/>. Since
+          <m>c^{1/n}=(c^{1/(2n)})^2</m>,
+          <xref ref="prop-limit-laws-sequences"/> gives
+          <m>c^{1/n}\to L^2</m>. By uniqueness of limits, <m>L=L^2</m>. Since
+          <m>L\ge1</m>, it follows that <m>L=1</m>.
+        </p>
+
+        <p>
+          Now suppose <m>0&lt;c\le 1</m>. Then <m>1/c\ge1</m>, so the first part
+          shows <m>(1/c)^{1/n}\to 1</m>. Since
+          <m>c^{1/n}=1/(1/c)^{1/n}</m>, the reciprocal limit law gives
+          <m>c^{1/n}\to 1</m>.
+        </p>
+      </proof>
+    </proposition>
+  </subsection>
+
+  <subsection xml:id="subsec-sequences-ratio-test">
+    <title>Ratio Test</title>
+
+    <p>
+      The next test is useful when successive terms are related
+      multiplicatively.
+    </p>
+
+    <proposition xml:id="prop-ratio-test-sequences">
+      <title>Ratio Test</title>
+      <statement>
+        <p>
+          Let <m>(x_n)</m> be a sequence of nonzero real numbers, and suppose
+          the limit <me>L=\lim_n \frac{|x_{n+1}|}{|x_n|}</me> exists. If
+          <m>L&lt;1</m>, then <m>(x_n)</m> is null. If <m>L&gt;1</m>, then
+          <m>(x_n)</m> is unbounded.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          First suppose <m>L&lt;1</m>. Since the terms <m>|x_{n+1}|/|x_n|</m>
+          are nonnegative, we also have <m>L\ge0</m> by
+          <xref ref="prop-limit-preserves-nonnegativity"/>. We have
+          <m>L&lt;c:=(1+L)/2&lt;1</m>, so
+          <m>|x_{n+1}|/|x_n|&lt;c</m> for all but finitely many <m>n</m>.
+          Since the convergence behavior and limit of a sequence do not
+          change when finitely many terms are modified, we may assume that
+          <m>|x_{n+1}|&lt;c|x_n|</m> for all <m>n</m>. Thus, for any <m>n</m>,
+          <me>
+            0 \le |x_{n+1}| \lt c|x_n| \lt c^2|x_{n-1}| \lt \cdots \lt
+            c^n|x_1|.
+          </me>
+          By <xref ref="prop-geometric-sequence-test"/>, the sequence
+          <m>(c^n)</m> is null, and then
+          <xref ref="prop-squeeze-lemma"/> shows that <m>(x_n)</m> is also
+          null.
+        </p>
+
+        <p>
+          Now suppose <m>L&gt;1</m>. Then <m>1&lt;c:=(1+L)/2&lt;L</m> and
+          <m>|x_{n+1}|/|x_n|&gt;c</m> for all but finitely many <m>n</m>.
+          Again, we may assume that the inequality, or equivalently
+          <m>|x_{n+1}|&gt;c|x_n|</m>, holds for all <m>n</m>. Therefore,
+          <me>
+            |x_{n+1}| \gt c|x_n| \gt c^2|x_{n-1}| \cdots \gt c^n|x_1|.
+          </me>
+          Because <m>c &gt;1</m>, <xref ref="prop-geometric-sequence-test"/>
+        shows that <m>c^n \to +\infty</m>. Thus, <m>(x_n)</m> is unbounded.
+        </p>
+      </proof>
+    </proposition>
+
+    <example xml:id="eg-ratio-test-inconclusive">
+      <statement>
+        <p>
+          If <m>L=1</m>, the ratio test gives no conclusion. For example,
+          <m>x_n=1/n</m> satisfies
+          <m>|x_{n+1}|/|x_n|=n/(n+1)\to 1</m> and is null, while the constant
+          sequence <m>y_n=1</m> satisfies
+          <m>|y_{n+1}|/|y_n|=1\to 1</m> and is not null.
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      For positive sequences <m>(a_n)</m> and <m>(b_n)</m>, we write
+      <m>a_n \ll b_n</m> if <m>(a_n/b_n)</m> is null.
+    </p>
+
+    <proposition xml:id="prop-growth-comparison-basic-sequences">
+      <title>Growth Comparison</title>
+      <statement>
+        <p>
+          Let <m>a\ge 0</m> and <m>b&gt;1</m>. Then
+          <me>n^a \ll b^n \ll n! \ll n^n.</me>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          First,
+          <me>
+            \frac{(n+1)^a}{b^{n+1}}\frac{b^n}{n^a}
+            =
+            \left(1+\frac{1}{n}\right)^a \frac{1}{b}
+            \to \frac{1}{b} &lt; 1.
+          </me>
+          Therefore <m>n^a/b^n\to 0</m> by the ratio test.
+        </p>
+
+        <p>
+          Next,
+          <me>
+            \frac{b^{n+1}}{(n+1)!}\frac{n!}{b^n}
+            =
+            \frac{b}{n+1}
+            \to 0.
+          </me>
+          Hence <m>b^n/n!\to 0</m> by the ratio test.
+        </p>
+
+        <p>
+          Finally,
+          <me>
+            0 \le \frac{n!}{n^n}
+            =
+            1\left(1-\frac{1}{n}\right)\left(1-\frac{2}{n}\right)\cdots
+            \frac{1}{n}
+            &lt; \frac{1}{n}.
+          </me>
+          Since <m>1/n\to 0</m>, <xref ref="prop-squeeze-lemma"/> gives
+          <m>n!/n^n\to 0</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <example xml:id="eg-nth-root-of-n">
+      <statement>
+        <p>
+          The sequence <m>(n^{1/n})</m> converges to <m>1</m>. To see this,
+          let <m>\varepsilon&gt;0</m> and set <m>b=1+\varepsilon</m>. The
+          previous proposition with <m>a=1</m> shows that <m>n/b^n\to
+          0</m>. Hence <m>n&lt;b^n</m> for all sufficiently large
+          <m>n</m>. Taking <m>n</m>-th roots, we obtain <m>1\le n^{1/n}&lt;
+          b = 1+\varepsilon</m> for all sufficiently large <m>n</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Thus <m>|n^{1/n}-1|&lt;\varepsilon</m> for all sufficiently large
+          <m>n</m>. Therefore <m>n^{1/n}\to 1</m>.
+        </p>
+      </proof>
+    </example>
+  </subsection>
+</section>

@@ -4,6 +4,7 @@
   <title>Sequences</title>
 
   <xi:include href="sec-sequences.ptx" />
+  <xi:include href="sec-convergence-tests-for-sequences.ptx" />
 
   <exercises xml:id="ex-ch2">
     <title>Exercises</title>
@@ -39,6 +40,47 @@
       <statement>
         <p>
           Give a divergent sequence that has a convergent subsequence.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-sequences-geometric-negative-base">
+      <statement>
+        <p>
+          Determine whether each sequence converges. If it does, find its
+          limit.
+        </p>
+        <ul>
+          <li><m>((-1/3)^n)</m></li>
+          <li><m>((-2)^n)</m></li>
+          <li><m>((3/2)^n)</m></li>
+        </ul>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-sequences-ratio-test-power-over-exponential">
+      <statement>
+        <p>
+          Use the ratio test to prove that <m>n^3/2^n\to 0</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-sequences-ratio-test-factorial">
+      <statement>
+        <p>
+          Use the ratio test to prove that <m>5^n/n!\to 0</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-sequences-ratio-test-inconclusive">
+      <statement>
+        <p>
+          Give two sequences of nonzero real numbers <m>(x_n)</m> and
+          <m>(y_n)</m> such that
+          <m>|x_{n+1}|/|x_n|\to 1</m> and <m>|y_{n+1}|/|y_n|\to 1</m>, but
+          <m>(x_n)</m> is null while <m>(y_n)</m> is unbounded.
         </p>
       </statement>
     </exercise>
