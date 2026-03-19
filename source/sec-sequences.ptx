@@ -53,25 +53,29 @@
       many <m>n</m>.
     </p>
 
-    <example xml:id="eg-one-over-n-null">
-      <statement>
-        <p>
-          The sequence <m>(1/n)</m> is null.
-        </p>
-      </statement>
-    </example>
-
     <p>
       We say that a sequence <m>(x_n)</m> <term>converges</term><idx>convergent
       sequence</idx> to <m>L\in\R</m>, written <m>x_n\to L</m> or
       <m>\lim_n x_n = L</m>, if the sequence <m>(x_n-L)</m> is null. In
       that case <m>L</m> is called a <term>limit</term><idx>limit of a
-      sequence</idx> of the sequence. A sequence is <term>convergent</term>
-      <idx>convergent sequence</idx> if it has a limit. A sequence is
-      <term>divergent</term><idx>divergent sequence</idx> if it does not
-      converge.
+      sequence</idx> of the sequence. So a null sequence is the same as a
+      sequence that converges to 0.
     </p>
 
+    <p>
+      A sequence is <term>convergent</term> <idx>convergent sequence</idx>
+      if it has a limit. A sequence is <term>divergent</term><idx>divergent
+      sequence</idx> if it does not converge.
+    </p>
+
+    <p>
+      For <m>K \ge 0</m>, the
+      <term><m>K</m>-tail</term><idx><h>tail</h><h>K-tail</h></idx> of a
+      sequence <m>(x_n)</m> is the sequence <m>(x_{n+K})</m>. So, the 0-tail
+      of a sequence is the sequence itself. A <term>tail</term><idx>tail of
+      a sequence</idx> of a sequence is simply a <m>K</m>-tail for some <m>K
+      \ge 0</m>.
+    </p>
     <example xml:id="eg-sequences-k-tails">
       <statement>
         <p>
@@ -162,19 +166,9 @@
 
     <p>
       With this convention, the statement that <m>(x_n)</m> is null becomes:
-      for every <m>\varepsilon \gt 0</m>, we have <m>|x_n| \lt
-      \varepsilon</m> for all <m>n \gg 0</m>.
+      for every <m>\varepsilon \gt 0</m>, we have <m>|x_n| \lt \varepsilon</m>
+      for all <m>n \gg 0</m>.
     </p>
-
-    <p>
-      For <m>K \ge 0</m>, the <term><m>K</m>-tail</term><idx><h>tail</h><h>K-tail</h></idx>
-      of a sequence <m>(x_n)</m> is the sequence <m>(x_{n+K})</m>. So, the
-      0-tail of a sequence is the sequence itself. A <term>tail</term><idx>tail
-      of a sequence</idx> of a sequence is simply a <m>K</m>-tail for some
-      <m>K \ge 0</m>.
-    </p>
-
-
 
     <proposition xml:id="prop-null-sequence-basic-operations">
       <statement>
@@ -235,6 +229,7 @@
         </p>
       </proof>
     </proposition>
+
 
     <proposition xml:id="prop-convergent-sequence-bounded">
       <statement>
@@ -438,16 +433,13 @@
         </p>
       </proof>
     </corollary>
-  </subsection>
-
-  <subsection xml:id="subsec-sequences-subsequences">
-    <title>Subsequences</title>
 
     <p>
       A <term>subsequence</term><idx>subsequence</idx> of a sequence
       <m>(x_n)</m> is a sequence of the form <m>(x_{n_k})</m>, where
       <m>(n_k)</m> is a strictly increasing sequence of natural numbers.
     </p>
+
     <proposition xml:id="prop-subsequence-of-convergent-sequence">
       <statement>
         <p>

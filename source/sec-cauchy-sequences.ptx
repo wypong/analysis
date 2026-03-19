@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-cauchy-sequences"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Cauchy Sequences</title>
+
+  <introduction>
+    <p>
+      Sometimes we can show that the terms of a sequence become arbitrarily
+      close to one another even before we know what the limit should be. The
+      next definition isolates that idea.
+    </p>
+  </introduction>
+
+  <p>
+    A sequence <m>(x_n)</m> is <term>Cauchy sequence</term><idx>Cauchy
+    sequence</idx> if for every <m>\varepsilon&gt;0</m> there exists
+    <m>N\in\N</m> such that <me>
+      |x_n-x_m|&lt;\varepsilon \quad\text{whenever } n,m\ge N.
+    </me>
+  </p>
+
+  <p>
+    In other words, all sufficiently far terms of a Cauchy sequence lie
+    close to one another.
+  </p>
+
+  <example xml:id="eg-cauchy-one-over-n">
+    <statement>
+      <p>
+        The sequence <m>(1/n)</m> is Cauchy. Indeed, if <m>m,n\ge N</m>, then
+        <me>
+          \left|\frac{1}{n}-\frac{1}{m}\right|
+          \le \frac{1}{n}+\frac{1}{m}
+          \le \frac{2}{N}.
+        </me>
+        Therefore, once <m>N</m> is large enough that
+        <m>2/N&lt;\varepsilon</m>, we have
+        <m>|1/n-1/m|&lt;\varepsilon</m> for all <m>m,n\ge N</m>.
+      </p>
+    </statement>
+  </example>
+
+  <example xml:id="eg-not-cauchy-alternating">
+    <statement>
+      <p>
+        The sequence <m>((-1)^n)</m> is not Cauchy. If <m>n</m> is even, then
+        <m>|(-1)^n-(-1)^{n+1}|=2</m>. So no tail of the sequence can have all
+        of its terms within distance <m>1</m> of each other.
+      </p>
+    </statement>
+  </example>
+
+  <proposition xml:id="prop-convergent-implies-cauchy">
+    <statement>
+      <p>
+        Every convergent sequence is Cauchy.
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Suppose <m>x_n\to L</m>. Let <m>\varepsilon&gt;0</m>. Choose
+        <m>N\in\N</m> such that <m>|x_n-L|&lt;\varepsilon/2</m> for all
+        <m>n\ge N</m>. Then whenever <m>m,n\ge N</m>, the triangle inequality
+        gives
+        <me>
+          |x_n-x_m|\le |x_n-L|+|x_m-L|&lt; \varepsilon.
+        </me>
+        Hence <m>(x_n)</m> is Cauchy.
+      </p>
+    </proof>
+  </proposition>
+
+  <proposition xml:id="prop-cauchy-sequence-bounded">
+    <statement>
+      <p>
+        Every Cauchy sequence is bounded.
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Let <m>(x_n)</m> be Cauchy. Then for some <m>N\in\N</m>,
+        <m>|x_n-x_m|&lt;1</m> whenever <m>m,n\ge N</m>. In particular,
+        for every <m>n\ge N</m>, <me>
+          |x_n|\le |x_n-x_N|+|x_N|&lt;1+|x_N|.
+	</me> 
+
+	Thus, <m>(x_n)</m> is bounded by
+	<m>B:=\max\{|x_1|,\dots,|x_{N-1}|,|x_N|+1\}</m>
+      
+      </p>
+    </proof>
+  </proposition>
+
+  <p>
+    The converse of <xref ref="prop-convergent-implies-cauchy"/> need not hold
+    in an arbitrary ordered field.
+  </p>
+
+  <theorem xml:id="thm-sequential-completeness-of-reals">
+    <statement>
+      <p> <m>\R</m> is sequentially complete <idx><h>sequentially
+      complete</h></idx>. That is, every Cauchy sequence of real numbers
+      converges.  
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+	A Cauchy sequence <m>(x_n)</m> is bounded (<xref
+	ref="prop-cauchy-sequence-bounded"/>) hence, by the Bolzano-Weierstrass
+	Theorem (<xref ref="thm-bolzano-weierstrass"/>) admits a convergent
+	subsequence <m>(x_{n_k})</m>. Let <m>x_{n_k}\to L</m>.
+      </p>
+
+      <p>
+        Let <m>\varepsilon&gt;0</m>. Since <m>(x_n)</m> is Cauchy, there
+        exists <m>N \in\N</m> such that <m>|x_n-x_m|&lt;\varepsilon/2</m>
+        whenever <m>m,n\ge N</m>.  Since <m>x_{n_k}\to L</m>, there exists
+        <m>K \in\N</m> such that <m>|x_{n_k}-L|&lt;\varepsilon/2</m> for
+        every <m>k\ge K</m>.
+      </p>
+
+      <p>
+	For <m>n,k \ge M:=\max\{N,K\}</m>, because <m>(n_k)</m> is strictly
+	increasing, <m>n_k \ge k \ge M \ge N</m>. Thus,
+	<me>
+	  |x_n-L| \le |x_n-x_{n_k}| + |x_{n_k}-L| &lt;
+	  \frac{\varepsilon}{2}+\frac{\varepsilon}{2} = \varepsilon.
+	</me>
+	This shows that <m>x_n\to L</m>.
+      </p>
+    </proof>
+  </theorem>
+
+  <example xml:id="eg-q-not-sequentially-complete">
+    <statement>
+      <p>
+        The ordered field <m>\Q</m> is not sequentially complete. Let
+        <m>x_n</m> be the decimal truncation of <m>\sqrt{2}</m> to
+        <m>n</m> decimal places:
+        <m>1, 1.4, 1.41, 1.414, \dots</m>. Then
+        <m>0\le \sqrt{2}-x_n &lt; 10^{-n}</m> for every <m>n</m>. Hence,
+        for <m>m,n\ge N</m>,
+        <me>
+          |x_n-x_m|
+          \le |\sqrt{2}-x_n| + |\sqrt{2}-x_m|
+          &lt; 2\cdot 10^{-N}.
+        </me>
+        So <m>(x_n)</m> is Cauchy. But it cannot converge in <m>\Q</m>,
+        because as a real sequence it converges to <m>\sqrt{2}</m>, and
+        <m>\sqrt{2}\notin\Q</m>. Thus <m>\Q</m> is not sequentially complete.
+      </p>
+    </statement>
+  </example>
+</section>

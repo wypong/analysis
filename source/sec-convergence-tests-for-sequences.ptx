@@ -119,8 +119,8 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Ratio Test</title>
 
     <p>
-      The next test is useful when successive terms are related
-      multiplicatively.
+      The next test gives a convenient condition for comparing a sequence with
+      a geometric sequence.
     </p>
 
     <proposition xml:id="prop-ratio-test-sequences">
