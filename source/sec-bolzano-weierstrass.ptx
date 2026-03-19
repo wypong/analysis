@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-bolzano-weierstrass"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Bolzano-Weierstrass Theorem</title>
+
+  <p>
+    The Bolzano-Weierstrass theorem says that bounded sequences always have
+    convergent subsequences. This result is one of the main ways in which the
+    completeness of <m>\R</m> appears in the study of sequences.
+  </p>
+
+  <proposition xml:id="prop-monotone-subsequence">
+    <title>Monotone Subsequence Lemma</title>
+    <statement>
+      <p>
+        Every real sequence has a subsequence that is either increasing or
+        decreasing.
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Let <m>(x_n)</m> be a real sequence. Call <m>n\in\N</m> a
+        <term>peak index</term> if <m>x_n\ge x_m</m> for every <m>m\ge n</m>.
+      </p>
+
+      <p>
+        First suppose there are infinitely many peak indices. Choose them in
+        increasing order:
+        <me>
+          n_1 \lt n_2 \lt n_3 \lt \cdots.
+        </me>
+        Since <m>n_k</m> is a peak index and <m>n_{k+1}\ge n_k</m>, we have
+        <m>x_{n_k}\ge x_{n_{k+1}}</m> for every <m>k</m>. Hence
+        <m>(x_{n_k})</m> is a decreasing subsequence.
+      </p>
+
+      <p>
+        Now suppose there are only finitely many peak indices. Then there is
+        some <m>n_1\in\N</m> such that no <m>n\ge n_1</m> is a peak index.
+        Since <m>n_1</m> is not a peak index, there exists <m>n_2\gt n_1</m>
+        such that <m>x_{n_2}\gt x_{n_1}</m>. Since <m>n_2</m> is not a peak
+        index, there exists <m>n_3\gt n_2</m> such that
+        <m>x_{n_3}\gt x_{n_2}</m>. Continuing inductively, we obtain a
+        subsequence <m>(x_{n_k})</m> with
+        <me>
+          x_{n_1} \lt x_{n_2} \lt x_{n_3} \lt \cdots.
+        </me>
+        Therefore <m>(x_{n_k})</m> is increasing.
+      </p>
+
+      <p>
+        In either case, <m>(x_n)</m> has a monotone subsequence.
+      </p>
+    </proof>
+  </proposition>
+
+  <theorem xml:id="thm-bolzano-weierstrass">
+    <title>Bolzano-Weierstrass Theorem</title>
+    <statement>
+      <p>
+        Every bounded sequence of real numbers has a convergent subsequence.
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Let <m>(x_n)</m> be bounded. By
+        <xref ref="prop-monotone-subsequence"/>, the sequence has a monotone
+        subsequence <m>(x_{n_k})</m>.
+      </p>
+
+      <p>
+        Since <m>(x_n)</m> is bounded, every subsequence of <m>(x_n)</m> is
+        also bounded. Therefore <m>(x_{n_k})</m> is a bounded monotone
+        sequence.
+      </p>
+
+      <p>
+        By the monotone convergence theorem,
+        <xref ref="thm-monotone-convergence"/>, the subsequence
+        <m>(x_{n_k})</m> converges. Thus <m>(x_n)</m> has a convergent
+        subsequence.
+      </p>
+    </proof>
+  </theorem>
+
+  <p>
+    This theorem will later let us pass from boundedness to convergence in
+    situations where the whole sequence is not obviously convergent.
+  </p>
+
+  <p> Consider a sequence <m>(x_n)</m>. Let <m>S_k := \{x_n : n \ge k\}</m> be
+  the sets of terms of <m>(x_n)</m> with index at least <m>k \in \N</m>.
+  Clearly <m>S_k \supseteq S_{k+1}</m> and so   
+  
+  <me>
+       \inf S_{k} \le \inf S_{k+1} \le \sup S_{k+1} \le \sup S_{k}
+  </me>
+  
+  as extended reals. Since any two of the <m>S_k</m>'s differ by a finite and
+  hence bounded set, either all of them or none of them is bounded. In the
+  bounded case, the real sequence <m>(\sup S_k)_k</m> is a decreasing and
+  bounded below by <m>\inf S_1</m>. Its limit, guaranteed by the Monotonic
+  Convergence Theorem, is the <term>limit superior</term> of the sequence
+  <m>(x_n)</m> and is denoted by <m>\limsup x_n</m>. Likewise, the <term>limit
+  inferior</term> of <m>(x_n)</m> is defined to be the limit of the real
+  sequence <m>(\inf S_k)_k</m>.
+  </p>
+
+  <p> If the <m>S_k</m>'s are not bounded above, then each <m>\sup S_k =
+  +\infty</m> and we define <m>\limsup x_n = +\infty</m>. Likewise, if the
+  <m>S_k</m>'s are not bounded below, then each <m>\inf S_k = -\infty</m>
+  and <m>\liminf x_n</m> is defined as <m>-\infty</m>.
+  </p>
+
+  <proposition xml:id="prop-convergent-iff-limsup-equals-liminf">
+    <statement>
+      <p>
+         A bounded sequence <m>(x_n)</m> is convergent if and only if
+	 <m>\limsup x_n = \liminf x_n</m>.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Suppose first that <m>x_n \to L</m>. Let <m>\varepsilon \gt 0</m>.
+        Choose <m>N\in\N</m> such that for all <m>n\ge N</m>,
+	<me>
+	L -\varepsilon \lt x_n \lt L + \varepsilon.
+	</me> 
+        
+	Then for any <m>k \ge N</m>, <m>S_k \subseteq (L-\varepsilon,
+	L+\varepsilon)</m> and so
+
+	<me>
+	L-\varepsilon \le \inf S_k \le \sup S_k \le L+\varepsilon.
+	</me>
+
+	Therefore, <m>\limsup x_n=\lim_k \sup S_k</m> is arbitrary closed
+	to <m>L</m> and hence must be <m>L</m>. Likewise, <m>\liminf x_n =
+	L</m> as well.
+      </p>
+
+      <p>
+        Conversely, suppose <m>\liminf x_n = \limsup x_n = L</m>. Since
+        <m>x_k\in S_k</m>, we have 
+	<me>
+          \inf S_k \le x_k \le \sup S_k
+        </me> for every <m>k</m>. By the squeeze lemma, <m>x_k \to
+        L</m>. Therefore <m>(x_n)</m> is convergent.
+      </p>
+    </proof>
+  </proposition>
+
+  <theorem xml:id="thm-subsequence-converges-to-limsup-liminf">
+    <statement>
+      <p>
+        Every bounded sequence contains a subsequence that converges to its
+        limit superior (limit inferior).
+      </p>
+    </statement>
+    <proof>
+      <p>
+        We prove the statement for the limit superior. The proof for the
+	statement about limit inferior is analogous.
+      </p>
+
+      <p>
+	For a bounded sequence <m>(x_n)</m>, we construct a subsequence as
+	follows: set <m>n_1:=1</m>. Suppose natural numbers <me> n_1 \lt n_2
+	\ldots \lt n_k </me> have been chosen for some <m>k \ge 1</m>. By
+	the definition of supremum, there is some natural number <m>n_{k+1}
+	\ge n_k + 1 \gt n_k</m> such that
+	
+	<men xml:id='inductive-step'>
+            \sup S_{n_k +1} - \frac{1}{k} \le x_{n_{k+1}} \le \sup S_{n_k +
+	    1}.
+	</men>
+
+	This inductively defines a strictly increasing sequence <m>(n_k)</m>
+	of natural numbers and hence a subsequence <m>(x_{n_k})</m>
+	of <m>(x_n)</m>.
+      </p>
+
+      <p>
+	As a subsequence of the convergent sequence <m>(\sup S_n)</m>,
+	<m>(\sup S_{n_k+1})</m> also converges to <m>\limsup x_n</m> by <xref
+	ref="prop-subsequence-of-convergent-sequence"/>. Since the sequence
+	<m>(\sup S_{n_k+1} - 1/k)</m> has the same limit, the squeeze lemma
+	applied to <xref ref="inductive-step"/> shows that <m>x_{n_{k+1}}
+	\to \limsup x_n</m>.
+      </p>
+    </proof>
+  </theorem>
+  
+  <proposition xml:id="prop-subsequence-liminf-limsup-inequalities">
+    <statement>
+      <p>
+         For any subsequence <m>(x_{n_k})</m> of a sequence <m>(x_n)</m>,
+	 <me>
+             \liminf_n x_n \le \liminf_k x_{n_k} \le \limsup_k x_{n_k} \le
+	     \limsup_n x_n. 
+	 </me>
+      </p>
+    </statement>
+    <proof>
+      <p>
+        For each <m>n\in\N</m>, let <m>S_n:=\{x_m:m\ge n\}</m>, and for each
+        <m>k\in\N</m>, let
+        <me>
+          T_k:=\{x_{n_j}:j\ge k\}.
+        </me>
+        Then <m>T_k\subseteq S_{n_k}</m>, so
+        <me>
+          \inf S_{n_k} \le \inf T_k \le \sup T_k \le \sup S_{n_k}
+        </me>
+        for every <m>k</m>.
+      </p>
+
+      <p>
+        If <m>(x_n)</m> is not bounded above, then
+        <m>\sup S_n=+\infty</m> for every <m>n</m>, and so
+        <m>\limsup_n x_n=+\infty</m>. In that case the last inequality is
+        automatic. Otherwise <m>(x_n)</m> is bounded above, so
+        <m>(\sup S_n)</m> is a real decreasing sequence converging to
+        <m>\limsup_n x_n</m>. Since <m>(\sup S_{n_k})</m> is a subsequence of
+        <m>(\sup S_n)</m>, it has the same limit by
+        <xref ref="prop-subsequence-of-convergent-sequence"/>. Also,
+        <m>\sup T_k \le \sup S_{n_k}</m> for every <m>k</m>, so
+        <m>\limsup_k x_{n_k} \le \limsup_n x_n</m>.
+      </p>
+
+      <p>
+        Similarly, if <m>(x_n)</m> is not bounded below, then
+        <m>\inf S_n=-\infty</m> for every <m>n</m>, and so
+        <m>\liminf_n x_n=-\infty</m>. In that case the first inequality is
+        automatic. Otherwise <m>(x_n)</m> is bounded below, so
+        <m>(\inf S_n)</m> is a real increasing sequence converging to
+        <m>\liminf_n x_n</m>. Since <m>(\inf S_{n_k})</m> is a subsequence of
+        <m>(\inf S_n)</m>, it has the same limit. Also,
+        <m>\inf S_{n_k} \le \inf T_k</m> for every <m>k</m>, so
+        <m>\liminf_n x_n \le \liminf_k x_{n_k}</m>.
+      </p>
+
+      <p>
+        Finally, <m>\inf T_k \le \sup T_k</m> for every <m>k</m>, so
+        <m>\liminf_k x_{n_k} \le \limsup_k x_{n_k}</m>. Combining the three
+        inequalities gives the result.
+      </p>
+    </proof>
+  </proposition>
+</section>
