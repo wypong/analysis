@@ -155,4 +155,118 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       </p>
     </statement>
   </example>
+
+  <p>
+    The completeness axiom and sequential completeness do not look alike at
+    first. The completeness axiom is a statement about bounded sets, while
+    sequential completeness is a statement about Cauchy sequences. The link is
+    that one can try to locate the supremum of a nonempty set bounded above by
+    repeatedly choosing a point of the set and an upper bound whose distance
+    keeps shrinking. This produces Cauchy sequences from below and above, and
+    their common limit turns out to be the desired supremum. Thus, for
+    <m>\R</m>, the two formulations of completeness are equivalent.
+  </p>
+
+  <proposition xml:id="prop-sequential-completeness-implies-lub">
+    <statement>
+      <p>
+        Sequential completeness of <m>\R</m> implies completeness of
+	<m>\R</m>.
+      </p>
+    </statement>
+    <proof>
+      <p>
+	Let <m>A\subseteq \R</m> be non-empty and bounded above. Let
+	<m>B</m> be the set of all upper bounds of <m>A</m>. Then <m>B</m>
+	is non-empty. Choose <m>a_1\in A</m> and <m>b_1\in B</m>, so in
+	particular, <m>a_1 \le b_1</m>.
+      </p>
+
+      <p> We will construct, by induction, sequences <m>(a_n)</m> in
+      <m>A</m> and <m>(b_n)</m> in <m>B</m> such that
+      </p>
+      <ol>
+        <li> <m>(a_n)</m> is increasing and <m>(b_n)</m> is decreasing.
+	</li>
+	
+	<li> 
+
+	<m> 0 \le b_n-a_n \le \frac{b_1-a_1}{2^{n-1}} </m> for all <m>n \in
+	\N</m>. 
+	</li>
+      
+      </ol>
+      
+      <p>
+      Suppose for some <m>k \ge 1</m>, <m>a_i \in A</m> and <m>b_i \in B</m>
+      (<m>1 \le i \le k</m>) have been chosen such that
+      
+      <men xml:id='anbn-ind-hyp'>
+      a_1 \le a_2 \le \ldots \le a_k \le b_k \le \ldots \le b_2 \le b_1
+      </men>
+      and <m>b_i - a_i \le (b_1-a_1)/2^{i-1}</m>.
+
+      We choose <m>a_{k+1} \in A</m> and <m>b_{k+1} \in B</m> as follows.
+      Let <m>m:=\frac{a_k+b_k}{2}</m>. Then:
+      <ol>
+        <li><m>m \in B</m>, take <m>b_{k+1} = m</m> and <m>a_{k+1} =a_k</m>.
+	</li>
+        
+	<li>
+          If <m>m \notin B</m>, then we choose an element of <m>A</m> that
+	  is larger than <m>m</m> to be <m>a_{k+1}</m> and keep
+	  <m>b_{k+1}=b_k</m>.
+	</li>
+      </ol>
+      
+      In either case, <m>a_k \le a_{k+1} \le b_{k+1} \le b_k</m> and by
+      <xref ref='anbn-ind-hyp'/>
+      
+      <me> b_{k+1} - a_{k+1} \le \frac{1}{2}(b_k - a_k) \le \frac{1}{2^{k}}(b_1
+      - a_1).  
+      </me>
+	So by induction, we have constructed sequences <m>(a_n)</m> in <m>A</m>
+	and <m>(b_n)</m> in <m>B</m> with the required properties. 
+     </p>
+     
+     <p> Next, we argue that both sequences are Cauchy. For any <m>n,m</m>
+     with <m>n \ge m</m>,
+	<m>
+	   a_m \le a_n \le b_n \le b_m
+	</m>.  Hence,
+	
+	<me>
+	 0 \le |a_n - a_m|, |b_n-b_m| \le b_m - a_m \le \frac{1}{2^{m-1}}(b_1
+	 - a_1).
+	</me>
+
+	Since <m>(b_1-a_1)/2^{m-1} \to 0</m> as <m>m \to \infty</m>,
+	both <m>(a_n)</m> and <m>(b_n)</m> are Cauchy and hence convergent by
+	the sequential completeness of <m>\R</m>. Let <m>a</m> and <m>b</m> be
+	their limits, respectively. 
+     </p>
+     
+     <p>
+     We claim that <m>a=b</m>. Fix any <m>m \in \N</m>, since <m>a_n \le
+     b_m</m> for any <m>n</m>, so <m>a \le b_m</m>. Since <m>m</m> is
+     arbitrary, we have <m>a \le b</m> and
+     
+     <me> b-a \le b_n -a_n \le (b_1-a_1)/2^{n-1} </me> for any
+     <m>n</m>. Letting <m>n \to \infty</m>, we conclude that <m>a = b</m>. 
+    </p>
+
+    <p>
+     We now contend that the common limit, say <m>s</m>, of <m>(a_n)</m>
+     and <m>(b_n)</m> is the supremum of <m>A</m>. First, <m>s</m> must be
+     an upper bound of <m>A</m>. If not, then
+      <m>s \lt a_0</m> for some <m>a_0 \in A</m>. But since <m>s</m> is
+      the limit of <m>(b_n)</m>, we have <m>b_{n_0} \lt a_0</m> for some
+      <m>n_0</m>, contradicting the fact that <m>b_{n_0} \in B</m> is an
+      upper bound of <m>A</m>. Next, we argue that any <m>s' \lt s</m> is
+      not an upper bound of <m>A</m>.  Otherwise <m>a_n \le s'</m> for each
+      <m>n</m> and so <m>a_n \to s \le s'</m>, a contradiction. Putting these
+      together shows that <m>s = \sup A</m>, and the proof is complete.  
+    </p>
+    </proof>
+  </proposition>
 </section>

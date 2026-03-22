@@ -46,6 +46,58 @@
       </statement>
     </exercise>
 
+    <exercise xml:id="ex-sequences-limsup-liminf-bounded-examples">
+      <statement>
+        <p>
+          For each of the following sequences, compute its limit superior and
+          limit inferior.
+        </p>
+        <ul>
+          <li><m>((-1)^n)</m></li>
+          <li><m>(1/n)</m></li>
+          <li><m>((-1)^n/n)</m></li>
+          <li><m>((-1/2)^n)</m></li>
+          <li><m>((-1)^n(1-1/n))</m></li>
+        </ul>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-sequences-limsup-liminf-unbounded-examples">
+      <statement>
+        <p>
+          Compute the limit superior and limit inferior, in the extended real
+          numbers, of each of the following sequences.
+        </p>
+        <ul>
+          <li><m>((-2)^n)</m></li>
+          <li><m>(5(n+1))</m></li>
+        </ul>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-sequences-limsup-liminf-subsequences-example">
+      <statement>
+        <p>
+          Consider the sequence <m>x_n = (-1)^n(1-1/n)</m>.
+        </p>
+        <p>
+          Find a subsequence converging to <m>\limsup x_n</m> and a subsequence
+          converging to <m>\liminf x_n</m>. Determine all limits of convergent
+          subsequences of <m>(x_n)</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-sequences-unique-subsequential-limit">
+      <statement>
+        <p>
+          Let <m>(x_n)</m> be a bounded sequence. Suppose every convergent
+          subsequence of <m>(x_n)</m> has the same limit <m>L</m>. Prove that
+          <m>(x_n)</m> converges to <m>L</m>.
+        </p>
+      </statement>
+    </exercise>
+
     <exercise xml:id="ex-sequences-cauchy-direct">
       <statement>
         <p>

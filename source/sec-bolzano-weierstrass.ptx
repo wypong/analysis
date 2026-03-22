@@ -5,114 +5,31 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Bolzano-Weierstrass Theorem</title>
 
   <p>
-    The Bolzano-Weierstrass theorem says that bounded sequences always have
-    convergent subsequences. This result is one of the main ways in which the
-    completeness of <m>\R</m> appears in the study of sequences.
-  </p>
-
-  <proposition xml:id="prop-monotone-subsequence">
-    <title>Monotone Subsequence Lemma</title>
-    <statement>
-      <p>
-        Every real sequence has a subsequence that is either increasing or
-        decreasing.
-      </p>
-    </statement>
-
-    <proof>
-      <p>
-        Let <m>(x_n)</m> be a real sequence. Call <m>n\in\N</m> a
-        <term>peak index</term> if <m>x_n\ge x_m</m> for every <m>m\ge n</m>.
-      </p>
-
-      <p>
-        First suppose there are infinitely many peak indices. Choose them in
-        increasing order:
-        <me>
-          n_1 \lt n_2 \lt n_3 \lt \cdots.
-        </me>
-        Since <m>n_k</m> is a peak index and <m>n_{k+1}\ge n_k</m>, we have
-        <m>x_{n_k}\ge x_{n_{k+1}}</m> for every <m>k</m>. Hence
-        <m>(x_{n_k})</m> is a decreasing subsequence.
-      </p>
-
-      <p>
-        Now suppose there are only finitely many peak indices. Then there is
-        some <m>n_1\in\N</m> such that no <m>n\ge n_1</m> is a peak index.
-        Since <m>n_1</m> is not a peak index, there exists <m>n_2\gt n_1</m>
-        such that <m>x_{n_2}\gt x_{n_1}</m>. Since <m>n_2</m> is not a peak
-        index, there exists <m>n_3\gt n_2</m> such that
-        <m>x_{n_3}\gt x_{n_2}</m>. Continuing inductively, we obtain a
-        subsequence <m>(x_{n_k})</m> with
-        <me>
-          x_{n_1} \lt x_{n_2} \lt x_{n_3} \lt \cdots.
-        </me>
-        Therefore <m>(x_{n_k})</m> is increasing.
-      </p>
-
-      <p>
-        In either case, <m>(x_n)</m> has a monotone subsequence.
-      </p>
-    </proof>
-  </proposition>
-
-  <theorem xml:id="thm-bolzano-weierstrass">
-    <title>Bolzano-Weierstrass Theorem</title>
-    <statement>
-      <p>
-        Every bounded sequence of real numbers has a convergent subsequence.
-      </p>
-    </statement>
-
-    <proof>
-      <p>
-        Let <m>(x_n)</m> be bounded. By
-        <xref ref="prop-monotone-subsequence"/>, the sequence has a monotone
-        subsequence <m>(x_{n_k})</m>.
-      </p>
-
-      <p>
-        Since <m>(x_n)</m> is bounded, every subsequence of <m>(x_n)</m> is
-        also bounded. Therefore <m>(x_{n_k})</m> is a bounded monotone
-        sequence.
-      </p>
-
-      <p>
-        By the monotone convergence theorem,
-        <xref ref="thm-monotone-convergence"/>, the subsequence
-        <m>(x_{n_k})</m> converges. Thus <m>(x_n)</m> has a convergent
-        subsequence.
-      </p>
-    </proof>
-  </theorem>
-
-  <p>
-    This theorem will later let us pass from boundedness to convergence in
-    situations where the whole sequence is not obviously convergent.
-  </p>
-
-  <p> Consider a sequence <m>(x_n)</m>. Let <m>S_k := \{x_n : n \ge k\}</m> be
-  the sets of terms of <m>(x_n)</m> with index at least <m>k \in \N</m>.
-  Clearly <m>S_k \supseteq S_{k+1}</m> and so   
+    Consider a sequence <m>(x_n)</m>. For each <m>k \in \N</m>, let
+    <m>S_k := \{x_n : n \ge k\}</m> be the set of all terms of
+    <m>(x_n)</m> with index at least <m>k</m>. Clearly
+    <m>S_k \supseteq S_{k+1}</m>, and so
   
   <me>
        \inf S_{k} \le \inf S_{k+1} \le \sup S_{k+1} \le \sup S_{k}
   </me>
   
-  as extended reals. Since any two of the <m>S_k</m>'s differ by a finite and
-  hence bounded set, either all of them or none of them is bounded. In the
-  bounded case, the real sequence <m>(\sup S_k)_k</m> is a decreasing and
-  bounded below by <m>\inf S_1</m>. Its limit, guaranteed by the Monotonic
-  Convergence Theorem, is the <term>limit superior</term> of the sequence
-  <m>(x_n)</m> and is denoted by <m>\limsup x_n</m>. Likewise, the <term>limit
-  inferior</term> of <m>(x_n)</m> is defined to be the limit of the real
-  sequence <m>(\inf S_k)_k</m>.
+    as extended real numbers. Since any two of the sets <m>S_k</m> differ by
+    only finitely many terms, either all of them are bounded or none of them
+    is. In the bounded case, the real sequence <m>(\sup S_k)_k</m> is
+    decreasing and bounded below by <m>\inf S_1</m>. By the Monotone
+    Convergence Theorem, this sequence has a limit. That limit is called the
+    <term>limit superior</term> of <m>(x_n)</m> and is denoted by
+    <m>\limsup x_n</m>. Likewise, the <term>limit inferior</term> of
+    <m>(x_n)</m> is defined to be the limit of the real sequence
+    <m>(\inf S_k)_k</m>.
   </p>
 
-  <p> If the <m>S_k</m>'s are not bounded above, then each <m>\sup S_k =
-  +\infty</m> and we define <m>\limsup x_n = +\infty</m>. Likewise, if the
-  <m>S_k</m>'s are not bounded below, then each <m>\inf S_k = -\infty</m>
-  and <m>\liminf x_n</m> is defined as <m>-\infty</m>.
+  <p>
+    If the sets <m>S_k</m> are not bounded above, then each
+    <m>\sup S_k = +\infty</m>, and we define <m>\limsup x_n = +\infty</m>.
+    Likewise, if the sets <m>S_k</m> are not bounded below, then each
+    <m>\inf S_k = -\infty</m>, and we define <m>\liminf x_n = -\infty</m>.
   </p>
 
   <proposition xml:id="prop-convergent-iff-limsup-equals-liminf">
@@ -153,19 +70,19 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
     </proof>
   </proposition>
 
-  <theorem xml:id="thm-subsequence-converges-to-limsup-liminf">
+  <p>
+    One of the main ways in which the completeness of <m>\R</m> enters the
+    study of sequences is through the following theorem.
+  </p>
+
+  <theorem xml:id="thm-bolzano-weierstrass">
+    <title>Bolzano-Weierstrass Theorem</title>
     <statement>
       <p>
-        Every bounded sequence contains a subsequence that converges to its
-        limit superior (limit inferior).
+        Every bounded sequence of real numbers has a convergent subsequence.
       </p>
     </statement>
     <proof>
-      <p>
-        We prove the statement for the limit superior. The proof for the
-	statement about limit inferior is analogous.
-      </p>
-
       <p>
 	For a bounded sequence <m>(x_n)</m>, we construct a subsequence as
 	follows: set <m>n_1:=1</m>. Suppose natural numbers <me> n_1 \lt n_2
@@ -177,7 +94,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
             \sup S_{n_k +1} - \frac{1}{k} \le x_{n_{k+1}} \le \sup S_{n_k +
 	    1}.
 	</men>
-
 	This inductively defines a strictly increasing sequence <m>(n_k)</m>
 	of natural numbers and hence a subsequence <m>(x_{n_k})</m>
 	of <m>(x_n)</m>.
@@ -193,7 +109,16 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       </p>
     </proof>
   </theorem>
-  
+
+  <p>
+    In fact, we proved a stronger statement: every bounded sequence contains a
+    subsequence that converges to its limit superior, and likewise a
+    subsequence that converges to its limit inferior. With a slight
+    modification of the proof, one can also show that if a sequence is not
+    bounded above (respectively, below), then it has a subsequence that
+    diverges to <m>+\infty</m> (respectively, <m>-\infty</m>).
+  </p>
+
   <proposition xml:id="prop-subsequence-liminf-limsup-inequalities">
     <statement>
       <p>
@@ -250,4 +175,62 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       </p>
     </proof>
   </proposition>
+
+  <p>
+    We conclude this section with a proof of the Bolzano-Weierstrass theorem
+    that uses only convergence, not limit superior or limit inferior. Its main
+    advantage is that it is more visual.
+  </p>
+
+  <proposition xml:id="prop-monotone-subsequence">
+    <title>Monotone Subsequence Lemma</title> <statement>
+      <p>
+        Every real sequence has a subsequence that is either increasing
+        or decreasing.
+      </p>
+    </statement>
+
+    <proof>
+    <p>
+     Let <m>(x_n)</m> be a real sequence. Call <m>n\in\N</m> a
+     <term>peak index</term> if <m>x_n\ge x_m</m> for every <m>m\ge n</m>.
+    </p>
+      <p>
+        First suppose there are infinitely many peak indices. Choose them in
+        increasing order:
+        <me>
+          n_1 \lt n_2 \lt n_3 \lt \cdots.
+        </me>
+        Since <m>n_k</m> is a peak index and <m>n_{k+1}\ge n_k</m>, we have
+        <m>x_{n_k}\ge x_{n_{k+1}}</m> for every <m>k</m>. Hence
+        <m>(x_{n_k})</m> is a decreasing subsequence.
+      </p>
+
+      <p>
+        Now suppose there are only finitely many peak indices. Then there is
+        some <m>n_1\in\N</m> such that no <m>n\ge n_1</m> is a peak index.
+        Since <m>n_1</m> is not a peak index, there exists <m>n_2\gt n_1</m>
+        such that <m>x_{n_2}\gt x_{n_1}</m>. Since <m>n_2</m> is not a peak
+        index, there exists <m>n_3\gt n_2</m> such that
+        <m>x_{n_3}\gt x_{n_2}</m>. Continuing inductively, we obtain a
+        subsequence <m>(x_{n_k})</m> with
+        <me>
+          x_{n_1} \lt x_{n_2} \lt x_{n_3} \lt \cdots.
+        </me>
+        Therefore <m>(x_{n_k})</m> is increasing.
+      </p>
+
+      <p>
+        In either case, <m>(x_n)</m> has a monotone subsequence.
+      </p>
+    </proof>
+  </proposition>
+
+  <p>
+    By the lemma above, every sequence has a monotone subsequence. If the
+    original sequence is bounded, then this subsequence is also bounded. A
+    bounded monotone sequence converges by
+    <xref ref="thm-monotone-convergence"/>, so the Bolzano-Weierstrass theorem
+    follows.
+  </p>
 </section>
