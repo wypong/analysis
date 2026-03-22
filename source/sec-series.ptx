@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-series" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Series</title>
+
+  <p>
+    A <term>series</term><idx>series</idx> is the sum of a sequence. We write <me>
+      \sum_{n=m}^k x_n
+    </me> for the finite sum <me>
+      x_m+x_{m+1}+\cdots+x_k.
+    </me> This is just convenient notation, but it will also guide the
+    definition of an infinite series.
+  </p>
+
+  <p>
+    Given an infinite sequence <m>(x_n)</m>, the expression
+    <m>\sum_{n=1}^\infty x_n</m> is called an
+    <term>infinite series</term><idx><h>series</h><h>infinite</h></idx>.
+    To make sense of it, we consider its
+    <term>sequence of partial sums</term><idx><h>series</h><h>sequence of
+    partial sums</h></idx> <m>(s_k)</m>, where
+    <me>
+      s_k:=\sum_{n=1}^k x_n = x_1+x_2+\cdots+x_k.
+    </me>
+    We say that the series <m>\sum_{n=1}^\infty x_n</m>
+    <term>converges</term><idx>convergent series</idx> if the sequence
+    <m>(s_k)</m> converges. In that
+    case, we write
+    <me>
+      \sum_{n=1}^\infty x_n = s
+    </me>
+    where <m>s</m> is the limit of <m>(s_k)</m>. The series
+    <term>diverges</term><idx>divergent series</idx> if it does not converge.
+    We also write
+    <m>\sum_{n=1}^\infty x_n = +\infty</m> (resp.  <m>-\infty) </m>if
+    <m>(s_k)</m> diverges to <m>+\infty</m> (resp.  <m>-\infty</m>).
+  </p>
+
+  <p>
+     Since altering finitely many terms will not affect the convergence of
+     a series, so if we concern only about convergence, we will drop the
+     indices and simply write <m>\sum x_n</m> for the series whose terms
+     are from the sequence <m>(x_n)</m>.
+  </p>
+
+  <proposition xml:id="prop-divergence-test-series">
+    <title>Divergence Test</title> <statement>
+      <p>
+        If the series <m>\sum x_n</m> converges, then <m>x_n\to 0</m>.
+      </p>
+    </statement>
+
+    <proof>
+      <p> Suppose <m>\sum x_n</m> converges to <m>s</m>. That mean it
+      sequence of partial sums <m>(s_n)</m> converges to <m>s</m>. But then
+      the sequence <m>(s_{n+1})</m> also has <m>s</m> as its limit. Therefore,
+      <me>
+      x_{n+1} = s_{n+1} - s_{n} \to 0.
+      </me>
+      This show that <m>(x_n)</m> is null.
+      </p>
+    </proof>
+  </proposition>
+
+  <example xml:id="eg-series-basic-examples">
+    <statement>
+      <p> The series <m>\sum_{n=1}^\infty 1</m> and <m>\sum_{n=1}^{\infty}
+      (-1)^{n+1}</m> are both divergent by the divergence test. These series
+      are examples of geometry series.
+      </p>
+    </statement>
+  </example>
+
+  <p>
+		A <term>geometric series</term><idx>geometric series</idx> is a series whose terms form a
+	geometric series. We will show in the next section that the geometric
+	series <m>\sum r^n</m> converges when <m>|r| \lt 1</m> and diverges
+	when <m>|r| \ge 1</m>.
+   </p>
+
+  <p>
+
+    The converse statement of the divergence test is false: a null
+    sequence need not give a convergent series.  The standard example is the
+    <term>harmonic series</term><idx>harmonic series</idx>
+    <m>\sum_{n=1}^\infty 1/n</m>.  We will prove
+    in the next section that this series diverges even though <m>1/n\to 0</m>.
+  
+  </p>
+
+  <p>
+    
+  A series <m>\sum x_n</m> is <term>absolutely convergent</term><idx>absolutely convergent series</idx> if the series
+
+    <me>
+      \sum |x_n|
+    </me>
+    converges. It is <term>conditionally convergent</term><idx>conditionally convergent series</idx> if
+    <m>\sum x_n</m> converges but
+    <m>\sum |x_n|</m> diverges.
+  </p>
+
+  <example xml:id="eg-series-absolute-conditional">
+    <statement>
+      <p>
+        The series <m>\sum 1/n^2</m> is absolutely convergent,
+        while the alternating harmonic series
+        <me>
+          \sum \frac{(-1)^{n+1}}{n}
+        </me>
+        is conditionally convergent. We defer the justifications to the next
+        section, where we develop tests for convergence of series.
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    The distinction between absolute and conditional convergence is important.
+    Absolute convergence behaves much like finite summation, but conditional
+    convergence can be surprisingly unstable under rearrangement of terms.
+  </p>
+
+  <p>
+    A <term>rearrangement</term><idx>rearrangement of series</idx> of the series
+    <m>\sum_{n=1}^\infty x_n</m> is a series of the form
+    <m>\sum_{n=1}^\infty x_{\pi(n)}</m>, where
+    <m>\pi:\N\to\N</m> is a bijection.
+  </p>
+
+  <theorem xml:id="thm-riemann-rearrangement">
+    <title>Riemann Rearrangement Theorem</title>
+    <statement>
+      <p>
+        If <m>\sum_{n=1}^\infty x_n</m> is conditionally convergent and
+        <m>L\in\R</m>, then there is a rearrangement of the series that
+        converges to <m>L</m>. Moreover, there are rearrangements that diverge
+        to <m>+\infty</m> and rearrangements that diverge to
+        <m>-\infty</m>.
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    We will not prove this theorem here. A proof can be found at
+    <url href="https://proofwiki.org/wiki/Riemann%27s_Rearrangement_Theorem"
+    visual="ProofWiki"/>. That page also cites Rudin, "Principles of
+    Mathematical Analysis", Theorem 3.54.
+  </p>
+</section>

@@ -19,9 +19,10 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
     is. In the bounded case, the real sequence <m>(\sup S_k)_k</m> is
     decreasing and bounded below by <m>\inf S_1</m>. By the Monotone
     Convergence Theorem, this sequence has a limit. That limit is called the
-    <term>limit superior</term> of <m>(x_n)</m> and is denoted by
-    <m>\limsup x_n</m>. Likewise, the <term>limit inferior</term> of
-    <m>(x_n)</m> is defined to be the limit of the real sequence
+    <term>limit superior</term><idx><h>sequence</h><h>limit superior</h></idx>
+    of <m>(x_n)</m> and is denoted by <m>\limsup x_n</m>. Likewise, the
+    <term>limit inferior</term><idx><h>sequence</h><h>limit inferior</h></idx>
+    of <m>(x_n)</m> is defined to be the limit of the real sequence
     <m>(\inf S_k)_k</m>.
   </p>
 
@@ -193,7 +194,8 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
     <proof>
     <p>
      Let <m>(x_n)</m> be a real sequence. Call <m>n\in\N</m> a
-     <term>peak index</term> if <m>x_n\ge x_m</m> for every <m>m\ge n</m>.
+     <term>peak index</term><idx>peak index</idx> if <m>x_n\ge x_m</m> for
+     every <m>m\ge n</m>.
     </p>
       <p>
         First suppose there are infinitely many peak indices. Choose them in

@@ -11,7 +11,8 @@
       sequence</term><idx><h>sequence</h><h>infinite</h></idx> is a function
       whose domain is, up to order isomorphism, the ordered set <m>(\N,
       \le)</m>. Since we will only consider infinite sequences here, we
-      simply call them <term>sequences</term>.  If <m>x</m> is a sequence, we
+      simply call them <term>sequences</term><idx>sequence</idx>.  If <m>x</m>
+      is a sequence, we
       write <m>x_n</m> for its value at <m>n\in\N</m> and call <m>x_n</m> the
       <term><m>n</m>-th term</term><idx><h>term</h><h>of a sequence</h></idx>
       of the sequence.  We denote the sequence by <m>(x_n)</m>.
@@ -19,15 +20,19 @@
 
     <p>
       Since a real sequence is a function from <m>\N</m> to <m>\R</m>,
-      notions such as <term>bounded above</term>, <term>bounded
-      below</term>, <term>bounded</term>, <term>increasing</term>, and
-      <term>decreasing</term> apply exactly as they do for functions. An
+      notions such as <term>bounded above</term><idx><h>sequence</h><h>bounded
+      above</h></idx>, <term>bounded below</term><idx><h>sequence</h><h>bounded
+      below</h></idx>, <term>bounded</term><idx><h>sequence</h><h>bounded</h></idx>,
+      <term>increasing</term><idx><h>sequence</h><h>increasing</h></idx>, and
+      <term>decreasing</term><idx><h>sequence</h><h>decreasing</h></idx> apply
+      exactly as they do for functions. An
       increasing (resp. a decreasing) sequence is bounded below (resp. above)
-      by its first term. A sequence is <term>constant</term> if and only
-      if it is both increasing and decreasing. We say that <m>(x_n)</m> is
-      <term>strictly increasing</term> if <m>x_m \lt x_n</m> whenever <m>m
-      \lt n</m>. The concept <term>strictly decreasing</term> is defined
-      similarly. We often regard real numbers as constant sequences.
+      by its first term. A sequence is <term>constant</term><idx><h>sequence</h><h>constant</h></idx>
+      if and only if it is both increasing and decreasing. We say that
+      <m>(x_n)</m> is <term>strictly increasing</term><idx><h>sequence</h><h>strictly increasing</h></idx>
+      if <m>x_m \lt x_n</m> whenever <m>m \lt n</m>. The concept
+      <term>strictly decreasing</term><idx><h>sequence</h><h>strictly decreasing</h></idx>
+      is defined similarly. We often regard real numbers as constant sequences.
     </p>
 
     <example xml:id="eg-basic-sequences">

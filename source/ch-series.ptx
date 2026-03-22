@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-series" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Series</title>
+
+  <xi:include href="sec-series.ptx" />
+  <xi:include href="sec-convergency-tests-for-series.ptx" />
+
+  <exercises xml:id="ex-ch3">
+    <title>Exercises</title>
+  </exercises>
+</chapter>

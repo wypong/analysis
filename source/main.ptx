@@ -13,6 +13,7 @@
     <!-- Include chapters -->
     <xi:include href="./ch-real-numbers.ptx" />
     <xi:include href="./ch-sequences.ptx" />
+    <xi:include href="./ch-series.ptx" />
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />
