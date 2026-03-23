@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-convergence-tests-for-series"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Convergence Tests for Series</title>
+
+  <introduction>
+    <p>
+      In <xref ref="sec-series"/> we defined convergence of a series and
+      proved the divergence test (<xref ref="prop-divergence-test-series"/>).
+      Here we develop positive tests that help us decide whether a series
+      converges.
+    </p>
+
+    <p>
+      A series <m>\sum x_n</m> is called a <term>Cauchy series</term><idx>Cauchy
+      series</idx> if its sequence of partial sums is a Cauchy sequence. By
+      <xref ref="prop-convergent-implies-cauchy"/> and
+      <xref ref="thm-sequential-completeness-of-reals"/>, a series of real
+      numbers converges if and only if it is Cauchy.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-series-geometric">
+    <title>Geometric Series</title>
+
+    <proposition xml:id="prop-geometric-series">
+      <title>Geometric Series</title>
+      <statement>
+        <p>
+          Let <m>r\in\R</m>. The geometric series
+          <me>
+            \sum_{n=0}^\infty r^n
+          </me>
+          converges to <m>1/(1-r)</m> when <m>|r|&lt;1</m>, and diverges when
+          <m>|r|\ge 1</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Let <m>s_k=\sum_{n=0}^k r^n</m>. If <m>r\ne 1</m>, then
+          <me>
+            (1-r)s_k = (1-r)(1+r+r^2+\cdots+r^k)=1-r^{k+1},
+          </me>
+          so
+          <me>
+            s_k=\frac{1-r^{k+1}}{1-r}.
+          </me>
+        </p>
+
+        <p>
+	  Suppose first that <m>|r|&lt;1</m>. Then <m>|r^n| = |r|^n
+	  \to 0</m> by <xref ref="prop-geometric-sequence-test"/> and so
+	  <m>(r^n)</m> is null. Therefore, <m>s_k\to 1/(1-r)</m>,
+	  and the series converges to that value.
+	</p>
+
+        <p>
+          If <m>|r| \ge 1</m>, then <m>|r^n|\ge 1</m> for all <m>n</m>,
+          so <m>r^n</m> is not a null sequence. Thus, the series diverges
+          by <xref ref="prop-divergence-test-series"/>.
+        </p>
+      </proof>
+    </proposition>
+
+    <example xml:id="eg-geometric-series-basic">
+      <statement>
+        <p>
+          Taking <m>r=1/3</m> gives
+          <me>
+            1+\frac13+\frac19+\frac1{27}+\cdots
+            =
+            \frac{1}{1-\frac13}
+            =
+            \frac32.
+          </me>
+          Taking <m>r=-1/2</m> gives
+          <me>
+            1-\frac12+\frac14-\frac18+\cdots
+            =
+            \frac{1}{1+\frac12}
+            =
+            \frac23.
+          </me>
+        </p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-series-positive-terms">
+    <title>Series with Nonnegative Terms</title>
+
+    <p>
+      For a series with nonnegative terms, the sequence of partial sums is
+      automatically increasing. This gives a useful criterion.
+    </p>
+
+    <proposition xml:id="prop-nonnegative-series-criterion">
+      <title>Nonnegative Term Criterion</title>
+      <statement>
+        <p>
+          Suppose <m>x_n\ge 0</m> for all <m>n</m>. Then the series
+          <m>\sum x_n</m> converges if and only if its sequence of partial sums
+          is bounded above.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Let <m>s_k=\sum_{n=1}^k x_n</m>. Since each <m>x_n\ge 0</m>, we have
+          <m>s_{k+1}-s_k=x_{k+1}\ge 0</m>, so <m>(s_k)</m> is increasing. An
+          increasing sequence converges if and only if it is bounded above by
+          <xref ref="thm-monotone-convergence"/>. Since the series converges
+          exactly when <m>(s_k)</m> converges, the result follows.
+        </p>
+      </proof>
+    </proposition>
+
+    <example xml:id="eg-harmonic-series-diverges">
+      <statement>
+        <p>
+          The harmonic series
+          <me>
+            \sum_{n=1}^\infty \frac{1}{n}
+          </me>
+          diverges.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Group the terms as
+          <me>
+            1+\frac12+\left(\frac13+\frac14\right)+
+            \left(\frac15+\frac16+\frac17+\frac18\right)+\cdots.
+          </me>
+          For each <m>k\ge 1</m>, the block from <m>n=2^k+1</m> to
+          <m>n=2^{k+1}</m> has <m>2^k</m> terms, and each of those terms is at
+          least <m>1/2^{k+1}</m>. Hence each block has sum at least
+          <m>1/2</m>. Therefore the partial sums are unbounded above, so the
+          series diverges by <xref ref="prop-nonnegative-series-criterion"/>.
+        </p>
+      </proof>
+    </example>
+
+    <p>
+      The previous example is the basic comparison for the
+      <term><m>p</m>-series</term><idx>p-series</idx>.
+    </p>
+
+    <proposition xml:id="prop-p-series-test">
+      <title><m>p</m>-Series Test</title>
+      <statement>
+        <p>
+          For <m>p\in\R</m>, the series
+          <me>
+            \sum_{n=1}^\infty \frac{1}{n^p}
+          </me>
+          converges if and only if <m>p&gt;1</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          If <m>p\le 1</m>, then <m>1/n^p \ge 1/n</m> for all <m>n\in\N</m>.
+          Hence every partial sum of <m>\sum 1/n^p</m> is at least as large as
+          the corresponding partial sum of the harmonic series. Since the
+          harmonic series diverges by
+          <xref ref="eg-harmonic-series-diverges"/>, the series
+          <m>\sum 1/n^p</m> also diverges.
+        </p>
+
+        <p>
+          Now suppose <m>p&gt;1</m>. For each <m>k\ge 0</m>, every
+          <m>n</m> with <m>2^k\le n \lt 2^{k+1}</m> satisfies
+          <m>1/n^p \le 1/(2^k)^p</m>. Therefore
+          <me>
+            \sum_{n=2^k}^{2^{k+1}-1}\frac{1}{n^p}
+            \le
+            2^k\frac{1}{(2^k)^p}
+            =
+            2^{k(1-p)}.
+          </me>
+          Since <m>0\lt 2^{1-p}\lt 1</m>, the geometric series
+          <m>\sum_{k=0}^\infty 2^{k(1-p)}</m> converges by
+          <xref ref="prop-geometric-series"/>. Hence the partial sums of
+          <m>\sum 1/n^p</m> are bounded above, and so the series converges by
+          <xref ref="prop-nonnegative-series-criterion"/>.
+        </p>
+      </proof>
+    </proposition>
+
+    <p>
+      Another important notion is <term>absolute convergence</term><idx>absolute
+      convergence</idx>.
+    </p>
+
+    <proposition xml:id="prop-absolute-convergence-implies-convergence">
+      <title>Absolute Convergence Test</title>
+      <statement>
+        <p>
+          If the series <m>\sum |x_n|</m> converges, then the series
+          <m>\sum x_n</m> converges.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Let <m>u_k=\sum_{n=1}^k |x_n|</m> and <m>s_k=\sum_{n=1}^k x_n</m>.
+          Since <m>(u_k)</m> converges, it is Cauchy by
+          <xref ref="prop-convergent-implies-cauchy"/>. If <m>m&gt;n</m>, then
+          <md>
+	  <mrow>
+            |s_m-s_n|
+            &amp; =
+            |x_{n+1}+x_{n+2}+\cdots+x_m|
+	  </mrow>
+	  <mrow>
+            &amp; \le
+            |x_{n+1}|+|x_{n+2}|+\cdots+|x_m| = u_m-u_n.
+	  </mrow>
+          </md>
+          Hence <m>(s_k)</m> is also Cauchy. By
+          <xref ref="thm-sequential-completeness-of-reals"/>, the sequence
+          <m>(s_k)</m> converges, so <m>\sum x_n</m> converges.
+        </p>
+      </proof>
+    </proposition>
+  </subsection>
+
+  <subsection xml:id="subsec-series-comparison-tests">
+    <title>Comparison Tests</title>
+
+    <p>
+      The first comparison tool is the <term>comparison test</term><idx>comparison
+      test for series</idx>.
+    </p>
+
+    <proposition xml:id="prop-comparison-test-series">
+      <title>Comparison Test</title>
+      <statement>
+        <p>
+          Suppose <m>0\le x_n\le y_n</m> for all <m>n</m>. If
+          <m>\sum y_n</m> converges, then <m>\sum x_n</m> converges.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Let <m>s_k=\sum_{n=1}^k x_n</m> and <m>t_k=\sum_{n=1}^k y_n</m>.
+          Then <m>0\le s_k\le t_k</m> for every <m>k</m>. If <m>\sum y_n</m>
+          converges, then <m>(t_k)</m> is bounded above. Consequently
+          <m>(s_k)</m> is bounded above as well, and
+          <xref ref="prop-nonnegative-series-criterion"/> shows that
+          <m>\sum x_n</m> converges.
+        </p>
+      </proof>
+    </proposition>
+
+    <p>
+      A useful refinement is the <term>limit comparison test</term><idx>limit
+      comparison test</idx>.
+    </p>
+
+    <proposition xml:id="prop-limit-comparison-test-series">
+      <title>Limit Comparison Test</title>
+      <statement>
+        <p>
+          Suppose <m>x_n&gt;0</m> and <m>y_n&gt;0</m> for all <m>n</m>. If
+          <me>
+            \lim_{n\to\infty}\frac{x_n}{y_n}=L
+          </me>
+          for some <m>L&gt;0</m>, then <m>\sum x_n</m> converges if and only if
+          <m>\sum y_n</m> converges.
+        </p>
+        <p>
+          If instead
+          <me>
+            \lim_{n\to\infty}\frac{x_n}{y_n}=0,
+          </me>
+          then convergence of <m>\sum y_n</m> implies convergence of
+          <m>\sum x_n</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          First suppose <m>L&gt;0</m>. Then for all sufficiently large <m>n</m>
+          <me>
+            \frac{L}{2} \lt \frac{x_n}{y_n} \lt \frac{3L}{2}
+          </me>
+          Since <m>y_n&gt;0</m>, this is equivalent to
+          <me>
+	  \frac{L}{2}y_n \lt x_n \lt \frac{3L}{2}y_n.
+          </me>
+	  
+	  If <m>\sum y_n</m> converges, then so does <m>\sum (3L/2)y_n</m>, and
+	  the comparison test gives convergence of <m>\sum x_n</m>. Conversely,
+	  if <m>\sum x_n</m> converges, then so does <m>\sum (2/L)x_n</m>,
+	  and the comparison test applied to <m> y_n \lt (2/L)x_n </m>
+	  shows that <m>\sum y_n</m> converges.
+	</p>
+
+        <p>
+          If <m>x_n/y_n\to 0</m>, then for all sufficiently large <m>n</m>
+          <m>x_n/y_n&lt;1</m>. Hence <m>0\lt x_n\lt y_n</m> eventually,
+          so convergence of <m>\sum y_n</m> implies convergence of <m>\sum
+          x_n</m> by the comparison test.
+        </p>
+      </proof>
+    </proposition>
+
+    <example xml:id="eg-limit-comparison-n-cubed-minus-one">
+      <statement>
+        <p>
+          The series
+          <me>
+            \sum_{n=2}^\infty \frac{1}{n^3-1}
+          </me>
+          converges. Indeed,
+          <me>
+            \lim_{n\to\infty}
+            \frac{\frac{1}{n^3-1}}{\frac{1}{n^3}}
+            =
+            \lim_{n\to\infty}\frac{n^3}{n^3-1}
+            =
+            1,
+          </me>
+          and <m>\sum 1/n^3</m> converges by
+          <xref ref="prop-p-series-test"/>. Therefore
+          <m>\sum 1/(n^3-1)</m> converges by
+          <xref ref="prop-limit-comparison-test-series"/>.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-series-ratio-root-tests">
+    <title>Ratio and Root Tests</title>
+
+    <p>
+      The next tests compare a series to a geometric series. The first is
+      the <term>ratio test</term><idx>ratio test for series</idx>.
+    </p>
+
+    <proposition xml:id="prop-ratio-test-series">
+      <title>Ratio Test</title>
+      <statement>
+        <p>
+          Let <m>(x_n)</m> be a sequence of real numbers such that
+          <m>x_n\ne 0</m> for all sufficiently large <m>n</m>, and suppose
+          <me>
+            \lim_{n\to\infty}\frac{|x_{n+1}|}{|x_n|}=L.
+          </me>
+          If <m>L&lt;1</m>, then <m>\sum x_n</m> converges absolutely. If
+          <m>L&gt;1</m>, then <m>\sum x_n</m> diverges.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Suppose <m>L&lt;1</m>. Then <m>L\lt r:=(1+L)/2 \lt 1</m>, so for all
+	  <m>n</m> sufficiently large,
+          <me>
+	  \frac{|x_{n+1}|}{|x_n|}\lt r.
+          </me>
+
+	  By dropping finitely many terms, which does not affect convergence,
+	  we can assume the inequality holds for all <m>n</m>. Hence,
+          <md>
+            <mrow>
+              |x_2| &lt; |x_1|
+            </mrow>
+            <mrow>
+              |x_3| &lt; r|x_2| &lt; r^2|x_1|
+            </mrow>
+            <mrow>
+              \vdots
+            </mrow>
+            <mrow>
+	    |x_n| &lt; r^{n-1}|x_1|.
+            </mrow>
+          </md>
+	  Since <m>0 \lt r \lt 1</m>, <m>\sum r^k</m> converges by <xref
+	  ref="prop-geometric-series"/> and the comparison test implies that
+	  <m>\sum_{n=N}^\infty |x_n|</m> converges. Therefore <m>\sum x_n</m>
+	  converges absolutely.
+	</p>
+
+        <p>
+          Now suppose <m>L&gt;1</m>, and set <m>r=(1+L)/2</m>. Then
+          <m>1\lt r\lt L</m>, so there exists <m>N</m> such that
+          <m>|x_{n+1}|/|x_n| \gt r\gt 1</m> for all <m>n\ge N</m>. In
+          particular, <m>|x_n|</m> is eventually strictly increasing, so it
+          cannot converge to <m>0</m>. Therefore <m>\sum x_n</m> diverges by
+          <xref ref="prop-divergence-test-series"/>.
+        </p>
+      </proof>
+    </proposition>
+
+    <example xml:id="eg-ratio-test-series-polynomial-over-exponential">
+      <statement>
+        <p>
+          The series
+          <me>
+            \sum_{n=1}^\infty \frac{n^2}{2^n}
+          </me>
+          converges absolutely, because
+          <me>
+            \frac{(n+1)^2/2^{n+1}}{n^2/2^n}
+            =
+            \frac{(n+1)^2}{2n^2}
+            \to
+            \frac12.
+          </me>
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      If the ratio limit is <m>1</m>, the ratio test gives no conclusion:
+      both <m>\sum 1/n</m> and <m>\sum 1/n^2</m> have consecutive-term ratio
+      tending to <m>1</m>, but the first diverges and the second converges.
+    </p>
+
+    <p>
+      The <term>root test</term><idx>root test for series</idx> is often more
+      convenient when the <m>n</m>-th power is explicit.
+    </p>
+
+    <proposition xml:id="prop-root-test-series">
+      <title>Root Test</title>
+      <statement>
+        <p>
+          Let
+          <me>
+            L=\limsup_{n\to\infty}|x_n|^{1/n}.
+          </me>
+          If <m>L&lt;1</m>, then <m>\sum x_n</m> converges absolutely. If
+          <m>L&gt;1</m>, then <m>\sum x_n</m> diverges.
+        </p>
+      </statement>
+
+      <proof>
+	<p> Suppose <m>L&lt;1</m>, then for some <m>N</m> sufficiently
+	large, 
+	<me>
+	      \sup_{n \ge N} |x_n|^{1/n} &lt; r := \frac{1+L}{2} &lt; 1.
+	</me> 
+
+	That means <m>|x_n| &lt; r</m> for all sufficiently large
+	<m>n</m>.  Since <m>0 &lt; r &lt; 1, \sum r^n</m> converges and,
+	by the comparison test, so does <m>\sum |x_n|</m> \
+	</p>
+
+        <p>
+	Now suppose <m>L&gt;1</m>. Then for all sufficiently large <m>N</m>,
+
+	<me>
+              \sup_{n \ge N} |x_n|^{1/n} &gt; r := \frac{1+L}{2} &gt; 1.
+	</me>
+	
+	So <m>1</m> is not an upper bound of <m>\{|x_n|^{1/n} \colon n \ge
+	N\}</m>. Thus, for all <m>N</m> sufficiently large, there exists
+	<m>n \ge N</m> such that <m>|x_n|^{1/n} &gt; r</m>. That means <me>
+	   |x_n| &gt; r^n &gt; 1
+	</me> for infinitely many <m>n</m>. As a result <m>(x_n)</m> cannot
+	be a null sequence. Therefore, <m>\sum x_n</m> diverges by
+	  <xref ref="prop-divergence-test-series"/>.
+	</p>
+      </proof>
+    </proposition>
+
+    <p> Later, we will see that the Root Test is strictly more powerful than
+    the Ratio Test.  </p>
+    
+    <example xml:id="eg-root-test-series-nth-power">
+      <statement>
+        <p>
+          The series
+          <me>
+            \sum_{n=1}^\infty \left(\frac{3n}{4n+1}\right)^n
+          </me>
+          converges absolutely, because
+          <me>
+            \left|\left(\frac{3n}{4n+1}\right)^n\right|^{1/n}
+            =
+            \frac{3n}{4n+1}
+            \to
+            \frac34
+            &lt;
+            1.
+          </me>
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      The root test is also inconclusive when <m>L=1</m>. For example,
+      <m>\sum 1/n</m> diverges while <m>\sum 1/n^2</m> converges, but both
+      satisfy <m>\lim |x_n|^{1/n}=1</m>.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-series-alternating">
+    <title>Alternating Series</title>
+
+    <p>
+      The final test in this section is the <term>alternating series
+      test</term><idx>alternating series test</idx>.
+    </p>
+
+    <proposition xml:id="prop-alternating-series-test">
+      <title>Alternating Series Test</title>
+      <statement>
+        <p>
+          Suppose <m>x_n\ge 0</m> for all <m>n</m>, the sequence <m>(x_n)</m> is
+          decreasing, and <m>x_n\to 0</m>. Then the alternating series
+          <me>
+            \sum_{n=1}^\infty (-1)^{n+1}x_n
+          </me>
+          converges.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Let <m>s_k=\sum_{n=1}^k (-1)^{n+1}x_n</m>. Then
+          <me>
+            s_{2k+2}-s_{2k}=x_{2k+1}-x_{2k+2}\ge 0,
+          </me>
+          so the even partial sums form an increasing sequence. Also,
+          <me>
+            s_{2k+3}-s_{2k+1}=-x_{2k+2}+x_{2k+3}\le 0,
+          </me>
+          so the odd partial sums form a decreasing sequence.
+        </p>
+
+        <p>
+          For every <m>k</m>, we have <m>s_{2k}\le s_{2k+1}\le s_1=x_1</m>.
+          Thus <m>(s_{2k})</m> is increasing and bounded above, so it converges
+          by <xref ref="thm-monotone-convergence"/>. Write
+          <m>s_{2k}\to L</m>. Since
+          <me>
+            s_{2k+1}-s_{2k}=x_{2k+1}\to 0,
+          </me>
+          the limit laws imply that <m>s_{2k+1}\to L</m> as well. Therefore
+          the whole sequence of partial sums converges to <m>L</m>, and the
+          series converges.
+        </p>
+      </proof>
+    </proposition>
+
+    <example xml:id="eg-alternating-harmonic-series">
+      <statement>
+        <p>
+          The alternating harmonic series
+          <me>
+            \sum_{n=1}^\infty \frac{(-1)^{n+1}}{n}
+          </me>
+          converges by <xref ref="prop-alternating-series-test"/>, because
+          <m>(1/n)</m> is decreasing and null. It is not absolutely convergent,
+          since
+          <me>
+            \sum_{n=1}^\infty \left|\frac{(-1)^{n+1}}{n}\right|
+            =
+            \sum_{n=1}^\infty \frac{1}{n}
+          </me>
+          diverges. Hence it is conditionally convergent.
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      The proof shows more: if <m>L=\sum_{n=1}^\infty (-1)^{n+1}x_n</m>, then
+      the error after <m>n</m> terms satisfies
+      <me>
+        |L-s_n|\le x_{n+1}.
+      </me>
+      So the first omitted term controls the truncation error.
+    </p>
+  </subsection>
+
+  <conclusion>
+    <p>
+      References: compare <xref ref="biblio-lebl-basic-analysis"/>,
+      Sections 2.5-2.6, for a treatment close to the organization of this
+      section, <xref ref="biblio-rudin-pma"/>, Chapter 3, for a more concise
+      treatment, and <xref ref="biblio-rosenlicht-intro"/> for additional
+      worked examples.
+    </p>
+  </conclusion>
+</section>

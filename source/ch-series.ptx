@@ -4,9 +4,135 @@
   <title>Series</title>
 
   <xi:include href="sec-series.ptx" />
-  <xi:include href="sec-convergency-tests-for-series.ptx" />
+  <xi:include href="sec-convergence-tests-for-series.ptx" />
 
   <exercises xml:id="ex-ch3">
     <title>Exercises</title>
+
+    <exercise xml:id="ex-series-geometric-basic">
+      <statement>
+        <p>
+          Determine whether each of the following series converges. If it
+          converges, find its sum.
+        </p>
+        <ul>
+          <li><m>\sum_{n=0}^\infty (2/3)^n</m></li>
+          <li><m>\sum_{n=0}^\infty (-1/4)^n</m></li>
+          <li><m>\sum_{n=0}^\infty (-2)^n</m></li>
+        </ul>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-series-comparison-quadratic">
+      <statement>
+        <p>
+          Use the comparison test to prove that
+          <me>
+            \sum_{n=1}^\infty \frac{1}{n^2+1}
+          </me>
+          converges.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-series-p-test-examples">
+      <statement>
+        <p>
+          Determine whether each series converges or diverges.
+        </p>
+        <ul>
+          <li><m>\sum_{n=1}^\infty 1/\sqrt{n}</m></li>
+          <li><m>\sum_{n=1}^\infty 1/n^{3/2}</m></li>
+          <li><m>\sum_{n=1}^\infty 1/n^{-2}</m></li>
+        </ul>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-series-limit-comparison-cubic">
+      <statement>
+        <p>
+          Use the limit comparison test to determine whether
+          <me>
+            \sum_{n=2}^\infty \frac{1}{n^3-1}
+          </me>
+          converges.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-series-absolute-conditional-classification">
+      <statement>
+        <p>
+          Determine whether each series is absolutely convergent,
+          conditionally convergent, or divergent.
+        </p>
+        <ul>
+          <li><m>\sum_{n=1}^\infty (-1)^{n+1}/\sqrt{n}</m></li>
+          <li><m>\sum_{n=1}^\infty (-1)^n/n^2</m></li>
+          <li><m>\sum_{n=1}^\infty (-1)^n</m></li>
+        </ul>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-series-ratio-test-polynomial-over-exponential">
+      <statement>
+        <p>
+          Use the ratio test to prove that
+          <me>
+            \sum_{n=1}^\infty \frac{n^2}{2^n}
+          </me>
+          converges absolutely.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-series-ratio-test-factorial-over-exponential">
+      <statement>
+        <p>
+          Use the ratio test to show that
+          <me>
+            \sum_{n=1}^\infty \frac{n!}{3^n}
+          </me>
+          diverges.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-series-root-test-nth-power">
+      <statement>
+        <p>
+          Use the root test to determine whether
+          <me>
+            \sum_{n=1}^\infty \left(\frac{3n}{4n+1}\right)^n
+          </me>
+          converges.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-series-root-test-inconclusive">
+      <statement>
+        <p>
+          Give two series <m>\sum x_n</m> and <m>\sum y_n</m> such that
+          <m>\lim |x_n|^{1/n}=1=\lim |y_n|^{1/n}</m>, but
+          <m>\sum x_n</m> converges and <m>\sum y_n</m> diverges.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-series-alternating-harmonic-error">
+      <statement>
+        <p>
+          Let
+          <me>
+            s=\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n}.
+          </me>
+          Find <m>N</m> such that
+          <me>
+            \left|s-\sum_{n=1}^N \frac{(-1)^{n+1}}{n}\right| \lt 0.01.
+          </me>
+        </p>
+      </statement>
+    </exercise>
   </exercises>
 </chapter>
