@@ -451,7 +451,7 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
 
 	That means <m>|x_n| &lt; r</m> for all sufficiently large
 	<m>n</m>.  Since <m>0 &lt; r &lt; 1, \sum r^n</m> converges and,
-	by the comparison test, so does <m>\sum |x_n|</m> \
+	by the comparison test, so does <m>\sum |x_n|</m>.
 	</p>
 
         <p>
@@ -461,12 +461,12 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
               \sup_{n \ge N} |x_n|^{1/n} &gt; r := \frac{1+L}{2} &gt; 1.
 	</me>
 	
-	So <m>1</m> is not an upper bound of <m>\{|x_n|^{1/n} \colon n \ge
-	N\}</m>. Thus, for all <m>N</m> sufficiently large, there exists
-	<m>n \ge N</m> such that <m>|x_n|^{1/n} &gt; r</m>. That means <me>
+	Thus, <m>1</m> is not an upper bound of the set <m>\{|x_n|^{1/n}
+	\colon n \ge N\}</m>. And so there exists <m>n \ge N</m> such that
+	<m>|x_n|^{1/n} &gt; r</m>. That means <me>
 	   |x_n| &gt; r^n &gt; 1
 	</me> for infinitely many <m>n</m>. As a result <m>(x_n)</m> cannot
-	be a null sequence. Therefore, <m>\sum x_n</m> diverges by
+	be a null sequence and <m>\sum x_n</m> is divergent by
 	  <xref ref="prop-divergence-test-series"/>.
 	</p>
       </proof>

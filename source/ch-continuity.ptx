@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-continuity" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Continuity</title>
+
+  <xi:include href="sec-definition-of-continuity-examples.ptx" />
+  <xi:include href="sec-limits-and-continuity.ptx" />
+  <xi:include href="sec-basic-properties.ptx" />
+  <xi:include href="sec-continuous-functions-on-intervals.ptx" />
+
+  <exercises xml:id="ex-ch4">
+    <title>Exercises</title>
+  </exercises>
+</chapter>

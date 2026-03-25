@@ -14,6 +14,7 @@
     <xi:include href="./ch-real-numbers.ptx" />
     <xi:include href="./ch-sequences.ptx" />
     <xi:include href="./ch-series.ptx" />
+    <xi:include href="./ch-continuity.ptx" />
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />

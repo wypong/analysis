@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-limits-and-continuity"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Limits and Continuity</title>
+
+  <subsection xml:id="subsec-limits-at-cluster-points">
+    <title>Limits at Cluster Points</title>
+
+    <p>
+      Let <m>S \subseteq \R</m>, let <m>f \colon S \to \R</m> be a function,
+      and let <m>c</m> be a cluster point of <m>S</m>. We say that
+      <m>f</m> has <term>limit</term><idx>limit of a function</idx> <m>L \in
+      \R</m> at <m>c</m> if for every <m>\varepsilon \gt 0</m> there exists
+      <m>\delta \gt 0</m> such that whenever <m>x \in S</m> and
+      <m>0 \lt |x-c| \lt \delta</m>, we have
+      <me>|f(x)-L| \lt \varepsilon.</me>
+    </p>
+
+    <p>
+      In that case we write
+      <me>\lim_{x\to c} f(x)=L</me>
+      or, equivalently,
+      <me>f(x)\to L \quad \text{as } x\to c.</me>
+      These two notations mean exactly the same thing. The second is read as
+      “<m>f(x)</m> tends to <m>L</m> as <m>x</m> tends to <m>c</m>.”
+    </p>
+
+    <p>
+      The condition <m>0 \lt |x-c|</m> is essential: it says that we are only
+      looking at points <m>x</m> near <m>c</m> but different from <m>c</m>.
+      Thus the existence of <m>\lim_{x\to c} f(x)</m> depends only on the
+      values of <m>f</m> arbitrarily close to <m>c</m>, not on the value
+      <m>f(c)</m>. In particular, <m>c</m> need not even belong to the domain
+      of <m>f</m>.
+    </p>
+
+    <example xml:id="eg-limit-at-point-with-hole">
+      <statement>
+        <p>
+          Let <m>f(x)=x+1</m> on <m>\R \setminus \{1\}</m>. Then
+          <m>\lim_{x\to 1} f(x)=2</m>. Indeed, if
+          <m>0 \lt |x-1| \lt \varepsilon</m>, then
+          <me>|f(x)-2|=|(x+1)-2|=|x-1| \lt \varepsilon.</me>
+          This example shows that a limit may exist even when <m>f</m> is not
+          defined at the limiting point.
+        </p>
+      </statement>
+    </example>
+
+    <proposition xml:id="prop-limit-unique">
+      <statement>
+        <p>
+          If <m>\lim_{x\to c} f(x)</m> exists, then it is unique.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Suppose <m>L_1</m> and <m>L_2</m> are limits of <m>f</m> at
+          <m>c</m>. We must show that <m>L_1=L_2</m>. Let
+          <m>\varepsilon \gt 0</m>. By the definition of limit, there exist
+          <m>\delta_i \gt 0</m> such that <m>|f(x)-L_i| \lt \varepsilon</m>
+          whenever <m>x \in S</m> and <m>0 \lt |x-c| \lt \delta_i</m>, for
+          <m>i=1,2</m>. Thus,
+
+          <me>
+            |L_1-L_2| \le |f(x)-L_1| + |f(x)-L_2| \lt 2\varepsilon
+          </me>
+          for any <m>x \in S</m> with
+          <m>0 \lt |x-c| \lt \min\{\delta_1,\delta_2\}</m>. By the definition
+          of cluster point, such an <m>x</m> exists. Since
+          <m>\varepsilon \gt 0</m> was arbitrary, it follows that
+          <m>|L_1-L_2|=0</m>. Therefore <m>L_1=L_2</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <p>
+      This proposition also explains why we only define
+      <m>\lim_{x\to c} f(x)</m> when <m>c</m> is a cluster point of the
+      domain. If <m>c</m> were an isolated point of <m>S</m>, then for
+      sufficiently small <m>\delta</m> there would be no point <m>x \in S</m>
+      with <m>0 \lt |x-c| \lt \delta</m>. The implication in the definition
+      would then be automatically true for every real number <m>L</m>, so the
+      “limit” would not be unique.
+    </p>
+
+    <example xml:id="eg-no-limit-at-isolated-point">
+      <statement>
+        <p>
+          Let <m>S=\{0\}</m> and let <m>f(0)=7</m>. If we tried to define a
+          limit of <m>f</m> at <m>0</m> using the usual punctured-neighborhood
+          condition, then every <m>L \in \R</m> would satisfy it, because
+          there are no points <m>x \in S</m> with <m>0 \lt |x| \lt \delta</m>.
+          So there is no meaningful notion of limit at that isolated point.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-one-sided-limits">
+    <title>Left and Right Limits</title>
+
+    <p>
+      Suppose <m>c</m> is a cluster point of <m>S \cap (-\infty,c)</m>. We
+      say that <m>f</m> has <term>left limit</term><idx>left limit</idx>
+      <m>L</m> at <m>c</m> if for every <m>\varepsilon \gt 0</m> there exists
+      <m>\delta \gt 0</m> such that whenever <m>x \in S</m> and
+      <m>c-\delta \lt x \lt c</m>, we have
+      <me>|f(x)-L| \lt \varepsilon.</me>
+      We write <m>\lim_{x\to c^-} f(x)=L</m> or <m>f(c^-) = L</m>.
+    </p>
+
+    <p>
+      Similarly, if <m>c</m> is a cluster point of
+      <m>S \cap (c,\infty)</m>, we say that <m>f</m> has
+      <term>right limit</term><idx>right limit</idx> <m>L</m> at <m>c</m> if
+      for every <m>\varepsilon \gt 0</m> there exists <m>\delta \gt 0</m>
+      such that whenever <m>x \in S</m> and <m>c \lt x \lt c+\delta</m>, we
+      have <me>|f(x)-L| \lt \varepsilon.</me>
+      We write <m>\lim_{x\to c^+} f(x)=L</m> or <m>f(c^+) = L</m>.
+    </p>
+
+    <proposition xml:id="prop-two-sided-limit-iff-one-sided-limits">
+      <statement>
+        <p>
+          Assume that <m>c</m> is a cluster point of both
+          <m>S \cap (-\infty,c)</m> and <m>S \cap (c,\infty)</m>. Then
+          <me>\lim_{x\to c} f(x)=L</me>
+          if and only if
+          <me>\lim_{x\to c^-} f(x)=L=\lim_{x\to c^+} f(x).</me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Suppose <m>\lim_{x\to c} f(x)=L</m>. Given
+          <m>\varepsilon \gt 0</m>, choose <m>\delta \gt 0</m> so that
+          <m>|f(x)-L| \lt \varepsilon</m> whenever <m>x \in S</m> and
+          <m>0 \lt |x-c| \lt \delta</m>. If <m>c-\delta \lt x \lt c</m>, then
+          certainly <m>0 \lt |x-c| \lt \delta</m>, so
+          <m>|f(x)-L| \lt \varepsilon</m>. This proves
+          <m>\lim_{x\to c^-} f(x)=L</m>. The proof for the right limit is the
+          same.
+        </p>
+
+        <p>
+          Conversely, suppose both one-sided limits exist and are equal to
+          <m>L</m>. Given <m>\varepsilon \gt 0</m>, choose
+          <m>\delta_1,\delta_2 \gt 0</m> so that
+          <m>|f(x)-L| \lt \varepsilon</m> whenever <m>x \in S</m> and
+          <m>c-\delta_1 \lt x \lt c</m>, and also whenever <m>x \in S</m> and
+          <m>c \lt x \lt c+\delta_2</m>. Let
+          <m>\delta=\min\{\delta_1,\delta_2\}</m>. If <m>x \in S</m> and
+          <m>0 \lt |x-c| \lt \delta</m>, then either <m>x \lt c</m> or
+          <m>x \gt c</m>. In the first case <m>c-\delta_1 \lt x \lt c</m>, and
+          in the second case <m>c \lt x \lt c+\delta_2</m>. Hence in either
+          case <m>|f(x)-L| \lt \varepsilon</m>. Therefore
+          <m>\lim_{x\to c} f(x)=L</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <example xml:id="eg-sign-function-one-sided-limits">
+      <statement>
+        <p>
+          Define
+          <me>\operatorname{sgn} x=\begin{cases}
+          -1 &amp; \text{if } x \lt 0,\\
+          1 &amp; \text{if } x \ge 0.
+          \end{cases}</me>
+          Then
+          <m>\lim_{x\to 0^-} \operatorname{sgn} x=-1</m> and
+          <m>\lim_{x\to 0^+} \operatorname{sgn} x=1</m>. Since these
+          one-sided limits are different, <m>\lim_{x\to 0} \operatorname{sgn}
+          x</m> does not exist.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-limit-and-continuity">
+    <title>Relation Between Limits and Continuity</title>
+
+    <p>
+      The definition of limit ignores the value at the point <m>c</m>,
+      whereas continuity compares nearby values with <m>f(c)</m>. Because of
+      this, limits and continuity are closely related but not identical.
+    </p>
+
+    <proposition xml:id="prop-continuity-iff-limit-equals-value">
+      <statement>
+        <p>
+          Let <m>f \colon S \to \R</m> and let <m>c \in S</m>. If
+          <m>c</m> is a cluster point of <m>S</m>, then <m>f</m> is
+          continuous at <m>c</m> if and only if
+          <me>\lim_{x\to c} f(x)=f(c).</me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Suppose <m>f</m> is continuous at <m>c</m>. Let
+          <m>\varepsilon \gt 0</m> be given. By continuity, there exists
+          <m>\delta \gt 0</m> such that
+          <m>|f(x)-f(c)| \lt \varepsilon</m> whenever <m>x \in S</m> and
+          <m>|x-c| \lt \delta</m>. In particular, this holds whenever
+          <m>x \in S</m> and <m>0 \lt |x-c| \lt \delta</m>. Hence
+          <m>\lim_{x\to c} f(x)=f(c)</m>.
+        </p>
+
+        <p>
+          Conversely, suppose <m>\lim_{x\to c} f(x)=f(c)</m>. Let
+          <m>\varepsilon \gt 0</m> be given. Then there exists
+          <m>\delta \gt 0</m> such that
+          <m>|f(x)-f(c)| \lt \varepsilon</m> whenever <m>x \in S</m> and
+          <m>0 \lt |x-c| \lt \delta</m>. Now if <m>x \in S</m> and
+          <m>|x-c| \lt \delta</m>, then either <m>x=c</m>, in which case
+          <m>|f(x)-f(c)|=0</m>, or <m>0 \lt |x-c| \lt \delta</m>, in which
+          case <m>|f(x)-f(c)| \lt \varepsilon</m>. Therefore <m>f</m> is
+          continuous at <m>c</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <example xml:id="eg-removable-discontinuity">
+      <statement>
+        <p>
+          Define
+          <me>f(x)=\begin{cases}
+          \dfrac{x^2-1}{x-1} &amp; \text{if } x \neq 1,\\
+          0 &amp; \text{if } x=1.
+          \end{cases}</me>
+          For <m>x \neq 1</m>, we have <m>f(x)=x+1</m>, so
+          <m>\lim_{x\to 1} f(x)=2</m>. However, <m>f(1)=0</m>, so
+          <m>f</m> is not continuous at <m>1</m>. If we redefine the value at
+          <m>1</m> to be <m>2</m>, then the resulting function becomes
+          continuous at <m>1</m>. This is the basic model of a
+          <term>removable discontinuity</term><idx>removable discontinuity</idx>.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-extended-real-limits">
+    <title>Limits Involving <m>\pm\infty</m></title>
+
+    <p>
+      We now extend the definition of limit to cases where either the point
+      approached or the limiting value is allowed to be <m>+\infty</m> or
+      <m>-\infty</m>. The set
+      <m>\R \cup \{-\infty,+\infty\}</m> is called the
+      <term>extended real line</term><idx>extended real line</idx>.
+    </p>
+
+    <p>
+      First suppose <m>c \in \R</m> is a cluster point of <m>S</m>. We write
+      <me>\lim_{x\to c} f(x)=+\infty</me>
+      if for every <m>M \in \R</m> there exists <m>\delta \gt 0</m> such that
+      whenever <m>x \in S</m> and <m>0 \lt |x-c| \lt \delta</m>, we have
+      <m>f(x) \gt M</m>. Similarly, we write
+      <me>\lim_{x\to c} f(x)=-\infty</me>
+      if for every <m>M \in \R</m> there exists <m>\delta \gt 0</m> such that
+      whenever <m>x \in S</m> and <m>0 \lt |x-c| \lt \delta</m>, we have
+      <m>f(x) \lt M</m>.
+    </p>
+
+    <p>
+      The one-sided definitions extend in exactly the same way. For example,
+      <m>\lim_{x\to c^+} f(x)=+\infty</m> means that for every <m>M \in
+      \R</m> there exists <m>\delta \gt 0</m> such that whenever
+      <m>x \in S</m> and <m>c \lt x \lt c+\delta</m>, we have
+      <m>f(x) \gt M</m>. The other one-sided cases are analogous.
+    </p>
+
+    <p>
+      Next suppose that <m>S</m> is unbounded above. We write
+      <me>\lim_{x\to +\infty} f(x)=L</me>
+      for <m>L \in \R</m> if for every <m>\varepsilon \gt 0</m> there exists
+      <m>A \in \R</m> such that whenever <m>x \in S</m> and <m>x \gt A</m>,
+      we have <m>|f(x)-L| \lt \varepsilon</m>. We write
+      <me>\lim_{x\to +\infty} f(x)=+\infty</me>
+      if for every <m>M \in \R</m> there exists <m>A \in \R</m> such that
+      whenever <m>x \in S</m> and <m>x \gt A</m>, we have
+      <m>f(x) \gt M</m>. The definition of
+      <m>\lim_{x\to +\infty} f(x)=-\infty</m> is analogous.
+    </p>
+
+    <p>
+      Likewise, if <m>S</m> is unbounded below, we write
+      <me>\lim_{x\to -\infty} f(x)=L</me>
+      for <m>L \in \R</m> if for every <m>\varepsilon \gt 0</m> there exists
+      <m>A \in \R</m> such that whenever <m>x \in S</m> and <m>x \lt A</m>,
+      we have <m>|f(x)-L| \lt \varepsilon</m>. We define
+      <m>\lim_{x\to -\infty} f(x)=+\infty</m> and
+      <m>\lim_{x\to -\infty} f(x)=-\infty</m> similarly, by requiring
+      <m>f(x)</m> to be eventually larger than any prescribed real number, or
+      eventually smaller than any prescribed real number.
+    </p>
+
+    <p>
+      In each of these cases we also use the corresponding arrow notation:
+      <m>f(x)\to L</m> as <m>x\to c</m>, as <m>x\to +\infty</m>, or as
+      <m>x\to -\infty</m>. The same uniqueness principle remains valid for
+      these extended-real limits as well.
+    </p>
+
+    <example xml:id="eg-extended-real-limits">
+      <statement>
+        <ul>
+          <li>
+            On <m>\R \setminus \{0\}</m>, we have
+            <m>\lim_{x\to 0} \frac{1}{x^2}=+\infty</m>.
+          </li>
+          <li>
+            On <m>\R \setminus \{0\}</m>, we have
+            <m>\lim_{x\to 0^+} \frac{1}{x}=+\infty</m> and
+            <m>\lim_{x\to 0^-} \frac{1}{x}=-\infty</m>.
+          </li>
+          <li>
+            On <m>(0,\infty)</m>, we have
+            <m>\lim_{x\to +\infty} \frac{1}{x}=0</m>.
+          </li>
+          <li>
+            On <m>\R</m>, we have
+            <m>\lim_{x\to -\infty} x^2=+\infty</m>.
+          </li>
+        </ul>
+      </statement>
+    </example>
+
+    <p>
+      It is often helpful to think of <m>+\infty</m> and <m>-\infty</m> as
+      extra endpoints added to the real line. Then the definitions above are
+      the natural analogues of ordinary limits at finite cluster points.
+    </p>
+  </subsection>
+</section>

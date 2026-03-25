@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-definition-of-continuity-examples"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Definition of Continuity. Examples.</title>
+
+  <subsection xml:id="subsec-continuity-at-a-point">
+    <title>Continuity at a Point</title>
+
+    <p>
+      Let <m>S \subseteq \R</m> and let <m>f \colon S \to \R</m>
+      be a function. We say that <m>f</m> is <term>continuous
+      at</term><idx>continuous at a point</idx> <m>c \in S</m> if for
+      every <m>\varepsilon \gt 0</m> there exists <m>\delta \gt 0</m> such
+      that whenever <m>x \in S</m> and <m>|x-c| \lt \delta</m>, we have
+      <me>|f(x)-f(c)| \lt \varepsilon.</me>
+      In other words, <m>f</m> is continuous at <m>c</m> if the output
+      <m>f(x)</m> can be made arbitrarily close to <m>f(c)</m> provided that
+      the input <m>x</m> is sufficiently close to <m>c</m>.
+    </p>
+
+    <p>
+      If <m>A \subseteq S</m>, then <m>f</m> is <term>continuous
+      on</term><idx>continuous on a set</idx> <m>A</m> if it is continuous at
+      every point of <m>A</m>. We say simply that <m>f</m> is
+      <term>continuous</term><idx>continuous function</idx> if it is
+      continuous on its whole domain.
+    </p>
+
+    <p>
+      The definition only refers to points <m>x</m> that lie in the domain
+      <m>S</m>. So continuity at <m>c</m> concerns the behavior of <m>f</m>
+      on domain points near <m>c</m>; we do not need <m>f</m> to be defined
+      on an entire open interval around <m>c</m>.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-cluster-and-isolated-points">
+    <title>Cluster Points and Isolated Points</title>
+
+    <p>
+      A <term>neighborhood</term> of a point <m>c \in \R</m> is a subset
+      of <m>\R</m> that contains an open interval around <m>c</m>.
+      In particular, every open interval containing <m>c</m> is a neighborhood
+      of <m>c</m>.
+    </p>
+
+    <p>
+      Let <m>S \subseteq \R</m>. A real number <m>c</m> is called a
+      <term>cluster point</term><idx>cluster point</idx> of <m>S</m> if for
+      every <m>\delta \gt 0</m> there exists <m>x \in S</m> such that <m>x
+      \neq c</m> and <m>|x-c| \lt \delta</m>. In other words, <m>c</m> is a
+      cluster point of <m>S</m> if every neighborhood of <m>c</m> contains
+      a point in <m>S</m> other than <m>c</m>. A cluster point is also
+      called a <term>limit point</term><idx>limit point</idx> of <m>S</m>.
+      A point <m>c \in S</m> is an <term>isolated point</term><idx>isolated
+      point</idx> of <m>S</m> if it is not a cluster point of <m>S</m>. That
+      is, there exists <m>\delta \gt 0</m> such that <me>S \cap
+      (c-\delta,c+\delta)=\{c\}.</me>
+      Equivalently, some neighborhood of <m>c</m> contains no points of
+      <m>S</m> other than <m>c</m>. A cluster point of <m>S</m> need not
+      belong to <m>S</m>, but an isolated point of <m>S</m>, by definition,
+      must belong to <m>S</m>.
+    </p>
+
+    <example xml:id="eg-cluster-and-isolated-points">
+      <statement>
+        <ul>
+          <li>
+            Every point of an open interval <m>(a,b)</m> is a cluster point
+            of <m>(a,b)</m>.
+          </li>
+          <li>
+            The point <m>0</m> is a cluster point of <m>(0,1)</m> even though
+            <m>0 \notin (0,1)</m>.
+          </li>
+          <li>
+            Every integer is an isolated point of <m>\Z</m>.
+          </li>
+          <li>
+            In the set <m>\{0\} \cup \{1/n : n \in \N\}</m>, the point
+            <m>0</m> is a cluster point, while each point <m>1/n</m> is an
+            isolated point.
+          </li>
+        </ul>
+      </statement>
+    </example>
+
+    <proposition xml:id="prop-isolated-points-are-continuity-points">
+      <statement>
+        <p>
+          A function is continuous at the isolated points of its domain.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Let <m>c</m> be an isolated point of the domain <m>S</m> of a
+          function <m>f</m>. Then there exists some <m>\delta_0 \gt 0</m>
+          such that <m>S \cap (c-\delta_0,c+\delta_0)=\{c\}</m>. So whenever
+          <m>x \in S</m> and <m>|x-c| \lt \delta_0</m>, necessarily
+          <m>x=c</m>. Hence,
+          <me>|f(x)-f(c)|=|f(c)-f(c)|=0</me>
+          which is less than any positive <m>\varepsilon</m>. This shows that
+          <m>f</m> is continuous at <m>c</m>.
+        </p>
+      </proof>
+    </proposition>
+  </subsection>
+
+  <subsection xml:id="subsec-examples-of-continuous-functions">
+    <title>Examples of Continuous Functions</title>
+
+    <p>
+      The simplest examples of continuous functions are the constant
+      functions and the identity function <m>\mathrm{id}(x)=x</m>. We leave
+      the justification of these statements as an exercise.
+    </p>
+
+    <proposition xml:id="prop-absolute-value-continuous">
+      <statement>
+        <p>
+          The absolute value function is continuous on <m>\R</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Fix <m>c \in \R</m>. By the reverse triangle inequality,
+          <me>\bigl||x|-|c|\bigr| \le |x-c| \quad (x \in \R).</me>
+          Therefore, for any <m>\varepsilon \gt 0</m>, if <m>|x-c| \lt
+          \varepsilon</m>, then <m>||x|-|c|| \lt \varepsilon</m> as well.
+          Since <m>c</m> is an arbitrary real number, this shows that the
+          function <m>x \mapsto |x|</m> is continuous on <m>\R</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-reciprocal-continuous">
+      <statement>
+        <p>
+          The reciprocal function <m>f(x)=1/x</m> is continuous on
+          <m>\R \setminus \{0\}</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          To prove the continuity of the function <m>x \mapsto 1/x</m>, we
+          need, roughly speaking, to show that for any fixed <m>c \neq 0</m>,
+          <me>\left|\frac{1}{x}-\frac{1}{c}\right|
+            = \frac{|x-c|}{|x||c|}</me>
+          is small whenever <m>|x-c|</m> is small. Thus, we need to make sure
+          that the quantity <m>|xc|</m>, and hence <m>|x|</m>, stays bounded
+          away from <m>0</m> when <m>x</m> is close to <m>c</m>. This can
+          be achieved because if <m>|x-c| \lt |c|/2</m>, then
+          <m>||x|-|c|| \lt |c|/2</m>, and that guarantees
+          <m>|x| \gt |c|/2</m>. Thus,
+          <me>\left|\frac{1}{x}-\frac{1}{c}\right| = \frac{|x-c|}{|x||c|}
+          \le \frac{2|x-c|}{|c|^2}.</me>
+          So for any <m>\varepsilon \gt 0</m>, if we choose
+          <m>0 \lt \delta \lt \min\{|c|/2, \varepsilon|c|^2/2\}</m>, then the
+          inequality above implies <m>|1/x - 1/c| \lt \varepsilon</m>, and we
+          are done, since <m>c \neq 0</m> is arbitrary.
+        </p>
+      </proof>
+    </proposition>
+
+    <example xml:id="eg-continuous-functions-on-discrete-domains">
+      <statement>
+        <p>
+          If the domain consists entirely of isolated points, then every
+          function on that domain is continuous. For example, every function
+          <m>f \colon \Z \to \R</m> is continuous, because each integer is an
+          isolated point of <m>\Z</m>.
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      Later we will prove that sums, products, quotients (where the
+      denominator is nonzero), and compositions of continuous functions are
+      again continuous. From those general results it will follow that every
+      polynomial is continuous on <m>\R</m>, every rational function is
+      continuous on its domain, and standard functions such as
+      <m>\sin x</m>, <m>\cos x</m>, <m>e^x</m>, and <m>\ln x</m> are
+      continuous on their natural domains.
+    </p>
+  </subsection>
+</section>

@@ -15,11 +15,11 @@
           Determine whether each of the following series converges. If it
           converges, find its sum.
         </p>
-        <ul>
-          <li><m>\sum_{n=0}^\infty (2/3)^n</m></li>
-          <li><m>\sum_{n=0}^\infty (-1/4)^n</m></li>
-          <li><m>\sum_{n=0}^\infty (-2)^n</m></li>
-        </ul>
+        <p>
+          a) <m>\sum_{n=0}^\infty (2/3)^n</m><m>\qquad</m>
+          b) <m>\sum_{n=0}^\infty (-1/4)^n</m><m>\qquad</m>
+          c) <m>\sum_{n=0}^\infty (-2)^n</m>
+        </p>
       </statement>
     </exercise>
 
@@ -40,11 +40,11 @@
         <p>
           Determine whether each series converges or diverges.
         </p>
-        <ul>
-          <li><m>\sum_{n=1}^\infty 1/\sqrt{n}</m></li>
-          <li><m>\sum_{n=1}^\infty 1/n^{3/2}</m></li>
-          <li><m>\sum_{n=1}^\infty 1/n^{-2}</m></li>
-        </ul>
+        <p>
+          a) <m>\sum_{n=1}^\infty 1/\sqrt{n}</m><m>\qquad</m>
+          b) <m>\sum_{n=1}^\infty 1/n^{3/2}</m><m>\qquad</m>
+          c) <m>\sum_{n=1}^\infty 1/n^{-2}</m>
+        </p>
       </statement>
     </exercise>
 
@@ -66,11 +66,11 @@
           Determine whether each series is absolutely convergent,
           conditionally convergent, or divergent.
         </p>
-        <ul>
-          <li><m>\sum_{n=1}^\infty (-1)^{n+1}/\sqrt{n}</m></li>
-          <li><m>\sum_{n=1}^\infty (-1)^n/n^2</m></li>
-          <li><m>\sum_{n=1}^\infty (-1)^n</m></li>
-        </ul>
+        <p>
+          a) <m>\sum_{n=1}^\infty (-1)^{n+1}/\sqrt{n}</m><m>\qquad</m>
+          b) <m>\sum_{n=1}^\infty (-1)^n/n^2</m><m>\qquad</m>
+          c) <m>\sum_{n=1}^\infty (-1)^n</m>
+        </p>
       </statement>
     </exercise>
 
