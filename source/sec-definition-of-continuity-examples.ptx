@@ -51,16 +51,13 @@
       every <m>\delta \gt 0</m> there exists <m>x \in S</m> such that <m>x
       \neq c</m> and <m>|x-c| \lt \delta</m>. In other words, <m>c</m> is a
       cluster point of <m>S</m> if every neighborhood of <m>c</m> contains
-      a point in <m>S</m> other than <m>c</m>. A cluster point is also
-      called a <term>limit point</term><idx>limit point</idx> of <m>S</m>.
-      A point <m>c \in S</m> is an <term>isolated point</term><idx>isolated
-      point</idx> of <m>S</m> if it is not a cluster point of <m>S</m>. That
-      is, there exists <m>\delta \gt 0</m> such that <me>S \cap
-      (c-\delta,c+\delta)=\{c\}.</me>
-      Equivalently, some neighborhood of <m>c</m> contains no points of
-      <m>S</m> other than <m>c</m>. A cluster point of <m>S</m> need not
-      belong to <m>S</m>, but an isolated point of <m>S</m>, by definition,
-      must belong to <m>S</m>.
+      a point in <m>S</m> other than <m>c</m>. A point <m>c \in S</m> is an
+      <term>isolated point</term><idx>isolated point</idx> of <m>S</m> if it
+      is not a cluster point of <m>S</m>. That is, there exists <m>\delta \gt
+      0</m> such that <me>S \cap (c-\delta,c+\delta)=\{c\}.</me> Equivalently,
+      some neighborhood of <m>c</m> contains no points of <m>S</m> other than
+      <m>c</m>. A cluster point of <m>S</m> need not belong to <m>S</m>, but
+      an isolated point of <m>S</m>, by definition, must belong to <m>S</m>.
     </p>
 
     <example xml:id="eg-cluster-and-isolated-points">
@@ -104,6 +101,55 @@
           which is less than any positive <m>\varepsilon</m>. This shows that
           <m>f</m> is continuous at <m>c</m>.
         </p>
+      </proof>
+    </proposition>
+
+    <p>
+        A cluster point is also called a <term>limit point</term><idx>limit
+	point</idx>. Here is why:
+    </p>
+
+    <proposition>
+      <statement>
+        <p>
+          A real number <m>c</m> is a cluster point of <m>S \subseteq \R</m>
+          if and only if there is an injective sequence <m>(x_n)</m> in
+          <m>S</m> that converges to <m>c</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          First suppose that <m>c</m> is a cluster point of <m>S</m>. We
+          construct an injective sequence <m>(x_n)</m> in <m>S</m> such that
+          <m>x_n \to c</m>. Since <m>c</m> is a cluster point, there exists
+          <m>x_1 \in S</m> such that <m>0 \lt |x_1-c| \lt 1</m>. Now suppose
+          that <m>x_1,\dots,x_{n-1}</m> have been chosen in <m>S</m>, all
+          distinct, with <m>0 \lt |x_k-c| \lt 1/k</m> for
+          <m>k=1,\dots,n-1</m>. Let
+          <me>\eta=\min\{|x_1-c|,\dots,|x_{n-1}-c|\} \gt 0.</me>
+          Because <m>c</m> is a cluster point of <m>S</m>, there exists
+          <m>x_n \in S</m> such that
+          <me>0 \lt |x_n-c| \lt \min\{1/n,\eta\}.</me>
+          Then <m>x_n \neq x_k</m> for <m>k=1,\dots,n-1</m>, because
+          <m>|x_n-c| \lt |x_k-c|</m>. Thus, by induction, we obtain an
+          injective sequence <m>(x_n)</m> in <m>S</m> with
+          <m>|x_n-c| \lt 1/n</m> for every <m>n</m>. Since <m>1/n \to 0</m>,
+          it follows that <m>|x_n-c| \to 0</m>, and hence <m>x_n \to c</m>.
+        </p>
+
+	<p>
+	  Conversely, suppose there is an injective sequence <m>(x_n)</m> in
+	  <m>S</m> such that <m>x_n \to c</m>. Let <m>\delta \gt 0</m>. Since
+	  <m>x_n \to c</m>, <m>|x_n-c| \lt \delta</m> for all <m>n</m>
+	  sufficiently large. In particular, the inequality is satisfied by
+	  infinitely many <m>n</m>'s. Because the sequence is injective, at
+	  most one term can equal <m>c</m>. Therefore, there exists <m>N</m>
+	  sufficiently large and that <m>x_N \neq c</m>. Since <m>N</m>
+	  is sufficiently large <m>|x_N-c| \lt \delta</m>. This shows that
+	  every neighborhood of <m>c</m> contains a point of <m>S</m> other
+	  than <m>c</m>. Therefore <m>c</m> is a cluster point of <m>S</m>.
+	</p>
       </proof>
     </proposition>
   </subsection>
