@@ -10,5 +10,188 @@
 
   <exercises xml:id="ex-ch4">
     <title>Exercises</title>
+
+    <exercise xml:id="ex-continuity-constant-and-identity">
+      <statement>
+        <p>
+          Prove that every constant function and the identity function
+          <m>x \mapsto x</m> are continuous on <m>\R</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-continuity-functions-on-z">
+      <statement>
+        <p>
+          Prove that every function <m>f \colon \Z \to \R</m> is continuous.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-continuity-cluster-isolated-points-example">
+      <statement>
+        <p>
+          Let
+          <me>S=\{0\}\cup\left\{\frac1n : n \in \N\right\}
+            \cup \left\{2-\frac1n : n \in \N\right\}.</me>
+          Determine all cluster points of <m>S</m> and all isolated points of
+          <m>S</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-continuity-cluster-point-sequential-characterization">
+      <statement>
+        <p>
+          Let <m>S \subseteq \R</m> and <m>c \in \R</m>. Prove that <m>c</m>
+          is a cluster point of <m>S</m> if and only if there exists a
+          sequence <m>(x_n)</m> in <m>S \setminus \{c\}</m> such that
+          <m>x_n \to c</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-continuity-direct-proof-square">
+      <statement>
+        <p>
+          Prove directly from the <m>\varepsilon</m>-<m>\delta</m>
+          definition that <m>f(x)=x^2</m> is continuous on <m>\R</m>.
+        </p>
+        <p>
+          Hint: for fixed <m>c \in \R</m>, write
+          <m>|x^2-c^2|=|x-c||x+c|</m> and choose
+          <m>\delta \lt \min\{1,\varepsilon/(2|c|+1)\}</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-continuity-direct-proof-extended-limits">
+      <statement>
+        <p>
+          Prove directly from the definitions that
+          <me>\lim_{x\to 0} \frac{1}{x^2}=+\infty
+            \quad\text{and}\quad
+            \lim_{x\to +\infty} \frac{1}{x}=0.</me>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-continuity-piecewise-one-sided-limits">
+      <statement>
+        <p>
+          Define
+          <me>f(x)=\begin{cases}
+          -1 &amp; \text{if } x \lt 0,\\
+          0 &amp; \text{if } x=0,\\
+          1 &amp; \text{if } x \gt 0.
+          \end{cases}</me>
+          Compute <m>\lim_{x\to 0^-} f(x)</m> and
+          <m>\lim_{x\to 0^+} f(x)</m>. Does <m>\lim_{x\to 0} f(x)</m> exist?
+          Is <m>f</m> continuous at <m>0</m>?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-continuity-removable-discontinuity-example">
+      <statement>
+        <p>
+          Define
+          <me>f(x)=\begin{cases}
+          \dfrac{x^2-4}{x-2} &amp; \text{if } x \neq 2,\\
+          0 &amp; \text{if } x=2.
+          \end{cases}</me>
+          Find <m>\lim_{x\to 2} f(x)</m>. Is <m>f</m> continuous at <m>2</m>?
+          How should <m>f(2)</m> be redefined to make <m>f</m> continuous at
+          <m>2</m>?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-continuity-absolute-value-of-continuous-function">
+      <statement>
+        <p>
+          Let <m>S \subseteq \R</m> and let <m>f \colon S \to \R</m> be
+          continuous. Prove that <m>|f| \colon S \to \R</m> is continuous.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-continuity-agree-on-rationals">
+      <statement>
+        <p>
+          Let <m>S \subseteq \R</m>, and let <m>f,g \colon S \to \R</m> be
+          continuous. Suppose that <m>f(q)=g(q)</m> for every
+          <m>q \in \Q \cap S</m>. Prove that <m>f=g</m> on <m>S</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-continuity-positive-near-positive-point">
+      <statement>
+        <p>
+          Let <m>S \subseteq \R</m>, let <m>f \colon S \to \R</m>, and let
+          <m>c \in S</m>. Assume that <m>f</m> is continuous at <m>c</m> and
+          <m>f(c) \gt 0</m>. Prove that there exists <m>\delta \gt 0</m> such
+          that
+          <me>f(x) \gt \frac{f(c)}{2}</me>
+          for every <m>x \in S</m> with <m>|x-c| \lt \delta</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-continuity-evt-hypotheses-necessary">
+      <statement>
+        <p>
+          Give examples showing that each hypothesis of the Extreme Value
+          Theorem is necessary.
+        </p>
+        <ul>
+          <li>
+            A continuous function on a bounded interval that does not attain an
+            absolute maximum or an absolute minimum.
+          </li>
+          <li>
+            A continuous function on a closed interval that is not bounded
+            above.
+          </li>
+          <li>
+            A function on a closed bounded interval that is not continuous and
+            does not attain an absolute maximum or an absolute minimum.
+          </li>
+        </ul>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-continuity-ivt-cosx-fixed-point">
+      <statement>
+        <p>
+          Use the Intermediate Value Theorem to prove that the equation
+          <m>\cos x = x</m> has a solution in <m>(0,1)</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-continuity-image-of-interval-is-interval">
+      <statement>
+        <p>
+          Let <m>I \subseteq \R</m> be an interval, and let
+          <m>f \colon I \to \R</m> be continuous. Prove that <m>f(I)</m> is
+          an interval.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-continuity-odd-polynomial-root">
+      <statement>
+        <p>
+          Prove that every odd degree polynomial with real coefficients has a
+          real root.
+        </p>
+        <p>
+          Hint: compare the dominant term for large positive and negative
+          values of <m>x</m>, then apply the Intermediate Value Theorem.
+        </p>
+      </statement>
+    </exercise>
   </exercises>
 </chapter>

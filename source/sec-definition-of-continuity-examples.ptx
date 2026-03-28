@@ -142,13 +142,13 @@
 	  Conversely, suppose there is an injective sequence <m>(x_n)</m> in
 	  <m>S</m> such that <m>x_n \to c</m>. Let <m>\delta \gt 0</m>. Since
 	  <m>x_n \to c</m>, <m>|x_n-c| \lt \delta</m> for all <m>n</m>
-	  sufficiently large. In particular, the inequality is satisfied by
-	  infinitely many <m>n</m>'s. Because the sequence is injective, at
-	  most one term can equal <m>c</m>. Therefore, there exists <m>N</m>
-	  sufficiently large and that <m>x_N \neq c</m>. Since <m>N</m>
-	  is sufficiently large <m>|x_N-c| \lt \delta</m>. This shows that
-	  every neighborhood of <m>c</m> contains a point of <m>S</m> other
-	  than <m>c</m>. Therefore <m>c</m> is a cluster point of <m>S</m>.
+	  sufficiently large. In particular, the inequality is satisfied
+	  by infinitely many terms of the sequence. At most one of them
+	  can be <m>c</m> by injectivity. Therefore, <m>x_N \neq c</m> for
+	  some sufficiently large <m>N</m> and so <m>|x_N-c| \lt \delta</m>
+	  as well. This shows that every neighborhood of <m>c</m> contains
+	  a point of <m>S</m> other than <m>c</m>. Therefore <m>c</m> is a
+	  cluster point of <m>S</m>.
 	</p>
       </proof>
     </proposition>

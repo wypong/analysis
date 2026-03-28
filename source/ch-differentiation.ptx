@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-differentiation" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Differentiation</title>
+
+  <xi:include href="sec-derivative.ptx" />
+  <xi:include href="sec-the-mean-value-theorem.ptx" />
+  <xi:include href="sec-applications-of-differentiation.ptx" />
+  <xi:include href="sec-exercises-differentiation.ptx" />
+</chapter>

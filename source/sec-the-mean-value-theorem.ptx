@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-the-mean-value-theorem"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The Mean Value Theorem</title>
+
+  <introduction>
+    <p>
+      The derivative is defined pointwise, but the next results show that it
+      controls the global behavior of a function on an interval. Rolle's
+      theorem and the Mean Value Theorem connect endpoint information with the
+      derivative at some interior point. They are among the central tools of
+      differential calculus.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-critical-points-and-rolle">
+    <title>Critical Points and Rolle's Theorem</title>
+
+    <proposition xml:id="prop-critical-point-theorem">
+      <title>Critical Point Theorem</title>
+      <statement>
+        <p>
+          Let <m>f \colon (a,b) \to \R</m>, and let <m>c \in (a,b)</m>. If
+          <m>f</m> has a local maximum or a local minimum at <m>c</m> and
+          <m>f</m> is differentiable at <m>c</m>, then
+          <me>f'(c)=0.</me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Suppose <m>f</m> has a local maximum at <m>c</m>. Then for all
+          <m>x</m> sufficiently close to <m>c</m>, we have
+          <m>f(x)-f(c) \le 0</m>. If <m>x \lt c</m>, then <m>x-c \lt 0</m>, so
+          <me>\frac{f(x)-f(c)}{x-c} \ge 0.</me>
+          If <m>x \gt c</m>, then <m>x-c \gt 0</m>, so
+          <me>\frac{f(x)-f(c)}{x-c} \le 0.</me>
+          Since the derivative exists, both one-sided limits of the difference
+          quotient equal <m>f'(c)</m>. Hence <m>f'(c) \ge 0</m> and
+          <m>f'(c) \le 0</m>, so <m>f'(c)=0</m>. The proof for a local minimum
+          is analogous.
+        </p>
+      </proof>
+    </proposition>
+
+    <theorem xml:id="thm-rolle">
+      <title>Rolle's Theorem</title>
+      <statement>
+        <p>
+          Let <m>f \colon [a,b] \to \R</m>. Assume that
+        </p>
+        <ol>
+          <li><p><m>f</m> is continuous on <m>[a,b]</m>,</p></li>
+          <li><p><m>f</m> is differentiable on <m>(a,b)</m>,</p></li>
+          <li><p><m>f(a)=f(b)</m>.</p></li>
+        </ol>
+        <p>
+          Then there exists <m>c \in (a,b)</m> such that
+          <me>f'(c)=0.</me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          By <xref ref="thm-extreme-value-theorem"/>, <m>f</m> attains an
+          absolute minimum and an absolute maximum on <m>[a,b]</m>. If these
+          are equal, then <m>f</m> is constant, so <m>f'(x)=0</m> for every
+          <m>x \in (a,b)</m>.
+        </p>
+
+        <p>
+          Otherwise at least one of the two extreme values is different from
+          <m>f(a)=f(b)</m>. If the minimum is different from <m>f(a)</m>, then
+          the point where the minimum is attained cannot be <m>a</m> or
+          <m>b</m>, so it lies in <m>(a,b)</m>. The
+          <xref ref="prop-critical-point-theorem"/> then gives a point
+          <m>c \in (a,b)</m> with <m>f'(c)=0</m>. The same argument works if
+          the maximum is different from <m>f(a)</m>.
+        </p>
+      </proof>
+    </theorem>
+  </subsection>
+
+  <subsection xml:id="subsec-mean-value-theorems">
+    <title>The Mean Value Theorems</title>
+
+    <p>
+      Rolle's theorem is already useful, but its most important role is as the
+      model for the Mean Value Theorem. The idea is simple: subtract a suitable
+      linear function so that the new function has equal endpoint values, then
+      apply Rolle's theorem.
+    </p>
+
+    <theorem xml:id="thm-mean-value-theorem">
+      <title>Mean Value Theorem</title>
+      <statement>
+        <p>
+          Let <m>f \colon [a,b] \to \R</m>. Assume that <m>f</m> is continuous
+          on <m>[a,b]</m> and differentiable on <m>(a,b)</m>. Then there
+          exists <m>c \in (a,b)</m> such that
+          <me>f'(c)=\frac{f(b)-f(a)}{b-a}.</me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Let
+          <me>s(x)=f(a)+\frac{f(b)-f(a)}{b-a}(x-a),</me>
+          the secant line through the points <m>(a,f(a))</m> and
+          <m>(b,f(b))</m>. Define <m>h(x)=f(x)-s(x)</m>. Then <m>h</m> is
+          continuous on <m>[a,b]</m> and differentiable on <m>(a,b)</m>. Also
+          <me>h(a)=0=h(b).</me>
+          By <xref ref="thm-rolle"/>, there exists <m>c \in (a,b)</m> such
+          that <m>h'(c)=0</m>. Since
+          <me>h'(x)=f'(x)-\frac{f(b)-f(a)}{b-a},</me>
+          we obtain
+          <me>f'(c)=\frac{f(b)-f(a)}{b-a}.</me>
+        </p>
+
+        <figure xml:id="fig-mvt-secant-tangent">
+          <caption>For a differentiable function, some tangent line is parallel to the secant line joining the endpoints.</caption>
+          <image width="52%">
+            <shortdescription>A parabola on an interval with a secant line through the endpoints and a tangent line at an interior point having the same slope.</shortdescription>
+            <latex-image>
+\begin{tikzpicture}
+\begin{axis}[
+  width=8cm,
+  height=5.8cm,
+  axis lines=middle,
+  xmin=-0.2, xmax=2.4,
+  ymin=-0.4, ymax=4.6,
+  xtick={0,1,2},
+  ytick={0,1,4},
+  xlabel={$x$},
+  ylabel={$y$},
+  clip=false
+]
+  \addplot[blue, thick, domain=0:2, samples=100] {x^2};
+  \addplot[red, thick, domain=0:2] {2*x};
+  \addplot[green!60!black, thick, domain=0.2:1.8] {2*x-1};
+  \addplot[only marks, mark=*, mark size=2pt, blue] coordinates {(0,0) (1,1) (2,4)};
+\end{axis}
+\end{tikzpicture}
+            </latex-image>
+          </image>
+        </figure>
+      </proof>
+    </theorem>
+
+    <example xml:id="eg-mvt-hypotheses-necessary">
+      <statement>
+        <p>
+          Each hypothesis in the Mean Value Theorem is necessary.
+        </p>
+        <ul>
+          <li>
+            The function
+            <me>f(x)=\begin{cases}
+            x &amp; \text{if } 0 \lt x \lt 1,\\
+            0 &amp; \text{if } x=0 \text{ or } x=1
+            \end{cases}</me>
+            is differentiable on <m>(0,1)</m> and satisfies
+            <m>f(0)=f(1)=0</m>, but it is not continuous on <m>[0,1]</m> and
+            there is no <m>c \in (0,1)</m> with <m>f'(c)=0</m>.
+          </li>
+          <li>
+            The function <m>f(x)=|x|-1</m> is continuous on <m>[-1,1]</m> and
+            satisfies <m>f(-1)=f(1)=0</m>, but it is not differentiable at
+            <m>0</m> and there is no <m>c \in (-1,1)</m> with
+            <m>f'(c)=0</m>.
+          </li>
+        </ul>
+      </statement>
+    </example>
+
+    <theorem xml:id="thm-cauchy-mean-value-theorem">
+      <title>Cauchy's Mean Value Theorem</title>
+      <statement>
+        <p>
+          Let <m>f,g \colon [a,b] \to \R</m>. Assume that <m>f</m> and
+          <m>g</m> are continuous on <m>[a,b]</m> and differentiable on
+          <m>(a,b)</m>. Then there exists <m>c \in (a,b)</m> such that
+          <me>f'(c)(g(b)-g(a))=g'(c)(f(b)-f(a)).</me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Define
+          <me>h(x)=(f(x)-f(a))(g(b)-g(a))-(g(x)-g(a))(f(b)-f(a)).</me>
+          Then <m>h</m> is continuous on <m>[a,b]</m> and differentiable on
+          <m>(a,b)</m>. Also <m>h(a)=0=h(b)</m>. By
+          <xref ref="thm-rolle"/>, there exists <m>c \in (a,b)</m> such that
+          <m>h'(c)=0</m>. Since
+          <me>h'(x)=f'(x)(g(b)-g(a))-g'(x)(f(b)-f(a)),</me>
+          we obtain
+          <me>f'(c)(g(b)-g(a))=g'(c)(f(b)-f(a)).</me>
+        </p>
+      </proof>
+    </theorem>
+
+    <p>
+      Taking <m>g(x)=x</m> in Cauchy's theorem recovers the ordinary Mean
+      Value Theorem. So Cauchy's version is a genuine generalization rather
+      than a separate result.
+    </p>
+  </subsection>
+</section>

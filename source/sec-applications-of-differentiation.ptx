@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-applications-of-differentiation"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Applications</title>
+
+  <introduction>
+    <p>
+      The Mean Value Theorem turns derivative information into comparisons of
+      function values. This lets us read off monotonicity, detect local
+      extrema, and prove qualitative facts about derivatives themselves. At
+      the end of the section we include a brief preview of the Fundamental
+      Theorem of Calculus, assuming the usual properties of the definite
+      integral.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-monotonicity-and-constant-functions">
+    <title>Monotonicity</title>
+
+    <proposition xml:id="prop-derivative-sign-and-monotonicity">
+      <statement>
+        <p>
+          Let <m>I</m> be an open interval, and let <m>f \colon I \to \R</m>
+          be differentiable on <m>I</m>.
+        </p>
+        <ol>
+          <li>
+            <p>
+              The function <m>f</m> is increasing on <m>I</m> if and only if
+              <m>f'(x) \ge 0</m> for every <m>x \in I</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The function <m>f</m> is decreasing on <m>I</m> if and only if
+              <m>f'(x) \le 0</m> for every <m>x \in I</m>.
+            </p>
+          </li>
+        </ol>
+      </statement>
+
+      <proof>
+        <p>
+          We prove the increasing case; the decreasing case follows by applying
+          the same argument to <m>-f</m>. First suppose that <m>f</m> is
+          increasing on <m>I</m>. Fix <m>c \in I</m>. By
+          <xref ref="prop-caratheodory-criterion"/>, there exists a function
+          <m>\varphi \colon I \to \R</m>, continuous at <m>c</m>, such that
+          <me>f(x)-f(c)=\varphi(x)(x-c)</me>
+          for all <m>x \in I</m>, and <m>\varphi(c)=f'(c)</m>. For
+          <m>x \neq c</m>, monotonicity of <m>f</m> gives
+          <me>\varphi(x)=\frac{f(x)-f(c)}{x-c} \ge 0.</me>
+          Since <m>\varphi</m> is continuous at <m>c</m>, it follows that
+          <m>f'(c)=\varphi(c) \ge 0</m>.
+        </p>
+
+        <p>
+          Conversely, suppose that <m>f'(x) \ge 0</m> for every <m>x \in I</m>.
+          Let <m>x_1,x_2 \in I</m> with <m>x_1 \lt x_2</m>. By
+          <xref ref="thm-mean-value-theorem"/>, applied to the restriction of
+          <m>f</m> to <m>[x_1,x_2]</m>, there exists <m>c \in (x_1,x_2)</m>
+          such that
+          <me>f(x_2)-f(x_1)=f'(c)(x_2-x_1).</me>
+          Since <m>f'(c) \ge 0</m> and <m>x_2-x_1 \gt 0</m>, we have
+          <m>f(x_2)-f(x_1) \ge 0</m>. Hence <m>f(x_1) \le f(x_2)</m>, so
+          <m>f</m> is increasing on <m>I</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-positive-derivative-implies-strictly-monotone">
+      <statement>
+        <p>
+          Let <m>I</m> be an open interval, and let <m>f \colon I \to \R</m>
+          be differentiable on <m>I</m>.
+        </p>
+        <ol>
+          <li><p>If <m>f'(x) \gt 0</m> for every <m>x \in I</m>, then <m>f</m> is strictly increasing on <m>I</m>.</p></li>
+          <li><p>If <m>f'(x) \lt 0</m> for every <m>x \in I</m>, then <m>f</m> is strictly decreasing on <m>I</m>.</p></li>
+        </ol>
+      </statement>
+
+      <proof>
+        <p>
+          Again we prove only the increasing case. Let <m>x_1,x_2 \in I</m>
+          with <m>x_1 \lt x_2</m>. By <xref ref="thm-mean-value-theorem"/>,
+          there exists <m>c \in (x_1,x_2)</m> such that
+          <me>f(x_2)-f(x_1)=f'(c)(x_2-x_1).</me>
+          Since <m>f'(c) \gt 0</m> and <m>x_2-x_1 \gt 0</m>, we get
+          <m>f(x_2)-f(x_1) \gt 0</m>. Therefore <m>f</m> is strictly
+          increasing on <m>I</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <example xml:id="eg-x-cubed-increasing-flat-at-zero">
+      <statement>
+        <p>
+          The converse of
+          <xref ref="prop-positive-derivative-implies-strictly-monotone"/> is
+          false. The function <m>f(x)=x^3</m> is strictly increasing on
+          <m>\R</m>, but <m>f'(0)=0</m>.
+        </p>
+
+        <figure xml:id="fig-x-cubed-flat-at-zero">
+          <caption>The function <m>x^3</m> is strictly increasing even though its tangent is horizontal at <m>0</m>.</caption>
+          <image width="48%">
+            <shortdescription>The graph of y equals x cubed rises from left to right and has a horizontal tangent at the origin.</shortdescription>
+            <latex-image>
+\begin{tikzpicture}
+\begin{axis}[
+  width=7.4cm,
+  height=5.8cm,
+  axis lines=middle,
+  xmin=-1.5, xmax=1.5,
+  ymin=-1.8, ymax=1.8,
+  xtick={-1,0,1},
+  ytick={-1,0,1},
+  xlabel={$x$},
+  ylabel={$y$}
+]
+  \addplot[blue, thick, domain=-1.2:1.2, samples=200] {x^3};
+  \addplot[red, thick, domain=-1.2:1.2] {0};
+\end{axis}
+\end{tikzpicture}
+            </latex-image>
+          </image>
+        </figure>
+      </statement>
+    </example>
+
+    <corollary xml:id="cor-derivative-zero-implies-constant">
+      <statement>
+        <p>
+          Let <m>I</m> be an open interval, and let <m>f \colon I \to \R</m>
+          be differentiable on <m>I</m>. If <m>f'(x)=0</m> for every
+          <m>x \in I</m>, then <m>f</m> is constant on <m>I</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          By <xref ref="prop-derivative-sign-and-monotonicity"/>, <m>f</m> is
+          both increasing and decreasing on <m>I</m>. Hence <m>f</m> is
+          constant on <m>I</m>.
+        </p>
+      </proof>
+    </corollary>
+
+    <p>
+      The fact that the domain is an interval is essential here. For example,
+      define <m>f \colon (-1,0)\cup(0,1) \to \R</m> by
+      <me>f(x)=\begin{cases}
+      -1 &amp; \text{if } x \lt 0,\\
+      1 &amp; \text{if } x \gt 0.
+      \end{cases}</me>
+      Then <m>f'(x)=0</m> for every point of its domain, but <m>f</m> is not
+      constant. What remains true in general is that <m>f</m> is constant on
+      each interval component of its domain.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-derivative-tests">
+    <title>Derivative Tests for Extrema</title>
+
+    <p>
+      The sign of the derivative often reveals where extrema occur. The first
+      derivative test uses only the sign pattern of <m>f'</m>. The second
+      derivative test packages the same idea into a convenient condition at a
+      single point.
+    </p>
+
+    <proposition xml:id="prop-first-derivative-test">
+      <title>First Derivative Test</title>
+      <statement>
+        <p>
+          Let <m>c \in (a,b)</m>, and let <m>f \colon (a,b) \to \R</m> be
+          continuous on <m>(a,b)</m> and differentiable on
+          <m>(a,b)\setminus\{c\}</m>.
+        </p>
+        <ol>
+          <li>
+            <p>
+              If <m>f'(x) \ge 0</m> on <m>(a,c)</m> and <m>f'(x) \le 0</m> on
+              <m>(c,b)</m>, then <m>c</m> is a maximum point of <m>f</m> on
+              <m>(a,b)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>f'(x) \le 0</m> on <m>(a,c)</m> and <m>f'(x) \ge 0</m> on
+              <m>(c,b)</m>, then <m>c</m> is a minimum point of <m>f</m> on
+              <m>(a,b)</m>.
+            </p>
+          </li>
+        </ol>
+        <p>
+          If the inequalities are strict, then the corresponding extremum is
+          strict.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          We prove the first statement. Let <m>x \in (a,c)</m>. The function
+          <m>f</m> is continuous on <m>[x,c]</m> and differentiable on
+          <m>(x,c)</m>, so <xref ref="thm-mean-value-theorem"/> gives a point
+          <m>u_x \in (x,c)</m> such that
+          <me>f(c)-f(x)=f'(u_x)(c-x).</me>
+          Since <m>f'(u_x) \ge 0</m> and <m>c-x \gt 0</m>, we obtain
+          <m>f(c)-f(x) \ge 0</m>, that is, <m>f(x) \le f(c)</m>.
+        </p>
+
+        <p>
+          Similarly, if <m>y \in (c,b)</m>, then applying the Mean Value
+          Theorem to <m>[c,y]</m> gives <m>v_y \in (c,y)</m> such that
+          <me>f(y)-f(c)=f'(v_y)(y-c).</me>
+          Since <m>f'(v_y) \le 0</m> and <m>y-c \gt 0</m>, we get
+          <m>f(y) \le f(c)</m>. Therefore <m>f(x) \le f(c)</m> for every
+          <m>x \in (a,b)</m>, so <m>c</m> is a maximum point of <m>f</m>. The
+          strict case is identical, with <m>\ge</m> replaced by <m>\gt</m> and
+          <m>\le</m> replaced by <m>\lt</m>. The second statement follows by
+          applying the first to <m>-f</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-second-derivative-test">
+      <title>Second Derivative Test</title>
+      <statement>
+        <p>
+          Let <m>f</m> be defined on a neighborhood of <m>x_0</m>, and suppose
+          that <m>f</m> is twice differentiable at <m>x_0</m> with
+          <m>f'(x_0)=0</m>.
+        </p>
+        <ol>
+          <li><p>If <m>f''(x_0) \gt 0</m>, then <m>x_0</m> is a strict local minimum of <m>f</m>.</p></li>
+          <li><p>If <m>f''(x_0) \lt 0</m>, then <m>x_0</m> is a strict local maximum of <m>f</m>.</p></li>
+        </ol>
+      </statement>
+
+      <proof>
+        <p>
+          We prove the first statement. Apply
+          <xref ref="prop-caratheodory-criterion"/> to <m>f'</m> at
+          <m>x_0</m>. Then there exists a function <m>\psi</m>, continuous at
+          <m>x_0</m>, such that
+          <me>f'(x)-f'(x_0)=\psi(x)(x-x_0)</me>
+          for all <m>x</m> near <m>x_0</m>, and
+          <m>\psi(x_0)=f''(x_0) \gt 0</m>. Since <m>f'(x_0)=0</m>, this becomes
+          <me>f'(x)=\psi(x)(x-x_0).</me>
+        </p>
+
+        <p>
+          Because <m>\psi</m> is continuous at <m>x_0</m> and
+          <m>\psi(x_0) \gt 0</m>, there exists <m>\delta \gt 0</m> such that
+          <m>\psi(x) \gt 0</m> whenever <m>|x-x_0| \lt \delta</m>. Hence
+          <m>f'(x) \lt 0</m> on <m>(x_0-\delta,x_0)</m> and
+          <m>f'(x) \gt 0</m> on <m>(x_0,x_0+\delta)</m>. By
+          <xref ref="prop-first-derivative-test"/>, <m>x_0</m> is a strict
+          local minimum of <m>f</m>. The second statement follows by applying
+          the first to <m>-f</m>.
+        </p>
+      </proof>
+    </proposition>
+  </subsection>
+
+  <subsection xml:id="subsec-darboux-and-ftc-preview">
+    <title>Darboux and a Preview of the FTC</title>
+
+    <theorem xml:id="thm-darboux-for-derivatives">
+      <title>Darboux's Theorem</title>
+      <statement>
+        <p>
+          Let <m>f \colon [a,b] \to \R</m> be differentiable on <m>[a,b]</m>.
+          If <m>\lambda</m> lies between <m>f'(a)</m> and <m>f'(b)</m>, then
+          there exists <m>c \in (a,b)</m> such that
+          <me>f'(c)=\lambda.</me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          After replacing <m>f</m> by <m>-f</m> if necessary, we may assume
+          <m>f'(a) \lt \lambda \lt f'(b)</m>. Define
+          <me>g(x)=f(x)-\lambda x.</me>
+          Then <m>g</m> is continuous on <m>[a,b]</m> and differentiable on
+          <m>[a,b]</m>, with
+          <me>g'(a)=f'(a)-\lambda \lt 0
+            \quad\text{and}\quad
+            g'(b)=f'(b)-\lambda \gt 0.</me>
+        </p>
+
+        <p>
+          Since <m>g'(a) \lt 0</m>, by the definition of the right derivative
+          at <m>a</m> there exist points <m>x \gt a</m> arbitrarily close to
+          <m>a</m> such that
+          <me>\frac{g(x)-g(a)}{x-a} \lt 0.</me>
+          Hence <m>g(x) \lt g(a)</m> for such <m>x</m>, so <m>a</m> is not a
+          minimum point of <m>g</m> on <m>[a,b]</m>. Similarly, since
+          <m>g'(b) \gt 0</m>, there exist points <m>x \lt b</m> arbitrarily
+          close to <m>b</m> with
+          <me>\frac{g(x)-g(b)}{x-b} \gt 0,</me>
+          and because <m>x-b \lt 0</m> this implies <m>g(x) \lt g(b)</m>. So
+          <m>b</m> is not a minimum point either.
+        </p>
+
+        <p>
+          By <xref ref="thm-extreme-value-theorem"/>, <m>g</m> attains an
+          absolute minimum at some point <m>c \in [a,b]</m>. Since neither
+          endpoint can be a minimum point, we must have <m>c \in (a,b)</m>.
+          The <xref ref="prop-critical-point-theorem"/> then gives
+          <m>g'(c)=0</m>. Therefore
+          <me>f'(c)-\lambda=g'(c)=0,</me>
+          so <m>f'(c)=\lambda</m>.
+        </p>
+      </proof>
+    </theorem>
+
+    <p>
+      Darboux's theorem shows that derivatives have the intermediate value
+      property, even though derivatives need not be continuous. We now record
+      one further application of the earlier results. This final part depends
+      on the usual properties of the definite integral, which we have not yet
+      developed systematically, so it should be viewed as a preview.
+    </p>
+
+    <proposition xml:id="prop-integral-mean-value-theorem">
+      <title>Integral Mean Value Theorem</title>
+      <statement>
+        <p>
+          Assume the basic properties of the definite integral. If
+          <m>f \colon [a,b] \to \R</m> is continuous, then there exists
+          <m>c \in [a,b]</m> such that
+          <me>\int_a^b f(x)\,dx = f(c)(b-a).</me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          By <xref ref="thm-extreme-value-theorem"/>, <m>f</m> attains an
+          absolute minimum <m>m</m> and an absolute maximum <m>M</m> on
+          <m>[a,b]</m>. Hence
+          <me>m \le f(x) \le M \quad \text{for all } x \in [a,b].</me>
+          Integrating gives
+          <me>m(b-a) \le \int_a^b f(x)\,dx \le M(b-a).</me>
+          Since <m>b-a \gt 0</m>,
+          <me>m \le \frac{1}{b-a}\int_a^b f(x)\,dx \le M.</me>
+          Because <m>f</m> is continuous on <m>[a,b]</m>, the
+          <xref ref="thm-intermediate-value-theorem"/> yields some
+          <m>c \in [a,b]</m> such that
+          <me>f(c)=\frac{1}{b-a}\int_a^b f(x)\,dx.</me>
+          Multiplying by <m>b-a</m> gives the result.
+        </p>
+      </proof>
+    </proposition>
+
+    <theorem xml:id="thm-ftc-special-case">
+      <title>Fundamental Theorem of Calculus (Special Case)</title>
+      <statement>
+        <p>
+          Assume the basic properties of the definite integral. If
+          <m>f \colon [a,b] \to \R</m> is continuous and
+          <me>F(x)=\int_a^x f(t)\,dt,</me>
+          then <m>F</m> is differentiable on <m>[a,b]</m> and
+          <me>F'(x)=f(x)</me>
+          for every <m>x \in [a,b]</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Fix <m>x \in [a,b]</m>. Let <m>h \neq 0</m> be small enough that
+          <m>x+h \in [a,b]</m>. Then
+          <me>F(x+h)-F(x)=\int_x^{x+h} f(t)\,dt.</me>
+          By <xref ref="prop-integral-mean-value-theorem"/>, there exists a
+          point <m>c_h</m> between <m>x</m> and <m>x+h</m> such that
+          <me>\int_x^{x+h} f(t)\,dt = f(c_h)h.</me>
+          Therefore
+          <me>\frac{F(x+h)-F(x)}{h}=f(c_h).</me>
+        </p>
+
+        <p>
+          Since <m>c_h</m> lies between <m>x</m> and <m>x+h</m>, we have
+          <m>c_h \to x</m> as <m>h \to 0</m>. By continuity of <m>f</m>,
+          <m>f(c_h) \to f(x)</m>. Hence
+          <me>\lim_{h\to 0}\frac{F(x+h)-F(x)}{h}=f(x),</me>
+          so <m>F'(x)=f(x)</m>.
+        </p>
+      </proof>
+    </theorem>
+
+    <corollary xml:id="cor-newton-leibniz-special-case">
+      <statement>
+        <p>
+          Assume the basic properties of the definite integral. If
+          <m>f \colon [a,b] \to \R</m> is continuous and <m>G</m> is any
+          antiderivative of <m>f</m> on <m>[a,b]</m>, then
+          <me>\int_a^b f(x)\,dx = G(b)-G(a).</me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Let <m>F(x)=\int_a^x f(t)\,dt</m>. By
+          <xref ref="thm-ftc-special-case"/>, both <m>F</m> and <m>G</m> are
+          antiderivatives of <m>f</m> on <m>[a,b]</m>. Hence
+          <m>(G-F)'(x)=0</m> for every <m>x \in (a,b)</m>. By
+          <xref ref="cor-derivative-zero-implies-constant"/>, the function
+          <m>G-F</m> is constant on <m>(a,b)</m>. Since both <m>F</m> and
+          <m>G</m> are continuous on <m>[a,b]</m>, it follows that
+          <m>G-F</m> is constant on all of <m>[a,b]</m>.
+        </p>
+
+        <p>
+          Evaluating at <m>x=a</m>, we obtain
+          <me>G(a)-F(a)=G(a),</me>
+          because <m>F(a)=\int_a^a f(t)\,dt=0</m>. Therefore
+          <m>G(x)-F(x)=G(a)</m> for every <m>x \in [a,b]</m>. Setting
+          <m>x=b</m> gives
+          <me>G(b)-\int_a^b f(t)\,dt = G(a),</me>
+          and rearranging yields
+          <me>\int_a^b f(x)\,dx = G(b)-G(a).</me>
+        </p>
+      </proof>
+    </corollary>
+  </subsection>
+</section>

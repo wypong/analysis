@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-derivative"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Derivative</title>
+
+  <introduction>
+    <p>
+      Continuity says that nearby inputs produce nearby outputs. The
+      derivative asks for something more precise: whether, near a point, the
+      change in <m>f(x)</m> is approximately proportional to the change in
+      <m>x</m>. This leads to the slope of the tangent line and, more
+      importantly for analysis, to a first-order approximation of the
+      function.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-derivative-at-a-point">
+    <title>Derivative at a Point</title>
+
+    <p>
+      Let <m>S \subseteq \R</m>, let <m>f \colon S \to \R</m>, and let
+      <m>c \in S</m> be a cluster point of <m>S</m>. We say that <m>f</m> is
+      <term>differentiable at</term><idx>differentiable at a point</idx>
+      <m>c</m> if the limit
+      <me>\lim_{x\to c}\frac{f(x)-f(c)}{x-c}</me>
+      exists. In that case, this limit is called the
+      <term>derivative</term><idx>derivative</idx> of <m>f</m> at <m>c</m>
+      and is denoted by
+      <me>f'(c)=\lim_{x\to c}\frac{f(x)-f(c)}{x-c}.</me>
+    </p>
+
+    <p>
+      If <m>S</m> is an interval and <m>c</m> is an endpoint of <m>S</m>,
+      then the same definition is understood one-sidedly, using only points of
+      <m>S</m> near <m>c</m>. Thus, on <m>[a,b]</m>, differentiability at
+      <m>a</m> means the existence of the right-hand limit
+      <me>\lim_{x\to a^+}\frac{f(x)-f(a)}{x-a},</me>
+      and differentiability at <m>b</m> means the existence of the left-hand
+      limit
+      <me>\lim_{x\to b^-}\frac{f(x)-f(b)}{x-b}.</me>
+      We say that <m>f</m> is <term>differentiable on</term><idx>differentiable on an interval</idx>
+      an interval if it is differentiable at each point of the interval, with
+      this endpoint convention when needed.
+    </p>
+
+    <example xml:id="eg-derivative-of-square">
+      <statement>
+        <p>
+          The function <m>f(x)=x^2</m> is differentiable on <m>\R</m>, and
+          <m>f'(c)=2c</m> for every <m>c \in \R</m>. Indeed,
+          <me>\frac{x^2-c^2}{x-c}=x+c \to 2c
+            \quad\text{as } x\to c.</me>
+        </p>
+      </statement>
+    </example>
+
+    <example xml:id="eg-absolute-value-not-differentiable">
+      <statement>
+        <p>
+          The function <m>f(x)=|x|</m> is not differentiable at <m>0</m>.
+          For <m>x \gt 0</m>,
+          <m>(|x|-|0|)/(x-0)=1</m>, while for <m>x \lt 0</m>,
+          <m>(|x|-|0|)/(x-0)=-1</m>. Since the left and right limits are
+          different, the derivative at <m>0</m> does not exist.
+        </p>
+
+        <figure xml:id="fig-abs-not-differentiable">
+          <caption>The graph of <m>|x|</m> has a corner at <m>0</m>, so there is no single tangent slope there.</caption>
+          <image width="44%">
+            <shortdescription>The graph of y equals absolute value of x has a V-shape with vertex at the origin.</shortdescription>
+            <latex-image>
+\begin{tikzpicture}
+\begin{axis}[
+  width=7cm,
+  height=5.8cm,
+  axis lines=middle,
+  xmin=-2.2, xmax=2.2,
+  ymin=-0.4, ymax=2.4,
+  xtick={-2,-1,0,1,2},
+  ytick={0,1,2},
+  xlabel={$x$},
+  ylabel={$y$}
+]
+  \addplot[blue, thick, domain=-2:2, samples=100] {abs(x)};
+\end{axis}
+\end{tikzpicture}
+            </latex-image>
+          </image>
+        </figure>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-caratheodory-criterion">
+    <title>Carathéodory's Criterion</title>
+
+    <p>
+      The derivative is defined as a limit of quotients, but there is another
+      viewpoint that is often more flexible: differentiability at <m>c</m>
+      means that <m>f(x)-f(c)</m> factors as <m>x-c</m> times a function that
+      is continuous at <m>c</m>.
+    </p>
+
+    <proposition xml:id="prop-caratheodory-criterion">
+      <title>Carathéodory's Criterion</title>
+      <statement>
+        <p>
+          Let <m>S \subseteq \R</m>, let <m>f \colon S \to \R</m>, and let
+          <m>c \in S</m> be a cluster point of <m>S</m>. Then <m>f</m> is
+          differentiable at <m>c</m> if and only if there exists a function
+          <m>\varphi \colon S \to \R</m>, continuous at <m>c</m>, such that
+          <me>f(x)-f(c)=\varphi(x)(x-c)</me>
+          for every <m>x \in S</m>. In that case,
+          <me>\varphi(c)=f'(c).</me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          First suppose that <m>f</m> is differentiable at <m>c</m>. Define
+          <me>\varphi(x)=\begin{cases}
+          \dfrac{f(x)-f(c)}{x-c} &amp; \text{if } x \neq c,\\
+          f'(c) &amp; \text{if } x=c.
+          \end{cases}</me>
+          Then
+          <m>f(x)-f(c)=\varphi(x)(x-c)</m> for every <m>x \in S</m>. Also,
+          for <m>x \neq c</m> the definition of derivative gives
+          <me>\varphi(x)=\frac{f(x)-f(c)}{x-c} \to f'(c)=\varphi(c)
+            \quad\text{as } x\to c,</me>
+          so <m>\varphi</m> is continuous at <m>c</m>.
+        </p>
+
+        <p>
+          Conversely, suppose there exists <m>\varphi \colon S \to \R</m>,
+          continuous at <m>c</m>, such that
+          <m>f(x)-f(c)=\varphi(x)(x-c)</m> for every <m>x \in S</m>. Then for
+          <m>x \neq c</m> we have
+          <me>\frac{f(x)-f(c)}{x-c}=\varphi(x).</me>
+          Since <m>\varphi</m> is continuous at <m>c</m>, it follows that
+          <me>\lim_{x\to c}\frac{f(x)-f(c)}{x-c}
+            = \lim_{x\to c}\varphi(x)=\varphi(c).</me>
+          Hence <m>f</m> is differentiable at <m>c</m> and
+          <m>f'(c)=\varphi(c)</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-differentiable-implies-continuous">
+      <statement>
+        <p>
+          If <m>f</m> is differentiable at <m>c</m>, then <m>f</m> is
+          continuous at <m>c</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          By <xref ref="prop-caratheodory-criterion"/>, there exists
+          <m>\varphi \colon S \to \R</m>, continuous at <m>c</m>, such that
+          <me>f(x)=f(c)+\varphi(x)(x-c).</me>
+          The function <m>x \mapsto x-c</m> is continuous, so
+          <m>x \mapsto \varphi(x)(x-c)</m> is continuous at <m>c</m> by
+          <xref ref="prop-algebra-of-continuous-functions"/>. Therefore
+          <m>f</m> is continuous at <m>c</m>.
+        </p>
+      </proof>
+    </proposition>
+  </subsection>
+
+  <subsection xml:id="subsec-rules-of-differentiation">
+    <title>Rules of Differentiation</title>
+
+    <p>
+      Carathéodory's criterion is especially effective for proving the
+      differentiation rules. The point is that differentiability has been
+      converted into a factorization statement, and such factorizations are
+      easy to combine.
+    </p>
+
+    <proposition xml:id="prop-derivative-sum-product-rules">
+      <title>Sum and Product Rules</title>
+      <statement>
+        <p>
+          Let <m>S \subseteq \R</m>, let <m>f,g \colon S \to \R</m>, let
+          <m>c \in S</m>, and let <m>\alpha \in \R</m>. If <m>f</m> and
+          <m>g</m> are differentiable at <m>c</m>, then so are
+          <m>\alpha f</m>, <m>f+g</m>, and <m>fg</m>. Moreover,
+          <me>(\alpha f)'(c)=\alpha f'(c),</me>
+          <me>(f+g)'(c)=f'(c)+g'(c),</me>
+          and
+          <me>(fg)'(c)=f'(c)g(c)+f(c)g'(c).</me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          By <xref ref="prop-caratheodory-criterion"/>, there exist functions
+          <m>\varphi_f,\varphi_g \colon S \to \R</m>, both continuous at
+          <m>c</m>, such that
+          <me>f(x)-f(c)=\varphi_f(x)(x-c)
+            \quad\text{and}\quad
+            g(x)-g(c)=\varphi_g(x)(x-c).</me>
+          Also <m>\varphi_f(c)=f'(c)</m> and <m>\varphi_g(c)=g'(c)</m>.
+        </p>
+
+        <p>
+          Multiplying the first identity by <m>\alpha</m>, we get
+          <me>(\alpha f)(x)-(\alpha f)(c)=\alpha\varphi_f(x)(x-c).</me>
+          Since <m>\alpha\varphi_f</m> is continuous at <m>c</m>,
+          <xref ref="prop-caratheodory-criterion"/> shows that <m>\alpha f</m>
+          is differentiable at <m>c</m> and
+          <m>(\alpha f)'(c)=\alpha\varphi_f(c)=\alpha f'(c)</m>.
+        </p>
+
+        <p>
+          Adding the two identities gives
+          <me>(f+g)(x)-(f+g)(c)
+            =(\varphi_f(x)+\varphi_g(x))(x-c).</me>
+          Since <m>\varphi_f+\varphi_g</m> is continuous at <m>c</m>,
+          <m>f+g</m> is differentiable at <m>c</m>, and
+          <me>(f+g)'(c)=\varphi_f(c)+\varphi_g(c)=f'(c)+g'(c).</me>
+        </p>
+
+        <p>
+          For the product,
+          <me>\begin{aligned}
+          (fg)(x)-(fg)(c)
+            &amp;= g(x)(f(x)-f(c)) + f(c)(g(x)-g(c)) \\
+            &amp;= \bigl(g(x)\varphi_f(x)+f(c)\varphi_g(x)\bigr)(x-c).
+          \end{aligned}</me>
+          By <xref ref="prop-differentiable-implies-continuous"/>, <m>g</m>
+          is continuous at <m>c</m>. Therefore
+          <m>x \mapsto g(x)\varphi_f(x)+f(c)\varphi_g(x)</m> is continuous at
+          <m>c</m>. Another application of
+          <xref ref="prop-caratheodory-criterion"/> yields the product rule:
+          <me>(fg)'(c)
+            = g(c)\varphi_f(c)+f(c)\varphi_g(c)
+            = f'(c)g(c)+f(c)g'(c).</me>
+        </p>
+      </proof>
+    </proposition>
+
+    <theorem xml:id="thm-chain-rule">
+      <title>Chain Rule</title>
+      <statement>
+        <p>
+          Let <m>S,T \subseteq \R</m>, let <m>f \colon S \to T</m>, and let
+          <m>g \colon T \to \R</m>. If <m>f</m> is differentiable at
+          <m>c \in S</m> and <m>g</m> is differentiable at <m>f(c)</m>, then
+          <m>g \circ f</m> is differentiable at <m>c</m>, and
+          <me>(g \circ f)'(c)=g'(f(c))f'(c).</me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          By <xref ref="prop-caratheodory-criterion"/>, there exist functions
+          <m>\varphi \colon S \to \R</m> and <m>\psi \colon T \to \R</m> such
+          that <m>\varphi</m> is continuous at <m>c</m>,
+          <m>\psi</m> is continuous at <m>f(c)</m>, and
+          <me>f(x)-f(c)=\varphi(x)(x-c)</me>
+          for <m>x \in S</m>, while
+          <me>g(u)-g(f(c))=\psi(u)(u-f(c))</me>
+          for <m>u \in T</m>. Also
+          <m>\varphi(c)=f'(c)</m> and <m>\psi(f(c))=g'(f(c))</m>.
+        </p>
+
+        <p>
+          Substituting <m>u=f(x)</m> into the second identity gives
+          <me>\begin{aligned}
+          (g \circ f)(x)-(g \circ f)(c)
+            &amp;= \psi(f(x))(f(x)-f(c)) \\
+            &amp;= \psi(f(x))\varphi(x)(x-c).
+          \end{aligned}</me>
+          By <xref ref="prop-composition-preserves-continuity"/>,
+          <m>\psi \circ f</m> is continuous at <m>c</m>, and hence so is
+          <m>(\psi \circ f)\varphi</m>. Therefore
+          <xref ref="prop-caratheodory-criterion"/> shows that
+          <m>g \circ f</m> is differentiable at <m>c</m>, with
+          <me>(g \circ f)'(c)
+            = \psi(f(c))\varphi(c)=g'(f(c))f'(c).</me>
+        </p>
+      </proof>
+    </theorem>
+
+    <example xml:id="eg-differentiability-hypotheses-not-necessary">
+      <statement>
+        <p>
+          The hypotheses in the sum, product, and chain rules are sufficient,
+          but not necessary. For example:
+        </p>
+        <ul>
+          <li>
+            Neither <m>f(x)=|x|</m> nor <m>g(x)=-|x|</m> is differentiable at
+            <m>0</m>, but <m>f+g=0</m> is differentiable at <m>0</m>.
+          </li>
+          <li>
+            The function <m>g(x)=|x|</m> is not differentiable at <m>0</m>,
+            but <m>xg(x)=x|x|</m> is differentiable at <m>0</m>.
+          </li>
+          <li>
+            The function <m>f(x)=|x|</m> is not differentiable at <m>0</m>,
+            but if <m>h(x)=x^2</m>, then
+            <m>(h \circ f)(x)=|x|^2=x^2</m> is differentiable at <m>0</m>.
+          </li>
+        </ul>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-derivatives-of-inverse-functions">
+    <title>Derivatives of Inverse Functions</title>
+
+    <p>
+      Suppose <m>f</m> has an inverse function <m>f^{-1}</m>. Since
+      <m>f^{-1}(f(x))=x</m>, the chain rule suggests that the derivative of
+      the inverse should be the reciprocal of the derivative of <m>f</m>. The
+      next proposition makes this precise.
+    </p>
+
+    <proposition xml:id="prop-derivative-of-inverse-function">
+      <title>Derivative of an Inverse Function</title>
+      <statement>
+        <p>
+          Let <m>I,J \subseteq \R</m> be intervals, let
+          <m>f \colon I \to J</m> be a continuous bijection, and let
+          <m>x_0 \in I</m>. Suppose that <m>f</m> is differentiable at
+          <m>x_0</m> and that <m>f'(x_0)\neq 0</m>. If
+          <m>g=f^{-1}\colon J \to I</m> and <m>y_0=f(x_0)</m>, then
+          <m>g</m> is differentiable at <m>y_0</m>, and
+          <me>g'(y_0)=\frac{1}{f'(x_0)}
+            =\frac{1}{f'(g(y_0))}.</me>
+        </p>
+
+        <p>
+          If, in addition, <m>f</m> is differentiable on <m>I</m> and
+          <m>f'(x)\neq 0</m> for every <m>x \in I</m>, then <m>g</m> is
+          differentiable on <m>J</m>, and
+          <me>g'(y)=\frac{1}{f'(g(y))}
+            \qquad \text{for every } y \in J.</me>
+          If <m>f'</m> is also continuous on <m>I</m>, then <m>g'</m> is
+          continuous on <m>J</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Let <m>g=f^{-1}</m>. By
+          <xref ref="prop-injective-continuous-on-interval-has-continuous-inverse"/>,
+          the inverse <m>g</m> is continuous on <m>J</m>. By
+          <xref ref="prop-caratheodory-criterion"/>, there exists a
+          function <m>\varphi \colon I \to \R</m>, continuous at <m>x_0</m>,
+          such that
+          <me>f(x)-f(x_0)=\varphi(x)(x-x_0)
+            \qquad \text{for every } x \in I,</me>
+          and <m>\varphi(x_0)=f'(x_0)</m>.
+        </p>
+
+        <p>
+          Now let <m>y \in J</m>. Since <m>y=f(g(y))</m> and
+          <m>y_0=f(x_0)=f(g(y_0))</m>, substituting <m>x=g(y)</m> gives
+          <me>y-y_0=\varphi(g(y))(g(y)-g(y_0)).</me>
+          Because <m>g</m> is continuous at <m>y_0</m> and
+          <m>\varphi</m> is continuous at <m>x_0=g(y_0)</m>, the function
+          <m>y \mapsto \varphi(g(y))</m> is continuous at <m>y_0</m>. Also,
+          <m>\varphi(g(y_0))=\varphi(x_0)=f'(x_0)\neq 0</m>, so
+          <m>\psi(y)=1/\varphi(g(y))</m> is defined and continuous at
+          <m>y_0</m>. Therefore
+          <me>g(y)-g(y_0)=\psi(y)(y-y_0).</me>
+          Another application of
+          <xref ref="prop-caratheodory-criterion"/> shows that <m>g</m> is
+          differentiable at <m>y_0</m> and that
+          <me>g'(y_0)=\psi(y_0)=\frac{1}{\varphi(g(y_0))}
+            =\frac{1}{\varphi(x_0)}=\frac{1}{f'(x_0)}.</me>
+        </p>
+
+        <p>
+          If <m>f</m> is differentiable on <m>I</m> and <m>f'</m> never
+          vanishes there, then the same argument applies at each point
+          <m>x_0 \in I</m>. Hence <m>g</m> is differentiable on <m>J</m> and
+          satisfies <m>g'(y)=1/f'(g(y))</m> for every <m>y \in J</m>. If
+          <m>f'</m> is continuous on <m>I</m>, then <m>g</m> is continuous on
+          <m>J</m>, so <m>f' \circ g</m> is continuous on <m>J</m> by
+          <xref ref="prop-composition-preserves-continuity"/>. Since
+          <m>f'(g(y))\neq 0</m> for every <m>y \in J</m>,
+          <m>g'(y)=1/f'(g(y))</m> is continuous on <m>J</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <p>
+      The proposition explains how to differentiate an inverse once we know
+      that the inverse exists and is continuous. To guarantee this locally,
+      it is enough to assume that the derivative is continuous near the point
+      and does not vanish there.
+    </p>
+
+    <theorem xml:id="thm-single-variable-inverse-function">
+      <title>Single-Variable Inverse Function Theorem</title>
+      <statement>
+        <p>
+          Let <m>f \colon (a,b) \to \R</m> be continuously differentiable, and
+          let <m>x_0 \in (a,b)</m> satisfy <m>f'(x_0)\neq 0</m>. Then there
+          exists an open interval <m>I \subseteq (a,b)</m> containing
+          <m>x_0</m> such that the restriction <m>f|_I</m> is injective. If
+          <m>J=f(I)</m> and <m>g=(f|_I)^{-1}\colon J \to I</m>, then
+          <m>g</m> is continuously differentiable on <m>J</m> and
+          <me>g'(y)=\frac{1}{f'(g(y))}
+            \qquad \text{for every } y \in J.</me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Since <m>f'</m> is continuous at <m>x_0</m> and
+          <m>f'(x_0)\neq 0</m>, there exists an open interval
+          <m>I \subseteq (a,b)</m> containing <m>x_0</m> such that either
+          <m>f'(x)\gt 0</m> for every <m>x \in I</m> or
+          <m>f'(x)\lt 0</m> for every <m>x \in I</m>. By
+          <xref ref="prop-positive-derivative-implies-strictly-monotone"/>,
+          the restriction <m>f|_I</m> is strictly monotone, hence injective.
+        </p>
+
+        <p>
+          Because <m>f|_I</m> is continuous and <m>I</m> is an interval,
+          <m>J=f(I)</m> is also an interval. Now apply
+          <xref ref="prop-derivative-of-inverse-function"/> to the restriction
+          <m>f|_I \colon I \to J</m>. Since <m>f'</m> is continuous on
+          <m>I</m> and never vanishes on <m>I</m>, the inverse
+          <m>g \colon J \to I</m> is continuously differentiable and satisfies
+          <m>g'(y)=1/f'(g(y))</m> for all <m>y \in J</m>.
+        </p>
+      </proof>
+    </theorem>
+
+    <example xml:id="eg-inverse-function-theorem-is-local">
+      <statement>
+        <p>
+          The inverse function theorem is a local result. Let
+          <m>f(x)=x^2</m> on <m>(-2,2)</m>, and take <m>x_0=1</m>. Then
+          <m>f'(1)=2\neq 0</m>, so the theorem applies near <m>1</m>. For
+          example, on <m>I=(0,2)</m> the function is injective, and its
+          inverse is <m>g(y)=\sqrt{y}</m>. But <m>f</m> is not injective on
+          all of <m>(-2,2)</m>, since <m>f(1)=f(-1)</m>. Thus the interval
+          <m>I</m> in the theorem may have to be smaller than the original
+          domain.
+        </p>
+      </statement>
+    </example>
+
+    <example xml:id="eg-derivative-nonzero-needed-for-inverse">
+      <statement>
+        <p>
+          The condition <m>f'(x_0)\neq 0</m> cannot be omitted. The function
+          <m>f(x)=x^3</m> is a continuous bijection from <m>\R</m> onto
+          <m>\R</m>, and it is differentiable everywhere. Its inverse is
+          <m>g(y)=\sqrt[3]{y}</m>. However, <m>f'(0)=0</m>, and
+          <m>g</m> is not differentiable at <m>0</m>, because
+          <me>\frac{g(y)-g(0)}{y-0}=\frac{\sqrt[3]{y}}{y}
+            =\frac{1}{y^{2/3}}</me>
+          for <m>y\neq 0</m>, and this does not approach a finite limit as
+          <m>y \to 0</m>.
+        </p>
+      </statement>
+    </example>
+
+    <example xml:id="eg-inverse-function-theorem-needs-derivative-continuity">
+      <statement>
+        <p>
+          The continuity of <m>f'</m> near <m>x_0</m> is also important for
+          the local existence of an inverse. Define
+          <me>f(x)=\begin{cases}
+            x+x^2\sin(1/x) &amp; \text{if } x\neq 0,\\
+            0 &amp; \text{if } x=0.
+          \end{cases}</me>
+          Then <m>f</m> is differentiable at <m>0</m> and
+          <m>f'(0)=1</m>. For <m>x\neq 0</m>,
+          <me>f'(x)=1+2x\sin(1/x)-\cos(1/x).</me>
+          This derivative is not continuous at <m>0</m>.
+        </p>
+
+        <p>
+          In fact, <m>f</m> is not injective on any neighborhood of
+          <m>0</m>. For <m>n \in \N</m>, let
+          <me>a_n=\frac{1}{2\pi n+\frac{1}{2n}}
+            \qquad \text{and} \qquad
+            b_n=\frac{1}{2\pi n-\frac{1}{2n}}.</me>
+          Then <m>0 \lt a_n \lt b_n</m> and <m>a_n,b_n \to 0</m>. A Taylor
+          expansion of <m>\sin t</m> and <m>\cos t</m> at <m>t=0</m> shows
+          that, for all sufficiently large <m>n</m>,
+          <me>f'(a_n) \gt 0
+            \qquad \text{and} \qquad
+            f'(b_n) \lt 0.</me>
+          Since <m>f'</m> is continuous on the closed interval
+          <m>[a_n,b_n]</m>, the function <m>f</m> attains its maximum on that
+          interval at some interior point. Therefore <m>f</m> takes some value
+          twice on <m>[a_n,b_n]</m>. As these intervals shrink to <m>0</m>,
+          no neighborhood of <m>0</m> can be one-to-one.
+        </p>
+      </statement>
+    </example>
+
+  </subsection>
+</section>

@@ -3,4 +3,242 @@
 <section xml:id="sec-basic-properties"
   xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Basic Properties</title>
+
+  <introduction>
+    <p>
+      The definition of continuity is local and quantitative, but in practice
+      it is often convenient to test continuity using sequences. Once that
+      criterion is available, several basic permanence properties follow
+      immediately: sums, products, quotients, and compositions of continuous
+      functions are again continuous. These results will let us build large
+      classes of examples from a small stock of simple continuous functions.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-sequential-characterization-of-continuity">
+    <title>Sequential Characterization</title>
+
+    <p>
+      The following criterion replaces the <m>\varepsilon</m>-<m>\delta</m>
+      definition with a statement about images of convergent sequences. It is
+      often the most efficient way to prove that a function is continuous.
+    </p>
+
+    <proposition xml:id="prop-sequential-characterization-of-continuity">
+      <statement>
+        <p>
+          Let <m>S \subseteq \R</m>, let <m>f \colon S \to \R</m>, and let
+          <m>c \in S</m>. Then <m>f</m> is continuous at <m>c</m> if and only
+          if for every sequence <m>(x_n)</m> in <m>S</m> with
+          <m>x_n \to c</m>, we have
+          <me>f(x_n) \to f(c).</me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          First suppose that <m>f</m> is continuous at <m>c</m>, and let
+          <m>(x_n)</m> be a sequence in <m>S</m> such that <m>x_n \to c</m>.
+          Let <m>\varepsilon \gt 0</m> be given. By continuity at <m>c</m>,
+          there exists <m>\delta \gt 0</m> such that <m>|f(x)-f(c)|
+          \lt \varepsilon</m> whenever <m>x \in S</m> and <m>|x-c| \lt
+          \delta</m>. Since <m>x_n \to c</m>, <m>|x_n-c| \lt \delta</m>
+          for all but finitely many <m>n</m>. Hence <m>|f(x_n)-f(c)| \lt
+          \varepsilon</m> for all but finitely many <m>n</m>, so <m>f(x_n)
+          \to f(c)</m>.
+        </p>
+
+	<p>
+	   Conversely, assume <m>f(x_n) \to f(c)</m> for every sequence
+	   <m>(x_n)</m> in <m>S</m> that converges to <m>c</m> but <m>f</m>
+	   is not continuous at <m>c</m>. Then there exists <m>\varepsilon_0
+	   \gt 0</m> such that for every <m>n \in \N</m> there exists
+	   <m>x_n \in S</m> with <m>|x_n-c| \lt 1/n</m> and
+
+          <me>|f(x_n)-f(c)| \ge \varepsilon_0.</me>
+          
+	  Clearly, <m>x_n \to c</m>, but <m>f(x_n)</m> does not converge
+	  to <m>f(c)</m>, contradicting the hypothesis. Therefore <m>f</m>
+	  must be continuous at <m>c</m>.
+	</p>
+      </proof>
+    </proposition>
+
+    <p>
+      We will use this <term>sequential characterization of
+      continuity</term><idx>sequential characterization of continuity</idx>
+      repeatedly. Once continuity is translated into a statement about
+      convergent sequences, the usual algebraic properties of limits give
+      the corresponding algebraic properties of continuous functions.
+    </p>
+
+  </subsection>
+
+  <subsection xml:id="subsec-algebra-of-continuous-functions">
+    <title>Algebra of Continuous Functions</title>
+
+    <proposition xml:id="prop-algebra-of-continuous-functions">
+      <statement>
+	<p>
+	  Let <m>f,g \colon S \to \R</m> be continuous at <m>c \in S</m>, then
+	  so are <m>f+g</m> and <m>fg</m>.  Moreover, if <m>g(c) \neq 0</m>,
+	  then <m>1/g</m> and hence <m>f/g</m> are also continuous at <m>c</m>.
+	</p>
+      </statement>
+
+      <proof>
+        <p>
+          Pick a sequence <m>(x_n)</m> in <m>S</m> that converges to <m>c</m>.
+          Since <m>f</m> and <m>g</m> are continuous at <m>c</m>, the
+          sequential characterization gives
+          <me>f(x_n) \to f(c)
+            \quad\text{and}\quad g(x_n) \to g(c).
+          </me>
+          Therefore <xref ref="prop-limit-laws-sequences"/> implies that
+          <me>(f+g)(x_n)=f(x_n)+g(x_n) \to f(c)+g(c)=(f+g)(c)</me>
+          and
+          <me>(fg)(x_n)=f(x_n)g(x_n) \to f(c)g(c)=(fg)(c).</me>
+          Hence <m>f+g</m> and <m>fg</m> are continuous at <m>c</m>.
+        </p>
+
+        <p>
+          Now assume <m>g(c) \neq 0</m>. Since <m>g(x_n) \to g(c)</m>, we
+          have <m>g(x_n) \neq 0</m> for all sufficiently large <m>n</m>. Thus,
+          by dropping finitely many terms if necessary, we may assume
+          <m>g(x_n) \neq 0</m> for all <m>n</m>. Then the reciprocal part of
+          <xref ref="prop-limit-laws-sequences"/> gives
+          <me>\frac{1}{g(x_n)} \to \frac{1}{g(c)}.</me>
+          Thus <m>1/g</m> is continuous at <m>c</m> by the sequential
+          characterization of continuity. Applying the product result to
+          <m>f</m> and <m>1/g</m>, we conclude that <m>f/g=f(1/g)</m> is
+          continuous at <m>c</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-composition-preserves-continuity">
+      <statement>
+        <p>
+          Let <m>S,T \subseteq \R</m>, let <m>f \colon S \to T</m>, and let
+          <m>g \colon T \to \R</m>. If <m>f</m> is continuous at
+          <m>c \in S</m> and <m>g</m> is continuous at <m>f(c)</m>, then the
+          composition <m>g \circ f</m> is continuous at <m>c</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Let <m>(x_n)</m> be a sequence in <m>S</m> with <m>x_n \to c</m>.
+          Since <m>f</m> is continuous at <m>c</m>, we have
+          <m>f(x_n) \to f(c)</m>. The sequence <m>(f(x_n))</m> lies in
+          <m>T</m>, and because <m>g</m> is continuous at <m>f(c)</m>, it
+          follows that
+          <me>(g \circ f)(x_n)=g(f(x_n)) \to g(f(c))=(g \circ f)(c).</me>
+          Therefore <m>g \circ f</m> is continuous at <m>c</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <corollary xml:id="cor-polynomials-and-rational-functions-continuous">
+      <statement>
+        <p>
+          Every polynomial is continuous on <m>\R</m>, and every rational
+          function is continuous on its domain.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Constant functions and the identity function are continuous. By
+          repeated application of the preceding proposition, finite sums and
+          products of continuous functions are continuous, so every polynomial
+          is continuous on <m>\R</m>. A rational function is a quotient
+          <m>p/q</m> of two polynomials, and the quotient part of the same
+          proposition shows that <m>p/q</m> is continuous at every point where
+          <m>q \neq 0</m>.
+        </p>
+      </proof>
+    </corollary>
+  </subsection>
+
+  <subsection xml:id="subsec-consequences-of-continuity">
+    <title>Some Consequences</title>
+
+    <p>
+      Continuity does more than preserve limits under algebraic operations. It
+      also imposes rigidity: a continuous function is determined by its values
+      on a dense subset, and a nonzero value at one point forces the function
+      to keep the same sign nearby.
+    </p>
+
+    <proposition xml:id="prop-continuous-zero-on-dense-subset">
+      <statement>
+        <p>
+          Let <m>S \subseteq \R</m>, let <m>D \subseteq S</m> be dense in
+          <m>S</m>, and let <m>f \colon S \to \R</m> be continuous on
+          <m>S</m>. If <m>f(x)=0</m> for every <m>x \in D</m>, then
+          <m>f(x)=0</m> for every <m>x \in S</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Fix <m>c \in S</m>. Since <m>D</m> is dense in <m>S</m>, for each
+          <m>n \in \N</m> we may choose <m>d_n \in D</m> such that
+          <m>|d_n-c| \lt 1/n</m>. Then <m>d_n \to c</m>. Because <m>f</m> is
+          continuous at <m>c</m>, the sequential characterization gives
+          <m>f(d_n) \to f(c)</m>. But every <m>d_n</m> lies in <m>D</m>, so
+          <m>f(d_n)=0</m> for all <m>n</m>. Hence the constant sequence
+          <m>(f(d_n))</m> converges to <m>0</m>, and therefore
+          <m>f(c)=0</m>. Since <m>c</m> was arbitrary, <m>f=0</m> on
+          <m>S</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <corollary xml:id="cor-continuous-functions-agree-on-dense-subset">
+      <statement>
+        <p>
+          Let <m>S \subseteq \R</m> and let <m>D \subseteq S</m> be dense in
+          <m>S</m>. If <m>f,g \colon S \to \R</m> are continuous on <m>S</m>
+          and <m>f(x)=g(x)</m> for every <m>x \in D</m>, then
+          <m>f=g</m> on <m>S</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          The function <m>f-g</m> is continuous on <m>S</m> and vanishes on
+          <m>D</m>. By the proposition, <m>f-g=0</m> on <m>S</m>. Therefore
+          <m>f=g</m> on <m>S</m>.
+        </p>
+      </proof>
+    </corollary>
+
+    <proposition xml:id="prop-sign-preserved-near-nonzero-point">
+      <statement>
+        <p>
+          Let <m>S \subseteq \R</m>, let <m>f \colon S \to \R</m>, and let
+          <m>c \in S</m>. If <m>f</m> is continuous at <m>c</m> and
+          <m>f(c) \neq 0</m>, then there exists <m>\delta \gt 0</m> such that
+          <m>f(x)</m> has the same sign as <m>f(c)</m> whenever
+          <m>x \in S</m> and <m>|x-c| \lt \delta</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Let <m>\varepsilon = |f(c)|/2</m>. Since <m>f</m> is continuous at
+          <m>c</m>, there exists <m>\delta \gt 0</m> such that
+          <me>|f(x)-f(c)| \lt \frac{|f(c)|}{2}</me>
+          whenever <m>x \in S</m> and <m>|x-c| \lt \delta</m>. If
+          <m>f(c) \gt 0</m>, then
+          <me>f(x) \gt f(c)-\frac{|f(c)|}{2}=\frac{f(c)}{2}\gt 0.</me>
+          If <m>f(c) \lt 0</m>, then
+          <me>f(x) \lt f(c)+\frac{|f(c)|}{2}=\frac{f(c)}{2}\lt 0.</me>
+          In either case, <m>f(x)</m> has the same sign as <m>f(c)</m>.
+        </p>
+      </proof>
+    </proposition>
+  </subsection>
 </section>
