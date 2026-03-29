@@ -6,5 +6,221 @@
   <xi:include href="sec-derivative.ptx" />
   <xi:include href="sec-the-mean-value-theorem.ptx" />
   <xi:include href="sec-applications-of-differentiation.ptx" />
-  <xi:include href="sec-exercises-differentiation.ptx" />
+
+  <exercises xml:id="ex-ch5">
+    <title>Exercises</title>
+
+    <exercise xml:id="ex-differentiation-x-abs-x">
+      <statement>
+        <p>
+          Show that the function <m>f(x)=x|x|</m> is differentiable on
+          <m>\R</m>. Compute <m>f'(x)</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-differentiation-rules-hypotheses-not-necessary">
+      <statement>
+        <p>
+          Give examples of functions <m>f</m> and <m>g</m> such that neither
+          <m>f</m> nor <m>g</m> is differentiable at <m>0</m>, but:
+        </p>
+        <ol>
+          <li><p><m>f+g</m> is differentiable at <m>0</m>,</p></li>
+          <li><p><m>fg</m> is differentiable at <m>0</m>,</p></li>
+          <li><p><m>g \circ f</m> is differentiable at <m>0</m>.</p></li>
+        </ol>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-differentiation-quotient-rule">
+      <statement>
+        <p>
+          Let <m>f</m> and <m>g</m> be differentiable at <m>c</m>, and assume
+          <m>g(c)\ne 0</m>. Prove that <m>f/g</m> is differentiable at
+          <m>c</m> and that
+          <me>
+            \left(\frac{f}{g}\right)'(c)
+            =
+            \frac{f'(c)g(c)-f(c)g'(c)}{g(c)^2}.
+          </me>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-differentiation-power-rule">
+      <statement>
+        <p>
+          Use <xref ref="prop-derivative-sum-product-rules"/> and induction on
+          <m>n</m> to prove that, for every <m>n \in \N</m>, the function
+          <m>x \mapsto x^n</m> is differentiable on <m>\R</m> and satisfies
+          <me>
+            \frac{d}{dx}x^n = nx^{n-1}.
+          </me>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-differentiation-sqrt-derivative">
+      <statement>
+        <p>
+          Use <xref ref="prop-derivative-of-inverse-function"/> with
+          <m>f(x)=x^2</m> on <m>(0,\infty)</m> to prove that
+          <m>\sqrt{x}</m> is differentiable on <m>(0,\infty)</m> and that
+          <me>
+            \frac{d}{dx}\sqrt{x}=\frac{1}{2\sqrt{x}}.
+          </me>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-differentiation-local-inverses-of-square">
+      <statement>
+        <p>
+          Let <m>f(x)=x^2</m> on <m>(-2,2)</m>.
+        </p>
+        <ol>
+          <li>
+            <p>
+              Find an open interval <m>I_+</m> containing <m>1</m> such that
+              <m>f|_{I_+}</m> is injective, and describe its inverse explicitly.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find an open interval <m>I_-</m> containing <m>-1</m> such that
+              <m>f|_{I_-}</m> is injective, and describe its inverse explicitly.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use <xref ref="thm-single-variable-inverse-function"/> to compute
+              the derivative of each local inverse.
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-differentiation-rolle-hypotheses-necessary">
+      <statement>
+        <p>
+          Give two examples showing that the hypotheses in
+          <xref ref="thm-rolle"/> are necessary:
+        </p>
+        <ol>
+          <li><p>one function that is differentiable on <m>(a,b)</m> and satisfies <m>f(a)=f(b)</m>, but is not continuous on <m>[a,b]</m> and has no point <m>c \in (a,b)</m> with <m>f'(c)=0</m>;</p></li>
+          <li><p>one function that is continuous on <m>[a,b]</m> and satisfies <m>f(a)=f(b)</m>, but is not differentiable on <m>(a,b)</m> and has no point <m>c \in (a,b)</m> with <m>f'(c)=0</m>.</p></li>
+        </ol>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-differentiation-bounded-derivative-lipschitz">
+      <statement>
+        <p>
+          Let <m>f \colon [a,b] \to \R</m> be continuous on <m>[a,b]</m> and
+          differentiable on <m>(a,b)</m>. Assume that
+          <m>|f'(x)| \le M</m> for every <m>x \in (a,b)</m>. Prove that
+          <me>
+            |f(x)-f(y)| \le M|x-y|
+          </me>
+          for all <m>x,y \in [a,b]</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-differentiation-cauchy-mvt-ratio">
+      <statement>
+        <p>
+          Let <m>f,g \colon [a,b] \to \R</m> be continuous on <m>[a,b]</m> and
+          differentiable on <m>(a,b)</m>. Assume that <m>g'(x)\ne 0</m> for
+          every <m>x \in (a,b)</m>. Use
+          <xref ref="thm-cauchy-mean-value-theorem"/> to prove that there exists
+          <m>c \in (a,b)</m> such that
+          <me>
+            \frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(c)}{g'(c)}.
+          </me>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-differentiation-derivative-zero-constant-mvt">
+      <statement>
+        <p>
+          Let <m>f \colon [a,b] \to \R</m> be continuous on <m>[a,b]</m> and
+          differentiable on <m>(a,b)</m>. Prove directly from
+          <xref ref="thm-mean-value-theorem"/> that if <m>f'(x)=0</m> for every
+          <m>x \in (a,b)</m>, then <m>f</m> is constant on <m>[a,b]</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-differentiation-first-derivative-test-cubic">
+      <statement>
+        <p>
+          Use <xref ref="prop-first-derivative-test"/> to find the local
+          extrema of
+          <me>
+            f(x)=x^3-3x.
+          </me>
+          Also determine the absolute maximum and minimum of <m>f</m> on the
+          interval <m>[-2,2]</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-differentiation-second-derivative-test-quartic">
+      <statement>
+        <p>
+          Find all critical points of
+          <me>
+            f(x)=x^4-4x^2.
+          </me>
+          Use <xref ref="prop-second-derivative-test"/> where applicable to
+          classify them. If the second derivative test is inconclusive at some
+          critical point, analyze that point by another method.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-differentiation-darboux-no-zero-free-derivative">
+      <statement>
+        <p>
+          Use <xref ref="thm-darboux-for-derivatives"/> to show that there does
+          not exist a differentiable function <m>f \colon [0,1] \to \R</m> such
+          that <m>f'(0) \lt 0 \lt f'(1)</m> and
+          <m>f'(x)\ne 0</m> for every <m>x \in (0,1)</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-differentiation-integral-mean-value-zero">
+      <statement>
+        <p>
+          Assume the basic properties of the definite integral. Let
+          <m>f \colon [a,b] \to \R</m> be continuous and suppose that
+          <me>
+            \int_a^b f(x)\,dx = 0.
+          </me>
+          Prove that if <m>f(x)\ge 0</m> for every <m>x \in [a,b]</m>, then
+          there exists <m>c \in [a,b]</m> such that <m>f(c)=0</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-differentiation-ftc-zero-integral-function">
+      <statement>
+        <p>
+          Assume the basic properties of the definite integral. Let
+          <m>f \colon [a,b] \to \R</m> be continuous, and suppose that
+          <me>
+            \int_a^x f(t)\,dt = 0
+          </me>
+          for every <m>x \in [a,b]</m>. Use
+          <xref ref="thm-ftc-special-case"/> to prove that <m>f(x)=0</m> for
+          every <m>x \in [a,b]</m>.
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
 </chapter>

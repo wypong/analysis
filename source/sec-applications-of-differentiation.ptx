@@ -42,29 +42,29 @@
 
       <proof>
         <p>
-          We prove the increasing case; the decreasing case follows by applying
-          the same argument to <m>-f</m>. First suppose that <m>f</m> is
-          increasing on <m>I</m>. Fix <m>c \in I</m>. By
-          <xref ref="prop-caratheodory-criterion"/>, there exists a function
-          <m>\varphi \colon I \to \R</m>, continuous at <m>c</m>, such that
-          <me>f(x)-f(c)=\varphi(x)(x-c)</me>
-          for all <m>x \in I</m>, and <m>\varphi(c)=f'(c)</m>. For
-          <m>x \neq c</m>, monotonicity of <m>f</m> gives
-          <me>\varphi(x)=\frac{f(x)-f(c)}{x-c} \ge 0.</me>
+          We prove the increasing case; the decreasing case follows by
+          applying the same argument to <m>-f</m>. First suppose that
+          <m>f</m> is increasing on <m>I</m>. Fix <m>c \in I</m>. By
+          Carathéodory's Criterion
+          (<xref ref="prop-caratheodory-criterion"/>), there exists a function
+          <m>\varphi \colon I \to \R</m>, continuous at <m>c</m>, such
+          that <me>f(x)-f(c)=\varphi(x)(x-c)</me> for all <m>x \in I</m>,
+          and <m>\varphi(c)=f'(c)</m>. For <m>x \neq c</m>, monotonicity of
+          <m>f</m> gives <me>\varphi(x)=\frac{f(x)-f(c)}{x-c} \ge 0.</me>
           Since <m>\varphi</m> is continuous at <m>c</m>, it follows that
           <m>f'(c)=\varphi(c) \ge 0</m>.
         </p>
 
         <p>
-          Conversely, suppose that <m>f'(x) \ge 0</m> for every <m>x \in I</m>.
-          Let <m>x_1,x_2 \in I</m> with <m>x_1 \lt x_2</m>. By
-          <xref ref="thm-mean-value-theorem"/>, applied to the restriction of
-          <m>f</m> to <m>[x_1,x_2]</m>, there exists <m>c \in (x_1,x_2)</m>
-          such that
-          <me>f(x_2)-f(x_1)=f'(c)(x_2-x_1).</me>
-          Since <m>f'(c) \ge 0</m> and <m>x_2-x_1 \gt 0</m>, we have
-          <m>f(x_2)-f(x_1) \ge 0</m>. Hence <m>f(x_1) \le f(x_2)</m>, so
-          <m>f</m> is increasing on <m>I</m>.
+          Conversely, suppose that <m>f'(x) \ge 0</m> for every <m>x
+          \in I</m>.  Let <m>x_1,x_2 \in I</m> with <m>x_1 \lt x_2</m>. By
+          the Mean Value Theorem (<xref ref="thm-mean-value-theorem"/>),
+          applied to the restriction of <m>f</m> to <m>[x_1,x_2]</m>, there
+          exists <m>c \in (x_1,x_2)</m> such that
+          <me>f(x_2)-f(x_1)=f'(c)(x_2-x_1).</me> Since <m>f'(c)
+          \ge 0</m> and <m>x_2-x_1 \gt 0</m>, we have <m>f(x_2)-f(x_1) \ge
+          0</m>. Hence <m>f(x_1) \le f(x_2)</m>, so <m>f</m> is increasing
+          on <m>I</m>.
         </p>
       </proof>
     </proposition>
@@ -84,8 +84,9 @@
       <proof>
         <p>
           Again we prove only the increasing case. Let <m>x_1,x_2 \in I</m>
-          with <m>x_1 \lt x_2</m>. By <xref ref="thm-mean-value-theorem"/>,
-          there exists <m>c \in (x_1,x_2)</m> such that
+          with <m>x_1 \lt x_2</m>. By the Mean Value Theorem
+          (<xref ref="thm-mean-value-theorem"/>), there exists
+          <m>c \in (x_1,x_2)</m> such that
           <me>f(x_2)-f(x_1)=f'(c)(x_2-x_1).</me>
           Since <m>f'(c) \gt 0</m> and <m>x_2-x_1 \gt 0</m>, we get
           <m>f(x_2)-f(x_1) \gt 0</m>. Therefore <m>f</m> is strictly
@@ -205,7 +206,8 @@
         <p>
           We prove the first statement. Let <m>x \in (a,c)</m>. The function
           <m>f</m> is continuous on <m>[x,c]</m> and differentiable on
-          <m>(x,c)</m>, so <xref ref="thm-mean-value-theorem"/> gives a point
+          <m>(x,c)</m>, so the Mean Value Theorem
+          (<xref ref="thm-mean-value-theorem"/>) gives a point
           <m>u_x \in (x,c)</m> such that
           <me>f(c)-f(x)=f'(u_x)(c-x).</me>
           Since <m>f'(u_x) \ge 0</m> and <m>c-x \gt 0</m>, we obtain
@@ -242,8 +244,8 @@
 
       <proof>
         <p>
-          We prove the first statement. Apply
-          <xref ref="prop-caratheodory-criterion"/> to <m>f'</m> at
+          We prove the first statement. Apply Carathéodory's Criterion
+          (<xref ref="prop-caratheodory-criterion"/>) to <m>f'</m> at
           <m>x_0</m>. Then there exists a function <m>\psi</m>, continuous at
           <m>x_0</m>, such that
           <me>f'(x)-f'(x_0)=\psi(x)(x-x_0)</me>
@@ -257,17 +259,17 @@
           <m>\psi(x_0) \gt 0</m>, there exists <m>\delta \gt 0</m> such that
           <m>\psi(x) \gt 0</m> whenever <m>|x-x_0| \lt \delta</m>. Hence
           <m>f'(x) \lt 0</m> on <m>(x_0-\delta,x_0)</m> and
-          <m>f'(x) \gt 0</m> on <m>(x_0,x_0+\delta)</m>. By
-          <xref ref="prop-first-derivative-test"/>, <m>x_0</m> is a strict
-          local minimum of <m>f</m>. The second statement follows by applying
-          the first to <m>-f</m>.
+          <m>f'(x) \gt 0</m> on <m>(x_0,x_0+\delta)</m>. By the First
+          Derivative Test (<xref ref="prop-first-derivative-test"/>),
+          <m>x_0</m> is a strict local minimum of <m>f</m>. The second
+          statement follows by applying the first to <m>-f</m>.
         </p>
       </proof>
     </proposition>
   </subsection>
 
   <subsection xml:id="subsec-darboux-and-ftc-preview">
-    <title>Darboux and a Preview of the FTC</title>
+    <title>Darboux's Theorem and a Preview of the FTC</title>
 
     <theorem xml:id="thm-darboux-for-derivatives">
       <title>Darboux's Theorem</title>
@@ -281,40 +283,49 @@
       </statement>
 
       <proof>
+	<p>
+	  Replacing <m>f</m> by <m>x \mapsto f(x)-\lambda x</m>, it suffices
+	  to prove the theorem in the case <m>\lambda=0</m>. Replacing
+	  <m>f</m> by <m>-f</m> if necessary, we may further assume that
+	  <m>f'(a) \lt 0 \lt f'(b)</m>.
+	</p>
+
         <p>
-          After replacing <m>f</m> by <m>-f</m> if necessary, we may assume
-          <m>f'(a) \lt \lambda \lt f'(b)</m>. Define
-          <me>g(x)=f(x)-\lambda x.</me>
-          Then <m>g</m> is continuous on <m>[a,b]</m> and differentiable on
-          <m>[a,b]</m>, with
-          <me>g'(a)=f'(a)-\lambda \lt 0
-            \quad\text{and}\quad
-            g'(b)=f'(b)-\lambda \gt 0.</me>
+	  Since <m>f</m> is differentiable at <m>a</m>, Carathéodory's
+	  Criterion (<xref ref="prop-caratheodory-criterion"/>) gives a
+	  function <m>\varphi_a</m>, continuous at <m>a</m>, such that
+	  <me>
+	    f(x)-f(a)=\varphi_a(x)(x-a)
+	  </me>
+	  for all <m>x \in [a,b]</m>, with <m>\varphi_a(a)=f'(a) \lt 0</m>.
+	  Hence <m>\varphi_a(x) \lt 0</m> for all <m>x \gt a</m> sufficiently
+	  close to <m>a</m>. Since also <m>x-a \gt 0</m>, it follows that
+	  <m>f(x)-f(a) \lt 0</m> for such <m>x</m>. Therefore <m>a</m> is not
+	  a minimum point of <m>f</m> on <m>[a,b]</m>.
         </p>
 
         <p>
-          Since <m>g'(a) \lt 0</m>, by the definition of the right derivative
-          at <m>a</m> there exist points <m>x \gt a</m> arbitrarily close to
-          <m>a</m> such that
-          <me>\frac{g(x)-g(a)}{x-a} \lt 0.</me>
-          Hence <m>g(x) \lt g(a)</m> for such <m>x</m>, so <m>a</m> is not a
-          minimum point of <m>g</m> on <m>[a,b]</m>. Similarly, since
-          <m>g'(b) \gt 0</m>, there exist points <m>x \lt b</m> arbitrarily
-          close to <m>b</m> with
-          <me>\frac{g(x)-g(b)}{x-b} \gt 0,</me>
-          and because <m>x-b \lt 0</m> this implies <m>g(x) \lt g(b)</m>. So
-          <m>b</m> is not a minimum point either.
-        </p>
+	  A similar argument at <m>b</m> shows that <m>b</m> is not a minimum
+	  point either. Indeed, Carathéodory's Criterion gives a function
+	  <m>\varphi_b</m>, continuous at <m>b</m>, such that
+	  <me>
+	    f(x)-f(b)=\varphi_b(x)(x-b)
+	  </me>
+	  for all <m>x \in [a,b]</m>, with <m>\varphi_b(b)=f'(b) \gt 0</m>.
+	  Thus <m>\varphi_b(x) \gt 0</m> for all <m>x \lt b</m> sufficiently
+	  close to <m>b</m>. Since then <m>x-b \lt 0</m>, we obtain
+	  <m>f(x)-f(b) \lt 0</m>. Hence <m>b</m> is not a minimum point of
+	  <m>f</m>.
+	</p>
 
-        <p>
-          By <xref ref="thm-extreme-value-theorem"/>, <m>g</m> attains an
-          absolute minimum at some point <m>c \in [a,b]</m>. Since neither
-          endpoint can be a minimum point, we must have <m>c \in (a,b)</m>.
-          The <xref ref="prop-critical-point-theorem"/> then gives
-          <m>g'(c)=0</m>. Therefore
-          <me>f'(c)-\lambda=g'(c)=0,</me>
-          so <m>f'(c)=\lambda</m>.
-        </p>
+	<p>
+	  By the Extreme Value Theorem (<xref
+	  ref="thm-extreme-value-theorem"/>), <m>f</m> attains its
+	  minimum value at some point <m>c \in [a,b]</m>. Thus, we must
+	  have <m>c \in (a,b)</m>. The Critical Point Theorem (<xref
+	  ref="prop-critical-point-theorem"/>) then gives <m>f'(c)=0</m>, as
+	  required.
+	</p>
       </proof>
     </theorem>
 
@@ -339,7 +350,8 @@
 
       <proof>
         <p>
-          By <xref ref="thm-extreme-value-theorem"/>, <m>f</m> attains an
+          By the Extreme Value Theorem
+          (<xref ref="thm-extreme-value-theorem"/>), <m>f</m> attains an
           absolute minimum <m>m</m> and an absolute maximum <m>M</m> on
           <m>[a,b]</m>. Hence
           <me>m \le f(x) \le M \quad \text{for all } x \in [a,b].</me>
@@ -348,7 +360,8 @@
           Since <m>b-a \gt 0</m>,
           <me>m \le \frac{1}{b-a}\int_a^b f(x)\,dx \le M.</me>
           Because <m>f</m> is continuous on <m>[a,b]</m>, the
-          <xref ref="thm-intermediate-value-theorem"/> yields some
+          Intermediate Value Theorem
+          (<xref ref="thm-intermediate-value-theorem"/>) yields some
           <m>c \in [a,b]</m> such that
           <me>f(c)=\frac{1}{b-a}\int_a^b f(x)\,dx.</me>
           Multiplying by <m>b-a</m> gives the result.
@@ -374,7 +387,8 @@
           Fix <m>x \in [a,b]</m>. Let <m>h \neq 0</m> be small enough that
           <m>x+h \in [a,b]</m>. Then
           <me>F(x+h)-F(x)=\int_x^{x+h} f(t)\,dt.</me>
-          By <xref ref="prop-integral-mean-value-theorem"/>, there exists a
+          By the Integral Mean Value Theorem
+          (<xref ref="prop-integral-mean-value-theorem"/>), there exists a
           point <m>c_h</m> between <m>x</m> and <m>x+h</m> such that
           <me>\int_x^{x+h} f(t)\,dt = f(c_h)h.</me>
           Therefore
@@ -395,34 +409,40 @@
       <statement>
         <p>
           Assume the basic properties of the definite integral. If
-          <m>f \colon [a,b] \to \R</m> is continuous and <m>G</m> is any
+          <m>f \colon [a,b] \to \R</m> is continuous and <m>F</m> is any
           antiderivative of <m>f</m> on <m>[a,b]</m>, then
-          <me>\int_a^b f(x)\,dx = G(b)-G(a).</me>
+          <me>\int_a^b f(x)\,dx = F(b)-F(a).</me>
         </p>
       </statement>
 
       <proof>
         <p>
-          Let <m>F(x)=\int_a^x f(t)\,dt</m>. By
-          <xref ref="thm-ftc-special-case"/>, both <m>F</m> and <m>G</m> are
-          antiderivatives of <m>f</m> on <m>[a,b]</m>. Hence
-          <m>(G-F)'(x)=0</m> for every <m>x \in (a,b)</m>. By
-          <xref ref="cor-derivative-zero-implies-constant"/>, the function
-          <m>G-F</m> is constant on <m>(a,b)</m>. Since both <m>F</m> and
-          <m>G</m> are continuous on <m>[a,b]</m>, it follows that
-          <m>G-F</m> is constant on all of <m>[a,b]</m>.
+          Let <m>F_a(x)=\int_a^x f(t)\,dt</m>. By the Fundamental Theorem
+          of Calculus (Special Case) (<xref ref="thm-ftc-special-case"/>),
+          both <m>F</m> and <m>F_a</m> are antiderivatives of <m>f</m>
+          on <m>[a,b]</m>. Hence <m>(F-F_a)'(x)=0</m> for every <m>x \in
+          (a,b)</m>. By <xref ref="cor-derivative-zero-implies-constant"/>,
+          the function <m>F-F_a</m> is constant on <m>(a,b)</m>. Since both
+          <m>F_a</m> and <m>F</m> are continuous on <m>[a,b]</m>, it follows
+          that <m>F-F_a</m> is constant on all of <m>[a,b]</m>.
         </p>
 
-        <p>
-          Evaluating at <m>x=a</m>, we obtain
-          <me>G(a)-F(a)=G(a),</me>
-          because <m>F(a)=\int_a^a f(t)\,dt=0</m>. Therefore
-          <m>G(x)-F(x)=G(a)</m> for every <m>x \in [a,b]</m>. Setting
-          <m>x=b</m> gives
-          <me>G(b)-\int_a^b f(t)\,dt = G(a),</me>
-          and rearranging yields
-          <me>\int_a^b f(x)\,dx = G(b)-G(a).</me>
-        </p>
+	<p>
+	  Evaluating at <m>x=a</m>, we obtain
+	  <me>
+	    F(a)-F_a(a)=F(a),
+	  </me>
+	  because <m>F_a(a)=\int_a^a f(t)\,dt=0</m>. Therefore
+	  <m>F(x)-F_a(x)=F(a)</m> for every <m>x \in [a,b]</m>. Setting
+	  <m>x=b</m> gives
+	  <me>
+	    F(b)-\int_a^b f(t)\,dt = F(a),
+	  </me>
+	  and rearranging yields
+	  <me>
+	    \int_a^b f(x)\,dx = F(b)-F(a).
+	  </me>
+	</p>
       </proof>
     </corollary>
   </subsection>

@@ -112,12 +112,12 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
   </theorem>
 
   <p>
-    In fact, we proved a stronger statement: every bounded sequence contains a
-    subsequence that converges to its limit superior, and likewise a
-    subsequence that converges to its limit inferior. With a slight
-    modification of the proof, one can also show that if a sequence is not
-    bounded above (respectively, below), then it has a subsequence that
-    diverges to <m>+\infty</m> (respectively, <m>-\infty</m>).
+    In fact, we proved a stronger statement: every bounded sequence
+    contains a subsequence that converges to its limit superior, and
+    likewise a subsequence that converges to its limit inferior. With a
+    slight modification of the proof, one can also show that if a sequence
+    is not bounded above (respectively, below), then it has a subsequence
+    that diverges to <m>+\infty</m> (respectively, <m>-\infty</m>).
   </p>
 
   <proposition xml:id="prop-subsequence-liminf-limsup-inequalities">
@@ -176,6 +176,67 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       </p>
     </proof>
   </proposition>
+
+  <p>
+      The follow application of the Bolzano-Weierstrass theorem will be used
+      in our discussion of convergence tests for series later.
+  </p>
+  <theorem xml:id="thm-root-ratio-limsup-inequality">
+    <statement>
+      <p>
+        Let <m>(x_n)</m> be a sequence of nonzero real numbers. Then
+        
+	<me> \liminf \left|\frac{x_{n+1}}{x_n}\right| \le \liminf |x_n|^{1/n}
+	\le \limsup |x_n|^{1/n} \le
+	  \limsup \left|\frac{x_{n+1}}{x_n}\right|.
+	</me>
+      
+	</p>
+    </statement>
+
+    <proof>
+      <p>
+        The middle inequality is trivial. We will proof the right inequality.
+	The left inequality has a similar proof, left as exercise. Let
+
+        <me>
+          L := \limsup_n \left|\frac{x_{n+1}}{x_n}\right|
+          \qquad\text{and}\qquad
+          s := \limsup_n |x_n|^{1/n}.
+        </me>
+        If <m>L = +\infty</m>, then the inequality is automatic, so assume
+        that <m>L</m> is finite.
+      </p>
+
+      <p>
+        Let <m>L' \gt L</m>. By the definition of limit superior, there
+        exists <m>N\in\N</m> such that
+        <me>
+          \left|\frac{x_{n+1}}{x_n}\right| \lt L'
+        </me>
+        for every <m>n\ge N</m>. So by dropping finitely many terms, we can
+	assume the above inequality holds for every <m>n</m>. Thus, for every
+	<m>n \gt 1</m>,
+        
+	<me>
+	  \left| \frac{x_{n}}{x_1}\right| = \left| \frac{x_{n}}{x_n-1}\right|
+	  \cdots \left| \frac{x_{2}}{x_1}\right| \lt (L')^{n-1}.
+	</me> and so <me> |x_n|^{1/n} \lt c_n:=(L')^{1-1/n}|x_1|^{1/n}.  </me>
+      </p> 
+
+      <p>
+	 Thus, since <m>c_n = L' \left( \frac{|x_1|}{L'} \right)^{1/n}</m>,
+	 <xref ref="prop-nth-root-sequence-test"/> implies that <m>c_n \to
+	 L'</m>. Hence <m>(|x_n|^{1/n})</m> is a bounded sequence
+	 and so, by the Bolzano-Weierstrass theorem, contains a subsequence
+	 <m>(|x_{n_k}|^{1/n_k})</m> the converges to <m>s</m>. Finally,
+	 since <me>
+	       |x_{n_k}|^{1/n_k} \le c_{n_k}
+	 </me> for each <m>k</m>, letting <m>k \to \infty</m>, we conclude
+	 that <m>s \lt L'</m>.
+      </p>
+    </proof>
+  </theorem>
 
   <p>
     We conclude this section with a proof of the Bolzano-Weierstrass theorem

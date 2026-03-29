@@ -192,8 +192,12 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
     </proposition>
 
     <p>
-      Another important notion is <term>absolute convergence</term><idx>absolute
-      convergence</idx>.
+      For series with non-negative terms, convergence and absolute
+      convergence mean the same thing. In general, absolute convergence
+      implies convergence. The converse is false, since there are
+      conditionally convergent
+      series, for example the alternating series <m>\sum (-1)^{n+1}
+      1/n</m> (<xref ref="eg-alternating-harmonic-series"/>).
     </p>
 
     <proposition xml:id="prop-absolute-convergence-implies-convergence">
@@ -233,8 +237,8 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Comparison Tests</title>
 
     <p>
-      The first comparison tool is the <term>comparison test</term><idx>comparison
-      test for series</idx>.
+      The first comparison tool is the <term>comparison
+      test</term><idx>comparison test for series</idx>.
     </p>
 
     <proposition xml:id="prop-comparison-test-series">
@@ -425,8 +429,10 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
     </p>
 
     <p>
-      The <term>root test</term><idx>root test for series</idx> is often more
-      convenient when the <m>n</m>-th power is explicit.
+      The <term>root test</term><idx>root test for series</idx> provides
+      another way of comparing a series with a geometric series. It is often
+      more convenient when an explicit <m>n</m>-th power appears in the
+      terms.
     </p>
 
     <proposition xml:id="prop-root-test-series">
@@ -443,38 +449,35 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       </statement>
 
       <proof>
-	<p> Suppose <m>L&lt;1</m>, then for some <m>N</m> sufficiently
-	large, 
+	<p>
+	  Suppose <m>L&lt;1</m>. Then for some <m>N</m>,
 	<me>
 	      \sup_{n \ge N} |x_n|^{1/n} &lt; r := \frac{1+L}{2} &lt; 1.
 	</me> 
 
-	That means <m>|x_n| &lt; r</m> for all sufficiently large
-	<m>n</m>.  Since <m>0 &lt; r &lt; 1, \sum r^n</m> converges and,
-	by the comparison test, so does <m>\sum |x_n|</m>.
+	  That means <m>|x_n| &lt; r^n</m> for all <m>n \ge N</m>. Since
+	  <m>0 &lt; r &lt; 1</m>, the geometric series <m>\sum r^n</m>
+	  converges, and by the comparison test so does <m>\sum |x_n|</m>.
 	</p>
 
         <p>
-	Now suppose <m>L&gt;1</m>. Then for all sufficiently large <m>N</m>,
-
+	  Now suppose <m>L&gt;1</m>, and let <m>r := (1+L)/2</m>. Then
+	  <m>r&gt;1</m>. By the definition of limit superior, for every
+	  <m>N</m>,
 	<me>
-              \sup_{n \ge N} |x_n|^{1/n} &gt; r := \frac{1+L}{2} &gt; 1.
+              \sup_{n \ge N} |x_n|^{1/n} \ge r.
 	</me>
 	
-	Thus, <m>1</m> is not an upper bound of the set <m>\{|x_n|^{1/n}
-	\colon n \ge N\}</m>. And so there exists <m>n \ge N</m> such that
-	<m>|x_n|^{1/n} &gt; r</m>. That means <me>
-	   |x_n| &gt; r^n &gt; 1
+	  Hence for every <m>N</m> there exists <m>n \ge N</m> such that
+	  <m>|x_n|^{1/n} \ge r</m>. Therefore <me>
+	   |x_n| \ge r^n \ge 1
 	</me> for infinitely many <m>n</m>. As a result <m>(x_n)</m> cannot
-	be a null sequence and <m>\sum x_n</m> is divergent by
+	be a null sequence, and <m>\sum x_n</m> diverges by
 	  <xref ref="prop-divergence-test-series"/>.
 	</p>
       </proof>
     </proposition>
-
-    <p> Later, we will see that the Root Test is strictly more powerful than
-    the Ratio Test.  </p>
-    
+   
     <example xml:id="eg-root-test-series-nth-power">
       <statement>
         <p>
@@ -501,6 +504,57 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       <m>\sum 1/n</m> diverges while <m>\sum 1/n^2</m> converges, but both
       satisfy <m>\lim |x_n|^{1/n}=1</m>.
     </p>
+
+    <p>
+      Since <xref ref="thm-root-ratio-limsup-inequality"/> implies that
+      if <m>\lim |x_{n+1}|/|x_n|</m> exists, then
+      <m>\limsup |x_n|^{1/n} = \lim |x_{n+1}|/|x_n|</m>, the root test is
+      at least as strong as the ratio test.
+      The following example shows that it is strictly stronger.
+    </p>
+
+    <example xml:id="eg-root-test-stronger-than-ratio-test">
+      <statement>
+        <p>
+          The root test can succeed even when the ratio test fails. Consider
+          the series <me>
+            \sum_{n=1}^{\infty} x_n,
+          </me>
+          where
+          <me>
+            x_n =
+            \begin{cases}
+              2^{-n}, &amp; \text{if } n \text{ is even},\\
+              3^{-n}, &amp; \text{if } n \text{ is odd}.
+            \end{cases}
+          </me>
+          Then
+          <me>
+            |x_n|^{1/n} =
+            \begin{cases}
+              1/2, &amp; \text{if } n \text{ is even},\\
+              1/3, &amp; \text{if } n \text{ is odd},
+            \end{cases}
+          </me>
+          so <m>\limsup |x_n|^{1/n} = 1/2 &lt; 1</m>. Hence the root test
+          shows that <m>\sum x_n</m> converges absolutely.
+        </p>
+
+        <p>
+          On the other hand,
+          <me>
+            \frac{x_{n+1}}{x_n} =
+            \begin{cases}
+              2^n/3^{n+1}, &amp; \text{if } n \text{ is even},\\
+              3^n/2^{n+1}, &amp; \text{if } n \text{ is odd},
+            \end{cases}
+          </me>
+          so one subsequence tends to <m>0</m> and the other tends to
+          <m>+\infty</m>. Therefore <m>(x_{n+1}/x_n)</m> has no limit, and
+          the ratio test does not apply.
+        </p>
+      </statement>
+    </example>
   </subsection>
 
   <subsection xml:id="subsec-series-alternating">
@@ -512,15 +566,12 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
     </p>
 
     <proposition xml:id="prop-alternating-series-test">
-      <title>Alternating Series Test</title>
-      <statement>
+      <title>Alternating Series Test</title> <statement>
         <p>
-          Suppose <m>x_n\ge 0</m> for all <m>n</m>, the sequence <m>(x_n)</m> is
-          decreasing, and <m>x_n\to 0</m>. Then the alternating series
-          <me>
+          Suppose <m>x_n\ge 0</m> for all <m>n</m>, the sequence <m>(x_n)</m>
+          is decreasing, and <m>x_n\to 0</m>. Then the alternating series <me>
             \sum_{n=1}^\infty (-1)^{n+1}x_n
-          </me>
-          converges.
+          </me> converges.
         </p>
       </statement>
 
