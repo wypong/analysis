@@ -18,6 +18,25 @@
     Keith G. Binmore, <title>Mathematical Analysis: A Straightforward Approach</title>.
   </biblio>
 
+  <biblio xml:id="biblio-boas-primer" type="raw">
+    Robert P. Boas, Jr. and Harold P. Boas, <title>A Primer of Real Functions</title>.
+  </biblio>
+
+  <biblio xml:id="biblio-besenyei-borel" type="raw">
+    Adam Besenyei, <title>Peano's Unnoticed Proof of Borel's Theorem</title>,
+    <pubtitle>The American Mathematical Monthly</pubtitle>, 121 (2014), 69-72.
+    <url href="https://doi.org/10.4169/amer.math.monthly.121.01.069">Article link</url>.
+  </biblio>
+
+  <biblio xml:id="biblio-eom-borel-theorem" type="raw">
+    <title>Borel theorem</title>, <pubtitle>Encyclopedia of Mathematics</pubtitle>.
+    <url href="https://encyclopediaofmath.org/wiki/Borel_theorem">Online reference</url>.
+  </biblio>
+
+  <biblio xml:id="biblio-bartle-sherbert" type="raw">
+    Robert G. Bartle and Donald R. Sherbert, <title>Introduction to Real Analysis</title>.
+  </biblio>
+
   <biblio xml:id="biblio-garrett-csb" type="raw">
     Paul Garrett, <title>A Proof of the Cantor-Schroeder-Bernstein Theorem</title>.
     <url href="https://www-users.cse.umn.edu/~garrett/m/algebra/cantor_schroeder_bernstein.pdf">Online lecture note</url>.

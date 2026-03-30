@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-power-series-radius"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Power Series and Radius of Convergence</title>
+
+  <introduction>
+    <p>
+      A power series is a series whose terms are powers of <m>x-x_0</m>. The
+      root test from <xref ref="prop-root-test-series"/> shows that such
+      series have much more rigid convergence behavior than an arbitrary
+      series: there is always a single radius inside which the series
+      converges absolutely and outside which it diverges.
+    </p>
+  </introduction>
+
+  <p>
+    A <term>power series</term><idx>power series</idx> centered at
+    <m>x_0 \in \R</m> is a series of the form
+    <me>
+      \sum_{n=0}^\infty a_n(x-x_0)^n.
+    </me>
+    It always converges at the center <m>x=x_0</m>. If it converges at some
+    point <m>x \ne x_0</m>, we call it a
+    <term>convergent power series</term>; otherwise it is a
+    <term>divergent power series</term>.
+  </p>
+
+  <example xml:id="eg-power-series-radii">
+    <statement>
+      <p>
+        Every radius of convergence can occur.
+      </p>
+      <ol>
+        <li>
+          <p>
+            The series
+            <me>
+              \sum_{n=0}^\infty n!x^n
+            </me>
+            has radius of convergence <m>0</m>. Indeed,
+            <m>(n!)^{1/n}\to \infty</m> because
+            <m>n! \ge (n/2)^{n/2}</m> for large <m>n</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The geometric series
+            <me>
+              \sum_{n=0}^\infty x^n
+            </me>
+            has radius of convergence <m>1</m> by
+            <xref ref="prop-geometric-series"/>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The exponential series
+            <me>
+              \sum_{n=0}^\infty \frac{x^n}{n!}
+            </me>
+            has radius of convergence <m>\infty</m>, because the ratio test
+            gives
+            <me>
+              \frac{|x|^{n+1}/(n+1)!}{|x|^n/n!}=\frac{|x|}{n+1}\to 0
+            </me>
+            for every <m>x \in \R</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </example>
+
+  <theorem xml:id="thm-radius-of-convergence">
+    <title>Radius of Convergence</title>
+    <statement>
+      <p>
+        Let
+        <me>
+          \sum_{n=0}^\infty a_n(x-x_0)^n
+        </me>
+        be a power series. Then there exists a number
+        <m>R \in [0,\infty]</m> such that:
+      </p>
+      <ol>
+        <li><p>the series converges absolutely for every <m>x</m> with <m>|x-x_0| &lt; R</m>,</p></li>
+        <li><p>the series diverges for every <m>x</m> with <m>|x-x_0| &gt; R</m>.</p></li>
+      </ol>
+      <p>
+        Moreover,
+        <me>
+          R=\frac{1}{\limsup |a_n|^{1/n}},
+        </me>
+        with the conventions <m>1/\infty=0</m> and <m>1/0=\infty</m>.
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Fix <m>x \in \R</m> and apply the root test to the series
+        <me>
+          \sum_{n=0}^\infty a_n(x-x_0)^n.
+        </me>
+        Since
+        <me>
+          \limsup |a_n(x-x_0)^n|^{1/n}
+          =
+          |x-x_0| \limsup |a_n|^{1/n},
+        </me>
+        the root test shows that the series converges absolutely when this
+        quantity is less than <m>1</m> and diverges when it is greater than
+        <m>1</m>. Defining <m>R</m> by the displayed formula gives the
+        result.
+      </p>
+    </proof>
+  </theorem>
+
+  <p>
+    The number <m>R</m> is called the
+    <term>radius of convergence</term><idx>radius of convergence</idx> of the
+    power series. The interval
+    <me>
+      (x_0-R,x_0+R)
+    </me>
+    is called its <term>interval of convergence</term><idx>interval of
+    convergence</idx>. The theorem says nothing about the boundary points
+    <m>x_0-R</m> and <m>x_0+R</m>; these must be checked separately.
+  </p>
+
+  <example xml:id="eg-power-series-endpoint-behavior">
+    <statement>
+      <p>
+        Boundary behavior can vary even when the radius of convergence is the
+        same. Each of the following power series has radius <m>1</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>\sum_{n=0}^\infty x^n</m> diverges at both endpoints
+            <m>x=\pm 1</m> by <xref ref="prop-geometric-series"/>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sum_{n=1}^\infty x^n/n</m> diverges at <m>x=1</m> by the
+            <m>p</m>-series test (<xref ref="prop-p-series-test"/>) but
+            converges at <m>x=-1</m> by the alternating series test
+            (<xref ref="prop-alternating-series-test"/>).
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sum_{n=1}^\infty x^n/n^2</m> converges absolutely at both
+            endpoints by <xref ref="prop-p-series-test"/>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </example>
+
+  <p>
+    By translating the variable, one may often reduce questions about a power
+    series centered at <m>x_0</m> to a power series centered at <m>0</m>. For
+    that reason, many examples below are written in the simpler form
+    <m>\sum a_nx^n</m>.
+  </p>
+</section>

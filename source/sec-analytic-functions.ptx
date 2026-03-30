@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-analytic-functions"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Analytic Functions</title>
+
+  <p>
+    A function <m>f</m> is said to be <term>analytic at</term><idx>analytic
+    at a point</idx> <m>x_0</m> if there exists a power series
+    <me>
+      \sum_{n=0}^\infty a_n(x-x_0)^n
+    </me>
+    that converges to <m>f(x)</m> on some open interval containing
+    <m>x_0</m>. We say that <m>f</m> is <term>analytic on</term><idx>analytic
+    on an open set</idx> an open set <m>U \subseteq \R</m> if it is analytic
+    at every point of <m>U</m>.
+  </p>
+
+  <p>
+    Thus analytic functions are exactly those functions that locally agree
+    with power series. The next result shows that such a representation, if it
+    exists, is forced to be the Taylor series.
+  </p>
+
+  <theorem xml:id="thm-analytic-functions-unique-taylor-series">
+    <title>Analytic Functions Are Given by Their Taylor Series</title>
+    <statement>
+      <p>
+        Suppose <m>f</m> is analytic at <m>x_0</m>. Then <m>f</m> is
+        infinitely differentiable on some neighborhood of <m>x_0</m>, and
+        there exists <m>r&gt;0</m> such that
+        <me>
+          f(x)=\sum_{n=0}^\infty \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n
+          \qquad \text{for } |x-x_0|&lt;r.
+        </me>
+        In particular, the power series representation of <m>f</m> about
+        <m>x_0</m> is unique.
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Since <m>f</m> is analytic at <m>x_0</m>, there is a power series
+        <me>
+          f(x)=\sum_{n=0}^\infty a_n(x-x_0)^n
+        </me>
+        on some interval <m>|x-x_0|&lt;r</m>. By
+        <xref ref="thm-termwise-calculus-power-series"/>, we may differentiate
+        term by term on this interval. Repeating this process <m>k</m> times
+        gives
+        <me>
+          f^{(k)}(x)
+          =
+          \sum_{n=k}^\infty n(n-1)\cdots(n-k+1)a_n(x-x_0)^{n-k}.
+        </me>
+      </p>
+
+      <p>
+        Setting <m>x=x_0</m> leaves only the term with <m>n=k</m>, so
+        <me>
+          f^{(k)}(x_0)=k!a_k.
+        </me>
+        Hence
+        <me>
+          a_k=\frac{f^{(k)}(x_0)}{k!},
+        </me>
+        and substituting this into the original series gives the desired
+        Taylor expansion. Since each coefficient is uniquely determined by
+        <m>f</m>, the representation is unique.
+      </p>
+    </proof>
+  </theorem>
+
+  <p>
+    The theorem shows that analytic functions are automatically
+    <m>C^\infty</m>. The converse is false: a function may be infinitely
+    differentiable and still fail to agree with its Taylor series.
+  </p>
+
+  <example xml:id="eg-smooth-not-analytic">
+    <statement>
+      <p>
+        Define
+        <me>
+          f(x)=\begin{cases}
+          e^{-1/x} &amp; \text{if } x&gt;0,\\
+          0 &amp; \text{if } x\le 0.
+          \end{cases}
+        </me>
+        Then <m>f</m> is infinitely differentiable on <m>\R</m>, and every
+        derivative of <m>f</m> at <m>0</m> is equal to <m>0</m>. Therefore
+        the Taylor series of <m>f</m> at <m>0</m> is the zero series.
+        However, <m>f(x)&gt;0</m> for every <m>x&gt;0</m>, so <m>f</m> does
+        not agree with that Taylor series on any neighborhood of <m>0</m>.
+        Thus <m>f</m> is not analytic at <m>0</m>.
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    The previous example shows that a smooth function may fail to agree with
+    its Taylor series even when that Taylor series converges everywhere.
+    There are also smooth functions whose Taylor series at a point does not
+    converge anywhere except at that point.
+  </p>
+
+  <example xml:id="eg-smooth-divergent-taylor-series">
+    <statement>
+      <p>
+        Consider
+        <me>
+          f(x)=\int_0^\infty e^{-t}\cos(t^2x)\,dt.
+        </me>
+        One can show, by differentiating under the integral sign, that
+        <m>f</m> is <m>C^\infty</m> and that
+        <me>
+          f^{(n)}(0)=\begin{cases}
+          0 &amp; \text{if } n \text{ is odd},\\
+          \pm (2n)! &amp; \text{if } n \text{ is even}.
+          \end{cases}
+        </me>
+        Consequently the Taylor coefficient
+        <m>f^{(n)}(0)/n!</m> has absolute value <m>(2n)!/n!</m> for infinitely
+        many <m>n</m>. Since
+        <me>
+          \frac{(2n)!}{n!}=(n+1)(n+2)\cdots(2n)\ge (n+1)^n,
+        </me>
+        the <m>n</m>-th roots of these coefficients tend to <m>\infty</m>.
+        The root test therefore shows that the Taylor series of <m>f</m> at
+        <m>0</m> has radius of convergence <m>0</m>. So this Taylor series
+        diverges for every <m>x \ne 0</m>.
+      </p>
+    </statement>
+  </example>
+
+  <theorem xml:id="thm-borel-peano">
+    <title>Borel-Peano Theorem</title>
+    <statement>
+      <p>
+        For every formal power series
+        <me>
+          \sum_{n=0}^\infty a_nx^n
+        </me>
+        there exists a function <m>f \in C^\infty(\R)</m> whose Taylor series
+        at <m>0</m> is exactly
+        <me>
+          \sum_{n=0}^\infty a_nx^n.
+        </me>
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    In other words, every formal power series occurs as the Taylor series of
+    some smooth function, whether or not that series converges. For a readable
+    account, see <xref ref="biblio-eom-borel-theorem"/> and the historical
+    note <xref ref="biblio-besenyei-borel"/>.
+  </p>
+
+  <p>
+    Further examples and discussion of non-analytic smooth functions can be
+    found in <xref ref="biblio-boas-primer"/>.
+  </p>
+</section>

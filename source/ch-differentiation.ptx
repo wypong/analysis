@@ -4,6 +4,7 @@
   <title>Differentiation</title>
 
   <xi:include href="sec-derivative.ptx" />
+  <xi:include href="sec-differentiability-classes.ptx" />
   <xi:include href="sec-the-mean-value-theorem.ptx" />
   <xi:include href="sec-applications-of-differentiation.ptx" />
 
@@ -58,6 +59,30 @@
             \frac{d}{dx}x^n = nx^{n-1}.
           </me>
         </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-differentiation-classes-f4-g4">
+      <statement>
+        <p>
+          Consider the functions from
+          <xref ref="sec-differentiability-classes"/>
+          with <m>n=4</m>:
+        </p>
+        <me>
+          f_4(x)=\begin{cases}
+          x^4 &amp; \text{if } x \ge 0,\\
+          -x^4 &amp; \text{if } x \lt 0
+          \end{cases}
+          \qquad\text{and}\qquad
+          g_4(x)=\begin{cases}
+          x^8\sin(1/x) &amp; \text{if } x \ne 0,\\
+          0 &amp; \text{if } x=0.
+          \end{cases}
+        </me>
+        Compute several derivatives of these functions and verify that
+        <m>f_4 \in C^3(\R)\setminus D^4(\R)</m> and
+        <m>g_4 \in D^4(\R)\setminus C^4(\R)</m>.
       </statement>
     </exercise>
 

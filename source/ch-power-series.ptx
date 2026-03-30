@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-power-series" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Power Series</title>
+
+  <xi:include href="sec-power-series-radius.ptx" />
+  <xi:include href="sec-calculus-of-power-series.ptx" />
+  <xi:include href="sec-analytic-functions.ptx" />
+  <xi:include href="sec-taylors-theorem.ptx" />
+
+  <conclusion>
+    <p>
+      This chapter builds directly on the material on geometric series and
+      convergence tests from <xref ref="sec-convergence-tests-for-series"/>
+      and on the differentiation results from
+      <xref ref="sec-the-mean-value-theorem"/>. For external references,
+      compare <xref ref="biblio-lebl-basic-analysis"/>, Sections 2.6 and 4.3,
+      <xref ref="biblio-rudin-pma"/>, Chapter 8, and
+      <xref ref="biblio-boas-primer"/> for further examples involving smooth
+      but non-analytic functions.
+    </p>
+  </conclusion>
+
+  <exercises xml:id="ex-ch6">
+    <title>Exercises</title>
+
+    <exercise xml:id="ex-power-series-radius-basic">
+      <statement>
+        <p>
+          Find the radius of convergence and the interval of convergence of
+          each power series.
+        </p>
+        <ol>
+          <li><p><m>\sum_{n=1}^\infty \frac{x^n}{n}</m>,</p></li>
+          <li><p><m>\sum_{n=0}^\infty n!x^n</m>,</p></li>
+          <li><p><m>\sum_{n=0}^\infty \frac{x^n}{n!}</m>.</p></li>
+        </ol>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-power-series-shifted-center">
+      <statement>
+        <p>
+          Find the radius of convergence and the interval of convergence of
+          <me>
+            \sum_{n=0}^\infty \frac{(x-2)^n}{3^n}.
+          </me>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-power-series-sum-n-over-three-power-n">
+      <statement>
+        <p>
+          Use the geometric series and term-by-term differentiation to compute
+          <me>
+            \sum_{n=1}^\infty \frac{n}{3^n}.
+          </me>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-power-series-log-and-arctan">
+      <statement>
+        <p>
+          Starting from the geometric series, derive the power series for
+          <m>\ln(1+x)</m> and <m>\arctan x</m> about <m>0</m>. In each case,
+          determine the radius of convergence.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-power-series-smooth-not-analytic">
+      <statement>
+        <p>
+          Let
+          <me>
+            f(x)=\begin{cases}
+            e^{-1/x} &amp; \text{if } x&gt;0,\\
+            0 &amp; \text{if } x\le 0.
+            \end{cases}
+          </me>
+          Show that every derivative of <m>f</m> at <m>0</m> is equal to
+          <m>0</m>. Conclude that <m>f</m> is not analytic at <m>0</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-power-series-taylor-ln-error">
+      <statement>
+        <p>
+          Let <m>P_3(x)=x-\frac{x^2}{2}+\frac{x^3}{3}</m>, the third Taylor
+          polynomial of <m>\ln(1+x)</m> at <m>0</m>.
+        </p>
+        <ol>
+          <li><p>Compute <m>\ln(1+x)-P_3(x)</m> in the form given by Taylor's theorem.</p></li>
+          <li><p>Use this to show that <m>|\ln(3/2)-P_3(1/2)| \le 1/32</m>.</p></li>
+        </ol>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-power-series-binomial-sqrt">
+      <statement>
+        <p>
+          Use the binomial series to write down the first four nonzero terms
+          of the power series for <m>\sqrt{1+x}</m> about <m>0</m>. What is
+          the radius of convergence?
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
+</chapter>

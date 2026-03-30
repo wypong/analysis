@@ -5,6 +5,7 @@
 
   <xi:include href="sec-series.ptx" />
   <xi:include href="sec-convergence-tests-for-series.ptx" />
+  <xi:include href="sec-more-convergence-tests-for-series.ptx" />
 
   <exercises xml:id="ex-ch3">
     <title>Exercises</title>
@@ -131,6 +132,34 @@
           <me>
             \left|s-\sum_{n=1}^N \frac{(-1)^{n+1}}{n}\right| \lt 0.01.
           </me>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-series-cauchy-product-geometric">
+      <statement>
+        <p>
+          Let <m>|x|&lt;1</m>. Compute the Cauchy product of
+          <m>\sum_{n=0}^\infty x^n</m> with itself and use
+          <xref ref="thm-mertens-series"/> to prove that
+          <me>
+            \sum_{n=0}^\infty (n+1)x^n=\frac{1}{(1-x)^2}.
+          </me>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-series-raabe-p-series">
+      <statement>
+        <p>
+          Use the limit form of Raabe's test
+          (<xref ref="cor-raabe-limit-form-series"/>) to give another proof
+          that
+          <me>
+            \sum_{n=1}^\infty \frac{1}{n^p}
+          </me>
+          converges for <m>p&gt;1</m> and diverges for <m>p&lt;1</m>.
+          Explain why the case <m>p=1</m> is inconclusive for Raabe's test.
         </p>
       </statement>
     </exercise>
