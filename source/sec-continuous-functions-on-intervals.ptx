@@ -115,7 +115,7 @@
 	<m>[a,b]</m>. Then <m>J:=f([a,b])</m> is nonempty and, by <xref
 	ref="prop-continuous-on-closed-bounded-interval-bounded"/>, is also
 	bounded. So <m>M:=\sup J</m>exists. By <xref
-	  ref="prop-sequences-approximate-sup-inf"/>, there is a sequence
+	  ref="ex-sequences-approximate-sup"/>, there is a sequence
 	  <m>(y_n)</m> in <m>J</m> that converges to <m>M</m>. For each
 	  <m>n</m>, pick <m>x_n \in [a,b]</m> with <m>f(x_n)=y_n</m>.
 	</p>

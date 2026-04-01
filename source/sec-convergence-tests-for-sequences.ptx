@@ -19,7 +19,7 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
     <p>
       We begin with sequences of the form <m>(c^n)</m> for <m>c&gt;0</m>.
       The cases <m>c=0</m> and <m>c=1</m> are constant sequences, so the
-      interesting behavior occurs when <m>0&lt;c&lt;1</m> or <m>c&gt;1</m>.
+      interesting cases are <m>0&lt;c&lt;1</m> and <m>c&gt;1</m>.
     </p>
 
     <proposition xml:id="prop-geometric-sequence-test">
@@ -32,26 +32,26 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
 
       <proof>
         <p>
-          First suppose <m>0&lt;c&lt;1</m>. Then
+          First suppose <m>0 \lt c \lt 1</m>. Then
           <me>c&gt;c^2&gt;c^3&gt;\cdots&gt;0.</me> Hence <m>(c^n)</m> is
-          decreasing and bounded below, so it converges by
-          <xref ref="thm-monotone-convergence"/>. Let <m>L</m> be its limit.
-        </p>
-
-        <p>
-          The tail <m>(c^{n+1})</m> has the same limit as <m>(c^n)</m> by
-          <xref ref="prop-sequences-tail"/>. On the other hand,
-          <m>c^{n+1}=c\cdot c^n</m>, so <xref ref="prop-limit-laws-sequences"/>
-          gives <m>c^{n+1}\to cL</m>. Therefore <m>cL=L</m>. Since
-          <m>1-c\ne0</m>, we obtain <m>L(1-c)=0</m>, and hence <m>L=0</m>.
+          decreasing and bounded below, so
+          <xref ref="thm-monotone-convergence"/> implies that it converges to
+	  some real number <m>r</m>. By
+          <xref ref="prop-subsequence-of-convergent-sequence"/>, the
+	  subsequence <m>(c^{n+1})</m> also converges to <m>r</m>. Since the
+          constant sequence <m>c</m> converges to <m>c</m>,
+          <xref ref="prop-limit-laws-sequences"/> gives
+          <m>c^{n+1} = c \cdot c^n \to cr</m>. By
+          <xref ref="prop-convergent-sequence-unique-limit"/>, we must have
+          <m>r=cr</m>. Because <m>0&lt;c&lt;1</m>, this implies <m>r=0</m>.
         </p>
 
         <p>
           Now suppose <m>c&gt;1</m>. Then <m>0&lt;1/c&lt;1</m>, so the
-          first case gives <m>(1/c)^n\to 0</m>. For any <m>B&gt;0</m>, since
-          <m>(1/c)^n\to 0</m>, we have <m>(1/c)^n&lt;1/B</m> for all
-          sufficiently large <m>n</m>. Equivalently, <m>c^n&gt;B</m> for all
-          sufficiently large <m>n</m>. Thus <m>c^n\to +\infty</m>.
+          first case gives <m>(1/c)^n\to 0</m>. For any <m>B &gt; 0</m>,
+          since <m>(1/c)^n\to 0</m>, we have <m>(1/c)^n&lt;1/B</m> for all
+          sufficiently large <m>n</m>. Equivalently, <m>c^n \gt B</m> for
+          all sufficiently large <m>n</m>. Thus <m>c^n\to +\infty</m>.
         </p>
       </proof>
     </proposition>
@@ -201,7 +201,8 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
             \left(1+\frac{1}{n}\right)^a \frac{1}{b}
             \to \frac{1}{b} &lt; 1.
           </me>
-          Therefore <m>n^a/b^n\to 0</m> by the ratio test.
+          Therefore <m>n^a/b^n\to 0</m> by
+          <xref ref="prop-ratio-test-sequences"/>.
         </p>
 
         <p>
@@ -212,7 +213,8 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
             \frac{b}{n+1}
             \to 0.
           </me>
-          Hence <m>b^n/n!\to 0</m> by the ratio test.
+          Hence <m>b^n/n!\to 0</m> by
+          <xref ref="prop-ratio-test-sequences"/>.
         </p>
 
         <p>
@@ -235,10 +237,12 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         <p>
           The sequence <m>(n^{1/n})</m> converges to <m>1</m>. To see this,
           let <m>\varepsilon&gt;0</m> and set <m>b=1+\varepsilon</m>. The
-          previous proposition with <m>a=1</m> shows that <m>n/b^n\to
-          0</m>. Hence <m>n&lt;b^n</m> for all sufficiently large
-          <m>n</m>. Taking <m>n</m>-th roots, we obtain <m>1\le n^{1/n}&lt;
-          b = 1+\varepsilon</m> for all sufficiently large <m>n</m>.
+          growth comparison proposition <xref
+          ref="prop-growth-comparison-basic-sequences"/> with <m>a=1</m>
+          shows that <m>n/b^n\to 0</m>. Hence <m>n&lt;b^n</m> for all
+          sufficiently large <m>n</m>. Taking <m>n</m>-th roots, we obtain
+          <m>1\le n^{1/n}\lt b = 1+\varepsilon</m> for all sufficiently large
+          <m>n</m>.
         </p>
       </statement>
 

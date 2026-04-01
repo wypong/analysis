@@ -23,6 +23,9 @@
   <macros> \newcommand{\N}{\mathbb{N}} \newcommand{\Z}{\mathbb{Z}}
   \newcommand{\Q}{\mathbb{Q}} \newcommand{\R}{\mathbb{R}}
   \newcommand{\lb}{\mathrm{lb}} \newcommand{\ub}{\mathrm{ub}}
+  \newcommand{\vx}{\mathbf{x}} \newcommand{\va}{\mathbf{a}}
+ \newcommand{\vb}{\mathbf{b}} \newcommand{\vc}{\mathbf{c}}
+ \newcommand{\vy}{\mathbf{y}} \newcommand{\vz}{\mathbf{z}}
   </macros>
 
   <!-- If you put any latex-image elements you can include preambles -->

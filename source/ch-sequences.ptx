@@ -62,6 +62,15 @@
       </statement>
     </exercise>
 
+    <exercise xml:id="ex-sequences-null-neg-abs-equiv">
+      <statement>
+	<p> Show that the following statements are equivalent: (i) <m>\vx
+	\approx 0</m>, (ii) <m>-\vx \approx 0</m> and (iii) <m>|\vx|
+	\approx 0</m>.
+	</p>
+      </statement>
+    </exercise>
+
     <exercise xml:id="ex-sequences-limsup-liminf-unbounded-examples">
       <statement>
         <p>
@@ -86,6 +95,15 @@
           subsequences of <m>(x_n)</m>.
         </p>
       </statement>
+    </exercise>
+
+    <exercise xml:id="ex-sequences-approximate-sup">
+    <statement>
+      <p>
+         Suppose <m>\sup S</m> exists. Show that there is a sequence
+	 <m>(x_n)</m> in <m>S</m> that converges to <m>\sup S</m>.
+      </p>
+    </statement>
     </exercise>
 
     <exercise xml:id="ex-sequences-unique-subsequential-limit">
