@@ -63,3 +63,9 @@ Two deployment options:
 2. GitHub Actions deploy:
 - Push to `main` (automatic in this repo), or run the workflow manually in Actions.
 - In repository settings, set Pages source to `Deploy from a branch` and branch `gh-pages` if needed.
+
+## License
+
+This book is licensed under the Creative Commons Attribution-ShareAlike 4.0
+International License. See [LICENSE](LICENSE) or
+<https://creativecommons.org/licenses/by-sa/4.0/>.
