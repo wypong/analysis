@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-definitions-and-examples-of-integration"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Definitions and Examples</title>
+
+  <introduction>
+    <p>
+      We define the Riemann integral by Darboux's approach. The main objects
+      are lower and upper sums attached to partitions of a closed bounded
+      interval. These sums give step-function approximations to a bounded
+      function from below and above, and the function is integrable precisely
+      when the gap between these approximations can be made arbitrarily small.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-partitions-and-darboux-sums">
+    <title>Partitions and Darboux Sums</title>
+
+    <p>
+      A <term>partition</term><idx><h>partition</h><h>of an interval</h></idx>
+      of a closed bounded interval <m>[a,b]</m> is a finite subset of
+      <m>[a,b]</m> containing both endpoints. We list a partition in
+      increasing order:
+      <me>
+        P=\{x_0,x_1,\dots,x_n\},
+        \qquad
+        a=x_0 \lt x_1 \lt \cdots \lt x_n=b.
+      </me>
+      For such a partition, we write
+      <me>
+        I_i=[x_{i-1},x_i],
+        \qquad
+        \Delta x_i=x_i-x_{i-1}
+        \qquad (1 \le i \le n).
+      </me>
+    </p>
+
+    <p>
+      For now, we write <m>\int_a^b f</m> rather than
+      <m>\int_a^b f(x)\,dx</m>. At this stage there is no risk of confusion,
+      because the interval and the function being integrated are both fixed.
+      Only later, when we discuss change of variables, will it become useful
+      to display the variable of integration explicitly.
+    </p>
+
+    <p>
+      Now let <m>f \colon [a,b] \to \R</m> be bounded, and let
+      <m>P=\{x_0,\dots,x_n\}</m> be a partition of <m>[a,b]</m>. For each
+      subinterval <m>I_i=[x_{i-1},x_i]</m>, define
+      <me>
+        m_i=\inf\{f(x):x \in I_i\},
+        \qquad
+        M_i=\sup\{f(x):x \in I_i\}.
+      </me>
+      The numbers
+      <me>
+        L(P,f)=\sum_{i=1}^n m_i \Delta x_i
+        \qquad\text{and}\qquad
+        U(P,f)=\sum_{i=1}^n M_i \Delta x_i
+      </me>
+      are called the <term>lower Darboux sum</term><idx><h>Darboux
+      sum</h><h>lower</h></idx> and <term>upper Darboux sum</term><idx><h>Darboux
+      sum</h><h>upper</h></idx> of <m>f</m> with respect to <m>P</m>.
+    </p>
+
+    <example xml:id="eg-darboux-sums-x-squared">
+      <statement>
+        <p>
+          Let <m>f(x)=x^2</m> on <m>[0,1]</m>, and let
+          <m>P=\{0,\frac13,\frac23,1\}</m>. Since <m>f</m> is increasing on
+          <m>[0,1]</m>, the infimum on each subinterval occurs at the left
+          endpoint and the supremum occurs at the right endpoint. Therefore
+          <me>
+            L(P,f)
+            =
+            \left(0+\frac19+\frac49\right)\frac13
+            =
+            \frac{5}{27},
+          </me>
+          while
+          <me>
+            U(P,f)
+            =
+            \left(\frac19+\frac49+1\right)\frac13
+            =
+            \frac{14}{27}.
+          </me>
+        </p>
+
+        <figure xml:id="fig-darboux-sums-x-squared">
+          <caption>The lower Darboux sum, the upper Darboux sum, and the
+          curve <m>y=x^2</m> for the partition
+          <m>\{0,\frac13,\frac23,1\}</m>.</caption>
+          <image width="60%">
+            <shortdescription>A parabola on the interval from zero to one together with two overlapping families of rectangles for the lower and upper Darboux sums based on the partition at one third and two thirds.</shortdescription>
+            <latex-image>
+\begin{tikzpicture}
+\begin{axis}[
+  width=9cm,
+  height=6cm,
+  axis lines=middle,
+  xmin=-0.05, xmax=1.05,
+  ymin=-0.05, ymax=1.1,
+  xtick={0,0.333333,0.666667,1},
+  xticklabels={$0$,$\frac13$,$\frac23$,$1$},
+  ytick={0,0.111111,0.444444,1},
+  yticklabels={$0$,$\frac19$,$\frac49$,$1$},
+  xlabel={$x$},
+  ylabel={$y$},
+  clip=false
+]
+  \draw[fill=orange!18, draw=orange!60!black] (axis cs:0,0) rectangle (axis cs:0.333333,0.111111);
+  \draw[fill=orange!18, draw=orange!60!black] (axis cs:0.333333,0) rectangle (axis cs:0.666667,0.444444);
+  \draw[fill=orange!18, draw=orange!60!black] (axis cs:0.666667,0) rectangle (axis cs:1,1);
+  \draw[fill=blue!22, draw=blue!60] (axis cs:0,0) rectangle (axis cs:0.333333,0);
+  \draw[fill=blue!22, draw=blue!60] (axis cs:0.333333,0) rectangle (axis cs:0.666667,0.111111);
+  \draw[fill=blue!22, draw=blue!60] (axis cs:0.666667,0) rectangle (axis cs:1,0.444444);
+  \addplot[black, thick, domain=0:1, samples=150] {x^2};
+\end{axis}
+\end{tikzpicture}
+            </latex-image>
+          </image>
+        </figure>
+      </statement>
+    </example>
+
+    <example xml:id="eg-constant-function-darboux-sums">
+      <statement>
+        <p>
+          If <m>f(x)=c</m> is constant on <m>[a,b]</m>, then for every
+          partition <m>P</m> we have <m>m_i=M_i=c</m> for every
+          <m>i</m>. Hence
+          <me>
+            L(P,f)=c(b-a)=U(P,f).
+          </me>
+          So lower and upper sums already agree for every partition.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-upper-and-lower-integrals">
+    <title>Upper and Lower Integrals</title>
+
+    <p>
+      Since <m>f</m> is bounded, there exist real numbers <m>m \le M</m> such
+      that
+      <me>
+        m \le f(x) \le M
+        \qquad (x \in [a,b]).
+      </me>
+      Therefore, for every partition <m>P</m>,
+      <me>
+        m(b-a) \le L(P,f) \le U(P,f) \le M(b-a).
+      </me>
+      Thus the set of all lower sums is bounded above, and the set of all
+      upper sums is bounded below.
+    </p>
+
+    <p>
+      By the
+      <xref ref="ax-least-upper-bound-property" text="title"/>, the least upper bound
+      of the set of lower sums exists, and likewise the greatest lower bound
+      of the set of upper sums exists. We define the
+      <term>lower integral</term><idx><h>integral</h><h>lower</h></idx> and
+      <term>upper integral</term><idx><h>integral</h><h>upper</h></idx> of
+      <m>f</m> by
+      <me>
+        \underline{\int_a^b} f
+        :=
+        \sup\{L(P,f): P \text{ a partition of } [a,b]\},
+      </me>
+      and
+      <me>
+        \overline{\int_a^b} f
+        :=
+        \inf\{U(P,f): P \text{ a partition of } [a,b]\}.
+      </me>
+    </p>
+
+    <p>
+      If <m>P</m> and <m>P'</m> are partitions of <m>[a,b]</m>, we say that
+      <m>P'</m> is a <term>refinement</term><idx><h>partition</h><h>refinement</h></idx>
+      of <m>P</m> if <m>P \subseteq P'</m>.
+    </p>
+
+    <proposition xml:id="prop-refinement-monotonicity-darboux-sums">
+      <statement>
+        <p>
+          Let <m>f \colon [a,b] \to \R</m> be bounded. If <m>P'</m> is a
+          refinement of <m>P</m>, then
+          <me>
+            L(P,f) \le L(P',f) \le U(P',f) \le U(P,f).
+          </me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          It is enough to prove the result in the special case where <m>P'</m>
+          is obtained from <m>P=\{x_0,\dots,x_n\}</m> by adjoining a single
+          point <m>x'</m> with <m>x_{i-1} \lt x' \lt x_i</m> for some
+          <m>i</m>. All terms in the upper sum remain unchanged except the
+          term corresponding to the interval <m>[x_{i-1},x_i]</m>.
+        </p>
+
+        <p>
+          Let <m>M</m> be the supremum of <m>f</m> on <m>[x_{i-1},x_i]</m>,
+          and let <m>M_1,M_2</m> be the suprema on
+          <m>[x_{i-1},x']</m> and <m>[x',x_i]</m>, respectively. Since these
+          two intervals are contained in <m>[x_{i-1},x_i]</m>, we have
+          <m>M_1 \le M</m> and <m>M_2 \le M</m>. Therefore
+          <me>
+            M_1(x'-x_{i-1}) + M_2(x_i-x')
+            \le
+            M\bigl((x'-x_{i-1})+(x_i-x')\bigr)
+            =
+            M(x_i-x_{i-1}).
+          </me>
+          So <m>U(P',f) \le U(P,f)</m>.
+        </p>
+
+        <p>
+          The proof that <m>L(P,f) \le L(P',f)</m> is analogous, using
+          infima instead of suprema. The middle inequality
+          <m>L(P',f) \le U(P',f)</m> is immediate.
+        </p>
+      </proof>
+    </proposition>
+
+    <corollary xml:id="cor-lower-upper-integral-between-sums">
+      <statement>
+        <p>
+          For every partition <m>P</m> of <m>[a,b]</m>,
+          <me>
+            L(P,f)
+            \le
+            \underline{\int_a^b} f
+            \le
+            \overline{\int_a^b} f
+            \le
+            U(P,f).
+          </me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Let <m>P</m> and <m>P'</m> be any two partitions. Then
+          <m>P \cup P'</m> is a common refinement of both. By
+          <xref ref="prop-refinement-monotonicity-darboux-sums"/>,
+          <me>
+            L(P,f) \le L(P \cup P',f) \le U(P \cup P',f) \le U(P',f).
+          </me>
+          Since <m>P'</m> is arbitrary, <m>L(P,f)</m> is a lower bound for the
+          set of upper sums. Hence
+          <m>L(P,f) \le \overline{\int_a^b} f</m>. Therefore every
+          upper integral is an upper bound for the set of lower sums, so
+          <m>\underline{\int_a^b} f \le \overline{\int_a^b} f</m>.
+          The remaining inequalities follow directly from the definitions of
+          supremum and infimum.
+        </p>
+      </proof>
+    </corollary>
+
+    <example xml:id="eg-dirichlet-upper-lower-integrals">
+      <statement>
+        <p>
+          Define the Dirichlet function <m>1_{\Q} \colon [0,1] \to \R</m> by
+          <me>
+            1_{\Q}(x)=
+            \begin{cases}
+              1 &amp; \text{if } x \in \Q,\\
+              0 &amp; \text{if } x \notin \Q.
+            \end{cases}
+          </me>
+          Then
+          <me>
+            \underline{\int_0^1} 1_{\Q} = 0
+            \qquad\text{and}\qquad
+            \overline{\int_0^1} 1_{\Q} = 1.
+          </me>
+        </p>
+
+        <p>
+          Indeed, by <xref ref="prop-q-dense-in-r"/>, every nondegenerate
+          subinterval of <m>[0,1]</m> contains a rational number. If
+          <m>[u,v]</m> is such a subinterval, then
+          <m>[u-\sqrt{2},v-\sqrt{2}]</m> is also nondegenerate, so again by
+          <xref ref="prop-q-dense-in-r"/> there is some <m>q \in \Q</m> with
+          <m>u-\sqrt{2} \lt q \lt v-\sqrt{2}</m>. Then
+          <m>q+\sqrt{2}</m> is irrational and lies in <m>[u,v]</m>. Thus on
+          each subinterval of any partition the infimum is <m>0</m> and the
+          supremum is <m>1</m>. Hence every lower sum is <m>0</m> and every
+          upper sum is <m>1</m>.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-riemann-integrability-darboux">
+    <title>Riemann Integrability</title>
+
+    <p>
+      A bounded function <m>f \colon [a,b] \to \R</m> is
+      <term>Riemann integrable</term><idx>Riemann integrable function</idx> if
+      its lower and upper integrals are equal:
+      <me>
+        \underline{\int_a^b} f
+        =
+        \overline{\int_a^b} f.
+      </me>
+      The common value is called the <term>Riemann integral</term><idx><h>Riemann
+      integral</h><h>value of</h></idx> of <m>f</m> on <m>[a,b]</m>, and is
+      denoted by
+      <me>
+        \int_a^b f.
+      </me>
+      We write <m>R[a,b]</m> for the set of all Riemann integrable functions on
+      <m>[a,b]</m>.
+    </p>
+
+    <proposition xml:id="prop-integrability-criterion-darboux">
+      <title>Integrability Criterion</title>
+      <statement>
+        <p>
+          A bounded function <m>f \colon [a,b] \to \R</m> is Riemann
+          integrable if and only if for every <m>\varepsilon \gt 0</m> there
+          exists a partition <m>P</m> of <m>[a,b]</m> such that
+          <me>
+            U(P,f)-L(P,f) \lt \varepsilon.
+          </me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          First assume that for every <m>\varepsilon \gt 0</m> there exists a
+          partition <m>P</m> with <m>U(P,f)-L(P,f) \lt \varepsilon</m>. By
+          <xref ref="cor-lower-upper-integral-between-sums"/>,
+          <me>
+            0
+            \le
+            \overline{\int_a^b} f
+            -
+            \underline{\int_a^b} f
+            \le
+            U(P,f)-L(P,f).
+          </me>
+          Since the right-hand side can be made arbitrarily small, the
+          difference of the upper and lower integrals must be <m>0</m>. Hence
+          <m>f</m> is integrable.
+        </p>
+
+        <p>
+          Conversely, suppose <m>f</m> is integrable, and let
+          <m>I=\int_a^b f</m>. Given <m>\varepsilon \gt 0</m>, choose
+          partitions <m>P'</m> and <m>P''</m> such that
+          <me>
+            U(P',f) \lt I+\frac{\varepsilon}{2}
+            \qquad\text{and}\qquad
+            I-\frac{\varepsilon}{2} \lt L(P'',f).
+          </me>
+          Let <m>P=P' \cup P''</m>. Then <m>P</m> refines both <m>P'</m> and
+          <m>P''</m>, so
+          <me>
+            I-\frac{\varepsilon}{2}
+            \lt
+            L(P'',f)
+            \le
+            L(P,f)
+            \le
+            U(P,f)
+            \le
+            U(P',f)
+            \lt
+            I+\frac{\varepsilon}{2}.
+          </me>
+          Therefore <m>U(P,f)-L(P,f) \lt \varepsilon</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <example xml:id="eg-x-integrable-on-unit-interval">
+      <statement>
+        <p>
+          The function <m>f(x)=x</m> is Riemann integrable on <m>[0,1]</m>.
+          For each <m>n \in \N</m>, let
+          <me>
+            P_n=\left\{0,\frac{1}{n},\frac{2}{n},\dots,\frac{n-1}{n},1\right\}.
+          </me>
+          Since <m>f</m> is increasing,
+          <me>
+            L(P_n,f)
+            =
+            \frac{1}{n^2}\sum_{k=0}^{n-1} k
+            =
+            \frac{n-1}{2n}
+          </me>
+          and
+          <me>
+            U(P_n,f)
+            =
+            \frac{1}{n^2}\sum_{k=1}^{n} k
+            =
+            \frac{n+1}{2n}.
+          </me>
+          Hence
+          <me>
+            U(P_n,f)-L(P_n,f)=\frac{1}{n} \to 0.
+          </me>
+          By the <xref ref="prop-integrability-criterion-darboux" text="title"/>,
+          the function <m>x</m> is integrable on <m>[0,1]</m>. Also,
+          <me>
+            \frac{n-1}{2n}
+            \le
+            \int_0^1 x
+            \le
+            \frac{n+1}{2n}
+          </me>
+          for every <m>n</m>, so letting <m>n \to \infty</m> gives
+          <me>
+            \int_0^1 x = \frac12.
+          </me>
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      Finally, if <m>f</m> is integrable on <m>[a,b]</m>, we extend the
+      notation by setting
+      <me>
+        \int_a^a f = 0,
+        \qquad
+        \int_b^a f = -\int_a^b f.
+      </me>
+    </p>
+  </subsection>
+</section>

@@ -9,6 +9,10 @@
     Walter Rudin, <title>Principles of Mathematical Analysis</title>.
   </biblio>
 
+  <biblio xml:id="biblio-ross-elementary-analysis" type="raw">
+    Kenneth A. Ross, <title>Elementary Analysis: The Theory of Calculus</title>.
+  </biblio>
+
   <biblio xml:id="biblio-lebl-basic-analysis" type="raw">
     Jiri Lebl, <title>Basic Analysis I: Introduction to Real Analysis, Volume I</title>.
     <url href="https://www.jirka.org/ra/">Online text</url>.
@@ -25,16 +29,21 @@
   <biblio xml:id="biblio-besenyei-borel" type="raw">
     Adam Besenyei, <title>Peano's Unnoticed Proof of Borel's Theorem</title>,
     <pubtitle>The American Mathematical Monthly</pubtitle>, 121 (2014), 69-72.
-    <url href="https://doi.org/10.4169/amer.math.monthly.121.01.069">Article link</url>.
+    <url href="https://abesenyei.web.elte.hu/publications/monthly_2014_january_69_72.pdf">Article link</url>.
   </biblio>
 
   <biblio xml:id="biblio-eom-borel-theorem" type="raw">
     <title>Borel theorem</title>, <pubtitle>Encyclopedia of Mathematics</pubtitle>.
-    <url href="https://encyclopediaofmath.org/wiki/Borel_theorem">Online reference</url>.
   </biblio>
 
   <biblio xml:id="biblio-bartle-sherbert" type="raw">
     Robert G. Bartle and Donald R. Sherbert, <title>Introduction to Real Analysis</title>.
+  </biblio>
+
+  <biblio xml:id="biblio-lu-composition-integrable" type="raw">
+    Jitan Lu, <title>Is the Composition Function Integrable?</title>,
+    <pubtitle>The American Mathematical Monthly</pubtitle>, 106 (1999), 361-363.
+    <url href="https://bomongiaitich.wordpress.com/wp-content/uploads/2010/12/lu99.pdf">Online copy</url>.
   </biblio>
 
   <biblio xml:id="biblio-garrett-csb" type="raw">
@@ -44,6 +53,5 @@
 
   <biblio xml:id="biblio-hyde-csb" type="raw">
     Trevor Hyde, <title>A Dynamical Proof of the Cantor-Bernstein Theorem</title>.
-    <url href="https://math.uchicago.edu/~tghyde/Hyde%20--%20A%20dynamical%20proof%20of%20the%20Cantor-Bernstein%20theorem.pdf">Online note</url>.
   </biblio>
 </references>

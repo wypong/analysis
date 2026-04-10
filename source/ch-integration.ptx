@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-integration" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Integration</title>
+
+  <xi:include href="sec-definitions-and-examples-of-integration.ptx" />
+  <xi:include href="sec-properties-of-riemann-integrals.ptx" />
+  <xi:include href="sec-fundamental-theorem-of-calculus.ptx" />
+</chapter>

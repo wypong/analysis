@@ -7,6 +7,7 @@
   <xi:include href="sec-limits-and-continuity.ptx" />
   <xi:include href="sec-basic-properties.ptx" />
   <xi:include href="sec-continuous-functions-on-intervals.ptx" />
+  <xi:include href="sec-uniform-continuity.ptx" />
 
   <exercises xml:id="ex-ch4">
     <title>Exercises</title>
@@ -190,6 +191,31 @@
         <p>
           Hint: compare the dominant term for large positive and negative
           values of <m>x</m>, then apply the Intermediate Value Theorem.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-continuity-x-squared-not-uniformly-continuous">
+      <statement>
+        <p>
+          Prove that <m>f(x)=x^2</m> is not uniformly continuous on <m>\R</m>.
+        </p>
+        <p>
+          Hint: compare the values of <m>f</m> at <m>n</m> and
+          <m>n+\frac1n</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-continuity-sin-one-over-x-not-uniformly-continuous">
+      <statement>
+        <p>
+          Show that <m>f(x)=\sin(1/x)</m> is not uniformly continuous on
+          <m>(0,1)</m>.
+        </p>
+        <p>
+          Hint: use
+          <xref ref="prop-uniform-continuity-extension-open-interval"/>.
         </p>
       </statement>
     </exercise>

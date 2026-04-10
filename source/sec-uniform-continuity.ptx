@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-uniform-continuity"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Uniform Continuity</title>
+
+  <introduction>
+    <p>
+      The extreme value theorem and the intermediate value theorem show that a
+      continuous function on an interval has strong global consequences. There
+      is another global strengthening of continuity that will be useful later:
+      a single choice of <m>\delta</m> can control the oscillation of the
+      function at every point of the domain at once. This is the idea of
+      <term>uniform continuity</term><idx>uniform continuity</idx>.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-definition-of-uniform-continuity">
+    <title>Definition and First Examples</title>
+
+    <p>
+      Let <m>S \subseteq \R</m> and let <m>f \colon S \to \R</m>. We say that
+      <m>f</m> is uniformly continuous on <m>S</m> if for every
+      <m>\varepsilon \gt 0</m> there exists <m>\delta \gt 0</m> such that
+      <me>
+        |f(s)-f(t)| \lt \varepsilon
+      </me>
+      whenever <m>s,t \in S</m> and <m>|s-t| \lt \delta</m>.
+    </p>
+
+    <p>
+      The crucial difference from ordinary continuity is that <m>\delta</m>
+      depends only on <m>\varepsilon</m>, not on a base point
+      <m>c \in S</m>. Thus one estimate works simultaneously for all points of
+      the domain.
+    </p>
+
+    <proposition xml:id="prop-uniform-continuity-implies-continuity">
+      <statement>
+        <p>
+          If <m>f \colon S \to \R</m> is uniformly continuous on <m>S</m>,
+          then <m>f</m> is continuous at every point of <m>S</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Fix <m>c \in S</m> and let <m>\varepsilon \gt 0</m>. Choose
+          <m>\delta \gt 0</m> from uniform continuity. If <m>x \in S</m> and
+          <m>|x-c| \lt \delta</m>, then applying the definition with
+          <m>s=x</m> and <m>t=c</m> gives
+          <m>|f(x)-f(c)| \lt \varepsilon</m>. Therefore <m>f</m> is
+          continuous at <m>c</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <example xml:id="eg-one-over-x-not-uniformly-continuous">
+      <statement>
+        <p>
+          The function <m>f(x)=1/x</m> on <m>(0,1)</m> is continuous but not
+          uniformly continuous. To see this, take <m>\varepsilon = 1</m>.
+          Suppose there were some <m>\delta \gt 0</m> such that
+          <m>|1/s-1/t| \lt 1</m> whenever <m>s,t \in (0,1)</m> and
+          <m>|s-t| \lt \delta</m>. Choose <m>n \in \N</m> so large that
+          <m>1/(n(n+1)) \lt \delta</m>, and let
+          <me>s=\frac1n, \qquad t=\frac{1}{n+1}.</me>
+          Then <m>s,t \in (0,1)</m> and
+          <me>|s-t|=\frac{1}{n(n+1)} \lt \delta,</me>
+          but
+          <me>\left|\frac1s-\frac1t\right|=|n-(n+1)|=1,</me>
+          contradicting the definition of uniform continuity.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-uniform-continuity-on-closed-intervals">
+    <title>Closed Bounded Intervals</title>
+
+    <p>
+      The same hypotheses that guarantee the extreme value theorem also force
+      uniform continuity.
+    </p>
+
+    <theorem xml:id="thm-continuous-on-closed-bounded-interval-uniformly-continuous">
+      <statement>
+        <p>
+          Every continuous function on a closed bounded interval is uniformly
+          continuous.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Let <m>f \colon [a,b] \to \R</m> be continuous. Suppose that
+          <m>f</m> is not uniformly continuous. Then there exists
+          <m>\varepsilon_0 \gt 0</m> such that for every <m>n \in \N</m> we
+          can find <m>x_n,x'_n \in [a,b]</m> with
+          <me>
+            |x_n-x'_n| \lt \frac1n
+            \qquad\text{but}\qquad
+            |f(x_n)-f(x'_n)| \ge \varepsilon_0.
+          </me>
+        </p>
+
+        <p>
+          The sequence <m>(x_n)</m> lies in the bounded interval <m>[a,b]</m>,
+          so by the <xref ref="thm-bolzano-weierstrass" text="title"/> it
+          has a convergent subsequence <m>(x_{n_k})</m>. Let <m>x_{n_k} \to
+          c</m>. Since <m>[a,b]</m> contains all its cluster points <xref
+          ref="prop-closed-interval-contains-cluster-points"/>, <m>c \in
+          [a,b]</m>.
+        </p>
+
+	<p> As a subsequence of the null sequence <m>(x_n - x_n')</m>,
+	<m>(x'_{n_k}-x_{n_k})</m> is also null. Thus, <m>x'_{n_k}</m> converges
+	to <m>c</m> as well. Since <m>f</m> is continuous at <m>c</m>,
+	<xref ref="prop-sequential-characterization-of-continuity"/> gives
+
+          <me>
+            f(x_{n_k}) \to f(c)
+            \qquad\text{and}\qquad
+            f(x'_{n_k}) \to f(c).
+          </me>
+
+	  Therefore, <m>f(x_{n_k})-f(x'_{n_k}) \to 0</m> is null which
+	  contradicts <m>|f(x_{n_k})-f(x'_{n_k})| \ge \varepsilon_0</m>
+	  for every <m>k</m>. This contradiction shows that <m>f</m> is
+	  uniformly continuous.
+	</p>
+      </proof>
+    </theorem>
+  </subsection>
+
+  <subsection xml:id="subsec-cauchy-sequences-and-extension">
+    <title>Cauchy Sequences and Extension to Endpoints</title>
+
+    <p>
+      Uniform continuity is closely tied to the material from the chapter on
+      sequences. Ordinary continuity carries convergent sequences to convergent
+      sequences (<xref ref="prop-sequential-characterization-of-continuity"/>).
+      Uniform continuity does something stronger: it preserves the Cauchy
+      property itself.
+    </p>
+
+    <proposition xml:id="prop-uniform-continuity-preserves-cauchy">
+      <statement>
+        <p>
+          If <m>f \colon S \to \R</m> is uniformly continuous on <m>S</m> and
+          <m>(x_n)</m> is a Cauchy sequence in <m>S</m>, then
+          <m>(f(x_n))</m> is a Cauchy sequence in <m>\R</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Let <m>\varepsilon \gt 0</m>. Choose <m>\delta \gt 0</m> from the
+          definition of uniform continuity. Since <m>(x_n)</m> is Cauchy,
+          there exists <m>N \in \N</m> such that
+          <m>|x_n-x_m| \lt \delta</m> whenever <m>m,n \ge N</m>. Therefore,
+          for <m>m,n \ge N</m>,
+          <me>
+            |f(x_n)-f(x_m)| \lt \varepsilon.
+          </me>
+          Hence <m>(f(x_n))</m> is Cauchy.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-uniform-continuity-extension-open-interval">
+      <statement>
+        <p>
+          Let <m>f \colon (a,b) \to \R</m>. Then <m>f</m> is uniformly
+          continuous on <m>(a,b)</m> if and only if <m>f</m> extends to a
+          continuous function on <m>[a,b]</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          First suppose that <m>f</m> extends to a continuous function
+          <m>\widetilde{f} \colon [a,b] \to \R</m>. By
+          <xref ref="thm-continuous-on-closed-bounded-interval-uniformly-continuous"/>,
+          <m>\widetilde{f}</m> is uniformly continuous on <m>[a,b]</m>. Its
+          restriction to <m>(a,b)</m> is therefore uniformly continuous as
+          well, so <m>f</m> is uniformly continuous on <m>(a,b)</m>.
+        </p>
+
+        <p>
+          Conversely, suppose that <m>f</m> is uniformly continuous on
+          <m>(a,b)</m>. Let <m>(x_n)</m> be any sequence in <m>(a,b)</m> with
+          <m>x_n \to a</m>. By <xref ref="prop-convergent-implies-cauchy"/>,
+          <m>(x_n)</m> is Cauchy, so
+          <xref ref="prop-uniform-continuity-preserves-cauchy"/> shows that
+          <m>(f(x_n))</m> is Cauchy. By
+          <xref ref="thm-sequential-completeness-of-reals"/>,
+          <m>(f(x_n))</m> converges.
+        </p>
+
+        <p>
+          This limit is independent of the sequence approaching <m>a</m>. To
+          see this, let <m>(x_n)</m> and <m>(x'_n)</m> be sequences in
+          <m>(a,b)</m> with <m>x_n \to a</m> and <m>x'_n \to a</m>, and define
+          a new sequence <m>(z_n)</m> by
+          <me>
+            z_{2n-1}=x_n,
+            \qquad
+            z_{2n}=x'_n.
+          </me>
+          Then <m>z_n \to a</m>, so the argument above shows that
+          <m>(f(z_n))</m> converges. Since <m>(f(x_n))</m> and
+          <m>(f(x'_n))</m> are subsequences of the convergent sequence
+          <m>(f(z_n))</m>,
+          <xref ref="prop-subsequence-of-convergent-sequence"/> implies that
+          they converge to the same limit. Denote this common
+          limit by <m>L_a</m>. In the same way, there is a uniquely determined
+          real number <m>L_b</m> such that <m>f(x_n) \to L_b</m> whenever
+          <m>x_n \to b</m> with <m>x_n \in (a,b)</m>.
+        </p>
+
+        <p>
+          Define <m>\widetilde{f} \colon [a,b] \to \R</m> by
+          <me>
+            \widetilde{f}(x)=
+            \begin{cases}
+              L_a &amp; \text{if } x=a,\\
+              f(x) &amp; \text{if } a \lt x \lt b,\\
+              L_b &amp; \text{if } x=b.
+            \end{cases}
+          </me>
+          On <m>(a,b)</m>, the function <m>\widetilde{f}</m> agrees with
+          <m>f</m>, so it is continuous there by
+          <xref ref="prop-uniform-continuity-implies-continuity"/>.
+        </p>
+
+        <p>
+          It remains to prove continuity at the endpoints. We do this at
+          <m>a</m>; the proof at <m>b</m> is identical. Let <m>(u_n)</m> be a
+          sequence in <m>[a,b]</m> with <m>u_n \to a</m>. If all but finitely
+          many terms satisfy <m>u_n=a</m>, then clearly
+          <m>\widetilde{f}(u_n) \to L_a=\widetilde{f}(a)</m>. Otherwise, the
+          subsequence consisting of those terms with <m>u_n \gt a</m> still
+          converges to <m>a</m>. By the definition of <m>L_a</m>, the image of
+          that subsequence under <m>\widetilde{f}</m> converges to <m>L_a</m>,
+          while every term with <m>u_n=a</m> is mapped exactly to <m>L_a</m>.
+          Hence the whole sequence <m>(\widetilde{f}(u_n))</m> converges to
+          <m>L_a</m>. By the sequential characterization of continuity,
+          <m>\widetilde{f}</m> is continuous at <m>a</m>.
+        </p>
+      </proof>
+    </proposition>
+  </subsection>
+
+  <subsection xml:id="subsec-lipschitz-and-gluing">
+    <title>Lipschitz Continuity and Gluing Intervals</title>
+
+    <p>
+      A useful sufficient condition for uniform continuity is a linear bound on
+      how fast the function can change.
+    </p>
+
+    <p>
+      Let <m>S \subseteq \R</m>. A function <m>f \colon S \to \R</m> is
+      <term>Lipschitz continuous</term><idx>Lipschitz continuity</idx> on
+      <m>S</m> if there exists <m>K \gt 0</m> such that
+      <me>
+        |f(x)-f(x')| \le K|x-x'|
+      </me>
+      for all <m>x,x' \in S</m>.
+    </p>
+
+    <proposition xml:id="prop-lipschitz-implies-uniformly-continuous">
+      <statement>
+        <p>
+          Every Lipschitz continuous function is uniformly continuous.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Suppose <m>|f(x)-f(x')| \le K|x-x'|</m> for all
+          <m>x,x' \in S</m>.
+          Given <m>\varepsilon \gt 0</m>, choose
+          <m>\delta = \varepsilon/K</m>. Then whenever
+          <m>x,x' \in S</m> satisfy <m>|x-x'| \lt \delta</m>, we have
+          <me>
+            |f(x)-f(x')|
+            \le K|x-x'|
+            \lt K\delta
+            = \varepsilon.
+          </me>
+          Thus <m>f</m> is uniformly continuous.
+        </p>
+      </proof>
+    </proposition>
+
+    <example xml:id="eg-sqrt-lipschitz-on-one-infty">
+      <statement>
+        <p>
+          The function <m>f(x)=\sqrt{x}</m> is Lipschitz continuous on
+          <m>[1,\infty)</m>. Indeed, for <m>x,x' \ge 1</m>,
+          <me>
+            |x-x'|
+            = |\sqrt{x}-\sqrt{x'}|(\sqrt{x}+\sqrt{x'})
+            \ge 2|\sqrt{x}-\sqrt{x'}|,
+          </me>
+          so
+          <me>
+            |\sqrt{x}-\sqrt{x'}| \le \frac12 |x-x'|.
+          </me>
+          Therefore <m>\sqrt{x}</m> is uniformly continuous on
+          <m>[1,\infty)</m>.
+        </p>
+      </statement>
+    </example>
+
+    <proposition xml:id="prop-uniform-continuity-on-overlapping-intervals">
+      <statement>
+        <p>
+          Let <m>I_1</m> and <m>I_2</m> be intervals with
+          <m>I_1 \cap I_2 \neq \emptyset</m>. If
+          <m>f \colon I_1 \cup I_2 \to \R</m> is uniformly continuous on both
+          <m>I_1</m> and <m>I_2</m>, then <m>f</m> is uniformly continuous on
+          <m>I_1 \cup I_2</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Let <m>\varepsilon \gt 0</m>. Since <m>f</m> is uniformly continuous
+          on each interval, there exist <m>\delta_1,\delta_2 \gt 0</m> such
+          that
+          <me>
+            |f(x)-f(x')| \lt \frac{\varepsilon}{2}
+          </me>
+          whenever <m>x,x' \in I_k</m> and <m>|x-x'| \lt \delta_k</m>
+          (<m>k=1,2</m>). Let <m>\delta=\min\{\delta_1,\delta_2\}</m>.
+        </p>
+
+        <p>
+          Take <m>x,x' \in I_1 \cup I_2</m> with <m>|x-x'| \lt \delta</m>. If
+          both points lie in the same interval, then
+          <m>|f(x)-f(x')| \lt \varepsilon/2 \lt \varepsilon</m>. So assume that
+          <m>x \in I_1 \setminus I_2</m> and <m>x' \in I_2 \setminus I_1</m>.
+          Choose <m>c \in I_1 \cap I_2</m>.
+        </p>
+
+        <p>
+          The point <m>c</m> must lie between <m>x</m> and <m>x'</m>. For if,
+          say, <m>x</m> lay between <m>c</m> and <m>x'</m>, then since
+          <m>c,x' \in I_2</m> and <m>I_2</m> is an interval, we would also have
+          <m>x \in I_2</m>, a contradiction. Thus
+          <me>
+            |x-c| \le |x-x'|
+            \qquad\text{and}\qquad
+            |x'-c| \le |x-x'|,
+          </me>
+          so both are strictly less than <m>\delta</m>.
+        </p>
+
+        <p>
+          Since <m>x,c \in I_1</m> and <m>c,x' \in I_2</m>, we obtain
+          <me>
+            |f(x)-f(c)| \lt \frac{\varepsilon}{2}
+            \qquad\text{and}\qquad
+            |f(c)-f(x')| \lt \frac{\varepsilon}{2}.
+          </me>
+          The triangle inequality then gives
+          <me>
+            |f(x)-f(x')|
+            \le |f(x)-f(c)| + |f(c)-f(x')|
+            \lt \varepsilon.
+          </me>
+          Therefore <m>f</m> is uniformly continuous on <m>I_1 \cup I_2</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <example xml:id="eg-sqrt-uniformly-continuous-on-halfline">
+      <statement>
+        <p>
+          The function <m>f(x)=\sqrt{x}</m> is uniformly continuous on
+          <m>[0,\infty)</m>. By
+          <xref ref="thm-continuous-on-closed-bounded-interval-uniformly-continuous"/>,
+          the function is uniformly continuous on <m>[0,1]</m>. By
+          <xref ref="eg-sqrt-lipschitz-on-one-infty"/>, it is uniformly
+          continuous on <m>[1,\infty)</m>. Since these intervals overlap,
+          <xref ref="prop-uniform-continuity-on-overlapping-intervals"/>
+          implies that <m>\sqrt{x}</m> is uniformly continuous on their union
+          <m>[0,\infty)</m>.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+</section>

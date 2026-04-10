@@ -90,14 +90,14 @@
 
     <proposition xml:id="prop-null-sequence-basic-operations">
       <statement>
-	<p> Suppose <m>\vx \approx 0 \approx \vy</m>. Then 
+	<p> Suppose <m>(x_n)</m> and <m>(y_n)</m> are null sequences. Then 
 
 	</p> 
 	<ol>
-	   <li> <m>\vx + \vy \approx 0</m> </li>
+	   <li> <m>(x_n+y_n)</m> is null. </li>
 	   
 	   <li>
-	        <m>\vc\vx \approx 0</m> if <m>\vc</m> is bounded.
+	        <m>(c_nx_n)</m> is null if <m>(c_n)</m> is bounded.
 	   </li>	   
         </ol>
       </statement> 
@@ -114,8 +114,8 @@
 	<p> For (2), by <xref ref="prop-bounded-iff-abs-bound"/> there exists <m>M \gt 0</m>
 	such that <m>|c_n| \lt M</m> for every <m>n</m>. Let <m>\varepsilon
 	\gt 0</m>, then for all <m>n \gg 0</m>, <m>|x_n| \lt \varepsilon</m>
-	and hence <m>|c_n x_n| \lt M\varepsilon</m>. This shows that <m>\vc\vx
-	= (c_nx_n)</m> is a null sequence because as <m>M\varepsilon</m>
+	and hence <m>|c_n x_n| \lt M\varepsilon</m>. This shows that
+	<m>(c_nx_n)</m> is a null sequence because <m>M\varepsilon</m>
 	is an arbitrary positive number as <m>M \ge 0</m> and <m>\varepsilon
 	\ge 0</m> is arbitrary.
      </p>
@@ -137,11 +137,11 @@
         </p>
       </statement> <proof>
 	<p>
-	  Suppose <m>r \approx \vx \approx r'</m>. Then both
-	  <m>r-\vx</m> and <m>\vx-r'</m> are null sequences. By <xref
-	  ref="prop-null-sequence-basic-operations"/>, their sum <m>r-r'</m>
-	  is also null. A constant sequence is null only if its constant
-	  value is zero, so <m>r-r'=0</m>. Therefore <m>r=r'</m>.
+	  Suppose <m>x_n \to r</m> and <m>x_n \to r'</m>. Then both
+	  <m>(r-x_n)</m> and <m>(x_n-r')</m> are null sequences. By <xref
+	  ref="prop-null-sequence-basic-operations"/>, their sum
+	  <m>(r-r')</m> is also null. A constant sequence is null only if its
+	  constant value is zero, so <m>r-r'=0</m>. Therefore <m>r=r'</m>.
 	</p> </proof>
     </proposition>
 
@@ -158,7 +158,7 @@
 	  \le |x_n-r|+|r| \lt 1+|r|</m> for all <m>n \ge N</m>. It follows
 	  that <me>
 	    |x_n| \le \max\{|x_1|,\ldots,|x_N|,1+|r|\}
-	  </me> for every <m>n</m>. Thus <m>\vx</m> is bounded.
+	  </me> for every <m>n</m>. Thus <m>(x_n)</m> is bounded.
 	</p>
       </proof>
     </proposition>
@@ -177,7 +177,7 @@
 
       <proof>
 	<p>
-          First suppose <m>\vx</m> is increasing and bounded. Then its set of
+          First suppose <m>(x_n)</m> is increasing and bounded. Then its set of
           terms <m>S:=\{x_n \colon n \in \N\}</m> is nonempty and bounded above,
           so <m>s:=\sup S</m> exists.
         </p>
@@ -185,7 +185,7 @@
         <p>
 	  Let <m>\varepsilon \gt 0</m>. Since <m>s-\varepsilon</m> is not an
 	  upper bound of <m>S</m>, there exists <m>N</m> such that
-          <m>s-\varepsilon \lt x_N \le s</m>. As <m>\vx</m> is increasing, for
+          <m>s-\varepsilon \lt x_N \le s</m>. As <m>(x_n)</m> is increasing, for
           every <m>n \ge N</m> we have
 	  <me>
 	    s-\varepsilon \lt x_N \le x_n \le s \lt s+\varepsilon.
@@ -195,10 +195,10 @@
 	</p>
 
         <p>
-          If <m>\vx</m> is decreasing and bounded, then <m>-\vx</m> is
-          increasing and bounded. By the increasing case, <m>-\vx</m>
+          If <m>(x_n)</m> is decreasing and bounded, then <m>(-x_n)</m> is
+          increasing and bounded. By the increasing case, <m>(-x_n)</m>
           converges, and then <xref ref="prop-limit-laws-sequences"/> implies
-          that <m>\vx</m> converges as well.
+          that <m>(x_n)</m> converges as well.
         </p>
       </proof>
     </theorem>
@@ -212,38 +212,38 @@
     <proposition xml:id="prop-limit-laws-sequences">
       <statement>
         <p>
-          Suppose <m>\vx \approx x</m> and <m>\vy \approx y</m>. Then:
+          Suppose <m>x_n \to x</m> and <m>y_n \to y</m>. Then:
 	</p> <ol>
-	  <li><m>\vx + \vy \approx x+y</m>,</li>
+	  <li><m>x_n+y_n \to x+y</m>,</li>
           
-	  <li><m>\vx\vy \approx xy</m>,</li>
+	  <li><m>x_ny_n \to xy</m>,</li>
 
-          <li><m>1/\vy \approx 1/y</m>, provided <m>y \ne 0</m>.</li>
+          <li><m>1/y_n \to 1/y</m>, provided <m>y \ne 0</m>.</li>
         
 	</ol>
       </statement> 
       <proof> 
 
       <p>
-        Both <m>\vx-x</m> and <m>\vy-y</m> are null, so
+        Both <m>(x_n-x)</m> and <m>(y_n-y)</m> are null, so
         <xref ref="prop-null-sequence-basic-operations"/> shows that their sum
-        <m>(\vx-x)+(\vy-y)=(\vx+\vy)-(x+y)</m> is null. Therefore
-        <m>\vx+\vy \approx x+y</m>.
+        <m>(x_n-x)+(y_n-y)=(x_n+y_n)-(x+y)</m> is null. Therefore
+        <m>x_n+y_n \to x+y</m>.
       </p>
 
 	<p>
 	  Also
-          <m>\vx\vy-xy = \vx(\vy-y) + (\vx-x)y</m>. By
+          <m>x_ny_n-xy = x_n(y_n-y) + (x_n-x)y</m>. By
           <xref ref="prop-convergent-sequence-bounded"/>, the sequence
-          <m>\vx</m> is bounded. Hence
+          <m>(x_n)</m> is bounded. Hence
           <xref ref="prop-null-sequence-basic-operations"/> implies that
-          <m>\vx(\vy-y)</m> is null. Since the constant sequence <m>y</m> is
-          bounded, the same proposition shows that <m>(\vx-x)y</m> is null.
-          Therefore <m>\vx\vy-xy</m> is null, and so <m>\vx\vy \approx xy</m>.
+          <m>(x_n(y_n-y))</m> is null. Since the constant sequence <m>y</m> is
+          bounded, the same proposition shows that <m>((x_n-x)y)</m> is null.
+          Therefore <m>(x_ny_n-xy)</m> is null, and so <m>x_ny_n \to xy</m>.
 	</p>
 
 	<p>
-          For the reciprocal, assume <m>y \neq 0</m>. Since <m>\vy \approx y</m>,
+          For the reciprocal, assume <m>y \neq 0</m>. Since <m>y_n \to y</m>,
           there exists <m>N</m> such that <m>|y_n-y| \lt |y|/2</m> for all
           <m>n \ge N</m>. For such <m>n</m>,
           <m>|y_n| \ge |y|-|y_n-y| \gt |y|/2</m>, so in particular
@@ -254,9 +254,9 @@
 	\left|\frac{y-y_n}{y y_n}\right| \le \frac{2|y_n-y|}{|y|^2}.
 	</me>
 	  
-	Since <m>\vy-y</m> is null and <m>2/|y|^2</m> is a fixed number,
+	Since <m>(y_n-y)</m> is null and <m>2/|y|^2</m> is a fixed number,
 	<xref ref="prop-null-sequence-basic-operations"/> implies that
-          <m>1/\vy - 1/y</m> is null. Thus <m>1/\vy \approx 1/y</m>.
+          <m>(1/y_n - 1/y)</m> is null. Thus <m>1/y_n \to 1/y</m>.
 	</p>
       </proof>
     </proposition>
@@ -264,14 +264,14 @@
     <proposition xml:id="prop-squeeze-lemma">
       <title>Squeeze Lemma</title> <statement>
         <p>
-          Suppose <m>\vx \le \vz \le \vy</m> and <m>\vx \approx r \approx
-          \vy</m>. Then <m>\vz \approx r</m>.
+          Suppose <m>x_n \le z_n \le y_n</m> for every <m>n</m>, and suppose
+          <m>x_n \to r</m> and <m>y_n \to r</m>. Then <m>z_n \to r</m>.
         </p>
       </statement> 
 
       <proof>
 	<p>
-          Let <m>\varepsilon \gt 0</m>. Since <m>\vx \approx r \approx \vy</m>,
+          Let <m>\varepsilon \gt 0</m>. Since <m>x_n \to r</m> and <m>y_n \to r</m>,
           we have
           <m>|x_n-r| \lt \varepsilon</m> and <m>|y_n-r| \lt \varepsilon</m>
           for all sufficiently large <m>n</m>. For such <m>n</m>,
@@ -279,7 +279,7 @@
             -\varepsilon \lt x_n-r \le z_n-r \le y_n-r \lt \varepsilon.
           </me>
           Hence <m>|z_n-r| \lt \varepsilon</m> for all sufficiently large
-          <m>n</m>, so <m>\vz \approx r</m>.
+          <m>n</m>, so <m>z_n \to r</m>.
         </p>
       </proof>
     </proposition>
@@ -287,7 +287,8 @@
     <proposition xml:id="prop-limit-preserves-nonnegativity">
       <statement>
         <p>
-          If <m>\vx \approx r</m> and <m>\vx \ge 0</m> then <m>r \ge 0</m>.
+          If <m>x_n \to r</m> and <m>x_n \ge 0</m> for every <m>n</m>, then
+          <m>r \ge 0</m>.
         </p>
       </statement> 
 
@@ -295,7 +296,7 @@
         <p>
           Suppose instead that <m>r \lt 0</m>. Then for all <m>n \gg 0</m>,
           <m>x_n-r \ge -r = |r|</m>, so <m>|x_n-r|\ge |r| \gt 0</m>. This
-          contradicts <m>\vx \approx r</m>. Therefore <m>r \ge 0</m>.
+          contradicts <m>x_n \to r</m>. Therefore <m>r \ge 0</m>.
         </p>
       </proof>
     </proposition>
@@ -303,12 +304,12 @@
     <corollary xml:id="cor-limit-preserves-order">
       <statement>
         <p>
-          If <m>\vx \approx x</m>, <m>\vy \approx y</m>, and <m>\vx \le
-          \vy</m> then <m>x\le y</m>.
+          If <m>x_n \to x</m>, <m>y_n \to y</m>, and <m>x_n \le y_n</m> for
+          every <m>n</m>, then <m>x\le y</m>.
         </p>
       </statement> <proof>
         <p>
-          The sequence <m>\vy - \vx</m> converges to <m>y-x</m>
+          The sequence <m>(y_n - x_n)</m> converges to <m>y-x</m>
           by <xref ref="prop-limit-laws-sequences"/>, and each
           term is nonnegative. Hence <m>y-x \ge 0</m> by <xref
           ref="prop-limit-preserves-nonnegativity"/>, so <m>x \le y</m>.
@@ -320,8 +321,8 @@
       A <term>subsequence</term><idx>subsequence</idx> of a sequence
       <m>(x_n)</m> is a sequence of the form <m>(x_{n_k})</m>, where
       <m>(n_k)</m> is a strictly increasing sequence of natural numbers. In
-      other words, a subsequence of <m>\vx</m> is a sequence of the form
-      <m>\vx \circ \sigma</m>, where <m>\sigma</m> is a strictly increasing
+      other words, a subsequence of <m>(x_n)</m> is a sequence of the form
+      <m>(x_{\sigma(n)})</m>, where <m>\sigma</m> is a strictly increasing
       function from <m>\N</m> to itself.
     </p>
 

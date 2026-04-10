@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-properties-of-riemann-integrals"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Properties of Riemann Integrals</title>
+
+  <introduction>
+    <p>
+      The Darboux definition gives a practical criterion for integrability:
+      a bounded function is integrable exactly when some partition makes the
+      upper and lower sums arbitrarily close. We now use this criterion to
+      prove the basic algebraic and order properties of the integral, and then
+      to identify some important classes of integrable functions.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-basic-properties-of-the-integral">
+    <title>Basic Properties</title>
+
+    <theorem xml:id="thm-basic-properties-riemann-integral">
+      <title>Basic Properties of the Integral</title>
+      <statement>
+        <p>
+          Let <m>f,g \in R[a,b]</m>, and let <m>c \in \R</m>.
+        </p>
+        <ol>
+          <li>
+            <p>
+              The functions <m>f+g</m> and <m>cf</m> belong to
+              <m>R[a,b]</m>, and
+              <me>
+                \int_a^b (f+g)=\int_a^b f+\int_a^b g,
+                \qquad
+                \int_a^b (cf)=c\int_a^b f.
+              </me>
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>f(x) \le g(x)</m> for every <m>x \in [a,b]</m>, then
+              <me>
+                \int_a^b f \le \int_a^b g.
+              </me>
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>a \lt c \lt b</m>, then the restrictions of <m>f</m> to
+              <m>[a,c]</m> and <m>[c,b]</m> are integrable, and
+              <me>
+                \int_a^b f=\int_a^c f+\int_c^b f.
+              </me>
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>|f(x)| \le M</m> for every <m>x \in [a,b]</m>, then
+              <me>
+                \left|\int_a^b f\right| \le M|b-a|.
+              </me>
+            </p>
+          </li>
+        </ol>
+      </statement>
+
+      <proof>
+        <p>
+          We begin with part (1). Let <m>I_f=\int_a^b f</m> and
+          <m>I_g=\int_a^b g</m>, and fix <m>\varepsilon \gt 0</m>. By the
+          <xref ref="prop-integrability-criterion-darboux" text="title"/>,
+          there are partitions <m>P_f</m> and <m>P_g</m> of <m>[a,b]</m> such
+          that
+          <me>
+            U(P_f,f)-L(P_f,f) \lt \frac{\varepsilon}{2},
+            \qquad
+            U(P_g,g)-L(P_g,g) \lt \frac{\varepsilon}{2}.
+          </me>
+          Let <m>P=P_f \cup P_g</m>. Since refinement decreases upper sums and
+          increases lower sums,
+          <me>
+            U(P,f)-L(P,f) \lt \frac{\varepsilon}{2},
+            \qquad
+            U(P,g)-L(P,g) \lt \frac{\varepsilon}{2}.
+          </me>
+        </p>
+
+        <p>
+          For each subinterval <m>I_i</m> of <m>P</m>, let
+          <m>m_i^f,M_i^f</m> and <m>m_i^g,M_i^g</m> be the infima and suprema
+          of <m>f</m> and <m>g</m> on <m>I_i</m>. Then
+          <me>
+            m_i^f+m_i^g \le \inf_{x \in I_i}(f(x)+g(x)),
+            \qquad
+            \sup_{x \in I_i}(f(x)+g(x)) \le M_i^f+M_i^g.
+          </me>
+          Summing over the partition gives
+          <me>
+            L(P,f)+L(P,g) \le L(P,f+g) \le U(P,f+g) \le U(P,f)+U(P,g).
+          </me>
+          Hence
+          <me>
+            U(P,f+g)-L(P,f+g)
+            \le
+            \bigl(U(P,f)-L(P,f)\bigr)+\bigl(U(P,g)-L(P,g)\bigr)
+            \lt \varepsilon.
+          </me>
+          So <m>f+g</m> is integrable.
+        </p>
+
+        <p>
+          Also, because <m>I_f</m> lies between <m>L(P,f)</m> and
+          <m>U(P,f)</m>, and similarly for <m>I_g</m>, we have
+          <me>
+            I_f+I_g-\varepsilon
+            \lt
+            L(P,f)+L(P,g)
+            \le
+            \int_a^b (f+g)
+            \le
+            U(P,f)+U(P,g)
+            \lt
+            I_f+I_g+\varepsilon.
+          </me>
+          Since <m>\varepsilon</m> is arbitrary,
+          <m>\int_a^b (f+g)=I_f+I_g</m>.
+        </p>
+
+        <p>
+          For scalar multiples, let <m>P=\{x_0,\dots,x_n\}</m> be any
+          partition, and let <m>m_i,M_i</m> be the infima and suprema of
+          <m>f</m> on <m>[x_{i-1},x_i]</m>. If <m>c \ge 0</m>, then the infimum
+          and supremum of <m>cf</m> on the same interval are <m>cm_i</m> and
+          <m>cM_i</m>. If <m>c \lt 0</m>, they are <m>cM_i</m> and <m>cm_i</m>.
+          In either case,
+          <me>
+            U(P,cf)-L(P,cf)=|c|\bigl(U(P,f)-L(P,f)\bigr).
+          </me>
+          Hence <m>cf</m> is integrable. When <m>c \ge 0</m>,
+          <me>
+            L(P,cf)=cL(P,f),
+            \qquad
+            U(P,cf)=cU(P,f),
+          </me>
+          and the same squeeze argument as above gives
+          <m>\int_a^b (cf)=c\int_a^b f</m>. When <m>c \lt 0</m>, the same
+          conclusion follows from the identities
+          <me>
+            L(P,cf)=cU(P,f),
+            \qquad
+            U(P,cf)=cL(P,f).
+          </me>
+        </p>
+
+        <p>
+          For part (2), if <m>f(x) \le g(x)</m> on <m>[a,b]</m>, then on every
+          subinterval of every partition <m>P</m> the infimum and supremum of
+          <m>f</m> are at most the corresponding infimum and supremum of
+          <m>g</m>. Thus
+          <me>
+            L(P,f) \le L(P,g)
+            \qquad\text{and}\qquad
+            U(P,f) \le U(P,g).
+          </me>
+          Since <m>\int_a^b f \le U(P,f)</m> and <m>L(P,g) \le \int_a^b g</m>
+          for every partition <m>P</m>, it follows that
+          <m>\int_a^b f \le \int_a^b g</m>.
+        </p>
+
+        <p>
+          For part (3), let <m>I=\int_a^b f</m> and fix <m>\varepsilon \gt 0</m>.
+          By the <xref ref="prop-integrability-criterion-darboux" text="title"/>,
+          there is a partition <m>P</m> of <m>[a,b]</m> such that
+          <m>U(P,f)-L(P,f) \lt \varepsilon/2</m>. If <m>c \notin P</m>, adjoin
+          <m>c</m> to obtain a refinement; the gap does not increase. Write
+          <m>P_1</m> and <m>P_2</m> for the induced partitions of
+          <m>[a,c]</m> and <m>[c,b]</m>. Then
+          <me>
+            L(P,f)=L(P_1,f)+L(P_2,f),
+            \qquad
+            U(P,f)=U(P_1,f)+U(P_2,f),
+          </me>
+          so
+          <me>
+            \bigl(U(P_1,f)-L(P_1,f)\bigr)+\bigl(U(P_2,f)-L(P_2,f)\bigr)
+            =
+            U(P,f)-L(P,f)
+            \lt
+            \frac{\varepsilon}{2}.
+          </me>
+          Since each summand is nonnegative, both are less than
+          <m>\varepsilon/2</m>. Therefore the restrictions of <m>f</m> to
+          <m>[a,c]</m> and <m>[c,b]</m> are integrable.
+        </p>
+
+        <p>
+          Let <m>I_1=\int_a^c f</m> and <m>I_2=\int_c^b f</m>. Because
+          <m>I_1</m> and <m>I_2</m> lie between the corresponding lower and
+          upper sums, we obtain
+          <me>
+            I_1+I_2-\varepsilon
+            \lt
+            L(P_1,f)+L(P_2,f)
+            =
+            L(P,f)
+            \le
+            I
+            \le
+            U(P,f)
+            =
+            U(P_1,f)+U(P_2,f)
+            \lt
+            I_1+I_2+\varepsilon.
+          </me>
+          Hence <m>I=I_1+I_2</m>.
+        </p>
+
+        <p>
+          Finally, for part (4), the hypothesis gives
+          <m>-M \le f(x) \le M</m> on <m>[a,b]</m>. By part (2),
+          <me>
+            \int_a^b (-M) \le \int_a^b f \le \int_a^b M.
+          </me>
+          Since constant functions are integrable and
+          <me>
+            \int_a^b (-M)=-M(b-a),
+            \qquad
+            \int_a^b M=M(b-a),
+          </me>
+          we conclude that
+          <me>
+            -M(b-a) \le \int_a^b f \le M(b-a).
+          </me>
+          Therefore <m>\left|\int_a^b f\right| \le M(b-a)=M|b-a|</m>.
+        </p>
+      </proof>
+    </theorem>
+  </subsection>
+
+  <subsection xml:id="subsec-step-functions">
+    <title>Step Functions</title>
+
+    <p>
+      A function <m>s \colon [a,b] \to \R</m> is a
+      <term>step function</term><idx>step function</idx> if there is a
+      partition <m>P=\{x_0,\dots,x_n\}</m> of <m>[a,b]</m> and real numbers
+      <m>c_1,\dots,c_n</m> such that
+      <me>
+        s=\sum_{i=1}^n c_i 1_{I_i},
+      </me>
+      where
+      <me>
+        I_i=[x_{i-1},x_i)
+        \qquad (1 \le i \lt n),
+        \qquad
+        I_n=[x_{n-1},x_n].
+      </me>
+    </p>
+
+    <p>
+      If <m>J</m> is any subinterval of <m>[a,b]</m> with endpoints
+      <m>c \le d</m>, then the indicator function <m>1_J</m> is Riemann
+      integrable and
+      <me>
+        \int_a^b 1_J=d-c.
+      </me>
+
+      Indeed, let <m>\varepsilon \gt 0</m>. One may choose a partition that
+      isolates the endpoints of <m>J</m> inside two subintervals of lengths
+      less than <m>\varepsilon/2</m> each. Outside those short endpoint
+      intervals the function is constant, so the upper and lower sums differ
+      by at most <m>\varepsilon</m>. Thus <m>1_J</m> is integrable, and its
+      integral is the length of <m>J</m>.
+    </p>
+
+    <proposition xml:id="prop-step-functions-integrable">
+      <statement>
+        <p>
+          Every step function on <m>[a,b]</m> is Riemann integrable. More
+          precisely, if
+          <me>
+            s=\sum_{i=1}^n c_i 1_{I_i}
+          </me>
+          for a partition <m>P=\{x_0,\dots,x_n\}</m> and the associated
+          subintervals <m>I_i</m>, then
+          <me>
+            \int_a^b s=\sum_{i=1}^n c_i(x_i-x_{i-1}).
+          </me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Each indicator function <m>1_{I_i}</m> is integrable, with
+          <m>\int_a^b 1_{I_i}=x_i-x_{i-1}</m>. Therefore part (1) of
+          <xref ref="thm-basic-properties-riemann-integral" text="title"/>
+          shows that any linear combination
+          <m>\sum_{i=1}^n c_i1_{I_i}</m> is integrable and that
+          <me>
+            \int_a^b s
+            =
+            \sum_{i=1}^n c_i \int_a^b 1_{I_i}
+            =
+            \sum_{i=1}^n c_i(x_i-x_{i-1}).
+          </me>
+        </p>
+      </proof>
+    </proposition>
+  </subsection>
+
+  <subsection xml:id="subsec-continuous-functions-of-integrable-functions">
+    <title>Continuous Functions of Integrable Functions</title>
+
+    <theorem xml:id="thm-continuous-composition-preserves-integrability">
+      <title>Continuous Compositions Preserve Integrability</title>
+      <statement>
+        <p>
+          Suppose <m>f \in R[a,b]</m>, let <m>m,M \in \R</m> satisfy
+          <m>f([a,b]) \subseteq [m,M]</m>, and let
+          <m>\phi \colon [m,M] \to \R</m> be continuous. Then
+          <m>\phi \circ f \in R[a,b]</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      A proof of this can be found in <xref ref="biblio-rudin-pma"/>. The
+      same result holds for the more general Riemann-Stieltjes integral.
+    </p>
+
+    <p>
+      The order of composition matters. There exist a Riemann integrable
+      function <m>f</m> and a continuous function <m>\phi</m> such that
+      <m>f \circ \phi</m> is not Riemann integrable; see
+      <xref ref="biblio-lu-composition-integrable"/>.
+    </p>
+
+    <proposition xml:id="prop-product-of-integrable-functions">
+      <statement>
+        <p>
+          If <m>f,g \in R[a,b]</m>, then <m>fg \in R[a,b]</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          By the <xref ref="thm-basic-properties-riemann-integral" text="title"/>,
+          the functions <m>f+g</m>, <m>f</m>, and <m>g</m> are integrable. The
+          function <m>t \mapsto t^2</m> is continuous on every closed bounded
+          interval, so <xref
+          ref="thm-continuous-composition-preserves-integrability"
+          text="title"/> shows that <m>(f+g)^2</m>, <m>f^2</m>, and
+          <m>g^2</m> are integrable. Since
+          <me>
+            fg=\frac12\bigl((f+g)^2-f^2-g^2\bigr),
+          </me>
+          another application of
+          <xref ref="thm-basic-properties-riemann-integral" text="title"/>
+          gives <m>fg \in R[a,b]</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-absolute-value-integrable">
+      <statement>
+        <p>
+          If <m>f \in R[a,b]</m>, then <m>|f| \in R[a,b]</m>. Moreover,
+          <me>
+            \left|\int_a^b f\right| \le \int_a^b |f|.
+          </me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          The function <m>t \mapsto |t|</m> is continuous, so
+          <xref ref="thm-continuous-composition-preserves-integrability"
+          text="title"/> shows that <m>|f|</m> is integrable.
+        </p>
+
+        <p>
+          Since <m>-|f(x)| \le f(x) \le |f(x)|</m> on <m>[a,b]</m>, part (2)
+          of <xref ref="thm-basic-properties-riemann-integral" text="title"/>
+          gives
+          <me>
+            \int_a^b (-|f|) \le \int_a^b f \le \int_a^b |f|.
+          </me>
+          Part (1) of the same theorem implies
+          <m>\int_a^b (-|f|)=-\int_a^b |f|</m>. Therefore
+          <me>
+            -\int_a^b |f|
+            \le
+            \int_a^b f
+            \le
+            \int_a^b |f|,
+          </me>
+          and hence <m>\left|\int_a^b f\right| \le \int_a^b |f|</m>.
+        </p>
+      </proof>
+    </proposition>
+
+  </subsection>
+
+  <subsection xml:id="subsec-large-classes-of-integrable-functions">
+    <title>Large Classes of Integrable Functions</title>
+
+    <p>
+      For <m>n \ge 1</m>, the <term>uniform <m>n</m>-partition</term><idx><h>uniform partition</h></idx>
+      of <m>[a,b]</m> is the partition
+      <me>
+        P_n([a,b])=\left\{a=x_0 \lt x_1 \lt \cdots \lt x_n=b\right\},
+      </me>
+      where
+      <me>
+        \Delta x_i = x_i-x_{i-1}=\frac{b-a}{n}
+        \qquad (1 \le i \le n).
+      </me>
+      When the interval is clear from the context, we simply write
+      <m>P_n</m>.
+    </p>
+
+    <theorem xml:id="thm-continuous-function-integrable">
+      <title>Continuous Functions Are Integrable</title>
+      <statement>
+        <p>
+          Every continuous function on a closed bounded interval is Riemann
+          integrable.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Let <m>f \colon [a,b] \to \R</m> be continuous, and let
+          <m>\varepsilon \gt 0</m>. By
+          <xref ref="thm-continuous-on-closed-bounded-interval-uniformly-continuous"/>,
+          <m>f</m> is uniformly continuous on <m>[a,b]</m>. Therefore there
+          exists <m>\delta \gt 0</m> such that
+          <me>
+            |f(x)-f(x')| \lt \frac{\varepsilon}{b-a}
+          </me>
+          whenever <m>x,x' \in [a,b]</m> and <m>|x-x'| \lt \delta</m>.
+        </p>
+
+        <p>
+          Choose <m>n</m> so large that <m>(b-a)/n \lt \delta</m>, and let
+          <m>P_n=\{x_0,\dots,x_n\}</m> be the uniform <m>n</m>-partition of
+          <m>[a,b]</m>. For each subinterval <m>I_i=[x_{i-1},x_i]</m>, the
+          restriction of <m>f</m> to <m>I_i</m> is continuous, so the
+          <xref ref="thm-extreme-value-theorem" text="title"/> gives points
+          <m>x_i^*,x_i^{**} \in I_i</m> such that
+          <me>
+            M_i=f(x_i^*),
+            \qquad
+            m_i=f(x_i^{**}),
+          </me>
+          where <m>M_i</m> and <m>m_i</m> are the supremum and infimum of
+          <m>f</m> on <m>I_i</m>.
+        </p>
+
+        <p>
+          Since <m>|x_i^*-x_i^{**}| \le (b-a)/n \lt \delta</m>, we have
+          <me>
+            M_i-m_i
+            =
+            |f(x_i^*)-f(x_i^{**})|
+            \lt
+            \frac{\varepsilon}{b-a}.
+          </me>
+          Therefore
+          <me>
+            U(P_n,f)-L(P_n,f)
+            =
+            \sum_{i=1}^n (M_i-m_i)\Delta x_i
+            \lt
+            \frac{\varepsilon}{b-a}\sum_{i=1}^n \Delta x_i
+            =
+            \varepsilon.
+          </me>
+          By the <xref ref="prop-integrability-criterion-darboux" text="title"/>,
+          <m>f</m> is integrable.
+        </p>
+      </proof>
+    </theorem>
+
+    <theorem xml:id="thm-monotone-function-integrable">
+      <title>Monotone Functions Are Integrable</title>
+      <statement>
+        <p>
+          Every monotone function on a closed bounded interval is Riemann
+          integrable.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          First suppose that <m>f</m> is increasing on <m>[a,b]</m>. Let
+          <m>P_n=\{x_0,\dots,x_n\}</m> be the uniform <m>n</m>-partition of
+          <m>[a,b]</m>. Then on each subinterval <m>[x_{i-1},x_i]</m>,
+          <me>
+            M_i=f(x_i),
+            \qquad
+            m_i=f(x_{i-1}).
+          </me>
+          Hence
+          <me>
+            U(P_n,f)-L(P_n,f)
+            =
+            \sum_{i=1}^n (f(x_i)-f(x_{i-1}))\frac{b-a}{n}
+            =
+            \frac{b-a}{n}\bigl(f(b)-f(a)\bigr).
+          </me>
+          The right-hand side tends to <m>0</m> as <m>n \to \infty</m>, so the
+          <xref ref="prop-integrability-criterion-darboux" text="title"/>
+          shows that <m>f</m> is integrable.
+        </p>
+
+        <p>
+          If <m>f</m> is decreasing, then <m>-f</m> is increasing, so the
+          argument above shows that <m>-f</m> is integrable. By part (1) of
+          <xref ref="thm-basic-properties-riemann-integral" text="title"/>,
+          <m>f=-(-f)</m> is integrable as well.
+        </p>
+      </proof>
+    </theorem>
+
+    <example xml:id="eg-thomae-function">
+      <statement>
+        <p>
+          The <term>Thomae function</term><idx>Thomae function</idx>
+          <m>h \colon [0,1] \to \R</m> is defined by
+          <me>
+            h(x)=
+            \begin{cases}
+              \dfrac{1}{n} &amp; \text{if } x=\dfrac{m}{n} \text{ in lowest terms},\\
+              0 &amp; \text{if } x \in [0,1]\setminus \Q.
+            \end{cases}
+          </me>
+          This function is integrable on <m>[0,1]</m>, with
+          <m>\int_0^1 h=0</m>, but it is neither continuous nor monotone on
+          any nondegenerate subinterval of <m>[0,1]</m>.
+        </p>
+
+        <figure xml:id="fig-thomae-function">
+          <caption>A plot of the Thomae function on <m>[0,1]</m>, showing
+          sample values at rational points with denominator at most
+          <m>10</m>.</caption>
+          <image width="65%">
+            <shortdescription>A point plot of the Thomae function on the interval from zero to one, with higher points at rationals having small denominators and lower points at rationals with larger denominators.</shortdescription>
+            <latex-image>
+\begin{tikzpicture}
+\begin{axis}[
+  width=10cm,
+  height=5.8cm,
+  axis lines=middle,
+  xmin=-0.02, xmax=1.02,
+  ymin=-0.02, ymax=1.05,
+  xtick={0,0.25,0.5,0.75,1},
+  ytick={0,0.2,0.4,0.6,0.8,1},
+  xlabel={$x$},
+  ylabel={$y$},
+  clip=false
+]
+  \addplot[black, thick, domain=0:1, samples=2] {0};
+  \addplot[only marks, blue!70!black, mark=*, mark size=1.2pt] coordinates {
+    (0.000000,1.000000)
+    (0.100000,0.100000)
+    (0.111111,0.111111)
+    (0.125000,0.125000)
+    (0.142857,0.142857)
+    (0.166667,0.166667)
+    (0.200000,0.200000)
+    (0.222222,0.111111)
+    (0.250000,0.250000)
+    (0.285714,0.142857)
+    (0.300000,0.100000)
+    (0.333333,0.333333)
+    (0.375000,0.125000)
+    (0.400000,0.200000)
+    (0.428571,0.142857)
+    (0.444444,0.111111)
+    (0.500000,0.500000)
+    (0.555556,0.111111)
+    (0.571429,0.142857)
+    (0.600000,0.200000)
+    (0.625000,0.125000)
+    (0.666667,0.333333)
+    (0.700000,0.100000)
+    (0.714286,0.142857)
+    (0.750000,0.250000)
+    (0.777778,0.111111)
+    (0.800000,0.200000)
+    (0.833333,0.166667)
+    (0.857143,0.142857)
+    (0.875000,0.125000)
+    (0.888889,0.111111)
+    (0.900000,0.100000)
+    (1.000000,1.000000)
+  };
+\end{axis}
+\end{tikzpicture}
+            </latex-image>
+          </image>
+        </figure>
+
+        <p>
+          By <xref ref="prop-q-dense-in-r"/> and the argument from
+          <xref ref="eg-dirichlet-upper-lower-integrals"/>, every
+          nondegenerate subinterval of <m>[0,1]</m> contains both rational and
+          irrational numbers. Thus, if <m>\alpha \lt q \lt \beta</m> with
+          <m>\alpha,\beta</m> irrational and <m>q</m> rational, then
+          <me>
+            h(\alpha)=0,
+            \qquad
+            h(q) \gt 0,
+            \qquad
+            h(\beta)=0,
+          </me>
+          so <m>h</m> cannot be increasing or decreasing on that interval.
+          Also, if <m>q \in [0,1] \cap \Q</m>, choose irrational numbers
+          <m>\alpha_n \to q</m>. Then <m>h(\alpha_n)=0 \to 0</m>, while
+          <m>h(q) \gt 0</m>, so <m>h</m> is not continuous at <m>q</m>. Since
+          rationals are dense, <m>h</m> is not continuous on any
+          nondegenerate subinterval.
+        </p>
+
+        <p>
+          Every nondegenerate subinterval of <m>[0,1]</m> contains irrational
+          numbers, so the infimum of <m>h</m> on each such interval is
+          <m>0</m>. Hence every lower sum of <m>h</m> is <m>0</m>.
+        </p>
+
+        <p>
+          To control the upper sums, fix <m>N \in \N</m> and let
+          <me>
+            H_N=\{x \in [0,1] : h(x) \ge 1/N\}.
+          </me>
+          If <m>x \in H_N</m>, then <m>x=m/n</m> in lowest terms with
+          <m>1 \le n \le N</m>. Therefore <m>H_N</m> is finite. Choose
+          pairwise disjoint closed intervals <m>J_x \subseteq [0,1]</m>, one
+          for each <m>x \in H_N</m>, such that <m>x \in J_x</m> and the sum of
+          their lengths is less than <m>1/N</m>. Let <m>P</m> be a partition
+          containing all endpoints of these intervals.
+        </p>
+
+        <p>
+          Any subinterval of <m>P</m> that is disjoint from
+          <m>\bigcup_{x \in H_N} J_x</m> contains no point of <m>H_N</m>, so
+          the supremum of <m>h</m> there is less than <m>1/N</m>. On the other
+          subintervals, the supremum is at most <m>1</m>. It follows that
+          <me>
+            U(P,h)
+            \le
+            \sum_{x \in H_N} |J_x| + \frac{1}{N}
+            \left(1-\sum_{x \in H_N} |J_x|\right)
+            \lt
+            \frac{1}{N}+\frac{1}{N}
+            =
+            \frac{2}{N}.
+          </me>
+          Since <m>N</m> is arbitrary, the
+          <xref ref="prop-integrability-criterion-darboux" text="title"/>
+          shows that <m>h</m> is integrable. Because every lower sum is
+          <m>0</m>, we have <m>\int_0^1 h=0</m>.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+</section>
