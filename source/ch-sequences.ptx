@@ -146,8 +146,12 @@
       <statement>
         <p>
           Let <m>x_n</m> be the decimal truncation of <m>\sqrt{2}</m> to
-          <m>n</m> decimal places:
-          <m>1, 1.4, 1.41, 1.414, \dots</m>.
+          <m>n</m> decimal places, so that
+        </p>
+        <me>
+          x_1=1, \qquad x_2=1.4, \qquad x_3=1.41, \qquad x_4=1.414, \dots
+        </me>
+        <p>
           Show that <m>(x_n)</m> is Cauchy in <m>\Q</m>. Explain why it does
           not converge in <m>\Q</m>, and conclude that <m>\Q</m> is not
           sequentially complete.

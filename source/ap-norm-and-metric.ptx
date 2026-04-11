@@ -5,7 +5,7 @@
 
   <section xml:id="sec-norm-and-metric-euclidean">
     <title>Euclidean Norm on <m>\R^n</m></title>
-    <shorttitle>Euclidean Norm on <m>\R^n</m></shorttitle>
+    <shorttitle>Euclidean Norm on Rn</shorttitle>
 
     <p>
       For vectors <m>x=(x_1,\dots,x_n)</m> and <m>y=(y_1,\dots,y_n)</m> in

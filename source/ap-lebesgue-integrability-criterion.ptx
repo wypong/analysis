@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<appendix xml:id="ap-lebesgue-integrability-criterion"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Lebesgue Criterion</title>
+
+  <section xml:id="sec-lebesgue-integrability-criterion">
+    <title>Lebesgue Integrability Criterion</title>
+
+    <p>
+      We record here a useful criterion for Riemann integrability that goes
+      far beyond continuity and monotonicity. A proof can be found in
+      <xref ref="biblio-bartle-sherbert"/>.
+    </p>
+
+    <definition xml:id="def-measure-zero">
+      <statement>
+        <p>
+          A set <m>A \subseteq \R</m> has <term>measure zero</term><idx>measure zero</idx>
+          if for every <m>\varepsilon \gt 0</m> there exists a sequence of open
+          intervals <m>(I_k)_{k=1}^{\infty}</m> such that
+          <me>
+            A \subseteq \bigcup_{k=1}^{\infty} I_k
+            \qquad\text{and}\qquad
+            \sum_{k=1}^{\infty} |I_k| \le \varepsilon,
+          </me>
+          where <m>|I_k|</m> denotes the length of <m>I_k</m>. A set of
+          measure zero is also called a <term>null set</term><idx>null set</idx>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      A property is said to hold <term>almost everywhere</term><idx>almost everywhere</idx>
+      on an interval if it fails only on a null set.
+    </p>
+
+    <example xml:id="eg-naturals-null">
+      <statement>
+        <p>
+          The set <m>\N</m> is a null set. Indeed, let
+          <m>\varepsilon \gt 0</m>. For each <m>k \in \N</m>, define
+          <me>
+            I_k=\left(k-\frac{\varepsilon}{2^{k+1}},
+            k+\frac{\varepsilon}{2^{k+1}}\right).
+          </me>
+          Then <m>k \in I_k</m> for every <m>k</m>, so
+          <m>\N \subseteq \bigcup_{k=1}^{\infty} I_k</m>. Also,
+          <me>
+            |I_k|=\frac{\varepsilon}{2^k},
+          </me>
+          and therefore
+          <me>
+            \sum_{k=1}^{\infty} |I_k|
+            =
+            \sum_{k=1}^{\infty} \frac{\varepsilon}{2^k}
+            =
+            \varepsilon.
+          </me>
+        </p>
+      </statement>
+    </example>
+
+    <corollary xml:id="cor-countable-sets-null">
+      <statement>
+        <p>
+          Every countable subset of <m>\R</m> is a null set.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Let <m>A=\{a_1,a_2,\dots\}</m> be countably infinite. Given
+          <m>\varepsilon \gt 0</m>, put
+          <me>
+            I_k=\left(a_k-\frac{\varepsilon}{2^{k+1}},
+            a_k+\frac{\varepsilon}{2^{k+1}}\right).
+          </me>
+          Then <m>A \subseteq \bigcup_{k=1}^{\infty} I_k</m> and
+          <me>
+            \sum_{k=1}^{\infty} |I_k|
+            =
+            \sum_{k=1}^{\infty}\frac{\varepsilon}{2^k}
+            =
+            \varepsilon.
+          </me>
+          Finite sets are treated in the same way, by allowing all but
+          finitely many intervals to be empty.
+        </p>
+      </proof>
+    </corollary>
+
+    <proposition xml:id="prop-union-two-null-sets">
+      <statement>
+        <p>
+          The union of two null sets is null.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Let <m>A</m> and <m>B</m> be null sets, and let
+          <m>\varepsilon \gt 0</m>. Choose open intervals <m>(I_k)</m>
+          covering <m>A</m> with
+          <me>
+            \sum_{k=1}^{\infty}|I_k| \le \frac{\varepsilon}{2},
+          </me>
+          and open intervals <m>(J_k)</m> covering <m>B</m> with
+          <me>
+            \sum_{k=1}^{\infty}|J_k| \le \frac{\varepsilon}{2}.
+          </me>
+          Then the countable family consisting of all the intervals
+          <m>I_k</m> and <m>J_k</m> covers <m>A \cup B</m>, and the total sum
+          of their lengths is at most <m>\varepsilon</m>. Hence
+          <m>A \cup B</m> is null.
+        </p>
+      </proof>
+    </proposition>
+
+    <theorem xml:id="thm-lebesgue-integrability-criterion">
+      <title>Lebesgue Integrability Criterion</title>
+      <statement>
+        <p>
+          A bounded function <m>f \colon [a,b] \to \R</m> is Riemann
+          integrable if and only if it is continuous almost everywhere on
+          <m>[a,b]</m>; that is, if and only if the set of discontinuities of
+          <m>f</m> has measure zero.
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      The Thomae function from <xref ref="eg-thomae-function"/> illustrates
+      this criterion well: it is continuous at every irrational point and
+      discontinuous at every rational point. Since <m>\Q</m> is countable,
+      <xref ref="cor-countable-sets-null"/> shows that the set of
+      discontinuities has measure zero, so the theorem predicts that the
+      Thomae function is Riemann integrable.
+    </p>
+
+    <p>
+      The criterion also gives a quick explanation for some earlier results.
+      If <m>\phi</m> is continuous and <m>f</m> is integrable, then every
+      discontinuity of <m>\phi \circ f</m> must already be a discontinuity of
+      <m>f</m>, so <m>\phi \circ f</m> is integrable as well. Similarly, if
+      <m>f</m> and <m>g</m> are integrable, then every discontinuity of
+      <m>fg</m> lies in the union of the discontinuity sets of <m>f</m> and
+      <m>g</m>. By <xref ref="prop-union-two-null-sets"/>, that union has
+      measure zero, so <m>fg</m> is integrable.
+    </p>
+  </section>
+</appendix>

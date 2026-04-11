@@ -196,21 +196,26 @@
           Let <m>I_1=\int_a^c f</m> and <m>I_2=\int_c^b f</m>. Because
           <m>I_1</m> and <m>I_2</m> lie between the corresponding lower and
           upper sums, we obtain
-          <me>
-            I_1+I_2-\varepsilon
-            \lt
-            L(P_1,f)+L(P_2,f)
-            =
-            L(P,f)
-            \le
-            I
-            \le
-            U(P,f)
-            =
-            U(P_1,f)+U(P_2,f)
-            \lt
-            I_1+I_2+\varepsilon.
-          </me>
+          <md>
+            <mrow>
+              I_1+I_2-\varepsilon
+              \lt
+              L(P_1,f)+L(P_2,f)
+              =
+              L(P,f)
+              \le
+              I,
+            </mrow>
+            <mrow>
+              I
+              \le
+              U(P,f)
+              =
+              U(P_1,f)+U(P_2,f)
+              \lt
+              I_1+I_2+\varepsilon.
+            </mrow>
+          </md>
           Hence <m>I=I_1+I_2</m>.
         </p>
 

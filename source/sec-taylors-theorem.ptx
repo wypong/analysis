@@ -164,6 +164,14 @@
     </proof>
   </proposition>
 
+  <p>
+    This is a convenient special case tailored to the present argument. A more
+    general integration-by-parts formula, together with a change-of-variables
+    theorem, appears later in the integration chapter; see
+    <xref ref="prop-integration-by-parts"/> and
+    <xref ref="thm-change-of-variables"/>.
+  </p>
+
   <theorem xml:id="thm-taylor-integral-remainder">
     <title>Taylor's Theorem with Integral Remainder</title>
     <statement>

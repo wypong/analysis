@@ -291,9 +291,12 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
 
   <p>
     By the lemma above, every sequence has a monotone subsequence. If the
-    original sequence is bounded, then this subsequence is also bounded. A
-    bounded monotone sequence converges by
-    <xref ref="thm-monotone-convergence"/>, so the Bolzano-Weierstrass theorem
-    follows.
+    original sequence is bounded, then this subsequence is also bounded.
+  </p>
+
+  <p>
+    A bounded monotone sequence converges by
+    <xref ref="thm-monotone-convergence"/>. This proves the
+    Bolzano-Weierstrass theorem.
   </p>
 </section>

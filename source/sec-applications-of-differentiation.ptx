@@ -405,6 +405,14 @@
       </proof>
     </theorem>
 
+    <p>
+      This theorem is only a preview. In the integration chapter we prove the
+      more general second form of the Fundamental Theorem of Calculus
+      (<xref ref="thm-ftc-second-form"/>), where the integrand is assumed only
+      to be Riemann integrable and the conclusion is differentiability at
+      points of continuity of the integrand.
+    </p>
+
     <corollary xml:id="cor-newton-leibniz-special-case">
       <statement>
         <p>
@@ -445,5 +453,12 @@
 	</p>
       </proof>
     </corollary>
+
+    <p>
+      Likewise, the integration chapter proves the more general first form of
+      the Fundamental Theorem of Calculus
+      (<xref ref="thm-ftc-first-form"/>) and the corresponding
+      Newton-Leibniz formula (<xref ref="cor-newton-leibniz-ftc"/>).
+    </p>
   </subsection>
 </section>

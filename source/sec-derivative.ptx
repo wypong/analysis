@@ -146,6 +146,12 @@
       </proof>
     </proposition>
 
+    <p>
+      Since Carathéodory's Criterion is equivalent to the classical limit
+      definition of differentiability, we will use these two formulations
+      interchangeably.
+    </p>
+
     <proposition xml:id="prop-differentiable-implies-continuous">
       <statement>
         <p>

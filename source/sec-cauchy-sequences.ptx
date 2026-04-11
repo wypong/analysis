@@ -140,8 +140,11 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       <p>
         The ordered field <m>\Q</m> is not sequentially complete. Let
         <m>x_n</m> be the decimal truncation of <m>\sqrt{2}</m> to
-        <m>n</m> decimal places:
-        <m>1, 1.4, 1.41, 1.414, \dots</m>. Then
+        <m>n</m> decimal places. Thus
+        <me>
+          x_1=1, \qquad x_2=1.4, \qquad x_3=1.41, \qquad x_4=1.414, \dots
+        </me>
+        Then
         <m>0\le \sqrt{2}-x_n &lt; 10^{-n}</m> for every <m>n</m>. Hence,
         for <m>m,n\ge N</m>,
         <me>

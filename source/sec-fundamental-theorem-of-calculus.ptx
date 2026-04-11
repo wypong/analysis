@@ -3,4 +3,403 @@
 <section xml:id="sec-fundamental-theorem-of-calculus"
   xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>The Fundamental Theorem of Calculus</title>
+
+  <introduction>
+    <p>
+      We now return to the theme announced at the end of
+      <xref ref="sec-applications-of-differentiation"/>: differentiation and
+      integration are inverse processes, at least under suitable hypotheses.
+      We present the theorem in two standard forms.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-indefinite-integrals">
+    <title>Indefinite Integrals</title>
+
+    <p>
+      Let <m>f \in R[a,b]</m>. For each <m>c \in [a,b]</m>, the function
+      <me>
+        x \mapsto \int_c^x f(t)\,dt
+      </me>
+      is called the <term>indefinite integral</term><idx><h>integral</h><h>indefinite</h></idx>
+      of <m>f</m> with <term>base point</term><idx><h>integral</h><h>base point</h></idx>
+      <m>c</m>.
+    </p>
+
+    <theorem xml:id="thm-ftc-second-form">
+      <title>Fundamental Theorem of Calculus (Second Form)</title>
+      <statement>
+        <p>
+          Let <m>f \in R[a,b]</m>, and define
+          <me>
+            F(x)=\int_a^x f(t)\,dt.
+          </me>
+          Then <m>F</m> is Lipschitz continuous on <m>[a,b]</m>. Moreover, if
+          <m>f</m> is continuous at <m>x_0 \in [a,b]</m>, then <m>F</m> is
+          differentiable at <m>x_0</m> and
+          <me>
+            F'(x_0)=f(x_0).
+          </me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Since <m>f</m> is integrable on <m>[a,b]</m>, it is bounded. Choose
+          <m>M \ge 0</m> such that <m>|f(x)| \le M</m> for every
+          <m>x \in [a,b]</m>. Let <m>x,x' \in [a,b]</m>. If <m>x \lt x'</m>,
+          then part (3) of <xref ref="thm-basic-properties-riemann-integral"
+          text="title"/> gives
+          <me>
+            F(x')-F(x)=\int_x^{x'} f(t)\,dt.
+          </me>
+          Therefore, by part (4) of the same theorem,
+          <me>
+            |F(x')-F(x)|
+            =
+            \left|\int_x^{x'} f(t)\,dt\right|
+            \le
+            M|x'-x|.
+          </me>
+          The same inequality is trivial if <m>x=x'</m>, and it follows by
+          symmetry when <m>x' \lt x</m>. Thus <m>F</m> is Lipschitz
+          continuous on <m>[a,b]</m>.
+        </p>
+
+        <p>
+          Now suppose that <m>f</m> is continuous at <m>x_0 \in [a,b]</m>. Let
+          <me>
+            \varphi(x)=
+            \begin{cases}
+              \dfrac{1}{x-x_0}\int_{x_0}^{x} f(t)\,dt &amp; \text{if } x \ne x_0,\\
+              f(x_0) &amp; \text{if } x=x_0.
+            \end{cases}
+          </me>
+          Then
+          <me>
+            F(x)-F(x_0)=\varphi(x)(x-x_0)
+          </me>
+          for every <m>x \in [a,b]</m>. We will prove that <m>\varphi</m> is
+          continuous at <m>x_0</m>. Let <m>\varepsilon \gt 0</m>. There exists
+          <m>\delta \gt 0</m> such that
+          <me>
+            |f(t)-f(x_0)| \lt \varepsilon
+          </me>
+          whenever <m>t \in [a,b]</m> and <m>|t-x_0| \lt \delta</m>. If
+          <m>x \in [a,b]</m> with <m>0 \lt |x-x_0| \lt \delta</m>, then
+          <me>
+            \begin{aligned}
+            |\varphi(x)-\varphi(x_0)|
+            &amp;=
+            \left|
+            \frac{1}{x-x_0}\int_{x_0}^{x} f(t)\,dt
+            -
+            \frac{1}{x-x_0}\int_{x_0}^{x} f(x_0)\,dt
+            \right| \\
+            &amp;\le
+            \frac{1}{|x-x_0|}
+            \int_{\min\{x,x_0\}}^{\max\{x,x_0\}} |f(t)-f(x_0)|\,dt \\
+            &amp;\lt
+            \frac{1}{|x-x_0|}\varepsilon |x-x_0|
+            =
+            \varepsilon.
+            \end{aligned}
+          </me>
+          Thus <m>\varphi(x) \to \varphi(x_0)</m> as <m>x \to x_0</m>, so
+          <m>\varphi</m> is continuous at <m>x_0</m>. By Carathéodory's
+          Criterion (<xref ref="prop-caratheodory-criterion"/>), it follows
+          that <m>F</m> is differentiable at <m>x_0</m> and
+          <m>F'(x_0)=\varphi(x_0)=f(x_0)</m>.
+        </p>
+      </proof>
+    </theorem>
+
+    <corollary xml:id="cor-continuous-functions-have-primitives">
+      <statement>
+        <p>
+          If <m>f \in C[a,b]</m>, then the indefinite integral
+          <me>
+            F(x)=\int_a^x f(t)\,dt
+          </me>
+          is an antiderivative, or <term>primitive</term><idx>primitive</idx>,
+          of <m>f</m> on <m>[a,b]</m>.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          By <xref ref="thm-continuous-function-integrable" text="title"/>,
+          every continuous function on <m>[a,b]</m> is Riemann integrable.
+          Therefore <xref ref="thm-ftc-second-form" text="title"/> applies at
+          every point of <m>[a,b]</m> and yields <m>F'=f</m>.
+        </p>
+      </proof>
+    </corollary>
+
+    <p>
+      In general, however, an indefinite integral need not be differentiable
+      at every point, and even when it is differentiable at a point, its
+      derivative there need not equal the original integrand.
+    </p>
+
+    <example xml:id="eg-ftc-signum-absolute-value">
+      <statement>
+        <p>
+          Consider the signum function
+          <me>
+            \operatorname{sgn}(x)=
+            \begin{cases}
+              1 &amp; \text{if } x \gt 0,\\
+              0 &amp; \text{if } x=0,\\
+              -1 &amp; \text{if } x \lt 0.
+            \end{cases}
+          </me>
+          Since this is a step function, it is integrable on <m>[-1,1]</m>.
+          Its indefinite integral with base point <m>0</m> is
+          <me>
+            F(x)=\int_0^x \operatorname{sgn}(t)\,dt=|x|.
+          </me>
+          The function <m>|x|</m> is not differentiable at <m>0</m>, so the
+          indefinite integral of an integrable function need not be
+          differentiable everywhere.
+        </p>
+      </statement>
+    </example>
+
+    <example xml:id="eg-ftc-thomae-zero-primitive">
+      <statement>
+        <p>
+          Let <m>h</m> be the Thomae function from
+          <xref ref="eg-thomae-function"/>. Since <m>h \ge 0</m> and
+          <m>\int_0^1 h=0</m>, part (2) of
+          <xref ref="thm-basic-properties-riemann-integral" text="title"/>
+          implies that
+          <me>
+            0 \le \int_0^x h(t)\,dt \le \int_0^1 h(t)\,dt=0
+          </me>
+          for every <m>x \in [0,1]</m>. Hence the function
+          <me>
+            H(x)=\int_0^x h(t)\,dt
+          </me>
+          is identically zero on <m>[0,1]</m>. Therefore <m>H'(x)=0</m> for
+          every <m>x \in [0,1]</m>, while <m>h(q) \gt 0</m> for every rational
+          <m>q \in [0,1]</m>. So it can happen that the indefinite integral is
+          differentiable at a point but its derivative does not equal the
+          integrand there.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-two-forms-ftc">
+    <title>The Two Forms of the Theorem</title>
+
+    <theorem xml:id="thm-ftc-first-form">
+      <title>Fundamental Theorem of Calculus (First Form)</title>
+      <statement>
+        <p>
+          Suppose <m>F \colon [a,b] \to \R</m> is differentiable on
+          <m>[a,b]</m> and that <m>F' \in R[a,b]</m>. Then
+          <me>
+            \int_a^b F'(x)\,dx = F(b)-F(a).
+          </me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Since differentiability implies continuity,
+          <m>F</m> is continuous on <m>[a,b]</m>. Let
+          <m>P=\{x_0,\dots,x_n\}</m> be any partition of <m>[a,b]</m>, and let
+          <m>m_i</m> and <m>M_i</m> be the infimum and supremum of
+          <m>F'</m> on <m>[x_{i-1},x_i]</m>. By the Mean Value Theorem
+          (<xref ref="thm-mean-value-theorem"/>), for each
+          <m>i=1,\dots,n</m> there exists <m>t_i \in (x_{i-1},x_i)</m> such
+          that
+          <me>
+            F(x_i)-F(x_{i-1})=F'(t_i)(x_i-x_{i-1}).
+          </me>
+          Hence
+          <me>
+            m_i(x_i-x_{i-1})
+            \le
+            F(x_i)-F(x_{i-1})
+            \le
+            M_i(x_i-x_{i-1}).
+          </me>
+        </p>
+
+        <p>
+          Summing over <m>i</m> gives
+          <me>
+            L(P,F')
+            \le
+            \sum_{i=1}^n \bigl(F(x_i)-F(x_{i-1})\bigr)
+            \le
+            U(P,F').
+          </me>
+          The sum in the middle telescopes, so
+          <me>
+            L(P,F') \le F(b)-F(a) \le U(P,F').
+          </me>
+        </p>
+
+        <p>
+          Since <m>P</m> was arbitrary, we obtain
+          <me>
+            \underline{\int_a^b} F'
+            \le
+            F(b)-F(a)
+            \le
+            \overline{\int_a^b} F'.
+          </me>
+          Because <m>F'</m> is integrable, the upper and lower integrals are
+          equal. Therefore
+          <me>
+            \int_a^b F'(x)\,dx = F(b)-F(a).
+          </me>
+        </p>
+      </proof>
+    </theorem>
+
+    <corollary xml:id="cor-newton-leibniz-ftc">
+      <statement>
+        <p>
+          Let <m>f \colon [a,b] \to \R</m> be continuous, and let <m>F</m> be
+          an antiderivative of <m>f</m> on <m>[a,b]</m>. Then
+          <me>
+            \int_a^b f(x)\,dx = F(b)-F(a).
+          </me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          By <xref ref="thm-continuous-function-integrable" text="title"/>,
+          the function <m>f</m> is Riemann integrable on <m>[a,b]</m>. Since
+          <m>F'=f</m>, the conclusion follows from
+          <xref ref="thm-ftc-first-form" text="title"/>.
+        </p>
+      </proof>
+    </corollary>
+
+    <p>
+      When <m>f</m> is continuous, the first form may also be recovered from
+      the second form. Indeed, if
+      <me>
+        F_a(x)=\int_a^x f(t)\,dt,
+      </me>
+      then <xref ref="thm-ftc-second-form" text="title"/> shows that
+      <m>F_a'=f</m>. Hence <m>(F-F_a)'=0</m> on <m>(a,b)</m>, so
+      <xref ref="cor-derivative-zero-implies-constant"/> yields
+      <m>F(x)=F_a(x)+F(a)</m>. Evaluating at <m>x=b</m> gives
+      <m>\int_a^b f = F(b)-F(a)</m>.
+    </p>
+
+    <example xml:id="eg-thomae-no-primitive">
+      <statement>
+        <p>
+          The Thomae function is integrable on <m>[0,1]</m>, but it has no
+          primitive on <m>[0,1]</m>. Indeed, if <m>H</m> were a primitive of
+          <m>h</m>, then by <xref ref="thm-ftc-first-form" text="title"/>,
+          <me>
+            H(x)-H(0)=\int_0^x h(t)\,dt = 0
+          </me>
+          for every <m>x \in [0,1]</m>. Thus <m>H</m> would be constant, which
+          is impossible because then <m>H'=0</m> everywhere, while
+          <m>h(q) \gt 0</m> for rational <m>q</m>.
+        </p>
+      </statement>
+    </example>
+
+    <example xml:id="eg-ftc-sqrt-not-riemann">
+      <statement>
+        <p>
+          Let
+          <me>
+            H(x)=2\sqrt{x}
+            \qquad (x \in [0,1]).
+          </me>
+          Then <m>H</m> is continuous on <m>[0,1]</m>, and for
+          <m>x \in (0,1]</m>,
+          <me>
+            H'(x)=\frac{1}{\sqrt{x}}.
+          </me>
+          This derivative is unbounded on <m>[0,1]</m>, so it is not Riemann
+          integrable no matter how one defines <m>H'(0)</m>. Thus
+          <xref ref="thm-ftc-first-form"/> does not apply.
+        </p>
+      </statement>
+    </example>
+
+    <example xml:id="eg-ftc-bounded-oscillatory-derivative">
+      <statement>
+        <p>
+          Define
+          <me>
+            F(x)=
+            \begin{cases}
+              x^2\sin(1/x) &amp; \text{if } x \ne 0,\\
+              0 &amp; \text{if } x=0
+            \end{cases}
+          </me>
+          on <m>[-1,1]</m>. Then <m>F</m> is differentiable on <m>[-1,1]</m>,
+          and
+          <me>
+            F'(x)=
+            \begin{cases}
+              2x\sin(1/x)-\cos(1/x) &amp; \text{if } x \ne 0,\\
+              0 &amp; \text{if } x=0.
+            \end{cases}
+          </me>
+          The derivative is bounded on <m>[-1,1]</m> and is continuous except
+          at <m>0</m>, so <m>F'</m> is integrable. By
+          <xref ref="thm-ftc-first-form"/>,
+          <me>
+            \int_{-1}^1 F'(x)\,dx
+            =
+            F(1)-F(-1)
+            =
+            \sin(1)-(-\sin(1))
+            =
+            2\sin(1).
+          </me>
+        </p>
+      </statement>
+    </example>
+
+    <example xml:id="eg-ftc-unbounded-oscillatory-derivative">
+      <statement>
+        <p>
+          Let
+          <me>
+            F(x)=
+            \begin{cases}
+              x^2\cos(1/x^2) &amp; \text{if } x \ne 0,\\
+              0 &amp; \text{if } x=0.
+            \end{cases}
+          </me>
+          Then <m>F</m> is differentiable on <m>[0,1]</m>, and
+          <me>
+            F'(x)=
+            \begin{cases}
+              2x\cos(1/x^2)+\dfrac{2}{x}\sin(1/x^2) &amp; \text{if } x \ne 0,\\
+              0 &amp; \text{if } x=0.
+            \end{cases}
+          </me>
+          The term <m>(2/x)\sin(1/x^2)</m> is unbounded near <m>0</m>, so
+          <m>F'</m> is not Riemann integrable on <m>[0,1]</m>. Again,
+          <xref ref="thm-ftc-first-form"/> does not apply.
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      For a much broader characterization of Riemann integrability, see
+      <xref ref="ap-lebesgue-integrability-criterion"/>. In particular,
+      <xref ref="thm-lebesgue-integrability-criterion"/> explains why
+      bounded functions such as the Thomae function are integrable even though
+      they are not continuous everywhere.
+    </p>
+  </subsection>
 </section>

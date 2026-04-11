@@ -506,10 +506,12 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
     </p>
 
     <p>
-      Since <xref ref="thm-root-ratio-limsup-inequality"/> implies that
-      if <m>\lim |x_{n+1}|/|x_n|</m> exists, then
-      <m>\limsup |x_n|^{1/n} = \lim |x_{n+1}|/|x_n|</m>, the root test is
-      at least as strong as the ratio test.
+      By <xref ref="thm-root-ratio-limsup-inequality"/>, if the limit
+      <m>\lim |x_{n+1}|/|x_n|</m> exists, then
+      <me>
+        \limsup |x_n|^{1/n} = \lim \frac{|x_{n+1}|}{|x_n|}.
+      </me>
+      Therefore the root test is at least as strong as the ratio test.
       The following example shows that it is strictly stronger.
     </p>
 

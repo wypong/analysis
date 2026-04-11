@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-integration-by-parts-and-change-of-variables"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Integration by Parts and Change of Variables</title>
+
+  <introduction>
+    <p>
+      The Fundamental Theorem of Calculus turns differentiation rules into
+      integration formulas. Two of the most useful are integration by parts,
+      which comes from the product rule, and change of variables, which comes
+      from the chain rule.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-integration-by-parts">
+    <title>Integration by Parts</title>
+
+    <proposition xml:id="prop-integration-by-parts">
+      <title>Integration by Parts</title>
+      <statement>
+        <p>
+          Suppose <m>F</m> and <m>G</m> are differentiable on <m>[a,b]</m>
+          and that <m>F'</m> and <m>G'</m> are both integrable on
+          <m>[a,b]</m>. Then
+          <me>
+            \int_a^b F(x)G'(x)\,dx
+            =
+            F(b)G(b)-F(a)G(a)-\int_a^b F'(x)G(x)\,dx.
+          </me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Since differentiability implies continuity, both <m>F</m> and
+          <m>G</m> are continuous on <m>[a,b]</m>. Hence
+          <xref ref="thm-continuous-function-integrable" text="title"/>
+          shows that <m>F,G \in R[a,b]</m>. Because <m>F'</m> and <m>G'</m>
+          are integrable by assumption, <xref
+          ref="prop-product-of-integrable-functions"/> implies that
+          <m>F'G</m> and <m>FG'</m> are integrable.
+        </p>
+
+        <p>
+          By the product rule
+          (<xref ref="prop-derivative-sum-product-rules"/>),
+          <me>
+            (FG)'=F'G+FG'.
+          </me>
+          Therefore <m>(FG)'</m> is integrable, by part (1) of
+          <xref ref="thm-basic-properties-riemann-integral" text="title"/>.
+          Applying <xref ref="thm-ftc-first-form" text="title"/> to
+          <m>FG</m>, we get
+          <me>
+            F(b)G(b)-F(a)G(a)
+            =
+            \int_a^b (FG)'(x)\,dx
+            =
+            \int_a^b F'(x)G(x)\,dx + \int_a^b F(x)G'(x)\,dx.
+          </me>
+          Rearranging yields the formula.
+        </p>
+      </proof>
+    </proposition>
+  </subsection>
+
+  <subsection xml:id="subsec-change-of-variables">
+    <title>Change of Variables</title>
+
+    <theorem xml:id="thm-change-of-variables">
+      <title>Change of Variables</title>
+      <statement>
+        <p>
+          Let <m>\varphi \in C^1[a,b]</m>, and let <m>f</m> be continuous on
+          <m>\varphi([a,b])</m>. Then
+          <me>
+            \int_a^b f(\varphi(x))\varphi'(x)\,dx
+            =
+            \int_{\varphi(a)}^{\varphi(b)} f(u)\,du.
+          </me>
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Since <m>f</m> is continuous on <m>\varphi([a,b])</m>, the second
+          form of the Fundamental Theorem of Calculus
+          (<xref ref="thm-ftc-second-form"/>) gives a function
+          <me>
+            U(y)=\int_{\varphi(a)}^{y} f(u)\,du
+            \qquad (y \in \varphi([a,b]))
+          </me>
+          such that <m>U'(y)=f(y)</m> for every <m>y \in \varphi([a,b])</m>.
+        </p>
+
+        <p>
+          Define <m>H(x)=U(\varphi(x))</m> on <m>[a,b]</m>. By the chain rule,
+          <me>
+            H'(x)=U'(\varphi(x))\varphi'(x)=f(\varphi(x))\varphi'(x).
+          </me>
+          Because <m>\varphi</m> and <m>\varphi'</m> are continuous on
+          <m>[a,b]</m>, and <m>f</m> is continuous on <m>\varphi([a,b])</m>,
+          the function <m>f \circ \varphi</m> is continuous on <m>[a,b]</m>.
+          Hence <m>H'</m> is continuous, in particular integrable, on
+          <m>[a,b]</m>.
+        </p>
+
+        <p>
+          Applying <xref ref="thm-ftc-first-form" text="title"/> to <m>H</m>,
+          we obtain
+          <me>
+            \int_a^b f(\varphi(x))\varphi'(x)\,dx
+            =
+            \int_a^b H'(x)\,dx
+            =
+            H(b)-H(a)
+            =
+            U(\varphi(b))-U(\varphi(a)).
+          </me>
+          Since <m>U(\varphi(a))=0</m>, the right-hand side is
+          <me>
+            \int_{\varphi(a)}^{\varphi(b)} f(u)\,du.
+          </me>
+          This proves the formula.
+        </p>
+      </proof>
+    </theorem>
+
+    <example xml:id="eg-change-of-variables-x-over-one-plus-xsq">
+      <statement>
+        <p>
+          Consider
+          <me>
+            \int_{-1}^{2} \frac{x}{1+x^2}\,dx.
+          </me>
+          Let <m>\varphi(x)=1+x^2</m> and <m>f(u)=1/(2u)</m>. Then
+          <me>
+            \varphi'(x)=2x
+            \qquad\text{and}\qquad
+            f(\varphi(x))\varphi'(x)
+            =
+            \frac{1}{2(1+x^2)}\cdot 2x
+            =
+            \frac{x}{1+x^2}.
+          </me>
+          Therefore the change-of-variables theorem gives
+          <me>
+            \int_{-1}^{2} \frac{x}{1+x^2}\,dx
+            =
+            \int_{2}^{5} \frac{1}{2u}\,du
+            =
+            \frac12 \ln\frac{5}{2}.
+          </me>
+        </p>
+      </statement>
+    </example>
+  </subsection>
+</section>

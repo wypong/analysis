@@ -6,8 +6,8 @@
 <project ptx-version="2">
   <targets>
     <target name="web" format="html" />
-    <target name="latex" format="latex" />
-    <target name="print" format="pdf" />
+    <target name="latex" format="latex" xsl="custom-latex.xsl" />
+    <target name="print" format="pdf" xsl="custom-latex.xsl" />
   </targets>
 </project>
 
