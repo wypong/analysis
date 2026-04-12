@@ -18,6 +18,7 @@
     <xi:include href="./ch-differentiation.ptx" />
     <xi:include href="./ch-power-series.ptx" />
     <xi:include href="./ch-integration.ptx" />
+    <xi:include href="./ch-interchange-of-limit-operations.ptx" />
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />

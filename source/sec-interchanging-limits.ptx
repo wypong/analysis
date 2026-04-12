@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-interchanging-limits"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Interchanging Limits</title>
+
+  <introduction>
+    <p>
+      Limits do not commute automatically. Even when every object in sight is
+      continuous or integrable, taking one limit can destroy the hypotheses
+      needed for another. Uniform convergence is the condition that makes many
+      familiar limit operations legitimate.
+    </p>
+  </introduction>
+
+  <example xml:id="eg-two-limits-do-not-commute">
+    <statement>
+      <p>
+        Define
+        <me>
+          a_{n,k}=\frac{n}{n+k}.
+        </me>
+        Then for each fixed <m>n</m>,
+        <m>\lim_{k\to\infty} a_{n,k}=0</m>, so
+        <me>
+          \lim_{n\to\infty}\left(\lim_{k\to\infty} a_{n,k}\right)=0.
+        </me>
+        But for each fixed <m>k</m>,
+        <m>\lim_{n\to\infty} a_{n,k}=1</m>, and therefore
+        <me>
+          \lim_{k\to\infty}\left(\lim_{n\to\infty} a_{n,k}\right)=1.
+        </me>
+        So the two iterated limits are different.
+      </p>
+    </statement>
+  </example>
+
+  <theorem xml:id="thm-uniform-limit-continuous">
+    <title>Continuity of the Uniform Limit</title>
+    <statement>
+      <p>
+        Let <m>S \subseteq \R</m>, let <m>x_0 \in S</m>, and suppose
+        <m>f_n \colon S \to \R</m> is continuous at <m>x_0</m> for every
+        <m>n</m>. If <m>f_n \to f</m> uniformly on <m>S</m>, then
+        <m>f</m> is continuous at <m>x_0</m>.
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Let <m>\varepsilon \gt 0</m>. By uniform convergence, there exists
+        <m>N</m> such that
+        <me>
+          |f_N(x)-f(x)| \lt \frac{\varepsilon}{3}
+          \qquad \text{for all } x \in S.
+        </me>
+        Since <m>f_N</m> is continuous at <m>x_0</m>, there exists
+        <m>\delta \gt 0</m> such that
+        <me>
+          |f_N(x)-f_N(x_0)| \lt \frac{\varepsilon}{3}
+          \qquad \text{whenever } x \in S \text{ and } |x-x_0| \lt \delta.
+        </me>
+        For such <m>x</m>,
+        <me>
+          |f(x)-f(x_0)|
+          \le
+          |f(x)-f_N(x)|
+          +
+          |f_N(x)-f_N(x_0)|
+          +
+          |f_N(x_0)-f(x_0)|
+          \lt
+          \varepsilon.
+        </me>
+        Therefore <m>f</m> is continuous at <m>x_0</m>.
+      </p>
+    </proof>
+  </theorem>
+
+  <corollary xml:id="cor-uniform-limit-of-continuous-functions">
+    <statement>
+      <p>
+        The uniform limit of continuous functions is continuous.
+      </p>
+    </statement>
+  </corollary>
+
+  <corollary xml:id="cor-uniform-limit-uniformly-continuous">
+    <statement>
+      <p>
+        Let <m>S \subseteq \R</m>. If each <m>f_n \colon S \to \R</m> is
+        uniformly continuous on <m>S</m> and <m>f_n \to f</m> uniformly on
+        <m>S</m>, then <m>f</m> is uniformly continuous on <m>S</m>.
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Let <m>\varepsilon \gt 0</m>. Choose <m>N</m> such that
+        <m>|f(x)-f_N(x)| \lt \varepsilon/3</m> for all <m>x \in S</m>. Since
+        <m>f_N</m> is uniformly continuous, there exists <m>\delta \gt 0</m>
+        such that
+        <m>|f_N(x)-f_N(y)| \lt \varepsilon/3</m> whenever
+        <m>x,y \in S</m> and <m>|x-y| \lt \delta</m>. For such
+        <m>x,y</m>,
+        <me>
+          |f(x)-f(y)|
+          \le
+          |f(x)-f_N(x)|+|f_N(x)-f_N(y)|+|f_N(y)-f(y)|
+          \lt
+          \varepsilon.
+        </me>
+        Hence <m>f</m> is uniformly continuous on <m>S</m>.
+      </p>
+    </proof>
+  </corollary>
+
+  <example xml:id="eg-pointwise-limit-can-destroy-continuity">
+    <statement>
+      <p>
+        The sequence <m>f_n(x)=x^n</m> on <m>[0,1]</m> converges pointwise to
+        the discontinuous limit described in
+        <xref ref="eg-pointwise-limit-xn"/>. Thus continuity is not preserved
+        by pointwise convergence.
+      </p>
+    </statement>
+  </example>
+
+  <theorem xml:id="thm-integral-uniform-limit">
+    <title>Integration of the Uniform Limit</title>
+    <statement>
+      <p>
+        Let <m>f_n \in R[a,b]</m> for every <m>n</m>, and suppose
+        <m>f_n \to f</m> uniformly on <m>[a,b]</m>. Then <m>f \in R[a,b]</m>,
+        and
+        <me>
+          \int_a^b f
+          =
+          \lim_{n\to\infty} \int_a^b f_n.
+        </me>
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Let
+        <me>
+          c_n=\sup_{x \in [a,b]} |f(x)-f_n(x)|.
+        </me>
+        Then <m>c_n \to 0</m>. Fix <m>\varepsilon \gt 0</m>, and choose
+        <m>n</m> so that <m>c_n \lt \varepsilon/(3(b-a))</m>. Since
+        <m>f_n</m> is integrable, the Darboux criterion
+        (<xref ref="prop-integrability-criterion-darboux"/>) gives a partition
+        <m>P</m> of <m>[a,b]</m> such that
+        <me>
+          U(P,f_n)-L(P,f_n) \lt \frac{\varepsilon}{3}.
+        </me>
+      </p>
+
+      <p>
+        On each subinterval <m>I_j</m> of <m>P</m>, let <m>M_j^n,m_j^n</m> be
+        the supremum and infimum of <m>f_n</m>, and let <m>M_j,m_j</m> be the
+        corresponding quantities for <m>f</m>. From
+        <m>|f-f_n| \le c_n</m> we obtain
+        <me>
+          M_j \le M_j^n+c_n
+          \qquad\text{and}\qquad
+          m_j \ge m_j^n-c_n.
+        </me>
+        Summing over the partition gives
+        <me>
+          U(P,f)-L(P,f)
+          \le
+          U(P,f_n)-L(P,f_n)+2c_n(b-a)
+          \lt
+          \varepsilon.
+        </me>
+        Therefore <m>f</m> is integrable.
+      </p>
+
+      <p>
+        Since <m>f-f_n</m> is now integrable, part (4) of
+        <xref ref="thm-basic-properties-riemann-integral"/> yields
+        <me>
+          \left|\int_a^b f-\int_a^b f_n\right|
+          =
+          \left|\int_a^b (f-f_n)\right|
+          \le
+          c_n(b-a).
+        </me>
+        The right-hand side tends to <m>0</m>, so
+        <m>\int_a^b f_n \to \int_a^b f</m>.
+      </p>
+    </proof>
+  </theorem>
+
+  <example xml:id="eg-spike-functions-integrals">
+    <statement>
+      <p>
+        For each <m>n \in \N</m>, define
+        <me>
+          f_n(x)=
+          \begin{cases}
+            4n^2x &amp; \text{if } 0 \le x \le \frac{1}{2n},\\
+            4n-4n^2x &amp; \text{if } \frac{1}{2n} \lt x \le \frac{1}{n},\\
+            0 &amp; \text{if } \frac{1}{n} \lt x \le 1.
+          \end{cases}
+        </me>
+        Each <m>f_n</m> is continuous on <m>[0,1]</m> and therefore
+        integrable. Geometrically, the graph is a triangle of base
+        <m>1/n</m> and height <m>2n</m>, so
+        <me>
+          \int_0^1 f_n = \frac12 \cdot \frac{1}{n} \cdot 2n = 1.
+        </me>
+        For every fixed <m>x \gt 0</m>, we have <m>f_n(x)=0</m> for all
+        sufficiently large <m>n</m>, and clearly <m>f_n(0)=0</m>. Thus
+        <m>f_n \to 0</m> pointwise on <m>[0,1]</m>, but
+        <me>
+          \int_0^1 \lim_{n\to\infty} f_n
+          =
+          0
+          \neq
+          1
+          =
+          \lim_{n\to\infty} \int_0^1 f_n.
+        </me>
+        So pointwise convergence is not enough to interchange limit and
+        integral.
+      </p>
+    </statement>
+  </example>
+
+  <theorem xml:id="thm-differentiation-under-uniform-limit">
+    <title>Differentiation Under the Limit Sign</title>
+    <statement>
+      <p>
+        Let <m>I \subseteq \R</m> be an open interval, and let
+        <m>f_n \in C^1(I)</m> for every <m>n</m>. Suppose there exists a point
+        <m>a \in I</m> such that the numerical sequence <m>(f_n(a))</m>
+        converges, and suppose that <m>f_n'</m> converges uniformly on every
+        compact interval <m>K \subseteq I</m> to a function <m>g</m>. Then
+        there exists a differentiable function <m>f \colon I \to \R</m> such
+        that <m>f_n \to f</m> uniformly on every compact interval of
+        <m>I</m>, and
+        <me>
+          f'(x)=g(x)
+          \qquad \text{for every } x \in I.
+        </me>
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Let <m>L=\lim_{n\to\infty} f_n(a)</m>. Fix a compact interval
+        <m>K=[u,v] \subseteq I</m>, and set
+        <m>\alpha=\min\{a,u\}</m> and <m>\beta=\max\{a,v\}</m>. Then
+        <m>[\alpha,\beta] \subseteq I</m>, and by hypothesis
+        <m>f_n' \to g</m> uniformly on <m>[\alpha,\beta]</m>. Since each
+        <m>f_n'</m> is continuous,
+        <xref ref="cor-uniform-limit-of-continuous-functions"/> shows that
+        <m>g</m> is continuous on <m>[\alpha,\beta]</m>.
+      </p>
+
+      <p>
+        For each <m>x \in K</m>, the Fundamental Theorem of Calculus gives
+        <me>
+          f_n(x)=f_n(a)+\int_a^x f_n'(t)\,dt.
+        </me>
+        Define
+        <me>
+          f(x)=L+\int_a^x g(t)\,dt
+          \qquad (x \in I).
+        </me>
+        Then for <m>x \in K</m>,
+        <me>
+          |f_n(x)-f(x)|
+          \le
+          |f_n(a)-L|
+          +
+          \left|\int_a^x \bigl(f_n'(t)-g(t)\bigr)\,dt\right|
+          \le
+          |f_n(a)-L| + (\beta-\alpha)\sup_{t \in [\alpha,\beta]} |f_n'(t)-g(t)|.
+        </me>
+        The right-hand side tends to <m>0</m>, uniformly in <m>x \in K</m>.
+        Hence <m>f_n \to f</m> uniformly on <m>K</m>.
+      </p>
+
+      <p>
+        Because <m>g</m> is continuous on every compact interval of <m>I</m>,
+        the Fundamental Theorem of Calculus implies that <m>f</m> is
+        differentiable on <m>I</m> and that <m>f'(x)=g(x)</m> for every
+        <m>x \in I</m>.
+      </p>
+    </proof>
+  </theorem>
+
+  <example xml:id="eg-uniform-limit-not-enough-for-derivatives">
+    <statement>
+      <p>
+        Uniform convergence of <m>f_n</m> alone does not justify
+        differentiating term by term. Let
+        <me>
+          f_n(x)=\frac{\sin(nx)}{n}
+          \qquad (x \in \R).
+        </me>
+        Since <m>|f_n(x)| \le 1/n</m>, we have <m>f_n \to 0</m> uniformly on
+        <m>\R</m>. But
+        <me>
+          f_n'(x)=\cos(nx),
+        </me>
+        and the sequence <m>(\cos(nx))</m> does not even converge pointwise
+        on <m>\R</m>; for example, <m>\cos(n\pi)=(-1)^n</m> oscillates.
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    Theorems <xref ref="thm-integral-uniform-limit"/> and
+    <xref ref="thm-differentiation-under-uniform-limit"/> explain why power
+    series can be integrated and differentiated term by term on closed
+    subintervals inside their interval of convergence.
+  </p>
+</section>

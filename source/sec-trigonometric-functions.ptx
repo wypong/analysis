@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-trigonometric-functions"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Trigonometric Functions</title>
+
+  <introduction>
+    <p>
+      We now construct sine and cosine from their power series. The basic
+      algebraic identities will emerge from differentiation and from a simple
+      uniqueness argument for the differential equation <m>y''+y=0</m>. This
+      follows the same general strategy used in classical analysis texts such
+      as Rosenlicht.
+    </p>
+  </introduction>
+
+  <p>
+    For <m>x \in \R</m>, define
+    <me>
+      \sin x := \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!}
+      \qquad\text{and}\qquad
+      \cos x := \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!}.
+    </me>
+  </p>
+
+  <proposition xml:id="prop-sine-cosine-series-convergence">
+    <statement>
+      <p>
+        For every <m>R \gt 0</m>, the defining series for <m>\sin x</m> and
+        <m>\cos x</m> converge uniformly on <m>[-R,R]</m>. In particular,
+        <m>\sin</m> and <m>\cos</m> are continuous on <m>\R</m>.
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        If <m>|x| \le R</m>, then
+        <me>
+          \left|\frac{(-1)^n x^{2n+1}}{(2n+1)!}\right|
+          \le
+          \frac{R^{2n+1}}{(2n+1)!},
+          \qquad
+          \left|\frac{(-1)^n x^{2n}}{(2n)!}\right|
+          \le
+          \frac{R^{2n}}{(2n)!}.
+        </me>
+        Both numerical majorants converge by the ratio test, so the
+        Weierstrass M-test
+        (<xref ref="thm-weierstrass-m-test-functions"/>) gives uniform
+        convergence on <m>[-R,R]</m>.
+      </p>
+    </proof>
+  </proposition>
+
+  <proposition xml:id="prop-sine-cosine-derivatives">
+    <statement>
+      <p>
+        The functions <m>\sin</m> and <m>\cos</m> are analytic on <m>\R</m>,
+        and
+        <me>
+          (\sin x)'=\cos x,
+          \qquad
+          (\cos x)'=-\sin x.
+        </me>
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Each defining series has radius of convergence <m>\infty</m>, so
+        <xref ref="thm-termwise-calculus-power-series"/> allows us to
+        differentiate term by term:
+        <me>
+          (\sin x)'
+          =
+          \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!}
+          =
+          \cos x,
+        </me>
+        and
+        <me>
+          (\cos x)'
+          =
+          \sum_{n=1}^\infty \frac{(-1)^n (2n)x^{2n-1}}{(2n)!}
+          =
+          -\sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!}
+          =
+          -\sin x.
+        </me>
+        Analyticity follows because both are power-series functions with
+        infinite radius of convergence.
+      </p>
+    </proof>
+  </proposition>
+
+  <p>
+    The defining series immediately show that
+    <me>
+      \sin(-x)=-\sin x
+      \qquad\text{and}\qquad
+      \cos(-x)=\cos x,
+    </me>
+    so <m>\sin</m> is odd and <m>\cos</m> is even.
+  </p>
+
+  <proposition xml:id="prop-pythagorean-identity">
+    <statement>
+      <p>
+        For every <m>x \in \R</m>,
+        <me>
+          \sin^2 x+\cos^2 x=1.
+        </me>
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Let <m>h(x)=\sin^2 x+\cos^2 x</m>. Using the product rule and
+        <xref ref="prop-sine-cosine-derivatives"/>, we get
+        <me>
+          h'(x)=2\sin x \cos x + 2\cos x(-\sin x)=0.
+        </me>
+        By <xref ref="cor-derivative-zero-implies-constant"/>, <m>h</m> is
+        constant on <m>\R</m>. Evaluating at <m>x=0</m> gives
+        <me>
+          h(0)=\sin^2 0+\cos^2 0=0^2+1^2=1.
+        </me>
+        Hence <m>h(x)=1</m> for all <m>x</m>.
+      </p>
+    </proof>
+  </proposition>
+
+  <lemma xml:id="lem-trig-ode-uniqueness">
+    <statement>
+      <p>
+        Let <m>h \in C^2(\R)</m> satisfy
+        <me>
+          h''(x)=-h(x)
+          \qquad \text{for all } x \in \R,
+        </me>
+        together with <m>h(0)=0</m> and <m>h'(0)=0</m>. Then
+        <m>h(x)=0</m> for every <m>x \in \R</m>.
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Consider the function
+        <me>
+          E(x)=h(x)^2+h'(x)^2.
+        </me>
+        Differentiating gives
+        <me>
+          E'(x)=2h(x)h'(x)+2h'(x)h''(x)
+          =
+          2h'(x)\bigl(h(x)+h''(x)\bigr)
+          =0.
+        </me>
+        Hence <m>E</m> is constant by
+        <xref ref="cor-derivative-zero-implies-constant"/>. Since
+        <m>E(0)=h(0)^2+h'(0)^2=0</m>, we have <m>E(x)=0</m> for every
+        <m>x</m>. Therefore both <m>h(x)</m> and <m>h'(x)</m> are identically
+        zero.
+      </p>
+    </proof>
+  </lemma>
+
+  <theorem xml:id="thm-sine-cosine-addition-formulas">
+    <title>Addition Formulas</title>
+    <statement>
+      <p>
+        For all <m>x,a \in \R</m>,
+        <me>
+          \sin(x+a)=\sin x \cos a+\cos x \sin a,
+        </me>
+        and
+        <me>
+          \cos(x+a)=\cos x \cos a-\sin x \sin a.
+        </me>
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Fix <m>a \in \R</m>. Define
+        <me>
+          F(x)=\sin(x+a)
+          \qquad\text{and}\qquad
+          G(x)=\sin x \cos a+\cos x \sin a.
+        </me>
+        By <xref ref="prop-sine-cosine-derivatives"/>, both functions belong
+        to <m>C^2(\R)</m> and satisfy <m>y''=-y</m>. Also,
+        <me>
+          F(0)=\sin a=G(0)
+          \qquad\text{and}\qquad
+          F'(0)=\cos a=G'(0).
+        </me>
+        Therefore <m>H=F-G</m> satisfies the hypotheses of
+        <xref ref="lem-trig-ode-uniqueness"/>, so <m>H=0</m>. This proves the
+        sine addition formula.
+      </p>
+
+      <p>
+        For cosine, define
+        <me>
+          \widetilde{F}(x)=\cos(x+a)
+          \qquad\text{and}\qquad
+          \widetilde{G}(x)=\cos x \cos a-\sin x \sin a.
+        </me>
+        Again both satisfy <m>y''=-y</m>, and
+        <me>
+          \widetilde{F}(0)=\cos a=\widetilde{G}(0),
+          \qquad
+          \widetilde{F}'(0)=-\sin a=\widetilde{G}'(0).
+        </me>
+        Hence <m>\widetilde{F}=\widetilde{G}</m> by the same lemma.
+      </p>
+    </proof>
+  </theorem>
+
+  <proposition xml:id="prop-sine-positive-on-zero-two">
+    <statement>
+      <p>
+        If <m>0 \lt x \le 2</m>, then
+        <me>
+          0 \lt \sin x \le x.
+        </me>
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        For <m>0 \lt x \le 2</m>, the successive term magnitudes in the sine
+        series satisfy
+        <me>
+          \frac{x^{2n+3}/(2n+3)!}{x^{2n+1}/(2n+1)!}
+          =
+          \frac{x^2}{(2n+2)(2n+3)}
+          \le
+          \frac{4}{6}
+          \lt
+          1.
+        </me>
+        Thus the terms decrease in absolute value to <m>0</m>, so the
+        alternating-series test gives
+        <me>
+          0 \lt \sin x \le x.
+        </me>
+      </p>
+    </proof>
+  </proposition>
+
+  <proposition xml:id="prop-pi-over-two">
+    <statement>
+      <p>
+        There exists a unique number <m>\pi/2 \in (1,2)</m> such that
+        <me>
+          \cos(\pi/2)=0.
+        </me>
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        By <xref ref="prop-sine-cosine-derivatives"/> and
+        <xref ref="prop-sine-positive-on-zero-two"/>, we have
+        <me>
+          (\cos x)'=-\sin x \lt 0
+          \qquad \text{for } 0 \lt x \le 2.
+        </me>
+        Hence <m>\cos x</m> is strictly decreasing on <m>[0,2]</m>.
+      </p>
+
+      <p>
+        Using the alternating-series estimate,
+        <me>
+          \cos 1
+          =
+          1-\frac{1}{2!}+\frac{1}{4!}-\cdots
+          \gt
+          1-\frac12
+          \gt
+          0,
+        </me>
+        while
+        <me>
+          \cos 2
+          =
+          1-\frac{2^2}{2!}+\frac{2^4}{4!}-\frac{2^6}{6!}+\cdots
+          \lt
+          1-2+\frac{16}{24}
+          =
+          -\frac13
+          \lt
+          0.
+        </me>
+        Therefore the Intermediate Value Theorem gives a zero of
+        <m>\cos x</m> in <m>(1,2)</m>, and strict decrease makes that zero
+        unique.
+      </p>
+    </proof>
+  </proposition>
+
+  <p>
+    We define <m>\pi</m><idx>\pi</idx> to be twice this number:
+    <me>
+      \pi := 2(\pi/2).
+    </me>
+  </p>
+
+  <theorem xml:id="thm-trig-quarter-turn-periodicity">
+    <title>Quarter-Turn Identities and Periodicity</title>
+    <statement>
+      <p>
+        For every <m>x \in \R</m>,
+        <me>
+          \sin\left(x+\frac{\pi}{2}\right)=\cos x,
+          \qquad
+          \cos\left(x+\frac{\pi}{2}\right)=-\sin x,
+        </me>
+        and consequently
+        <me>
+          \sin(x+\pi)=-\sin x,
+          \qquad
+          \cos(x+\pi)=-\cos x,
+        </me>
+        and
+        <me>
+          \sin(x+2\pi)=\sin x,
+          \qquad
+          \cos(x+2\pi)=\cos x.
+        </me>
+      </p>
+      <p>
+        In particular,
+        <me>
+          \sin\left(\frac{\pi}{2}\right)=1,
+          \qquad
+          \sin(\pi)=0,
+          \qquad
+          \cos(\pi)=-1.
+        </me>
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Since <m>\cos(\pi/2)=0</m> and <m>\sin^2(\pi/2)+\cos^2(\pi/2)=1</m>,
+        we have <m>\sin(\pi/2)=1</m>. The addition formulas with
+        <m>a=\pi/2</m> therefore give
+        <me>
+          \begin{aligned}
+            \sin\left(x+\frac{\pi}{2}\right)
+            &amp;=
+            \sin x \cos\left(\frac{\pi}{2}\right)
+            +
+            \cos x \sin\left(\frac{\pi}{2}\right)\\
+            &amp;=
+            \cos x,
+          \end{aligned}
+        </me>
+        and
+        <me>
+          \begin{aligned}
+            \cos\left(x+\frac{\pi}{2}\right)
+            &amp;=
+            \cos x \cos\left(\frac{\pi}{2}\right)
+            -
+            \sin x \sin\left(\frac{\pi}{2}\right)\\
+            &amp;=
+            -\sin x.
+          \end{aligned}
+        </me>
+      </p>
+
+      <p>
+        Putting <m>x=\pi/2</m> into the first identity gives <m>\sin(\pi)=0</m>,
+        and then the second identity yields <m>\cos(\pi)=-1</m>. Applying the
+        addition formulas with <m>a=\pi</m> gives
+        <me>
+          \sin(x+\pi)=\sin x \cos \pi+\cos x \sin \pi=-\sin x,
+        </me>
+        and
+        <me>
+          \cos(x+\pi)=\cos x \cos \pi-\sin x \sin \pi=-\cos x.
+        </me>
+        Replacing <m>x</m> by <m>x+\pi</m> in these formulas shows that
+        <me>
+          \sin(x+2\pi)=\sin x,
+          \qquad
+          \cos(x+2\pi)=\cos x.
+        </me>
+      </p>
+    </proof>
+  </theorem>
+
+  <proposition xml:id="prop-sine-basic-limits">
+    <statement>
+      <p>
+        For every <m>x \in \R</m>,
+        <me>
+          |\sin x| \le |x|,
+        </me>
+        and
+        <me>
+          \lim_{x\to 0} \frac{\sin x}{x}=1,
+          \qquad
+          \lim_{x\to 0} \cos x=1.
+        </me>
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        By <xref ref="prop-pythagorean-identity"/>, we have
+        <m>|\cos x| \le 1</m> for all <m>x</m>. Applying the Mean Value
+        Theorem to <m>\sin</m> on the interval between <m>0</m> and <m>x</m>,
+        we obtain
+        <me>
+          |\sin x-\sin 0| = |\cos c|\,|x|
+        </me>
+        for some <m>c</m> between <m>0</m> and <m>x</m>. Since
+        <m>\sin 0=0</m>, it follows that <m>|\sin x| \le |x|</m>.
+      </p>
+
+      <p>
+        Dividing the power series for <m>\sin x</m> by <m>x</m> gives
+        <me>
+          \frac{\sin x}{x}
+          =
+          1-\frac{x^2}{3!}+\frac{x^4}{5!}-\cdots
+          \qquad (x \neq 0).
+        </me>
+        The right-hand side converges to <m>1</m> as <m>x \to 0</m>, and the
+        power series for <m>\cos x</m> plainly tends to <m>1</m> as well.
+      </p>
+    </proof>
+  </proposition>
+</section>

@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-sequences-and-series-of-functions"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Sequences and Series of Functions</title>
+
+  <introduction>
+    <p>
+      Power series, Fourier series, and many approximation procedures are
+      built from sequences of functions. The basic question is simple: if
+      each function in the sequence is well behaved, what can be said about
+      the limit? Pointwise convergence is often too weak, so the right notion
+      for analysis is usually uniform convergence.
+    </p>
+  </introduction>
+
+  <p>
+    Let <m>S \subseteq \R</m>, and let <m>(f_n)</m> be a sequence of
+    functions from <m>S</m> to <m>\R</m>. We say that <m>f_n</m> converges
+    <term>pointwise</term><idx><h>convergence</h><h>pointwise</h></idx> on
+    <m>S</m> to a function <m>f \colon S \to \R</m> if for every
+    <m>x \in S</m> the numerical sequence <m>(f_n(x))</m> converges to
+    <m>f(x)</m>.
+  </p>
+
+  <example xml:id="eg-pointwise-limit-xn">
+    <statement>
+      <p>
+        Let <m>f_n(x)=x^n</m> on <m>[0,1]</m>. Then <m>f_n(x)\to 0</m> for
+        every <m>x \in [0,1)</m>, while <m>f_n(1)=1</m> for every <m>n</m>.
+        Thus the pointwise limit is
+        <me>
+          f(x)=\begin{cases}
+            0 &amp; \text{if } 0 \le x \lt 1,\\
+            1 &amp; \text{if } x=1.
+          \end{cases}
+        </me>
+        Each <m>f_n</m> is a polynomial, but the limit is not continuous at
+        <m>1</m>.
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    Pointwise convergence looks at one input <m>x</m> at a time. The index
+    <m>N</m> that makes <m>|f_n(x)-f(x)|</m> small is allowed to depend on
+    <m>x</m>. Uniform convergence removes that dependence.
+  </p>
+
+  <p>
+    We say that <m>f_n</m> converges <term>uniformly</term>
+    <idx><h>convergence</h><h>uniform</h></idx> on <m>S</m> to <m>f</m> if
+    for every <m>\varepsilon \gt 0</m> there
+    exists <m>N \in \N</m> such that
+    <me>
+      |f_n(x)-f(x)| \lt \varepsilon
+      \qquad \text{for all } n \ge N \text{ and all } x \in S.
+    </me>
+  </p>
+
+  <proposition xml:id="prop-uniform-implies-pointwise-functions">
+    <statement>
+      <p>
+        Uniform convergence implies pointwise convergence.
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Fix <m>x \in S</m>. If <m>f_n \to f</m> uniformly on <m>S</m>, then
+        for every <m>\varepsilon \gt 0</m> there exists <m>N</m> such that
+        <m>|f_n(y)-f(y)| \lt \varepsilon</m> for all <m>y \in S</m> and all
+        <m>n \ge N</m>. In particular, the same inequality holds when
+        <m>y=x</m>. Therefore <m>f_n(x)\to f(x)</m>.
+      </p>
+    </proof>
+  </proposition>
+
+  <example xml:id="eg-pointwise-not-uniform-xn">
+    <statement>
+      <p>
+        The convergence in <xref ref="eg-pointwise-limit-xn"/> is not uniform
+        on <m>[0,1]</m>. Let <m>f</m> be the pointwise limit. For
+        <m>x_n=n/(n+1)</m> we have <m>x_n \in [0,1)</m>, so <m>f(x_n)=0</m>,
+        while
+        <me>
+          f_n(x_n)=\left(\frac{n}{n+1}\right)^n \to e^{-1}.
+        </me>
+        Hence <m>|f_n(x_n)-f(x_n)|</m> does not tend to <m>0</m>. Therefore
+        <m>f_n</m> cannot converge uniformly to <m>f</m> on <m>[0,1]</m>.
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    If <m>f \colon S \to \R</m> is bounded, its
+    <term>supremum norm</term><idx><h>norm</h><h>supremum</h></idx> on
+    <m>S</m> is
+    <me>
+      \|f\|_S := \sup\{|f(x)| : x \in S\}.
+    </me>
+    When the set <m>S</m> is understood, we simply write <m>\|f\|</m>.
+  </p>
+
+  <proposition xml:id="prop-uniform-convergence-supnorm">
+    <statement>
+      <p>
+        Suppose <m>f_n</m> and <m>f</m> are bounded on <m>S</m> for every
+        <m>n</m>. Then <m>f_n \to f</m> uniformly on <m>S</m> if and only if
+        <me>
+          \|f_n-f\|_S \to 0.
+        </me>
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        If <m>f_n \to f</m> uniformly on <m>S</m>, then for every
+        <m>\varepsilon \gt 0</m> there exists <m>N</m> such that
+        <m>|f_n(x)-f(x)| \lt \varepsilon</m> for all <m>x \in S</m> and all
+        <m>n \ge N</m>. Taking the supremum over <m>x</m> gives
+        <m>\|f_n-f\|_S \le \varepsilon</m> for <m>n \ge N</m>.
+      </p>
+
+      <p>
+        Conversely, if <m>\|f_n-f\|_S \to 0</m>, then for every
+        <m>\varepsilon \gt 0</m> there exists <m>N</m> such that
+        <m>\|f_n-f\|_S \lt \varepsilon</m> whenever <m>n \ge N</m>. Hence
+        <m>|f_n(x)-f(x)| \le \|f_n-f\|_S \lt \varepsilon</m> for every
+        <m>x \in S</m>, which is exactly uniform convergence.
+      </p>
+    </proof>
+  </proposition>
+
+  <proposition xml:id="prop-uniform-cauchy-criterion-functions">
+    <statement>
+      <p>
+        Let <m>(f_n)</m> be a sequence of functions on <m>S</m>. Then
+        <m>(f_n)</m> converges uniformly on <m>S</m> if and only if for every
+        <m>\varepsilon \gt 0</m> there exists <m>N</m> such that
+        <me>
+          |f_m(x)-f_n(x)| \lt \varepsilon
+          \qquad \text{for all } m,n \ge N \text{ and all } x \in S.
+        </me>
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        If <m>f_n \to f</m> uniformly on <m>S</m>, then for every
+        <m>\varepsilon \gt 0</m> we may choose <m>N</m> so that
+        <m>|f_n(x)-f(x)| \lt \varepsilon/2</m> for all <m>x \in S</m> and all
+        <m>n \ge N</m>. Therefore, whenever <m>m,n \ge N</m>,
+        <me>
+          |f_m(x)-f_n(x)|
+          \le
+          |f_m(x)-f(x)|+|f_n(x)-f(x)|
+          \lt
+          \varepsilon
+        </me>
+        for all <m>x \in S</m>.
+      </p>
+
+      <p>
+        Conversely, suppose the displayed condition holds. Fix
+        <m>x \in S</m>. Then <m>(f_n(x))</m> is a Cauchy sequence in
+        <m>\R</m>, so it converges by completeness. Define
+        <m>f(x)=\lim_{n\to\infty} f_n(x)</m>. Now let <m>\varepsilon \gt 0</m>
+        and choose <m>N</m> as in the hypothesis. For <m>n \ge N</m> and
+        fixed <m>x \in S</m>, the inequality
+        <m>|f_m(x)-f_n(x)| \lt \varepsilon</m> holds for all <m>m \ge N</m>.
+        Letting <m>m \to \infty</m> gives
+        <m>|f(x)-f_n(x)| \le \varepsilon</m>. Since this estimate is valid for
+        every <m>x \in S</m>, the convergence is uniform.
+      </p>
+    </proof>
+  </proposition>
+
+  <p>
+    A <term>series of functions</term><idx><h>series</h><h>of functions</h></idx>
+    <m>\sum_{n=0}^\infty f_n</m> on <m>S</m> is studied through its partial
+    sums
+    <me>
+      s_N(x)=\sum_{n=0}^N f_n(x).
+    </me>
+    We say that the series converges pointwise or uniformly according as the
+    sequence <m>(s_N)</m> does.
+  </p>
+
+  <theorem xml:id="thm-weierstrass-m-test-functions">
+    <title>Weierstrass M-Test</title>
+    <statement>
+      <p>
+        Let <m>(f_n)</m> be a sequence of functions on <m>S</m>. Suppose
+        there are numbers <m>M_n \ge 0</m> such that
+        <me>
+          |f_n(x)| \le M_n
+          \qquad \text{for all } x \in S \text{ and all } n,
+        </me>
+        and suppose that the numerical series <m>\sum_{n=0}^\infty M_n</m>
+        converges. Then the series <m>\sum_{n=0}^\infty f_n</m> converges
+        absolutely and uniformly on <m>S</m>.
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Let <m>s_N(x)=\sum_{n=0}^N f_n(x)</m>. Since
+        <m>\sum_{n=0}^\infty M_n</m> converges, its tails tend to <m>0</m>.
+        Thus, given <m>\varepsilon \gt 0</m>, there exists <m>N</m> such that
+        for all <m>m \gt n \ge N</m>,
+        <me>
+          \sum_{k=n+1}^m M_k \lt \varepsilon.
+        </me>
+        Hence for every <m>x \in S</m>,
+        <me>
+          |s_m(x)-s_n(x)|
+          \le
+          \sum_{k=n+1}^m |f_k(x)|
+          \le
+          \sum_{k=n+1}^m M_k
+          \lt
+          \varepsilon.
+        </me>
+        By <xref ref="prop-uniform-cauchy-criterion-functions"/>, the partial
+        sums converge uniformly on <m>S</m>.
+      </p>
+
+      <p>
+        For each fixed <m>x \in S</m>, the estimate
+        <m>|f_n(x)| \le M_n</m> also shows that the numerical series
+        <m>\sum_{n=0}^\infty |f_n(x)|</m> converges by comparison. Therefore
+        the convergence is absolute at every point.
+      </p>
+    </proof>
+  </theorem>
+
+  <example xml:id="eg-geometric-series-uniform-on-closed-subinterval">
+    <statement>
+      <p>
+        Let <m>0 \lt r \lt 1</m>. On the interval <m>[-r,r]</m> we have
+        <m>|x^n| \le r^n</m>, and the geometric series
+        <m>\sum_{n=0}^\infty r^n</m> converges. Therefore
+        <m>\sum_{n=0}^\infty x^n</m> converges uniformly on <m>[-r,r]</m> by
+        the Weierstrass M-test.
+      </p>
+    </statement>
+  </example>
+
+  <theorem xml:id="thm-power-series-uniform-on-compact-subintervals">
+    <title>Uniform Convergence on Closed Subintervals</title>
+    <statement>
+      <p>
+        Suppose the power series
+        <me>
+          \sum_{n=0}^\infty a_n(x-x_0)^n
+        </me>
+        has radius of convergence <m>R \gt 0</m>. Then for every
+        <m>r</m> with <m>0 \lt r \lt R</m>, the series converges absolutely
+        and uniformly on the closed interval <m>[x_0-r,x_0+r]</m>.
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Let <m>L=\limsup |a_n|^{1/n}=1/R</m>. Choose a number <m>\rho</m>
+        such that
+        <me>
+          L \lt \rho \lt \frac{1}{r}.
+        </me>
+        By the definition of <m>\limsup</m>, there exists <m>N</m> such that
+        <m>|a_n|^{1/n} \le \rho</m> for every <m>n \ge N</m>, and hence
+        <m>|a_n| \le \rho^n</m> for all such <m>n</m>.
+      </p>
+
+      <p>
+        If <m>|x-x_0| \le r</m> and <m>n \ge N</m>, then
+        <me>
+          |a_n(x-x_0)^n|
+          \le
+          \rho^n r^n
+          =
+          (\rho r)^n.
+        </me>
+        Since <m>\rho r \lt 1</m>, the geometric series
+        <m>\sum_{n=N}^\infty (\rho r)^n</m> converges. For the finitely many
+        indices <m>n \lt N</m>, set <m>M_n=|a_n|r^n</m>. Then
+        <m>|a_n(x-x_0)^n| \le M_n</m> for every <m>x \in [x_0-r,x_0+r]</m>
+        and every <m>n</m>, and the numerical series <m>\sum M_n</m>
+        converges. The Weierstrass M-test now gives absolute and uniform
+        convergence on the stated interval.
+      </p>
+    </proof>
+  </theorem>
+
+  <example xml:id="eg-geometric-series-not-uniform-on-open-interval">
+    <statement>
+      <p>
+        The geometric series
+        <me>
+          \sum_{n=0}^\infty x^n
+        </me>
+        converges to <m>1/(1-x)</m> on <m>(-1,1)</m>, but the convergence is
+        not uniform on that open interval. Indeed, if
+        <m>s_N(x)=1+x+\dots+x^N</m>, then
+        <me>
+          \frac{1}{1-x}-s_N(x)=\frac{x^{N+1}}{1-x}.
+        </me>
+        For each fixed <m>N</m>, the right-hand side becomes arbitrarily large
+        as <m>x \to 1^-</m>. Hence <m>s_N</m> cannot converge uniformly to
+        <m>1/(1-x)</m> on <m>(-1,1)</m>.
+      </p>
+    </statement>
+  </example>
+</section>

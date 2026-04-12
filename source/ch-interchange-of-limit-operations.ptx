@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-interchange-of-limit-operations"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Interchange of Limit Operations</title>
+
+  <xi:include href="sec-sequences-and-series-of-functions.ptx" />
+  <xi:include href="sec-interchanging-limits.ptx" />
+  <xi:include href="sec-exponential-and-logarithmic-functions.ptx" />
+  <xi:include href="sec-trigonometric-functions.ptx" />
+
+  <conclusion>
+    <p>
+      The first two sections provide the uniform-convergence machinery that
+      was used implicitly in the power-series chapter. The last two sections
+      apply that machinery to construct the classical transcendental
+      functions directly from power series. For related presentations, compare
+      <xref ref="biblio-rosenlicht-intro"/> and
+      <xref ref="biblio-lebl-basic-analysis"/>.
+    </p>
+  </conclusion>
+
+  <exercises xml:id="ex-ch8">
+    <title>Exercises</title>
+
+    <exercise xml:id="ex-interchange-xn-not-uniform">
+      <statement>
+        <p>
+          Let <m>f_n(x)=x^n</m> on <m>[0,1]</m>.
+        </p>
+        <ol>
+          <li>
+            <p>
+              Find the pointwise limit of <m>(f_n)</m> on <m>[0,1]</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Prove that <m>(f_n)</m> does not converge uniformly on
+              <m>[0,1]</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that <m>(f_n)</m> does converge uniformly on
+              <m>[0,r]</m> for every <m>0 \lt r \lt 1</m>.
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-interchange-exp-mtest">
+      <statement>
+        <p>
+          Use the Weierstrass M-test to prove that the exponential series
+          <me>
+            \sum_{n=0}^\infty \frac{x^n}{n!}
+          </me>
+          converges uniformly on every interval <m>[-R,R]</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-interchange-uniform-limit-uniformly-continuous">
+      <statement>
+        <p>
+          Prove <xref ref="cor-uniform-limit-uniformly-continuous"/> directly
+          from the definitions.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-interchange-spike-functions">
+      <statement>
+        <p>
+          For each <m>n \in \N</m>, define
+          <me>
+            f_n(x)=
+            \begin{cases}
+              4n^2x &amp; \text{if } 0 \le x \le \frac{1}{2n},\\
+              4n-4n^2x &amp; \text{if } \frac{1}{2n} \lt x \le \frac{1}{n},\\
+              0 &amp; \text{if } \frac{1}{n} \lt x \le 1.
+            \end{cases}
+          </me>
+          Show that <m>f_n \to 0</m> pointwise on <m>[0,1]</m>, but
+          <m>\int_0^1 f_n = 1</m> for every <m>n</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-interchange-logarithm-integral">
+      <statement>
+        <p>
+          Define
+          <me>
+            F(x)=\int_1^x \frac{dt}{t}
+            \qquad (x \gt 0).
+          </me>
+          Use the derivative formula for <m>\ln x</m> to prove that
+          <m>F(x)=\ln x</m> for all <m>x \gt 0</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="ex-interchange-double-angle-formulas">
+      <statement>
+        <p>
+          Use the addition formulas for sine and cosine to prove that
+          <me>
+            \sin(2x)=2\sin x \cos x
+            \qquad\text{and}\qquad
+            \cos(2x)=\cos^2 x-\sin^2 x.
+          </me>
+          Deduce the identities
+          <me>
+            \cos^2 x=\frac{1+\cos(2x)}{2}
+            \qquad\text{and}\qquad
+            \sin^2 x=\frac{1-\cos(2x)}{2}.
+          </me>
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
+</chapter>

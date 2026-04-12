@@ -91,10 +91,47 @@
 
     <proof>
       <p>
-        We omit the proof. It uses uniform convergence on closed subintervals
-        of <m>(x_0-R,x_0+R)</m>. The previous proposition already shows that
-        the differentiated and integrated series have the same radius of
-        convergence.
+        Fix <m>r</m> with <m>0 \lt r \lt R</m>, and let
+        <m>I_r=[x_0-r,x_0+r]</m>. By
+        <xref ref="thm-power-series-uniform-on-compact-subintervals"/>, the
+        original power series and its formal derivative both converge
+        uniformly on <m>I_r</m>. Let
+        <me>
+          s_n(x)=\sum_{k=0}^n a_k(x-x_0)^k.
+        </me>
+        Each <m>s_n</m> is a polynomial, so
+        <me>
+          s_n'(x)=\sum_{k=1}^n ka_k(x-x_0)^{k-1}.
+        </me>
+        Also <m>s_n(x_0)=a_0</m> for every <m>n</m>. Therefore
+        <xref ref="thm-differentiation-under-uniform-limit"/> applies and
+        shows that the limit function <m>f</m> is differentiable on
+        <m>(x_0-r,x_0+r)</m>, with
+        <me>
+          f'(x)=\sum_{k=1}^\infty ka_k(x-x_0)^{k-1}
+          \qquad \text{for } x \in (x_0-r,x_0+r).
+        </me>
+      </p>
+
+      <p>
+        Likewise, since <m>s_n \to f</m> uniformly on <m>I_r</m>,
+        <xref ref="thm-integral-uniform-limit"/> gives
+        <me>
+          \int_{x_0}^x f(t)\,dt
+          =
+          \lim_{n\to\infty} \int_{x_0}^x s_n(t)\,dt
+          =
+          \lim_{n\to\infty}
+          \sum_{k=0}^n \frac{a_k}{k+1}(x-x_0)^{k+1}
+          =
+          \sum_{k=0}^\infty \frac{a_k}{k+1}(x-x_0)^{k+1}
+        </me>
+        for every <m>x \in (x_0-r,x_0+r)</m>.
+      </p>
+
+      <p>
+        Since <m>r \lt R</m> was arbitrary, both formulas hold throughout the
+        entire interval <m>(x_0-R,x_0+R)</m>.
       </p>
     </proof>
   </theorem>

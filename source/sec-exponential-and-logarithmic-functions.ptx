@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-exponential-and-logarithmic-functions"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Exponential and Logarithmic Functions</title>
+
+  <introduction>
+    <p>
+      We now construct the exponential function directly from its power
+      series. Uniform convergence on bounded intervals gives a genuine
+      function, and the algebra of absolutely convergent series yields the
+      familiar laws of exponents. The logarithm will then appear naturally as
+      the inverse function.
+    </p>
+  </introduction>
+
+  <theorem xml:id="thm-exponential-series-bounded-intervals">
+    <title>The Exponential Series on Bounded Intervals</title>
+    <statement>
+      <p>
+        For every <m>R \gt 0</m>, the series
+        <me>
+          \sum_{n=0}^\infty \frac{x^n}{n!}
+        </me>
+        converges uniformly on <m>[-R,R]</m>. Hence it defines a continuous
+        function <m>E \colon \R \to \R</m> by
+        <me>
+          E(x)=\sum_{n=0}^\infty \frac{x^n}{n!}.
+        </me>
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Fix <m>R \gt 0</m>. If <m>|x| \le R</m>, then
+        <me>
+          \left|\frac{x^n}{n!}\right| \le \frac{R^n}{n!}.
+        </me>
+        The numerical series <m>\sum_{n=0}^\infty R^n/n!</m> converges by the
+        ratio test, since
+        <me>
+          \frac{R^{n+1}/(n+1)!}{R^n/n!}=\frac{R}{n+1}\to 0.
+        </me>
+        Therefore the Weierstrass M-test
+        (<xref ref="thm-weierstrass-m-test-functions"/>) applies and gives
+        uniform convergence on <m>[-R,R]</m>.
+      </p>
+    </proof>
+  </theorem>
+
+  <p>
+    We write
+    <me>
+      e^x := E(x)=\sum_{n=0}^\infty \frac{x^n}{n!}
+      \qquad (x \in \R),
+    </me>
+    and in particular <m>e:=e^1</m>.
+  </p>
+
+  <proposition xml:id="prop-exponential-addition-law">
+    <title>Addition Law</title>
+    <statement>
+      <p>
+        For all <m>x,y \in \R</m>,
+        <me>
+          e^{x+y}=e^x e^y.
+        </me>
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        For fixed <m>x,y \in \R</m>, the numerical series
+        <m>\sum x^n/n!</m> and <m>\sum y^n/n!</m> converge absolutely.
+        Therefore Mertens' theorem
+        (<xref ref="thm-mertens-series"/>) applies to their product:
+        <me>
+          e^x e^y
+          =
+          \left(\sum_{m=0}^\infty \frac{x^m}{m!}\right)
+          \left(\sum_{n=0}^\infty \frac{y^n}{n!}\right)
+          =
+          \sum_{k=0}^\infty \sum_{j=0}^k \frac{x^j}{j!}\frac{y^{k-j}}{(k-j)!}.
+        </me>
+      </p>
+
+      <p>
+        By the binomial theorem,
+        <me>
+          \sum_{j=0}^k \frac{x^j}{j!}\frac{y^{k-j}}{(k-j)!}
+          =
+          \frac{1}{k!}\sum_{j=0}^k \binom{k}{j}x^j y^{k-j}
+          =
+          \frac{(x+y)^k}{k!}.
+        </me>
+        Substituting this into the previous display gives
+        <me>
+          e^x e^y
+          =
+          \sum_{k=0}^\infty \frac{(x+y)^k}{k!}
+          =
+          e^{x+y}.
+        </me>
+      </p>
+    </proof>
+  </proposition>
+
+  <corollary xml:id="cor-exponential-is-analytic">
+    <statement>
+      <p>
+        The exponential function is analytic on all of <m>\R</m>.
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Fix <m>a \in \R</m>. For every <m>x \in \R</m>, the addition law gives
+        <me>
+          e^x=e^a e^{x-a}
+          =
+          e^a \sum_{n=0}^\infty \frac{(x-a)^n}{n!}.
+        </me>
+        Thus near the point <m>a</m>, the function <m>e^x</m> is represented
+        by a power series in <m>x-a</m>. Since <m>a</m> was arbitrary,
+        <m>e^x</m> is analytic on <m>\R</m>.
+      </p>
+    </proof>
+  </corollary>
+
+  <proposition xml:id="prop-exponential-derivative">
+    <statement>
+      <p>
+        The exponential function satisfies
+        <me>
+          \frac{d}{dx} e^x = e^x
+          \qquad \text{for all } x \in \R.
+        </me>
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        The power series for <m>e^x</m> has radius of convergence
+        <m>\infty</m>, so by
+        <xref ref="thm-termwise-calculus-power-series"/> it may be
+        differentiated term by term:
+        <me>
+          \frac{d}{dx} e^x
+          =
+          \sum_{n=1}^\infty \frac{n x^{n-1}}{n!}
+          =
+          \sum_{n=1}^\infty \frac{x^{n-1}}{(n-1)!}
+          =
+          \sum_{m=0}^\infty \frac{x^m}{m!}
+          =
+          e^x.
+        </me>
+      </p>
+    </proof>
+  </proposition>
+
+  <proposition xml:id="prop-exponential-basic-properties">
+    <title>Basic Properties of the Exponential Function</title>
+    <statement>
+      <p>
+        For all <m>x,y \in \R</m>, the exponential function satisfies:
+      </p>
+      <ol>
+        <li><p><m>e^0=1</m>,</p></li>
+        <li><p><m>e^{-x}=1/e^x</m>,</p></li>
+        <li><p><m>e^x \gt 0</m>,</p></li>
+        <li><p><m>e^x</m> is strictly increasing on <m>\R</m>.</p></li>
+      </ol>
+    </statement>
+
+    <proof>
+      <p>
+        The identity <m>e^0=1</m> is immediate from the defining series. The
+        addition law with <m>y=-x</m> gives
+        <me>
+          e^x e^{-x}=e^0=1,
+        </me>
+        so <m>e^{-x}=1/e^x</m> and, in particular, <m>e^x \neq 0</m> for every
+        <m>x</m>.
+      </p>
+
+      <p>
+        Because <m>e^x</m> is continuous and <m>e^0=1 \gt 0</m>, the
+        Intermediate Value Theorem implies that <m>e^x</m> cannot be negative:
+        if it were, continuity would force a zero somewhere in between.
+        Therefore <m>e^x \gt 0</m> for every <m>x</m>.
+      </p>
+
+      <p>
+        Finally, <xref ref="prop-exponential-derivative"/> shows that
+        <m>(e^x)'=e^x \gt 0</m> everywhere. By
+        <xref ref="prop-positive-derivative-implies-strictly-monotone"/>,
+        <m>e^x</m> is strictly increasing on <m>\R</m>.
+      </p>
+    </proof>
+  </proposition>
+
+  <proposition xml:id="prop-exponential-range">
+    <statement>
+      <p>
+        The exponential function maps <m>\R</m> bijectively onto
+        <m>(0,\infty)</m>.
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        We already know from
+        <xref ref="prop-exponential-basic-properties"/> that <m>e^x \gt 0</m>
+        for all <m>x</m> and that <m>e^x</m> is strictly increasing, so it is
+        injective.
+      </p>
+
+      <p>
+        Also,
+        <me>
+          e=e^1=1+1+\frac{1}{2!}+\frac{1}{3!}+\cdots \gt 2.
+        </me>
+        Therefore
+        <me>
+          e^n \ge 2^n \to \infty
+          \qquad \text{as } n \to \infty,
+        </me>
+        and hence <m>e^x</m> is unbounded above. Likewise,
+        <me>
+          e^{-n}=\frac{1}{e^n} \to 0,
+        </me>
+        so the values of <m>e^x</m> come arbitrarily close to <m>0</m>.
+      </p>
+
+      <p>
+        Since <m>e^x</m> is continuous and strictly increasing, its image is an
+        interval. The previous paragraph shows that this interval contains
+        arbitrarily large positive numbers and also positive numbers
+        arbitrarily close to <m>0</m>. Therefore the image is exactly
+        <m>(0,\infty)</m>.
+      </p>
+    </proof>
+  </proposition>
+
+  <p>
+    Because <m>e^x</m> is a continuous bijection from the interval
+    <m>\R</m> onto the interval <m>(0,\infty)</m>, it has a continuous inverse
+    by
+    <xref ref="prop-injective-continuous-on-interval-has-continuous-inverse"/>.
+    We call this inverse the <term>natural logarithm</term><idx><h>logarithm</h><h>natural</h></idx>
+    and write
+    <me>
+      \ln \colon (0,\infty) \to \R.
+    </me>
+  </p>
+
+  <p>
+    Since <m>\ln</m> is the inverse of a continuous strictly increasing
+    function, it is itself continuous and strictly increasing on
+    <m>(0,\infty)</m>.
+  </p>
+
+  <proposition xml:id="prop-logarithm-basic-properties">
+    <title>Basic Properties of the Logarithm</title>
+    <statement>
+      <p>
+        For all <m>x,y \gt 0</m>,
+      </p>
+      <ol>
+        <li><p><m>\ln 1=0</m>,</p></li>
+        <li><p><m>\ln(xy)=\ln x+\ln y</m>,</p></li>
+        <li><p><m>\ln(1/x)=-\ln x</m>,</p></li>
+        <li><p><m>\ln(x/y)=\ln x-\ln y</m>.</p></li>
+      </ol>
+    </statement>
+
+    <proof>
+      <p>
+        Since <m>e^0=1</m> and <m>\ln</m> is the inverse of <m>e^x</m>, we have
+        <m>\ln 1=0</m>.
+      </p>
+
+      <p>
+        Let <m>u=\ln x</m> and <m>v=\ln y</m>. Then <m>x=e^u</m> and
+        <m>y=e^v</m>. Hence
+        <me>
+          \begin{aligned}
+            xy &amp;= e^u e^v\\
+               &amp;= e^{u+v}.
+          \end{aligned}
+        </me>
+        and applying <m>\ln</m> to both sides gives
+        <me>
+          \ln(xy)=u+v=\ln x+\ln y.
+        </me>
+      </p>
+
+      <p>
+        Taking <m>y=1/x</m> in the previous identity yields
+        <me>
+          0=\ln 1=\ln x+\ln(1/x),
+        </me>
+        so <m>\ln(1/x)=-\ln x</m>. The quotient rule for logarithms follows by
+        combining the product rule with the reciprocal rule:
+        <me>
+          \ln(x/y)=\ln x+\ln(1/y)=\ln x-\ln y.
+        </me>
+      </p>
+    </proof>
+  </proposition>
+
+  <proposition xml:id="prop-logarithm-derivative">
+    <statement>
+      <p>
+        The logarithm is differentiable on <m>(0,\infty)</m>, and
+        <me>
+          \frac{d}{dx}\ln x = \frac{1}{x}.
+        </me>
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Apply
+        <xref ref="prop-derivative-of-inverse-function"/> to the continuous
+        bijection <m>e^x \colon \R \to (0,\infty)</m>. Since
+        <m>(e^x)'=e^x \neq 0</m> for every <m>x</m>, the inverse function
+        <m>\ln</m> is differentiable, and
+        <me>
+          (\ln)'(y)=\frac{1}{(e^x)'\big|_{x=\ln y}}
+          =
+          \frac{1}{e^{\ln y}}
+          =
+          \frac{1}{y}
+        </me>
+        for every <m>y \gt 0</m>.
+      </p>
+    </proof>
+  </proposition>
+
+  <corollary xml:id="cor-logarithm-integral-formula">
+    <statement>
+      <p>
+        For every <m>x \gt 0</m>,
+        <me>
+          \ln x = \int_1^x \frac{dt}{t}.
+        </me>
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Let
+        <me>
+          F(x)=\int_1^x \frac{dt}{t}
+          \qquad (x \gt 0).
+        </me>
+        By the Fundamental Theorem of Calculus, <m>F'(x)=1/x</m>. By
+        <xref ref="prop-logarithm-derivative"/>, the same is true for
+        <m>\ln x</m>. Therefore
+        <me>
+          \frac{d}{dx}\bigl(F(x)-\ln x\bigr)=0
+        </me>
+        on <m>(0,\infty)</m>. By
+        <xref ref="cor-derivative-zero-implies-constant"/>, the difference
+        <m>F-\ln</m> is constant. Evaluating at <m>x=1</m> gives
+        <me>
+          F(1)-\ln 1 = 0-0 = 0,
+        </me>
+        so the constant is <m>0</m>.
+      </p>
+    </proof>
+  </corollary>
+
+  <p>
+    Finally, if <m>a \gt 0</m>, one may define
+    <me>
+      a^x := e^{x\ln a}
+      \qquad (x \in \R).
+    </me>
+    The addition law for the exponential function then gives the usual rules
+    for general real powers as well.
+  </p>
+</section>
