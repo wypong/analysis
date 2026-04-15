@@ -11,13 +11,13 @@ Starter repository for a beginner-friendly Real Analysis textbook in PreTeXt.
 
 ## Local Workflow
 
-PreTeXt is installed in `~/pt`.
+PreTeXt is installed in the virtual environment at `~/pt/.venv/bin`.
 
 ```bash
-~/pt/bin/pretext --version
-~/pt/bin/pretext build web
-~/pt/bin/pretext view web
-~/pt/bin/pretext build print
+~/pt/.venv/bin/pretext --version
+~/pt/.venv/bin/pretext build web
+~/pt/.venv/bin/pretext view web
+~/pt/.venv/bin/pretext build print
 ```
 
 Optional convenience targets:
@@ -56,8 +56,8 @@ Two deployment options:
 1. Local deploy from your machine:
 
 ```bash
-~/pt/bin/pretext build web
-~/pt/bin/pretext deploy
+~/pt/.venv/bin/pretext build web
+~/pt/.venv/bin/pretext deploy
 ```
 
 2. GitHub Actions deploy:
