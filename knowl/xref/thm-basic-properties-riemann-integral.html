@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Basic Properties of the Integral.</span>
+</h4>
+<div class="para">Let <span class="process-math">\(f,g \in R[a,b]\text{,}\)</span> and let <span class="process-math">\(c \in \R\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-basic-properties-riemann-integral-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ol class="decimal" id="thm-basic-properties-riemann-integral-2-2">
+<li>
+<div class="para logical">
+<div class="para">The functions <span class="process-math">\(f+g\)</span> and <span class="process-math">\(cf\)</span> belong to <span class="process-math">\(R[a,b]\text{,}\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_a^b (f+g)=\int_a^b f+\int_a^b g,
+\qquad
+\int_a^b (cf)=c\int_a^b f.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-basic-properties-riemann-integral-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#thm-basic-properties-riemann-integral-2-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li>
+<div class="para logical">
+<div class="para">If <span class="process-math">\(f(x) \le g(x)\)</span> for every <span class="process-math">\(x \in [a,b]\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_a^b f \le \int_a^b g.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-basic-properties-riemann-integral-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#thm-basic-properties-riemann-integral-2-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li>
+<div class="para logical">
+<div class="para">If <span class="process-math">\(a \lt c \lt b\text{,}\)</span> then the restrictions of <span class="process-math">\(f\)</span> to <span class="process-math">\([a,c]\)</span> and <span class="process-math">\([c,b]\)</span> are integrable, and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_a^b f=\int_a^c f+\int_c^b f.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-basic-properties-riemann-integral-2-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#thm-basic-properties-riemann-integral-2-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li>
+<div class="para logical">
+<div class="para">If <span class="process-math">\(|f(x)| \le M\)</span> for every <span class="process-math">\(x \in [a,b]\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left|\int_a^b f\right| \le M|b-a|.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-basic-properties-riemann-integral-2-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#thm-basic-properties-riemann-integral-2-2-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Theorem 7.2.1: Basic Properties of the Integral"><a href="#thm-basic-properties-riemann-integral" title="Copy heading and permalink for Theorem 7.2.1: Basic Properties of the Integral" aria-label="Copy heading and permalink for Theorem 7.2.1: Basic Properties of the Integral">🔗</a></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">We begin with part (1). Let <span class="process-math">\(I_f=\int_a^b f\)</span> and <span class="process-math">\(I_g=\int_a^b g\text{,}\)</span> and fix <span class="process-math">\(\varepsilon \gt 0\text{.}\)</span> By the <a href="sec-definitions-and-examples-of-integration.html#prop-integrability-criterion-darboux" class="xref" data-knowl="./knowl/xref/prop-integrability-criterion-darboux.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 7.1.7: Integrability Criterion">Integrability Criterion</a>, there are partitions <span class="process-math">\(P_f\)</span> and <span class="process-math">\(P_g\)</span> of <span class="process-math">\([a,b]\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-integrability-criterion-darboux.html">
+\begin{equation*}
+U(P_f,f)-L(P_f,f) \lt \frac{\varepsilon}{2},
+\qquad
+U(P_g,g)-L(P_g,g) \lt \frac{\varepsilon}{2}.
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(P=P_f \cup P_g\text{.}\)</span> Since refinement decreases upper sums and increases lower sums,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-integrability-criterion-darboux.html">
+\begin{equation*}
+U(P,f)-L(P,f) \lt \frac{\varepsilon}{2},
+\qquad
+U(P,g)-L(P,g) \lt \frac{\varepsilon}{2}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-basic-properties-riemann-integral-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">For each subinterval <span class="process-math">\(I_i\)</span> of <span class="process-math">\(P\text{,}\)</span> let <span class="process-math">\(m_i^f,M_i^f\)</span> and <span class="process-math">\(m_i^g,M_i^g\)</span> be the infima and suprema of <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> on <span class="process-math">\(I_i\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+m_i^f+m_i^g \le \inf_{x \in I_i}(f(x)+g(x)),
+\qquad
+\sup_{x \in I_i}(f(x)+g(x)) \le M_i^f+M_i^g.
+\end{equation*}
+</div>
+<div class="para">Summing over the partition gives</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L(P,f)+L(P,g) \le L(P,f+g) \le U(P,f+g) \le U(P,f)+U(P,g).
+\end{equation*}
+</div>
+<div class="para">Hence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+U(P,f+g)-L(P,f+g)
+\le
+\bigl(U(P,f)-L(P,f)\bigr)+\bigl(U(P,g)-L(P,g)\bigr)
+\lt \varepsilon.
+\end{equation*}
+</div>
+<div class="para">So <span class="process-math">\(f+g\)</span> is integrable.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-basic-properties-riemann-integral-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Also, because <span class="process-math">\(I_f\)</span> lies between <span class="process-math">\(L(P,f)\)</span> and <span class="process-math">\(U(P,f)\text{,}\)</span> and similarly for <span class="process-math">\(I_g\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+I_f+I_g-\varepsilon
+\lt
+L(P,f)+L(P,g)
+\le
+\int_a^b (f+g)
+\le
+U(P,f)+U(P,g)
+\lt
+I_f+I_g+\varepsilon.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\varepsilon\)</span> is arbitrary, <span class="process-math">\(\int_a^b (f+g)=I_f+I_g\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-basic-properties-riemann-integral-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">For scalar multiples, let <span class="process-math">\(P=\{x_0,\dots,x_n\}\)</span> be any partition, and let <span class="process-math">\(m_i,M_i\)</span> be the infima and suprema of <span class="process-math">\(f\)</span> on <span class="process-math">\([x_{i-1},x_i]\text{.}\)</span> If <span class="process-math">\(c \ge 0\text{,}\)</span> then the infimum and supremum of <span class="process-math">\(cf\)</span> on the same interval are <span class="process-math">\(cm_i\)</span> and <span class="process-math">\(cM_i\text{.}\)</span> If <span class="process-math">\(c \lt 0\text{,}\)</span> they are <span class="process-math">\(cM_i\)</span> and <span class="process-math">\(cm_i\text{.}\)</span> In either case,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+U(P,cf)-L(P,cf)=|c|\bigl(U(P,f)-L(P,f)\bigr).
+\end{equation*}
+</div>
+<div class="para">Hence <span class="process-math">\(cf\)</span> is integrable. When <span class="process-math">\(c \ge 0\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L(P,cf)=cL(P,f),
+\qquad
+U(P,cf)=cU(P,f),
+\end{equation*}
+</div>
+<div class="para">and the same squeeze argument as above gives <span class="process-math">\(\int_a^b (cf)=c\int_a^b f\text{.}\)</span> When <span class="process-math">\(c \lt 0\text{,}\)</span> the same conclusion follows from the identities</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L(P,cf)=cU(P,f),
+\qquad
+U(P,cf)=cL(P,f).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-basic-properties-riemann-integral-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">For part (2), if <span class="process-math">\(f(x) \le g(x)\)</span> on <span class="process-math">\([a,b]\text{,}\)</span> then on every subinterval of every partition <span class="process-math">\(P\)</span> the infimum and supremum of <span class="process-math">\(f\)</span> are at most the corresponding infimum and supremum of <span class="process-math">\(g\text{.}\)</span> Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L(P,f) \le L(P,g)
+\qquad\text{and}\qquad
+U(P,f) \le U(P,g).
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\int_a^b f \le U(P,f)\)</span> and <span class="process-math">\(L(P,g) \le \int_a^b g\)</span> for every partition <span class="process-math">\(P\text{,}\)</span> it follows that <span class="process-math">\(\int_a^b f \le \int_a^b g\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-basic-properties-riemann-integral-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">For part (3), let <span class="process-math">\(I=\int_a^b f\)</span> and fix <span class="process-math">\(\varepsilon \gt 0\text{.}\)</span> By the <a href="sec-definitions-and-examples-of-integration.html#prop-integrability-criterion-darboux" class="xref" data-knowl="./knowl/xref/prop-integrability-criterion-darboux.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 7.1.7: Integrability Criterion">Integrability Criterion</a>, there is a partition <span class="process-math">\(P\)</span> of <span class="process-math">\([a,b]\)</span> such that <span class="process-math">\(U(P,f)-L(P,f) \lt \varepsilon/2\text{.}\)</span> If <span class="process-math">\(c \notin P\text{,}\)</span> adjoin <span class="process-math">\(c\)</span> to obtain a refinement; the gap does not increase. Write <span class="process-math">\(P_1\)</span> and <span class="process-math">\(P_2\)</span> for the induced partitions of <span class="process-math">\([a,c]\)</span> and <span class="process-math">\([c,b]\text{.}\)</span> Then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-integrability-criterion-darboux.html">
+\begin{equation*}
+L(P,f)=L(P_1,f)+L(P_2,f),
+\qquad
+U(P,f)=U(P_1,f)+U(P_2,f),
+\end{equation*}
+</div>
+<div class="para">so</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-integrability-criterion-darboux.html">
+\begin{equation*}
+\bigl(U(P_1,f)-L(P_1,f)\bigr)+\bigl(U(P_2,f)-L(P_2,f)\bigr)
+=
+U(P,f)-L(P,f)
+\lt
+\frac{\varepsilon}{2}.
+\end{equation*}
+</div>
+<div class="para">Since each summand is nonnegative, both are less than <span class="process-math">\(\varepsilon/2\text{.}\)</span> Therefore the restrictions of <span class="process-math">\(f\)</span> to <span class="process-math">\([a,c]\)</span> and <span class="process-math">\([c,b]\)</span> are integrable.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-basic-properties-riemann-integral-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(I_1=\int_a^c f\)</span> and <span class="process-math">\(I_2=\int_c^b f\text{.}\)</span> Because <span class="process-math">\(I_1\)</span> and <span class="process-math">\(I_2\)</span> lie between the corresponding lower and upper sums, we obtain</div>
+<div class="displaymath process-math">
+\begin{gather*}
+I_1+I_2-\varepsilon
+\lt
+L(P_1,f)+L(P_2,f)
+=
+L(P,f)
+\le
+I,\\
+I
+\le
+U(P,f)
+=
+U(P_1,f)+U(P_2,f)
+\lt
+I_1+I_2+\varepsilon.
+\end{gather*}
+</div>
+<div class="para">Hence <span class="process-math">\(I=I_1+I_2\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-basic-properties-riemann-integral-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Finally, for part (4), the hypothesis gives <span class="process-math">\(-M \le f(x) \le M\)</span> on <span class="process-math">\([a,b]\text{.}\)</span> By part (2),</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_a^b (-M) \le \int_a^b f \le \int_a^b M.
+\end{equation*}
+</div>
+<div class="para">Since constant functions are integrable and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_a^b (-M)=-M(b-a),
+\qquad
+\int_a^b M=M(b-a),
+\end{equation*}
+</div>
+<div class="para">we conclude that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+-M(b-a) \le \int_a^b f \le M(b-a).
+\end{equation*}
+</div>
+<div class="para">Therefore <span class="process-math">\(\left|\int_a^b f\right| \le M(b-a)=M|b-a|\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-basic-properties-riemann-integral-3-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 7.2.1.1"><a href="#thm-basic-properties-riemann-integral-3" title="Copy heading and permalink for Proof 7.2.1.1" aria-label="Copy heading and permalink for Proof 7.2.1.1">🔗</a></div></article></details><span class="incontext"><a class="internal" href="sec-properties-of-riemann-integrals.html#thm-basic-properties-riemann-integral">in-context</a></span>
+</body>
+</html>

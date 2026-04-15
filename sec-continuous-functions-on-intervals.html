@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Continuous Functions on Intervals</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "textmacros",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[tex]/textmacros",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Analysis for Beginners">
+<meta property="book:author" content="Wai Yan Pong">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.13.4';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.b76b8eace4405b9e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><link rel="icon" type="image/png" sizes="32x32" href="external/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="external/favicon/favicon-16x16.png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="analysis-for-beginners.html"><span class="title">Analysis for Beginners</span></a></h1>
+<p class="byline">Wai Yan Pong</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-8.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-basic-properties.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-continuity.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-uniform-continuity.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb{N}} \newcommand{\Z}{\mathbb{Z}}
+ \newcommand{\Q}{\mathbb{Q}} \newcommand{\R}{\mathbb{R}}
+ \newcommand{\lb}{\mathrm{lb}} \newcommand{\ub}{\mathrm{ub}}
+ \newcommand{\vx}{\mathbf{x}} \newcommand{\va}{\mathbf{a}}
+\newcommand{\vb}{\mathbf{b}} \newcommand{\vc}{\mathbf{c}}
+\newcommand{\vy}{\mathbf{y}} \newcommand{\vz}{\mathbf{z}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-title.html" class="internal"><span class="codenumber">1</span> <span class="title">The Real Numbers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-sets-of-real-numbers.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Sets of Real Numbers</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sets-of-real-numbers.html#subsec-bounded-subsets" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Bounded Subsets of <span class="process-math">\(\R\)</span></span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-completeness-axiom.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Completeness Axiom</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-completeness-axiom.html#subsec-completeness-consequences" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Consequences</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ex-ch1.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-sequences.html" class="internal"><span class="codenumber">2</span> <span class="title">Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-sequences.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sequences.html#subsec-sequences-definitions" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sequences.html#subsec-sequences-fundamental-results" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Fundamental Results</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-convergence-tests-for-sequences.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Convergence Tests for Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-convergence-tests-for-sequences.html#subsec-sequences-geometric" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Geometric Sequences</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-convergence-tests-for-sequences.html#subsec-sequences-nth-root" class="internal"><span class="codenumber">2.2.2</span> <span class="title"><span class="process-math">\(n\)</span>-th Root</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-convergence-tests-for-sequences.html#subsec-sequences-ratio-test" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Ratio Test</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-bolzano-weierstrass.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Bolzano-Weierstrass Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-cauchy-sequences.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Cauchy Sequences</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ex-ch2.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-series.html" class="internal"><span class="codenumber">3</span> <span class="title">Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-series.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Series</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-convergence-tests-for-series.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Convergence Tests for Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-convergence-tests-for-series.html#subsec-series-geometric" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Geometric Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-convergence-tests-for-series.html#subsec-series-positive-terms" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Series with Nonnegative Terms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-convergence-tests-for-series.html#subsec-series-comparison-tests" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Comparison Tests</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-convergence-tests-for-series.html#subsec-series-ratio-root-tests" class="internal"><span class="codenumber">3.2.4</span> <span class="title">Ratio and Root Tests</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-convergence-tests-for-series.html#subsec-series-alternating" class="internal"><span class="codenumber">3.2.5</span> <span class="title">Alternating Series</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-more-convergence-tests-for-series.html" class="internal"><span class="codenumber">3.3</span> <span class="title">More Convergence Tests for Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-more-convergence-tests-for-series.html#subsec-series-cauchy-products" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Cauchy Products</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-more-convergence-tests-for-series.html#subsec-series-raabe-test" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Raabe’s Test</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ex-ch3.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-continuity.html" class="internal"><span class="codenumber">4</span> <span class="title">Continuity</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-definition-of-continuity-examples.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Definition of Continuity. Examples.</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition-of-continuity-examples.html#subsec-continuity-at-a-point" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Continuity at a Point</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition-of-continuity-examples.html#subsec-cluster-and-isolated-points" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Cluster Points and Isolated Points</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition-of-continuity-examples.html#subsec-examples-of-continuous-functions" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Examples of Continuous Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limits-and-continuity.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Limits and Continuity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limits-and-continuity.html#subsec-limits-at-cluster-points" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Limits at Cluster Points</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limits-and-continuity.html#subsec-one-sided-limits" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Left and Right Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limits-and-continuity.html#subsec-limit-and-continuity" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Relation Between Limits and Continuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limits-and-continuity.html#subsec-extended-real-limits" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Limits Involving <span class="process-math">\(\pm\infty\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-basic-properties.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Basic Properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basic-properties.html#subsec-sequential-characterization-of-continuity" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Sequential Characterization</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basic-properties.html#subsec-algebra-of-continuous-functions" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Algebra of Continuous Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basic-properties.html#subsec-consequences-of-continuity" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Some Consequences</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-continuous-functions-on-intervals.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Continuous Functions on Intervals</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-continuous-functions-on-intervals.html#subsec-extreme-value-theorem" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Extreme Value Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-continuous-functions-on-intervals.html#subsec-intermediate-value-theorem" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Intermediate Value Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-uniform-continuity.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Uniform Continuity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-uniform-continuity.html#subsec-definition-of-uniform-continuity" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Definition and First Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-uniform-continuity.html#subsec-uniform-continuity-on-closed-intervals" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Closed Bounded Intervals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-uniform-continuity.html#subsec-cauchy-sequences-and-extension" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Cauchy Sequences and Extension to Endpoints</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-uniform-continuity.html#subsec-lipschitz-and-gluing" class="internal"><span class="codenumber">4.5.4</span> <span class="title">Lipschitz Continuity and Gluing Intervals</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ex-ch4.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-differentiation.html" class="internal"><span class="codenumber">5</span> <span class="title">Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Derivative</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative.html#subsec-derivative-at-a-point" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Derivative at a Point</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative.html#subsec-caratheodory-criterion" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Carathéodory’s Criterion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative.html#subsec-rules-of-differentiation" class="internal"><span class="codenumber">5.1.3</span> <span class="title">Rules of Differentiation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative.html#subsec-derivatives-of-inverse-functions" class="internal"><span class="codenumber">5.1.4</span> <span class="title">Derivatives of Inverse Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-differentiability-classes.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Differentiability Classes</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-the-mean-value-theorem.html" class="internal"><span class="codenumber">5.3</span> <span class="title">The Mean Value Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-the-mean-value-theorem.html#subsec-critical-points-and-rolle" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Critical Points and Rolle’s Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-the-mean-value-theorem.html#subsec-mean-value-theorems" class="internal"><span class="codenumber">5.3.2</span> <span class="title">The Mean Value Theorems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-applications-of-differentiation.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Applications</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-applications-of-differentiation.html#subsec-monotonicity-and-constant-functions" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Monotonicity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-applications-of-differentiation.html#subsec-derivative-tests" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Derivative Tests for Extrema</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-applications-of-differentiation.html#subsec-darboux-and-ftc-preview" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Darboux’s Theorem and a Preview of the FTC</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ex-ch5.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-power-series.html" class="internal"><span class="codenumber">6</span> <span class="title">Power Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-power-series-radius.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Power Series and Radius of Convergence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-calculus-of-power-series.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Calculus of Power Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-analytic-functions.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Analytic Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-taylors-theorem.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Taylor’s Theorem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ex-ch6.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-integration.html" class="internal"><span class="codenumber">7</span> <span class="title">Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-definitions-and-examples-of-integration.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Definitions and Examples</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definitions-and-examples-of-integration.html#subsec-partitions-and-darboux-sums" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Partitions and Darboux Sums</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definitions-and-examples-of-integration.html#subsec-upper-and-lower-integrals" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Upper and Lower Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definitions-and-examples-of-integration.html#subsec-riemann-integrability-darboux" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Riemann Integrability</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-properties-of-riemann-integrals.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Properties of Riemann Integrals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-properties-of-riemann-integrals.html#subsec-basic-properties-of-the-integral" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Basic Properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-properties-of-riemann-integrals.html#subsec-step-functions" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Step Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-properties-of-riemann-integrals.html#subsec-continuous-functions-of-integrable-functions" class="internal"><span class="codenumber">7.2.3</span> <span class="title">Continuous Functions of Integrable Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-properties-of-riemann-integrals.html#subsec-large-classes-of-integrable-functions" class="internal"><span class="codenumber">7.2.4</span> <span class="title">Large Classes of Integrable Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-fundamental-theorem-of-calculus.html" class="internal"><span class="codenumber">7.3</span> <span class="title">The Fundamental Theorem of Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-fundamental-theorem-of-calculus.html#subsec-indefinite-integrals" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Indefinite Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-fundamental-theorem-of-calculus.html#subsec-two-forms-ftc" class="internal"><span class="codenumber">7.3.2</span> <span class="title">The Two Forms of the Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integration-by-parts-and-change-of-variables.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Integration by Parts and Change of Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integration-by-parts-and-change-of-variables.html#subsec-integration-by-parts" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Integration by Parts</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integration-by-parts-and-change-of-variables.html#subsec-change-of-variables" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Change of Variables</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ex-ch7.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-interchange-of-limit-operations.html" class="internal"><span class="codenumber">8</span> <span class="title">Interchange of Limit Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-sequences-and-series-of-functions.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Sequences and Series of Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-interchanging-limits.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Interchanging Limits</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-exponential-and-logarithmic-functions.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Exponential and Logarithmic Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-trigonometric-functions.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Trigonometric Functions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ex-ch8.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="ap-cardinality.html" class="internal"><span class="codenumber">A</span> <span class="title">Cardinality</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-cardinality-subsets-real.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Cardinality</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-cardinality-exercises.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="ap-axioms-of-real-numbers.html" class="internal"><span class="codenumber">B</span> <span class="title">Axioms of Real Numbers</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-axioms-foundations.html" class="internal"><span class="codenumber">B.1</span> <span class="title">Foundations and Consequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-axioms-foundations.html#subsec-axioms-ordered-field" class="internal"><span class="codenumber">B.1.1</span> <span class="title">Ordered-Field Axioms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-axioms-foundations.html#subsec-axioms-isomorphism-reference" class="internal"><span class="codenumber">B.1.2</span> <span class="title">Uniqueness Up to Isomorphism</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-axioms-foundations.html#subsec-axioms-immediate-consequences" class="internal"><span class="codenumber">B.1.3</span> <span class="title">Immediate Consequences of the Axioms</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="ap-intervals.html" class="internal"><span class="codenumber">C</span> <span class="title">Intervals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-intervals.html" class="internal"><span class="codenumber">C.1</span> <span class="title">Intervals</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="ap-norm-and-metric.html" class="internal"><span class="codenumber">D</span> <span class="title">Norm and Metric</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-norm-and-metric-euclidean.html" class="internal"><span class="codenumber">D.1</span> <span class="title">Euclidean Norm on Rn</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-norm-and-metric-metrics.html" class="internal"><span class="codenumber">D.2</span> <span class="title">Metrics</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-norm-and-metric-exercises.html" class="internal"><span class="codenumber">D.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="ap-lebesgue-integrability-criterion.html" class="internal"><span class="codenumber">E</span> <span class="title">Lebesgue Criterion</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-lebesgue-integrability-criterion.html" class="internal"><span class="codenumber">E.1</span> <span class="title">Lebesgue Integrability Criterion</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-references"><div class="toc-title-box"><a href="references-general.html" class="internal"><span class="title">References</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-8.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-9.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-continuous-functions-on-intervals"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Continuous Functions on Intervals</span>
+</h2>
+<section class="introduction" id="sec-continuous-functions-on-intervals-2"><div class="para" id="sec-continuous-functions-on-intervals-2-1">The basic properties from the previous section show that continuity is preserved under many algebraic operations. When the domain is an interval, continuity also has strong global consequences. On a closed and bounded interval, a continuous function must stay bounded and must attain its largest and smallest values. On any interval, a continuous function cannot jump over intermediate values. These results are among the first indications that continuity is not merely a local condition.<div class="autopermalink" data-description="Paragraph"><a href="#sec-continuous-functions-on-intervals-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="subsec-extreme-value-theorem"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Extreme Value Theorem</span>
+</h3>
+<div class="para" id="subsec-extreme-value-theorem-2">Let <span class="process-math">\(S \subseteq \R\)</span> and let <span class="process-math">\(f \colon S \to \R\text{.}\)</span> We say that <span class="process-math">\(f\)</span> attains an <dfn class="terminology">absolute maximum</dfn> on <span class="process-math">\(S\)</span> at <span class="process-math">\(c \in S\)</span> if <span class="process-math">\(f(x) \le f(c)\)</span> for every <span class="process-math">\(x \in S\text{.}\)</span> Likewise, <span class="process-math">\(f\)</span> attains an <dfn class="terminology">absolute minimum</dfn> on <span class="process-math">\(S\)</span> at <span class="process-math">\(c\)</span> if <span class="process-math">\(f(c) \le f(x)\)</span> for every <span class="process-math">\(x \in S\text{.}\)</span> A function need not attain either one on an arbitrary domain, even if it is continuous. Closed and bounded intervals are special because limits of sequences in such intervals cannot escape the interval.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-extreme-value-theorem-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-closed-interval-contains-cluster-points"><h4 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="prop-closed-interval-contains-cluster-points-1-1">Every cluster point of a closed interval <span class="process-math">\([a,b]\)</span> belongs to <span class="process-math">\([a,b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-closed-interval-contains-cluster-points-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 4.4.1"><a href="#prop-closed-interval-contains-cluster-points" title="Copy heading and permalink for Proposition 4.4.1" aria-label="Copy heading and permalink for Proposition 4.4.1">🔗</a></div></article><details id="prop-closed-interval-contains-cluster-points-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="prop-closed-interval-contains-cluster-points-2-1">For any <span class="process-math">\(c \lt a\text{,}\)</span> let <span class="process-math">\(r=(a-c)/2\text{.}\)</span> Then <span class="process-math">\((c-r,c+r)
+\subseteq (-\infty,a)\text{,}\)</span> which is disjoint from <span class="process-math">\([a,b]\text{.}\)</span> So <span class="process-math">\(c\)</span> is not a cluster point of <span class="process-math">\([a,b]\text{.}\)</span> The case <span class="process-math">\(c \gt
+b\)</span> is similar, using <span class="process-math">\(r=(c-b)/2\text{.}\)</span> Therefore every cluster point of <span class="process-math">\([a,b]\)</span> must lie in <span class="process-math">\([a,b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-closed-interval-contains-cluster-points-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.4.1.1"><a href="#prop-closed-interval-contains-cluster-points-2" title="Copy heading and permalink for Proof 4.4.1.1" aria-label="Copy heading and permalink for Proof 4.4.1.1">🔗</a></div></article></details><article class="proposition theorem-like" id="prop-continuous-on-closed-bounded-interval-bounded"><h4 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="prop-continuous-on-closed-bounded-interval-bounded-1-1">Every continuous function on a closed bounded interval is bounded.<div class="autopermalink" data-description="Paragraph"><a href="#prop-continuous-on-closed-bounded-interval-bounded-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 4.4.2"><a href="#prop-continuous-on-closed-bounded-interval-bounded" title="Copy heading and permalink for Proposition 4.4.2" aria-label="Copy heading and permalink for Proposition 4.4.2">🔗</a></div></article><details id="prop-continuous-on-closed-bounded-interval-bounded-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="prop-continuous-on-closed-bounded-interval-bounded-2-1">
+<div class="para">Let <span class="process-math">\(f \colon [a,b] \to \R\)</span> be continuous. Suppose <span class="process-math">\(f\)</span> is not bounded. Then for every <span class="process-math">\(n \in \N\)</span> there exists <span class="process-math">\(x_n \in [a,b]\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-bolzano-weierstrass.html ./knowl/xref/prop-closed-interval-contains-cluster-points.html ./knowl/xref/prop-sequential-characterization-of-continuity.html" id="prop-continuous-on-closed-bounded-interval-bounded-2-1-5">
+\begin{equation*}
+|f(x_n)| \gt n.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\([a,b]\)</span> is bounded, <a href="sec-bolzano-weierstrass.html#thm-bolzano-weierstrass" class="xref" data-knowl="./knowl/xref/thm-bolzano-weierstrass.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.3.2: Bolzano-Weierstrass Theorem">Theorem 2.3.2</a> gives a convergent subsequence <span class="process-math">\((x_{n_k})\text{.}\)</span> Let <span class="process-math">\(x_{n_k} \to c\text{.}\)</span> By <a href="sec-continuous-functions-on-intervals.html#prop-closed-interval-contains-cluster-points" class="xref" data-knowl="./knowl/xref/prop-closed-interval-contains-cluster-points.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.4.1">Proposition 4.4.1</a>, <span class="process-math">\(c \in [a,b]\text{.}\)</span> Since <span class="process-math">\(f\)</span> is continuous at <span class="process-math">\(c\text{,}\)</span> <a href="sec-basic-properties.html#prop-sequential-characterization-of-continuity" class="xref" data-knowl="./knowl/xref/prop-sequential-characterization-of-continuity.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.3.1">Proposition 4.3.1</a> gives <span class="process-math">\(f(x_{n_k}) \to f(c)\text{.}\)</span> Hence <span class="process-math">\((f(x_{n_k}))\)</span> is convergent, so it is bounded. But <span class="process-math">\(|f(x_{n_k})| \gt n_k \ge k\)</span> for every <span class="process-math">\(k\text{,}\)</span> which is impossible. Therefore <span class="process-math">\(f\)</span> is bounded.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-continuous-on-closed-bounded-interval-bounded-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.4.2.1"><a href="#prop-continuous-on-closed-bounded-interval-bounded-2" title="Copy heading and permalink for Proof 4.4.2.1" aria-label="Copy heading and permalink for Proof 4.4.2.1">🔗</a></div></article></details><article class="example example-like" id="eg-boundedness-hypotheses-necessary"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="eg-boundedness-hypotheses-necessary-1-1">Both hypotheses in <a href="sec-continuous-functions-on-intervals.html#prop-continuous-on-closed-bounded-interval-bounded" class="xref" data-knowl="./knowl/xref/prop-continuous-on-closed-bounded-interval-bounded.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.4.2">Proposition 4.4.2</a> are necessary.<div class="autopermalink" data-description="Paragraph"><a href="#eg-boundedness-hypotheses-necessary-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ul class="disc" id="eg-boundedness-hypotheses-necessary-1-2">
+<li id="eg-boundedness-hypotheses-necessary-1-2-1">
+<div class="para" id="p-derived-eg-boundedness-hypotheses-necessary-1-2-1">The function <span class="process-math">\(f(x)=1/x\)</span> on <span class="process-math">\((0,1]\)</span> is continuous, but it is not bounded because <span class="process-math">\(f(x) \to +\infty\)</span> as <span class="process-math">\(x \to 0^+\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#eg-boundedness-hypotheses-necessary-1-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="eg-boundedness-hypotheses-necessary-1-2-2">
+<div class="para" id="p-derived-eg-boundedness-hypotheses-necessary-1-2-2">The function<div class="displaymath process-math" id="eg-boundedness-hypotheses-necessary-1-2-2-1">
+\begin{equation*}
+g(x)=\begin{cases}
+0 &amp; \text{if } x=0,\\
+1/x &amp; \text{if } 0 \lt x \le 1
+\end{cases}
+\end{equation*}
+</div>is defined on the closed bounded interval <span class="process-math">\([0,1]\text{,}\)</span> but it is not continuous at <span class="process-math">\(0\)</span> and it is not bounded.</div>
+<div class="autopermalink" data-description="Item"><a href="#eg-boundedness-hypotheses-necessary-1-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Example 4.4.3"><a href="#eg-boundedness-hypotheses-necessary" title="Copy heading and permalink for Example 4.4.3" aria-label="Copy heading and permalink for Example 4.4.3">🔗</a></div></article><article class="theorem theorem-like" id="thm-extreme-value-theorem"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Extreme Value Theorem.</span>
+</h4>
+<div class="para" id="thm-extreme-value-theorem-2-1">A continuous function on a closed bounded interval attains an absolute maximum and an absolute minimum.<div class="autopermalink" data-description="Paragraph"><a href="#thm-extreme-value-theorem-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 4.4.4: Extreme Value Theorem"><a href="#thm-extreme-value-theorem" title="Copy heading and permalink for Theorem 4.4.4: Extreme Value Theorem" aria-label="Copy heading and permalink for Theorem 4.4.4: Extreme Value Theorem">🔗</a></div></article><details id="thm-extreme-value-theorem-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-extreme-value-theorem-3-1">Let <span class="process-math">\(f\)</span> be continuous on a closed bounded interval <span class="process-math">\([a,b]\text{.}\)</span> Then <span class="process-math">\(J:=f([a,b])\)</span> is nonempty and, by <a href="sec-continuous-functions-on-intervals.html#prop-continuous-on-closed-bounded-interval-bounded" class="xref" data-knowl="./knowl/xref/prop-continuous-on-closed-bounded-interval-bounded.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.4.2">Proposition 4.4.2</a>, is also bounded. So <span class="process-math">\(M:=\sup J\)</span>exists. By <a href="ex-ch2.html#ex-sequences-approximate-sup" class="xref" data-knowl="./knowl/xref/ex-sequences-approximate-sup.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 2.5.9">Exercise 2.5.9</a>, there is a sequence <span class="process-math">\((y_n)\)</span> in <span class="process-math">\(J\)</span> that converges to <span class="process-math">\(M\text{.}\)</span> For each <span class="process-math">\(n\text{,}\)</span> pick <span class="process-math">\(x_n \in [a,b]\)</span> with <span class="process-math">\(f(x_n)=y_n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-extreme-value-theorem-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="thm-extreme-value-theorem-3-2">
+<div class="para">Since <span class="process-math">\([a,b]\)</span> is bounded, the Bolzano-Weierstrass theorem <a href="sec-bolzano-weierstrass.html#thm-bolzano-weierstrass" class="xref" data-knowl="./knowl/xref/thm-bolzano-weierstrass.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.3.2: Bolzano-Weierstrass Theorem">Theorem 2.3.2</a> yields a convergent subsequence <span class="process-math">\((x_{n_k})\)</span> of <span class="process-math">\((x_n)\text{.}\)</span> Again <a href="sec-continuous-functions-on-intervals.html#prop-closed-interval-contains-cluster-points" class="xref" data-knowl="./knowl/xref/prop-closed-interval-contains-cluster-points.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.4.1">Proposition 4.4.1</a> implies the limit of this subsequence, say <span class="process-math">\(c\text{,}\)</span> belongs to <span class="process-math">\([a,b]\text{.}\)</span> Consequently, <span class="process-math">\(f\)</span> is continuous at <span class="process-math">\(c\)</span> and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-bolzano-weierstrass.html ./knowl/xref/prop-closed-interval-contains-cluster-points.html ./knowl/xref/prop-sequential-characterization-of-continuity.html" id="thm-extreme-value-theorem-3-2-10">
+\begin{equation*}
+f(x_{n_k}) \to f(c)
+\end{equation*}
+</div>
+<div class="para">according to the sequential characterization of continuity <a href="sec-basic-properties.html#prop-sequential-characterization-of-continuity" class="xref" data-knowl="./knowl/xref/prop-sequential-characterization-of-continuity.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.3.1">Proposition 4.3.1</a>. As a subsequence of <span class="process-math">\((y_n)\text{,}\)</span> <span class="process-math">\(f(x_{n_k})=y_{n_k}\)</span> must converge to <span class="process-math">\(M\)</span> as well. So by uniqueness of limits <span class="process-math">\(f(c)=M\text{.}\)</span> Thus, <span class="process-math">\(f\)</span> attains its absolute maximum.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-extreme-value-theorem-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="thm-extreme-value-theorem-3-3">Applying the same argument to <span class="process-math">\(-f\text{,}\)</span> we see that <span class="process-math">\(-f\)</span> attains its absolute maximum at some point <span class="process-math">\(d \in [a,b]\text{.}\)</span> Then <span class="process-math">\(f(d)\)</span> is the absolute minimum of <span class="process-math">\(f\)</span> on <span class="process-math">\([a,b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-extreme-value-theorem-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.4.4.1"><a href="#thm-extreme-value-theorem-3" title="Copy heading and permalink for Proof 4.4.4.1" aria-label="Copy heading and permalink for Proof 4.4.4.1">🔗</a></div></article></details><article class="example example-like" id="eg-open-interval-no-extrema"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="eg-open-interval-no-extrema-1-1">The conclusion of the extreme value theorem can fail if the interval is not closed. The identity function <span class="process-math">\(f(x)=x\)</span> on <span class="process-math">\((0,1)\)</span> is continuous and bounded, but it has neither an absolute maximum nor an absolute minimum on <span class="process-math">\((0,1)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eg-open-interval-no-extrema-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <figure class="figure figure-like" id="fig-open-interval-no-extrema"><div class="image-box" style="width: 45%; margin-left: 27.5%; margin-right: 27.5%;"><img src="generated/latex-image/fig-open-interval-no-extrema-2.svg" role="img" class="contained" alt="The line y equals x on the open interval from zero to one, with open circles at both endpoints."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The graph of <span class="process-math">\(f(x)=x\)</span> on <span class="process-math">\((0,1)\)</span> has open endpoints, so the values <span class="process-math">\(0\)</span> and <span class="process-math">\(1\)</span> are approached but never attained.<div class="autopermalink" data-description="Figure 4.4.6"><a href="#fig-open-interval-no-extrema" title="Copy heading and permalink for Figure 4.4.6" aria-label="Copy heading and permalink for Figure 4.4.6">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Example 4.4.5"><a href="#eg-open-interval-no-extrema" title="Copy heading and permalink for Example 4.4.5" aria-label="Copy heading and permalink for Example 4.4.5">🔗</a></div></article><div class="autopermalink" data-description="Subsection 4.4.1: Extreme Value Theorem"><a href="#subsec-extreme-value-theorem" title="Copy heading and permalink for Subsection 4.4.1: Extreme Value Theorem" aria-label="Copy heading and permalink for Subsection 4.4.1: Extreme Value Theorem">🔗</a></div></section><section class="subsection" id="subsec-intermediate-value-theorem"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Intermediate Value Theorem</span>
+</h3>
+<div class="para" id="subsec-intermediate-value-theorem-2">The extreme value theorem says that a continuous function on <span class="process-math">\([a,b]\)</span> cannot avoid its largest and smallest values. The next theorem says more: between any two values it takes, it must also take every intermediate value. Geometrically, the graph of a continuous function on an interval cannot jump across a horizontal line.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-intermediate-value-theorem-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-bolzano-zero"><h4 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Bolzano’s Theorem.</span>
+</h4>
+<div class="para" id="prop-bolzano-zero-2-1">Let <span class="process-math">\(f \colon [a,b] \to \R\)</span> be continuous. If <span class="process-math">\(f(a)\)</span> and <span class="process-math">\(f(b)\)</span> are of opposite signs, then there exists <span class="process-math">\(c \in (a,b)\)</span> such that <span class="process-math">\(f(c)=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-bolzano-zero-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 4.4.7: Bolzano’s Theorem"><a href="#prop-bolzano-zero" title="Copy heading and permalink for Proposition 4.4.7: Bolzano’s Theorem" aria-label="Copy heading and permalink for Proposition 4.4.7: Bolzano’s Theorem">🔗</a></div></article><details id="prop-bolzano-zero-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="prop-bolzano-zero-3-1">
+<div class="para">After replacing <span class="process-math">\(f\)</span> by <span class="process-math">\(-f\)</span> if necessary, we may assume <span class="process-math">\(f(a) \lt 0 \lt f(b)\text{.}\)</span> Let</div>
+<div class="displaymath process-math" id="prop-bolzano-zero-3-1-4">
+\begin{equation*}
+S=\{x \in [a,b] : f(x) \lt 0\}.
+\end{equation*}
+</div>
+<div class="para">Then <span class="process-math">\(a \in S\text{,}\)</span> and <span class="process-math">\(b\)</span> is an upper bound of <span class="process-math">\(S\text{.}\)</span> So <span class="process-math">\(c:=\sup S\)</span> exists. Since <span class="process-math">\(a \in S \subseteq [a,b]\text{,}\)</span> we have <span class="process-math">\(c \in [a,b]\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-bolzano-zero-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="prop-bolzano-zero-3-2">We claim that <span class="process-math">\(f(c)=0\text{.}\)</span> Suppose first that <span class="process-math">\(f(c) \lt 0\text{.}\)</span> Then <span class="process-math">\(c \lt b\text{,}\)</span> since <span class="process-math">\(f(b) \gt 0\text{.}\)</span> Choose a sequence <span class="process-math">\((x_n)\)</span> in <span class="process-math">\((c,b)\)</span> such that <span class="process-math">\(x_n \to c\text{.}\)</span> By continuity of <span class="process-math">\(f\)</span> at <span class="process-math">\(c\text{,}\)</span> we have <span class="process-math">\(f(x_n) \to f(c) \lt 0\text{.}\)</span> Hence <span class="process-math">\(f(x_n) \lt 0\)</span> for all sufficiently large <span class="process-math">\(n\text{.}\)</span> For such <span class="process-math">\(n\text{,}\)</span> we have <span class="process-math">\(x_n \in S\)</span> and <span class="process-math">\(x_n \gt c\text{,}\)</span> contradicting the fact that <span class="process-math">\(c\)</span> is an upper bound of <span class="process-math">\(S\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-bolzano-zero-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="prop-bolzano-zero-3-3">Now suppose that <span class="process-math">\(f(c) \gt 0\text{.}\)</span> Then <span class="process-math">\(a \lt c\text{.}\)</span> For each <span class="process-math">\(n \in \N\text{,}\)</span> let <span class="process-math">\(m_n=c-(c-a)/2^n\text{.}\)</span> Then <span class="process-math">\(m_n \lt c=\sup S\text{,}\)</span> so <span class="process-math">\(m_n\)</span> is not an upper bound of <span class="process-math">\(S\text{.}\)</span> Therefore there exists <span class="process-math">\(x_n \in S\)</span> such that <span class="process-math">\(m_n \lt x_n \le c\text{.}\)</span> Since <span class="process-math">\(m_n \to c\)</span> and <span class="process-math">\(m_n \lt x_n \le c\)</span> for every <span class="process-math">\(n\text{,}\)</span> the squeeze lemma gives <span class="process-math">\(x_n \to c\text{.}\)</span> By continuity, <span class="process-math">\(f(x_n) \to f(c) \gt 0\text{,}\)</span> so <span class="process-math">\(f(x_n) \gt 0\)</span> for all sufficiently large <span class="process-math">\(n\text{.}\)</span> But each <span class="process-math">\(x_n \in S\text{,}\)</span> so <span class="process-math">\(f(x_n) \lt 0\)</span> for every <span class="process-math">\(n\text{,}\)</span> a contradiction.<div class="autopermalink" data-description="Paragraph"><a href="#prop-bolzano-zero-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="prop-bolzano-zero-3-4">Therefore <span class="process-math">\(f(c)=0\text{.}\)</span> Since <span class="process-math">\(f(a) \lt 0\)</span> and <span class="process-math">\(f(b) \gt 0\text{,}\)</span> we have <span class="process-math">\(c \neq a\)</span> and <span class="process-math">\(c \neq b\text{.}\)</span> Hence <span class="process-math">\(c \in (a,b)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-bolzano-zero-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.4.7.1"><a href="#prop-bolzano-zero-3" title="Copy heading and permalink for Proof 4.4.7.1" aria-label="Copy heading and permalink for Proof 4.4.7.1">🔗</a></div></article></details><article class="theorem theorem-like" id="thm-intermediate-value-theorem"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Intermediate Value Theorem.</span>
+</h4>
+<div class="para logical" id="thm-intermediate-value-theorem-2-1">
+<div class="para">Let <span class="process-math">\(f \colon [a,b] \to \R\)</span> be continuous, and let <span class="process-math">\(\gamma\)</span> be a real number between <span class="process-math">\(f(a)\)</span> and <span class="process-math">\(f(b)\text{.}\)</span> Then there exists <span class="process-math">\(c \in [a,b]\)</span> such that</div>
+<div class="displaymath process-math" id="thm-intermediate-value-theorem-2-1-6">
+\begin{equation*}
+f(c)=\gamma.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-intermediate-value-theorem-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 4.4.8: Intermediate Value Theorem"><a href="#thm-intermediate-value-theorem" title="Copy heading and permalink for Theorem 4.4.8: Intermediate Value Theorem" aria-label="Copy heading and permalink for Theorem 4.4.8: Intermediate Value Theorem">🔗</a></div></article><details id="thm-intermediate-value-theorem-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-intermediate-value-theorem-3-1">Consider the function <span class="process-math">\(g(x)=f(x)-\gamma\text{.}\)</span> Then <span class="process-math">\(g\)</span> is continuous on <span class="process-math">\([a,b]\text{.}\)</span> If <span class="process-math">\(\gamma=f(a)\)</span> or <span class="process-math">\(\gamma=f(b)\text{,}\)</span> then we are done. Otherwise <span class="process-math">\(\gamma\)</span> lies strictly between <span class="process-math">\(f(a)\)</span> and <span class="process-math">\(f(b)\text{,}\)</span> so <span class="process-math">\(g(a)\)</span> and <span class="process-math">\(g(b)\)</span> have opposite signs. Hence <a href="sec-continuous-functions-on-intervals.html#prop-bolzano-zero" class="xref" data-knowl="./knowl/xref/prop-bolzano-zero.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.4.7: Bolzano’s Theorem">Proposition 4.4.7</a> gives a point <span class="process-math">\(c \in (a,b)\)</span> such that <span class="process-math">\(g(c)=0\text{.}\)</span> Therefore <span class="process-math">\(f(c)=\gamma\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-intermediate-value-theorem-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.4.8.1"><a href="#thm-intermediate-value-theorem-3" title="Copy heading and permalink for Proof 4.4.8.1" aria-label="Copy heading and permalink for Proof 4.4.8.1">🔗</a></div></article></details><article class="example example-like" id="eg-ivt-equation-root"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="eg-ivt-equation-root-1-1">The equation <span class="process-math">\(x^3+x-1=0\)</span> has a solution in <span class="process-math">\((0,1)\text{.}\)</span> Indeed, the polynomial <span class="process-math">\(p(x)=x^3+x-1\)</span> is continuous, while <span class="process-math">\(p(0)=-1\)</span> and <span class="process-math">\(p(1)=1\text{.}\)</span> By <a href="sec-continuous-functions-on-intervals.html#prop-bolzano-zero" class="xref" data-knowl="./knowl/xref/prop-bolzano-zero.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.4.7: Bolzano’s Theorem">Proposition 4.4.7</a>, there exists <span class="process-math">\(c \in (0,1)\)</span> such that <span class="process-math">\(p(c)=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eg-ivt-equation-root-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 4.4.9"><a href="#eg-ivt-equation-root" title="Copy heading and permalink for Example 4.4.9" aria-label="Copy heading and permalink for Example 4.4.9">🔗</a></div></article><article class="example example-like" id="eg-ivt-needs-continuity"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="eg-ivt-needs-continuity-1-1">
+<div class="para">Continuity is essential in the intermediate value theorem. Define</div>
+<div class="displaymath process-math" id="eg-ivt-needs-continuity-1-1-1">
+\begin{equation*}
+f(x)=\begin{cases}
+-1 &amp; \text{if } x \lt 0,\\
+1 &amp; \text{if } x \ge 0.
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">Then <span class="process-math">\(f(-1)=-1\)</span> and <span class="process-math">\(f(1)=1\text{,}\)</span> but there is no <span class="process-math">\(c \in [-1,1]\)</span> with <span class="process-math">\(f(c)=0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg-ivt-needs-continuity-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <figure class="figure figure-like" id="fig-jump-discontinuity-no-ivt"><div class="image-box" style="width: 48%; margin-left: 26%; margin-right: 26%;"><img src="generated/latex-image/fig-jump-discontinuity-no-ivt-2.svg" role="img" class="contained" alt="The sign function equals negative one to the left of zero and positive one at and to the right of zero, so the graph jumps over zero."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A jump discontinuity can skip intermediate values.<div class="autopermalink" data-description="Figure 4.4.11"><a href="#fig-jump-discontinuity-no-ivt" title="Copy heading and permalink for Figure 4.4.11" aria-label="Copy heading and permalink for Figure 4.4.11">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Example 4.4.10"><a href="#eg-ivt-needs-continuity" title="Copy heading and permalink for Example 4.4.10" aria-label="Copy heading and permalink for Example 4.4.10">🔗</a></div></article><article class="corollary theorem-like" id="cor-continuous-image-of-interval-is-interval"><h4 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="cor-continuous-image-of-interval-is-interval-1-1">The image of an interval under a continuous function is an interval.<div class="autopermalink" data-description="Paragraph"><a href="#cor-continuous-image-of-interval-is-interval-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Corollary 4.4.12"><a href="#cor-continuous-image-of-interval-is-interval" title="Copy heading and permalink for Corollary 4.4.12" aria-label="Copy heading and permalink for Corollary 4.4.12">🔗</a></div></article><details id="cor-continuous-image-of-interval-is-interval-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor-continuous-image-of-interval-is-interval-2-1">Let <span class="process-math">\(I \subseteq \R\)</span> be an interval, and let <span class="process-math">\(f \colon I \to \R\)</span> be continuous. To show that <span class="process-math">\(f(I)\)</span> is an interval, let <span class="process-math">\(\alpha,\beta \in f(I)\)</span> with <span class="process-math">\(\alpha \lt \beta\text{,}\)</span> and let <span class="process-math">\(\gamma\)</span> satisfy <span class="process-math">\(\alpha \lt \gamma \lt \beta\text{.}\)</span> Choose <span class="process-math">\(x_1,x_2 \in I\)</span> such that <span class="process-math">\(f(x_1)=\alpha\)</span> and <span class="process-math">\(f(x_2)=\beta\text{.}\)</span> Since <span class="process-math">\(I\)</span> is an interval, the closed interval between <span class="process-math">\(x_1\)</span> and <span class="process-math">\(x_2\)</span> is contained in <span class="process-math">\(I\text{.}\)</span> Applying <a href="sec-continuous-functions-on-intervals.html#thm-intermediate-value-theorem" class="xref" data-knowl="./knowl/xref/thm-intermediate-value-theorem.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.8: Intermediate Value Theorem">Theorem 4.4.8</a> to the restriction of <span class="process-math">\(f\)</span> to that closed interval, we obtain <span class="process-math">\(c \in I\)</span> such that <span class="process-math">\(f(c)=\gamma\text{.}\)</span> Thus <span class="process-math">\(\gamma \in f(I)\text{,}\)</span> so <span class="process-math">\(f(I)\)</span> is an interval.<div class="autopermalink" data-description="Paragraph"><a href="#cor-continuous-image-of-interval-is-interval-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.4.12.1"><a href="#cor-continuous-image-of-interval-is-interval-2" title="Copy heading and permalink for Proof 4.4.12.1" aria-label="Copy heading and permalink for Proof 4.4.12.1">🔗</a></div></article></details><article class="corollary theorem-like" id="cor-continuous-image-of-closed-bounded-interval"><h4 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="cor-continuous-image-of-closed-bounded-interval-1-1">The image of a closed bounded interval under a continuous function is a closed bounded interval.<div class="autopermalink" data-description="Paragraph"><a href="#cor-continuous-image-of-closed-bounded-interval-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Corollary 4.4.13"><a href="#cor-continuous-image-of-closed-bounded-interval" title="Copy heading and permalink for Corollary 4.4.13" aria-label="Copy heading and permalink for Corollary 4.4.13">🔗</a></div></article><details id="cor-continuous-image-of-closed-bounded-interval-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="cor-continuous-image-of-closed-bounded-interval-2-1">
+<div class="para">Let <span class="process-math">\(f \colon [a,b] \to \R\)</span> be continuous. By <a href="sec-continuous-functions-on-intervals.html#cor-continuous-image-of-interval-is-interval" class="xref" data-knowl="./knowl/xref/cor-continuous-image-of-interval-is-interval.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.4.12">Corollary 4.4.12</a>, <span class="process-math">\(f([a,b])\)</span> is an interval. By <a href="sec-continuous-functions-on-intervals.html#thm-extreme-value-theorem" class="xref" data-knowl="./knowl/xref/thm-extreme-value-theorem.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.4: Extreme Value Theorem">Theorem 4.4.4</a>, <span class="process-math">\(f\)</span> attains its absolute minimum <span class="process-math">\(m\)</span> and absolute maximum <span class="process-math">\(M\)</span> on <span class="process-math">\([a,b]\text{.}\)</span> Hence <span class="process-math">\(f([a,b]) \subseteq [m,M]\text{.}\)</span> Since <span class="process-math">\(f([a,b])\)</span> is an interval containing <span class="process-math">\(m\)</span> and <span class="process-math">\(M\text{,}\)</span> it also contains every number between them. Therefore <span class="process-math">\([m,M] \subseteq f([a,b])\text{,}\)</span> and so</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-continuous-image-of-interval-is-interval.html ./knowl/xref/thm-extreme-value-theorem.html" id="cor-continuous-image-of-closed-bounded-interval-2-1-14">
+\begin{equation*}
+f([a,b])=[m,M].
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#cor-continuous-image-of-closed-bounded-interval-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.4.13.1"><a href="#cor-continuous-image-of-closed-bounded-interval-2" title="Copy heading and permalink for Proof 4.4.13.1" aria-label="Copy heading and permalink for Proof 4.4.13.1">🔗</a></div></article></details><div class="para" id="subsec-intermediate-value-theorem-9">The last corollary is a first glimpse of a more general theorem from topology: continuous images of compact sets are compact. For subsets of <span class="process-math">\(\R\text{,}\)</span> compactness is the same as being closed and bounded, so the corollary above is exactly the one-dimensional case of that general principle.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-intermediate-value-theorem-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-injective-continuous-on-interval-has-continuous-inverse"><h4 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="prop-injective-continuous-on-interval-has-continuous-inverse-1-1">If <span class="process-math">\(f\)</span> is injective and continuous on an interval <span class="process-math">\(I\text{,}\)</span> then the inverse of <span class="process-math">\(f \colon I \to f(I)\)</span> is also continuous.<div class="autopermalink" data-description="Paragraph"><a href="#prop-injective-continuous-on-interval-has-continuous-inverse-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 4.4.14"><a href="#prop-injective-continuous-on-interval-has-continuous-inverse" title="Copy heading and permalink for Proposition 4.4.14" aria-label="Copy heading and permalink for Proposition 4.4.14">🔗</a></div></article><details id="prop-injective-continuous-on-interval-has-continuous-inverse-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="prop-injective-continuous-on-interval-has-continuous-inverse-2-1">Clearly, we can assume <span class="process-math">\(I\)</span> is non-degenerated (i.e. has at least two points). Let <span class="process-math">\(g \colon f(I) \to I\)</span> be the inverse of <span class="process-math">\(f\text{.}\)</span>	We argue that <span class="process-math">\(g\)</span> is continuous at an arbitrary point <span class="process-math">\(y_0 \in f(I)\text{.}\)</span> Let <span class="process-math">\((y_n)\)</span> be a sequence in <span class="process-math">\(f(I)\)</span> that converges to <span class="process-math">\(y_0\text{.}\)</span> Set <span class="process-math">\(x_n=g(y_n)\)</span> and <span class="process-math">\(x_0=g(y_0)\text{.}\)</span> We must show that <span class="process-math">\(x_n \to x_0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-injective-continuous-on-interval-has-continuous-inverse-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="prop-injective-continuous-on-interval-has-continuous-inverse-2-2">
+<div class="para">Suppose, to the contrary, that <span class="process-math">\(x_n\)</span> does not converge to <span class="process-math">\(x_0\text{.}\)</span> Then there exists <span class="process-math">\(\varepsilon \gt 0\)</span> such that infinitely many terms of the sequence <span class="process-math">\((x_n)\)</span> lie outside the interval <span class="process-math">\(I_0 := (x_0-\varepsilon, x_0+\varepsilon) \cap I\text{.}\)</span> Passing to a subsequence, we may assume that <span class="process-math">\(x_{n_k} \notin I_0\)</span> for every <span class="process-math">\(k\text{.}\)</span> Since <span class="process-math">\(x_0\)</span> is a point of a non-degenerated interval, it is a cluster point of <span class="process-math">\(I\text{,}\)</span> and hence <span class="process-math">\(I_0\)</span> is also non-degenerated. By <a href="sec-continuous-functions-on-intervals.html#cor-continuous-image-of-interval-is-interval" class="xref" data-knowl="./knowl/xref/cor-continuous-image-of-interval-is-interval.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.4.12">Corollary 4.4.12</a>, <span class="process-math">\(f(I_0)\)</span> is an interval containing <span class="process-math">\(y_0\text{;}\)</span> it is also non-degenerated because <span class="process-math">\(f\)</span> is injective. Therefore there exists <span class="process-math">\(\delta \gt 0\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-continuous-image-of-interval-is-interval.html" id="prop-injective-continuous-on-interval-has-continuous-inverse-2-2-16">
+\begin{equation*}
+(y_0-\delta,y_0+\delta)\cap f(I) \subseteq f(I_0).
+\end{equation*}
+</div>
+<div class="para">But <span class="process-math">\(y_{n_k}=f(x_{n_k})\)</span> and <span class="process-math">\(x_{n_k} \notin I_0\text{,}\)</span> so <span class="process-math">\(y_{n_k} \notin f(I_0)\)</span> for every <span class="process-math">\(k\text{.}\)</span> On the other hand, since <span class="process-math">\(y_{n_k} \to y_0\)</span> and each <span class="process-math">\(y_{n_k}\)</span> lies in <span class="process-math">\(f(I)\text{,}\)</span> we have <span class="process-math">\(y_{n_k} \in f(I_0)\)</span> for all sufficiently large <span class="process-math">\(k\text{,}\)</span> a contradiction.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-injective-continuous-on-interval-has-continuous-inverse-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.4.14.1"><a href="#prop-injective-continuous-on-interval-has-continuous-inverse-2" title="Copy heading and permalink for Proof 4.4.14.1" aria-label="Copy heading and permalink for Proof 4.4.14.1">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 4.4.2: Intermediate Value Theorem"><a href="#subsec-intermediate-value-theorem" title="Copy heading and permalink for Subsection 4.4.2: Intermediate Value Theorem" aria-label="Copy heading and permalink for Subsection 4.4.2: Intermediate Value Theorem">🔗</a></div></section><div class="autopermalink" data-description="Section 4.4: Continuous Functions on Intervals"><a href="#sec-continuous-functions-on-intervals" title="Copy heading and permalink for Section 4.4: Continuous Functions on Intervals" aria-label="Copy heading and permalink for Section 4.4: Continuous Functions on Intervals">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-basic-properties.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-uniform-continuity.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

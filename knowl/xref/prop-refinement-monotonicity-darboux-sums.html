@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="proposition theorem-like"><h4 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(f \colon [a,b] \to \R\)</span> be bounded. If <span class="process-math">\(P'\)</span> is a refinement of <span class="process-math">\(P\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L(P,f) \le L(P',f) \le U(P',f) \le U(P,f).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-refinement-monotonicity-darboux-sums-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 7.1.4"><a href="#prop-refinement-monotonicity-darboux-sums" title="Copy heading and permalink for Proposition 7.1.4" aria-label="Copy heading and permalink for Proposition 7.1.4">🔗</a></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">It is enough to prove the result in the special case where <span class="process-math">\(P'\)</span> is obtained from <span class="process-math">\(P=\{x_0,\dots,x_n\}\)</span> by adjoining a single point <span class="process-math">\(x'\)</span> with <span class="process-math">\(x_{i-1} \lt x' \lt x_i\)</span> for some <span class="process-math">\(i\text{.}\)</span> All terms in the upper sum remain unchanged except the term corresponding to the interval <span class="process-math">\([x_{i-1},x_i]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-refinement-monotonicity-darboux-sums-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(M\)</span> be the supremum of <span class="process-math">\(f\)</span> on <span class="process-math">\([x_{i-1},x_i]\text{,}\)</span> and let <span class="process-math">\(M_1,M_2\)</span> be the suprema on <span class="process-math">\([x_{i-1},x']\)</span> and <span class="process-math">\([x',x_i]\text{,}\)</span> respectively. Since these two intervals are contained in <span class="process-math">\([x_{i-1},x_i]\text{,}\)</span> we have <span class="process-math">\(M_1 \le M\)</span> and <span class="process-math">\(M_2 \le M\text{.}\)</span> Therefore</div>
+<div class="displaymath process-math">
+\begin{equation*}
+M_1(x'-x_{i-1}) + M_2(x_i-x')
+\le
+M\bigl((x'-x_{i-1})+(x_i-x')\bigr)
+=
+M(x_i-x_{i-1}).
+\end{equation*}
+</div>
+<div class="para">So <span class="process-math">\(U(P',f) \le U(P,f)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-refinement-monotonicity-darboux-sums-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">The proof that <span class="process-math">\(L(P,f) \le L(P',f)\)</span> is analogous, using infima instead of suprema. The middle inequality <span class="process-math">\(L(P',f) \le U(P',f)\)</span> is immediate.<div class="autopermalink" data-description="Paragraph"><a href="#prop-refinement-monotonicity-darboux-sums-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 7.1.4.1"><a href="#prop-refinement-monotonicity-darboux-sums-2" title="Copy heading and permalink for Proof 7.1.4.1" aria-label="Copy heading and permalink for Proof 7.1.4.1">🔗</a></div></article></details><span class="incontext"><a class="internal" href="sec-definitions-and-examples-of-integration.html#prop-refinement-monotonicity-darboux-sums">in-context</a></span>
+</body>
+</html>

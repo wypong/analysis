@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Change of Variables.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(\varphi \in C^1[a,b]\text{,}\)</span> and let <span class="process-math">\(f\)</span> be continuous on <span class="process-math">\(\varphi([a,b])\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_a^b f(\varphi(x))\varphi'(x)\,dx
+=
+\int_{\varphi(a)}^{\varphi(b)} f(u)\,du.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-change-of-variables-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 7.4.2: Change of Variables"><a href="#thm-change-of-variables" title="Copy heading and permalink for Theorem 7.4.2: Change of Variables" aria-label="Copy heading and permalink for Theorem 7.4.2: Change of Variables">🔗</a></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Since <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\(\varphi([a,b])\text{,}\)</span> the second form of the Fundamental Theorem of Calculus (<a href="sec-fundamental-theorem-of-calculus.html#thm-ftc-second-form" class="xref" data-knowl="./knowl/xref/thm-ftc-second-form.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.3.1: Fundamental Theorem of Calculus (Second Form)">Theorem 7.3.1</a>) gives a function</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-ftc-second-form.html">
+\begin{equation*}
+U(y)=\int_{\varphi(a)}^{y} f(u)\,du
+\qquad (y \in \varphi([a,b]))
+\end{equation*}
+</div>
+<div class="para">such that <span class="process-math">\(U'(y)=f(y)\)</span> for every <span class="process-math">\(y \in \varphi([a,b])\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-change-of-variables-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Define <span class="process-math">\(H(x)=U(\varphi(x))\)</span> on <span class="process-math">\([a,b]\text{.}\)</span> By the chain rule,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+H'(x)=U'(\varphi(x))\varphi'(x)=f(\varphi(x))\varphi'(x).
+\end{equation*}
+</div>
+<div class="para">Because <span class="process-math">\(\varphi\)</span> and <span class="process-math">\(\varphi'\)</span> are continuous on <span class="process-math">\([a,b]\text{,}\)</span> and <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\(\varphi([a,b])\text{,}\)</span> the function <span class="process-math">\(f \circ \varphi\)</span> is continuous on <span class="process-math">\([a,b]\text{.}\)</span> Hence <span class="process-math">\(H'\)</span> is continuous, in particular integrable, on <span class="process-math">\([a,b]\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-change-of-variables-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Applying <a href="sec-fundamental-theorem-of-calculus.html#thm-ftc-first-form" class="xref" data-knowl="./knowl/xref/thm-ftc-first-form.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.3.5: Fundamental Theorem of Calculus (First Form)">Fundamental Theorem of Calculus (First Form)</a> to <span class="process-math">\(H\text{,}\)</span> we obtain</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-ftc-first-form.html">
+\begin{equation*}
+\int_a^b f(\varphi(x))\varphi'(x)\,dx
+=
+\int_a^b H'(x)\,dx
+=
+H(b)-H(a)
+=
+U(\varphi(b))-U(\varphi(a)).
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(U(\varphi(a))=0\text{,}\)</span> the right-hand side is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-ftc-first-form.html">
+\begin{equation*}
+\int_{\varphi(a)}^{\varphi(b)} f(u)\,du.
+\end{equation*}
+</div>
+<div class="para">This proves the formula.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-change-of-variables-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 7.4.2.1"><a href="#thm-change-of-variables-3" title="Copy heading and permalink for Proof 7.4.2.1" aria-label="Copy heading and permalink for Proof 7.4.2.1">🔗</a></div></article></details><span class="incontext"><a class="internal" href="sec-integration-by-parts-and-change-of-variables.html#thm-change-of-variables">in-context</a></span>
+</body>
+</html>
