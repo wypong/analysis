@@ -19,28 +19,28 @@
     <statement>
       <p>
         For every <m>R \gt 0</m>, the series
-        <me>
+        <md>
           \sum_{n=0}^\infty \frac{x^n}{n!}
-        </me>
+        </md>
         converges uniformly on <m>[-R,R]</m>. Hence it defines a continuous
         function <m>E \colon \R \to \R</m> by
-        <me>
+        <md>
           E(x)=\sum_{n=0}^\infty \frac{x^n}{n!}.
-        </me>
+        </md>
       </p>
     </statement>
 
     <proof>
       <p>
         Fix <m>R \gt 0</m>. If <m>|x| \le R</m>, then
-        <me>
+        <md>
           \left|\frac{x^n}{n!}\right| \le \frac{R^n}{n!}.
-        </me>
+        </md>
         The numerical series <m>\sum_{n=0}^\infty R^n/n!</m> converges by the
         ratio test, since
-        <me>
+        <md>
           \frac{R^{n+1}/(n+1)!}{R^n/n!}=\frac{R}{n+1}\to 0.
-        </me>
+        </md>
         Therefore the Weierstrass M-test
         (<xref ref="thm-weierstrass-m-test-functions"/>) applies and gives
         uniform convergence on <m>[-R,R]</m>.
@@ -50,10 +50,10 @@
 
   <p>
     We write
-    <me>
+    <md>
       e^x := E(x)=\sum_{n=0}^\infty \frac{x^n}{n!}
       \qquad (x \in \R),
-    </me>
+    </md>
     and in particular <m>e:=e^1</m>.
   </p>
 
@@ -62,9 +62,9 @@
     <statement>
       <p>
         For all <m>x,y \in \R</m>,
-        <me>
+        <md>
           e^{x+y}=e^x e^y.
-        </me>
+        </md>
       </p>
     </statement>
 
@@ -74,33 +74,33 @@
         <m>\sum x^n/n!</m> and <m>\sum y^n/n!</m> converge absolutely.
         Therefore Mertens' theorem
         (<xref ref="thm-mertens-series"/>) applies to their product:
-        <me>
+        <md>
           e^x e^y
           =
           \left(\sum_{m=0}^\infty \frac{x^m}{m!}\right)
           \left(\sum_{n=0}^\infty \frac{y^n}{n!}\right)
           =
           \sum_{k=0}^\infty \sum_{j=0}^k \frac{x^j}{j!}\frac{y^{k-j}}{(k-j)!}.
-        </me>
+        </md>
       </p>
 
       <p>
         By the binomial theorem,
-        <me>
+        <md>
           \sum_{j=0}^k \frac{x^j}{j!}\frac{y^{k-j}}{(k-j)!}
           =
           \frac{1}{k!}\sum_{j=0}^k \binom{k}{j}x^j y^{k-j}
           =
           \frac{(x+y)^k}{k!}.
-        </me>
+        </md>
         Substituting this into the previous display gives
-        <me>
+        <md>
           e^x e^y
           =
           \sum_{k=0}^\infty \frac{(x+y)^k}{k!}
           =
           e^{x+y}.
-        </me>
+        </md>
       </p>
     </proof>
   </proposition>
@@ -115,11 +115,11 @@
     <proof>
       <p>
         Fix <m>a \in \R</m>. For every <m>x \in \R</m>, the addition law gives
-        <me>
+        <md>
           e^x=e^a e^{x-a}
           =
           e^a \sum_{n=0}^\infty \frac{(x-a)^n}{n!}.
-        </me>
+        </md>
         Thus near the point <m>a</m>, the function <m>e^x</m> is represented
         by a power series in <m>x-a</m>. Since <m>a</m> was arbitrary,
         <m>e^x</m> is analytic on <m>\R</m>.
@@ -131,10 +131,10 @@
     <statement>
       <p>
         The exponential function satisfies
-        <me>
+        <md>
           \frac{d}{dx} e^x = e^x
           \qquad \text{for all } x \in \R.
-        </me>
+        </md>
       </p>
     </statement>
 
@@ -144,7 +144,7 @@
         <m>\infty</m>, so by
         <xref ref="thm-termwise-calculus-power-series"/> it may be
         differentiated term by term:
-        <me>
+        <md>
           \frac{d}{dx} e^x
           =
           \sum_{n=1}^\infty \frac{n x^{n-1}}{n!}
@@ -154,7 +154,7 @@
           \sum_{m=0}^\infty \frac{x^m}{m!}
           =
           e^x.
-        </me>
+        </md>
       </p>
     </proof>
   </proposition>
@@ -177,9 +177,9 @@
       <p>
         The identity <m>e^0=1</m> is immediate from the defining series. The
         addition law with <m>y=-x</m> gives
-        <me>
+        <md>
           e^x e^{-x}=e^0=1,
-        </me>
+        </md>
         so <m>e^{-x}=1/e^x</m> and, in particular, <m>e^x \neq 0</m> for every
         <m>x</m>.
       </p>
@@ -218,18 +218,18 @@
 
       <p>
         Also,
-        <me>
+        <md>
           e=e^1=1+1+\frac{1}{2!}+\frac{1}{3!}+\cdots \gt 2.
-        </me>
+        </md>
         Therefore
-        <me>
+        <md>
           e^n \ge 2^n \to \infty
           \qquad \text{as } n \to \infty,
-        </me>
+        </md>
         and hence <m>e^x</m> is unbounded above. Likewise,
-        <me>
+        <md>
           e^{-n}=\frac{1}{e^n} \to 0,
-        </me>
+        </md>
         so the values of <m>e^x</m> come arbitrarily close to <m>0</m>.
       </p>
 
@@ -250,9 +250,9 @@
     <xref ref="prop-injective-continuous-on-interval-has-continuous-inverse"/>.
     We call this inverse the <term>natural logarithm</term><idx><h>logarithm</h><h>natural</h></idx>
     and write
-    <me>
+    <md>
       \ln \colon (0,\infty) \to \R.
-    </me>
+    </md>
   </p>
 
   <p>
@@ -284,28 +284,28 @@
       <p>
         Let <m>u=\ln x</m> and <m>v=\ln y</m>. Then <m>x=e^u</m> and
         <m>y=e^v</m>. Hence
-        <me>
+        <md>
           \begin{aligned}
             xy &amp;= e^u e^v\\
                &amp;= e^{u+v}.
           \end{aligned}
-        </me>
+        </md>
         and applying <m>\ln</m> to both sides gives
-        <me>
+        <md>
           \ln(xy)=u+v=\ln x+\ln y.
-        </me>
+        </md>
       </p>
 
       <p>
         Taking <m>y=1/x</m> in the previous identity yields
-        <me>
+        <md>
           0=\ln 1=\ln x+\ln(1/x),
-        </me>
+        </md>
         so <m>\ln(1/x)=-\ln x</m>. The quotient rule for logarithms follows by
         combining the product rule with the reciprocal rule:
-        <me>
+        <md>
           \ln(x/y)=\ln x+\ln(1/y)=\ln x-\ln y.
-        </me>
+        </md>
       </p>
     </proof>
   </proposition>
@@ -314,9 +314,9 @@
     <statement>
       <p>
         The logarithm is differentiable on <m>(0,\infty)</m>, and
-        <me>
+        <md>
           \frac{d}{dx}\ln x = \frac{1}{x}.
-        </me>
+        </md>
       </p>
     </statement>
 
@@ -327,13 +327,13 @@
         bijection <m>e^x \colon \R \to (0,\infty)</m>. Since
         <m>(e^x)'=e^x \neq 0</m> for every <m>x</m>, the inverse function
         <m>\ln</m> is differentiable, and
-        <me>
+        <md>
           (\ln)'(y)=\frac{1}{(e^x)'\big|_{x=\ln y}}
           =
           \frac{1}{e^{\ln y}}
           =
           \frac{1}{y}
-        </me>
+        </md>
         for every <m>y \gt 0</m>.
       </p>
     </proof>
@@ -343,31 +343,31 @@
     <statement>
       <p>
         For every <m>x \gt 0</m>,
-        <me>
+        <md>
           \ln x = \int_1^x \frac{dt}{t}.
-        </me>
+        </md>
       </p>
     </statement>
 
     <proof>
       <p>
         Let
-        <me>
+        <md>
           F(x)=\int_1^x \frac{dt}{t}
           \qquad (x \gt 0).
-        </me>
+        </md>
         By the Fundamental Theorem of Calculus, <m>F'(x)=1/x</m>. By
         <xref ref="prop-logarithm-derivative"/>, the same is true for
         <m>\ln x</m>. Therefore
-        <me>
+        <md>
           \frac{d}{dx}\bigl(F(x)-\ln x\bigr)=0
-        </me>
+        </md>
         on <m>(0,\infty)</m>. By
         <xref ref="cor-derivative-zero-implies-constant"/>, the difference
         <m>F-\ln</m> is constant. Evaluating at <m>x=1</m> gives
-        <me>
+        <md>
           F(1)-\ln 1 = 0-0 = 0,
-        </me>
+        </md>
         so the constant is <m>0</m>.
       </p>
     </proof>
@@ -375,10 +375,10 @@
 
   <p>
     Finally, if <m>a \gt 0</m>, one may define
-    <me>
+    <md>
       a^x := e^{x\ln a}
       \qquad (x \in \R).
-    </me>
+    </md>
     The addition law for the exponential function then gives the usual rules
     for general real powers as well.
   </p>

@@ -28,9 +28,9 @@
       <statement>
         <p>
           Use the comparison test to prove that
-          <me>
+          <md>
             \sum_{n=1}^\infty \frac{1}{n^2+1}
-          </me>
+          </md>
           converges.
         </p>
       </statement>
@@ -53,9 +53,9 @@
       <statement>
         <p>
           Use the limit comparison test to determine whether
-          <me>
+          <md>
             \sum_{n=2}^\infty \frac{1}{n^3-1}
-          </me>
+          </md>
           converges.
         </p>
       </statement>
@@ -79,9 +79,9 @@
       <statement>
         <p>
           Use the ratio test to prove that
-          <me>
+          <md>
             \sum_{n=1}^\infty \frac{n^2}{2^n}
-          </me>
+          </md>
           converges absolutely.
         </p>
       </statement>
@@ -91,9 +91,9 @@
       <statement>
         <p>
           Use the ratio test to show that
-          <me>
+          <md>
             \sum_{n=1}^\infty \frac{n!}{3^n}
-          </me>
+          </md>
           diverges.
         </p>
       </statement>
@@ -103,9 +103,9 @@
       <statement>
         <p>
           Use the root test to determine whether
-          <me>
+          <md>
             \sum_{n=1}^\infty \left(\frac{3n}{4n+1}\right)^n
-          </me>
+          </md>
           converges.
         </p>
       </statement>
@@ -125,13 +125,13 @@
       <statement>
         <p>
           Let
-          <me>
+          <md>
             s=\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n}.
-          </me>
+          </md>
           Find <m>N</m> such that
-          <me>
+          <md>
             \left|s-\sum_{n=1}^N \frac{(-1)^{n+1}}{n}\right| \lt 0.01.
-          </me>
+          </md>
         </p>
       </statement>
     </exercise>
@@ -142,9 +142,9 @@
           Let <m>|x|&lt;1</m>. Compute the Cauchy product of
           <m>\sum_{n=0}^\infty x^n</m> with itself and use
           <xref ref="thm-mertens-series"/> to prove that
-          <me>
+          <md>
             \sum_{n=0}^\infty (n+1)x^n=\frac{1}{(1-x)^2}.
-          </me>
+          </md>
         </p>
       </statement>
     </exercise>
@@ -155,9 +155,9 @@
           Use the limit form of Raabe's test
           (<xref ref="cor-raabe-limit-form-series"/>) to give another proof
           that
-          <me>
+          <md>
             \sum_{n=1}^\infty \frac{1}{n^p}
-          </me>
+          </md>
           converges for <m>p&gt;1</m> and diverges for <m>p&lt;1</m>.
           Explain why the case <m>p=1</m> is inconclusive for Raabe's test.
         </p>

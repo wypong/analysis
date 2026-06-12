@@ -32,9 +32,9 @@
             <p>
               Conclude that <m>f</m> is Riemann integrable on <m>[0,1]</m> and
               that
-              <me>
+              <md>
                 \int_0^1 x^2\,dx=\frac13.
-              </me>
+              </md>
             </p>
           </li>
         </ol>
@@ -45,18 +45,18 @@
       <statement>
         <p>
           Define <m>s \colon [0,3] \to \R</m> by
-          <me>
+          <md>
             s(x)=
             \begin{cases}
               1 &amp; \text{if } 0 \le x \lt 1,\\
               -2 &amp; \text{if } 1 \le x \lt 2,\\
               3 &amp; \text{if } 2 \le x \le 3.
             \end{cases}
-          </me>
+          </md>
           Show that <m>s</m> is Riemann integrable and compute
-          <me>
+          <md>
             \int_0^3 s(x)\,dx.
-          </me>
+          </md>
         </p>
       </statement>
     </exercise>
@@ -75,9 +75,9 @@
         <p>
           Show that the function <m>f(x)=\lfloor x \rfloor</m> is Riemann
           integrable on <m>[0,3]</m>, and compute
-          <me>
+          <md>
             \int_0^3 \lfloor x \rfloor\,dx.
-          </me>
+          </md>
         </p>
       </statement>
     </exercise>
@@ -88,9 +88,9 @@
           Let <m>f \colon [a,b] \to \R</m> be bounded, and suppose that
           <m>f(x)=0</m> except at finitely many points of <m>[a,b]</m>. Prove
           that <m>f \in R[a,b]</m> and that
-          <me>
+          <md>
             \int_a^b f(x)\,dx=0.
-          </me>
+          </md>
         </p>
       </statement>
     </exercise>
@@ -100,9 +100,9 @@
         <p>
           Let <m>f \colon [a,b] \to \R</m> be continuous and suppose that
           <m>f(x) \ge 0</m> for every <m>x \in [a,b]</m>. Prove that if
-          <me>
+          <md>
             \int_a^b f(x)\,dx=0,
-          </me>
+          </md>
           then <m>f(x)=0</m> for all <m>x \in [a,b]</m>.
         </p>
       </statement>
@@ -112,9 +112,9 @@
       <statement>
         <p>
           Define <m>F \colon [-1,1] \to \R</m> by
-          <me>
+          <md>
             F(x)=\int_0^x |t|\,dt.
-          </me>
+          </md>
           Find an explicit formula for <m>F(x)</m> and verify that
           <m>F'(x)=|x|</m> for every <m>x \in [-1,1]</m>.
         </p>
@@ -125,9 +125,9 @@
       <statement>
         <p>
           Let <m>f(x)=\operatorname{sgn}(x)</m> on <m>[-1,1]</m>, and define
-          <me>
+          <md>
             F(x)=\int_0^x f(t)\,dt.
-          </me>
+          </md>
           Compute <m>F(x)</m> explicitly. Show that <m>F</m> is continuous on
           <m>[-1,1]</m>, and explain why <m>F</m> is not differentiable at
           <m>0</m>.
@@ -140,9 +140,9 @@
         <p>
           Suppose <m>F</m> is differentiable on <m>[a,b]</m>, that
           <m>F' \in R[a,b]</m>, and that <m>F(a)=F(b)=0</m>. Prove that
-          <me>
+          <md>
             \int_a^b xF'(x)\,dx=-\int_a^b F(x)\,dx.
-          </me>
+          </md>
         </p>
       </statement>
     </exercise>
@@ -152,9 +152,9 @@
         <p>
           Use <xref ref="prop-integration-by-parts"/> to prove by induction on
           <m>n \in \N</m> that
-          <me>
+          <md>
             \int_0^1 x^n\,dx=\frac{1}{n+1}.
-          </me>
+          </md>
         </p>
       </statement>
     </exercise>
@@ -163,9 +163,9 @@
       <statement>
         <p>
           Use <xref ref="thm-change-of-variables"/> to compute
-          <me>
+          <md>
             \int_0^1 x(1+x^2)^4\,dx.
-          </me>
+          </md>
         </p>
       </statement>
     </exercise>
@@ -176,9 +176,9 @@
           Let <m>\varphi \in C^1[a,b]</m>, and let <m>f</m> be continuous on
           <m>\varphi([a,b])</m>. Prove that if <m>\varphi(a)=\varphi(b)</m>,
           then
-          <me>
+          <md>
             \int_a^b f(\varphi(x))\varphi'(x)\,dx=0.
-          </me>
+          </md>
         </p>
       </statement>
     </exercise>
@@ -199,9 +199,9 @@
         <p>
           Let <m>h</m> be the Thomae function on <m>[0,1]</m>. Prove that the
           function <m>x \mapsto xh(x)</m> is Riemann integrable and that
-          <me>
+          <md>
             \int_0^1 xh(x)\,dx=0.
-          </me>
+          </md>
         </p>
       </statement>
     </exercise>

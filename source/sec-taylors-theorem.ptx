@@ -18,17 +18,17 @@
     Let <m>f</m> be a function with derivatives up to order <m>n</m> near
     <m>x_0</m>. The <term><m>n</m>-th Taylor polynomial</term><idx>Taylor
     polynomial</idx> of <m>f</m> at <m>x_0</m> is
-    <me>
+    <md>
       P_n(x;x_0)=\sum_{k=0}^n \frac{f^{(k)}(x_0)}{k!}(x-x_0)^k.
-    </me>
+    </md>
   </p>
 
   <p>
     We say that <m>x_0</m> is a <term>zero of multiplicity</term><idx>zero of
     multiplicity</idx> at least <m>m</m> of <m>g</m> if
-    <me>
+    <md>
       g(x_0)=g'(x_0)=\cdots=g^{(m-1)}(x_0)=0.
-    </me>
+    </md>
   </p>
 
   <lemma xml:id="lem-rolle-zero-multiplicity">
@@ -39,9 +39,9 @@
         <m>n+1</m> of <m>g</m>, and suppose <m>x \in I</m> is another zero of
         <m>g</m>. Then there exists a point <m>c</m> strictly between
         <m>x_0</m> and <m>x</m> such that
-        <me>
+        <md>
           g^{(n+1)}(c)=0.
-        </me>
+        </md>
       </p>
     </statement>
 
@@ -60,9 +60,9 @@
         Repeating this argument yields points
         <m>c_1,c_2,\dots,c_{n+1}</m>, each lying strictly between
         <m>x_0</m> and <m>x</m>, with
-        <me>
+        <md>
           g'(c_1)=0,\quad g''(c_2)=0,\quad \dots,\quad g^{(n+1)}(c_{n+1})=0.
-        </me>
+        </md>
         Taking <m>c=c_{n+1}</m> completes the proof.
       </p>
     </proof>
@@ -75,9 +75,9 @@
         Suppose <m>f</m> has derivatives up to order <m>n+1</m> on an open
         interval containing <m>x_0</m> and <m>x</m>. Then there exists a point
         <m>c</m> between <m>x_0</m> and <m>x</m> such that
-        <me>
+        <md>
           f(x)=P_n(x;x_0)+\frac{f^{(n+1)}(c)}{(n+1)!}(x-x_0)^{n+1}.
-        </me>
+        </md>
       </p>
       <p>
         The final term is called the <term>Lagrange remainder</term><idx>Lagrange remainder</idx>.
@@ -88,9 +88,9 @@
       <p>
         The case <m>x=x_0</m> is immediate, so assume <m>x \ne x_0</m>. Choose
         a constant <m>K</m> so that the function
-        <me>
+        <md>
           g(t)=f(t)-P_n(t;x_0)-K(t-x_0)^{n+1}
-        </me>
+        </md>
         satisfies <m>g(x)=0</m>. Since <m>P_n</m> matches the first
         <m>n</m> derivatives of <m>f</m> at <m>x_0</m>, the point
         <m>x_0</m> is a zero of multiplicity at least <m>n+1</m> of
@@ -102,17 +102,17 @@
         <m>c</m> between <m>x_0</m> and <m>x</m> such that
         <m>g^{(n+1)}(c)=0</m>. But the polynomial <m>P_n</m> has zero
         <m>(n+1)</m>-st derivative, so
-        <me>
+        <md>
           g^{(n+1)}(t)=f^{(n+1)}(t)-K(n+1)!.
-        </me>
+        </md>
         Evaluating at <m>c</m> gives
-        <me>
+        <md>
           0=f^{(n+1)}(c)-K(n+1)!,
-        </me>
+        </md>
         hence
-        <me>
+        <md>
           K=\frac{f^{(n+1)}(c)}{(n+1)!}.
-        </me>
+        </md>
         Substituting this value of <m>K</m> into the definition of <m>g</m>
         and using <m>g(x)=0</m> yields the formula.
       </p>
@@ -136,11 +136,11 @@
       <p>
         Assume the basic properties of the definite integral. If
         <m>u,v \colon [a,b] \to \R</m> are continuously differentiable, then
-        <me>
+        <md>
           \int_a^b u'(t)v(t)\,dt
           =
           u(b)v(b)-u(a)v(a)-\int_a^b u(t)v'(t)\,dt.
-        </me>
+        </md>
       </p>
     </statement>
 
@@ -148,17 +148,17 @@
       <p>
         By the product rule
         (<xref ref="prop-derivative-sum-product-rules"/>),
-        <me>
+        <md>
           (uv)'(t)=u'(t)v(t)+u(t)v'(t).
-        </me>
+        </md>
         Integrating both sides from <m>a</m> to <m>b</m> and applying
         <xref ref="cor-newton-leibniz-special-case"/> to the function
         <m>uv</m>, we get
-        <me>
+        <md>
           u(b)v(b)-u(a)v(a)
           =
           \int_a^b u'(t)v(t)\,dt + \int_a^b u(t)v'(t)\,dt.
-        </me>
+        </md>
         Rearranging gives the result.
       </p>
     </proof>
@@ -179,9 +179,9 @@
         Assume the basic properties of the definite integral. Suppose
         <m>f \in C^{n+1}(I)</m>, where <m>I</m> is a closed interval with
         endpoints <m>x_0</m> and <m>x</m>. Then
-        <me>
+        <md>
           f(x)=P_n(x;x_0)+\frac{1}{n!}\int_{x_0}^x f^{(n+1)}(t)(x-t)^n\,dt.
-        </me>
+        </md>
       </p>
       <p>
         The final term is called the <term>integral form of the
@@ -199,57 +199,57 @@
 
       <p>
         For each <m>k=0,1,\dots,n</m>, define
-        <me>
+        <md>
           R_k(x;x_0):=\frac{1}{k!}\int_{x_0}^x f^{(k+1)}(t)(x-t)^k\,dt.
-        </me>
+        </md>
       </p>
 
       <p>
         When <m>k=0</m>, the Newton-Leibniz formula
         (<xref ref="cor-newton-leibniz-special-case"/>) gives
-        <me>
+        <md>
           R_0(x;x_0)=\int_{x_0}^x f'(t)\,dt = f(x)-f(x_0).
-        </me>
+        </md>
       </p>
 
       <p>
         Now let <m>1 \le k \le n</m>. Apply
         <xref ref="prop-integration-by-parts-special-case"/> with
-        <me>
+        <md>
           u(t)=f^{(k)}(t)
           \qquad \text{and} \qquad
           v(t)=\frac{(x-t)^k}{k!}.
-        </me>
+        </md>
         Then <m>u'(t)=f^{(k+1)}(t)</m> and
-        <me>
+        <md>
           v'(t)=-\frac{(x-t)^{k-1}}{(k-1)!}.
-        </me>
+        </md>
         Therefore
-        <me>
+        <md>
           R_k(x;x_0)
           =
           \left[\frac{f^{(k)}(t)(x-t)^k}{k!}\right]_{t=x_0}^{t=x}
           +
           \frac{1}{(k-1)!}\int_{x_0}^x f^{(k)}(t)(x-t)^{k-1}\,dt.
-        </me>
+        </md>
         Since <m>(x-x)^k=0</m>, this becomes
-        <me>
+        <md>
           R_k(x;x_0)
           =
           -\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k + R_{k-1}(x;x_0).
-        </me>
+        </md>
       </p>
 
       <p>
         Starting from <m>R_0(x;x_0)=f(x)-f(x_0)</m> and applying the recurrence
         successively for <m>k=1,2,\dots,n</m>, we obtain
-        <me>
+        <md>
           R_n(x;x_0)
           =
           f(x)-\sum_{k=0}^n \frac{f^{(k)}(x_0)}{k!}(x-x_0)^k
           =
           f(x)-P_n(x;x_0).
-        </me>
+        </md>
         Rearranging gives the desired formula.
       </p>
     </proof>
@@ -261,9 +261,9 @@
         Suppose <m>f</m> has derivatives of all orders on an interval
         containing <m>x_0</m> and <m>x</m>. If there exists a constant
         <m>M&gt;0</m> such that
-        <me>
+        <md>
           |f^{(n)}(t)| \le M
-        </me>
+        </md>
         for every <m>n \ge 1</m> and every <m>t</m> between <m>x_0</m> and
         <m>x</m>, then the Taylor series of <m>f</m> at <m>x_0</m> converges
         to <m>f(x)</m>.
@@ -273,17 +273,17 @@
     <proof>
       <p>
         By Taylor's theorem,
-        <me>
+        <md>
           f(x)-P_n(x;x_0)
           =
           \frac{f^{(n+1)}(c_n)}{(n+1)!}(x-x_0)^{n+1}
-        </me>
+        </md>
         for some point <m>c_n</m> between <m>x_0</m> and <m>x</m>. Hence
-        <me>
+        <md>
           |f(x)-P_n(x;x_0)|
           \le
           M\frac{|x-x_0|^{n+1}}{(n+1)!}.
-        </me>
+        </md>
         By <xref ref="prop-growth-comparison-basic-sequences"/>,
         <m>|x-x_0|^{n+1}/(n+1)! \to 0</m>. Therefore
         <m>P_n(x;x_0)\to f(x)</m>.
@@ -300,9 +300,9 @@
         Theorem (<xref ref="thm-extreme-value-theorem"/>), <m>e^x</m> is
         bounded there by some constant <m>M</m>. Since every derivative of
         <m>e^x</m> is again <m>e^x</m>, the previous corollary gives
-        <me>
+        <md>
           e^{x_0}=\sum_{n=0}^\infty \frac{x_0^n}{n!}.
-        </me>
+        </md>
         Because <m>x_0</m> was arbitrary, the exponential function is analytic
         on all of <m>\R</m>.
       </p>
@@ -314,18 +314,18 @@
     <statement>
       <p>
         For each <m>\alpha \in \R</m>,
-        <me>
+        <md>
           (1+x)^\alpha
           =
           \sum_{n=0}^\infty \binom{\alpha}{n}x^n
           \qquad \text{for } |x|&lt;1,
-        </me>
+        </md>
         where
-        <me>
+        <md>
           \binom{\alpha}{n}
           =
           \frac{\alpha(\alpha-1)\cdots(\alpha-n+1)}{n!}.
-        </me>
+        </md>
       </p>
     </statement>
 
@@ -342,12 +342,12 @@
     <statement>
       <p>
         Taking <m>\alpha=1/2</m> gives
-        <me>
+        <md>
           \sqrt{1+x}
           =
           1+\frac12x-\frac18x^2+\frac1{16}x^3-\frac{5}{128}x^4+\cdots
           \qquad \text{for } |x|&lt;1.
-        </me>
+        </md>
         So <m>\sqrt{1+x}</m> is analytic at <m>0</m>.
       </p>
     </statement>

@@ -31,7 +31,7 @@
           <m>c \in S</m>. Then <m>f</m> is continuous at <m>c</m> if and only
           if for every sequence <m>(x_n)</m> in <m>S</m> with
           <m>x_n \to c</m>, we have
-          <me>f(x_n) \to f(c).</me>
+          <md>f(x_n) \to f(c).</md>
         </p>
       </statement>
 
@@ -55,7 +55,7 @@
 	   \gt 0</m> such that for every <m>n \in \N</m> there exists
 	   <m>x_n \in S</m> with <m>|x_n-c| \lt 1/n</m> and
 
-          <me>|f(x_n)-f(c)| \ge \varepsilon_0.</me>
+          <md>|f(x_n)-f(c)| \ge \varepsilon_0.</md>
           
 	  Clearly, <m>x_n \to c</m>, but <m>f(x_n)</m> does not converge
 	  to <m>f(c)</m>, contradicting the hypothesis. Therefore <m>f</m>
@@ -91,13 +91,13 @@
           Pick a sequence <m>(x_n)</m> in <m>S</m> that converges to <m>c</m>.
           Since <m>f</m> and <m>g</m> are continuous at <m>c</m>, the
           sequential characterization gives
-          <me>f(x_n) \to f(c)
+          <md>f(x_n) \to f(c)
             \quad\text{and}\quad g(x_n) \to g(c).
-          </me>
+          </md>
           Therefore <xref ref="prop-limit-laws-sequences"/> implies that
-          <me>(f+g)(x_n)=f(x_n)+g(x_n) \to f(c)+g(c)=(f+g)(c)</me>
+          <md>(f+g)(x_n)=f(x_n)+g(x_n) \to f(c)+g(c)=(f+g)(c)</md>
           and
-          <me>(fg)(x_n)=f(x_n)g(x_n) \to f(c)g(c)=(fg)(c).</me>
+          <md>(fg)(x_n)=f(x_n)g(x_n) \to f(c)g(c)=(fg)(c).</md>
           Hence <m>f+g</m> and <m>fg</m> are continuous at <m>c</m>.
         </p>
 
@@ -107,7 +107,7 @@
           by dropping finitely many terms if necessary, we may assume
           <m>g(x_n) \neq 0</m> for all <m>n</m>. Then the reciprocal part of
           <xref ref="prop-limit-laws-sequences"/> gives
-          <me>\frac{1}{g(x_n)} \to \frac{1}{g(c)}.</me>
+          <md>\frac{1}{g(x_n)} \to \frac{1}{g(c)}.</md>
           Thus <m>1/g</m> is continuous at <m>c</m> by the sequential
           characterization of continuity. Applying the product result to
           <m>f</m> and <m>1/g</m>, we conclude that <m>f/g=f(1/g)</m> is
@@ -133,7 +133,7 @@
           <m>f(x_n) \to f(c)</m>. The sequence <m>(f(x_n))</m> lies in
           <m>T</m>, and because <m>g</m> is continuous at <m>f(c)</m>, it
           follows that
-          <me>(g \circ f)(x_n)=g(f(x_n)) \to g(f(c))=(g \circ f)(c).</me>
+          <md>(g \circ f)(x_n)=g(f(x_n)) \to g(f(c))=(g \circ f)(c).</md>
           Therefore <m>g \circ f</m> is continuous at <m>c</m>.
         </p>
       </proof>
@@ -230,12 +230,12 @@
         <p>
           Let <m>\varepsilon = |f(c)|/2</m>. Since <m>f</m> is continuous at
           <m>c</m>, there exists <m>\delta \gt 0</m> such that
-          <me>|f(x)-f(c)| \lt \frac{|f(c)|}{2}</me>
+          <md>|f(x)-f(c)| \lt \frac{|f(c)|}{2}</md>
           whenever <m>x \in S</m> and <m>|x-c| \lt \delta</m>. If
           <m>f(c) \gt 0</m>, then
-          <me>f(x) \gt f(c)-\frac{|f(c)|}{2}=\frac{f(c)}{2}\gt 0.</me>
+          <md>f(x) \gt f(c)-\frac{|f(c)|}{2}=\frac{f(c)}{2}\gt 0.</md>
           If <m>f(c) \lt 0</m>, then
-          <me>f(x) \lt f(c)+\frac{|f(c)|}{2}=\frac{f(c)}{2}\lt 0.</me>
+          <md>f(x) \lt f(c)+\frac{|f(c)|}{2}=\frac{f(c)}{2}\lt 0.</md>
           In either case, <m>f(x)</m> has the same sign as <m>f(c)</m>.
         </p>
       </proof>

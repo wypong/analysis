@@ -17,9 +17,9 @@
   <p>
     A <term>power series</term><idx>power series</idx> centered at
     <m>x_0 \in \R</m> is a series of the form
-    <me>
+    <md>
       \sum_{n=0}^\infty a_n(x-x_0)^n.
-    </me>
+    </md>
     It always converges at the center <m>x=x_0</m>. If it converges at some
     point <m>x \ne x_0</m>, we call it a
     <term>convergent power series</term>; otherwise it is a
@@ -35,9 +35,9 @@
         <li>
           <p>
             The series
-            <me>
+            <md>
               \sum_{n=0}^\infty n!x^n
-            </me>
+            </md>
             has radius of convergence <m>0</m>. Indeed,
             <m>(n!)^{1/n}\to \infty</m> because
             <m>n! \ge (n/2)^{n/2}</m> for large <m>n</m>.
@@ -46,9 +46,9 @@
         <li>
           <p>
             The geometric series
-            <me>
+            <md>
               \sum_{n=0}^\infty x^n
-            </me>
+            </md>
             has radius of convergence <m>1</m> by
             <xref ref="prop-geometric-series"/>.
           </p>
@@ -56,14 +56,14 @@
         <li>
           <p>
             The exponential series
-            <me>
+            <md>
               \sum_{n=0}^\infty \frac{x^n}{n!}
-            </me>
+            </md>
             has radius of convergence <m>\infty</m>, because the ratio test
             gives
-            <me>
+            <md>
               \frac{|x|^{n+1}/(n+1)!}{|x|^n/n!}=\frac{|x|}{n+1}\to 0
-            </me>
+            </md>
             for every <m>x \in \R</m>.
           </p>
         </li>
@@ -76,9 +76,9 @@
     <statement>
       <p>
         Let
-        <me>
+        <md>
           \sum_{n=0}^\infty a_n(x-x_0)^n
-        </me>
+        </md>
         be a power series. Then there exists a number
         <m>R \in [0,\infty]</m> such that:
       </p>
@@ -88,9 +88,9 @@
       </ol>
       <p>
         Moreover,
-        <me>
+        <md>
           R=\frac{1}{\limsup |a_n|^{1/n}},
-        </me>
+        </md>
         with the conventions <m>1/\infty=0</m> and <m>1/0=\infty</m>.
       </p>
     </statement>
@@ -98,15 +98,15 @@
     <proof>
       <p>
         Fix <m>x \in \R</m> and apply the root test to the series
-        <me>
+        <md>
           \sum_{n=0}^\infty a_n(x-x_0)^n.
-        </me>
+        </md>
         Since
-        <me>
+        <md>
           \limsup |a_n(x-x_0)^n|^{1/n}
           =
           |x-x_0| \limsup |a_n|^{1/n},
-        </me>
+        </md>
         the root test shows that the series converges absolutely when this
         quantity is less than <m>1</m> and diverges when it is greater than
         <m>1</m>. Defining <m>R</m> by the displayed formula gives the
@@ -119,9 +119,9 @@
     The number <m>R</m> is called the
     <term>radius of convergence</term><idx>radius of convergence</idx> of the
     power series. The interval
-    <me>
+    <md>
       (x_0-R,x_0+R)
-    </me>
+    </md>
     is called its <term>interval of convergence</term><idx>interval of
     convergence</idx>. The theorem says nothing about the boundary points
     <m>x_0-R</m> and <m>x_0+R</m>; these must be checked separately.

@@ -27,18 +27,18 @@
     <statement>
       <p>
         For every open interval <m>I</m>,
-        <me>
+        <md>
           C^0(I) \supseteq D^1(I) \supseteq C^1(I) \supseteq D^2(I)
           \supseteq C^2(I) \supseteq \cdots.
-        </me>
+        </md>
         If we define
-        <me>
+        <md>
           C^\infty(I):=\bigcap_{n=0}^\infty C^n(I),
-        </me>
+        </md>
         then also
-        <me>
+        <md>
           C^\infty(I)=\bigcap_{n=1}^\infty D^n(I).
-        </me>
+        </md>
       </p>
     </statement>
 
@@ -50,18 +50,18 @@
         generally, if <m>f \in D^{n+1}(I)</m>, then <m>f^{(n)}</m> is
         differentiable on <m>I</m>, hence continuous. Therefore
         <m>f \in C^n(I)</m>, so
-        <me>
+        <md>
           D^{n+1}(I) \subseteq C^n(I)
-        </me>
+        </md>
         for every <m>n \ge 0</m>.
       </p>
 
       <p>
         On the other hand, if <m>f \in C^n(I)</m>, then by definition
         <m>f^{(n)}</m> exists, so certainly <m>f \in D^n(I)</m>. Thus
-        <me>
+        <md>
           C^n(I) \subseteq D^n(I)
-        </me>
+        </md>
         for every <m>n \ge 1</m>. Chaining these inclusions gives the stated
         hierarchy.
       </p>
@@ -89,16 +89,16 @@
     <statement>
       <p>
         For each <m>n \ge 1</m>, define
-        <me>
+        <md>
           f_n(x)=\begin{cases}
           x^n &amp; \text{if } x \ge 0,\\
           -x^n &amp; \text{if } x \lt 0.
           \end{cases}
-        </me>
+        </md>
         Then
-        <me>
+        <md>
           f_n \in C^{n-1}(\R) \setminus D^n(\R).
-        </me>
+        </md>
       </p>
     </statement>
 
@@ -106,12 +106,12 @@
       <p>
         For <m>0 \le k \le n-1</m> and <m>x \ne 0</m>, repeated
         differentiation gives
-        <me>
+        <md>
           f_n^{(k)}(x)=\begin{cases}
           \dfrac{n!}{(n-k)!}x^{n-k} &amp; \text{if } x \gt 0,\\
           -\dfrac{n!}{(n-k)!}x^{n-k} &amp; \text{if } x \lt 0.
           \end{cases}
-        </me>
+        </md>
         Since <m>n-k \ge 1</m>, both one-sided limits at <m>0</m> are equal
         to <m>0</m>. So each derivative up to order <m>n-1</m> extends
         continuously across <m>0</m>. Hence <m>f_n \in C^{n-1}(\R)</m>.
@@ -119,12 +119,12 @@
 
       <p>
         For <m>x \ne 0</m>, the <m>n</m>-th derivative is
-        <me>
+        <md>
           f_n^{(n)}(x)=\begin{cases}
           n! &amp; \text{if } x \gt 0,\\
           -n! &amp; \text{if } x \lt 0.
           \end{cases}
-        </me>
+        </md>
         The left and right limits at <m>0</m> are different, so
         <m>f_n^{(n)}(0)</m> does not exist. Therefore
         <m>f_n \notin D^n(\R)</m>.
@@ -136,16 +136,16 @@
     <statement>
       <p>
         For each <m>n \ge 1</m>, define
-        <me>
+        <md>
           g_n(x)=\begin{cases}
           x^{2n}\sin(1/x) &amp; \text{if } x \ne 0,\\
           0 &amp; \text{if } x=0.
           \end{cases}
-        </me>
+        </md>
         Then
-        <me>
+        <md>
           g_n \in D^n(\R) \setminus C^n(\R).
-        </me>
+        </md>
       </p>
     </statement>
 
@@ -154,11 +154,11 @@
         We claim that, for each <m>k=0,1,\dots,n</m>, the derivative
         <m>g_n^{(k)}(x)</m> for <m>x \ne 0</m> is a finite linear combination
         of terms of the form
-        <me>
+        <md>
           x^m \sin(1/x)
           \qquad \text{and} \qquad
           x^m \cos(1/x),
-        </me>
+        </md>
         where <m>m \ge 2n-2k</m>. This is true for <m>k=0</m>. If it holds for
         some <m>k</m>, then differentiating one such term either lowers the
         power of <m>x</m> by <m>1</m> or by <m>2</m>, so after one more
@@ -171,13 +171,13 @@
         at least <m>2</m>. Hence
         <m>g_n^{(k)}(x) \to 0</m> as <m>x \to 0</m>. Therefore
         <m>g_n^{(k)}(0)=0</m>, and
-        <me>
+        <md>
           \frac{g_n^{(k)}(h)-g_n^{(k)}(0)}{h}
           =
           \frac{g_n^{(k)}(h)}{h}
           \to 0
           \qquad \text{as } h \to 0,
-        </me>
+        </md>
         because every term in <m>g_n^{(k)}(h)/h</m> still has a positive power
         of <m>h</m>. Thus <m>g_n^{(k+1)}(0)</m> exists and equals <m>0</m>.
         By induction, <m>g_n \in D^n(\R)</m>.
@@ -187,9 +187,9 @@
         After differentiating exactly <m>n</m> times, there is a term with
         power <m>x^0</m>: it comes from differentiating the trigonometric
         factor in every step. So <m>g_n^{(n)}(x)</m> has the form
-        <me>
+        <md>
           g_n^{(n)}(x)=A(x)+B(x)\sin(1/x)+C(x)\cos(1/x)
-        </me>
+        </md>
         for <m>x \ne 0</m>, where <m>A,B,C</m> are finite linear combinations
         of powers of <m>x</m> and at least one of <m>B(0)</m> or <m>C(0)</m>
         is nonzero. Consequently, <m>g_n^{(n)}(x)</m> oscillates as

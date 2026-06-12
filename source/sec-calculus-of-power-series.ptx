@@ -19,17 +19,17 @@
     <statement>
       <p>
         Suppose the power series
-        <me>
+        <md>
           \sum_{n=0}^\infty a_n(x-x_0)^n
-        </me>
+        </md>
         has radius of convergence <m>R</m>. Then the formal derivative
-        <me>
+        <md>
           \sum_{n=1}^\infty na_n(x-x_0)^{n-1}
-        </me>
+        </md>
         and the formal integral
-        <me>
+        <md>
           \sum_{n=0}^\infty \frac{a_n}{n+1}(x-x_0)^{n+1}
-        </me>
+        </md>
         also have radius of convergence <m>R</m>.
       </p>
     </statement>
@@ -37,30 +37,30 @@
     <proof>
       <p>
         Let
-        <me>
+        <md>
           L=\limsup |a_n|^{1/n},
-        </me>
+        </md>
         so that <m>R=1/L</m> by <xref ref="thm-radius-of-convergence"/>.
         Since <m>n^{1/n}\to 1</m> by <xref ref="eg-nth-root-of-n"/>, we have
-        <me>
+        <md>
           \limsup |na_n|^{1/n}
           =
           \limsup n^{1/n}|a_n|^{1/n}
           =
           L.
-        </me>
+        </md>
         Hence the formal derivative has radius <m>R</m>.
       </p>
 
       <p>
         Likewise, because <m>(n+1)^{1/n}\to 1</m>,
-        <me>
+        <md>
           \limsup \left|\frac{a_n}{n+1}\right|^{1/n}
           =
           \limsup \frac{|a_n|^{1/n}}{(n+1)^{1/n}}
           =
           L,
-        </me>
+        </md>
         so the formal integral also has radius <m>R</m>.
       </p>
     </proof>
@@ -71,21 +71,21 @@
     <statement>
       <p>
         Suppose
-        <me>
+        <md>
           f(x)=\sum_{n=0}^\infty a_n(x-x_0)^n
-        </me>
+        </md>
         has radius of convergence <m>R&gt;0</m>. Then on the interval
         <m>(x_0-R,x_0+R)</m> the function <m>f</m> is differentiable and has
         antiderivatives. Moreover,
-        <me>
+        <md>
           f'(x)=\sum_{n=1}^\infty na_n(x-x_0)^{n-1}
-        </me>
+        </md>
         and
-        <me>
+        <md>
           \int_{x_0}^x f(t)\,dt
           =
           \sum_{n=0}^\infty \frac{a_n}{n+1}(x-x_0)^{n+1}.
-        </me>
+        </md>
       </p>
     </statement>
 
@@ -96,27 +96,27 @@
         <xref ref="thm-power-series-uniform-on-compact-subintervals"/>, the
         original power series and its formal derivative both converge
         uniformly on <m>I_r</m>. Let
-        <me>
+        <md>
           s_n(x)=\sum_{k=0}^n a_k(x-x_0)^k.
-        </me>
+        </md>
         Each <m>s_n</m> is a polynomial, so
-        <me>
+        <md>
           s_n'(x)=\sum_{k=1}^n ka_k(x-x_0)^{k-1}.
-        </me>
+        </md>
         Also <m>s_n(x_0)=a_0</m> for every <m>n</m>. Therefore
         <xref ref="thm-differentiation-under-uniform-limit"/> applies and
         shows that the limit function <m>f</m> is differentiable on
         <m>(x_0-r,x_0+r)</m>, with
-        <me>
+        <md>
           f'(x)=\sum_{k=1}^\infty ka_k(x-x_0)^{k-1}
           \qquad \text{for } x \in (x_0-r,x_0+r).
-        </me>
+        </md>
       </p>
 
       <p>
         Likewise, since <m>s_n \to f</m> uniformly on <m>I_r</m>,
         <xref ref="thm-integral-uniform-limit"/> gives
-        <me>
+        <md>
           \int_{x_0}^x f(t)\,dt
           =
           \lim_{n\to\infty} \int_{x_0}^x s_n(t)\,dt
@@ -125,7 +125,7 @@
           \sum_{k=0}^n \frac{a_k}{k+1}(x-x_0)^{k+1}
           =
           \sum_{k=0}^\infty \frac{a_k}{k+1}(x-x_0)^{k+1}
-        </me>
+        </md>
         for every <m>x \in (x_0-r,x_0+r)</m>.
       </p>
 
@@ -140,34 +140,34 @@
     <statement>
       <p>
         We can compute the sum
-        <me>
+        <md>
           \sum_{n=1}^\infty \frac{n}{2^n}.
-        </me>
+        </md>
         By the geometric series formula (<xref ref="prop-geometric-series"/>),
-        <me>
+        <md>
           \frac{1}{1-x}=\sum_{n=0}^\infty x^n
           \qquad \text{for } |x|&lt;1.
-        </me>
+        </md>
         Differentiating term by term gives
-        <me>
+        <md>
           \frac{1}{(1-x)^2}
           =
           \sum_{n=1}^\infty nx^{n-1}.
-        </me>
+        </md>
         Multiplying by <m>x</m>, we obtain
-        <me>
+        <md>
           \frac{x}{(1-x)^2}
           =
           \sum_{n=1}^\infty nx^n.
-        </me>
+        </md>
         Evaluating at <m>x=1/2</m> gives
-        <me>
+        <md>
           \sum_{n=1}^\infty \frac{n}{2^n}
           =
           \frac{\frac12}{(1-\frac12)^2}
           =
           2.
-        </me>
+        </md>
       </p>
     </statement>
   </example>
@@ -177,30 +177,30 @@
       <p>
         The geometric series also yields familiar expansions. Replacing
         <m>x</m> by <m>-x</m>, we get
-        <me>
+        <md>
           \frac{1}{1+x}=\sum_{n=0}^\infty (-1)^n x^n
           \qquad \text{for } |x|&lt;1.
-        </me>
+        </md>
         Integrating from <m>0</m> to <m>x</m> gives
-        <me>
+        <md>
           \ln(1+x)=\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n}x^n
           \qquad \text{for } |x|&lt;1.
-        </me>
+        </md>
       </p>
 
       <p>
         Likewise,
-        <me>
+        <md>
           \frac{1}{1+x^2}=\sum_{n=0}^\infty (-1)^n x^{2n}
           \qquad \text{for } |x|&lt;1,
-        </me>
+        </md>
         so integrating from <m>0</m> to <m>x</m> yields
-        <me>
+        <md>
           \arctan x
           =
           \sum_{n=0}^\infty \frac{(-1)^n}{2n+1}x^{2n+1}
           \qquad \text{for } |x|&lt;1.
-        </me>
+        </md>
       </p>
     </statement>
   </example>
@@ -210,17 +210,17 @@
     <statement>
       <p>
         Let
-        <me>
+        <md>
           f(x)=\sum_{n=0}^\infty a_nx^n
-        </me>
+        </md>
         be a power series with radius of convergence <m>1</m>. If the series
-        <me>
+        <md>
           \sum_{n=0}^\infty a_n
-        </me>
+        </md>
         converges to <m>L</m>, then
-        <me>
+        <md>
           \lim_{x\to 1^-} f(x)=L.
-        </me>
+        </md>
       </p>
     </statement>
 
@@ -228,9 +228,9 @@
       <p>
         Replacing <m>a_0</m> by <m>a_0-L</m>, we may assume without loss of
         generality that <m>L=0</m>. Let
-        <me>
+        <md>
           s_k:=\sum_{n=0}^k a_n.
-        </me>
+        </md>
         Then <m>s_k \to 0</m>.
       </p>
 
@@ -241,25 +241,25 @@
         (<xref ref="thm-mertens-series"/>) applies to the product of
         <m>\sum_{m=0}^\infty x^m</m> and <m>\sum_{n=0}^\infty a_nx^n</m>, and
         gives
-        <me>
+        <md>
           \frac{f(x)}{1-x}
           =
           \left(\sum_{m=0}^\infty x^m\right)\left(\sum_{n=0}^\infty a_nx^n\right)
           =
           \sum_{k=0}^\infty s_kx^k.
-        </me>
+        </md>
         Therefore
-        <me>
+        <md>
           f(x)=(1-x)\sum_{k=0}^\infty s_kx^k
           \qquad \text{for } 0&lt;x&lt;1.
-        </me>
+        </md>
       </p>
 
       <p>
         Let <m>\varepsilon&gt;0</m>. Since <m>s_k \to 0</m>, there exists
         <m>N</m> such that <m>|s_k|&lt;\varepsilon</m> for all <m>k \ge N</m>.
         Then for <m>0&lt;x&lt;1</m>,
-        <me>
+        <md>
           \left|(1-x)\sum_{k=N}^\infty s_kx^k\right|
           \le
           (1-x)\sum_{k=N}^\infty |s_k|x^k
@@ -269,22 +269,22 @@
           \varepsilon x^N
           \le
           \varepsilon.
-        </me>
+        </md>
       </p>
 
       <p>
         For the remaining finitely many terms, let
-        <me>
+        <md>
           B:=\max\{|s_0|,|s_1|,\dots,|s_{N-1}|\}.
-        </me>
+        </md>
         Then
-        <me>
+        <md>
           \left|(1-x)\sum_{k=0}^{N-1} s_kx^k\right|
           \le
           B(1-x)\sum_{k=0}^{N-1} x^k
           =
           B(1-x^N).
-        </me>
+        </md>
         Since <m>1-x^N \to 0</m> as <m>x \to 1^-</m>, there exists
         <m>\delta&gt;0</m> such that
         <m>0&lt;1-x&lt;\delta</m> implies <m>B(1-x^N)&lt;\varepsilon</m>.
@@ -308,20 +308,20 @@
     <statement>
       <p>
         From <xref ref="eg-power-series-log-and-arctan"/>, we know that
-        <me>
+        <md>
           \ln(1+x)=\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n}x^n
           \qquad \text{for } |x|&lt;1.
-        </me>
+        </md>
         The series at <m>x=1</m> is the alternating harmonic series, which
         converges by <xref ref="prop-alternating-series-test"/>. Since
         <m>\ln(1+x)</m> is continuous at <m>x=1</m>, Abel's theorem gives
-        <me>
+        <md>
           \sum_{n=1}^\infty \frac{(-1)^{n+1}}{n}
           =
           \lim_{x\to 1^-}\ln(1+x)
           =
           \ln 2.
-        </me>
+        </md>
       </p>
     </statement>
   </example>

@@ -10,9 +10,9 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
     <m>(x_n)</m> with index at least <m>k</m>. Clearly
     <m>S_k \supseteq S_{k+1}</m>, and so
   
-  <me>
+  <md>
        \inf S_{k} \le \inf S_{k+1} \le \sup S_{k+1} \le \sup S_{k}
-  </me>
+  </md>
   
     as extended real numbers. Since any two of the sets <m>S_k</m> differ by
     only finitely many terms, either all of them are bounded or none of them
@@ -44,16 +44,16 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       <p>
         Suppose first that <m>x_n \to L</m>. Let <m>\varepsilon \gt 0</m>.
         Choose <m>N\in\N</m> such that for all <m>n\ge N</m>,
-	<me>
+	<md>
 	L -\varepsilon \lt x_n \lt L + \varepsilon.
-	</me> 
+	</md> 
         
 	Then for any <m>k \ge N</m>, <m>S_k \subseteq (L-\varepsilon,
 	L+\varepsilon)</m> and so
 
-	<me>
+	<md>
 	L-\varepsilon \le \inf S_k \le \sup S_k \le L+\varepsilon.
-	</me>
+	</md>
 
 	Therefore, <m>\limsup x_n=\lim_k \sup S_k</m> is arbitrary closed
 	to <m>L</m> and hence must be <m>L</m>. Likewise, <m>\liminf x_n =
@@ -63,9 +63,9 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       <p>
         Conversely, suppose <m>\liminf x_n = \limsup x_n = L</m>. Since
         <m>x_k\in S_k</m>, we have 
-	<me>
+	<md>
           \inf S_k \le x_k \le \sup S_k
-        </me> for every <m>k</m>. By the squeeze lemma, <m>x_k \to
+        </md> for every <m>k</m>. By the squeeze lemma, <m>x_k \to
         L</m>. Therefore <m>(x_n)</m> is convergent.
       </p>
     </proof>
@@ -86,15 +86,15 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
     <proof>
       <p>
 	For a bounded sequence <m>(x_n)</m>, we construct a subsequence as
-	follows: set <m>n_1:=1</m>. Suppose natural numbers <me> n_1 \lt n_2
-	\ldots \lt n_k </me> have been chosen for some <m>k \ge 1</m>. By
+	follows: set <m>n_1:=1</m>. Suppose natural numbers <md> n_1 \lt n_2
+	\ldots \lt n_k </md> have been chosen for some <m>k \ge 1</m>. By
 	the definition of supremum, there is some natural number <m>n_{k+1}
 	\ge n_k + 1 \gt n_k</m> such that
 	
-	<men xml:id='inductive-step'>
+	<md number="yes" xml:id='inductive-step'>
             \sup S_{n_k +1} - \frac{1}{k} \le x_{n_{k+1}} \le \sup S_{n_k +
 	    1}.
-	</men>
+	</md>
 	This inductively defines a strictly increasing sequence <m>(n_k)</m>
 	of natural numbers and hence a subsequence <m>(x_{n_k})</m>
 	of <m>(x_n)</m>.
@@ -124,23 +124,23 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
     <statement>
       <p>
          For any subsequence <m>(x_{n_k})</m> of a sequence <m>(x_n)</m>,
-	 <me>
+	 <md>
              \liminf_n x_n \le \liminf_k x_{n_k} \le \limsup_k x_{n_k} \le
 	     \limsup_n x_n. 
-	 </me>
+	 </md>
       </p>
     </statement>
     <proof>
       <p>
         For each <m>n\in\N</m>, let <m>S_n:=\{x_m:m\ge n\}</m>, and for each
         <m>k\in\N</m>, let
-        <me>
+        <md>
           T_k:=\{x_{n_j}:j\ge k\}.
-        </me>
+        </md>
         Then <m>T_k\subseteq S_{n_k}</m>, so
-        <me>
+        <md>
           \inf S_{n_k} \le \inf T_k \le \sup T_k \le \sup S_{n_k}
-        </me>
+        </md>
         for every <m>k</m>.
       </p>
 
@@ -186,10 +186,10 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       <p>
         Let <m>(x_n)</m> be a sequence of nonzero real numbers. Then
         
-	<me> \liminf \left|\frac{x_{n+1}}{x_n}\right| \le \liminf |x_n|^{1/n}
+	<md> \liminf \left|\frac{x_{n+1}}{x_n}\right| \le \liminf |x_n|^{1/n}
 	\le \limsup |x_n|^{1/n} \le
 	  \limsup \left|\frac{x_{n+1}}{x_n}\right|.
-	</me>
+	</md>
       
 	</p>
     </statement>
@@ -199,11 +199,11 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         The middle inequality is trivial. We will proof the right inequality.
 	The left inequality has a similar proof, left as exercise. Let
 
-        <me>
+        <md>
           L := \limsup_n \left|\frac{x_{n+1}}{x_n}\right|
           \qquad\text{and}\qquad
           s := \limsup_n |x_n|^{1/n}.
-        </me>
+        </md>
         If <m>L = +\infty</m>, then the inequality is automatic, so assume
         that <m>L</m> is finite.
       </p>
@@ -211,17 +211,17 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       <p>
         Let <m>L' \gt L</m>. By the definition of limit superior, there
         exists <m>N\in\N</m> such that
-        <me>
+        <md>
           \left|\frac{x_{n+1}}{x_n}\right| \lt L'
-        </me>
+        </md>
         for every <m>n\ge N</m>. So by dropping finitely many terms, we can
 	assume the above inequality holds for every <m>n</m>. Thus, for every
 	<m>n \gt 1</m>,
         
-	<me>
+	<md>
 	  \left| \frac{x_{n}}{x_1}\right| = \left| \frac{x_{n}}{x_n-1}\right|
 	  \cdots \left| \frac{x_{2}}{x_1}\right| \lt (L')^{n-1}.
-	</me> and so <me> |x_n|^{1/n} \lt c_n:=(L')^{1-1/n}|x_1|^{1/n}.  </me>
+	</md> and so <md> |x_n|^{1/n} \lt c_n:=(L')^{1-1/n}|x_1|^{1/n}.  </md>
       </p> 
 
       <p>
@@ -230,9 +230,9 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
 	 L'</m>. Hence <m>(|x_n|^{1/n})</m> is a bounded sequence
 	 and so, by the Bolzano-Weierstrass theorem, contains a subsequence
 	 <m>(|x_{n_k}|^{1/n_k})</m> the converges to <m>s</m>. Finally,
-	 since <me>
+	 since <md>
 	       |x_{n_k}|^{1/n_k} \le c_{n_k}
-	 </me> for each <m>k</m>, letting <m>k \to \infty</m>, we conclude
+	 </md> for each <m>k</m>, letting <m>k \to \infty</m>, we conclude
 	 that <m>s \lt L'</m>.
       </p>
     </proof>
@@ -261,9 +261,9 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       <p>
         First suppose there are infinitely many peak indices. Choose them in
         increasing order:
-        <me>
+        <md>
           n_1 \lt n_2 \lt n_3 \lt \cdots.
-        </me>
+        </md>
         Since <m>n_k</m> is a peak index and <m>n_{k+1}\ge n_k</m>, we have
         <m>x_{n_k}\ge x_{n_{k+1}}</m> for every <m>k</m>. Hence
         <m>(x_{n_k})</m> is a decreasing subsequence.
@@ -277,9 +277,9 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         index, there exists <m>n_3\gt n_2</m> such that
         <m>x_{n_3}\gt x_{n_2}</m>. Continuing inductively, we obtain a
         subsequence <m>(x_{n_k})</m> with
-        <me>
+        <md>
           x_{n_1} \lt x_{n_2} \lt x_{n_3} \lt \cdots.
-        </me>
+        </md>
         Therefore <m>(x_{n_k})</m> is increasing.
       </p>
 

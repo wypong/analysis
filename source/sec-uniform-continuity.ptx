@@ -22,9 +22,9 @@
       Let <m>S \subseteq \R</m> and let <m>f \colon S \to \R</m>. We say that
       <m>f</m> is uniformly continuous on <m>S</m> if for every
       <m>\varepsilon \gt 0</m> there exists <m>\delta \gt 0</m> such that
-      <me>
+      <md>
         |f(s)-f(t)| \lt \varepsilon
-      </me>
+      </md>
       whenever <m>s,t \in S</m> and <m>|s-t| \lt \delta</m>.
     </p>
 
@@ -64,11 +64,11 @@
           <m>|1/s-1/t| \lt 1</m> whenever <m>s,t \in (0,1)</m> and
           <m>|s-t| \lt \delta</m>. Choose <m>n \in \N</m> so large that
           <m>1/(n(n+1)) \lt \delta</m>, and let
-          <me>s=\frac1n, \qquad t=\frac{1}{n+1}.</me>
+          <md>s=\frac1n, \qquad t=\frac{1}{n+1}.</md>
           Then <m>s,t \in (0,1)</m> and
-          <me>|s-t|=\frac{1}{n(n+1)} \lt \delta,</me>
+          <md>|s-t|=\frac{1}{n(n+1)} \lt \delta,</md>
           but
-          <me>\left|\frac1s-\frac1t\right|=|n-(n+1)|=1,</me>
+          <md>\left|\frac1s-\frac1t\right|=|n-(n+1)|=1,</md>
           contradicting the definition of uniform continuity.
         </p>
       </statement>
@@ -97,11 +97,11 @@
           <m>f</m> is not uniformly continuous. Then there exists
           <m>\varepsilon_0 \gt 0</m> such that for every <m>n \in \N</m> we
           can find <m>x_n,x'_n \in [a,b]</m> with
-          <me>
+          <md>
             |x_n-x'_n| \lt \frac1n
             \qquad\text{but}\qquad
             |f(x_n)-f(x'_n)| \ge \varepsilon_0.
-          </me>
+          </md>
         </p>
 
         <p>
@@ -118,11 +118,11 @@
 	to <m>c</m> as well. Since <m>f</m> is continuous at <m>c</m>,
 	<xref ref="prop-sequential-characterization-of-continuity"/> gives
 
-          <me>
+          <md>
             f(x_{n_k}) \to f(c)
             \qquad\text{and}\qquad
             f(x'_{n_k}) \to f(c).
-          </me>
+          </md>
 
 	  Therefore, <m>f(x_{n_k})-f(x'_{n_k}) \to 0</m> is null which
 	  contradicts <m>|f(x_{n_k})-f(x'_{n_k})| \ge \varepsilon_0</m>
@@ -160,9 +160,9 @@
           there exists <m>N \in \N</m> such that
           <m>|x_n-x_m| \lt \delta</m> whenever <m>m,n \ge N</m>. Therefore,
           for <m>m,n \ge N</m>,
-          <me>
+          <md>
             |f(x_n)-f(x_m)| \lt \varepsilon.
-          </me>
+          </md>
           Hence <m>(f(x_n))</m> is Cauchy.
         </p>
       </proof>
@@ -203,11 +203,11 @@
           see this, let <m>(x_n)</m> and <m>(x'_n)</m> be sequences in
           <m>(a,b)</m> with <m>x_n \to a</m> and <m>x'_n \to a</m>, and define
           a new sequence <m>(z_n)</m> by
-          <me>
+          <md>
             z_{2n-1}=x_n,
             \qquad
             z_{2n}=x'_n.
-          </me>
+          </md>
           Then <m>z_n \to a</m>, so the argument above shows that
           <m>(f(z_n))</m> converges. Since <m>(f(x_n))</m> and
           <m>(f(x'_n))</m> are subsequences of the convergent sequence
@@ -221,14 +221,14 @@
 
         <p>
           Define <m>\widetilde{f} \colon [a,b] \to \R</m> by
-          <me>
+          <md>
             \widetilde{f}(x)=
             \begin{cases}
               L_a &amp; \text{if } x=a,\\
               f(x) &amp; \text{if } a \lt x \lt b,\\
               L_b &amp; \text{if } x=b.
             \end{cases}
-          </me>
+          </md>
           On <m>(a,b)</m>, the function <m>\widetilde{f}</m> agrees with
           <m>f</m>, so it is continuous there by
           <xref ref="prop-uniform-continuity-implies-continuity"/>.
@@ -264,9 +264,9 @@
       Let <m>S \subseteq \R</m>. A function <m>f \colon S \to \R</m> is
       <term>Lipschitz continuous</term><idx>Lipschitz continuity</idx> on
       <m>S</m> if there exists <m>K \gt 0</m> such that
-      <me>
+      <md>
         |f(x)-f(x')| \le K|x-x'|
-      </me>
+      </md>
       for all <m>x,x' \in S</m>.
     </p>
 
@@ -284,12 +284,12 @@
           Given <m>\varepsilon \gt 0</m>, choose
           <m>\delta = \varepsilon/K</m>. Then whenever
           <m>x,x' \in S</m> satisfy <m>|x-x'| \lt \delta</m>, we have
-          <me>
+          <md>
             |f(x)-f(x')|
             \le K|x-x'|
             \lt K\delta
             = \varepsilon.
-          </me>
+          </md>
           Thus <m>f</m> is uniformly continuous.
         </p>
       </proof>
@@ -300,15 +300,15 @@
         <p>
           The function <m>f(x)=\sqrt{x}</m> is Lipschitz continuous on
           <m>[1,\infty)</m>. Indeed, for <m>x,x' \ge 1</m>,
-          <me>
+          <md>
             |x-x'|
             = |\sqrt{x}-\sqrt{x'}|(\sqrt{x}+\sqrt{x'})
             \ge 2|\sqrt{x}-\sqrt{x'}|,
-          </me>
+          </md>
           so
-          <me>
+          <md>
             |\sqrt{x}-\sqrt{x'}| \le \frac12 |x-x'|.
-          </me>
+          </md>
           Therefore <m>\sqrt{x}</m> is uniformly continuous on
           <m>[1,\infty)</m>.
         </p>
@@ -331,9 +331,9 @@
           Let <m>\varepsilon \gt 0</m>. Since <m>f</m> is uniformly continuous
           on each interval, there exist <m>\delta_1,\delta_2 \gt 0</m> such
           that
-          <me>
+          <md>
             |f(x)-f(x')| \lt \frac{\varepsilon}{2}
-          </me>
+          </md>
           whenever <m>x,x' \in I_k</m> and <m>|x-x'| \lt \delta_k</m>
           (<m>k=1,2</m>). Let <m>\delta=\min\{\delta_1,\delta_2\}</m>.
         </p>
@@ -351,27 +351,27 @@
           say, <m>x</m> lay between <m>c</m> and <m>x'</m>, then since
           <m>c,x' \in I_2</m> and <m>I_2</m> is an interval, we would also have
           <m>x \in I_2</m>, a contradiction. Thus
-          <me>
+          <md>
             |x-c| \le |x-x'|
             \qquad\text{and}\qquad
             |x'-c| \le |x-x'|,
-          </me>
+          </md>
           so both are strictly less than <m>\delta</m>.
         </p>
 
         <p>
           Since <m>x,c \in I_1</m> and <m>c,x' \in I_2</m>, we obtain
-          <me>
+          <md>
             |f(x)-f(c)| \lt \frac{\varepsilon}{2}
             \qquad\text{and}\qquad
             |f(c)-f(x')| \lt \frac{\varepsilon}{2}.
-          </me>
+          </md>
           The triangle inequality then gives
-          <me>
+          <md>
             |f(x)-f(x')|
             \le |f(x)-f(c)| + |f(c)-f(x')|
             \lt \varepsilon.
-          </me>
+          </md>
           Therefore <m>f</m> is uniformly continuous on <m>I_1 \cup I_2</m>.
         </p>
       </proof>

@@ -33,7 +33,7 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       <proof>
         <p>
           First suppose <m>0 \lt c \lt 1</m>. Then
-          <me>c&gt;c^2&gt;c^3&gt;\cdots&gt;0.</me> Hence <m>(c^n)</m> is
+          <md>c&gt;c^2&gt;c^3&gt;\cdots&gt;0.</md> Hence <m>(c^n)</m> is
           decreasing and bounded below, so
           <xref ref="thm-monotone-convergence"/> implies that it converges to
 	  some real number <m>r</m>. By
@@ -87,7 +87,7 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       <proof>
         <p>
           First suppose <m>c\ge 1</m>. Then
-          <me>c \ge c^{1/2} \ge c^{1/3} \ge \cdots \ge 1.</me>
+          <md>c \ge c^{1/2} \ge c^{1/3} \ge \cdots \ge 1.</md>
           Thus <m>(c^{1/n})</m> is decreasing and bounded below, so it
           converges by <xref ref="thm-monotone-convergence"/>. Let <m>L</m>
           be its limit.
@@ -128,7 +128,7 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       <statement>
         <p>
           Let <m>(x_n)</m> be a sequence of nonzero real numbers, and suppose
-          the limit <me>L=\lim_n \frac{|x_{n+1}|}{|x_n|}</me> exists. If
+          the limit <md>L=\lim_n \frac{|x_{n+1}|}{|x_n|}</md> exists. If
           <m>L&lt;1</m>, then <m>(x_n)</m> is null. If <m>L&gt;1</m>, then
           <m>(x_n)</m> is unbounded.
         </p>
@@ -143,10 +143,10 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           Since the convergence behavior and limit of a sequence do not
           change when finitely many terms are modified, we may assume that
           <m>|x_{n+1}|&lt;c|x_n|</m> for all <m>n</m>. Thus, for any <m>n</m>,
-          <me>
+          <md>
             0 \le |x_{n+1}| \lt c|x_n| \lt c^2|x_{n-1}| \lt \cdots \lt
             c^n|x_1|.
-          </me>
+          </md>
           By <xref ref="prop-geometric-sequence-test"/>, the sequence
           <m>(c^n)</m> is null, and then
           <xref ref="prop-squeeze-lemma"/> shows that <m>(x_n)</m> is also
@@ -158,9 +158,9 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           <m>|x_{n+1}|/|x_n|&gt;c</m> for all but finitely many <m>n</m>.
           Again, we may assume that the inequality, or equivalently
           <m>|x_{n+1}|&gt;c|x_n|</m>, holds for all <m>n</m>. Therefore,
-          <me>
+          <md>
             |x_{n+1}| \gt c|x_n| \gt c^2|x_{n-1}| \cdots \gt c^n|x_1|.
-          </me>
+          </md>
           Because <m>c &gt;1</m>, <xref ref="prop-geometric-sequence-test"/>
         shows that <m>c^n \to +\infty</m>. Thus, <m>(x_n)</m> is unbounded.
         </p>
@@ -189,43 +189,43 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       <statement>
         <p>
           Let <m>a\ge 0</m> and <m>b&gt;1</m>. Then
-          <me>n^a \ll b^n \ll n! \ll n^n.</me>
+          <md>n^a \ll b^n \ll n! \ll n^n.</md>
         </p>
       </statement>
       <proof>
         <p>
           First,
-          <me>
+          <md>
             \frac{(n+1)^a}{b^{n+1}}\frac{b^n}{n^a}
             =
             \left(1+\frac{1}{n}\right)^a \frac{1}{b}
             \to \frac{1}{b} &lt; 1.
-          </me>
+          </md>
           Therefore <m>n^a/b^n\to 0</m> by
           <xref ref="prop-ratio-test-sequences"/>.
         </p>
 
         <p>
           Next,
-          <me>
+          <md>
             \frac{b^{n+1}}{(n+1)!}\frac{n!}{b^n}
             =
             \frac{b}{n+1}
             \to 0.
-          </me>
+          </md>
           Hence <m>b^n/n!\to 0</m> by
           <xref ref="prop-ratio-test-sequences"/>.
         </p>
 
         <p>
           Finally,
-          <me>
+          <md>
             0 \le \frac{n!}{n^n}
             =
             1\left(1-\frac{1}{n}\right)\left(1-\frac{2}{n}\right)\cdots
             \frac{1}{n}
             &lt; \frac{1}{n}.
-          </me>
+          </md>
           Since <m>1/n\to 0</m>, <xref ref="prop-squeeze-lemma"/> gives
           <m>n!/n^n\to 0</m>.
         </p>

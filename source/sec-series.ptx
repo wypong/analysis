@@ -4,11 +4,11 @@
   <title>Series</title>
 
   <p>
-    A <term>series</term><idx>series</idx> is the sum of a sequence. We write <me>
+    A <term>series</term><idx>series</idx> is the sum of a sequence. We write <md>
       \sum_{n=m}^k x_n
-    </me> for the finite sum <me>
+    </md> for the finite sum <md>
       x_m+x_{m+1}+\cdots+x_k.
-    </me> This is just convenient notation, but it will also guide the
+    </md> This is just convenient notation, but it will also guide the
     definition of an infinite series.
   </p>
 
@@ -19,16 +19,16 @@
     To make sense of it, we consider its
     <term>sequence of partial sums</term><idx><h>series</h><h>sequence of
     partial sums</h></idx> <m>(s_k)</m>, where
-    <me>
+    <md>
       s_k:=\sum_{n=1}^k x_n = x_1+x_2+\cdots+x_k.
-    </me>
+    </md>
     We say that the series <m>\sum_{n=1}^\infty x_n</m>
     <term>converges</term><idx>convergent series</idx> if the sequence
     <m>(s_k)</m> converges. In that
     case, we write
-    <me>
+    <md>
       \sum_{n=1}^\infty x_n = s
-    </me>
+    </md>
     where <m>s</m> is the limit of <m>(s_k)</m>. The series
     <term>diverges</term><idx>divergent series</idx> if it does not converge.
     We also write
@@ -54,9 +54,9 @@
       <p> Suppose <m>\sum x_n</m> converges to <m>s</m>. That mean it
       sequence of partial sums <m>(s_n)</m> converges to <m>s</m>. But then
       the sequence <m>(s_{n+1})</m> also has <m>s</m> as its limit. Therefore,
-      <me>
+      <md>
       x_{n+1} = s_{n+1} - s_{n} \to 0.
-      </me>
+      </md>
       This show that <m>(x_n)</m> is null.
       </p>
     </proof>
@@ -92,9 +92,9 @@
     
   A series <m>\sum x_n</m> is <term>absolutely convergent</term><idx>absolutely convergent series</idx> if the series
 
-    <me>
+    <md>
       \sum |x_n|
-    </me>
+    </md>
     converges. It is <term>conditionally convergent</term><idx>conditionally convergent series</idx> if
     <m>\sum x_n</m> converges but
     <m>\sum |x_n|</m> diverges.
@@ -105,9 +105,9 @@
       <p>
         The series <m>\sum 1/n^2</m> is absolutely convergent,
         while the alternating harmonic series
-        <me>
+        <md>
           \sum \frac{(-1)^{n+1}}{n}
-        </me>
+        </md>
         is conditionally convergent. We defer the justifications to the next
         section, where we develop tests for convergence of series.
       </p>

@@ -42,9 +42,9 @@
       <statement>
         <p>
           Find the radius of convergence and the interval of convergence of
-          <me>
+          <md>
             \sum_{n=0}^\infty \frac{(x-2)^n}{3^n}.
-          </me>
+          </md>
         </p>
       </statement>
     </exercise>
@@ -53,9 +53,9 @@
       <statement>
         <p>
           Use the geometric series and term-by-term differentiation to compute
-          <me>
+          <md>
             \sum_{n=1}^\infty \frac{n}{3^n}.
-          </me>
+          </md>
         </p>
       </statement>
     </exercise>
@@ -74,12 +74,12 @@
       <statement>
         <p>
           Let
-          <me>
+          <md>
             f(x)=\begin{cases}
             e^{-1/x} &amp; \text{if } x&gt;0,\\
             0 &amp; \text{if } x\le 0.
             \end{cases}
-          </me>
+          </md>
           Show that every derivative of <m>f</m> at <m>0</m> is equal to
           <m>0</m>. Conclude that <m>f</m> is not analytic at <m>0</m>.
         </p>

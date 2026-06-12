@@ -14,14 +14,14 @@
       \R</m> at <m>c</m> if for every <m>\varepsilon \gt 0</m> there exists
       <m>\delta \gt 0</m> such that whenever <m>x \in S</m> and
       <m>0 \lt |x-c| \lt \delta</m>, we have
-      <me>|f(x)-L| \lt \varepsilon.</me>
+      <md>|f(x)-L| \lt \varepsilon.</md>
     </p>
 
     <p>
       In that case we write
-      <me>\lim_{x\to c} f(x)=L</me>
+      <md>\lim_{x\to c} f(x)=L</md>
       or, equivalently,
-      <me>f(x)\to L \quad \text{as } x\to c.</me>
+      <md>f(x)\to L \quad \text{as } x\to c.</md>
       These two notations mean exactly the same thing. The second is read as
       “<m>f(x)</m> tends to <m>L</m> as <m>x</m> tends to <m>c</m>.”
     </p>
@@ -41,7 +41,7 @@
           Let <m>f(x)=x+1</m> on <m>\R \setminus \{1\}</m>. Then
           <m>\lim_{x\to 1} f(x)=2</m>. Indeed, if
           <m>0 \lt |x-1| \lt \varepsilon</m>, then
-          <me>|f(x)-2|=|(x+1)-2|=|x-1| \lt \varepsilon.</me>
+          <md>|f(x)-2|=|(x+1)-2|=|x-1| \lt \varepsilon.</md>
           This example shows that a limit may exist even when <m>f</m> is not
           defined at the limiting point.
         </p>
@@ -64,9 +64,9 @@
           whenever <m>x \in S</m> and <m>0 \lt |x-c| \lt \delta_i</m>, for
           <m>i=1,2</m>. Thus,
 
-          <me>
+          <md>
             |L_1-L_2| \le |f(x)-L_1| + |f(x)-L_2| \lt 2\varepsilon
-          </me>
+          </md>
           for any <m>x \in S</m> with
           <m>0 \lt |x-c| \lt \min\{\delta_1,\delta_2\}</m>. By the definition
           of cluster point, such an <m>x</m> exists. Since
@@ -108,7 +108,7 @@
       <m>L</m> at <m>c</m> if for every <m>\varepsilon \gt 0</m> there exists
       <m>\delta \gt 0</m> such that whenever <m>x \in S</m> and
       <m>c-\delta \lt x \lt c</m>, we have
-      <me>|f(x)-L| \lt \varepsilon.</me>
+      <md>|f(x)-L| \lt \varepsilon.</md>
       We write <m>\lim_{x\to c^-} f(x)=L</m> or <m>f(c^-) = L</m>.
     </p>
 
@@ -118,7 +118,7 @@
       <term>right limit</term><idx>right limit</idx> <m>L</m> at <m>c</m> if
       for every <m>\varepsilon \gt 0</m> there exists <m>\delta \gt 0</m>
       such that whenever <m>x \in S</m> and <m>c \lt x \lt c+\delta</m>, we
-      have <me>|f(x)-L| \lt \varepsilon.</me>
+      have <md>|f(x)-L| \lt \varepsilon.</md>
       We write <m>\lim_{x\to c^+} f(x)=L</m> or <m>f(c^+) = L</m>.
     </p>
 
@@ -127,9 +127,9 @@
         <p>
           Assume that <m>c</m> is a cluster point of both
           <m>S \cap (-\infty,c)</m> and <m>S \cap (c,\infty)</m>. Then
-          <me>\lim_{x\to c} f(x)=L</me>
+          <md>\lim_{x\to c} f(x)=L</md>
           if and only if
-          <me>\lim_{x\to c^-} f(x)=L=\lim_{x\to c^+} f(x).</me>
+          <md>\lim_{x\to c^-} f(x)=L=\lim_{x\to c^+} f(x).</md>
         </p>
       </statement>
 
@@ -166,10 +166,10 @@
       <statement>
         <p>
           Define
-          <me>\operatorname{sgn} x=\begin{cases}
+          <md>\operatorname{sgn} x=\begin{cases}
           -1 &amp; \text{if } x \lt 0,\\
           1 &amp; \text{if } x \ge 0.
-          \end{cases}</me>
+          \end{cases}</md>
           Then
           <m>\lim_{x\to 0^-} \operatorname{sgn} x=-1</m> and
           <m>\lim_{x\to 0^+} \operatorname{sgn} x=1</m>. Since these
@@ -195,7 +195,7 @@
           Let <m>f \colon S \to \R</m> and let <m>c \in S</m>. If
           <m>c</m> is a cluster point of <m>S</m>, then <m>f</m> is
           continuous at <m>c</m> if and only if
-          <me>\lim_{x\to c} f(x)=f(c).</me>
+          <md>\lim_{x\to c} f(x)=f(c).</md>
         </p>
       </statement>
 
@@ -228,10 +228,10 @@
       <statement>
         <p>
           Define
-          <me>f(x)=\begin{cases}
+          <md>f(x)=\begin{cases}
           \dfrac{x^2-1}{x-1} &amp; \text{if } x \neq 1,\\
           0 &amp; \text{if } x=1.
-          \end{cases}</me>
+          \end{cases}</md>
           For <m>x \neq 1</m>, we have <m>f(x)=x+1</m>, so
           <m>\lim_{x\to 1} f(x)=2</m>. However, <m>f(1)=0</m>, so
           <m>f</m> is not continuous at <m>1</m>. If we redefine the value at
@@ -256,11 +256,11 @@
 
     <p>
       First suppose <m>c \in \R</m> is a cluster point of <m>S</m>. We write
-      <me>\lim_{x\to c} f(x)=+\infty</me>
+      <md>\lim_{x\to c} f(x)=+\infty</md>
       if for every <m>M \in \R</m> there exists <m>\delta \gt 0</m> such that
       whenever <m>x \in S</m> and <m>0 \lt |x-c| \lt \delta</m>, we have
       <m>f(x) \gt M</m>. Similarly, we write
-      <me>\lim_{x\to c} f(x)=-\infty</me>
+      <md>\lim_{x\to c} f(x)=-\infty</md>
       if for every <m>M \in \R</m> there exists <m>\delta \gt 0</m> such that
       whenever <m>x \in S</m> and <m>0 \lt |x-c| \lt \delta</m>, we have
       <m>f(x) \lt M</m>.
@@ -276,11 +276,11 @@
 
     <p>
       Next suppose that <m>S</m> is unbounded above. We write
-      <me>\lim_{x\to +\infty} f(x)=L</me>
+      <md>\lim_{x\to +\infty} f(x)=L</md>
       for <m>L \in \R</m> if for every <m>\varepsilon \gt 0</m> there exists
       <m>A \in \R</m> such that whenever <m>x \in S</m> and <m>x \gt A</m>,
       we have <m>|f(x)-L| \lt \varepsilon</m>. We write
-      <me>\lim_{x\to +\infty} f(x)=+\infty</me>
+      <md>\lim_{x\to +\infty} f(x)=+\infty</md>
       if for every <m>M \in \R</m> there exists <m>A \in \R</m> such that
       whenever <m>x \in S</m> and <m>x \gt A</m>, we have
       <m>f(x) \gt M</m>. The definition of
@@ -289,7 +289,7 @@
 
     <p>
       Likewise, if <m>S</m> is unbounded below, we write
-      <me>\lim_{x\to -\infty} f(x)=L</me>
+      <md>\lim_{x\to -\infty} f(x)=L</md>
       for <m>L \in \R</m> if for every <m>\varepsilon \gt 0</m> there exists
       <m>A \in \R</m> such that whenever <m>x \in S</m> and <m>x \lt A</m>,
       we have <m>|f(x)-L| \lt \varepsilon</m>. We define

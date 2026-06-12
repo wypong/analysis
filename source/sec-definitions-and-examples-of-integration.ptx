@@ -22,18 +22,18 @@
       of a closed bounded interval <m>[a,b]</m> is a finite subset of
       <m>[a,b]</m> containing both endpoints. We list a partition in
       increasing order:
-      <me>
+      <md>
         P=\{x_0,x_1,\dots,x_n\},
         \qquad
         a=x_0 \lt x_1 \lt \cdots \lt x_n=b.
-      </me>
+      </md>
       For such a partition, we write
-      <me>
+      <md>
         I_i=[x_{i-1},x_i],
         \qquad
         \Delta x_i=x_i-x_{i-1}
         \qquad (1 \le i \le n).
-      </me>
+      </md>
     </p>
 
     <p>
@@ -48,17 +48,17 @@
       Now let <m>f \colon [a,b] \to \R</m> be bounded, and let
       <m>P=\{x_0,\dots,x_n\}</m> be a partition of <m>[a,b]</m>. For each
       subinterval <m>I_i=[x_{i-1},x_i]</m>, define
-      <me>
+      <md>
         m_i=\inf\{f(x):x \in I_i\},
         \qquad
         M_i=\sup\{f(x):x \in I_i\}.
-      </me>
+      </md>
       The numbers
-      <me>
+      <md>
         L(P,f)=\sum_{i=1}^n m_i \Delta x_i
         \qquad\text{and}\qquad
         U(P,f)=\sum_{i=1}^n M_i \Delta x_i
-      </me>
+      </md>
       are called the <term>lower Darboux sum</term><idx><h>Darboux
       sum</h><h>lower</h></idx> and <term>upper Darboux sum</term><idx><h>Darboux
       sum</h><h>upper</h></idx> of <m>f</m> with respect to <m>P</m>.
@@ -71,21 +71,21 @@
           <m>P=\{0,\frac13,\frac23,1\}</m>. Since <m>f</m> is increasing on
           <m>[0,1]</m>, the infimum on each subinterval occurs at the left
           endpoint and the supremum occurs at the right endpoint. Therefore
-          <me>
+          <md>
             L(P,f)
             =
             \left(0+\frac19+\frac49\right)\frac13
             =
             \frac{5}{27},
-          </me>
+          </md>
           while
-          <me>
+          <md>
             U(P,f)
             =
             \left(\frac19+\frac49+1\right)\frac13
             =
             \frac{14}{27}.
-          </me>
+          </md>
         </p>
 
         <figure xml:id="fig-darboux-sums-x-squared">
@@ -131,9 +131,9 @@
           If <m>f(x)=c</m> is constant on <m>[a,b]</m>, then for every
           partition <m>P</m> we have <m>m_i=M_i=c</m> for every
           <m>i</m>. Hence
-          <me>
+          <md>
             L(P,f)=c(b-a)=U(P,f).
-          </me>
+          </md>
           So lower and upper sums already agree for every partition.
         </p>
       </statement>
@@ -146,14 +146,14 @@
     <p>
       Since <m>f</m> is bounded, there exist real numbers <m>m \le M</m> such
       that
-      <me>
+      <md>
         m \le f(x) \le M
         \qquad (x \in [a,b]).
-      </me>
+      </md>
       Therefore, for every partition <m>P</m>,
-      <me>
+      <md>
         m(b-a) \le L(P,f) \le U(P,f) \le M(b-a).
-      </me>
+      </md>
       Thus the set of all lower sums is bounded above, and the set of all
       upper sums is bounded below.
     </p>
@@ -166,17 +166,17 @@
       <term>lower integral</term><idx><h>integral</h><h>lower</h></idx> and
       <term>upper integral</term><idx><h>integral</h><h>upper</h></idx> of
       <m>f</m> by
-      <me>
+      <md>
         \underline{\int_a^b} f
         :=
         \sup\{L(P,f): P \text{ a partition of } [a,b]\},
-      </me>
+      </md>
       and
-      <me>
+      <md>
         \overline{\int_a^b} f
         :=
         \inf\{U(P,f): P \text{ a partition of } [a,b]\}.
-      </me>
+      </md>
     </p>
 
     <p>
@@ -190,9 +190,9 @@
         <p>
           Let <m>f \colon [a,b] \to \R</m> be bounded. If <m>P'</m> is a
           refinement of <m>P</m>, then
-          <me>
+          <md>
             L(P,f) \le L(P',f) \le U(P',f) \le U(P,f).
-          </me>
+          </md>
         </p>
       </statement>
 
@@ -211,13 +211,13 @@
           <m>[x_{i-1},x']</m> and <m>[x',x_i]</m>, respectively. Since these
           two intervals are contained in <m>[x_{i-1},x_i]</m>, we have
           <m>M_1 \le M</m> and <m>M_2 \le M</m>. Therefore
-          <me>
+          <md>
             M_1(x'-x_{i-1}) + M_2(x_i-x')
             \le
             M\bigl((x'-x_{i-1})+(x_i-x')\bigr)
             =
             M(x_i-x_{i-1}).
-          </me>
+          </md>
           So <m>U(P',f) \le U(P,f)</m>.
         </p>
 
@@ -233,7 +233,7 @@
       <statement>
         <p>
           For every partition <m>P</m> of <m>[a,b]</m>,
-          <me>
+          <md>
             L(P,f)
             \le
             \underline{\int_a^b} f
@@ -241,7 +241,7 @@
             \overline{\int_a^b} f
             \le
             U(P,f).
-          </me>
+          </md>
         </p>
       </statement>
 
@@ -250,9 +250,9 @@
           Let <m>P</m> and <m>P'</m> be any two partitions. Then
           <m>P \cup P'</m> is a common refinement of both. By
           <xref ref="prop-refinement-monotonicity-darboux-sums"/>,
-          <me>
+          <md>
             L(P,f) \le L(P \cup P',f) \le U(P \cup P',f) \le U(P',f).
-          </me>
+          </md>
           Since <m>P'</m> is arbitrary, <m>L(P,f)</m> is a lower bound for the
           set of upper sums. Hence
           <m>L(P,f) \le \overline{\int_a^b} f</m>. Therefore every
@@ -268,19 +268,19 @@
       <statement>
         <p>
           Define the Dirichlet function <m>1_{\Q} \colon [0,1] \to \R</m> by
-          <me>
+          <md>
             1_{\Q}(x)=
             \begin{cases}
               1 &amp; \text{if } x \in \Q,\\
               0 &amp; \text{if } x \notin \Q.
             \end{cases}
-          </me>
+          </md>
           Then
-          <me>
+          <md>
             \underline{\int_0^1} 1_{\Q} = 0
             \qquad\text{and}\qquad
             \overline{\int_0^1} 1_{\Q} = 1.
-          </me>
+          </md>
         </p>
 
         <p>
@@ -306,17 +306,17 @@
       A bounded function <m>f \colon [a,b] \to \R</m> is
       <term>Riemann integrable</term><idx>Riemann integrable function</idx> if
       its lower and upper integrals are equal:
-      <me>
+      <md>
         \underline{\int_a^b} f
         =
         \overline{\int_a^b} f.
-      </me>
+      </md>
       The common value is called the <term>Riemann integral</term><idx><h>Riemann
       integral</h><h>value of</h></idx> of <m>f</m> on <m>[a,b]</m>, and is
       denoted by
-      <me>
+      <md>
         \int_a^b f.
-      </me>
+      </md>
       We write <m>R[a,b]</m> for the set of all Riemann integrable functions on
       <m>[a,b]</m>.
     </p>
@@ -328,9 +328,9 @@
           A bounded function <m>f \colon [a,b] \to \R</m> is Riemann
           integrable if and only if for every <m>\varepsilon \gt 0</m> there
           exists a partition <m>P</m> of <m>[a,b]</m> such that
-          <me>
+          <md>
             U(P,f)-L(P,f) \lt \varepsilon.
-          </me>
+          </md>
         </p>
       </statement>
 
@@ -339,7 +339,7 @@
           First assume that for every <m>\varepsilon \gt 0</m> there exists a
           partition <m>P</m> with <m>U(P,f)-L(P,f) \lt \varepsilon</m>. By
           <xref ref="cor-lower-upper-integral-between-sums"/>,
-          <me>
+          <md>
             0
             \le
             \overline{\int_a^b} f
@@ -347,7 +347,7 @@
             \underline{\int_a^b} f
             \le
             U(P,f)-L(P,f).
-          </me>
+          </md>
           Since the right-hand side can be made arbitrarily small, the
           difference of the upper and lower integrals must be <m>0</m>. Hence
           <m>f</m> is integrable.
@@ -357,14 +357,14 @@
           Conversely, suppose <m>f</m> is integrable, and let
           <m>I=\int_a^b f</m>. Given <m>\varepsilon \gt 0</m>, choose
           partitions <m>P'</m> and <m>P''</m> such that
-          <me>
+          <md>
             U(P',f) \lt I+\frac{\varepsilon}{2}
             \qquad\text{and}\qquad
             I-\frac{\varepsilon}{2} \lt L(P'',f).
-          </me>
+          </md>
           Let <m>P=P' \cup P''</m>. Then <m>P</m> refines both <m>P'</m> and
           <m>P''</m>, so
-          <me>
+          <md>
             I-\frac{\varepsilon}{2}
             \lt
             L(P'',f)
@@ -376,7 +376,7 @@
             U(P',f)
             \lt
             I+\frac{\varepsilon}{2}.
-          </me>
+          </md>
           Therefore <m>U(P,f)-L(P,f) \lt \varepsilon</m>.
         </p>
       </proof>
@@ -387,42 +387,42 @@
         <p>
           The function <m>f(x)=x</m> is Riemann integrable on <m>[0,1]</m>.
           For each <m>n \in \N</m>, let
-          <me>
+          <md>
             P_n=\left\{0,\frac{1}{n},\frac{2}{n},\dots,\frac{n-1}{n},1\right\}.
-          </me>
+          </md>
           Since <m>f</m> is increasing,
-          <me>
+          <md>
             L(P_n,f)
             =
             \frac{1}{n^2}\sum_{k=0}^{n-1} k
             =
             \frac{n-1}{2n}
-          </me>
+          </md>
           and
-          <me>
+          <md>
             U(P_n,f)
             =
             \frac{1}{n^2}\sum_{k=1}^{n} k
             =
             \frac{n+1}{2n}.
-          </me>
+          </md>
           Hence
-          <me>
+          <md>
             U(P_n,f)-L(P_n,f)=\frac{1}{n} \to 0.
-          </me>
+          </md>
           By the <xref ref="prop-integrability-criterion-darboux" text="title"/>,
           the function <m>x</m> is integrable on <m>[0,1]</m>. Also,
-          <me>
+          <md>
             \frac{n-1}{2n}
             \le
             \int_0^1 x
             \le
             \frac{n+1}{2n}
-          </me>
+          </md>
           for every <m>n</m>, so letting <m>n \to \infty</m> gives
-          <me>
+          <md>
             \int_0^1 x = \frac12.
-          </me>
+          </md>
         </p>
       </statement>
     </example>
@@ -430,11 +430,11 @@
     <p>
       Finally, if <m>f</m> is integrable on <m>[a,b]</m>, we extend the
       notation by setting
-      <me>
+      <md>
         \int_a^a f = 0,
         \qquad
         \int_b^a f = -\int_a^b f.
-      </me>
+      </md>
     </p>
   </subsection>
 </section>

@@ -33,8 +33,8 @@
       <statement>
         <p>
           Let
-          <me>S=\{0\}\cup\left\{\frac1n : n \in \N\right\}
-            \cup \left\{2-\frac1n : n \in \N\right\}.</me>
+          <md>S=\{0\}\cup\left\{\frac1n : n \in \N\right\}
+            \cup \left\{2-\frac1n : n \in \N\right\}.</md>
           Determine all cluster points of <m>S</m> and all isolated points of
           <m>S</m>.
         </p>
@@ -70,9 +70,9 @@
       <statement>
         <p>
           Prove directly from the definitions that
-          <me>\lim_{x\to 0} \frac{1}{x^2}=+\infty
+          <md>\lim_{x\to 0} \frac{1}{x^2}=+\infty
             \quad\text{and}\quad
-            \lim_{x\to +\infty} \frac{1}{x}=0.</me>
+            \lim_{x\to +\infty} \frac{1}{x}=0.</md>
         </p>
       </statement>
     </exercise>
@@ -81,11 +81,11 @@
       <statement>
         <p>
           Define
-          <me>f(x)=\begin{cases}
+          <md>f(x)=\begin{cases}
           -1 &amp; \text{if } x \lt 0,\\
           0 &amp; \text{if } x=0,\\
           1 &amp; \text{if } x \gt 0.
-          \end{cases}</me>
+          \end{cases}</md>
           Compute <m>\lim_{x\to 0^-} f(x)</m> and
           <m>\lim_{x\to 0^+} f(x)</m>. Does <m>\lim_{x\to 0} f(x)</m> exist?
           Is <m>f</m> continuous at <m>0</m>?
@@ -97,10 +97,10 @@
       <statement>
         <p>
           Define
-          <me>f(x)=\begin{cases}
+          <md>f(x)=\begin{cases}
           \dfrac{x^2-4}{x-2} &amp; \text{if } x \neq 2,\\
           0 &amp; \text{if } x=2.
-          \end{cases}</me>
+          \end{cases}</md>
           Find <m>\lim_{x\to 2} f(x)</m>. Is <m>f</m> continuous at <m>2</m>?
           How should <m>f(2)</m> be redefined to make <m>f</m> continuous at
           <m>2</m>?
@@ -134,7 +134,7 @@
           <m>c \in S</m>. Assume that <m>f</m> is continuous at <m>c</m> and
           <m>f(c) \gt 0</m>. Prove that there exists <m>\delta \gt 0</m> such
           that
-          <me>f(x) \gt \frac{f(c)}{2}</me>
+          <md>f(x) \gt \frac{f(c)}{2}</md>
           for every <m>x \in S</m> with <m>|x-c| \lt \delta</m>.
         </p>
       </statement>

@@ -34,9 +34,9 @@
     <p>
       A sequence <m>\vx</m> is <term>null</term><idx>null sequence</idx>
       if for every <m>\varepsilon \gt 0</m> there exists <m>N \in \N</m>
-      such that <me>
+      such that <md>
         |x_n| \lt \varepsilon \quad\text{for all } n \ge N.
-      </me> 
+      </md> 
 
       In words, a sequence <m>\vx = (x_n)</m> is null if the absolute value
       of its terms <m>|x_n|</m> can be arbitrarily close to zero provided
@@ -66,9 +66,9 @@
       sequence</idx> to <m>r \in\R</m> or <m>r</m> is a
       <term>limit</term><idx>limit of a sequence</idx> of <m>\vx</m>, if
       the sequence <m>\vx-r</m> is null. We denote this by
-      <me>
+      <md>
         \lim x_n = r, \qquad x_n \to r, \qquad \text{or} \qquad \vx \approx r.
-      </me>
+      </md>
       The last notation captures the idea that a convergent sequence can be
       viewed as an approximation to its limit.
     </p>
@@ -156,9 +156,9 @@
 	  Suppose <m>x_n \to r</m>. Then there exists <m>N</m> such that
 	  <m>|x_n-r| \lt 1</m> for all <m>n \ge N</m>. Hence <m>|x_n|
 	  \le |x_n-r|+|r| \lt 1+|r|</m> for all <m>n \ge N</m>. It follows
-	  that <me>
+	  that <md>
 	    |x_n| \le \max\{|x_1|,\ldots,|x_N|,1+|r|\}
-	  </me> for every <m>n</m>. Thus <m>(x_n)</m> is bounded.
+	  </md> for every <m>n</m>. Thus <m>(x_n)</m> is bounded.
 	</p>
       </proof>
     </proposition>
@@ -187,9 +187,9 @@
 	  upper bound of <m>S</m>, there exists <m>N</m> such that
           <m>s-\varepsilon \lt x_N \le s</m>. As <m>(x_n)</m> is increasing, for
           every <m>n \ge N</m> we have
-	  <me>
+	  <md>
 	    s-\varepsilon \lt x_N \le x_n \le s \lt s+\varepsilon.
-	  </me>
+	  </md>
           Hence <m>|x_n-s| \lt \varepsilon</m> for all <m>n \ge N</m>, so
           <m>x_n \to s</m>.
 	</p>
@@ -249,10 +249,10 @@
           <m>|y_n| \ge |y|-|y_n-y| \gt |y|/2</m>, so in particular
           <m>y_n \neq 0</m>. Moreover, for all <m>n \ge N</m>,
 	
-	<me>
+	<md>
 	\left| \frac{1}{y_n} - \frac{1}{y}\right| =
 	\left|\frac{y-y_n}{y y_n}\right| \le \frac{2|y_n-y|}{|y|^2}.
-	</me>
+	</md>
 	  
 	Since <m>(y_n-y)</m> is null and <m>2/|y|^2</m> is a fixed number,
 	<xref ref="prop-null-sequence-basic-operations"/> implies that
@@ -275,9 +275,9 @@
           we have
           <m>|x_n-r| \lt \varepsilon</m> and <m>|y_n-r| \lt \varepsilon</m>
           for all sufficiently large <m>n</m>. For such <m>n</m>,
-          <me>
+          <md>
             -\varepsilon \lt x_n-r \le z_n-r \le y_n-r \lt \varepsilon.
-          </me>
+          </md>
           Hence <m>|z_n-r| \lt \varepsilon</m> for all sufficiently large
           <m>n</m>, so <m>z_n \to r</m>.
         </p>

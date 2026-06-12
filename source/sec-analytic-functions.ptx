@@ -7,9 +7,9 @@
   <p>
     A function <m>f</m> is said to be <term>analytic at</term><idx>analytic
     at a point</idx> <m>x_0</m> if there exists a power series
-    <me>
+    <md>
       \sum_{n=0}^\infty a_n(x-x_0)^n
-    </me>
+    </md>
     that converges to <m>f(x)</m> on some open interval containing
     <m>x_0</m>. We say that <m>f</m> is <term>analytic on</term><idx>analytic
     on an open set</idx> an open set <m>U \subseteq \R</m> if it is analytic
@@ -29,10 +29,10 @@
         Suppose <m>f</m> is analytic at <m>x_0</m>. Then <m>f</m> is
         infinitely differentiable on some neighborhood of <m>x_0</m>, and
         there exists <m>r&gt;0</m> such that
-        <me>
+        <md>
           f(x)=\sum_{n=0}^\infty \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n
           \qquad \text{for } |x-x_0|&lt;r.
-        </me>
+        </md>
         In particular, the power series representation of <m>f</m> about
         <m>x_0</m> is unique.
       </p>
@@ -41,29 +41,29 @@
     <proof>
       <p>
         Since <m>f</m> is analytic at <m>x_0</m>, there is a power series
-        <me>
+        <md>
           f(x)=\sum_{n=0}^\infty a_n(x-x_0)^n
-        </me>
+        </md>
         on some interval <m>|x-x_0|&lt;r</m>. By
         <xref ref="thm-termwise-calculus-power-series"/>, we may differentiate
         term by term on this interval. Repeating this process <m>k</m> times
         gives
-        <me>
+        <md>
           f^{(k)}(x)
           =
           \sum_{n=k}^\infty n(n-1)\cdots(n-k+1)a_n(x-x_0)^{n-k}.
-        </me>
+        </md>
       </p>
 
       <p>
         Setting <m>x=x_0</m> leaves only the term with <m>n=k</m>, so
-        <me>
+        <md>
           f^{(k)}(x_0)=k!a_k.
-        </me>
+        </md>
         Hence
-        <me>
+        <md>
           a_k=\frac{f^{(k)}(x_0)}{k!},
-        </me>
+        </md>
         and substituting this into the original series gives the desired
         Taylor expansion. Since each coefficient is uniquely determined by
         <m>f</m>, the representation is unique.
@@ -81,12 +81,12 @@
     <statement>
       <p>
         Define
-        <me>
+        <md>
           f(x)=\begin{cases}
           e^{-1/x} &amp; \text{if } x&gt;0,\\
           0 &amp; \text{if } x\le 0.
           \end{cases}
-        </me>
+        </md>
         Then <m>f</m> is infinitely differentiable on <m>\R</m>, and every
         derivative of <m>f</m> at <m>0</m> is equal to <m>0</m>. Therefore
         the Taylor series of <m>f</m> at <m>0</m> is the zero series.
@@ -108,23 +108,23 @@
     <statement>
       <p>
         Consider
-        <me>
+        <md>
           f(x)=\int_0^\infty e^{-t}\cos(t^2x)\,dt.
-        </me>
+        </md>
         One can show, by differentiating under the integral sign, that
         <m>f</m> is <m>C^\infty</m> and that
-        <me>
+        <md>
           f^{(n)}(0)=\begin{cases}
           0 &amp; \text{if } n \text{ is odd},\\
           \pm (2n)! &amp; \text{if } n \text{ is even}.
           \end{cases}
-        </me>
+        </md>
         Consequently the Taylor coefficient
         <m>f^{(n)}(0)/n!</m> has absolute value <m>(2n)!/n!</m> for infinitely
         many <m>n</m>. Since
-        <me>
+        <md>
           \frac{(2n)!}{n!}=(n+1)(n+2)\cdots(2n)\ge (n+1)^n,
-        </me>
+        </md>
         the <m>n</m>-th roots of these coefficients tend to <m>\infty</m>.
         The root test therefore shows that the Taylor series of <m>f</m> at
         <m>0</m> has radius of convergence <m>0</m>. So this Taylor series
@@ -138,14 +138,14 @@
     <statement>
       <p>
         For every formal power series
-        <me>
+        <md>
           \sum_{n=0}^\infty a_nx^n
-        </me>
+        </md>
         there exists a function <m>f \in C^\infty(\R)</m> whose Taylor series
         at <m>0</m> is exactly
-        <me>
+        <md>
           \sum_{n=0}^\infty a_nx^n.
-        </me>
+        </md>
       </p>
     </statement>
   </theorem>

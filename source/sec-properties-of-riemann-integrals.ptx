@@ -28,36 +28,36 @@
             <p>
               The functions <m>f+g</m> and <m>cf</m> belong to
               <m>R[a,b]</m>, and
-              <me>
+              <md>
                 \int_a^b (f+g)=\int_a^b f+\int_a^b g,
                 \qquad
                 \int_a^b (cf)=c\int_a^b f.
-              </me>
+              </md>
             </p>
           </li>
           <li>
             <p>
               If <m>f(x) \le g(x)</m> for every <m>x \in [a,b]</m>, then
-              <me>
+              <md>
                 \int_a^b f \le \int_a^b g.
-              </me>
+              </md>
             </p>
           </li>
           <li>
             <p>
               If <m>a \lt c \lt b</m>, then the restrictions of <m>f</m> to
               <m>[a,c]</m> and <m>[c,b]</m> are integrable, and
-              <me>
+              <md>
                 \int_a^b f=\int_a^c f+\int_c^b f.
-              </me>
+              </md>
             </p>
           </li>
           <li>
             <p>
               If <m>|f(x)| \le M</m> for every <m>x \in [a,b]</m>, then
-              <me>
+              <md>
                 \left|\int_a^b f\right| \le M|b-a|.
-              </me>
+              </md>
             </p>
           </li>
         </ol>
@@ -70,47 +70,47 @@
           <xref ref="prop-integrability-criterion-darboux" text="title"/>,
           there are partitions <m>P_f</m> and <m>P_g</m> of <m>[a,b]</m> such
           that
-          <me>
+          <md>
             U(P_f,f)-L(P_f,f) \lt \frac{\varepsilon}{2},
             \qquad
             U(P_g,g)-L(P_g,g) \lt \frac{\varepsilon}{2}.
-          </me>
+          </md>
           Let <m>P=P_f \cup P_g</m>. Since refinement decreases upper sums and
           increases lower sums,
-          <me>
+          <md>
             U(P,f)-L(P,f) \lt \frac{\varepsilon}{2},
             \qquad
             U(P,g)-L(P,g) \lt \frac{\varepsilon}{2}.
-          </me>
+          </md>
         </p>
 
         <p>
           For each subinterval <m>I_i</m> of <m>P</m>, let
           <m>m_i^f,M_i^f</m> and <m>m_i^g,M_i^g</m> be the infima and suprema
           of <m>f</m> and <m>g</m> on <m>I_i</m>. Then
-          <me>
+          <md>
             m_i^f+m_i^g \le \inf_{x \in I_i}(f(x)+g(x)),
             \qquad
             \sup_{x \in I_i}(f(x)+g(x)) \le M_i^f+M_i^g.
-          </me>
+          </md>
           Summing over the partition gives
-          <me>
+          <md>
             L(P,f)+L(P,g) \le L(P,f+g) \le U(P,f+g) \le U(P,f)+U(P,g).
-          </me>
+          </md>
           Hence
-          <me>
+          <md>
             U(P,f+g)-L(P,f+g)
             \le
             \bigl(U(P,f)-L(P,f)\bigr)+\bigl(U(P,g)-L(P,g)\bigr)
             \lt \varepsilon.
-          </me>
+          </md>
           So <m>f+g</m> is integrable.
         </p>
 
         <p>
           Also, because <m>I_f</m> lies between <m>L(P,f)</m> and
           <m>U(P,f)</m>, and similarly for <m>I_g</m>, we have
-          <me>
+          <md>
             I_f+I_g-\varepsilon
             \lt
             L(P,f)+L(P,g)
@@ -120,7 +120,7 @@
             U(P,f)+U(P,g)
             \lt
             I_f+I_g+\varepsilon.
-          </me>
+          </md>
           Since <m>\varepsilon</m> is arbitrary,
           <m>\int_a^b (f+g)=I_f+I_g</m>.
         </p>
@@ -132,23 +132,23 @@
           and supremum of <m>cf</m> on the same interval are <m>cm_i</m> and
           <m>cM_i</m>. If <m>c \lt 0</m>, they are <m>cM_i</m> and <m>cm_i</m>.
           In either case,
-          <me>
+          <md>
             U(P,cf)-L(P,cf)=|c|\bigl(U(P,f)-L(P,f)\bigr).
-          </me>
+          </md>
           Hence <m>cf</m> is integrable. When <m>c \ge 0</m>,
-          <me>
+          <md>
             L(P,cf)=cL(P,f),
             \qquad
             U(P,cf)=cU(P,f),
-          </me>
+          </md>
           and the same squeeze argument as above gives
           <m>\int_a^b (cf)=c\int_a^b f</m>. When <m>c \lt 0</m>, the same
           conclusion follows from the identities
-          <me>
+          <md>
             L(P,cf)=cU(P,f),
             \qquad
             U(P,cf)=cL(P,f).
-          </me>
+          </md>
         </p>
 
         <p>
@@ -156,11 +156,11 @@
           subinterval of every partition <m>P</m> the infimum and supremum of
           <m>f</m> are at most the corresponding infimum and supremum of
           <m>g</m>. Thus
-          <me>
+          <md>
             L(P,f) \le L(P,g)
             \qquad\text{and}\qquad
             U(P,f) \le U(P,g).
-          </me>
+          </md>
           Since <m>\int_a^b f \le U(P,f)</m> and <m>L(P,g) \le \int_a^b g</m>
           for every partition <m>P</m>, it follows that
           <m>\int_a^b f \le \int_a^b g</m>.
@@ -174,19 +174,19 @@
           <m>c</m> to obtain a refinement; the gap does not increase. Write
           <m>P_1</m> and <m>P_2</m> for the induced partitions of
           <m>[a,c]</m> and <m>[c,b]</m>. Then
-          <me>
+          <md>
             L(P,f)=L(P_1,f)+L(P_2,f),
             \qquad
             U(P,f)=U(P_1,f)+U(P_2,f),
-          </me>
+          </md>
           so
-          <me>
+          <md>
             \bigl(U(P_1,f)-L(P_1,f)\bigr)+\bigl(U(P_2,f)-L(P_2,f)\bigr)
             =
             U(P,f)-L(P,f)
             \lt
             \frac{\varepsilon}{2}.
-          </me>
+          </md>
           Since each summand is nonnegative, both are less than
           <m>\varepsilon/2</m>. Therefore the restrictions of <m>f</m> to
           <m>[a,c]</m> and <m>[c,b]</m> are integrable.
@@ -222,19 +222,19 @@
         <p>
           Finally, for part (4), the hypothesis gives
           <m>-M \le f(x) \le M</m> on <m>[a,b]</m>. By part (2),
-          <me>
+          <md>
             \int_a^b (-M) \le \int_a^b f \le \int_a^b M.
-          </me>
+          </md>
           Since constant functions are integrable and
-          <me>
+          <md>
             \int_a^b (-M)=-M(b-a),
             \qquad
             \int_a^b M=M(b-a),
-          </me>
+          </md>
           we conclude that
-          <me>
+          <md>
             -M(b-a) \le \int_a^b f \le M(b-a).
-          </me>
+          </md>
           Therefore <m>\left|\int_a^b f\right| \le M(b-a)=M|b-a|</m>.
         </p>
       </proof>
@@ -249,25 +249,25 @@
       <term>step function</term><idx>step function</idx> if there is a
       partition <m>P=\{x_0,\dots,x_n\}</m> of <m>[a,b]</m> and real numbers
       <m>c_1,\dots,c_n</m> such that
-      <me>
+      <md>
         s=\sum_{i=1}^n c_i 1_{I_i},
-      </me>
+      </md>
       where
-      <me>
+      <md>
         I_i=[x_{i-1},x_i)
         \qquad (1 \le i \lt n),
         \qquad
         I_n=[x_{n-1},x_n].
-      </me>
+      </md>
     </p>
 
     <p>
       If <m>J</m> is any subinterval of <m>[a,b]</m> with endpoints
       <m>c \le d</m>, then the indicator function <m>1_J</m> is Riemann
       integrable and
-      <me>
+      <md>
         \int_a^b 1_J=d-c.
-      </me>
+      </md>
 
       Indeed, let <m>\varepsilon \gt 0</m>. One may choose a partition that
       isolates the endpoints of <m>J</m> inside two subintervals of lengths
@@ -282,14 +282,14 @@
         <p>
           Every step function on <m>[a,b]</m> is Riemann integrable. More
           precisely, if
-          <me>
+          <md>
             s=\sum_{i=1}^n c_i 1_{I_i}
-          </me>
+          </md>
           for a partition <m>P=\{x_0,\dots,x_n\}</m> and the associated
           subintervals <m>I_i</m>, then
-          <me>
+          <md>
             \int_a^b s=\sum_{i=1}^n c_i(x_i-x_{i-1}).
-          </me>
+          </md>
         </p>
       </statement>
 
@@ -300,13 +300,13 @@
           <xref ref="thm-basic-properties-riemann-integral" text="title"/>
           shows that any linear combination
           <m>\sum_{i=1}^n c_i1_{I_i}</m> is integrable and that
-          <me>
+          <md>
             \int_a^b s
             =
             \sum_{i=1}^n c_i \int_a^b 1_{I_i}
             =
             \sum_{i=1}^n c_i(x_i-x_{i-1}).
-          </me>
+          </md>
         </p>
       </proof>
     </proposition>
@@ -355,9 +355,9 @@
           ref="thm-continuous-composition-preserves-integrability"
           text="title"/> shows that <m>(f+g)^2</m>, <m>f^2</m>, and
           <m>g^2</m> are integrable. Since
-          <me>
+          <md>
             fg=\frac12\bigl((f+g)^2-f^2-g^2\bigr),
-          </me>
+          </md>
           another application of
           <xref ref="thm-basic-properties-riemann-integral" text="title"/>
           gives <m>fg \in R[a,b]</m>.
@@ -369,9 +369,9 @@
       <statement>
         <p>
           If <m>f \in R[a,b]</m>, then <m>|f| \in R[a,b]</m>. Moreover,
-          <me>
+          <md>
             \left|\int_a^b f\right| \le \int_a^b |f|.
-          </me>
+          </md>
         </p>
       </statement>
 
@@ -386,18 +386,18 @@
           Since <m>-|f(x)| \le f(x) \le |f(x)|</m> on <m>[a,b]</m>, part (2)
           of <xref ref="thm-basic-properties-riemann-integral" text="title"/>
           gives
-          <me>
+          <md>
             \int_a^b (-|f|) \le \int_a^b f \le \int_a^b |f|.
-          </me>
+          </md>
           Part (1) of the same theorem implies
           <m>\int_a^b (-|f|)=-\int_a^b |f|</m>. Therefore
-          <me>
+          <md>
             -\int_a^b |f|
             \le
             \int_a^b f
             \le
             \int_a^b |f|,
-          </me>
+          </md>
           and hence <m>\left|\int_a^b f\right| \le \int_a^b |f|</m>.
         </p>
       </proof>
@@ -411,14 +411,14 @@
     <p>
       For <m>n \ge 1</m>, the <term>uniform <m>n</m>-partition</term><idx><h>uniform partition</h></idx>
       of <m>[a,b]</m> is the partition
-      <me>
+      <md>
         P_n([a,b])=\left\{a=x_0 \lt x_1 \lt \cdots \lt x_n=b\right\},
-      </me>
+      </md>
       where
-      <me>
+      <md>
         \Delta x_i = x_i-x_{i-1}=\frac{b-a}{n}
         \qquad (1 \le i \le n).
-      </me>
+      </md>
       When the interval is clear from the context, we simply write
       <m>P_n</m>.
     </p>
@@ -439,9 +439,9 @@
           <xref ref="thm-continuous-on-closed-bounded-interval-uniformly-continuous"/>,
           <m>f</m> is uniformly continuous on <m>[a,b]</m>. Therefore there
           exists <m>\delta \gt 0</m> such that
-          <me>
+          <md>
             |f(x)-f(x')| \lt \frac{\varepsilon}{b-a}
-          </me>
+          </md>
           whenever <m>x,x' \in [a,b]</m> and <m>|x-x'| \lt \delta</m>.
         </p>
 
@@ -452,26 +452,26 @@
           restriction of <m>f</m> to <m>I_i</m> is continuous, so the
           <xref ref="thm-extreme-value-theorem" text="title"/> gives points
           <m>x_i^*,x_i^{**} \in I_i</m> such that
-          <me>
+          <md>
             M_i=f(x_i^*),
             \qquad
             m_i=f(x_i^{**}),
-          </me>
+          </md>
           where <m>M_i</m> and <m>m_i</m> are the supremum and infimum of
           <m>f</m> on <m>I_i</m>.
         </p>
 
         <p>
           Since <m>|x_i^*-x_i^{**}| \le (b-a)/n \lt \delta</m>, we have
-          <me>
+          <md>
             M_i-m_i
             =
             |f(x_i^*)-f(x_i^{**})|
             \lt
             \frac{\varepsilon}{b-a}.
-          </me>
+          </md>
           Therefore
-          <me>
+          <md>
             U(P_n,f)-L(P_n,f)
             =
             \sum_{i=1}^n (M_i-m_i)\Delta x_i
@@ -479,7 +479,7 @@
             \frac{\varepsilon}{b-a}\sum_{i=1}^n \Delta x_i
             =
             \varepsilon.
-          </me>
+          </md>
           By the <xref ref="prop-integrability-criterion-darboux" text="title"/>,
           <m>f</m> is integrable.
         </p>
@@ -500,19 +500,19 @@
           First suppose that <m>f</m> is increasing on <m>[a,b]</m>. Let
           <m>P_n=\{x_0,\dots,x_n\}</m> be the uniform <m>n</m>-partition of
           <m>[a,b]</m>. Then on each subinterval <m>[x_{i-1},x_i]</m>,
-          <me>
+          <md>
             M_i=f(x_i),
             \qquad
             m_i=f(x_{i-1}).
-          </me>
+          </md>
           Hence
-          <me>
+          <md>
             U(P_n,f)-L(P_n,f)
             =
             \sum_{i=1}^n (f(x_i)-f(x_{i-1}))\frac{b-a}{n}
             =
             \frac{b-a}{n}\bigl(f(b)-f(a)\bigr).
-          </me>
+          </md>
           The right-hand side tends to <m>0</m> as <m>n \to \infty</m>, so the
           <xref ref="prop-integrability-criterion-darboux" text="title"/>
           shows that <m>f</m> is integrable.
@@ -532,13 +532,13 @@
         <p>
           The <term>Thomae function</term><idx>Thomae function</idx>
           <m>h \colon [0,1] \to \R</m> is defined by
-          <me>
+          <md>
             h(x)=
             \begin{cases}
               \dfrac{1}{n} &amp; \text{if } x=\dfrac{m}{n} \text{ in lowest terms},\\
               0 &amp; \text{if } x \in [0,1]\setminus \Q.
             \end{cases}
-          </me>
+          </md>
           This function is integrable on <m>[0,1]</m>, with
           <m>\int_0^1 h=0</m>, but it is neither continuous nor monotone on
           any nondegenerate subinterval of <m>[0,1]</m>.
@@ -612,13 +612,13 @@
           nondegenerate subinterval of <m>[0,1]</m> contains both rational and
           irrational numbers. Thus, if <m>\alpha \lt q \lt \beta</m> with
           <m>\alpha,\beta</m> irrational and <m>q</m> rational, then
-          <me>
+          <md>
             h(\alpha)=0,
             \qquad
             h(q) \gt 0,
             \qquad
             h(\beta)=0,
-          </me>
+          </md>
           so <m>h</m> cannot be increasing or decreasing on that interval.
           Also, if <m>q \in [0,1] \cap \Q</m>, choose irrational numbers
           <m>\alpha_n \to q</m>. Then <m>h(\alpha_n)=0 \to 0</m>, while
@@ -635,9 +635,9 @@
 
         <p>
           To control the upper sums, fix <m>N \in \N</m> and let
-          <me>
+          <md>
             H_N=\{x \in [0,1] : h(x) \ge 1/N\}.
-          </me>
+          </md>
           If <m>x \in H_N</m>, then <m>x=m/n</m> in lowest terms with
           <m>1 \le n \le N</m>. Therefore <m>H_N</m> is finite. Choose
           pairwise disjoint closed intervals <m>J_x \subseteq [0,1]</m>, one
@@ -651,7 +651,7 @@
           <m>\bigcup_{x \in H_N} J_x</m> contains no point of <m>H_N</m>, so
           the supremum of <m>h</m> there is less than <m>1/N</m>. On the other
           subintervals, the supremum is at most <m>1</m>. It follows that
-          <me>
+          <md>
             U(P,h)
             \le
             \sum_{x \in H_N} |J_x| + \frac{1}{N}
@@ -660,7 +660,7 @@
             \frac{1}{N}+\frac{1}{N}
             =
             \frac{2}{N}.
-          </me>
+          </md>
           Since <m>N</m> is arbitrary, the
           <xref ref="prop-integrability-criterion-darboux" text="title"/>
           shows that <m>h</m> is integrable. Because every lower sum is

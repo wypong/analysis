@@ -18,9 +18,9 @@
 
     <p>
       Let <m>f \in R[a,b]</m>. For each <m>c \in [a,b]</m>, the function
-      <me>
+      <md>
         x \mapsto \int_c^x f(t)\,dt
-      </me>
+      </md>
       is called the <term>indefinite integral</term><idx><h>integral</h><h>indefinite</h></idx>
       of <m>f</m> with <term>base point</term><idx><h>integral</h><h>base point</h></idx>
       <m>c</m>.
@@ -31,15 +31,15 @@
       <statement>
         <p>
           Let <m>f \in R[a,b]</m>, and define
-          <me>
+          <md>
             F(x)=\int_a^x f(t)\,dt.
-          </me>
+          </md>
           Then <m>F</m> is Lipschitz continuous on <m>[a,b]</m>. Moreover, if
           <m>f</m> is continuous at <m>x_0 \in [a,b]</m>, then <m>F</m> is
           differentiable at <m>x_0</m> and
-          <me>
+          <md>
             F'(x_0)=f(x_0).
-          </me>
+          </md>
         </p>
       </statement>
 
@@ -50,17 +50,17 @@
           <m>x \in [a,b]</m>. Let <m>x,x' \in [a,b]</m>. If <m>x \lt x'</m>,
           then part (3) of <xref ref="thm-basic-properties-riemann-integral"
           text="title"/> gives
-          <me>
+          <md>
             F(x')-F(x)=\int_x^{x'} f(t)\,dt.
-          </me>
+          </md>
           Therefore, by part (4) of the same theorem,
-          <me>
+          <md>
             |F(x')-F(x)|
             =
             \left|\int_x^{x'} f(t)\,dt\right|
             \le
             M|x'-x|.
-          </me>
+          </md>
           The same inequality is trivial if <m>x=x'</m>, and it follows by
           symmetry when <m>x' \lt x</m>. Thus <m>F</m> is Lipschitz
           continuous on <m>[a,b]</m>.
@@ -68,26 +68,26 @@
 
         <p>
           Now suppose that <m>f</m> is continuous at <m>x_0 \in [a,b]</m>. Let
-          <me>
+          <md>
             \varphi(x)=
             \begin{cases}
               \dfrac{1}{x-x_0}\int_{x_0}^{x} f(t)\,dt &amp; \text{if } x \ne x_0,\\
               f(x_0) &amp; \text{if } x=x_0.
             \end{cases}
-          </me>
+          </md>
           Then
-          <me>
+          <md>
             F(x)-F(x_0)=\varphi(x)(x-x_0)
-          </me>
+          </md>
           for every <m>x \in [a,b]</m>. We will prove that <m>\varphi</m> is
           continuous at <m>x_0</m>. Let <m>\varepsilon \gt 0</m>. There exists
           <m>\delta \gt 0</m> such that
-          <me>
+          <md>
             |f(t)-f(x_0)| \lt \varepsilon
-          </me>
+          </md>
           whenever <m>t \in [a,b]</m> and <m>|t-x_0| \lt \delta</m>. If
           <m>x \in [a,b]</m> with <m>0 \lt |x-x_0| \lt \delta</m>, then
-          <me>
+          <md>
             \begin{aligned}
             |\varphi(x)-\varphi(x_0)|
             &amp;=
@@ -104,7 +104,7 @@
             =
             \varepsilon.
             \end{aligned}
-          </me>
+          </md>
           Thus <m>\varphi(x) \to \varphi(x_0)</m> as <m>x \to x_0</m>, so
           <m>\varphi</m> is continuous at <m>x_0</m>. By Carathéodory's
           Criterion (<xref ref="prop-caratheodory-criterion"/>), it follows
@@ -118,9 +118,9 @@
       <statement>
         <p>
           If <m>f \in C[a,b]</m>, then the indefinite integral
-          <me>
+          <md>
             F(x)=\int_a^x f(t)\,dt
-          </me>
+          </md>
           is an antiderivative, or <term>primitive</term><idx>primitive</idx>,
           of <m>f</m> on <m>[a,b]</m>.
         </p>
@@ -146,19 +146,19 @@
       <statement>
         <p>
           Consider the signum function
-          <me>
+          <md>
             \operatorname{sgn}(x)=
             \begin{cases}
               1 &amp; \text{if } x \gt 0,\\
               0 &amp; \text{if } x=0,\\
               -1 &amp; \text{if } x \lt 0.
             \end{cases}
-          </me>
+          </md>
           Since this is a step function, it is integrable on <m>[-1,1]</m>.
           Its indefinite integral with base point <m>0</m> is
-          <me>
+          <md>
             F(x)=\int_0^x \operatorname{sgn}(t)\,dt=|x|.
-          </me>
+          </md>
           The function <m>|x|</m> is not differentiable at <m>0</m>, so the
           indefinite integral of an integrable function need not be
           differentiable everywhere.
@@ -174,13 +174,13 @@
           <m>\int_0^1 h=0</m>, part (2) of
           <xref ref="thm-basic-properties-riemann-integral" text="title"/>
           implies that
-          <me>
+          <md>
             0 \le \int_0^x h(t)\,dt \le \int_0^1 h(t)\,dt=0
-          </me>
+          </md>
           for every <m>x \in [0,1]</m>. Hence the function
-          <me>
+          <md>
             H(x)=\int_0^x h(t)\,dt
-          </me>
+          </md>
           is identically zero on <m>[0,1]</m>. Therefore <m>H'(x)=0</m> for
           every <m>x \in [0,1]</m>, while <m>h(q) \gt 0</m> for every rational
           <m>q \in [0,1]</m>. So it can happen that the indefinite integral is
@@ -200,9 +200,9 @@
         <p>
           Suppose <m>F \colon [a,b] \to \R</m> is differentiable on
           <m>[a,b]</m> and that <m>F' \in R[a,b]</m>. Then
-          <me>
+          <md>
             \int_a^b F'(x)\,dx = F(b)-F(a).
-          </me>
+          </md>
         </p>
       </statement>
 
@@ -216,48 +216,48 @@
           (<xref ref="thm-mean-value-theorem"/>), for each
           <m>i=1,\dots,n</m> there exists <m>t_i \in (x_{i-1},x_i)</m> such
           that
-          <me>
+          <md>
             F(x_i)-F(x_{i-1})=F'(t_i)(x_i-x_{i-1}).
-          </me>
+          </md>
           Hence
-          <me>
+          <md>
             m_i(x_i-x_{i-1})
             \le
             F(x_i)-F(x_{i-1})
             \le
             M_i(x_i-x_{i-1}).
-          </me>
+          </md>
         </p>
 
         <p>
           Summing over <m>i</m> gives
-          <me>
+          <md>
             L(P,F')
             \le
             \sum_{i=1}^n \bigl(F(x_i)-F(x_{i-1})\bigr)
             \le
             U(P,F').
-          </me>
+          </md>
           The sum in the middle telescopes, so
-          <me>
+          <md>
             L(P,F') \le F(b)-F(a) \le U(P,F').
-          </me>
+          </md>
         </p>
 
         <p>
           Since <m>P</m> was arbitrary, we obtain
-          <me>
+          <md>
             \underline{\int_a^b} F'
             \le
             F(b)-F(a)
             \le
             \overline{\int_a^b} F'.
-          </me>
+          </md>
           Because <m>F'</m> is integrable, the upper and lower integrals are
           equal. Therefore
-          <me>
+          <md>
             \int_a^b F'(x)\,dx = F(b)-F(a).
-          </me>
+          </md>
         </p>
       </proof>
     </theorem>
@@ -267,9 +267,9 @@
         <p>
           Let <m>f \colon [a,b] \to \R</m> be continuous, and let <m>F</m> be
           an antiderivative of <m>f</m> on <m>[a,b]</m>. Then
-          <me>
+          <md>
             \int_a^b f(x)\,dx = F(b)-F(a).
-          </me>
+          </md>
         </p>
       </statement>
 
@@ -286,9 +286,9 @@
     <p>
       When <m>f</m> is continuous, the first form may also be recovered from
       the second form. Indeed, if
-      <me>
+      <md>
         F_a(x)=\int_a^x f(t)\,dt,
-      </me>
+      </md>
       then <xref ref="thm-ftc-second-form" text="title"/> shows that
       <m>F_a'=f</m>. Hence <m>(F-F_a)'=0</m> on <m>(a,b)</m>, so
       <xref ref="cor-derivative-zero-implies-constant"/> yields
@@ -302,9 +302,9 @@
           The Thomae function is integrable on <m>[0,1]</m>, but it has no
           primitive on <m>[0,1]</m>. Indeed, if <m>H</m> were a primitive of
           <m>h</m>, then by <xref ref="thm-ftc-first-form" text="title"/>,
-          <me>
+          <md>
             H(x)-H(0)=\int_0^x h(t)\,dt = 0
-          </me>
+          </md>
           for every <m>x \in [0,1]</m>. Thus <m>H</m> would be constant, which
           is impossible because then <m>H'=0</m> everywhere, while
           <m>h(q) \gt 0</m> for rational <m>q</m>.
@@ -316,15 +316,15 @@
       <statement>
         <p>
           Let
-          <me>
+          <md>
             H(x)=2\sqrt{x}
             \qquad (x \in [0,1]).
-          </me>
+          </md>
           Then <m>H</m> is continuous on <m>[0,1]</m>, and for
           <m>x \in (0,1]</m>,
-          <me>
+          <md>
             H'(x)=\frac{1}{\sqrt{x}}.
-          </me>
+          </md>
           This derivative is unbounded on <m>[0,1]</m>, so it is not Riemann
           integrable no matter how one defines <m>H'(0)</m>. Thus
           <xref ref="thm-ftc-first-form"/> does not apply.
@@ -336,26 +336,26 @@
       <statement>
         <p>
           Define
-          <me>
+          <md>
             F(x)=
             \begin{cases}
               x^2\sin(1/x) &amp; \text{if } x \ne 0,\\
               0 &amp; \text{if } x=0
             \end{cases}
-          </me>
+          </md>
           on <m>[-1,1]</m>. Then <m>F</m> is differentiable on <m>[-1,1]</m>,
           and
-          <me>
+          <md>
             F'(x)=
             \begin{cases}
               2x\sin(1/x)-\cos(1/x) &amp; \text{if } x \ne 0,\\
               0 &amp; \text{if } x=0.
             \end{cases}
-          </me>
+          </md>
           The derivative is bounded on <m>[-1,1]</m> and is continuous except
           at <m>0</m>, so <m>F'</m> is integrable. By
           <xref ref="thm-ftc-first-form"/>,
-          <me>
+          <md>
             \int_{-1}^1 F'(x)\,dx
             =
             F(1)-F(-1)
@@ -363,7 +363,7 @@
             \sin(1)-(-\sin(1))
             =
             2\sin(1).
-          </me>
+          </md>
         </p>
       </statement>
     </example>
@@ -372,21 +372,21 @@
       <statement>
         <p>
           Let
-          <me>
+          <md>
             F(x)=
             \begin{cases}
               x^2\cos(1/x^2) &amp; \text{if } x \ne 0,\\
               0 &amp; \text{if } x=0.
             \end{cases}
-          </me>
+          </md>
           Then <m>F</m> is differentiable on <m>[0,1]</m>, and
-          <me>
+          <md>
             F'(x)=
             \begin{cases}
               2x\cos(1/x^2)+\dfrac{2}{x}\sin(1/x^2) &amp; \text{if } x \ne 0,\\
               0 &amp; \text{if } x=0.
             \end{cases}
-          </me>
+          </md>
           The term <m>(2/x)\sin(1/x^2)</m> is unbounded near <m>0</m>, so
           <m>F'</m> is not Riemann integrable on <m>[0,1]</m>. Again,
           <xref ref="thm-ftc-first-form"/> does not apply.

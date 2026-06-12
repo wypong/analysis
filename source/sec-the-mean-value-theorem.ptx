@@ -24,7 +24,7 @@
           Let <m>f \colon (a,b) \to \R</m>, and let <m>c \in (a,b)</m>. If
           <m>f</m> has a local maximum or a local minimum at <m>c</m> and
           <m>f</m> is differentiable at <m>c</m>, then
-          <me>f'(c)=0.</me>
+          <md>f'(c)=0.</md>
         </p>
       </statement>
 
@@ -33,9 +33,9 @@
           Suppose <m>f</m> has a local maximum at <m>c</m>. Then for all
           <m>x</m> sufficiently close to <m>c</m>, we have
           <m>f(x)-f(c) \le 0</m>. If <m>x \lt c</m>, then <m>x-c \lt 0</m>, so
-          <me>\frac{f(x)-f(c)}{x-c} \ge 0.</me>
+          <md>\frac{f(x)-f(c)}{x-c} \ge 0.</md>
           If <m>x \gt c</m>, then <m>x-c \gt 0</m>, so
-          <me>\frac{f(x)-f(c)}{x-c} \le 0.</me>
+          <md>\frac{f(x)-f(c)}{x-c} \le 0.</md>
           Since the derivative exists, both one-sided limits of the difference
           quotient equal <m>f'(c)</m>. Hence <m>f'(c) \ge 0</m> and
           <m>f'(c) \le 0</m>, so <m>f'(c)=0</m>. The proof for a local minimum
@@ -57,7 +57,7 @@
         </ol>
         <p>
           Then there exists <m>c \in (a,b)</m> such that
-          <me>f'(c)=0.</me>
+          <md>f'(c)=0.</md>
         </p>
       </statement>
 
@@ -99,23 +99,23 @@
           Let <m>f \colon [a,b] \to \R</m>. Assume that <m>f</m> is continuous
           on <m>[a,b]</m> and differentiable on <m>(a,b)</m>. Then there
           exists <m>c \in (a,b)</m> such that
-          <me>f'(c)=\frac{f(b)-f(a)}{b-a}.</me>
+          <md>f'(c)=\frac{f(b)-f(a)}{b-a}.</md>
         </p>
       </statement>
 
       <proof>
         <p>
           Let
-          <me>s(x)=f(a)+\frac{f(b)-f(a)}{b-a}(x-a),</me>
+          <md>s(x)=f(a)+\frac{f(b)-f(a)}{b-a}(x-a),</md>
           the secant line through the points <m>(a,f(a))</m> and
           <m>(b,f(b))</m>. Define <m>h(x)=f(x)-s(x)</m>. Then <m>h</m> is
           continuous on <m>[a,b]</m> and differentiable on <m>(a,b)</m>. Also
-          <me>h(a)=0=h(b).</me>
+          <md>h(a)=0=h(b).</md>
           By <xref ref="thm-rolle"/>, there exists <m>c \in (a,b)</m> such
           that <m>h'(c)=0</m>. Since
-          <me>h'(x)=f'(x)-\frac{f(b)-f(a)}{b-a},</me>
+          <md>h'(x)=f'(x)-\frac{f(b)-f(a)}{b-a},</md>
           we obtain
-          <me>f'(c)=\frac{f(b)-f(a)}{b-a}.</me>
+          <md>f'(c)=\frac{f(b)-f(a)}{b-a}.</md>
         </p>
 
         <figure xml:id="fig-mvt-secant-tangent">
@@ -156,10 +156,10 @@
         <ul>
           <li>
             The function
-            <me>f(x)=\begin{cases}
+            <md>f(x)=\begin{cases}
             x &amp; \text{if } 0 \lt x \lt 1,\\
             0 &amp; \text{if } x=0 \text{ or } x=1
-            \end{cases}</me>
+            \end{cases}</md>
             is differentiable on <m>(0,1)</m> and satisfies
             <m>f(0)=f(1)=0</m>, but it is not continuous on <m>[0,1]</m> and
             there is no <m>c \in (0,1)</m> with <m>f'(c)=0</m>.
@@ -181,21 +181,21 @@
           Let <m>f,g \colon [a,b] \to \R</m>. Assume that <m>f</m> and
           <m>g</m> are continuous on <m>[a,b]</m> and differentiable on
           <m>(a,b)</m>. Then there exists <m>c \in (a,b)</m> such that
-          <me>f'(c)(g(b)-g(a))=g'(c)(f(b)-f(a)).</me>
+          <md>f'(c)(g(b)-g(a))=g'(c)(f(b)-f(a)).</md>
         </p>
       </statement>
 
       <proof>
         <p>
           Define
-          <me>h(x)=(f(x)-f(a))(g(b)-g(a))-(g(x)-g(a))(f(b)-f(a)).</me>
+          <md>h(x)=(f(x)-f(a))(g(b)-g(a))-(g(x)-g(a))(f(b)-f(a)).</md>
           Then <m>h</m> is continuous on <m>[a,b]</m> and differentiable on
           <m>(a,b)</m>. Also <m>h(a)=0=h(b)</m>. By
           <xref ref="thm-rolle"/>, there exists <m>c \in (a,b)</m> such that
           <m>h'(c)=0</m>. Since
-          <me>h'(x)=f'(x)(g(b)-g(a))-g'(x)(f(b)-f(a)),</me>
+          <md>h'(x)=f'(x)(g(b)-g(a))-g'(x)(f(b)-f(a)),</md>
           we obtain
-          <me>f'(c)(g(b)-g(a))=g'(c)(f(b)-f(a)).</me>
+          <md>f'(c)(g(b)-g(a))=g'(c)(f(b)-f(a)).</md>
         </p>
       </proof>
     </theorem>

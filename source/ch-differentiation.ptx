@@ -40,11 +40,11 @@
           Let <m>f</m> and <m>g</m> be differentiable at <m>c</m>, and assume
           <m>g(c)\ne 0</m>. Prove that <m>f/g</m> is differentiable at
           <m>c</m> and that
-          <me>
+          <md>
             \left(\frac{f}{g}\right)'(c)
             =
             \frac{f'(c)g(c)-f(c)g'(c)}{g(c)^2}.
-          </me>
+          </md>
         </p>
       </statement>
     </exercise>
@@ -55,9 +55,9 @@
           Use <xref ref="prop-derivative-sum-product-rules"/> and induction on
           <m>n</m> to prove that, for every <m>n \in \N</m>, the function
           <m>x \mapsto x^n</m> is differentiable on <m>\R</m> and satisfies
-          <me>
+          <md>
             \frac{d}{dx}x^n = nx^{n-1}.
-          </me>
+          </md>
         </p>
       </statement>
     </exercise>
@@ -69,7 +69,7 @@
           <xref ref="sec-differentiability-classes"/>
           with <m>n=4</m>:
         </p>
-        <me>
+        <md>
           f_4(x)=\begin{cases}
           x^4 &amp; \text{if } x \ge 0,\\
           -x^4 &amp; \text{if } x \lt 0
@@ -79,7 +79,7 @@
           x^8\sin(1/x) &amp; \text{if } x \ne 0,\\
           0 &amp; \text{if } x=0.
           \end{cases}
-        </me>
+        </md>
         Compute several derivatives of these functions and verify that
         <m>f_4 \in C^3(\R)\setminus D^4(\R)</m> and
         <m>g_4 \in D^4(\R)\setminus C^4(\R)</m>.
@@ -92,9 +92,9 @@
           Use <xref ref="prop-derivative-of-inverse-function"/> with
           <m>f(x)=x^2</m> on <m>(0,\infty)</m> to prove that
           <m>\sqrt{x}</m> is differentiable on <m>(0,\infty)</m> and that
-          <me>
+          <md>
             \frac{d}{dx}\sqrt{x}=\frac{1}{2\sqrt{x}}.
-          </me>
+          </md>
         </p>
       </statement>
     </exercise>
@@ -146,9 +146,9 @@
           Let <m>f \colon [a,b] \to \R</m> be continuous on <m>[a,b]</m> and
           differentiable on <m>(a,b)</m>. Assume that
           <m>|f'(x)| \le M</m> for every <m>x \in (a,b)</m>. Prove that
-          <me>
+          <md>
             |f(x)-f(y)| \le M|x-y|
-          </me>
+          </md>
           for all <m>x,y \in [a,b]</m>.
         </p>
       </statement>
@@ -162,9 +162,9 @@
           every <m>x \in (a,b)</m>. Use
           <xref ref="thm-cauchy-mean-value-theorem"/> to prove that there exists
           <m>c \in (a,b)</m> such that
-          <me>
+          <md>
             \frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(c)}{g'(c)}.
-          </me>
+          </md>
         </p>
       </statement>
     </exercise>
@@ -185,9 +185,9 @@
         <p>
           Use <xref ref="prop-first-derivative-test"/> to find the local
           extrema of
-          <me>
+          <md>
             f(x)=x^3-3x.
-          </me>
+          </md>
           Also determine the absolute maximum and minimum of <m>f</m> on the
           interval <m>[-2,2]</m>.
         </p>
@@ -198,9 +198,9 @@
       <statement>
         <p>
           Find all critical points of
-          <me>
+          <md>
             f(x)=x^4-4x^2.
-          </me>
+          </md>
           Use <xref ref="prop-second-derivative-test"/> where applicable to
           classify them. If the second derivative test is inconclusive at some
           critical point, analyze that point by another method.
@@ -224,9 +224,9 @@
         <p>
           Assume the basic properties of the definite integral. Let
           <m>f \colon [a,b] \to \R</m> be continuous and suppose that
-          <me>
+          <md>
             \int_a^b f(x)\,dx = 0.
-          </me>
+          </md>
           Prove that if <m>f(x)\ge 0</m> for every <m>x \in [a,b]</m>, then
           there exists <m>c \in [a,b]</m> such that <m>f(c)=0</m>.
         </p>
@@ -238,9 +238,9 @@
         <p>
           Assume the basic properties of the definite integral. Let
           <m>f \colon [a,b] \to \R</m> be continuous, and suppose that
-          <me>
+          <md>
             \int_a^x f(t)\,dt = 0
-          </me>
+          </md>
           for every <m>x \in [a,b]</m>. Use
           <xref ref="thm-ftc-special-case"/> to prove that <m>f(x)=0</m> for
           every <m>x \in [a,b]</m>.

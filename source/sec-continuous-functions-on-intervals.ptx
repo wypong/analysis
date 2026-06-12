@@ -61,7 +61,7 @@
           Let <m>f \colon [a,b] \to \R</m> be continuous. Suppose
           <m>f</m> is not bounded. Then for every <m>n \in \N</m> there
           exists <m>x_n \in [a,b]</m> such that
-          <me>|f(x_n)| \gt n.</me>
+          <md>|f(x_n)| \gt n.</md>
           Since <m>[a,b]</m> is bounded, <xref ref="thm-bolzano-weierstrass"/>
           gives a convergent subsequence <m>(x_{n_k})</m>. Let
           <m>x_{n_k} \to c</m>. By
@@ -90,10 +90,10 @@
           </li>
           <li>
             The function
-            <me>g(x)=\begin{cases}
+            <md>g(x)=\begin{cases}
               0 &amp; \text{if } x=0,\\
               1/x &amp; \text{if } 0 \lt x \le 1
-            \end{cases}</me>
+            \end{cases}</md>
             is defined on the closed bounded interval <m>[0,1]</m>, but it is
             not continuous at <m>0</m> and it is not bounded.
           </li>
@@ -127,7 +127,7 @@
 	  <xref ref="prop-closed-interval-contains-cluster-points"/>
 	  implies the limit of this subsequence, say <m>c</m>, belongs
 	  to <m>[a,b]</m>. Consequently, <m>f</m> is continuous
-	  at <m>c</m> and <me>f(x_{n_k}) \to f(c)</me> according
+	  at <m>c</m> and <md>f(x_{n_k}) \to f(c)</md> according
 	  to the sequential characterization of continuity <xref
 	  ref="prop-sequential-characterization-of-continuity"/>. As a
 	  subsequence of <m>(y_n)</m>, <m>f(x_{n_k})=y_{n_k}</m> must converge
@@ -212,7 +212,7 @@
         <p>
           After replacing <m>f</m> by <m>-f</m> if necessary, we may assume
           <m>f(a) \lt 0 \lt f(b)</m>. Let
-          <me>S=\{x \in [a,b] : f(x) \lt 0\}.</me>
+          <md>S=\{x \in [a,b] : f(x) \lt 0\}.</md>
           Then <m>a \in S</m>, and <m>b</m> is an upper bound of <m>S</m>. So
           <m>c:=\sup S</m> exists. Since <m>a \in S \subseteq [a,b]</m>, we
           have <m>c \in [a,b]</m>.
@@ -257,7 +257,7 @@
           Let <m>f \colon [a,b] \to \R</m> be continuous, and let
           <m>\gamma</m> be a real number between <m>f(a)</m> and <m>f(b)</m>.
           Then there exists <m>c \in [a,b]</m> such that
-          <me>f(c)=\gamma.</me>
+          <md>f(c)=\gamma.</md>
         </p>
       </statement>
 
@@ -290,10 +290,10 @@
       <statement>
         <p>
           Continuity is essential in the intermediate value theorem. Define
-          <me>f(x)=\begin{cases}
+          <md>f(x)=\begin{cases}
             -1 &amp; \text{if } x \lt 0,\\
             1 &amp; \text{if } x \ge 0.
-          \end{cases}</me>
+          \end{cases}</md>
           Then <m>f(-1)=-1</m> and <m>f(1)=1</m>, but there is no
           <m>c \in [-1,1]</m> with <m>f(c)=0</m>.
         </p>
@@ -372,7 +372,7 @@
           <m>f([a,b])</m> is an interval containing <m>m</m> and <m>M</m>, it
           also contains every number between them. Therefore
           <m>[m,M] \subseteq f([a,b])</m>, and so
-          <me>f([a,b])=[m,M].</me>
+          <md>f([a,b])=[m,M].</md>
         </p>
       </proof>
     </corollary>
@@ -417,7 +417,7 @@
 	  is an interval containing <m>y_0</m>; it is also non-degenerated
 	  because <m>f</m> is injective. Therefore there exists
 	  <m>\delta \gt 0</m> such that
-	  <me>(y_0-\delta,y_0+\delta)\cap f(I) \subseteq f(I_0).</me>
+	  <md>(y_0-\delta,y_0+\delta)\cap f(I) \subseteq f(I_0).</md>
 	  But <m>y_{n_k}=f(x_{n_k})</m> and <m>x_{n_k} \notin I_0</m>, so
 	  <m>y_{n_k} \notin f(I_0)</m> for every <m>k</m>. On the other hand,
 	  since <m>y_{n_k} \to y_0</m> and each <m>y_{n_k}</m> lies in

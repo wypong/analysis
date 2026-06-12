@@ -13,7 +13,7 @@
       at</term><idx>continuous at a point</idx> <m>c \in S</m> if for
       every <m>\varepsilon \gt 0</m> there exists <m>\delta \gt 0</m> such
       that whenever <m>x \in S</m> and <m>|x-c| \lt \delta</m>, we have
-      <me>|f(x)-f(c)| \lt \varepsilon.</me>
+      <md>|f(x)-f(c)| \lt \varepsilon.</md>
       In other words, <m>f</m> is continuous at <m>c</m> if the output
       <m>f(x)</m> can be made arbitrarily close to <m>f(c)</m> provided that
       the input <m>x</m> is sufficiently close to <m>c</m>.
@@ -54,7 +54,7 @@
       a point in <m>S</m> other than <m>c</m>. A point <m>c \in S</m> is an
       <term>isolated point</term><idx>isolated point</idx> of <m>S</m> if it
       is not a cluster point of <m>S</m>. That is, there exists <m>\delta \gt
-      0</m> such that <me>S \cap (c-\delta,c+\delta)=\{c\}.</me> Equivalently,
+      0</m> such that <md>S \cap (c-\delta,c+\delta)=\{c\}.</md> Equivalently,
       some neighborhood of <m>c</m> contains no points of <m>S</m> other than
       <m>c</m>. A cluster point of <m>S</m> need not belong to <m>S</m>, but
       an isolated point of <m>S</m>, by definition, must belong to <m>S</m>.
@@ -97,7 +97,7 @@
           such that <m>S \cap (c-\delta_0,c+\delta_0)=\{c\}</m>. So whenever
           <m>x \in S</m> and <m>|x-c| \lt \delta_0</m>, necessarily
           <m>x=c</m>. Hence,
-          <me>|f(x)-f(c)|=|f(c)-f(c)|=0</me>
+          <md>|f(x)-f(c)|=|f(c)-f(c)|=0</md>
           which is less than any positive <m>\varepsilon</m>. This shows that
           <m>f</m> is continuous at <m>c</m>.
         </p>
@@ -127,10 +127,10 @@
           that <m>x_1,\dots,x_{n-1}</m> have been chosen in <m>S</m>, all
           distinct, with <m>0 \lt |x_k-c| \lt 1/k</m> for
           <m>k=1,\dots,n-1</m>. Let
-          <me>\eta=\min\{|x_1-c|,\dots,|x_{n-1}-c|\} \gt 0.</me>
+          <md>\eta=\min\{|x_1-c|,\dots,|x_{n-1}-c|\} \gt 0.</md>
           Because <m>c</m> is a cluster point of <m>S</m>, there exists
           <m>x_n \in S</m> such that
-          <me>0 \lt |x_n-c| \lt \min\{1/n,\eta\}.</me>
+          <md>0 \lt |x_n-c| \lt \min\{1/n,\eta\}.</md>
           Then <m>x_n \neq x_k</m> for <m>k=1,\dots,n-1</m>, because
           <m>|x_n-c| \lt |x_k-c|</m>. Thus, by induction, we obtain an
           injective sequence <m>(x_n)</m> in <m>S</m> with
@@ -173,7 +173,7 @@
       <proof>
         <p>
           Fix <m>c \in \R</m>. By the reverse triangle inequality,
-          <me>\bigl||x|-|c|\bigr| \le |x-c| \quad (x \in \R).</me>
+          <md>\bigl||x|-|c|\bigr| \le |x-c| \quad (x \in \R).</md>
           Therefore, for any <m>\varepsilon \gt 0</m>, if <m>|x-c| \lt
           \varepsilon</m>, then <m>||x|-|c|| \lt \varepsilon</m> as well.
           Since <m>c</m> is an arbitrary real number, this shows that the
@@ -194,16 +194,16 @@
         <p>
           To prove the continuity of the function <m>x \mapsto 1/x</m>, we
           need, roughly speaking, to show that for any fixed <m>c \neq 0</m>,
-          <me>\left|\frac{1}{x}-\frac{1}{c}\right|
-            = \frac{|x-c|}{|x||c|}</me>
+          <md>\left|\frac{1}{x}-\frac{1}{c}\right|
+            = \frac{|x-c|}{|x||c|}</md>
           is small whenever <m>|x-c|</m> is small. Thus, we need to make sure
           that the quantity <m>|xc|</m>, and hence <m>|x|</m>, stays bounded
           away from <m>0</m> when <m>x</m> is close to <m>c</m>. This can
           be achieved because if <m>|x-c| \lt |c|/2</m>, then
           <m>||x|-|c|| \lt |c|/2</m>, and that guarantees
           <m>|x| \gt |c|/2</m>. Thus,
-          <me>\left|\frac{1}{x}-\frac{1}{c}\right| = \frac{|x-c|}{|x||c|}
-          \le \frac{2|x-c|}{|c|^2}.</me>
+          <md>\left|\frac{1}{x}-\frac{1}{c}\right| = \frac{|x-c|}{|x||c|}
+          \le \frac{2|x-c|}{|c|^2}.</md>
           So for any <m>\varepsilon \gt 0</m>, if we choose
           <m>0 \lt \delta \lt \min\{|c|/2, \varepsilon|c|^2/2\}</m>, then the
           inequality above implies <m>|1/x - 1/c| \lt \varepsilon</m>, and we

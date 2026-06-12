@@ -19,17 +19,17 @@
 
     <p>
       Given two series
-      <me>
+      <md>
         \sum_{n=0}^\infty a_n
         \qquad \text{and} \qquad
         \sum_{n=0}^\infty b_n,
-      </me>
+      </md>
       their <term>Cauchy product</term><idx>Cauchy product</idx> is the series
-      <me>
+      <md>
         \sum_{n=0}^\infty c_n,
         \qquad
         c_n:=\sum_{k=0}^n a_kb_{n-k}.
-      </me>
+      </md>
       The coefficient <m>c_n</m> is the sum of all products whose indices add
       to <m>n</m>.
     </p>
@@ -39,20 +39,20 @@
       <statement>
         <p>
           Suppose
-          <me>
+          <md>
             \sum_{n=0}^\infty a_n = A
             \qquad \text{and} \qquad
             \sum_{n=0}^\infty b_n = B
-          </me>
+          </md>
           both converge, and suppose that at least one of these series
           converges absolutely. Then the Cauchy product
-          <me>
+          <md>
             \sum_{n=0}^\infty c_n
-          </me>
+          </md>
           converges, and
-          <me>
+          <md>
             \sum_{n=0}^\infty c_n = AB.
-          </me>
+          </md>
         </p>
       </statement>
 
@@ -68,23 +68,23 @@
       <statement>
         <p>
           Let <m>|x|&lt;1</m>. The Cauchy product of
-          <me>
+          <md>
             \sum_{n=0}^\infty x^n
             \qquad \text{with itself}
-          </me>
+          </md>
           has coefficients
-          <me>
+          <md>
             c_n=\sum_{k=0}^n x^k x^{n-k}=(n+1)x^n.
-          </me>
+          </md>
           Since the geometric series converges absolutely for <m>|x|&lt;1</m>
           by <xref ref="prop-geometric-series"/>, Mertens' theorem gives
-          <me>
+          <md>
             \sum_{n=0}^\infty (n+1)x^n
             =
             \left(\sum_{n=0}^\infty x^n\right)^2
             =
             \frac{1}{(1-x)^2}.
-          </me>
+          </md>
         </p>
       </statement>
     </example>
@@ -94,10 +94,10 @@
         <p>
           The Cauchy product of two conditionally convergent series may
           diverge. Consider
-          <me>
+          <md>
             a_n=b_n=\frac{(-1)^{n+1}}{\sqrt{n}}
             \qquad (n \ge 1).
-          </me>
+          </md>
           By the alternating series test
           (<xref ref="prop-alternating-series-test"/>), the series
           <m>\sum_{n=1}^\infty a_n</m> converges. It is not absolutely
@@ -107,22 +107,22 @@
 
         <p>
           If <m>c_n=\sum_{i+j=n}a_ib_j</m> for <m>n \ge 2</m>, then
-          <me>
+          <md>
             |c_n|
             =
             \left|\sum_{i+j=n}\frac{(-1)^{i+j}}{\sqrt{ij}}\right|
             =
             \sum_{i+j=n}\frac{1}{\sqrt{ij}}.
-          </me>
+          </md>
           For <m>i,j \ge 1</m> with <m>i+j=n</m>, we have
           <m>ij \lt (i+j)^2=n^2</m>, so
-          <me>
+          <md>
             \frac{1}{\sqrt{ij}} &gt; \frac{1}{n}.
-          </me>
+          </md>
           Since there are <m>n-1</m> such pairs, it follows that
-          <me>
+          <md>
             |c_n| &gt; \frac{n-1}{n} \to 1.
-          </me>
+          </md>
           Thus <m>c_n \not\to 0</m>, and the Cauchy product diverges by
           <xref ref="prop-divergence-test-series"/>.
         </p>
@@ -149,11 +149,11 @@
           <li>
             <p>
               If there exists <m>a&gt;1</m> such that
-              <me>
+              <md>
                 \left|\frac{x_{n+1}}{x_n}\right|
                 \le
                 1-\frac{a}{n+1}
-              </me>
+              </md>
               for all sufficiently large <m>n</m>, then <m>\sum x_n</m>
               converges absolutely.
             </p>
@@ -161,11 +161,11 @@
           <li>
             <p>
               If there exists <m>a\le 1</m> such that
-              <me>
+              <md>
                 \left|\frac{x_{n+1}}{x_n}\right|
                 \ge
                 1-\frac{a}{n+1}
-              </me>
+              </md>
               for all sufficiently large <m>n</m>, then <m>\sum x_n</m> does
               not converge absolutely.
             </p>
@@ -178,22 +178,22 @@
           We first prove part (1). By discarding finitely many terms, we may
           assume the displayed inequality holds for every <m>n \ge 1</m>.
           Then
-          <me>
+          <md>
             (n+1)|x_{n+1}|
             \le
             (n+1)|x_n|-a|x_n|
-          </me>
+          </md>
           for every <m>n \ge 1</m>. Rearranging gives
-          <me>
+          <md>
             0 \lt (a-1)|x_n|
             \le
             n|x_n|-(n+1)|x_{n+1}|.
-          </me>
+          </md>
         </p>
 
         <p>
           Summing from <m>n=1</m> to <m>n=N</m>, we obtain
-          <me>
+          <md>
             0
             \lt
             (a-1)\sum_{n=1}^N |x_n|
@@ -201,7 +201,7 @@
             |x_1|-(N+1)|x_{N+1}|
             \le
             |x_1|.
-          </me>
+          </md>
           Hence the partial sums of <m>\sum |x_n|</m> are bounded above. By
           <xref ref="prop-nonnegative-series-criterion"/>, the series
           <m>\sum |x_n|</m> converges. Therefore <m>\sum x_n</m> converges
@@ -211,19 +211,19 @@
         <p>
           Now consider part (2). Again we may discard finitely many terms and
           assume the inequality holds for all <m>n \ge 1</m>. Then
-          <me>
+          <md>
             (n+1)|x_{n+1}|
             \ge
             (n+1)|x_n|-a|x_n|
             \ge
             n|x_n|
-          </me>
+          </md>
           for every <m>n \ge 1</m>. Thus the sequence <m>(n|x_n|)</m> is
           increasing. Since <m>x_n \ne 0</m>, we have <m>|x_1|&gt;0</m>, and
           therefore
-          <me>
+          <md>
             |x_n| \ge \frac{|x_1|}{n}
-          </me>
+          </md>
           for every <m>n \ge 1</m>. Because the harmonic series diverges by
           <xref ref="eg-harmonic-series-diverges"/>, the comparison test shows
           that <m>\sum |x_n|</m> diverges. So <m>\sum x_n</m> is not
@@ -238,9 +238,9 @@
         <p>
           Let <m>(x_n)</m> be a sequence of nonzero real numbers, and suppose
           the limit
-          <me>
+          <md>
             a:=\lim (n+1)\left(1-\left|\frac{x_{n+1}}{x_n}\right|\right)
-          </me>
+          </md>
           exists.
         </p>
         <ol>
@@ -253,15 +253,15 @@
         <p>
           Suppose <m>a&gt;1</m>. Choose a number <m>a_1</m> with
           <m>1 \lt a_1 \lt a</m>. Then for all sufficiently large <m>n</m>,
-          <me>
+          <md>
             (n+1)\left(1-\left|\frac{x_{n+1}}{x_n}\right|\right) \gt a_1.
-          </me>
+          </md>
           Rearranging, we obtain
-          <me>
+          <md>
             \left|\frac{x_{n+1}}{x_n}\right|
             \lt
             1-\frac{a_1}{n+1}
-          </me>
+          </md>
           eventually. Part (1) of <xref ref="prop-raabe-test-series"/> now
           shows that <m>\sum x_n</m> converges absolutely.
         </p>
@@ -269,15 +269,15 @@
         <p>
           Suppose instead that <m>a&lt;1</m>. Choose <m>a_1</m> with
           <m>a \lt a_1 \lt 1</m>. Then for all sufficiently large <m>n</m>,
-          <me>
+          <md>
             (n+1)\left(1-\left|\frac{x_{n+1}}{x_n}\right|\right) \lt a_1,
-          </me>
+          </md>
           so
-          <me>
+          <md>
             \left|\frac{x_{n+1}}{x_n}\right|
             \gt
             1-\frac{a_1}{n+1}
-          </me>
+          </md>
           eventually. Part (2) of
           <xref ref="prop-raabe-test-series"/> implies that <m>\sum x_n</m>
           is not absolutely convergent.
@@ -290,15 +290,15 @@
         <p>
           Raabe's test recovers the <m>p</m>-series criterion for
           <m>p \ne 1</m>. Let <m>x_n=1/n^p</m>. Then
-          <me>
+          <md>
             \left|\frac{x_{n+1}}{x_n}\right|
             =
             \left(\frac{n}{n+1}\right)^p.
-          </me>
+          </md>
           A short computation shows
-          <me>
+          <md>
             \lim (n+1)\left(1-\left(\frac{n}{n+1}\right)^p\right)=p.
-          </me>
+          </md>
           Therefore <xref ref="cor-raabe-limit-form-series"/> gives absolute
           convergence when <m>p&gt;1</m> and failure of absolute convergence
           when <m>p&lt;1</m>. Since the terms are nonnegative, this means the

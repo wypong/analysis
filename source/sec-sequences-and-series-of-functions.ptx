@@ -29,12 +29,12 @@
         Let <m>f_n(x)=x^n</m> on <m>[0,1]</m>. Then <m>f_n(x)\to 0</m> for
         every <m>x \in [0,1)</m>, while <m>f_n(1)=1</m> for every <m>n</m>.
         Thus the pointwise limit is
-        <me>
+        <md>
           f(x)=\begin{cases}
             0 &amp; \text{if } 0 \le x \lt 1,\\
             1 &amp; \text{if } x=1.
           \end{cases}
-        </me>
+        </md>
         Each <m>f_n</m> is a polynomial, but the limit is not continuous at
         <m>1</m>.
       </p>
@@ -52,10 +52,10 @@
     <idx><h>convergence</h><h>uniform</h></idx> on <m>S</m> to <m>f</m> if
     for every <m>\varepsilon \gt 0</m> there
     exists <m>N \in \N</m> such that
-    <me>
+    <md>
       |f_n(x)-f(x)| \lt \varepsilon
       \qquad \text{for all } n \ge N \text{ and all } x \in S.
-    </me>
+    </md>
   </p>
 
   <proposition xml:id="prop-uniform-implies-pointwise-functions">
@@ -83,9 +83,9 @@
         on <m>[0,1]</m>. Let <m>f</m> be the pointwise limit. For
         <m>x_n=n/(n+1)</m> we have <m>x_n \in [0,1)</m>, so <m>f(x_n)=0</m>,
         while
-        <me>
+        <md>
           f_n(x_n)=\left(\frac{n}{n+1}\right)^n \to e^{-1}.
-        </me>
+        </md>
         Hence <m>|f_n(x_n)-f(x_n)|</m> does not tend to <m>0</m>. Therefore
         <m>f_n</m> cannot converge uniformly to <m>f</m> on <m>[0,1]</m>.
       </p>
@@ -96,9 +96,9 @@
     If <m>f \colon S \to \R</m> is bounded, its
     <term>supremum norm</term><idx><h>norm</h><h>supremum</h></idx> on
     <m>S</m> is
-    <me>
+    <md>
       \|f\|_S := \sup\{|f(x)| : x \in S\}.
-    </me>
+    </md>
     When the set <m>S</m> is understood, we simply write <m>\|f\|</m>.
   </p>
 
@@ -107,9 +107,9 @@
       <p>
         Suppose <m>f_n</m> and <m>f</m> are bounded on <m>S</m> for every
         <m>n</m>. Then <m>f_n \to f</m> uniformly on <m>S</m> if and only if
-        <me>
+        <md>
           \|f_n-f\|_S \to 0.
-        </me>
+        </md>
       </p>
     </statement>
 
@@ -138,10 +138,10 @@
         Let <m>(f_n)</m> be a sequence of functions on <m>S</m>. Then
         <m>(f_n)</m> converges uniformly on <m>S</m> if and only if for every
         <m>\varepsilon \gt 0</m> there exists <m>N</m> such that
-        <me>
+        <md>
           |f_m(x)-f_n(x)| \lt \varepsilon
           \qquad \text{for all } m,n \ge N \text{ and all } x \in S.
-        </me>
+        </md>
       </p>
     </statement>
 
@@ -151,13 +151,13 @@
         <m>\varepsilon \gt 0</m> we may choose <m>N</m> so that
         <m>|f_n(x)-f(x)| \lt \varepsilon/2</m> for all <m>x \in S</m> and all
         <m>n \ge N</m>. Therefore, whenever <m>m,n \ge N</m>,
-        <me>
+        <md>
           |f_m(x)-f_n(x)|
           \le
           |f_m(x)-f(x)|+|f_n(x)-f(x)|
           \lt
           \varepsilon
-        </me>
+        </md>
         for all <m>x \in S</m>.
       </p>
 
@@ -180,9 +180,9 @@
     A <term>series of functions</term><idx><h>series</h><h>of functions</h></idx>
     <m>\sum_{n=0}^\infty f_n</m> on <m>S</m> is studied through its partial
     sums
-    <me>
+    <md>
       s_N(x)=\sum_{n=0}^N f_n(x).
-    </me>
+    </md>
     We say that the series converges pointwise or uniformly according as the
     sequence <m>(s_N)</m> does.
   </p>
@@ -193,10 +193,10 @@
       <p>
         Let <m>(f_n)</m> be a sequence of functions on <m>S</m>. Suppose
         there are numbers <m>M_n \ge 0</m> such that
-        <me>
+        <md>
           |f_n(x)| \le M_n
           \qquad \text{for all } x \in S \text{ and all } n,
-        </me>
+        </md>
         and suppose that the numerical series <m>\sum_{n=0}^\infty M_n</m>
         converges. Then the series <m>\sum_{n=0}^\infty f_n</m> converges
         absolutely and uniformly on <m>S</m>.
@@ -209,11 +209,11 @@
         <m>\sum_{n=0}^\infty M_n</m> converges, its tails tend to <m>0</m>.
         Thus, given <m>\varepsilon \gt 0</m>, there exists <m>N</m> such that
         for all <m>m \gt n \ge N</m>,
-        <me>
+        <md>
           \sum_{k=n+1}^m M_k \lt \varepsilon.
-        </me>
+        </md>
         Hence for every <m>x \in S</m>,
-        <me>
+        <md>
           |s_m(x)-s_n(x)|
           \le
           \sum_{k=n+1}^m |f_k(x)|
@@ -221,7 +221,7 @@
           \sum_{k=n+1}^m M_k
           \lt
           \varepsilon.
-        </me>
+        </md>
         By <xref ref="prop-uniform-cauchy-criterion-functions"/>, the partial
         sums converge uniformly on <m>S</m>.
       </p>
@@ -252,9 +252,9 @@
     <statement>
       <p>
         Suppose the power series
-        <me>
+        <md>
           \sum_{n=0}^\infty a_n(x-x_0)^n
-        </me>
+        </md>
         has radius of convergence <m>R \gt 0</m>. Then for every
         <m>r</m> with <m>0 \lt r \lt R</m>, the series converges absolutely
         and uniformly on the closed interval <m>[x_0-r,x_0+r]</m>.
@@ -265,9 +265,9 @@
       <p>
         Let <m>L=\limsup |a_n|^{1/n}=1/R</m>. Choose a number <m>\rho</m>
         such that
-        <me>
+        <md>
           L \lt \rho \lt \frac{1}{r}.
-        </me>
+        </md>
         By the definition of <m>\limsup</m>, there exists <m>N</m> such that
         <m>|a_n|^{1/n} \le \rho</m> for every <m>n \ge N</m>, and hence
         <m>|a_n| \le \rho^n</m> for all such <m>n</m>.
@@ -275,13 +275,13 @@
 
       <p>
         If <m>|x-x_0| \le r</m> and <m>n \ge N</m>, then
-        <me>
+        <md>
           |a_n(x-x_0)^n|
           \le
           \rho^n r^n
           =
           (\rho r)^n.
-        </me>
+        </md>
         Since <m>\rho r \lt 1</m>, the geometric series
         <m>\sum_{n=N}^\infty (\rho r)^n</m> converges. For the finitely many
         indices <m>n \lt N</m>, set <m>M_n=|a_n|r^n</m>. Then
@@ -297,15 +297,15 @@
     <statement>
       <p>
         The geometric series
-        <me>
+        <md>
           \sum_{n=0}^\infty x^n
-        </me>
+        </md>
         converges to <m>1/(1-x)</m> on <m>(-1,1)</m>, but the convergence is
         not uniform on that open interval. Indeed, if
         <m>s_N(x)=1+x+\dots+x^N</m>, then
-        <me>
+        <md>
           \frac{1}{1-x}-s_N(x)=\frac{x^{N+1}}{1-x}.
-        </me>
+        </md>
         For each fixed <m>N</m>, the right-hand side becomes arbitrarily large
         as <m>x \to 1^-</m>. Hence <m>s_N</m> cannot converge uniformly to
         <m>1/(1-x)</m> on <m>(-1,1)</m>.

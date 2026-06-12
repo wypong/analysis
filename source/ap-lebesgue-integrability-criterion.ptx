@@ -19,11 +19,11 @@
           A set <m>A \subseteq \R</m> has <term>measure zero</term><idx>measure zero</idx>
           if for every <m>\varepsilon \gt 0</m> there exists a sequence of open
           intervals <m>(I_k)_{k=1}^{\infty}</m> such that
-          <me>
+          <md>
             A \subseteq \bigcup_{k=1}^{\infty} I_k
             \qquad\text{and}\qquad
             \sum_{k=1}^{\infty} |I_k| \le \varepsilon,
-          </me>
+          </md>
           where <m>|I_k|</m> denotes the length of <m>I_k</m>. A set of
           measure zero is also called a <term>null set</term><idx>null set</idx>.
         </p>
@@ -40,23 +40,23 @@
         <p>
           The set <m>\N</m> is a null set. Indeed, let
           <m>\varepsilon \gt 0</m>. For each <m>k \in \N</m>, define
-          <me>
+          <md>
             I_k=\left(k-\frac{\varepsilon}{2^{k+1}},
             k+\frac{\varepsilon}{2^{k+1}}\right).
-          </me>
+          </md>
           Then <m>k \in I_k</m> for every <m>k</m>, so
           <m>\N \subseteq \bigcup_{k=1}^{\infty} I_k</m>. Also,
-          <me>
+          <md>
             |I_k|=\frac{\varepsilon}{2^k},
-          </me>
+          </md>
           and therefore
-          <me>
+          <md>
             \sum_{k=1}^{\infty} |I_k|
             =
             \sum_{k=1}^{\infty} \frac{\varepsilon}{2^k}
             =
             \varepsilon.
-          </me>
+          </md>
         </p>
       </statement>
     </example>
@@ -72,18 +72,18 @@
         <p>
           Let <m>A=\{a_1,a_2,\dots\}</m> be countably infinite. Given
           <m>\varepsilon \gt 0</m>, put
-          <me>
+          <md>
             I_k=\left(a_k-\frac{\varepsilon}{2^{k+1}},
             a_k+\frac{\varepsilon}{2^{k+1}}\right).
-          </me>
+          </md>
           Then <m>A \subseteq \bigcup_{k=1}^{\infty} I_k</m> and
-          <me>
+          <md>
             \sum_{k=1}^{\infty} |I_k|
             =
             \sum_{k=1}^{\infty}\frac{\varepsilon}{2^k}
             =
             \varepsilon.
-          </me>
+          </md>
           Finite sets are treated in the same way, by allowing all but
           finitely many intervals to be empty.
         </p>
@@ -102,13 +102,13 @@
           Let <m>A</m> and <m>B</m> be null sets, and let
           <m>\varepsilon \gt 0</m>. Choose open intervals <m>(I_k)</m>
           covering <m>A</m> with
-          <me>
+          <md>
             \sum_{k=1}^{\infty}|I_k| \le \frac{\varepsilon}{2},
-          </me>
+          </md>
           and open intervals <m>(J_k)</m> covering <m>B</m> with
-          <me>
+          <md>
             \sum_{k=1}^{\infty}|J_k| \le \frac{\varepsilon}{2}.
-          </me>
+          </md>
           Then the countable family consisting of all the intervals
           <m>I_k</m> and <m>J_k</m> covers <m>A \cup B</m>, and the total sum
           of their lengths is at most <m>\varepsilon</m>. Hence

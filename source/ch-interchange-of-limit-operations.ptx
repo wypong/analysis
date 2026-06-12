@@ -54,9 +54,9 @@
       <statement>
         <p>
           Use the Weierstrass M-test to prove that the exponential series
-          <me>
+          <md>
             \sum_{n=0}^\infty \frac{x^n}{n!}
-          </me>
+          </md>
           converges uniformly on every interval <m>[-R,R]</m>.
         </p>
       </statement>
@@ -75,14 +75,14 @@
       <statement>
         <p>
           For each <m>n \in \N</m>, define
-          <me>
+          <md>
             f_n(x)=
             \begin{cases}
               4n^2x &amp; \text{if } 0 \le x \le \frac{1}{2n},\\
               4n-4n^2x &amp; \text{if } \frac{1}{2n} \lt x \le \frac{1}{n},\\
               0 &amp; \text{if } \frac{1}{n} \lt x \le 1.
             \end{cases}
-          </me>
+          </md>
           Show that <m>f_n \to 0</m> pointwise on <m>[0,1]</m>, but
           <m>\int_0^1 f_n = 1</m> for every <m>n</m>.
         </p>
@@ -93,10 +93,10 @@
       <statement>
         <p>
           Define
-          <me>
+          <md>
             F(x)=\int_1^x \frac{dt}{t}
             \qquad (x \gt 0).
-          </me>
+          </md>
           Use the derivative formula for <m>\ln x</m> to prove that
           <m>F(x)=\ln x</m> for all <m>x \gt 0</m>.
         </p>
@@ -107,17 +107,17 @@
       <statement>
         <p>
           Use the addition formulas for sine and cosine to prove that
-          <me>
+          <md>
             \sin(2x)=2\sin x \cos x
             \qquad\text{and}\qquad
             \cos(2x)=\cos^2 x-\sin^2 x.
-          </me>
+          </md>
           Deduce the identities
-          <me>
+          <md>
             \cos^2 x=\frac{1+\cos(2x)}{2}
             \qquad\text{and}\qquad
             \sin^2 x=\frac{1-\cos(2x)}{2}.
-          </me>
+          </md>
         </p>
       </statement>
     </exercise>

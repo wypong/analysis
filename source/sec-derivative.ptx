@@ -23,11 +23,11 @@
       <m>c \in S</m> be a cluster point of <m>S</m>. We say that <m>f</m> is
       <term>differentiable at</term><idx>differentiable at a point</idx>
       <m>c</m> if the limit
-      <me>\lim_{x\to c}\frac{f(x)-f(c)}{x-c}</me>
+      <md>\lim_{x\to c}\frac{f(x)-f(c)}{x-c}</md>
       exists. In that case, this limit is called the
       <term>derivative</term><idx>derivative</idx> of <m>f</m> at <m>c</m>
       and is denoted by
-      <me>f'(c)=\lim_{x\to c}\frac{f(x)-f(c)}{x-c}.</me>
+      <md>f'(c)=\lim_{x\to c}\frac{f(x)-f(c)}{x-c}.</md>
     </p>
 
     <p>
@@ -35,10 +35,10 @@
       then the same definition is understood one-sidedly, using only points of
       <m>S</m> near <m>c</m>. Thus, on <m>[a,b]</m>, differentiability at
       <m>a</m> means the existence of the right-hand limit
-      <me>\lim_{x\to a^+}\frac{f(x)-f(a)}{x-a},</me>
+      <md>\lim_{x\to a^+}\frac{f(x)-f(a)}{x-a},</md>
       and differentiability at <m>b</m> means the existence of the left-hand
       limit
-      <me>\lim_{x\to b^-}\frac{f(x)-f(b)}{x-b}.</me>
+      <md>\lim_{x\to b^-}\frac{f(x)-f(b)}{x-b}.</md>
       We say that <m>f</m> is <term>differentiable on</term><idx>differentiable on an interval</idx>
       an interval if it is differentiable at each point of the interval, with
       this endpoint convention when needed.
@@ -49,8 +49,8 @@
         <p>
           The function <m>f(x)=x^2</m> is differentiable on <m>\R</m>, and
           <m>f'(c)=2c</m> for every <m>c \in \R</m>. Indeed,
-          <me>\frac{x^2-c^2}{x-c}=x+c \to 2c
-            \quad\text{as } x\to c.</me>
+          <md>\frac{x^2-c^2}{x-c}=x+c \to 2c
+            \quad\text{as } x\to c.</md>
         </p>
       </statement>
     </example>
@@ -110,24 +110,24 @@
           <m>c \in S</m> be a cluster point of <m>S</m>. Then <m>f</m> is
           differentiable at <m>c</m> if and only if there exists a function
           <m>\varphi \colon S \to \R</m>, continuous at <m>c</m>, such that
-          <me>f(x)-f(c)=\varphi(x)(x-c)</me>
+          <md>f(x)-f(c)=\varphi(x)(x-c)</md>
           for every <m>x \in S</m>. In that case,
-          <me>\varphi(c)=f'(c).</me>
+          <md>\varphi(c)=f'(c).</md>
         </p>
       </statement>
 
       <proof>
         <p>
           First suppose that <m>f</m> is differentiable at <m>c</m>. Define
-          <me>\varphi(x)=\begin{cases}
+          <md>\varphi(x)=\begin{cases}
           \dfrac{f(x)-f(c)}{x-c} &amp; \text{if } x \neq c,\\
           f'(c) &amp; \text{if } x=c.
-          \end{cases}</me>
+          \end{cases}</md>
           Then
           <m>f(x)-f(c)=\varphi(x)(x-c)</m> for every <m>x \in S</m>. Also,
           for <m>x \neq c</m> the definition of derivative gives
-          <me>\varphi(x)=\frac{f(x)-f(c)}{x-c} \to f'(c)=\varphi(c)
-            \quad\text{as } x\to c,</me>
+          <md>\varphi(x)=\frac{f(x)-f(c)}{x-c} \to f'(c)=\varphi(c)
+            \quad\text{as } x\to c,</md>
           so <m>\varphi</m> is continuous at <m>c</m>.
         </p>
 
@@ -136,10 +136,10 @@
           continuous at <m>c</m>, such that
           <m>f(x)-f(c)=\varphi(x)(x-c)</m> for every <m>x \in S</m>. Then for
           <m>x \neq c</m> we have
-          <me>\frac{f(x)-f(c)}{x-c}=\varphi(x).</me>
+          <md>\frac{f(x)-f(c)}{x-c}=\varphi(x).</md>
           Since <m>\varphi</m> is continuous at <m>c</m>, it follows that
-          <me>\lim_{x\to c}\frac{f(x)-f(c)}{x-c}
-            = \lim_{x\to c}\varphi(x)=\varphi(c).</me>
+          <md>\lim_{x\to c}\frac{f(x)-f(c)}{x-c}
+            = \lim_{x\to c}\varphi(x)=\varphi(c).</md>
           Hence <m>f</m> is differentiable at <m>c</m> and
           <m>f'(c)=\varphi(c)</m>.
         </p>
@@ -164,7 +164,7 @@
         <p>
           By <xref ref="prop-caratheodory-criterion"/>, there exists
           <m>\varphi \colon S \to \R</m>, continuous at <m>c</m>, such that
-          <me>f(x)=f(c)+\varphi(x)(x-c).</me>
+          <md>f(x)=f(c)+\varphi(x)(x-c).</md>
           The function <m>x \mapsto x-c</m> is continuous, so
           <m>x \mapsto \varphi(x)(x-c)</m> is continuous at <m>c</m> by
           <xref ref="prop-algebra-of-continuous-functions"/>. Therefore
@@ -192,10 +192,10 @@
           <m>c \in S</m>, and let <m>\alpha \in \R</m>. If <m>f</m> and
           <m>g</m> are differentiable at <m>c</m>, then so are
           <m>\alpha f</m>, <m>f+g</m>, and <m>fg</m>. Moreover,
-          <me>(\alpha f)'(c)=\alpha f'(c),</me>
-          <me>(f+g)'(c)=f'(c)+g'(c),</me>
+          <md>(\alpha f)'(c)=\alpha f'(c),</md>
+          <md>(f+g)'(c)=f'(c)+g'(c),</md>
           and
-          <me>(fg)'(c)=f'(c)g(c)+f(c)g'(c).</me>
+          <md>(fg)'(c)=f'(c)g(c)+f(c)g'(c).</md>
         </p>
       </statement>
 
@@ -204,15 +204,15 @@
           By <xref ref="prop-caratheodory-criterion"/>, there exist functions
           <m>\varphi_f,\varphi_g \colon S \to \R</m>, both continuous at
           <m>c</m>, such that
-          <me>f(x)-f(c)=\varphi_f(x)(x-c)
+          <md>f(x)-f(c)=\varphi_f(x)(x-c)
             \quad\text{and}\quad
-            g(x)-g(c)=\varphi_g(x)(x-c).</me>
+            g(x)-g(c)=\varphi_g(x)(x-c).</md>
           Also <m>\varphi_f(c)=f'(c)</m> and <m>\varphi_g(c)=g'(c)</m>.
         </p>
 
         <p>
           Multiplying the first identity by <m>\alpha</m>, we get
-          <me>(\alpha f)(x)-(\alpha f)(c)=\alpha\varphi_f(x)(x-c).</me>
+          <md>(\alpha f)(x)-(\alpha f)(c)=\alpha\varphi_f(x)(x-c).</md>
           Since <m>\alpha\varphi_f</m> is continuous at <m>c</m>,
           <xref ref="prop-caratheodory-criterion"/> shows that <m>\alpha f</m>
           is differentiable at <m>c</m> and
@@ -221,28 +221,28 @@
 
         <p>
           Adding the two identities gives
-          <me>(f+g)(x)-(f+g)(c)
-            =(\varphi_f(x)+\varphi_g(x))(x-c).</me>
+          <md>(f+g)(x)-(f+g)(c)
+            =(\varphi_f(x)+\varphi_g(x))(x-c).</md>
           Since <m>\varphi_f+\varphi_g</m> is continuous at <m>c</m>,
           <m>f+g</m> is differentiable at <m>c</m>, and
-          <me>(f+g)'(c)=\varphi_f(c)+\varphi_g(c)=f'(c)+g'(c).</me>
+          <md>(f+g)'(c)=\varphi_f(c)+\varphi_g(c)=f'(c)+g'(c).</md>
         </p>
 
         <p>
           For the product,
-          <me>\begin{aligned}
+          <md>\begin{aligned}
           (fg)(x)-(fg)(c)
             &amp;= g(x)(f(x)-f(c)) + f(c)(g(x)-g(c)) \\
             &amp;= \bigl(g(x)\varphi_f(x)+f(c)\varphi_g(x)\bigr)(x-c).
-          \end{aligned}</me>
+          \end{aligned}</md>
           By <xref ref="prop-differentiable-implies-continuous"/>, <m>g</m>
           is continuous at <m>c</m>. Therefore
           <m>x \mapsto g(x)\varphi_f(x)+f(c)\varphi_g(x)</m> is continuous at
           <m>c</m>. Another application of
           <xref ref="prop-caratheodory-criterion"/> yields the product rule:
-          <me>(fg)'(c)
+          <md>(fg)'(c)
             = g(c)\varphi_f(c)+f(c)\varphi_g(c)
-            = f'(c)g(c)+f(c)g'(c).</me>
+            = f'(c)g(c)+f(c)g'(c).</md>
         </p>
       </proof>
     </proposition>
@@ -255,7 +255,7 @@
           <m>g \colon T \to \R</m>. If <m>f</m> is differentiable at
           <m>c \in S</m> and <m>g</m> is differentiable at <m>f(c)</m>, then
           <m>g \circ f</m> is differentiable at <m>c</m>, and
-          <me>(g \circ f)'(c)=g'(f(c))f'(c).</me>
+          <md>(g \circ f)'(c)=g'(f(c))f'(c).</md>
         </p>
       </statement>
 
@@ -265,27 +265,27 @@
           <m>\varphi \colon S \to \R</m> and <m>\psi \colon T \to \R</m> such
           that <m>\varphi</m> is continuous at <m>c</m>,
           <m>\psi</m> is continuous at <m>f(c)</m>, and
-          <me>f(x)-f(c)=\varphi(x)(x-c)</me>
+          <md>f(x)-f(c)=\varphi(x)(x-c)</md>
           for <m>x \in S</m>, while
-          <me>g(u)-g(f(c))=\psi(u)(u-f(c))</me>
+          <md>g(u)-g(f(c))=\psi(u)(u-f(c))</md>
           for <m>u \in T</m>. Also
           <m>\varphi(c)=f'(c)</m> and <m>\psi(f(c))=g'(f(c))</m>.
         </p>
 
         <p>
           Substituting <m>u=f(x)</m> into the second identity gives
-          <me>\begin{aligned}
+          <md>\begin{aligned}
           (g \circ f)(x)-(g \circ f)(c)
             &amp;= \psi(f(x))(f(x)-f(c)) \\
             &amp;= \psi(f(x))\varphi(x)(x-c).
-          \end{aligned}</me>
+          \end{aligned}</md>
           By <xref ref="prop-composition-preserves-continuity"/>,
           <m>\psi \circ f</m> is continuous at <m>c</m>, and hence so is
           <m>(\psi \circ f)\varphi</m>. Therefore
           <xref ref="prop-caratheodory-criterion"/> shows that
           <m>g \circ f</m> is differentiable at <m>c</m>, with
-          <me>(g \circ f)'(c)
-            = \psi(f(c))\varphi(c)=g'(f(c))f'(c).</me>
+          <md>(g \circ f)'(c)
+            = \psi(f(c))\varphi(c)=g'(f(c))f'(c).</md>
         </p>
       </proof>
     </theorem>
@@ -335,16 +335,16 @@
           <m>x_0</m> and that <m>f'(x_0)\neq 0</m>. If
           <m>g=f^{-1}\colon J \to I</m> and <m>y_0=f(x_0)</m>, then
           <m>g</m> is differentiable at <m>y_0</m>, and
-          <me>g'(y_0)=\frac{1}{f'(x_0)}
-            =\frac{1}{f'(g(y_0))}.</me>
+          <md>g'(y_0)=\frac{1}{f'(x_0)}
+            =\frac{1}{f'(g(y_0))}.</md>
         </p>
 
         <p>
           If, in addition, <m>f</m> is differentiable on <m>I</m> and
           <m>f'(x)\neq 0</m> for every <m>x \in I</m>, then <m>g</m> is
           differentiable on <m>J</m>, and
-          <me>g'(y)=\frac{1}{f'(g(y))}
-            \qquad \text{for every } y \in J.</me>
+          <md>g'(y)=\frac{1}{f'(g(y))}
+            \qquad \text{for every } y \in J.</md>
           If <m>f'</m> is also continuous on <m>I</m>, then <m>g'</m> is
           continuous on <m>J</m>.
         </p>
@@ -358,27 +358,27 @@
           <xref ref="prop-caratheodory-criterion"/>, there exists a
           function <m>\varphi \colon I \to \R</m>, continuous at <m>x_0</m>,
           such that
-          <me>f(x)-f(x_0)=\varphi(x)(x-x_0)
-            \qquad \text{for every } x \in I,</me>
+          <md>f(x)-f(x_0)=\varphi(x)(x-x_0)
+            \qquad \text{for every } x \in I,</md>
           and <m>\varphi(x_0)=f'(x_0)</m>.
         </p>
 
         <p>
           Now let <m>y \in J</m>. Since <m>y=f(g(y))</m> and
           <m>y_0=f(x_0)=f(g(y_0))</m>, substituting <m>x=g(y)</m> gives
-          <me>y-y_0=\varphi(g(y))(g(y)-g(y_0)).</me>
+          <md>y-y_0=\varphi(g(y))(g(y)-g(y_0)).</md>
           Because <m>g</m> is continuous at <m>y_0</m> and
           <m>\varphi</m> is continuous at <m>x_0=g(y_0)</m>, the function
           <m>y \mapsto \varphi(g(y))</m> is continuous at <m>y_0</m>. Also,
           <m>\varphi(g(y_0))=\varphi(x_0)=f'(x_0)\neq 0</m>, so
           <m>\psi(y)=1/\varphi(g(y))</m> is defined and continuous at
           <m>y_0</m>. Therefore
-          <me>g(y)-g(y_0)=\psi(y)(y-y_0).</me>
+          <md>g(y)-g(y_0)=\psi(y)(y-y_0).</md>
           Another application of
           <xref ref="prop-caratheodory-criterion"/> shows that <m>g</m> is
           differentiable at <m>y_0</m> and that
-          <me>g'(y_0)=\psi(y_0)=\frac{1}{\varphi(g(y_0))}
-            =\frac{1}{\varphi(x_0)}=\frac{1}{f'(x_0)}.</me>
+          <md>g'(y_0)=\psi(y_0)=\frac{1}{\varphi(g(y_0))}
+            =\frac{1}{\varphi(x_0)}=\frac{1}{f'(x_0)}.</md>
         </p>
 
         <p>
@@ -412,8 +412,8 @@
           <m>x_0</m> such that the restriction <m>f|_I</m> is injective. If
           <m>J=f(I)</m> and <m>g=(f|_I)^{-1}\colon J \to I</m>, then
           <m>g</m> is continuously differentiable on <m>J</m> and
-          <me>g'(y)=\frac{1}{f'(g(y))}
-            \qquad \text{for every } y \in J.</me>
+          <md>g'(y)=\frac{1}{f'(g(y))}
+            \qquad \text{for every } y \in J.</md>
         </p>
       </statement>
 
@@ -463,8 +463,8 @@
           <m>\R</m>, and it is differentiable everywhere. Its inverse is
           <m>g(y)=\sqrt[3]{y}</m>. However, <m>f'(0)=0</m>, and
           <m>g</m> is not differentiable at <m>0</m>, because
-          <me>\frac{g(y)-g(0)}{y-0}=\frac{\sqrt[3]{y}}{y}
-            =\frac{1}{y^{2/3}}</me>
+          <md>\frac{g(y)-g(0)}{y-0}=\frac{\sqrt[3]{y}}{y}
+            =\frac{1}{y^{2/3}}</md>
           for <m>y\neq 0</m>, and this does not approach a finite limit as
           <m>y \to 0</m>.
         </p>
@@ -476,28 +476,28 @@
         <p>
           The continuity of <m>f'</m> near <m>x_0</m> is also important for
           the local existence of an inverse. Define
-          <me>f(x)=\begin{cases}
+          <md>f(x)=\begin{cases}
             x+x^2\sin(1/x) &amp; \text{if } x\neq 0,\\
             0 &amp; \text{if } x=0.
-          \end{cases}</me>
+          \end{cases}</md>
           Then <m>f</m> is differentiable at <m>0</m> and
           <m>f'(0)=1</m>. For <m>x\neq 0</m>,
-          <me>f'(x)=1+2x\sin(1/x)-\cos(1/x).</me>
+          <md>f'(x)=1+2x\sin(1/x)-\cos(1/x).</md>
           This derivative is not continuous at <m>0</m>.
         </p>
 
         <p>
           In fact, <m>f</m> is not injective on any neighborhood of
           <m>0</m>. For <m>n \in \N</m>, let
-          <me>a_n=\frac{1}{2\pi n+\frac{1}{2n}}
+          <md>a_n=\frac{1}{2\pi n+\frac{1}{2n}}
             \qquad \text{and} \qquad
-            b_n=\frac{1}{2\pi n-\frac{1}{2n}}.</me>
+            b_n=\frac{1}{2\pi n-\frac{1}{2n}}.</md>
           Then <m>0 \lt a_n \lt b_n</m> and <m>a_n,b_n \to 0</m>. A Taylor
           expansion of <m>\sin t</m> and <m>\cos t</m> at <m>t=0</m> shows
           that, for all sufficiently large <m>n</m>,
-          <me>f'(a_n) \gt 0
+          <md>f'(a_n) \gt 0
             \qquad \text{and} \qquad
-            f'(b_n) \lt 0.</me>
+            f'(b_n) \lt 0.</md>
           Since <m>f'</m> is continuous on the closed interval
           <m>[a_n,b_n]</m>, the function <m>f</m> attains its maximum on that
           interval at some interior point. Therefore <m>f</m> takes some value

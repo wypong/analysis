@@ -15,9 +15,9 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
   <p>
     A sequence <m>(x_n)</m> is <term>Cauchy sequence</term><idx>Cauchy
     sequence</idx> if for every <m>\varepsilon&gt;0</m> there exists
-    <m>N\in\N</m> such that <me>
+    <m>N\in\N</m> such that <md>
       |x_n-x_m|&lt;\varepsilon \quad\text{whenever } n,m\ge N.
-    </me>
+    </md>
   </p>
 
   <p>
@@ -29,11 +29,11 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
     <statement>
       <p>
         The sequence <m>(1/n)</m> is Cauchy. Indeed, if <m>m,n\ge N</m>, then
-        <me>
+        <md>
           \left|\frac{1}{n}-\frac{1}{m}\right|
           \le \frac{1}{n}+\frac{1}{m}
           \le \frac{2}{N}.
-        </me>
+        </md>
         Therefore, once <m>N</m> is large enough that
         <m>2/N&lt;\varepsilon</m>, we have
         <m>|1/n-1/m|&lt;\varepsilon</m> for all <m>m,n\ge N</m>.
@@ -64,9 +64,9 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         <m>N\in\N</m> such that <m>|x_n-L|&lt;\varepsilon/2</m> for all
         <m>n\ge N</m>. Then whenever <m>m,n\ge N</m>, the triangle inequality
         gives
-        <me>
+        <md>
           |x_n-x_m|\le |x_n-L|+|x_m-L|&lt; \varepsilon.
-        </me>
+        </md>
         Hence <m>(x_n)</m> is Cauchy.
       </p>
     </proof>
@@ -83,9 +83,9 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       <p>
         Let <m>(x_n)</m> be Cauchy. Then for some <m>N\in\N</m>,
         <m>|x_n-x_m|&lt;1</m> whenever <m>m,n\ge N</m>. In particular,
-        for every <m>n\ge N</m>, <me>
+        for every <m>n\ge N</m>, <md>
           |x_n|\le |x_n-x_N|+|x_N|&lt;1+|x_N|.
-	</me> 
+	</md> 
 
 	Thus, <m>(x_n)</m> is bounded by
 	<m>B:=\max\{|x_1|,\dots,|x_{N-1}|,|x_N|+1\}</m>
@@ -126,10 +126,10 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       <p>
 	For <m>n,k \ge M:=\max\{N,K\}</m>, because <m>(n_k)</m> is strictly
 	increasing, <m>n_k \ge k \ge M \ge N</m>. Thus,
-	<me>
+	<md>
 	  |x_n-L| \le |x_n-x_{n_k}| + |x_{n_k}-L| &lt;
 	  \frac{\varepsilon}{2}+\frac{\varepsilon}{2} = \varepsilon.
-	</me>
+	</md>
 	This shows that <m>x_n\to L</m>.
       </p>
     </proof>
@@ -141,17 +141,17 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         The ordered field <m>\Q</m> is not sequentially complete. Let
         <m>x_n</m> be the decimal truncation of <m>\sqrt{2}</m> to
         <m>n</m> decimal places. Thus
-        <me>
+        <md>
           x_1=1, \qquad x_2=1.4, \qquad x_3=1.41, \qquad x_4=1.414, \dots
-        </me>
+        </md>
         Then
         <m>0\le \sqrt{2}-x_n &lt; 10^{-n}</m> for every <m>n</m>. Hence,
         for <m>m,n\ge N</m>,
-        <me>
+        <md>
           |x_n-x_m|
           \le |\sqrt{2}-x_n| + |\sqrt{2}-x_m|
           &lt; 2\cdot 10^{-N}.
-        </me>
+        </md>
         So <m>(x_n)</m> is Cauchy. But it cannot converge in <m>\Q</m>,
         because as a real sequence it converges to <m>\sqrt{2}</m>, and
         <m>\sqrt{2}\notin\Q</m>. Thus <m>\Q</m> is not sequentially complete.
@@ -204,9 +204,9 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       Suppose for some <m>k \ge 1</m>, <m>a_i \in A</m> and <m>b_i \in B</m>
       (<m>1 \le i \le k</m>) have been chosen such that
       
-      <men xml:id='anbn-ind-hyp'>
+      <md number="yes" xml:id='anbn-ind-hyp'>
       a_1 \le a_2 \le \ldots \le a_k \le b_k \le \ldots \le b_2 \le b_1
-      </men>
+      </md>
       and <m>b_i - a_i \le (b_1-a_1)/2^{i-1}</m>.
 
       We choose <m>a_{k+1} \in A</m> and <m>b_{k+1} \in B</m> as follows.
@@ -225,9 +225,9 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       In either case, <m>a_k \le a_{k+1} \le b_{k+1} \le b_k</m> and by
       <xref ref='anbn-ind-hyp'/>
       
-      <me> b_{k+1} - a_{k+1} \le \frac{1}{2}(b_k - a_k) \le \frac{1}{2^{k}}(b_1
+      <md> b_{k+1} - a_{k+1} \le \frac{1}{2}(b_k - a_k) \le \frac{1}{2^{k}}(b_1
       - a_1).  
-      </me>
+      </md>
 	So by induction, we have constructed sequences <m>(a_n)</m> in <m>A</m>
 	and <m>(b_n)</m> in <m>B</m> with the required properties. 
      </p>
@@ -238,10 +238,10 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
 	   a_m \le a_n \le b_n \le b_m
 	</m>.  Hence,
 	
-	<me>
+	<md>
 	 0 \le |a_n - a_m|, |b_n-b_m| \le b_m - a_m \le \frac{1}{2^{m-1}}(b_1
 	 - a_1).
-	</me>
+	</md>
 
 	Since <m>(b_1-a_1)/2^{m-1} \to 0</m> as <m>m \to \infty</m>,
 	both <m>(a_n)</m> and <m>(b_n)</m> are Cauchy and hence convergent by
@@ -254,7 +254,7 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
      b_m</m> for any <m>n</m>, so <m>a \le b_m</m>. Since <m>m</m> is
      arbitrary, we have <m>a \le b</m> and
      
-     <me> b-a \le b_n -a_n \le (b_1-a_1)/2^{n-1} </me> for any
+     <md> b-a \le b_n -a_n \le (b_1-a_1)/2^{n-1} </md> for any
      <m>n</m>. Letting <m>n \to \infty</m>, we conclude that <m>a = b</m>. 
     </p>
 

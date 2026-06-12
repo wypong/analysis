@@ -17,19 +17,19 @@
     <statement>
       <p>
         Define
-        <me>
+        <md>
           a_{n,k}=\frac{n}{n+k}.
-        </me>
+        </md>
         Then for each fixed <m>n</m>,
         <m>\lim_{k\to\infty} a_{n,k}=0</m>, so
-        <me>
+        <md>
           \lim_{n\to\infty}\left(\lim_{k\to\infty} a_{n,k}\right)=0.
-        </me>
+        </md>
         But for each fixed <m>k</m>,
         <m>\lim_{n\to\infty} a_{n,k}=1</m>, and therefore
-        <me>
+        <md>
           \lim_{k\to\infty}\left(\lim_{n\to\infty} a_{n,k}\right)=1.
-        </me>
+        </md>
         So the two iterated limits are different.
       </p>
     </statement>
@@ -50,18 +50,18 @@
       <p>
         Let <m>\varepsilon \gt 0</m>. By uniform convergence, there exists
         <m>N</m> such that
-        <me>
+        <md>
           |f_N(x)-f(x)| \lt \frac{\varepsilon}{3}
           \qquad \text{for all } x \in S.
-        </me>
+        </md>
         Since <m>f_N</m> is continuous at <m>x_0</m>, there exists
         <m>\delta \gt 0</m> such that
-        <me>
+        <md>
           |f_N(x)-f_N(x_0)| \lt \frac{\varepsilon}{3}
           \qquad \text{whenever } x \in S \text{ and } |x-x_0| \lt \delta.
-        </me>
+        </md>
         For such <m>x</m>,
-        <me>
+        <md>
           |f(x)-f(x_0)|
           \le
           |f(x)-f_N(x)|
@@ -71,7 +71,7 @@
           |f_N(x_0)-f(x_0)|
           \lt
           \varepsilon.
-        </me>
+        </md>
         Therefore <m>f</m> is continuous at <m>x_0</m>.
       </p>
     </proof>
@@ -103,13 +103,13 @@
         <m>|f_N(x)-f_N(y)| \lt \varepsilon/3</m> whenever
         <m>x,y \in S</m> and <m>|x-y| \lt \delta</m>. For such
         <m>x,y</m>,
-        <me>
+        <md>
           |f(x)-f(y)|
           \le
           |f(x)-f_N(x)|+|f_N(x)-f_N(y)|+|f_N(y)-f(y)|
           \lt
           \varepsilon.
-        </me>
+        </md>
         Hence <m>f</m> is uniformly continuous on <m>S</m>.
       </p>
     </proof>
@@ -133,28 +133,28 @@
         Let <m>f_n \in R[a,b]</m> for every <m>n</m>, and suppose
         <m>f_n \to f</m> uniformly on <m>[a,b]</m>. Then <m>f \in R[a,b]</m>,
         and
-        <me>
+        <md>
           \int_a^b f
           =
           \lim_{n\to\infty} \int_a^b f_n.
-        </me>
+        </md>
       </p>
     </statement>
 
     <proof>
       <p>
         Let
-        <me>
+        <md>
           c_n=\sup_{x \in [a,b]} |f(x)-f_n(x)|.
-        </me>
+        </md>
         Then <m>c_n \to 0</m>. Fix <m>\varepsilon \gt 0</m>, and choose
         <m>n</m> so that <m>c_n \lt \varepsilon/(3(b-a))</m>. Since
         <m>f_n</m> is integrable, the Darboux criterion
         (<xref ref="prop-integrability-criterion-darboux"/>) gives a partition
         <m>P</m> of <m>[a,b]</m> such that
-        <me>
+        <md>
           U(P,f_n)-L(P,f_n) \lt \frac{\varepsilon}{3}.
-        </me>
+        </md>
       </p>
 
       <p>
@@ -162,32 +162,32 @@
         the supremum and infimum of <m>f_n</m>, and let <m>M_j,m_j</m> be the
         corresponding quantities for <m>f</m>. From
         <m>|f-f_n| \le c_n</m> we obtain
-        <me>
+        <md>
           M_j \le M_j^n+c_n
           \qquad\text{and}\qquad
           m_j \ge m_j^n-c_n.
-        </me>
+        </md>
         Summing over the partition gives
-        <me>
+        <md>
           U(P,f)-L(P,f)
           \le
           U(P,f_n)-L(P,f_n)+2c_n(b-a)
           \lt
           \varepsilon.
-        </me>
+        </md>
         Therefore <m>f</m> is integrable.
       </p>
 
       <p>
         Since <m>f-f_n</m> is now integrable, part (4) of
         <xref ref="thm-basic-properties-riemann-integral"/> yields
-        <me>
+        <md>
           \left|\int_a^b f-\int_a^b f_n\right|
           =
           \left|\int_a^b (f-f_n)\right|
           \le
           c_n(b-a).
-        </me>
+        </md>
         The right-hand side tends to <m>0</m>, so
         <m>\int_a^b f_n \to \int_a^b f</m>.
       </p>
@@ -198,24 +198,24 @@
     <statement>
       <p>
         For each <m>n \in \N</m>, define
-        <me>
+        <md>
           f_n(x)=
           \begin{cases}
             4n^2x &amp; \text{if } 0 \le x \le \frac{1}{2n},\\
             4n-4n^2x &amp; \text{if } \frac{1}{2n} \lt x \le \frac{1}{n},\\
             0 &amp; \text{if } \frac{1}{n} \lt x \le 1.
           \end{cases}
-        </me>
+        </md>
         Each <m>f_n</m> is continuous on <m>[0,1]</m> and therefore
         integrable. Geometrically, the graph is a triangle of base
         <m>1/n</m> and height <m>2n</m>, so
-        <me>
+        <md>
           \int_0^1 f_n = \frac12 \cdot \frac{1}{n} \cdot 2n = 1.
-        </me>
+        </md>
         For every fixed <m>x \gt 0</m>, we have <m>f_n(x)=0</m> for all
         sufficiently large <m>n</m>, and clearly <m>f_n(0)=0</m>. Thus
         <m>f_n \to 0</m> pointwise on <m>[0,1]</m>, but
-        <me>
+        <md>
           \int_0^1 \lim_{n\to\infty} f_n
           =
           0
@@ -223,7 +223,7 @@
           1
           =
           \lim_{n\to\infty} \int_0^1 f_n.
-        </me>
+        </md>
         So pointwise convergence is not enough to interchange limit and
         integral.
       </p>
@@ -242,10 +242,10 @@
         there exists a differentiable function <m>f \colon I \to \R</m> such
         that <m>f_n \to f</m> uniformly on every compact interval of
         <m>I</m>, and
-        <me>
+        <md>
           f'(x)=g(x)
           \qquad \text{for every } x \in I.
-        </me>
+        </md>
       </p>
     </statement>
 
@@ -263,16 +263,16 @@
 
       <p>
         For each <m>x \in K</m>, the Fundamental Theorem of Calculus gives
-        <me>
+        <md>
           f_n(x)=f_n(a)+\int_a^x f_n'(t)\,dt.
-        </me>
+        </md>
         Define
-        <me>
+        <md>
           f(x)=L+\int_a^x g(t)\,dt
           \qquad (x \in I).
-        </me>
+        </md>
         Then for <m>x \in K</m>,
-        <me>
+        <md>
           |f_n(x)-f(x)|
           \le
           |f_n(a)-L|
@@ -280,7 +280,7 @@
           \left|\int_a^x \bigl(f_n'(t)-g(t)\bigr)\,dt\right|
           \le
           |f_n(a)-L| + (\beta-\alpha)\sup_{t \in [\alpha,\beta]} |f_n'(t)-g(t)|.
-        </me>
+        </md>
         The right-hand side tends to <m>0</m>, uniformly in <m>x \in K</m>.
         Hence <m>f_n \to f</m> uniformly on <m>K</m>.
       </p>
@@ -299,15 +299,15 @@
       <p>
         Uniform convergence of <m>f_n</m> alone does not justify
         differentiating term by term. Let
-        <me>
+        <md>
           f_n(x)=\frac{\sin(nx)}{n}
           \qquad (x \in \R).
-        </me>
+        </md>
         Since <m>|f_n(x)| \le 1/n</m>, we have <m>f_n \to 0</m> uniformly on
         <m>\R</m>. But
-        <me>
+        <md>
           f_n'(x)=\cos(nx),
-        </me>
+        </md>
         and the sequence <m>(\cos(nx))</m> does not even converge pointwise
         on <m>\R</m>; for example, <m>\cos(n\pi)=(-1)^n</m> oscillates.
       </p>
