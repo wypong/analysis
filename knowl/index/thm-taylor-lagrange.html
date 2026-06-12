@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Taylor’s Theorem.</span>
+</h2>
+<div class="para logical">
+<div class="para">Suppose <span class="process-math">\(f\)</span> has derivatives up to order <span class="process-math">\(n+1\)</span> on an open interval containing <span class="process-math">\(x_0\)</span> and <span class="process-math">\(x\text{.}\)</span> Then there exists a point <span class="process-math">\(c\)</span> between <span class="process-math">\(x_0\)</span> and <span class="process-math">\(x\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x)=P_n(x;x_0)+\frac{f^{(n+1)}(c)}{(n+1)!}(x-x_0)^{n+1}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-taylor-lagrange-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para">The final term is called the <dfn class="terminology">Lagrange remainder</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#thm-taylor-lagrange-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 6.4.2: Taylor’s Theorem"><a href="#thm-taylor-lagrange" title="Copy heading and permalink for Theorem 6.4.2: Taylor’s Theorem" aria-label="Copy heading and permalink for Theorem 6.4.2: Taylor’s Theorem">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical">
+<div class="para">The case <span class="process-math">\(x=x_0\)</span> is immediate, so assume <span class="process-math">\(x \ne x_0\text{.}\)</span> Choose a constant <span class="process-math">\(K\)</span> so that the function</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(t)=f(t)-P_n(t;x_0)-K(t-x_0)^{n+1}
+\end{equation*}
+</div>
+<div class="para">satisfies <span class="process-math">\(g(x)=0\text{.}\)</span> Since <span class="process-math">\(P_n\)</span> matches the first <span class="process-math">\(n\)</span> derivatives of <span class="process-math">\(f\)</span> at <span class="process-math">\(x_0\text{,}\)</span> the point <span class="process-math">\(x_0\)</span> is a zero of multiplicity at least <span class="process-math">\(n+1\)</span> of <span class="process-math">\(g\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-taylor-lagrange-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">By <a href="sec-taylors-theorem.html#lem-rolle-zero-multiplicity" class="xref" data-knowl="./knowl/xref/lem-rolle-zero-multiplicity.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 6.4.1">Lemma 6.4.1</a>, there exists a point <span class="process-math">\(c\)</span> between <span class="process-math">\(x_0\)</span> and <span class="process-math">\(x\)</span> such that <span class="process-math">\(g^{(n+1)}(c)=0\text{.}\)</span> But the polynomial <span class="process-math">\(P_n\)</span> has zero <span class="process-math">\((n+1)\)</span>-st derivative, so</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-rolle-zero-multiplicity.html">
+\begin{equation*}
+g^{(n+1)}(t)=f^{(n+1)}(t)-K(n+1)!.
+\end{equation*}
+</div>
+<div class="para">Evaluating at <span class="process-math">\(c\)</span> gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-rolle-zero-multiplicity.html">
+\begin{equation*}
+0=f^{(n+1)}(c)-K(n+1)!,
+\end{equation*}
+</div>
+<div class="para">hence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-rolle-zero-multiplicity.html">
+\begin{equation*}
+K=\frac{f^{(n+1)}(c)}{(n+1)!}.
+\end{equation*}
+</div>
+<div class="para">Substituting this value of <span class="process-math">\(K\)</span> into the definition of <span class="process-math">\(g\)</span> and using <span class="process-math">\(g(x)=0\)</span> yields the formula.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-taylor-lagrange-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 6.4.2.1"><a href="#thm-taylor-lagrange-3" title="Copy heading and permalink for Proof 6.4.2.1" aria-label="Copy heading and permalink for Proof 6.4.2.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="sec-taylors-theorem.html#thm-taylor-lagrange">In Context</a></span>
+</body>
+</html>

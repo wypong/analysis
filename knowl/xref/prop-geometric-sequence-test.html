@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="proposition theorem-like"><h2 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para">The sequence <span class="process-math">\((c^n)\)</span> is null if <span class="process-math">\(0&lt;c&lt;1\text{,}\)</span> and diverges to <span class="process-math">\(+\infty\)</span> if <span class="process-math">\(c&gt;1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-geometric-sequence-test-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 2.2.1"><a href="#prop-geometric-sequence-test" title="Copy heading and permalink for Proposition 2.2.1" aria-label="Copy heading and permalink for Proposition 2.2.1">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical">
+<div class="para">First suppose <span class="process-math">\(0 \lt c \lt 1\text{.}\)</span> Then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-monotone-convergence.html ./knowl/xref/prop-subsequence-of-convergent-sequence.html ./knowl/xref/prop-limit-laws-sequences.html ./knowl/xref/prop-convergent-sequence-unique-limit.html">
+\begin{equation*}
+c&gt;c^2&gt;c^3&gt;\cdots&gt;0.
+\end{equation*}
+</div>
+<div class="para">Hence <span class="process-math">\((c^n)\)</span> is decreasing and bounded below, so <a href="sec-sequences.html#thm-monotone-convergence" class="xref" data-knowl="./knowl/xref/thm-monotone-convergence.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.1.5: Monotone Convergence Theorem">Theorem 2.1.5</a> implies that it converges to some real number <span class="process-math">\(r\text{.}\)</span> By <a href="sec-sequences.html#prop-subsequence-of-convergent-sequence" class="xref" data-knowl="./knowl/xref/prop-subsequence-of-convergent-sequence.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.1.10">Proposition 2.1.10</a>, the subsequence <span class="process-math">\((c^{n+1})\)</span> also converges to <span class="process-math">\(r\text{.}\)</span> Since the constant sequence <span class="process-math">\(c\)</span> converges to <span class="process-math">\(c\text{,}\)</span> <a href="sec-sequences.html#prop-limit-laws-sequences" class="xref" data-knowl="./knowl/xref/prop-limit-laws-sequences.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.1.6">Proposition 2.1.6</a> gives <span class="process-math">\(c^{n+1} = c \cdot c^n \to cr\text{.}\)</span> By <a href="sec-sequences.html#prop-convergent-sequence-unique-limit" class="xref" data-knowl="./knowl/xref/prop-convergent-sequence-unique-limit.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.1.3">Proposition 2.1.3</a>, we must have <span class="process-math">\(r=cr\text{.}\)</span> Because <span class="process-math">\(0&lt;c&lt;1\text{,}\)</span> this implies <span class="process-math">\(r=0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-geometric-sequence-test-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">Now suppose <span class="process-math">\(c&gt;1\text{.}\)</span> Then <span class="process-math">\(0&lt;1/c&lt;1\text{,}\)</span> so the first case gives <span class="process-math">\((1/c)^n\to 0\text{.}\)</span> For any <span class="process-math">\(B &gt; 0\text{,}\)</span> since <span class="process-math">\((1/c)^n\to 0\text{,}\)</span> we have <span class="process-math">\((1/c)^n&lt;1/B\)</span> for all sufficiently large <span class="process-math">\(n\text{.}\)</span> Equivalently, <span class="process-math">\(c^n \gt B\)</span> for all sufficiently large <span class="process-math">\(n\text{.}\)</span> Thus <span class="process-math">\(c^n\to +\infty\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-geometric-sequence-test-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.2.1.1"><a href="#prop-geometric-sequence-test-2" title="Copy heading and permalink for Proof 2.2.1.1" aria-label="Copy heading and permalink for Proof 2.2.1.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="sec-convergence-tests-for-sequences.html#prop-geometric-sequence-test">In Context</a></span>
+</body>
+</html>

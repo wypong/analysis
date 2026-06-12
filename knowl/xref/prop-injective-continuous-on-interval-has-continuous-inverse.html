@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="proposition theorem-like"><h2 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para">If <span class="process-math">\(f\)</span> is injective and continuous on an interval <span class="process-math">\(I\text{,}\)</span> then the inverse of <span class="process-math">\(f \colon I \to f(I)\)</span> is also continuous.<div class="autopermalink" data-description="Paragraph"><a href="#prop-injective-continuous-on-interval-has-continuous-inverse-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 4.4.14"><a href="#prop-injective-continuous-on-interval-has-continuous-inverse" title="Copy heading and permalink for Proposition 4.4.14" aria-label="Copy heading and permalink for Proposition 4.4.14">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para">Clearly, we can assume <span class="process-math">\(I\)</span> is non-degenerated (i.e. has at least two points). Let <span class="process-math">\(g \colon f(I) \to I\)</span> be the inverse of <span class="process-math">\(f\text{.}\)</span>	We argue that <span class="process-math">\(g\)</span> is continuous at an arbitrary point <span class="process-math">\(y_0 \in f(I)\text{.}\)</span> Let <span class="process-math">\((y_n)\)</span> be a sequence in <span class="process-math">\(f(I)\)</span> that converges to <span class="process-math">\(y_0\text{.}\)</span> Set <span class="process-math">\(x_n=g(y_n)\)</span> and <span class="process-math">\(x_0=g(y_0)\text{.}\)</span> We must show that <span class="process-math">\(x_n \to x_0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-injective-continuous-on-interval-has-continuous-inverse-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Suppose, to the contrary, that <span class="process-math">\(x_n\)</span> does not converge to <span class="process-math">\(x_0\text{.}\)</span> Then there exists <span class="process-math">\(\varepsilon \gt 0\)</span> such that infinitely many terms of the sequence <span class="process-math">\((x_n)\)</span> lie outside the interval <span class="process-math">\(I_0 := (x_0-\varepsilon, x_0+\varepsilon) \cap I\text{.}\)</span> Passing to a subsequence, we may assume that <span class="process-math">\(x_{n_k} \notin I_0\)</span> for every <span class="process-math">\(k\text{.}\)</span> Since <span class="process-math">\(x_0\)</span> is a point of a non-degenerated interval, it is a cluster point of <span class="process-math">\(I\text{,}\)</span> and hence <span class="process-math">\(I_0\)</span> is also non-degenerated. By <a href="sec-continuous-functions-on-intervals.html#cor-continuous-image-of-interval-is-interval" class="xref" data-knowl="./knowl/xref/cor-continuous-image-of-interval-is-interval.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.4.12">Corollary 4.4.12</a>, <span class="process-math">\(f(I_0)\)</span> is an interval containing <span class="process-math">\(y_0\text{;}\)</span> it is also non-degenerated because <span class="process-math">\(f\)</span> is injective. Therefore there exists <span class="process-math">\(\delta \gt 0\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-continuous-image-of-interval-is-interval.html">
+\begin{equation*}
+(y_0-\delta,y_0+\delta)\cap f(I) \subseteq f(I_0).
+\end{equation*}
+</div>
+<div class="para">But <span class="process-math">\(y_{n_k}=f(x_{n_k})\)</span> and <span class="process-math">\(x_{n_k} \notin I_0\text{,}\)</span> so <span class="process-math">\(y_{n_k} \notin f(I_0)\)</span> for every <span class="process-math">\(k\text{.}\)</span> On the other hand, since <span class="process-math">\(y_{n_k} \to y_0\)</span> and each <span class="process-math">\(y_{n_k}\)</span> lies in <span class="process-math">\(f(I)\text{,}\)</span> we have <span class="process-math">\(y_{n_k} \in f(I_0)\)</span> for all sufficiently large <span class="process-math">\(k\text{,}\)</span> a contradiction.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-injective-continuous-on-interval-has-continuous-inverse-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.4.14.1"><a href="#prop-injective-continuous-on-interval-has-continuous-inverse-2" title="Copy heading and permalink for Proof 4.4.14.1" aria-label="Copy heading and permalink for Proof 4.4.14.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="sec-continuous-functions-on-intervals.html#prop-injective-continuous-on-interval-has-continuous-inverse">In Context</a></span>
+</body>
+</html>

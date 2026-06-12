@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="proposition theorem-like"><h2 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Limit Comparison Test.</span>
+</h2>
+<div class="para logical">
+<div class="para">Suppose <span class="process-math">\(x_n&gt;0\)</span> and <span class="process-math">\(y_n&gt;0\)</span> for all <span class="process-math">\(n\text{.}\)</span> If</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{n\to\infty}\frac{x_n}{y_n}=L
+\end{equation*}
+</div>
+<div class="para">for some <span class="process-math">\(L&gt;0\text{,}\)</span> then <span class="process-math">\(\sum x_n\)</span> converges if and only if <span class="process-math">\(\sum y_n\)</span> converges.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-limit-comparison-test-series-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical">
+<div class="para">If instead</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{n\to\infty}\frac{x_n}{y_n}=0,
+\end{equation*}
+</div>
+<div class="para">then convergence of <span class="process-math">\(\sum y_n\)</span> implies convergence of <span class="process-math">\(\sum x_n\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-limit-comparison-test-series-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 3.2.8: Limit Comparison Test"><a href="#prop-limit-comparison-test-series" title="Copy heading and permalink for Proposition 3.2.8: Limit Comparison Test" aria-label="Copy heading and permalink for Proposition 3.2.8: Limit Comparison Test">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical">
+<div class="para">First suppose <span class="process-math">\(L&gt;0\text{.}\)</span> Then for all sufficiently large <span class="process-math">\(n\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{L}{2} \lt \frac{x_n}{y_n} \lt \frac{3L}{2}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(y_n&gt;0\text{,}\)</span> this is equivalent to</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{L}{2}y_n \lt x_n \lt \frac{3L}{2}y_n.
+\end{equation*}
+</div>
+<div class="para">If <span class="process-math">\(\sum y_n\)</span> converges, then so does <span class="process-math">\(\sum (3L/2)y_n\text{,}\)</span> and the comparison test gives convergence of <span class="process-math">\(\sum x_n\text{.}\)</span> Conversely, if <span class="process-math">\(\sum x_n\)</span> converges, then so does <span class="process-math">\(\sum (2/L)x_n\text{,}\)</span> and the comparison test applied to <span class="process-math">\(y_n \lt (2/L)x_n \)</span> shows that <span class="process-math">\(\sum y_n\)</span> converges.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-limit-comparison-test-series-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">If <span class="process-math">\(x_n/y_n\to 0\text{,}\)</span> then for all sufficiently large <span class="process-math">\(n\)</span> <span class="process-math">\(x_n/y_n&lt;1\text{.}\)</span> Hence <span class="process-math">\(0\lt x_n\lt y_n\)</span> eventually, so convergence of <span class="process-math">\(\sum y_n\)</span> implies convergence of <span class="process-math">\(\sum
+x_n\)</span> by the comparison test.<div class="autopermalink" data-description="Paragraph"><a href="#prop-limit-comparison-test-series-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3.2.8.1"><a href="#prop-limit-comparison-test-series-3" title="Copy heading and permalink for Proof 3.2.8.1" aria-label="Copy heading and permalink for Proof 3.2.8.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="sec-convergence-tests-for-series.html#prop-limit-comparison-test-series">In Context</a></span>
+</body>
+</html>
