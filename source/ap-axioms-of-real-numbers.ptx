@@ -1,58 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<appendix xml:id="ap-axioms-of-real-numbers" xmlns:xi="http://www.w3.org/2001/XInclude">
+<appendix xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ap-axioms-of-real-numbers">
   <title>Axioms of Real Numbers</title>
-
   <section xml:id="sec-axioms-foundations">
     <title>Foundations and Consequences</title>
-
     <subsection xml:id="subsec-axioms-ordered-field">
       <title>Ordered-Field Axioms</title>
-
       <p>
         We start with a set <m>\R</m> with two operations <m>+</m> and <m>\cdot</m>, and a subset
         <m>\R_{+}\subseteq \R</m>. We call this an <term>ordered field</term><idx>ordered field</idx>
         when the following hold.
       </p>
-
-      <ol>
-        <li>
-          <p>
-            <m>+</m> and <m>\cdot</m> are commutative and associative, and
+      <p>
+        <ol>
+          <li>
+            <p><m>+</m> and <m>\cdot</m> are commutative and associative, and
             <m>a(b+c)=ab+ac</m> for all <m>a,b,c\in\R</m>.
           </p>
-        </li>
-        <li>
-          <p>
+          </li>
+          <li>
+            <p>
             There are distinct elements <m>0,1\in\R</m> such that
             <m>a+0=a</m> and <m>a\cdot 1=a</m> for all <m>a\in\R</m>.
           </p>
-        </li>
-        <li>
-          <p>
+          </li>
+          <li>
+            <p>
             Every <m>a\in\R</m> has an additive inverse <m>-a</m> with
             <m>a+(-a)=0</m>, and every nonzero <m>a\in\R</m> has a multiplicative inverse
             <m>a^{-1}</m> with <m>a\cdot a^{-1}=1</m>.
           </p>
-        </li>
-        <li>
-          <p>
+          </li>
+          <li>
+            <p>
             The set <m>\R_{+}</m> is closed under addition and multiplication.
           </p>
-        </li>
-        <li>
-          <p>
+          </li>
+          <li>
+            <p>
             For each <m>a\in\R</m>, exactly one of <m>a=0</m>, <m>a\in\R_{+}</m>,
             <m>-a\in\R_{+}</m> holds.
           </p>
-        </li>
-      </ol>
-
+          </li>
+        </ol>
+      </p>
       <p>
         We define <m>a&lt;b</m> if and only if <m>b-a\in\R_{+}</m>, and
         <m>a\le b</m> if and only if <m>a&lt;b</m> or <m>a=b</m>.
       </p>
-
       <p>
         To characterize the real numbers, we add the <term>least upper bound
         property</term><idx>least upper bound property</idx>: every nonempty subset of
@@ -61,16 +55,13 @@
         field</term><idx>complete ordered field</idx>.
       </p>
     </subsection>
-
     <subsection xml:id="subsec-axioms-isomorphism-reference">
       <title>Uniqueness Up to Isomorphism</title>
-
       <p>
         A standard theorem says that any two complete ordered fields are
         isomorphic (as ordered fields). This is the precise sense in which
         there is only one real number system up to isomorphism.
       </p>
-
       <p>
         Reference: <xref ref="biblio-rosenlicht-intro"/>, Chapter II, end of
         Section 4 (after the proof of existence of square roots), where he
@@ -78,15 +69,12 @@
         unique one-to-one correspondence preserving sums and products.
       </p>
     </subsection>
-
     <subsection xml:id="subsec-axioms-immediate-consequences">
       <title>Immediate Consequences of the Axioms</title>
-
       <p>
         The next results are typical short derivations from the axioms
         (compare <xref ref="biblio-rosenlicht-intro"/>, Chapter II, Sections 1-2).
       </p>
-
       <proposition xml:id="prop-axioms-identity-inverse-uniqueness">
         <statement>
           <p>
@@ -105,7 +93,6 @@
           </p>
         </proof>
       </proposition>
-
       <proposition xml:id="prop-axioms-basic-algebra-consequences">
         <statement>
           <p>
@@ -131,7 +118,6 @@
           </p>
         </proof>
       </proposition>
-
       <proposition xml:id="prop-axioms-basic-order-consequences">
         <statement>
           <p>
@@ -160,5 +146,4 @@
       </proposition>
     </subsection>
   </section>
-
 </appendix>

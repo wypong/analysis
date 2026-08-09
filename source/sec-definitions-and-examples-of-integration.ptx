@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<section xml:id="sec-definitions-and-examples-of-integration"
-  xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-definitions-and-examples-of-integration">
   <title>Definitions and Examples</title>
-
   <introduction>
     <p>
       We define the Riemann integral by Darboux's approach. The main objects
@@ -13,10 +10,8 @@
       when the gap between these approximations can be made arbitrarily small.
     </p>
   </introduction>
-
   <subsection xml:id="subsec-partitions-and-darboux-sums">
     <title>Partitions and Darboux Sums</title>
-
     <p>
       A <term>partition</term><idx><h>partition</h><h>of an interval</h></idx>
       of a closed bounded interval <m>[a,b]</m> is a finite subset of
@@ -33,9 +28,7 @@
         \qquad
         \Delta x_i=x_i-x_{i-1}
         \qquad (1 \le i \le n).
-      </md>
-    </p>
-
+      </md></p>
     <p>
       For now, we write <m>\int_a^b f</m> rather than
       <m>\int_a^b f(x)\,dx</m>. At this stage there is no risk of confusion,
@@ -43,7 +36,6 @@
       Only later, when we discuss change of variables, will it become useful
       to display the variable of integration explicitly.
     </p>
-
     <p>
       Now let <m>f \colon [a,b] \to \R</m> be bounded, and let
       <m>P=\{x_0,\dots,x_n\}</m> be a partition of <m>[a,b]</m>. For each
@@ -63,7 +55,6 @@
       sum</h><h>lower</h></idx> and <term>upper Darboux sum</term><idx><h>Darboux
       sum</h><h>upper</h></idx> of <m>f</m> with respect to <m>P</m>.
     </p>
-
     <example xml:id="eg-darboux-sums-x-squared">
       <statement>
         <p>
@@ -85,15 +76,13 @@
             \left(\frac19+\frac49+1\right)\frac13
             =
             \frac{14}{27}.
-          </md>
-        </p>
-
+          </md></p>
         <figure xml:id="fig-darboux-sums-x-squared">
           <caption>The lower Darboux sum, the upper Darboux sum, and the
           curve <m>y=x^2</m> for the partition
           <m>\{0,\frac13,\frac23,1\}</m>.</caption>
           <image width="60%">
-            <shortdescription>A parabola on the interval from zero to one together with two overlapping families of rectangles for the lower and upper Darboux sums based on the partition at one third and two thirds.</shortdescription>
+            <shortdescription>A parabola on [0,1] with lower and upper Darboux rectangles for the partition at one third and two thirds.</shortdescription>
             <latex-image>
 \begin{tikzpicture}
 \begin{axis}[
@@ -124,7 +113,6 @@
         </figure>
       </statement>
     </example>
-
     <example xml:id="eg-constant-function-darboux-sums">
       <statement>
         <p>
@@ -139,10 +127,8 @@
       </statement>
     </example>
   </subsection>
-
   <subsection xml:id="subsec-upper-and-lower-integrals">
     <title>Upper and Lower Integrals</title>
-
     <p>
       Since <m>f</m> is bounded, there exist real numbers <m>m \le M</m> such
       that
@@ -157,7 +143,6 @@
       Thus the set of all lower sums is bounded above, and the set of all
       upper sums is bounded below.
     </p>
-
     <p>
       By the
       <xref ref="ax-least-upper-bound-property" text="title"/>, the least upper bound
@@ -176,15 +161,12 @@
         \overline{\int_a^b} f
         :=
         \inf\{U(P,f): P \text{ a partition of } [a,b]\}.
-      </md>
-    </p>
-
+      </md></p>
     <p>
       If <m>P</m> and <m>P'</m> are partitions of <m>[a,b]</m>, we say that
       <m>P'</m> is a <term>refinement</term><idx><h>partition</h><h>refinement</h></idx>
       of <m>P</m> if <m>P \subseteq P'</m>.
     </p>
-
     <proposition xml:id="prop-refinement-monotonicity-darboux-sums">
       <statement>
         <p>
@@ -192,10 +174,8 @@
           refinement of <m>P</m>, then
           <md>
             L(P,f) \le L(P',f) \le U(P',f) \le U(P,f).
-          </md>
-        </p>
+          </md></p>
       </statement>
-
       <proof>
         <p>
           It is enough to prove the result in the special case where <m>P'</m>
@@ -204,7 +184,6 @@
           <m>i</m>. All terms in the upper sum remain unchanged except the
           term corresponding to the interval <m>[x_{i-1},x_i]</m>.
         </p>
-
         <p>
           Let <m>M</m> be the supremum of <m>f</m> on <m>[x_{i-1},x_i]</m>,
           and let <m>M_1,M_2</m> be the suprema on
@@ -220,7 +199,6 @@
           </md>
           So <m>U(P',f) \le U(P,f)</m>.
         </p>
-
         <p>
           The proof that <m>L(P,f) \le L(P',f)</m> is analogous, using
           infima instead of suprema. The middle inequality
@@ -228,7 +206,6 @@
         </p>
       </proof>
     </proposition>
-
     <corollary xml:id="cor-lower-upper-integral-between-sums">
       <statement>
         <p>
@@ -241,10 +218,8 @@
             \overline{\int_a^b} f
             \le
             U(P,f).
-          </md>
-        </p>
+          </md></p>
       </statement>
-
       <proof>
         <p>
           Let <m>P</m> and <m>P'</m> be any two partitions. Then
@@ -263,7 +238,6 @@
         </p>
       </proof>
     </corollary>
-
     <example xml:id="eg-dirichlet-upper-lower-integrals">
       <statement>
         <p>
@@ -280,9 +254,7 @@
             \underline{\int_0^1} 1_{\Q} = 0
             \qquad\text{and}\qquad
             \overline{\int_0^1} 1_{\Q} = 1.
-          </md>
-        </p>
-
+          </md></p>
         <p>
           Indeed, by <xref ref="prop-q-dense-in-r"/>, every nondegenerate
           subinterval of <m>[0,1]</m> contains a rational number. If
@@ -298,10 +270,8 @@
       </statement>
     </example>
   </subsection>
-
   <subsection xml:id="subsec-riemann-integrability-darboux">
     <title>Riemann Integrability</title>
-
     <p>
       A bounded function <m>f \colon [a,b] \to \R</m> is
       <term>Riemann integrable</term><idx>Riemann integrable function</idx> if
@@ -320,7 +290,6 @@
       We write <m>R[a,b]</m> for the set of all Riemann integrable functions on
       <m>[a,b]</m>.
     </p>
-
     <proposition xml:id="prop-integrability-criterion-darboux">
       <title>Integrability Criterion</title>
       <statement>
@@ -330,10 +299,8 @@
           exists a partition <m>P</m> of <m>[a,b]</m> such that
           <md>
             U(P,f)-L(P,f) \lt \varepsilon.
-          </md>
-        </p>
+          </md></p>
       </statement>
-
       <proof>
         <p>
           First assume that for every <m>\varepsilon \gt 0</m> there exists a
@@ -352,7 +319,6 @@
           difference of the upper and lower integrals must be <m>0</m>. Hence
           <m>f</m> is integrable.
         </p>
-
         <p>
           Conversely, suppose <m>f</m> is integrable, and let
           <m>I=\int_a^b f</m>. Given <m>\varepsilon \gt 0</m>, choose
@@ -381,7 +347,6 @@
         </p>
       </proof>
     </proposition>
-
     <example xml:id="eg-x-integrable-on-unit-interval">
       <statement>
         <p>
@@ -422,11 +387,9 @@
           for every <m>n</m>, so letting <m>n \to \infty</m> gives
           <md>
             \int_0^1 x = \frac12.
-          </md>
-        </p>
+          </md></p>
       </statement>
     </example>
-
     <p>
       Finally, if <m>f</m> is integrable on <m>[a,b]</m>, we extend the
       notation by setting
@@ -434,7 +397,6 @@
         \int_a^a f = 0,
         \qquad
         \int_b^a f = -\int_a^b f.
-      </md>
-    </p>
+      </md></p>
   </subsection>
 </section>

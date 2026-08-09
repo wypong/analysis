@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<section xml:id="sec-sequences" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-sequences">
   <title>Sequences</title>
-
   <subsection xml:id="subsec-sequences-definitions">
     <title>Definitions</title>
-
     <p>
       An <term>infinite sequence</term><idx><h>sequence</h></idx> is a
       function whose domain is the ordered set <m>(\N, \le)</m>. In this
@@ -16,21 +13,19 @@
       also denote the sequence <m>\vx</m> by <m>(x_n)</m>, and we identify
       a real number <m>r</m> with the constant sequence <m>n \mapsto r</m>.
     </p>
-
     <example xml:id="eg-basic-sequences">
       <statement>
-      <p>Since sequences are in particular real-valued functions, adjectives
+        <p>Since sequences are in particular real-valued functions, adjectives
       for real-valued functions apply to them as well:</p>
-        <ul>
-          <li><m>(1/n)</m> is decreasing and bounded.</li>
-
-	  <li><m>(n)</m> is increasing and bounded below, but not bounded above.</li>
-          
-	  <li><m>((-1)^n)</m> is bounded, but neither increasing nor decreasing.</li>
-        </ul>
+        <p>
+          <ul>
+            <li><m>(1/n)</m> is decreasing and bounded.</li>
+            <li><m>(n)</m> is increasing and bounded below, but not bounded above.</li>
+            <li><m>((-1)^n)</m> is bounded, but neither increasing nor decreasing.</li>
+          </ul>
+        </p>
       </statement>
     </example>
-
     <p>
       A sequence <m>\vx</m> is <term>null</term><idx>null sequence</idx>
       if for every <m>\varepsilon \gt 0</m> there exists <m>N \in \N</m>
@@ -42,27 +37,25 @@
       of its terms <m>|x_n|</m> can be arbitrarily close to zero provided
       that the index <m>n</m> of the terms is sufficiently large.
     </p>
-
     <p>
       It often makes an argument more intuitive by replacing "there exists <m>N
       \in \N</m> such that for all <m>n \ge N</m>" with either of the
       following phrases:
     </p>
-
-    <ol>
-      <li>for all sufficiently large <m>n</m>,</li>
-      <li>for all but finitely many <m>n</m>.</li>
-    </ol>
-
+    <p>
+      <ol>
+        <li>for all sufficiently large <m>n</m>,</li>
+        <li>for all but finitely many <m>n</m>.</li>
+      </ol>
+    </p>
     <p>
       We may abbreviate "<m>n</m> is sufficiently large" by <m>n \gg 0</m> or
       <m>n \approx \infty</m>. For example, the statement <m>\vx \approx 0</m>
       means that for every <m>\varepsilon \gt 0</m>, we have
       <m>|x_n| \lt \varepsilon</m> for all <m>n \gg 0</m>.
     </p>
-
     <p>
-      We say that a sequence <m>\vx</m> <term>converges</term><idx>convergent
+      We say that a sequence <m>\vx</m><term>converges</term><idx>convergent
       sequence</idx> to <m>r \in\R</m> or <m>r</m> is a
       <term>limit</term><idx>limit of a sequence</idx> of <m>\vx</m>, if
       the sequence <m>\vx-r</m> is null. We denote this by
@@ -72,9 +65,8 @@
       The last notation captures the idea that a convergent sequence can be
       viewed as an approximation to its limit.
     </p>
-
     <p>
-      A sequence is <term>convergent</term> <idx>convergent sequence</idx>
+      A sequence is <term>convergent</term><idx>convergent sequence</idx>
       if it has a limit, otherwise it is <term>divergent</term><idx>divergent
       sequence</idx>. We also distinguish two common types of divergent
       behavior. We write <m>x_n \to +\infty</m> if for every
@@ -84,34 +76,30 @@
       <m>n</m>.
     </p>
   </subsection>
-
   <subsection xml:id="subsec-sequences-fundamental-results">
     <title>Fundamental Results</title>
-
     <proposition xml:id="prop-null-sequence-basic-operations">
       <statement>
-	<p> Suppose <m>(x_n)</m> and <m>(y_n)</m> are null sequences. Then 
+        <p> Suppose <m>(x_n)</m> and <m>(y_n)</m> are null sequences. Then
 
-	</p> 
-	<ol>
-	   <li> <m>(x_n+y_n)</m> is null. </li>
-	   
-	   <li>
-	        <m>(c_nx_n)</m> is null if <m>(c_n)</m> is bounded.
-	   </li>	   
-        </ol>
-      </statement> 
-
+	</p>
+        <p>
+          <ol>
+            <li><m>(x_n+y_n)</m> is null. </li>
+            <li><m>(c_nx_n)</m> is null if <m>(c_n)</m> is bounded.
+	   </li>
+          </ol>
+        </p>
+      </statement>
       <proof>
-	<p>
+        <p>
           For (1), let <m>\varepsilon \gt 0</m>. Choose <m>N_1,N_2</m> so that
           <m>|x_n| \lt \varepsilon/2</m> for all <m>n \ge N_1</m> and
           <m>|y_n| \lt \varepsilon/2</m> for all <m>n \ge N_2</m>. Then for
           <m>n \ge \max\{N_1,N_2\}</m>, the triangle inequality gives
           <m>|x_n+y_n| \le |x_n|+|y_n| \lt \varepsilon</m>.
 	</p>
-
-	<p> For (2), by <xref ref="prop-bounded-iff-abs-bound"/> there exists <m>M \gt 0</m>
+        <p> For (2), by <xref ref="prop-bounded-iff-abs-bound"/> there exists <m>M \gt 0</m>
 	such that <m>|c_n| \lt M</m> for every <m>n</m>. Let <m>\varepsilon
 	\gt 0</m>, then for all <m>n \gg 0</m>, <m>|x_n| \lt \varepsilon</m>
 	and hence <m>|c_n x_n| \lt M\varepsilon</m>. This shows that
@@ -121,7 +109,6 @@
      </p>
       </proof>
     </proposition>
-
     <p>
       The proof of (1) illustrates an important general point: if a statement
       <m>P</m> holds for all sufficiently large <m>n</m> and a statement
@@ -129,30 +116,29 @@
       conjunction "<m>P</m> and <m>Q</m>" holds for all sufficiently large
       <m>n</m>.
     </p>
-
     <proposition xml:id="prop-convergent-sequence-unique-limit">
       <statement>
         <p>
           A convergent sequence has a unique limit.
         </p>
-      </statement> <proof>
-	<p>
+      </statement>
+      <proof>
+        <p>
 	  Suppose <m>x_n \to r</m> and <m>x_n \to r'</m>. Then both
-	  <m>(r-x_n)</m> and <m>(x_n-r')</m> are null sequences. By <xref
-	  ref="prop-null-sequence-basic-operations"/>, their sum
+	  <m>(r-x_n)</m> and <m>(x_n-r')</m> are null sequences. By <xref ref="prop-null-sequence-basic-operations"/>, their sum
 	  <m>(r-r')</m> is also null. A constant sequence is null only if its
 	  constant value is zero, so <m>r-r'=0</m>. Therefore <m>r=r'</m>.
-	</p> </proof>
+	</p>
+      </proof>
     </proposition>
-
-
     <proposition xml:id="prop-convergent-sequence-bounded">
       <statement>
         <p>
           Every convergent sequence is bounded.
         </p>
-      </statement> <proof>
-	<p>
+      </statement>
+      <proof>
+        <p>
 	  Suppose <m>x_n \to r</m>. Then there exists <m>N</m> such that
 	  <m>|x_n-r| \lt 1</m> for all <m>n \ge N</m>. Hence <m>|x_n|
 	  \le |x_n-r|+|r| \lt 1+|r|</m> for all <m>n \ge N</m>. It follows
@@ -162,26 +148,23 @@
 	</p>
       </proof>
     </proposition>
-
     <p>
 	The proof above shows that "eventually bounded" and "bounded" are
 	the same for sequences.
     </p>
-
     <theorem xml:id="thm-monotone-convergence">
-      <title>Monotone Convergence Theorem</title> <statement>
-	<p>
+      <title>Monotone Convergence Theorem</title>
+      <statement>
+        <p>
           Every bounded monotone sequence converges.
         </p>
-      </statement> 
-
+      </statement>
       <proof>
-	<p>
+        <p>
           First suppose <m>(x_n)</m> is increasing and bounded. Then its set of
           terms <m>S:=\{x_n \colon n \in \N\}</m> is nonempty and bounded above,
           so <m>s:=\sup S</m> exists.
         </p>
-
         <p>
 	  Let <m>\varepsilon \gt 0</m>. Since <m>s-\varepsilon</m> is not an
 	  upper bound of <m>S</m>, there exists <m>N</m> such that
@@ -193,7 +176,6 @@
           Hence <m>|x_n-s| \lt \varepsilon</m> for all <m>n \ge N</m>, so
           <m>x_n \to s</m>.
 	</p>
-
         <p>
           If <m>(x_n)</m> is decreasing and bounded, then <m>(-x_n)</m> is
           increasing and bounded. By the increasing case, <m>(-x_n)</m>
@@ -202,36 +184,32 @@
         </p>
       </proof>
     </theorem>
-
     <p>
       The next proposition shows that the usual algebraic operations on
       convergent sequences again produce convergent sequences, and that
       taking limits commutes with these operations.
     </p>
-
     <proposition xml:id="prop-limit-laws-sequences">
       <statement>
         <p>
           Suppose <m>x_n \to x</m> and <m>y_n \to y</m>. Then:
-	</p> <ol>
-	  <li><m>x_n+y_n \to x+y</m>,</li>
-          
-	  <li><m>x_ny_n \to xy</m>,</li>
-
-          <li><m>1/y_n \to 1/y</m>, provided <m>y \ne 0</m>.</li>
-        
-	</ol>
-      </statement> 
-      <proof> 
-
-      <p>
+	</p>
+        <p>
+          <ol>
+            <li><m>x_n+y_n \to x+y</m>,</li>
+            <li><m>x_ny_n \to xy</m>,</li>
+            <li><m>1/y_n \to 1/y</m>, provided <m>y \ne 0</m>.</li>
+          </ol>
+        </p>
+      </statement>
+      <proof>
+        <p>
         Both <m>(x_n-x)</m> and <m>(y_n-y)</m> are null, so
         <xref ref="prop-null-sequence-basic-operations"/> shows that their sum
         <m>(x_n-x)+(y_n-y)=(x_n+y_n)-(x+y)</m> is null. Therefore
         <m>x_n+y_n \to x+y</m>.
       </p>
-
-	<p>
+        <p>
 	  Also
           <m>x_ny_n-xy = x_n(y_n-y) + (x_n-x)y</m>. By
           <xref ref="prop-convergent-sequence-bounded"/>, the sequence
@@ -241,8 +219,7 @@
           bounded, the same proposition shows that <m>((x_n-x)y)</m> is null.
           Therefore <m>(x_ny_n-xy)</m> is null, and so <m>x_ny_n \to xy</m>.
 	</p>
-
-	<p>
+        <p>
           For the reciprocal, assume <m>y \neq 0</m>. Since <m>y_n \to y</m>,
           there exists <m>N</m> such that <m>|y_n-y| \lt |y|/2</m> for all
           <m>n \ge N</m>. For such <m>n</m>,
@@ -260,17 +237,16 @@
 	</p>
       </proof>
     </proposition>
-
     <proposition xml:id="prop-squeeze-lemma">
-      <title>Squeeze Lemma</title> <statement>
+      <title>Squeeze Lemma</title>
+      <statement>
         <p>
           Suppose <m>x_n \le z_n \le y_n</m> for every <m>n</m>, and suppose
           <m>x_n \to r</m> and <m>y_n \to r</m>. Then <m>z_n \to r</m>.
         </p>
-      </statement> 
-
+      </statement>
       <proof>
-	<p>
+        <p>
           Let <m>\varepsilon \gt 0</m>. Since <m>x_n \to r</m> and <m>y_n \to r</m>,
           we have
           <m>|x_n-r| \lt \varepsilon</m> and <m>|y_n-r| \lt \varepsilon</m>
@@ -283,15 +259,13 @@
         </p>
       </proof>
     </proposition>
-
     <proposition xml:id="prop-limit-preserves-nonnegativity">
       <statement>
         <p>
           If <m>x_n \to r</m> and <m>x_n \ge 0</m> for every <m>n</m>, then
           <m>r \ge 0</m>.
         </p>
-      </statement> 
-
+      </statement>
       <proof>
         <p>
           Suppose instead that <m>r \lt 0</m>. Then for all <m>n \gg 0</m>,
@@ -300,23 +274,21 @@
         </p>
       </proof>
     </proposition>
-
     <corollary xml:id="cor-limit-preserves-order">
       <statement>
         <p>
           If <m>x_n \to x</m>, <m>y_n \to y</m>, and <m>x_n \le y_n</m> for
           every <m>n</m>, then <m>x\le y</m>.
         </p>
-      </statement> <proof>
+      </statement>
+      <proof>
         <p>
           The sequence <m>(y_n - x_n)</m> converges to <m>y-x</m>
           by <xref ref="prop-limit-laws-sequences"/>, and each
-          term is nonnegative. Hence <m>y-x \ge 0</m> by <xref
-          ref="prop-limit-preserves-nonnegativity"/>, so <m>x \le y</m>.
+          term is nonnegative. Hence <m>y-x \ge 0</m> by <xref ref="prop-limit-preserves-nonnegativity"/>, so <m>x \le y</m>.
         </p>
       </proof>
     </corollary>
-
     <p>
       A <term>subsequence</term><idx>subsequence</idx> of a sequence
       <m>(x_n)</m> is a sequence of the form <m>(x_{n_k})</m>, where
@@ -325,23 +297,20 @@
       <m>(x_{\sigma(n)})</m>, where <m>\sigma</m> is a strictly increasing
       function from <m>\N</m> to itself.
     </p>
-
     <proposition xml:id="prop-subsequence-of-convergent-sequence">
       <statement>
         <p>
           Every subsequence of a convergent sequence converges to the
           same limit.
         </p>
-      </statement> 
-
+      </statement>
       <proof>
         <p>
           Suppose <m>x_n \to L</m> and <m>(x_{n_k})</m> is a subsequence.
           Since <m>(n_k)</m> is strictly increasing, we have <m>n_k \ge k</m>
           for every <m>k</m>.
         </p>
-
-	<p>
+        <p>
 	  Let <m>\varepsilon \gt 0</m>. Choose <m>N</m> such that
 	  <m>|x_n-L| \lt \varepsilon</m> for all <m>n \ge N</m>. If
           <m>k \ge N</m>, then <m>n_k \ge k \ge N</m>, so

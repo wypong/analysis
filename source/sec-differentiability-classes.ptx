@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<section xml:id="sec-differentiability-classes"
-  xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-differentiability-classes">
   <title>Differentiability Classes</title>
-
   <introduction>
     <p>
       Continuity and differentiability come in layers. A function may be
@@ -12,8 +9,9 @@
       standard hierarchy of classes <m>C^n</m> and <m>D^n</m>.
     </p>
   </introduction>
-
-  <p>
+  <subsection>
+    <title/>
+    <p>
     Let <m>I \subseteq \R</m> be an open interval.
     For <m>n \in \N</m>, let <m>D^n(I)</m> be the set of functions
     <m>f \colon I \to \R</m> that are <term><m>n</m> times differentiable</term><idx>differentiability classes</idx>
@@ -21,11 +19,10 @@
     <m>n</m>-th derivative exists and is continuous on <m>I</m>. We also set
     <m>C^0(I)</m> equal to the set of continuous functions on <m>I</m>.
   </p>
-
-  <proposition xml:id="prop-differentiability-class-hierarchy">
-    <title>The Hierarchy of Differentiability Classes</title>
-    <statement>
-      <p>
+    <proposition xml:id="prop-differentiability-class-hierarchy">
+      <title>The Hierarchy of Differentiability Classes</title>
+      <statement>
+        <p>
         For every open interval <m>I</m>,
         <md>
           C^0(I) \supseteq D^1(I) \supseteq C^1(I) \supseteq D^2(I)
@@ -38,12 +35,10 @@
         then also
         <md>
           C^\infty(I)=\bigcap_{n=1}^\infty D^n(I).
-        </md>
-      </p>
-    </statement>
-
-    <proof>
-      <p>
+        </md></p>
+      </statement>
+      <proof>
+        <p>
         The inclusion <m>D^1(I) \subseteq C^0(I)</m> is just the fact that
         differentiability implies continuity
         (<xref ref="prop-differentiable-implies-continuous"/>). More
@@ -55,8 +50,7 @@
         </md>
         for every <m>n \ge 0</m>.
       </p>
-
-      <p>
+        <p>
         On the other hand, if <m>f \in C^n(I)</m>, then by definition
         <m>f^{(n)}</m> exists, so certainly <m>f \in D^n(I)</m>. Thus
         <md>
@@ -65,17 +59,15 @@
         for every <m>n \ge 1</m>. Chaining these inclusions gives the stated
         hierarchy.
       </p>
-
-      <p>
+        <p>
         Since <m>D^{n+1}(I) \subseteq C^n(I) \subseteq D^n(I)</m> for each
         <m>n \ge 1</m>, a function belongs to every <m>C^n(I)</m> if and only
         if it belongs to every <m>D^n(I)</m>. This proves the identity for
         <m>C^\infty(I)</m>.
       </p>
-    </proof>
-  </proposition>
-
-  <p>
+      </proof>
+    </proposition>
+    <p>
     The inclusions in
     <xref ref="prop-differentiability-class-hierarchy"/> are all strict. The
     first strict inclusion already appears in
@@ -84,10 +76,9 @@
     continuous at <m>0</m>. The next two examples show that this phenomenon
     persists at every order.
   </p>
-
-  <example xml:id="eg-c-n-minus-1-not-d-n">
-    <statement>
-      <p>
+    <example xml:id="eg-c-n-minus-1-not-d-n">
+      <statement>
+        <p>
         For each <m>n \ge 1</m>, define
         <md>
           f_n(x)=\begin{cases}
@@ -98,12 +89,10 @@
         Then
         <md>
           f_n \in C^{n-1}(\R) \setminus D^n(\R).
-        </md>
-      </p>
-    </statement>
-
-    <proof>
-      <p>
+        </md></p>
+      </statement>
+      <solution>
+        <p>
         For <m>0 \le k \le n-1</m> and <m>x \ne 0</m>, repeated
         differentiation gives
         <md>
@@ -116,8 +105,7 @@
         to <m>0</m>. So each derivative up to order <m>n-1</m> extends
         continuously across <m>0</m>. Hence <m>f_n \in C^{n-1}(\R)</m>.
       </p>
-
-      <p>
+        <p>
         For <m>x \ne 0</m>, the <m>n</m>-th derivative is
         <md>
           f_n^{(n)}(x)=\begin{cases}
@@ -129,12 +117,11 @@
         <m>f_n^{(n)}(0)</m> does not exist. Therefore
         <m>f_n \notin D^n(\R)</m>.
       </p>
-    </proof>
-  </example>
-
-  <example xml:id="eg-d-n-not-c-n">
-    <statement>
-      <p>
+      </solution>
+    </example>
+    <example xml:id="eg-d-n-not-c-n">
+      <statement>
+        <p>
         For each <m>n \ge 1</m>, define
         <md>
           g_n(x)=\begin{cases}
@@ -145,12 +132,10 @@
         Then
         <md>
           g_n \in D^n(\R) \setminus C^n(\R).
-        </md>
-      </p>
-    </statement>
-
-    <proof>
-      <p>
+        </md></p>
+      </statement>
+      <solution>
+        <p>
         We claim that, for each <m>k=0,1,\dots,n</m>, the derivative
         <m>g_n^{(k)}(x)</m> for <m>x \ne 0</m> is a finite linear combination
         of terms of the form
@@ -165,8 +150,7 @@
         differentiation all exponents are still at least
         <m>2n-2(k+1)</m>. Thus the claim follows by induction.
       </p>
-
-      <p>
+        <p>
         In particular, if <m>k \le n-1</m>, then every exponent that occurs is
         at least <m>2</m>. Hence
         <m>g_n^{(k)}(x) \to 0</m> as <m>x \to 0</m>. Therefore
@@ -182,8 +166,7 @@
         of <m>h</m>. Thus <m>g_n^{(k+1)}(0)</m> exists and equals <m>0</m>.
         By induction, <m>g_n \in D^n(\R)</m>.
       </p>
-
-      <p>
+        <p>
         After differentiating exactly <m>n</m> times, there is a term with
         power <m>x^0</m>: it comes from differentiating the trigonometric
         factor in every step. So <m>g_n^{(n)}(x)</m> has the form
@@ -196,13 +179,13 @@
         <m>x \to 0</m> and is not continuous at <m>0</m>. Hence
         <m>g_n \notin C^n(\R)</m>.
       </p>
-    </proof>
-  </example>
-
-  <p>
+      </solution>
+    </example>
+    <p>
     Later, in <xref ref="sec-analytic-functions"/>, we will meet analytic
     functions. Every analytic function belongs to <m>C^\infty</m>, but the
     example above shows that belonging to <m>C^\infty</m> is still not enough
     to force a function to agree with a power series.
   </p>
+  </subsection>
 </section>

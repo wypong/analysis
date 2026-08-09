@@ -1,29 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<appendix xml:id="ap-intervals" xmlns:xi="http://www.w3.org/2001/XInclude">
+<appendix xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ap-intervals">
   <title>Intervals</title>
-
   <section xml:id="sec-intervals">
     <title>Intervals</title>
-
     <p>
-      An <term>interval</term> <idx><h>interval</h> </idx> is a subset of
+      An <term>interval</term><idx><h>interval</h></idx> is a subset of
       <m>\R</m> of one of the following forms, where
       <m>a,b \in \R</m> and <m>a \le b</m>:
     </p>
-
-    <ul>
-      <li><m>(a,b):=\{x\in\R \colon a\lt x\lt b\}</m></li>
-      <li><m>[a,b]:=\{x\in\R \colon a\le x\le b\}</m></li>
-      <li><m>(a,b]:=\{x\in\R \colon a\lt x\le b\}</m></li>
-      <li><m>[a,b):=\{x\in\R \colon a\le x\lt b\}</m></li>
-      <li><m>(a,\infty):=\{x\in\R \colon a\lt x\}</m></li>
-      <li><m>[a,\infty):=\{x\in\R \colon a\le x\}</m></li>
-      <li><m>(-\infty,b):=\{x\in\R \colon x\lt b\}</m></li>
-      <li><m>(-\infty,b]:=\{x\in\R \colon x\le b\}</m></li>
-      <li><m>\R=(-\infty,\infty)</m></li>
-    </ul>
-
+    <p>
+      <ul>
+        <li>
+          <m>(a,b):=\{x\in\R \colon a\lt x\lt b\}</m>
+        </li>
+        <li>
+          <m>[a,b]:=\{x\in\R \colon a\le x\le b\}</m>
+        </li>
+        <li>
+          <m>(a,b]:=\{x\in\R \colon a\lt x\le b\}</m>
+        </li>
+        <li>
+          <m>[a,b):=\{x\in\R \colon a\le x\lt b\}</m>
+        </li>
+        <li>
+          <m>(a,\infty):=\{x\in\R \colon a\lt x\}</m>
+        </li>
+        <li>
+          <m>[a,\infty):=\{x\in\R \colon a\le x\}</m>
+        </li>
+        <li>
+          <m>(-\infty,b):=\{x\in\R \colon x\lt b\}</m>
+        </li>
+        <li>
+          <m>(-\infty,b]:=\{x\in\R \colon x\le b\}</m>
+        </li>
+        <li>
+          <m>\R=(-\infty,\infty)</m>
+        </li>
+      </ul>
+    </p>
     <p>
       When <m>a=b</m>, the interval <m>(a,b)</m> is the empty set and <m>[a,b]
       = \{a\}</m>. A <term>nondegenerate interval</term> is an interval with
@@ -35,14 +50,12 @@
       I</m> with <m>x \le y</m>. Conversely, any subset of <m>\R</m> with
       this property is an interval.
     </p>
-
     <proposition xml:id="prop-classification-of-intervals">
       <statement>
         <p>
           Every interval in <m>\R</m> is one of the nine forms listed above.
         </p>
       </statement>
-
       <proof>
         <p>
           Let <m>I \subseteq \R</m> be an interval. If <m>I=\emptyset</m>,
@@ -84,7 +97,6 @@
         </p>
       </proof>
     </proposition>
-
     <proposition xml:id="prop-interval-cardinality-r">
       <statement>
         <p>
@@ -92,7 +104,6 @@
           <m>|\R|</m>. In particular, it is uncountable.
         </p>
       </statement>
-
       <proof>
         <p>
           Every such interval <m>I</m> contains an open interval
@@ -105,14 +116,12 @@
         </p>
       </proof>
     </proposition>
-
     <proposition xml:id="prop-intersection-intervals">
       <statement>
         <p>
           The intersection of two intervals is an interval.
         </p>
       </statement>
-
       <proof>
         <p> Let <m>I,J</m> be intervals. Since <m>\emptyset</m> and singletons
         are intervals, we may assume <m>I \cap J</m> has at least two points
@@ -122,14 +131,12 @@
         </p>
       </proof>
     </proposition>
-
     <proposition xml:id="prop-union-overlapping-intervals">
       <statement>
         <p>
           The union of two overlapping intervals is an interval.
         </p>
       </statement>
-
       <proof>
         <p>
           Let <m>I,J</m> be two overlapping intervals, and pick <m>a \in I
@@ -149,5 +156,4 @@
       </proof>
     </proposition>
   </section>
-
 </appendix>

@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<section xml:id="sec-derivative"
-  xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-derivative">
   <title>Derivative</title>
-
   <introduction>
     <p>
       Continuity says that nearby inputs produce nearby outputs. The
@@ -14,22 +11,17 @@
       function.
     </p>
   </introduction>
-
   <subsection xml:id="subsec-derivative-at-a-point">
     <title>Derivative at a Point</title>
-
     <p>
       Let <m>S \subseteq \R</m>, let <m>f \colon S \to \R</m>, and let
       <m>c \in S</m> be a cluster point of <m>S</m>. We say that <m>f</m> is
-      <term>differentiable at</term><idx>differentiable at a point</idx>
-      <m>c</m> if the limit
+      <term>differentiable at</term><idx>differentiable at a point</idx><m>c</m> if the limit
       <md>\lim_{x\to c}\frac{f(x)-f(c)}{x-c}</md>
       exists. In that case, this limit is called the
       <term>derivative</term><idx>derivative</idx> of <m>f</m> at <m>c</m>
       and is denoted by
-      <md>f'(c)=\lim_{x\to c}\frac{f(x)-f(c)}{x-c}.</md>
-    </p>
-
+      <md>f'(c)=\lim_{x\to c}\frac{f(x)-f(c)}{x-c}.</md></p>
     <p>
       If <m>S</m> is an interval and <m>c</m> is an endpoint of <m>S</m>,
       then the same definition is understood one-sidedly, using only points of
@@ -43,18 +35,15 @@
       an interval if it is differentiable at each point of the interval, with
       this endpoint convention when needed.
     </p>
-
     <example xml:id="eg-derivative-of-square">
       <statement>
         <p>
           The function <m>f(x)=x^2</m> is differentiable on <m>\R</m>, and
           <m>f'(c)=2c</m> for every <m>c \in \R</m>. Indeed,
           <md>\frac{x^2-c^2}{x-c}=x+c \to 2c
-            \quad\text{as } x\to c.</md>
-        </p>
+            \quad\text{as } x\to c.</md></p>
       </statement>
     </example>
-
     <example xml:id="eg-absolute-value-not-differentiable">
       <statement>
         <p>
@@ -64,7 +53,6 @@
           <m>(|x|-|0|)/(x-0)=-1</m>. Since the left and right limits are
           different, the derivative at <m>0</m> does not exist.
         </p>
-
         <figure xml:id="fig-abs-not-differentiable">
           <caption>The graph of <m>|x|</m> has a corner at <m>0</m>, so there is no single tangent slope there.</caption>
           <image width="44%">
@@ -91,17 +79,14 @@
       </statement>
     </example>
   </subsection>
-
   <subsection xml:id="subsec-caratheodory-criterion">
     <title>Carathéodory's Criterion</title>
-
     <p>
       The derivative is defined as a limit of quotients, but there is another
       viewpoint that is often more flexible: differentiability at <m>c</m>
       means that <m>f(x)-f(c)</m> factors as <m>x-c</m> times a function that
       is continuous at <m>c</m>.
     </p>
-
     <proposition xml:id="prop-caratheodory-criterion">
       <title>Carathéodory's Criterion</title>
       <statement>
@@ -112,10 +97,8 @@
           <m>\varphi \colon S \to \R</m>, continuous at <m>c</m>, such that
           <md>f(x)-f(c)=\varphi(x)(x-c)</md>
           for every <m>x \in S</m>. In that case,
-          <md>\varphi(c)=f'(c).</md>
-        </p>
+          <md>\varphi(c)=f'(c).</md></p>
       </statement>
-
       <proof>
         <p>
           First suppose that <m>f</m> is differentiable at <m>c</m>. Define
@@ -130,7 +113,6 @@
             \quad\text{as } x\to c,</md>
           so <m>\varphi</m> is continuous at <m>c</m>.
         </p>
-
         <p>
           Conversely, suppose there exists <m>\varphi \colon S \to \R</m>,
           continuous at <m>c</m>, such that
@@ -145,13 +127,11 @@
         </p>
       </proof>
     </proposition>
-
     <p>
       Since Carathéodory's Criterion is equivalent to the classical limit
       definition of differentiability, we will use these two formulations
       interchangeably.
     </p>
-
     <proposition xml:id="prop-differentiable-implies-continuous">
       <statement>
         <p>
@@ -159,7 +139,6 @@
           continuous at <m>c</m>.
         </p>
       </statement>
-
       <proof>
         <p>
           By <xref ref="prop-caratheodory-criterion"/>, there exists
@@ -173,17 +152,14 @@
       </proof>
     </proposition>
   </subsection>
-
   <subsection xml:id="subsec-rules-of-differentiation">
     <title>Rules of Differentiation</title>
-
     <p>
       Carathéodory's criterion is especially effective for proving the
       differentiation rules. The point is that differentiability has been
       converted into a factorization statement, and such factorizations are
       easy to combine.
     </p>
-
     <proposition xml:id="prop-derivative-sum-product-rules">
       <title>Sum and Product Rules</title>
       <statement>
@@ -192,13 +168,10 @@
           <m>c \in S</m>, and let <m>\alpha \in \R</m>. If <m>f</m> and
           <m>g</m> are differentiable at <m>c</m>, then so are
           <m>\alpha f</m>, <m>f+g</m>, and <m>fg</m>. Moreover,
-          <md>(\alpha f)'(c)=\alpha f'(c),</md>
-          <md>(f+g)'(c)=f'(c)+g'(c),</md>
+          <md>(\alpha f)'(c)=\alpha f'(c),</md><md>(f+g)'(c)=f'(c)+g'(c),</md>
           and
-          <md>(fg)'(c)=f'(c)g(c)+f(c)g'(c).</md>
-        </p>
+          <md>(fg)'(c)=f'(c)g(c)+f(c)g'(c).</md></p>
       </statement>
-
       <proof>
         <p>
           By <xref ref="prop-caratheodory-criterion"/>, there exist functions
@@ -209,7 +182,6 @@
             g(x)-g(c)=\varphi_g(x)(x-c).</md>
           Also <m>\varphi_f(c)=f'(c)</m> and <m>\varphi_g(c)=g'(c)</m>.
         </p>
-
         <p>
           Multiplying the first identity by <m>\alpha</m>, we get
           <md>(\alpha f)(x)-(\alpha f)(c)=\alpha\varphi_f(x)(x-c).</md>
@@ -218,16 +190,13 @@
           is differentiable at <m>c</m> and
           <m>(\alpha f)'(c)=\alpha\varphi_f(c)=\alpha f'(c)</m>.
         </p>
-
         <p>
           Adding the two identities gives
           <md>(f+g)(x)-(f+g)(c)
             =(\varphi_f(x)+\varphi_g(x))(x-c).</md>
           Since <m>\varphi_f+\varphi_g</m> is continuous at <m>c</m>,
           <m>f+g</m> is differentiable at <m>c</m>, and
-          <md>(f+g)'(c)=\varphi_f(c)+\varphi_g(c)=f'(c)+g'(c).</md>
-        </p>
-
+          <md>(f+g)'(c)=\varphi_f(c)+\varphi_g(c)=f'(c)+g'(c).</md></p>
         <p>
           For the product,
           <md>\begin{aligned}
@@ -242,11 +211,9 @@
           <xref ref="prop-caratheodory-criterion"/> yields the product rule:
           <md>(fg)'(c)
             = g(c)\varphi_f(c)+f(c)\varphi_g(c)
-            = f'(c)g(c)+f(c)g'(c).</md>
-        </p>
+            = f'(c)g(c)+f(c)g'(c).</md></p>
       </proof>
     </proposition>
-
     <theorem xml:id="thm-chain-rule">
       <title>Chain Rule</title>
       <statement>
@@ -255,10 +222,8 @@
           <m>g \colon T \to \R</m>. If <m>f</m> is differentiable at
           <m>c \in S</m> and <m>g</m> is differentiable at <m>f(c)</m>, then
           <m>g \circ f</m> is differentiable at <m>c</m>, and
-          <md>(g \circ f)'(c)=g'(f(c))f'(c).</md>
-        </p>
+          <md>(g \circ f)'(c)=g'(f(c))f'(c).</md></p>
       </statement>
-
       <proof>
         <p>
           By <xref ref="prop-caratheodory-criterion"/>, there exist functions
@@ -271,7 +236,6 @@
           for <m>u \in T</m>. Also
           <m>\varphi(c)=f'(c)</m> and <m>\psi(f(c))=g'(f(c))</m>.
         </p>
-
         <p>
           Substituting <m>u=f(x)</m> into the second identity gives
           <md>\begin{aligned}
@@ -285,46 +249,43 @@
           <xref ref="prop-caratheodory-criterion"/> shows that
           <m>g \circ f</m> is differentiable at <m>c</m>, with
           <md>(g \circ f)'(c)
-            = \psi(f(c))\varphi(c)=g'(f(c))f'(c).</md>
-        </p>
+            = \psi(f(c))\varphi(c)=g'(f(c))f'(c).</md></p>
       </proof>
     </theorem>
-
     <example xml:id="eg-differentiability-hypotheses-not-necessary">
       <statement>
         <p>
           The hypotheses in the sum, product, and chain rules are sufficient,
           but not necessary. For example:
         </p>
-        <ul>
-          <li>
+        <p>
+          <ul>
+            <li>
             Neither <m>f(x)=|x|</m> nor <m>g(x)=-|x|</m> is differentiable at
             <m>0</m>, but <m>f+g=0</m> is differentiable at <m>0</m>.
           </li>
-          <li>
+            <li>
             The function <m>g(x)=|x|</m> is not differentiable at <m>0</m>,
             but <m>xg(x)=x|x|</m> is differentiable at <m>0</m>.
           </li>
-          <li>
+            <li>
             The function <m>f(x)=|x|</m> is not differentiable at <m>0</m>,
             but if <m>h(x)=x^2</m>, then
             <m>(h \circ f)(x)=|x|^2=x^2</m> is differentiable at <m>0</m>.
           </li>
-        </ul>
+          </ul>
+        </p>
       </statement>
     </example>
   </subsection>
-
   <subsection xml:id="subsec-derivatives-of-inverse-functions">
     <title>Derivatives of Inverse Functions</title>
-
     <p>
       Suppose <m>f</m> has an inverse function <m>f^{-1}</m>. Since
       <m>f^{-1}(f(x))=x</m>, the chain rule suggests that the derivative of
       the inverse should be the reciprocal of the derivative of <m>f</m>. The
       next proposition makes this precise.
     </p>
-
     <proposition xml:id="prop-derivative-of-inverse-function">
       <title>Derivative of an Inverse Function</title>
       <statement>
@@ -336,9 +297,7 @@
           <m>g=f^{-1}\colon J \to I</m> and <m>y_0=f(x_0)</m>, then
           <m>g</m> is differentiable at <m>y_0</m>, and
           <md>g'(y_0)=\frac{1}{f'(x_0)}
-            =\frac{1}{f'(g(y_0))}.</md>
-        </p>
-
+            =\frac{1}{f'(g(y_0))}.</md></p>
         <p>
           If, in addition, <m>f</m> is differentiable on <m>I</m> and
           <m>f'(x)\neq 0</m> for every <m>x \in I</m>, then <m>g</m> is
@@ -349,7 +308,6 @@
           continuous on <m>J</m>.
         </p>
       </statement>
-
       <proof>
         <p>
           Let <m>g=f^{-1}</m>. By
@@ -362,7 +320,6 @@
             \qquad \text{for every } x \in I,</md>
           and <m>\varphi(x_0)=f'(x_0)</m>.
         </p>
-
         <p>
           Now let <m>y \in J</m>. Since <m>y=f(g(y))</m> and
           <m>y_0=f(x_0)=f(g(y_0))</m>, substituting <m>x=g(y)</m> gives
@@ -378,9 +335,7 @@
           <xref ref="prop-caratheodory-criterion"/> shows that <m>g</m> is
           differentiable at <m>y_0</m> and that
           <md>g'(y_0)=\psi(y_0)=\frac{1}{\varphi(g(y_0))}
-            =\frac{1}{\varphi(x_0)}=\frac{1}{f'(x_0)}.</md>
-        </p>
-
+            =\frac{1}{\varphi(x_0)}=\frac{1}{f'(x_0)}.</md></p>
         <p>
           If <m>f</m> is differentiable on <m>I</m> and <m>f'</m> never
           vanishes there, then the same argument applies at each point
@@ -394,14 +349,12 @@
         </p>
       </proof>
     </proposition>
-
     <p>
       The proposition explains how to differentiate an inverse once we know
       that the inverse exists and is continuous. To guarantee this locally,
       it is enough to assume that the derivative is continuous near the point
       and does not vanish there.
     </p>
-
     <theorem xml:id="thm-single-variable-inverse-function">
       <title>Single-Variable Inverse Function Theorem</title>
       <statement>
@@ -413,10 +366,8 @@
           <m>J=f(I)</m> and <m>g=(f|_I)^{-1}\colon J \to I</m>, then
           <m>g</m> is continuously differentiable on <m>J</m> and
           <md>g'(y)=\frac{1}{f'(g(y))}
-            \qquad \text{for every } y \in J.</md>
-        </p>
+            \qquad \text{for every } y \in J.</md></p>
       </statement>
-
       <proof>
         <p>
           Since <m>f'</m> is continuous at <m>x_0</m> and
@@ -427,7 +378,6 @@
           <xref ref="prop-positive-derivative-implies-strictly-monotone"/>,
           the restriction <m>f|_I</m> is strictly monotone, hence injective.
         </p>
-
         <p>
           Because <m>f|_I</m> is continuous and <m>I</m> is an interval,
           <m>J=f(I)</m> is also an interval. Now apply
@@ -439,7 +389,6 @@
         </p>
       </proof>
     </theorem>
-
     <example xml:id="eg-inverse-function-theorem-is-local">
       <statement>
         <p>
@@ -454,7 +403,6 @@
         </p>
       </statement>
     </example>
-
     <example xml:id="eg-derivative-nonzero-needed-for-inverse">
       <statement>
         <p>
@@ -470,7 +418,6 @@
         </p>
       </statement>
     </example>
-
     <example xml:id="eg-inverse-function-theorem-needs-derivative-continuity">
       <statement>
         <p>
@@ -485,7 +432,6 @@
           <md>f'(x)=1+2x\sin(1/x)-\cos(1/x).</md>
           This derivative is not continuous at <m>0</m>.
         </p>
-
         <p>
           In fact, <m>f</m> is not injective on any neighborhood of
           <m>0</m>. For <m>n \in \N</m>, let
@@ -506,6 +452,5 @@
         </p>
       </statement>
     </example>
-
   </subsection>
 </section>

@@ -1,55 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<chapter xml:id="ch-interchange-of-limit-operations"
-  xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-interchange-of-limit-operations">
   <title>Interchange of Limit Operations</title>
-
-  <xi:include href="sec-sequences-and-series-of-functions.ptx" />
-  <xi:include href="sec-interchanging-limits.ptx" />
-  <xi:include href="sec-exponential-and-logarithmic-functions.ptx" />
-  <xi:include href="sec-trigonometric-functions.ptx" />
-
-  <conclusion>
-    <p>
-      The first two sections provide the uniform-convergence machinery that
-      was used implicitly in the power-series chapter. The last two sections
-      apply that machinery to construct the classical transcendental
-      functions directly from power series. For related presentations, compare
-      <xref ref="biblio-rosenlicht-intro"/> and
-      <xref ref="biblio-lebl-basic-analysis"/>.
-    </p>
-  </conclusion>
-
+  <xi:include href="sec-sequences-and-series-of-functions.ptx"/>
+  <xi:include href="sec-interchanging-limits.ptx"/>
+  <xi:include href="sec-exponential-and-logarithmic-functions.ptx"/>
+  <xi:include href="sec-trigonometric-functions.ptx"/>
   <exercises xml:id="ex-ch8">
     <title>Exercises</title>
-
     <exercise xml:id="ex-interchange-xn-not-uniform">
       <statement>
         <p>
           Let <m>f_n(x)=x^n</m> on <m>[0,1]</m>.
         </p>
-        <ol>
-          <li>
-            <p>
+        <p>
+          <ol>
+            <li>
+              <p>
               Find the pointwise limit of <m>(f_n)</m> on <m>[0,1]</m>.
             </p>
-          </li>
-          <li>
-            <p>
+            </li>
+            <li>
+              <p>
               Prove that <m>(f_n)</m> does not converge uniformly on
               <m>[0,1]</m>.
             </p>
-          </li>
-          <li>
-            <p>
+            </li>
+            <li>
+              <p>
               Show that <m>(f_n)</m> does converge uniformly on
               <m>[0,r]</m> for every <m>0 \lt r \lt 1</m>.
             </p>
-          </li>
-        </ol>
+            </li>
+          </ol>
+        </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-interchange-exp-mtest">
       <statement>
         <p>
@@ -61,7 +46,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-interchange-uniform-limit-uniformly-continuous">
       <statement>
         <p>
@@ -70,7 +54,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-interchange-spike-functions">
       <statement>
         <p>
@@ -88,7 +71,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-interchange-logarithm-integral">
       <statement>
         <p>
@@ -102,7 +84,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-interchange-double-angle-formulas">
       <statement>
         <p>
@@ -117,9 +98,18 @@
             \cos^2 x=\frac{1+\cos(2x)}{2}
             \qquad\text{and}\qquad
             \sin^2 x=\frac{1-\cos(2x)}{2}.
-          </md>
-        </p>
+          </md></p>
       </statement>
     </exercise>
   </exercises>
+  <conclusion>
+    <p>
+      The first two sections provide the uniform-convergence machinery that
+      was used implicitly in the power-series chapter. The last two sections
+      apply that machinery to construct the classical transcendental
+      functions directly from power series. For related presentations, compare
+      <xref ref="biblio-rosenlicht-intro"/> and
+      <xref ref="biblio-lebl-basic-analysis"/>.
+    </p>
+  </conclusion>
 </chapter>

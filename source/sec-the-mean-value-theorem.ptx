@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<section xml:id="sec-the-mean-value-theorem"
-  xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-the-mean-value-theorem">
   <title>The Mean Value Theorem</title>
-
   <introduction>
     <p>
       The derivative is defined pointwise, but the next results show that it
@@ -13,10 +10,8 @@
       differential calculus.
     </p>
   </introduction>
-
   <subsection xml:id="subsec-critical-points-and-rolle">
     <title>Critical Points and Rolle's Theorem</title>
-
     <proposition xml:id="prop-critical-point-theorem">
       <title>Critical Point Theorem</title>
       <statement>
@@ -24,10 +19,8 @@
           Let <m>f \colon (a,b) \to \R</m>, and let <m>c \in (a,b)</m>. If
           <m>f</m> has a local maximum or a local minimum at <m>c</m> and
           <m>f</m> is differentiable at <m>c</m>, then
-          <md>f'(c)=0.</md>
-        </p>
+          <md>f'(c)=0.</md></p>
       </statement>
-
       <proof>
         <p>
           Suppose <m>f</m> has a local maximum at <m>c</m>. Then for all
@@ -43,24 +36,29 @@
         </p>
       </proof>
     </proposition>
-
     <theorem xml:id="thm-rolle">
       <title>Rolle's Theorem</title>
       <statement>
         <p>
           Let <m>f \colon [a,b] \to \R</m>. Assume that
         </p>
-        <ol>
-          <li><p><m>f</m> is continuous on <m>[a,b]</m>,</p></li>
-          <li><p><m>f</m> is differentiable on <m>(a,b)</m>,</p></li>
-          <li><p><m>f(a)=f(b)</m>.</p></li>
-        </ol>
+        <p>
+          <ol>
+            <li>
+              <p><m>f</m> is continuous on <m>[a,b]</m>,</p>
+            </li>
+            <li>
+              <p><m>f</m> is differentiable on <m>(a,b)</m>,</p>
+            </li>
+            <li>
+              <p><m>f(a)=f(b)</m>.</p>
+            </li>
+          </ol>
+        </p>
         <p>
           Then there exists <m>c \in (a,b)</m> such that
-          <md>f'(c)=0.</md>
-        </p>
+          <md>f'(c)=0.</md></p>
       </statement>
-
       <proof>
         <p>
           By <xref ref="thm-extreme-value-theorem"/>, <m>f</m> attains an
@@ -68,7 +66,6 @@
           are equal, then <m>f</m> is constant, so <m>f'(x)=0</m> for every
           <m>x \in (a,b)</m>.
         </p>
-
         <p>
           Otherwise at least one of the two extreme values is different from
           <m>f(a)=f(b)</m>. If the minimum is different from <m>f(a)</m>, then
@@ -81,17 +78,14 @@
       </proof>
     </theorem>
   </subsection>
-
   <subsection xml:id="subsec-mean-value-theorems">
     <title>The Mean Value Theorems</title>
-
     <p>
       Rolle's theorem is already useful, but its most important role is as the
       model for the Mean Value Theorem. The idea is simple: subtract a suitable
       linear function so that the new function has equal endpoint values, then
       apply Rolle's theorem.
     </p>
-
     <theorem xml:id="thm-mean-value-theorem">
       <title>Mean Value Theorem</title>
       <statement>
@@ -99,10 +93,8 @@
           Let <m>f \colon [a,b] \to \R</m>. Assume that <m>f</m> is continuous
           on <m>[a,b]</m> and differentiable on <m>(a,b)</m>. Then there
           exists <m>c \in (a,b)</m> such that
-          <md>f'(c)=\frac{f(b)-f(a)}{b-a}.</md>
-        </p>
+          <md>f'(c)=\frac{f(b)-f(a)}{b-a}.</md></p>
       </statement>
-
       <proof>
         <p>
           Let
@@ -115,13 +107,11 @@
           that <m>h'(c)=0</m>. Since
           <md>h'(x)=f'(x)-\frac{f(b)-f(a)}{b-a},</md>
           we obtain
-          <md>f'(c)=\frac{f(b)-f(a)}{b-a}.</md>
-        </p>
-
+          <md>f'(c)=\frac{f(b)-f(a)}{b-a}.</md></p>
         <figure xml:id="fig-mvt-secant-tangent">
           <caption>For a differentiable function, some tangent line is parallel to the secant line joining the endpoints.</caption>
           <image width="52%">
-            <shortdescription>A parabola on an interval with a secant line through the endpoints and a tangent line at an interior point having the same slope.</shortdescription>
+            <shortdescription>A parabola with a secant through the endpoints and a parallel tangent at an interior point.</shortdescription>
             <latex-image>
 \begin{tikzpicture}
 \begin{axis}[
@@ -147,14 +137,14 @@
         </figure>
       </proof>
     </theorem>
-
     <example xml:id="eg-mvt-hypotheses-necessary">
       <statement>
         <p>
           Each hypothesis in the Mean Value Theorem is necessary.
         </p>
-        <ul>
-          <li>
+        <p>
+          <ul>
+            <li>
             The function
             <md>f(x)=\begin{cases}
             x &amp; \text{if } 0 \lt x \lt 1,\\
@@ -164,16 +154,16 @@
             <m>f(0)=f(1)=0</m>, but it is not continuous on <m>[0,1]</m> and
             there is no <m>c \in (0,1)</m> with <m>f'(c)=0</m>.
           </li>
-          <li>
+            <li>
             The function <m>f(x)=|x|-1</m> is continuous on <m>[-1,1]</m> and
             satisfies <m>f(-1)=f(1)=0</m>, but it is not differentiable at
             <m>0</m> and there is no <m>c \in (-1,1)</m> with
             <m>f'(c)=0</m>.
           </li>
-        </ul>
+          </ul>
+        </p>
       </statement>
     </example>
-
     <theorem xml:id="thm-cauchy-mean-value-theorem">
       <title>Cauchy's Mean Value Theorem</title>
       <statement>
@@ -181,10 +171,8 @@
           Let <m>f,g \colon [a,b] \to \R</m>. Assume that <m>f</m> and
           <m>g</m> are continuous on <m>[a,b]</m> and differentiable on
           <m>(a,b)</m>. Then there exists <m>c \in (a,b)</m> such that
-          <md>f'(c)(g(b)-g(a))=g'(c)(f(b)-f(a)).</md>
-        </p>
+          <md>f'(c)(g(b)-g(a))=g'(c)(f(b)-f(a)).</md></p>
       </statement>
-
       <proof>
         <p>
           Define
@@ -195,11 +183,9 @@
           <m>h'(c)=0</m>. Since
           <md>h'(x)=f'(x)(g(b)-g(a))-g'(x)(f(b)-f(a)),</md>
           we obtain
-          <md>f'(c)(g(b)-g(a))=g'(c)(f(b)-f(a)).</md>
-        </p>
+          <md>f'(c)(g(b)-g(a))=g'(c)(f(b)-f(a)).</md></p>
       </proof>
     </theorem>
-
     <p>
       Taking <m>g(x)=x</m> in Cauchy's theorem recovers the ordinary Mean
       Value Theorem. So Cauchy's version is a genuine generalization rather

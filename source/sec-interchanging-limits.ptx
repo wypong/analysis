@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<section xml:id="sec-interchanging-limits"
-  xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-interchanging-limits">
   <title>Interchanging Limits</title>
-
   <introduction>
     <p>
       Limits do not commute automatically. Even when every object in sight is
@@ -12,10 +9,11 @@
       familiar limit operations legitimate.
     </p>
   </introduction>
-
-  <example xml:id="eg-two-limits-do-not-commute">
-    <statement>
-      <p>
+  <subsection>
+    <title/>
+    <example xml:id="eg-two-limits-do-not-commute">
+      <statement>
+        <p>
         Define
         <md>
           a_{n,k}=\frac{n}{n+k}.
@@ -32,22 +30,20 @@
         </md>
         So the two iterated limits are different.
       </p>
-    </statement>
-  </example>
-
-  <theorem xml:id="thm-uniform-limit-continuous">
-    <title>Continuity of the Uniform Limit</title>
-    <statement>
-      <p>
+      </statement>
+    </example>
+    <theorem xml:id="thm-uniform-limit-continuous">
+      <title>Continuity of the Uniform Limit</title>
+      <statement>
+        <p>
         Let <m>S \subseteq \R</m>, let <m>x_0 \in S</m>, and suppose
         <m>f_n \colon S \to \R</m> is continuous at <m>x_0</m> for every
         <m>n</m>. If <m>f_n \to f</m> uniformly on <m>S</m>, then
         <m>f</m> is continuous at <m>x_0</m>.
       </p>
-    </statement>
-
-    <proof>
-      <p>
+      </statement>
+      <proof>
+        <p>
         Let <m>\varepsilon \gt 0</m>. By uniform convergence, there exists
         <m>N</m> such that
         <md>
@@ -74,28 +70,25 @@
         </md>
         Therefore <m>f</m> is continuous at <m>x_0</m>.
       </p>
-    </proof>
-  </theorem>
-
-  <corollary xml:id="cor-uniform-limit-of-continuous-functions">
-    <statement>
-      <p>
+      </proof>
+    </theorem>
+    <corollary xml:id="cor-uniform-limit-of-continuous-functions">
+      <statement>
+        <p>
         The uniform limit of continuous functions is continuous.
       </p>
-    </statement>
-  </corollary>
-
-  <corollary xml:id="cor-uniform-limit-uniformly-continuous">
-    <statement>
-      <p>
+      </statement>
+    </corollary>
+    <corollary xml:id="cor-uniform-limit-uniformly-continuous">
+      <statement>
+        <p>
         Let <m>S \subseteq \R</m>. If each <m>f_n \colon S \to \R</m> is
         uniformly continuous on <m>S</m> and <m>f_n \to f</m> uniformly on
         <m>S</m>, then <m>f</m> is uniformly continuous on <m>S</m>.
       </p>
-    </statement>
-
-    <proof>
-      <p>
+      </statement>
+      <proof>
+        <p>
         Let <m>\varepsilon \gt 0</m>. Choose <m>N</m> such that
         <m>|f(x)-f_N(x)| \lt \varepsilon/3</m> for all <m>x \in S</m>. Since
         <m>f_N</m> is uniformly continuous, there exists <m>\delta \gt 0</m>
@@ -112,24 +105,22 @@
         </md>
         Hence <m>f</m> is uniformly continuous on <m>S</m>.
       </p>
-    </proof>
-  </corollary>
-
-  <example xml:id="eg-pointwise-limit-can-destroy-continuity">
-    <statement>
-      <p>
+      </proof>
+    </corollary>
+    <example xml:id="eg-pointwise-limit-can-destroy-continuity">
+      <statement>
+        <p>
         The sequence <m>f_n(x)=x^n</m> on <m>[0,1]</m> converges pointwise to
         the discontinuous limit described in
         <xref ref="eg-pointwise-limit-xn"/>. Thus continuity is not preserved
         by pointwise convergence.
       </p>
-    </statement>
-  </example>
-
-  <theorem xml:id="thm-integral-uniform-limit">
-    <title>Integration of the Uniform Limit</title>
-    <statement>
-      <p>
+      </statement>
+    </example>
+    <theorem xml:id="thm-integral-uniform-limit">
+      <title>Integration of the Uniform Limit</title>
+      <statement>
+        <p>
         Let <m>f_n \in R[a,b]</m> for every <m>n</m>, and suppose
         <m>f_n \to f</m> uniformly on <m>[a,b]</m>. Then <m>f \in R[a,b]</m>,
         and
@@ -137,12 +128,10 @@
           \int_a^b f
           =
           \lim_{n\to\infty} \int_a^b f_n.
-        </md>
-      </p>
-    </statement>
-
-    <proof>
-      <p>
+        </md></p>
+      </statement>
+      <proof>
+        <p>
         Let
         <md>
           c_n=\sup_{x \in [a,b]} |f(x)-f_n(x)|.
@@ -154,10 +143,8 @@
         <m>P</m> of <m>[a,b]</m> such that
         <md>
           U(P,f_n)-L(P,f_n) \lt \frac{\varepsilon}{3}.
-        </md>
-      </p>
-
-      <p>
+        </md></p>
+        <p>
         On each subinterval <m>I_j</m> of <m>P</m>, let <m>M_j^n,m_j^n</m> be
         the supremum and infimum of <m>f_n</m>, and let <m>M_j,m_j</m> be the
         corresponding quantities for <m>f</m>. From
@@ -177,8 +164,7 @@
         </md>
         Therefore <m>f</m> is integrable.
       </p>
-
-      <p>
+        <p>
         Since <m>f-f_n</m> is now integrable, part (4) of
         <xref ref="thm-basic-properties-riemann-integral"/> yields
         <md>
@@ -191,12 +177,11 @@
         The right-hand side tends to <m>0</m>, so
         <m>\int_a^b f_n \to \int_a^b f</m>.
       </p>
-    </proof>
-  </theorem>
-
-  <example xml:id="eg-spike-functions-integrals">
-    <statement>
-      <p>
+      </proof>
+    </theorem>
+    <example xml:id="eg-spike-functions-integrals">
+      <statement>
+        <p>
         For each <m>n \in \N</m>, define
         <md>
           f_n(x)=
@@ -227,13 +212,12 @@
         So pointwise convergence is not enough to interchange limit and
         integral.
       </p>
-    </statement>
-  </example>
-
-  <theorem xml:id="thm-differentiation-under-uniform-limit">
-    <title>Differentiation Under the Limit Sign</title>
-    <statement>
-      <p>
+      </statement>
+    </example>
+    <theorem xml:id="thm-differentiation-under-uniform-limit">
+      <title>Differentiation Under the Limit Sign</title>
+      <statement>
+        <p>
         Let <m>I \subseteq \R</m> be an open interval, and let
         <m>f_n \in C^1(I)</m> for every <m>n</m>. Suppose there exists a point
         <m>a \in I</m> such that the numerical sequence <m>(f_n(a))</m>
@@ -245,12 +229,10 @@
         <md>
           f'(x)=g(x)
           \qquad \text{for every } x \in I.
-        </md>
-      </p>
-    </statement>
-
-    <proof>
-      <p>
+        </md></p>
+      </statement>
+      <proof>
+        <p>
         Let <m>L=\lim_{n\to\infty} f_n(a)</m>. Fix a compact interval
         <m>K=[u,v] \subseteq I</m>, and set
         <m>\alpha=\min\{a,u\}</m> and <m>\beta=\max\{a,v\}</m>. Then
@@ -260,8 +242,7 @@
         <xref ref="cor-uniform-limit-of-continuous-functions"/> shows that
         <m>g</m> is continuous on <m>[\alpha,\beta]</m>.
       </p>
-
-      <p>
+        <p>
         For each <m>x \in K</m>, the Fundamental Theorem of Calculus gives
         <md>
           f_n(x)=f_n(a)+\int_a^x f_n'(t)\,dt.
@@ -273,30 +254,29 @@
         </md>
         Then for <m>x \in K</m>,
         <md>
-          |f_n(x)-f(x)|
-          \le
-          |f_n(a)-L|
-          +
-          \left|\int_a^x \bigl(f_n'(t)-g(t)\bigr)\,dt\right|
-          \le
-          |f_n(a)-L| + (\beta-\alpha)\sup_{t \in [\alpha,\beta]} |f_n'(t)-g(t)|.
+          \begin{aligned}
+            |f_n(x)-f(x)|
+            &amp;\le |f_n(a)-L|
+              + \left|\int_a^x \bigl(f_n'(t)-g(t)\bigr)\,dt\right| \\
+            &amp;\le |f_n(a)-L| \\
+            &amp;\qquad + (\beta-\alpha)
+              \sup_{t \in [\alpha,\beta]} |f_n'(t)-g(t)|.
+          \end{aligned}
         </md>
         The right-hand side tends to <m>0</m>, uniformly in <m>x \in K</m>.
         Hence <m>f_n \to f</m> uniformly on <m>K</m>.
       </p>
-
-      <p>
+        <p>
         Because <m>g</m> is continuous on every compact interval of <m>I</m>,
         the Fundamental Theorem of Calculus implies that <m>f</m> is
         differentiable on <m>I</m> and that <m>f'(x)=g(x)</m> for every
         <m>x \in I</m>.
       </p>
-    </proof>
-  </theorem>
-
-  <example xml:id="eg-uniform-limit-not-enough-for-derivatives">
-    <statement>
-      <p>
+      </proof>
+    </theorem>
+    <example xml:id="eg-uniform-limit-not-enough-for-derivatives">
+      <statement>
+        <p>
         Uniform convergence of <m>f_n</m> alone does not justify
         differentiating term by term. Let
         <md>
@@ -311,13 +291,13 @@
         and the sequence <m>(\cos(nx))</m> does not even converge pointwise
         on <m>\R</m>; for example, <m>\cos(n\pi)=(-1)^n</m> oscillates.
       </p>
-    </statement>
-  </example>
-
-  <p>
+      </statement>
+    </example>
+    <p>
     Theorems <xref ref="thm-integral-uniform-limit"/> and
     <xref ref="thm-differentiation-under-uniform-limit"/> explain why power
     series can be integrated and differentiated term by term on closed
     subintervals inside their interval of convergence.
   </p>
+  </subsection>
 </section>

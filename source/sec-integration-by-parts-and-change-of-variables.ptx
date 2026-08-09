@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<section xml:id="sec-integration-by-parts-and-change-of-variables"
-  xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-integration-by-parts-and-change-of-variables">
   <title>Integration by Parts and Change of Variables</title>
-
   <introduction>
     <p>
       The Fundamental Theorem of Calculus turns differentiation rules into
@@ -12,10 +9,8 @@
       from the chain rule.
     </p>
   </introduction>
-
   <subsection xml:id="subsec-integration-by-parts">
     <title>Integration by Parts</title>
-
     <proposition xml:id="prop-integration-by-parts">
       <title>Integration by Parts</title>
       <statement>
@@ -27,21 +22,17 @@
             \int_a^b F(x)G'(x)\,dx
             =
             F(b)G(b)-F(a)G(a)-\int_a^b F'(x)G(x)\,dx.
-          </md>
-        </p>
+          </md></p>
       </statement>
-
       <proof>
         <p>
           Since differentiability implies continuity, both <m>F</m> and
           <m>G</m> are continuous on <m>[a,b]</m>. Hence
           <xref ref="thm-continuous-function-integrable" text="title"/>
           shows that <m>F,G \in R[a,b]</m>. Because <m>F'</m> and <m>G'</m>
-          are integrable by assumption, <xref
-          ref="prop-product-of-integrable-functions"/> implies that
+          are integrable by assumption, <xref ref="prop-product-of-integrable-functions"/> implies that
           <m>F'G</m> and <m>FG'</m> are integrable.
         </p>
-
         <p>
           By the product rule
           (<xref ref="prop-derivative-sum-product-rules"/>),
@@ -64,10 +55,8 @@
       </proof>
     </proposition>
   </subsection>
-
   <subsection xml:id="subsec-change-of-variables">
     <title>Change of Variables</title>
-
     <theorem xml:id="thm-change-of-variables">
       <title>Change of Variables</title>
       <statement>
@@ -78,10 +67,8 @@
             \int_a^b f(\varphi(x))\varphi'(x)\,dx
             =
             \int_{\varphi(a)}^{\varphi(b)} f(u)\,du.
-          </md>
-        </p>
+          </md></p>
       </statement>
-
       <proof>
         <p>
           Since <m>f</m> is continuous on <m>\varphi([a,b])</m>, the second
@@ -93,7 +80,6 @@
           </md>
           such that <m>U'(y)=f(y)</m> for every <m>y \in \varphi([a,b])</m>.
         </p>
-
         <p>
           Define <m>H(x)=U(\varphi(x))</m> on <m>[a,b]</m>. By the chain rule,
           <md>
@@ -105,7 +91,6 @@
           Hence <m>H'</m> is continuous, in particular integrable, on
           <m>[a,b]</m>.
         </p>
-
         <p>
           Applying <xref ref="thm-ftc-first-form" text="title"/> to <m>H</m>,
           we obtain
@@ -126,7 +111,6 @@
         </p>
       </proof>
     </theorem>
-
     <example xml:id="eg-change-of-variables-x-over-one-plus-xsq">
       <statement>
         <p>
@@ -151,8 +135,7 @@
             \int_{2}^{5} \frac{1}{2u}\,du
             =
             \frac12 \ln\frac{5}{2}.
-          </md>
-        </p>
+          </md></p>
       </statement>
     </example>
   </subsection>

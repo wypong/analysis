@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<section xml:id="sec-applications-of-differentiation"
-  xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-applications-of-differentiation">
   <title>Applications</title>
-
   <introduction>
     <p>
       The Mean Value Theorem turns derivative information into comparisons of
@@ -14,32 +11,31 @@
       integral.
     </p>
   </introduction>
-
   <subsection xml:id="subsec-monotonicity-and-constant-functions">
     <title>Monotonicity</title>
-
     <proposition xml:id="prop-derivative-sign-and-monotonicity">
       <statement>
         <p>
           Let <m>I</m> be an open interval, and let <m>f \colon I \to \R</m>
           be differentiable on <m>I</m>.
         </p>
-        <ol>
-          <li>
-            <p>
+        <p>
+          <ol>
+            <li>
+              <p>
               The function <m>f</m> is increasing on <m>I</m> if and only if
               <m>f'(x) \ge 0</m> for every <m>x \in I</m>.
             </p>
-          </li>
-          <li>
-            <p>
+            </li>
+            <li>
+              <p>
               The function <m>f</m> is decreasing on <m>I</m> if and only if
               <m>f'(x) \le 0</m> for every <m>x \in I</m>.
             </p>
-          </li>
-        </ol>
+            </li>
+          </ol>
+        </p>
       </statement>
-
       <proof>
         <p>
           We prove the increasing case; the decreasing case follows by
@@ -54,7 +50,6 @@
           Since <m>\varphi</m> is continuous at <m>c</m>, it follows that
           <m>f'(c)=\varphi(c) \ge 0</m>.
         </p>
-
         <p>
           Conversely, suppose that <m>f'(x) \ge 0</m> for every <m>x
           \in I</m>.  Let <m>x_1,x_2 \in I</m> with <m>x_1 \lt x_2</m>. By
@@ -68,19 +63,23 @@
         </p>
       </proof>
     </proposition>
-
     <proposition xml:id="prop-positive-derivative-implies-strictly-monotone">
       <statement>
         <p>
           Let <m>I</m> be an open interval, and let <m>f \colon I \to \R</m>
           be differentiable on <m>I</m>.
         </p>
-        <ol>
-          <li><p>If <m>f'(x) \gt 0</m> for every <m>x \in I</m>, then <m>f</m> is strictly increasing on <m>I</m>.</p></li>
-          <li><p>If <m>f'(x) \lt 0</m> for every <m>x \in I</m>, then <m>f</m> is strictly decreasing on <m>I</m>.</p></li>
-        </ol>
+        <p>
+          <ol>
+            <li>
+              <p>If <m>f'(x) \gt 0</m> for every <m>x \in I</m>, then <m>f</m> is strictly increasing on <m>I</m>.</p>
+            </li>
+            <li>
+              <p>If <m>f'(x) \lt 0</m> for every <m>x \in I</m>, then <m>f</m> is strictly decreasing on <m>I</m>.</p>
+            </li>
+          </ol>
+        </p>
       </statement>
-
       <proof>
         <p>
           Again we prove only the increasing case. Let <m>x_1,x_2 \in I</m>
@@ -94,7 +93,6 @@
         </p>
       </proof>
     </proposition>
-
     <example xml:id="eg-x-cubed-increasing-flat-at-zero">
       <statement>
         <p>
@@ -103,7 +101,6 @@
           false. The function <m>f(x)=x^3</m> is strictly increasing on
           <m>\R</m>, but <m>f'(0)=0</m>.
         </p>
-
         <figure xml:id="fig-x-cubed-flat-at-zero">
           <caption>The function <m>x^3</m> is strictly increasing even though its tangent is horizontal at <m>0</m>.</caption>
           <image width="48%">
@@ -130,7 +127,6 @@
         </figure>
       </statement>
     </example>
-
     <corollary xml:id="cor-derivative-zero-implies-constant">
       <statement>
         <p>
@@ -139,7 +135,6 @@
           <m>x \in I</m>, then <m>f</m> is constant on <m>I</m>.
         </p>
       </statement>
-
       <proof>
         <p>
           By <xref ref="prop-derivative-sign-and-monotonicity"/>, <m>f</m> is
@@ -148,7 +143,6 @@
         </p>
       </proof>
     </corollary>
-
     <p>
       The fact that the domain is an interval is essential here. For example,
       define <m>f \colon (-1,0)\cup(0,1) \to \R</m> by
@@ -161,17 +155,14 @@
       each interval component of its domain.
     </p>
   </subsection>
-
   <subsection xml:id="subsec-derivative-tests">
     <title>Derivative Tests for Extrema</title>
-
     <p>
       The sign of the derivative often reveals where extrema occur. The first
       derivative test uses only the sign pattern of <m>f'</m>. The second
       derivative test packages the same idea into a convenient condition at a
       single point.
     </p>
-
     <proposition xml:id="prop-first-derivative-test">
       <title>First Derivative Test</title>
       <statement>
@@ -180,28 +171,29 @@
           continuous on <m>(a,b)</m> and differentiable on
           <m>(a,b)\setminus\{c\}</m>.
         </p>
-        <ol>
-          <li>
-            <p>
+        <p>
+          <ol>
+            <li>
+              <p>
               If <m>f'(x) \ge 0</m> on <m>(a,c)</m> and <m>f'(x) \le 0</m> on
               <m>(c,b)</m>, then <m>c</m> is a maximum point of <m>f</m> on
               <m>(a,b)</m>.
             </p>
-          </li>
-          <li>
-            <p>
+            </li>
+            <li>
+              <p>
               If <m>f'(x) \le 0</m> on <m>(a,c)</m> and <m>f'(x) \ge 0</m> on
               <m>(c,b)</m>, then <m>c</m> is a minimum point of <m>f</m> on
               <m>(a,b)</m>.
             </p>
-          </li>
-        </ol>
+            </li>
+          </ol>
+        </p>
         <p>
           If the inequalities are strict, then the corresponding extremum is
           strict.
         </p>
       </statement>
-
       <proof>
         <p>
           We prove the first statement. Let <m>x \in (a,c)</m>. The function
@@ -213,7 +205,6 @@
           Since <m>f'(u_x) \ge 0</m> and <m>c-x \gt 0</m>, we obtain
           <m>f(c)-f(x) \ge 0</m>, that is, <m>f(x) \le f(c)</m>.
         </p>
-
         <p>
           Similarly, if <m>y \in (c,b)</m>, then applying the Mean Value
           Theorem to <m>[c,y]</m> gives <m>v_y \in (c,y)</m> such that
@@ -227,7 +218,6 @@
         </p>
       </proof>
     </proposition>
-
     <proposition xml:id="prop-second-derivative-test">
       <title>Second Derivative Test</title>
       <statement>
@@ -236,12 +226,17 @@
           that <m>f</m> is twice differentiable at <m>x_0</m> with
           <m>f'(x_0)=0</m>.
         </p>
-        <ol>
-          <li><p>If <m>f''(x_0) \gt 0</m>, then <m>x_0</m> is a strict local minimum of <m>f</m>.</p></li>
-          <li><p>If <m>f''(x_0) \lt 0</m>, then <m>x_0</m> is a strict local maximum of <m>f</m>.</p></li>
-        </ol>
+        <p>
+          <ol>
+            <li>
+              <p>If <m>f''(x_0) \gt 0</m>, then <m>x_0</m> is a strict local minimum of <m>f</m>.</p>
+            </li>
+            <li>
+              <p>If <m>f''(x_0) \lt 0</m>, then <m>x_0</m> is a strict local maximum of <m>f</m>.</p>
+            </li>
+          </ol>
+        </p>
       </statement>
-
       <proof>
         <p>
           We prove the first statement. Apply Carathéodory's Criterion
@@ -251,9 +246,7 @@
           <md>f'(x)-f'(x_0)=\psi(x)(x-x_0)</md>
           for all <m>x</m> near <m>x_0</m>, and
           <m>\psi(x_0)=f''(x_0) \gt 0</m>. Since <m>f'(x_0)=0</m>, this becomes
-          <md>f'(x)=\psi(x)(x-x_0).</md>
-        </p>
-
+          <md>f'(x)=\psi(x)(x-x_0).</md></p>
         <p>
           Because <m>\psi</m> is continuous at <m>x_0</m> and
           <m>\psi(x_0) \gt 0</m>, there exists <m>\delta \gt 0</m> such that
@@ -267,10 +260,8 @@
       </proof>
     </proposition>
   </subsection>
-
   <subsection xml:id="subsec-darboux-and-ftc-preview">
     <title>Darboux's Theorem and a Preview of the FTC</title>
-
     <theorem xml:id="thm-darboux-for-derivatives">
       <title>Darboux's Theorem</title>
       <statement>
@@ -278,18 +269,15 @@
           Let <m>f \colon [a,b] \to \R</m> be differentiable on <m>[a,b]</m>.
           If <m>\lambda</m> lies between <m>f'(a)</m> and <m>f'(b)</m>, then
           there exists <m>c \in (a,b)</m> such that
-          <md>f'(c)=\lambda.</md>
-        </p>
+          <md>f'(c)=\lambda.</md></p>
       </statement>
-
       <proof>
-	<p>
+        <p>
 	  Replacing <m>f</m> by <m>x \mapsto f(x)-\lambda x</m>, it suffices
 	  to prove the theorem in the case <m>\lambda=0</m>. Replacing
 	  <m>f</m> by <m>-f</m> if necessary, we may further assume that
 	  <m>f'(a) \lt 0 \lt f'(b)</m>.
 	</p>
-
         <p>
 	  Since <m>f</m> is differentiable at <m>a</m>, Carathéodory's
 	  Criterion (<xref ref="prop-caratheodory-criterion"/>) gives a
@@ -303,7 +291,6 @@
 	  <m>f(x)-f(a) \lt 0</m> for such <m>x</m>. Therefore <m>a</m> is not
 	  a minimum point of <m>f</m> on <m>[a,b]</m>.
         </p>
-
         <p>
 	  A similar argument at <m>b</m> shows that <m>b</m> is not a minimum
 	  point either. Indeed, Carathéodory's Criterion gives a function
@@ -317,18 +304,14 @@
 	  <m>f(x)-f(b) \lt 0</m>. Hence <m>b</m> is not a minimum point of
 	  <m>f</m>.
 	</p>
-
-	<p>
-	  By the Extreme Value Theorem (<xref
-	  ref="thm-extreme-value-theorem"/>), <m>f</m> attains its
+        <p>
+	  By the Extreme Value Theorem (<xref ref="thm-extreme-value-theorem"/>), <m>f</m> attains its
 	  minimum value at some point <m>c \in [a,b]</m>. Thus, we must
-	  have <m>c \in (a,b)</m>. The Critical Point Theorem (<xref
-	  ref="prop-critical-point-theorem"/>) then gives <m>f'(c)=0</m>, as
+	  have <m>c \in (a,b)</m>. The Critical Point Theorem (<xref ref="prop-critical-point-theorem"/>) then gives <m>f'(c)=0</m>, as
 	  required.
 	</p>
       </proof>
     </theorem>
-
     <p>
       Darboux's theorem shows that derivatives have the intermediate value
       property, even though derivatives need not be continuous. We now record
@@ -336,7 +319,6 @@
       on the usual properties of the definite integral, which we have not yet
       developed systematically, so it should be viewed as a preview.
     </p>
-
     <proposition xml:id="prop-integral-mean-value-theorem">
       <title>Integral Mean Value Theorem</title>
       <statement>
@@ -344,10 +326,8 @@
           Assume the basic properties of the definite integral. If
           <m>f \colon [a,b] \to \R</m> is continuous, then there exists
           <m>c \in [a,b]</m> such that
-          <md>\int_a^b f(x)\,dx = f(c)(b-a).</md>
-        </p>
+          <md>\int_a^b f(x)\,dx = f(c)(b-a).</md></p>
       </statement>
-
       <proof>
         <p>
           By the Extreme Value Theorem
@@ -368,7 +348,6 @@
         </p>
       </proof>
     </proposition>
-
     <theorem xml:id="thm-ftc-special-case">
       <title>Fundamental Theorem of Calculus (Special Case)</title>
       <statement>
@@ -381,7 +360,6 @@
           for every <m>x \in [a,b]</m>.
         </p>
       </statement>
-
       <proof>
         <p>
           Fix <m>x \in [a,b]</m>. Let <m>h \neq 0</m> be small enough that
@@ -392,9 +370,7 @@
           point <m>c_h</m> between <m>x</m> and <m>x+h</m> such that
           <md>\int_x^{x+h} f(t)\,dt = f(c_h)h.</md>
           Therefore
-          <md>\frac{F(x+h)-F(x)}{h}=f(c_h).</md>
-        </p>
-
+          <md>\frac{F(x+h)-F(x)}{h}=f(c_h).</md></p>
         <p>
           Since <m>c_h</m> lies between <m>x</m> and <m>x+h</m>, we have
           <m>c_h \to x</m> as <m>h \to 0</m>. By continuity of <m>f</m>,
@@ -404,7 +380,6 @@
         </p>
       </proof>
     </theorem>
-
     <p>
       This theorem is only a preview. In the integration chapter we prove the
       more general second form of the Fundamental Theorem of Calculus
@@ -412,17 +387,14 @@
       to be Riemann integrable and the conclusion is differentiability at
       points of continuity of the integrand.
     </p>
-
     <corollary xml:id="cor-newton-leibniz-special-case">
       <statement>
         <p>
           Assume the basic properties of the definite integral. If
           <m>f \colon [a,b] \to \R</m> is continuous and <m>F</m> is any
           antiderivative of <m>f</m> on <m>[a,b]</m>, then
-          <md>\int_a^b f(x)\,dx = F(b)-F(a).</md>
-        </p>
+          <md>\int_a^b f(x)\,dx = F(b)-F(a).</md></p>
       </statement>
-
       <proof>
         <p>
           Let <m>F_a(x)=\int_a^x f(t)\,dt</m>. By the Fundamental Theorem
@@ -434,8 +406,7 @@
           <m>F_a</m> and <m>F</m> are continuous on <m>[a,b]</m>, it follows
           that <m>F-F_a</m> is constant on all of <m>[a,b]</m>.
         </p>
-
-	<p>
+        <p>
 	  Evaluating at <m>x=a</m>, we obtain
 	  <md>
 	    F(a)-F_a(a)=F(a),
@@ -449,11 +420,9 @@
 	  and rearranging yields
 	  <md>
 	    \int_a^b f(x)\,dx = F(b)-F(a).
-	  </md>
-	</p>
+	  </md></p>
       </proof>
     </corollary>
-
     <p>
       Likewise, the integration chapter proves the more general first form of
       the Fundamental Theorem of Calculus

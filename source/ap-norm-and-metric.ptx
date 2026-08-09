@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<appendix xml:id="ap-norm-and-metric" xmlns:xi="http://www.w3.org/2001/XInclude">
+<appendix xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ap-norm-and-metric">
   <title>Norm and Metric</title>
-
   <section xml:id="sec-norm-and-metric-euclidean">
     <title>Euclidean Norm on <m>\R^n</m></title>
     <shorttitle>Euclidean Norm on Rn</shorttitle>
-
     <p>
       For vectors <m>x=(x_1,\dots,x_n)</m> and <m>y=(y_1,\dots,y_n)</m> in
       <m>\R^n</m>, their <term>dot product</term><idx>dot product</idx> is
       <m>x\cdot y=\sum_{i=1}^n x_i y_i</m>.
       It is symmetric and bilinear.
     </p>
-
     <p>
       The <term>Euclidean norm</term><idx>Euclidean norm</idx> of
       <m>x\in\R^n</m> is
@@ -25,7 +21,6 @@
       When <m>n=1</m>, the norm is just the absolute value:
       <m>\|x\|=|x|</m>.
     </p>
-
     <theorem xml:id="thm-cauchy-schwarz-rn">
       <title>Cauchy-Schwarz</title>
       <statement>
@@ -43,8 +38,7 @@
             0\le \|y-tx\|^2
             = (y-tx)\cdot(y-tx)
             = \|y\|^2 - 2t(x\cdot y) + t^2\|x\|^2.
-          </m>
-        </p>
+          </m></p>
         <p>
           This quadratic polynomial in <m>t</m> is never negative, so its
           discriminant is at most zero:
@@ -57,7 +51,6 @@
         </p>
       </proof>
     </theorem>
-
     <proposition xml:id="prop-triangle-inequality-rn">
       <statement>
         <p>
@@ -80,7 +73,6 @@
         </p>
       </proof>
     </proposition>
-
     <proposition xml:id="prop-reverse-triangle-inequality-rn">
       <statement>
         <p>
@@ -100,28 +92,33 @@
       </proof>
     </proposition>
   </section>
-
   <section xml:id="sec-norm-and-metric-metrics">
     <title>Metrics</title>
-
     <p>
       Let <m>X</m> be a set. A function <m>d:X\times X\to\R</m> is called a
       <term>metric</term><idx>metric</idx> on <m>X</m> if, for all
       <m>x,y,z\in X</m>, the following hold:
     </p>
-
-    <ol>
-      <li><p><m>d(x,y)\ge 0</m>.</p></li>
-      <li><p><m>d(x,y)=0</m> if and only if <m>x=y</m>.</p></li>
-      <li><p><m>d(x,y)=d(y,x)</m>.</p></li>
-      <li><p><m>d(x,z)\le d(x,y)+d(y,z)</m>.</p></li>
-    </ol>
-
+    <p>
+      <ol>
+        <li>
+          <p><m>d(x,y)\ge 0</m>.</p>
+        </li>
+        <li>
+          <p><m>d(x,y)=0</m> if and only if <m>x=y</m>.</p>
+        </li>
+        <li>
+          <p><m>d(x,y)=d(y,x)</m>.</p>
+        </li>
+        <li>
+          <p><m>d(x,z)\le d(x,y)+d(y,z)</m>.</p>
+        </li>
+      </ol>
+    </p>
     <p>
       For <m>x,y\in\R^n</m>, define the <term>Euclidean distance</term><idx>Euclidean distance</idx> by
       <m>d(x,y)=\|x-y\|</m>.
     </p>
-
     <proposition xml:id="prop-euclidean-distance-metric">
       <statement>
         <p>
@@ -151,16 +148,23 @@
       </proof>
     </proposition>
   </section>
-
   <section xml:id="sec-norm-and-metric-exercises">
     <title>Exercises</title>
-
-    <ol>
-      <li><p>Show directly from the definition that for <m>x=(x_1,\dots,x_n)\in\R^n</m>, one has <m>\|x\|=0</m> if and only if <m>x=0</m>.</p></li>
-      <li><p>Let <m>x,y\in\R^n</m>. Show that if <m>x\cdot y=0</m>, then <m>\|x+y\|^2=\|x\|^2+\|y\|^2</m>.</p></li>
-      <li><p>Prove that for all <m>x,y\in\R^n</m>, <m>\bigl|\,\|x\|-\|y\|\,\bigr|\le \|x-y\| \le \|x\|+\|y\|</m>.</p></li>
-      <li><p>For <m>x,y\in\R</m>, the Euclidean distance on <m>\R</m> is <m>d(x,y)=|x-y|</m>. Verify the four metric axioms in this case.</p></li>
-    </ol>
+    <p>
+      <ol>
+        <li>
+          <p>Show directly from the definition that for <m>x=(x_1,\dots,x_n)\in\R^n</m>, one has <m>\|x\|=0</m> if and only if <m>x=0</m>.</p>
+        </li>
+        <li>
+          <p>Let <m>x,y\in\R^n</m>. Show that if <m>x\cdot y=0</m>, then <m>\|x+y\|^2=\|x\|^2+\|y\|^2</m>.</p>
+        </li>
+        <li>
+          <p>Prove that for all <m>x,y\in\R^n</m>, <m>\bigl|\,\|x\|-\|y\|\,\bigr|\le \|x-y\| \le \|x\|+\|y\|</m>.</p>
+        </li>
+        <li>
+          <p>For <m>x,y\in\R</m>, the Euclidean distance on <m>\R</m> is <m>d(x,y)=|x-y|</m>. Verify the four metric axioms in this case.</p>
+        </li>
+      </ol>
+    </p>
   </section>
-
 </appendix>

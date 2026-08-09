@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<chapter xml:id="ch-differentiation" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-differentiation">
   <title>Differentiation</title>
-
-  <xi:include href="sec-derivative.ptx" />
-  <xi:include href="sec-differentiability-classes.ptx" />
-  <xi:include href="sec-the-mean-value-theorem.ptx" />
-  <xi:include href="sec-applications-of-differentiation.ptx" />
-
+  <xi:include href="sec-derivative.ptx"/>
+  <xi:include href="sec-differentiability-classes.ptx"/>
+  <xi:include href="sec-the-mean-value-theorem.ptx"/>
+  <xi:include href="sec-applications-of-differentiation.ptx"/>
   <exercises xml:id="ex-ch5">
     <title>Exercises</title>
-
     <exercise xml:id="ex-differentiation-x-abs-x">
       <statement>
         <p>
@@ -19,21 +15,27 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-differentiation-rules-hypotheses-not-necessary">
       <statement>
         <p>
           Give examples of functions <m>f</m> and <m>g</m> such that neither
           <m>f</m> nor <m>g</m> is differentiable at <m>0</m>, but:
         </p>
-        <ol>
-          <li><p><m>f+g</m> is differentiable at <m>0</m>,</p></li>
-          <li><p><m>fg</m> is differentiable at <m>0</m>,</p></li>
-          <li><p><m>g \circ f</m> is differentiable at <m>0</m>.</p></li>
-        </ol>
+        <p>
+          <ol>
+            <li>
+              <p><m>f+g</m> is differentiable at <m>0</m>,</p>
+            </li>
+            <li>
+              <p><m>fg</m> is differentiable at <m>0</m>,</p>
+            </li>
+            <li>
+              <p><m>g \circ f</m> is differentiable at <m>0</m>.</p>
+            </li>
+          </ol>
+        </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-differentiation-quotient-rule">
       <statement>
         <p>
@@ -44,11 +46,9 @@
             \left(\frac{f}{g}\right)'(c)
             =
             \frac{f'(c)g(c)-f(c)g'(c)}{g(c)^2}.
-          </md>
-        </p>
+          </md></p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-differentiation-power-rule">
       <statement>
         <p>
@@ -57,11 +57,9 @@
           <m>x \mapsto x^n</m> is differentiable on <m>\R</m> and satisfies
           <md>
             \frac{d}{dx}x^n = nx^{n-1}.
-          </md>
-        </p>
+          </md></p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-differentiation-classes-f4-g4">
       <statement>
         <p>
@@ -69,7 +67,8 @@
           <xref ref="sec-differentiability-classes"/>
           with <m>n=4</m>:
         </p>
-        <md>
+        <p>
+          <md>
           f_4(x)=\begin{cases}
           x^4 &amp; \text{if } x \ge 0,\\
           -x^4 &amp; \text{if } x \lt 0
@@ -80,12 +79,14 @@
           0 &amp; \text{if } x=0.
           \end{cases}
         </md>
+        </p>
+        <p>
         Compute several derivatives of these functions and verify that
         <m>f_4 \in C^3(\R)\setminus D^4(\R)</m> and
         <m>g_4 \in D^4(\R)\setminus C^4(\R)</m>.
+        </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-differentiation-sqrt-derivative">
       <statement>
         <p>
@@ -94,52 +95,56 @@
           <m>\sqrt{x}</m> is differentiable on <m>(0,\infty)</m> and that
           <md>
             \frac{d}{dx}\sqrt{x}=\frac{1}{2\sqrt{x}}.
-          </md>
-        </p>
+          </md></p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-differentiation-local-inverses-of-square">
       <statement>
         <p>
           Let <m>f(x)=x^2</m> on <m>(-2,2)</m>.
         </p>
-        <ol>
-          <li>
-            <p>
+        <p>
+          <ol>
+            <li>
+              <p>
               Find an open interval <m>I_+</m> containing <m>1</m> such that
               <m>f|_{I_+}</m> is injective, and describe its inverse explicitly.
             </p>
-          </li>
-          <li>
-            <p>
+            </li>
+            <li>
+              <p>
               Find an open interval <m>I_-</m> containing <m>-1</m> such that
               <m>f|_{I_-}</m> is injective, and describe its inverse explicitly.
             </p>
-          </li>
-          <li>
-            <p>
+            </li>
+            <li>
+              <p>
               Use <xref ref="thm-single-variable-inverse-function"/> to compute
               the derivative of each local inverse.
             </p>
-          </li>
-        </ol>
+            </li>
+          </ol>
+        </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-differentiation-rolle-hypotheses-necessary">
       <statement>
         <p>
           Give two examples showing that the hypotheses in
           <xref ref="thm-rolle"/> are necessary:
         </p>
-        <ol>
-          <li><p>one function that is differentiable on <m>(a,b)</m> and satisfies <m>f(a)=f(b)</m>, but is not continuous on <m>[a,b]</m> and has no point <m>c \in (a,b)</m> with <m>f'(c)=0</m>;</p></li>
-          <li><p>one function that is continuous on <m>[a,b]</m> and satisfies <m>f(a)=f(b)</m>, but is not differentiable on <m>(a,b)</m> and has no point <m>c \in (a,b)</m> with <m>f'(c)=0</m>.</p></li>
-        </ol>
+        <p>
+          <ol>
+            <li>
+              <p>one function that is differentiable on <m>(a,b)</m> and satisfies <m>f(a)=f(b)</m>, but is not continuous on <m>[a,b]</m> and has no point <m>c \in (a,b)</m> with <m>f'(c)=0</m>;</p>
+            </li>
+            <li>
+              <p>one function that is continuous on <m>[a,b]</m> and satisfies <m>f(a)=f(b)</m>, but is not differentiable on <m>(a,b)</m> and has no point <m>c \in (a,b)</m> with <m>f'(c)=0</m>.</p>
+            </li>
+          </ol>
+        </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-differentiation-bounded-derivative-lipschitz">
       <statement>
         <p>
@@ -153,7 +158,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-differentiation-cauchy-mvt-ratio">
       <statement>
         <p>
@@ -164,11 +168,9 @@
           <m>c \in (a,b)</m> such that
           <md>
             \frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(c)}{g'(c)}.
-          </md>
-        </p>
+          </md></p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-differentiation-derivative-zero-constant-mvt">
       <statement>
         <p>
@@ -179,7 +181,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-differentiation-first-derivative-test-cubic">
       <statement>
         <p>
@@ -193,7 +194,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-differentiation-second-derivative-test-quartic">
       <statement>
         <p>
@@ -207,7 +207,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-differentiation-darboux-no-zero-free-derivative">
       <statement>
         <p>
@@ -218,7 +217,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-differentiation-integral-mean-value-zero">
       <statement>
         <p>
@@ -232,7 +230,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-differentiation-ftc-zero-integral-function">
       <statement>
         <p>

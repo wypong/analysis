@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<section xml:id="sec-power-series-radius"
-  xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-power-series-radius">
   <title>Power Series and Radius of Convergence</title>
-
   <introduction>
     <p>
       A power series is a series whose terms are powers of <m>x-x_0</m>. The
@@ -13,8 +10,9 @@
       converges absolutely and outside which it diverges.
     </p>
   </introduction>
-
-  <p>
+  <subsection>
+    <title/>
+    <p>
     A <term>power series</term><idx>power series</idx> centered at
     <m>x_0 \in \R</m> is a series of the form
     <md>
@@ -25,15 +23,15 @@
     <term>convergent power series</term>; otherwise it is a
     <term>divergent power series</term>.
   </p>
-
-  <example xml:id="eg-power-series-radii">
-    <statement>
-      <p>
+    <example xml:id="eg-power-series-radii">
+      <statement>
+        <p>
         Every radius of convergence can occur.
       </p>
-      <ol>
-        <li>
-          <p>
+        <p>
+          <ol>
+            <li>
+              <p>
             The series
             <md>
               \sum_{n=0}^\infty n!x^n
@@ -42,9 +40,9 @@
             <m>(n!)^{1/n}\to \infty</m> because
             <m>n! \ge (n/2)^{n/2}</m> for large <m>n</m>.
           </p>
-        </li>
-        <li>
-          <p>
+            </li>
+            <li>
+              <p>
             The geometric series
             <md>
               \sum_{n=0}^\infty x^n
@@ -52,9 +50,9 @@
             has radius of convergence <m>1</m> by
             <xref ref="prop-geometric-series"/>.
           </p>
-        </li>
-        <li>
-          <p>
+            </li>
+            <li>
+              <p>
             The exponential series
             <md>
               \sum_{n=0}^\infty \frac{x^n}{n!}
@@ -66,15 +64,15 @@
             </md>
             for every <m>x \in \R</m>.
           </p>
-        </li>
-      </ol>
-    </statement>
-  </example>
-
-  <theorem xml:id="thm-radius-of-convergence">
-    <title>Radius of Convergence</title>
-    <statement>
-      <p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+    <theorem xml:id="thm-radius-of-convergence">
+      <title>Radius of Convergence</title>
+      <statement>
+        <p>
         Let
         <md>
           \sum_{n=0}^\infty a_n(x-x_0)^n
@@ -82,21 +80,26 @@
         be a power series. Then there exists a number
         <m>R \in [0,\infty]</m> such that:
       </p>
-      <ol>
-        <li><p>the series converges absolutely for every <m>x</m> with <m>|x-x_0| &lt; R</m>,</p></li>
-        <li><p>the series diverges for every <m>x</m> with <m>|x-x_0| &gt; R</m>.</p></li>
-      </ol>
-      <p>
+        <p>
+          <ol>
+            <li>
+              <p>the series converges absolutely for every <m>x</m> with <m>|x-x_0| &lt; R</m>,</p>
+            </li>
+            <li>
+              <p>the series diverges for every <m>x</m> with <m>|x-x_0| &gt; R</m>.</p>
+            </li>
+          </ol>
+        </p>
+        <p>
         Moreover,
         <md>
           R=\frac{1}{\limsup |a_n|^{1/n}},
         </md>
         with the conventions <m>1/\infty=0</m> and <m>1/0=\infty</m>.
       </p>
-    </statement>
-
-    <proof>
-      <p>
+      </statement>
+      <proof>
+        <p>
         Fix <m>x \in \R</m> and apply the root test to the series
         <md>
           \sum_{n=0}^\infty a_n(x-x_0)^n.
@@ -112,10 +115,9 @@
         <m>1</m>. Defining <m>R</m> by the displayed formula gives the
         result.
       </p>
-    </proof>
-  </theorem>
-
-  <p>
+      </proof>
+    </theorem>
+    <p>
     The number <m>R</m> is called the
     <term>radius of convergence</term><idx>radius of convergence</idx> of the
     power series. The interval
@@ -126,42 +128,40 @@
     convergence</idx>. The theorem says nothing about the boundary points
     <m>x_0-R</m> and <m>x_0+R</m>; these must be checked separately.
   </p>
-
-  <example xml:id="eg-power-series-endpoint-behavior">
-    <statement>
-      <p>
+    <example xml:id="eg-power-series-endpoint-behavior">
+      <statement>
+        <p>
         Boundary behavior can vary even when the radius of convergence is the
         same. Each of the following power series has radius <m>1</m>.
       </p>
-      <ol>
-        <li>
-          <p>
-            <m>\sum_{n=0}^\infty x^n</m> diverges at both endpoints
+        <p>
+          <ol>
+            <li>
+              <p><m>\sum_{n=0}^\infty x^n</m> diverges at both endpoints
             <m>x=\pm 1</m> by <xref ref="prop-geometric-series"/>.
           </p>
-        </li>
-        <li>
-          <p>
-            <m>\sum_{n=1}^\infty x^n/n</m> diverges at <m>x=1</m> by the
+            </li>
+            <li>
+              <p><m>\sum_{n=1}^\infty x^n/n</m> diverges at <m>x=1</m> by the
             <m>p</m>-series test (<xref ref="prop-p-series-test"/>) but
             converges at <m>x=-1</m> by the alternating series test
             (<xref ref="prop-alternating-series-test"/>).
           </p>
-        </li>
-        <li>
-          <p>
-            <m>\sum_{n=1}^\infty x^n/n^2</m> converges absolutely at both
+            </li>
+            <li>
+              <p><m>\sum_{n=1}^\infty x^n/n^2</m> converges absolutely at both
             endpoints by <xref ref="prop-p-series-test"/>.
           </p>
-        </li>
-      </ol>
-    </statement>
-  </example>
-
-  <p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+    <p>
     By translating the variable, one may often reduce questions about a power
     series centered at <m>x_0</m> to a power series centered at <m>0</m>. For
     that reason, many examples below are written in the simpler form
     <m>\sum a_nx^n</m>.
   </p>
+  </subsection>
 </section>

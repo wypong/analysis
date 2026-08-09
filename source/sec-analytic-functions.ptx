@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<section xml:id="sec-analytic-functions"
-  xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-analytic-functions">
   <title>Analytic Functions</title>
-
   <p>
     A function <m>f</m> is said to be <term>analytic at</term><idx>analytic
-    at a point</idx> <m>x_0</m> if there exists a power series
+    at a point</idx><m>x_0</m> if there exists a power series
     <md>
       \sum_{n=0}^\infty a_n(x-x_0)^n
     </md>
@@ -15,13 +12,11 @@
     on an open set</idx> an open set <m>U \subseteq \R</m> if it is analytic
     at every point of <m>U</m>.
   </p>
-
   <p>
     Thus analytic functions are exactly those functions that locally agree
     with power series. The next result shows that such a representation, if it
     exists, is forced to be the Taylor series.
   </p>
-
   <theorem xml:id="thm-analytic-functions-unique-taylor-series">
     <title>Analytic Functions Are Given by Their Taylor Series</title>
     <statement>
@@ -37,7 +32,6 @@
         <m>x_0</m> is unique.
       </p>
     </statement>
-
     <proof>
       <p>
         Since <m>f</m> is analytic at <m>x_0</m>, there is a power series
@@ -52,9 +46,7 @@
           f^{(k)}(x)
           =
           \sum_{n=k}^\infty n(n-1)\cdots(n-k+1)a_n(x-x_0)^{n-k}.
-        </md>
-      </p>
-
+        </md></p>
       <p>
         Setting <m>x=x_0</m> leaves only the term with <m>n=k</m>, so
         <md>
@@ -70,13 +62,11 @@
       </p>
     </proof>
   </theorem>
-
   <p>
     The theorem shows that analytic functions are automatically
     <m>C^\infty</m>. The converse is false: a function may be infinitely
     differentiable and still fail to agree with its Taylor series.
   </p>
-
   <example xml:id="eg-smooth-not-analytic">
     <statement>
       <p>
@@ -96,14 +86,12 @@
       </p>
     </statement>
   </example>
-
   <p>
     The previous example shows that a smooth function may fail to agree with
     its Taylor series even when that Taylor series converges everywhere.
     There are also smooth functions whose Taylor series at a point does not
     converge anywhere except at that point.
   </p>
-
   <example xml:id="eg-smooth-divergent-taylor-series">
     <statement>
       <p>
@@ -132,7 +120,6 @@
       </p>
     </statement>
   </example>
-
   <theorem xml:id="thm-borel-peano">
     <title>Borel-Peano Theorem</title>
     <statement>
@@ -145,18 +132,15 @@
         at <m>0</m> is exactly
         <md>
           \sum_{n=0}^\infty a_nx^n.
-        </md>
-      </p>
+        </md></p>
     </statement>
   </theorem>
-
   <p>
     In other words, every formal power series occurs as the Taylor series of
     some smooth function, whether or not that series converges. For a readable
     account, see <xref ref="biblio-eom-borel-theorem"/> and the historical
     note <xref ref="biblio-besenyei-borel"/>.
   </p>
-
   <p>
     Further examples and discussion of non-analytic smooth functions can be
     found in <xref ref="biblio-boas-primer"/>.

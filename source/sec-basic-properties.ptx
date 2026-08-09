@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<section xml:id="sec-basic-properties"
-  xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-basic-properties">
   <title>Basic Properties</title>
-
   <introduction>
     <p>
       The definition of continuity is local and quantitative, but in practice
@@ -14,16 +11,13 @@
       classes of examples from a small stock of simple continuous functions.
     </p>
   </introduction>
-
   <subsection xml:id="subsec-sequential-characterization-of-continuity">
     <title>Sequential Characterization</title>
-
     <p>
       The following criterion replaces the <m>\varepsilon</m>-<m>\delta</m>
       definition with a statement about images of convergent sequences. It is
       often the most efficient way to prove that a function is continuous.
     </p>
-
     <proposition xml:id="prop-sequential-characterization-of-continuity">
       <statement>
         <p>
@@ -31,10 +25,8 @@
           <m>c \in S</m>. Then <m>f</m> is continuous at <m>c</m> if and only
           if for every sequence <m>(x_n)</m> in <m>S</m> with
           <m>x_n \to c</m>, we have
-          <md>f(x_n) \to f(c).</md>
-        </p>
+          <md>f(x_n) \to f(c).</md></p>
       </statement>
-
       <proof>
         <p>
           First suppose that <m>f</m> is continuous at <m>c</m>, and let
@@ -47,8 +39,7 @@
           \varepsilon</m> for all but finitely many <m>n</m>, so <m>f(x_n)
           \to f(c)</m>.
         </p>
-
-	<p>
+        <p>
 	   Conversely, assume <m>f(x_n) \to f(c)</m> for every sequence
 	   <m>(x_n)</m> in <m>S</m> that converges to <m>c</m> but <m>f</m>
 	   is not continuous at <m>c</m>. Then there exists <m>\varepsilon_0
@@ -63,7 +54,6 @@
 	</p>
       </proof>
     </proposition>
-
     <p>
       We will use this <term>sequential characterization of
       continuity</term><idx>sequential characterization of continuity</idx>
@@ -71,21 +61,17 @@
       convergent sequences, the usual algebraic properties of limits give
       the corresponding algebraic properties of continuous functions.
     </p>
-
   </subsection>
-
   <subsection xml:id="subsec-algebra-of-continuous-functions">
     <title>Algebra of Continuous Functions</title>
-
     <proposition xml:id="prop-algebra-of-continuous-functions">
       <statement>
-	<p>
+        <p>
 	  Let <m>f,g \colon S \to \R</m> be continuous at <m>c \in S</m>, then
 	  so are <m>f+g</m> and <m>fg</m>.  Moreover, if <m>g(c) \neq 0</m>,
 	  then <m>1/g</m> and hence <m>f/g</m> are also continuous at <m>c</m>.
 	</p>
       </statement>
-
       <proof>
         <p>
           Pick a sequence <m>(x_n)</m> in <m>S</m> that converges to <m>c</m>.
@@ -100,7 +86,6 @@
           <md>(fg)(x_n)=f(x_n)g(x_n) \to f(c)g(c)=(fg)(c).</md>
           Hence <m>f+g</m> and <m>fg</m> are continuous at <m>c</m>.
         </p>
-
         <p>
           Now assume <m>g(c) \neq 0</m>. Since <m>g(x_n) \to g(c)</m>, we
           have <m>g(x_n) \neq 0</m> for all sufficiently large <m>n</m>. Thus,
@@ -115,7 +100,6 @@
         </p>
       </proof>
     </proposition>
-
     <proposition xml:id="prop-composition-preserves-continuity">
       <statement>
         <p>
@@ -125,7 +109,6 @@
           composition <m>g \circ f</m> is continuous at <m>c</m>.
         </p>
       </statement>
-
       <proof>
         <p>
           Let <m>(x_n)</m> be a sequence in <m>S</m> with <m>x_n \to c</m>.
@@ -138,7 +121,6 @@
         </p>
       </proof>
     </proposition>
-
     <corollary xml:id="cor-polynomials-and-rational-functions-continuous">
       <statement>
         <p>
@@ -146,7 +128,6 @@
           function is continuous on its domain.
         </p>
       </statement>
-
       <proof>
         <p>
           Constant functions and the identity function are continuous. By
@@ -160,17 +141,14 @@
       </proof>
     </corollary>
   </subsection>
-
   <subsection xml:id="subsec-consequences-of-continuity">
     <title>Some Consequences</title>
-
     <p>
       Continuity does more than preserve limits under algebraic operations. It
       also imposes rigidity: a continuous function is determined by its values
       on a dense subset, and a nonzero value at one point forces the function
       to keep the same sign nearby.
     </p>
-
     <proposition xml:id="prop-continuous-zero-on-dense-subset">
       <statement>
         <p>
@@ -180,7 +158,6 @@
           <m>f(x)=0</m> for every <m>x \in S</m>.
         </p>
       </statement>
-
       <proof>
         <p>
           Fix <m>c \in S</m>. Since <m>D</m> is dense in <m>S</m>, for each
@@ -195,7 +172,6 @@
         </p>
       </proof>
     </proposition>
-
     <corollary xml:id="cor-continuous-functions-agree-on-dense-subset">
       <statement>
         <p>
@@ -205,7 +181,6 @@
           <m>f=g</m> on <m>S</m>.
         </p>
       </statement>
-
       <proof>
         <p>
           The function <m>f-g</m> is continuous on <m>S</m> and vanishes on
@@ -214,7 +189,6 @@
         </p>
       </proof>
     </corollary>
-
     <proposition xml:id="prop-sign-preserved-near-nonzero-point">
       <statement>
         <p>
@@ -225,7 +199,6 @@
           <m>x \in S</m> and <m>|x-c| \lt \delta</m>.
         </p>
       </statement>
-
       <proof>
         <p>
           Let <m>\varepsilon = |f(c)|/2</m>. Since <m>f</m> is continuous at

@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<section xml:id="sec-definition-of-continuity-examples"
-  xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-definition-of-continuity-examples">
   <title>Definition of Continuity. Examples.</title>
-
   <subsection xml:id="subsec-continuity-at-a-point">
     <title>Continuity at a Point</title>
-
     <p>
       Let <m>S \subseteq \R</m> and let <m>f \colon S \to \R</m>
       be a function. We say that <m>f</m> is <term>continuous
-      at</term><idx>continuous at a point</idx> <m>c \in S</m> if for
+      at</term><idx>continuous at a point</idx><m>c \in S</m> if for
       every <m>\varepsilon \gt 0</m> there exists <m>\delta \gt 0</m> such
       that whenever <m>x \in S</m> and <m>|x-c| \lt \delta</m>, we have
       <md>|f(x)-f(c)| \lt \varepsilon.</md>
@@ -18,15 +14,13 @@
       <m>f(x)</m> can be made arbitrarily close to <m>f(c)</m> provided that
       the input <m>x</m> is sufficiently close to <m>c</m>.
     </p>
-
     <p>
       If <m>A \subseteq S</m>, then <m>f</m> is <term>continuous
-      on</term><idx>continuous on a set</idx> <m>A</m> if it is continuous at
+      on</term><idx>continuous on a set</idx><m>A</m> if it is continuous at
       every point of <m>A</m>. We say simply that <m>f</m> is
       <term>continuous</term><idx>continuous function</idx> if it is
       continuous on its whole domain.
     </p>
-
     <p>
       The definition only refers to points <m>x</m> that lie in the domain
       <m>S</m>. So continuity at <m>c</m> concerns the behavior of <m>f</m>
@@ -34,17 +28,14 @@
       on an entire open interval around <m>c</m>.
     </p>
   </subsection>
-
   <subsection xml:id="subsec-cluster-and-isolated-points">
     <title>Cluster Points and Isolated Points</title>
-
     <p>
       A <term>neighborhood</term> of a point <m>c \in \R</m> is a subset
       of <m>\R</m> that contains an open interval around <m>c</m>.
       In particular, every open interval containing <m>c</m> is a neighborhood
       of <m>c</m>.
     </p>
-
     <p>
       Let <m>S \subseteq \R</m>. A real number <m>c</m> is called a
       <term>cluster point</term><idx>cluster point</idx> of <m>S</m> if for
@@ -59,37 +50,36 @@
       <m>c</m>. A cluster point of <m>S</m> need not belong to <m>S</m>, but
       an isolated point of <m>S</m>, by definition, must belong to <m>S</m>.
     </p>
-
     <example xml:id="eg-cluster-and-isolated-points">
       <statement>
-        <ul>
-          <li>
+        <p>
+          <ul>
+            <li>
             Every point of an open interval <m>(a,b)</m> is a cluster point
             of <m>(a,b)</m>.
           </li>
-          <li>
+            <li>
             The point <m>0</m> is a cluster point of <m>(0,1)</m> even though
             <m>0 \notin (0,1)</m>.
           </li>
-          <li>
+            <li>
             Every integer is an isolated point of <m>\Z</m>.
           </li>
-          <li>
+            <li>
             In the set <m>\{0\} \cup \{1/n : n \in \N\}</m>, the point
             <m>0</m> is a cluster point, while each point <m>1/n</m> is an
             isolated point.
           </li>
-        </ul>
+          </ul>
+        </p>
       </statement>
     </example>
-
     <proposition xml:id="prop-isolated-points-are-continuity-points">
       <statement>
         <p>
           A function is continuous at the isolated points of its domain.
         </p>
       </statement>
-
       <proof>
         <p>
           Let <m>c</m> be an isolated point of the domain <m>S</m> of a
@@ -103,12 +93,10 @@
         </p>
       </proof>
     </proposition>
-
     <p>
         A cluster point is also called a <term>limit point</term><idx>limit
 	point</idx>. Here is why:
     </p>
-
     <proposition>
       <statement>
         <p>
@@ -117,7 +105,6 @@
           <m>S</m> that converges to <m>c</m>.
         </p>
       </statement>
-
       <proof>
         <p>
           First suppose that <m>c</m> is a cluster point of <m>S</m>. We
@@ -137,8 +124,7 @@
           <m>|x_n-c| \lt 1/n</m> for every <m>n</m>. Since <m>1/n \to 0</m>,
           it follows that <m>|x_n-c| \to 0</m>, and hence <m>x_n \to c</m>.
         </p>
-
-	<p>
+        <p>
 	  Conversely, suppose there is an injective sequence <m>(x_n)</m> in
 	  <m>S</m> such that <m>x_n \to c</m>. Let <m>\delta \gt 0</m>. Since
 	  <m>x_n \to c</m>, <m>|x_n-c| \lt \delta</m> for all <m>n</m>
@@ -153,23 +139,19 @@
       </proof>
     </proposition>
   </subsection>
-
   <subsection xml:id="subsec-examples-of-continuous-functions">
     <title>Examples of Continuous Functions</title>
-
     <p>
       The simplest examples of continuous functions are the constant
       functions and the identity function <m>\mathrm{id}(x)=x</m>. We leave
       the justification of these statements as an exercise.
     </p>
-
     <proposition xml:id="prop-absolute-value-continuous">
       <statement>
         <p>
           The absolute value function is continuous on <m>\R</m>.
         </p>
       </statement>
-
       <proof>
         <p>
           Fix <m>c \in \R</m>. By the reverse triangle inequality,
@@ -181,7 +163,6 @@
         </p>
       </proof>
     </proposition>
-
     <proposition xml:id="prop-reciprocal-continuous">
       <statement>
         <p>
@@ -189,7 +170,6 @@
           <m>\R \setminus \{0\}</m>.
         </p>
       </statement>
-
       <proof>
         <p>
           To prove the continuity of the function <m>x \mapsto 1/x</m>, we
@@ -211,7 +191,6 @@
         </p>
       </proof>
     </proposition>
-
     <example xml:id="eg-continuous-functions-on-discrete-domains">
       <statement>
         <p>
@@ -222,7 +201,6 @@
         </p>
       </statement>
     </example>
-
     <p>
       Later we will prove that sums, products, quotients (where the
       denominator is nonzero), and compositions of continuous functions are

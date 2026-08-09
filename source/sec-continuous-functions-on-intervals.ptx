@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<section xml:id="sec-continuous-functions-on-intervals"
-  xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-continuous-functions-on-intervals">
   <title>Continuous Functions on Intervals</title>
-
   <introduction>
     <p>
       The basic properties from the previous section show that continuity is
@@ -15,10 +12,8 @@
       the first indications that continuity is not merely a local condition.
     </p>
   </introduction>
-
   <subsection xml:id="subsec-extreme-value-theorem">
     <title>Extreme Value Theorem</title>
-
     <p>
       Let <m>S \subseteq \R</m> and let <m>f \colon S \to \R</m>. We say that
       <m>f</m> attains an <term>absolute maximum</term><idx>absolute
@@ -30,7 +25,6 @@
       is continuous. Closed and bounded intervals are special because limits of
       sequences in such intervals cannot escape the interval.
     </p>
-
     <proposition xml:id="prop-closed-interval-contains-cluster-points">
       <statement>
         <p>
@@ -38,9 +32,8 @@
           <m>[a,b]</m>.
         </p>
       </statement>
-
       <proof>
-	<p> For any <m>c \lt a</m>, let <m>r=(a-c)/2</m>. Then <m>(c-r,c+r)
+        <p> For any <m>c \lt a</m>, let <m>r=(a-c)/2</m>. Then <m>(c-r,c+r)
 	  \subseteq (-\infty,a)</m>, which is disjoint from <m>[a,b]</m>. So
 	  <m>c</m> is not a cluster point of <m>[a,b]</m>. The case <m>c \gt
 	  b</m> is similar, using <m>r=(c-b)/2</m>. Therefore every cluster
@@ -48,14 +41,12 @@
 	</p>
       </proof>
     </proposition>
-
     <proposition xml:id="prop-continuous-on-closed-bounded-interval-bounded">
       <statement>
         <p>
           Every continuous function on a closed bounded interval is bounded.
         </p>
       </statement>
-
       <proof>
         <p>
           Let <m>f \colon [a,b] \to \R</m> be continuous. Suppose
@@ -75,7 +66,6 @@
         </p>
       </proof>
     </proposition>
-
     <example xml:id="eg-boundedness-hypotheses-necessary">
       <statement>
         <p>
@@ -83,12 +73,13 @@
           <xref ref="prop-continuous-on-closed-bounded-interval-bounded"/>
           are necessary.
         </p>
-        <ul>
-          <li>
+        <p>
+          <ul>
+            <li>
             The function <m>f(x)=1/x</m> on <m>(0,1]</m> is continuous, but it
             is not bounded because <m>f(x) \to +\infty</m> as <m>x \to 0^+</m>.
           </li>
-          <li>
+            <li>
             The function
             <md>g(x)=\begin{cases}
               0 &amp; \text{if } x=0,\\
@@ -97,10 +88,10 @@
             is defined on the closed bounded interval <m>[0,1]</m>, but it is
             not continuous at <m>0</m> and it is not bounded.
           </li>
-        </ul>
+          </ul>
+        </p>
       </statement>
     </example>
-
     <theorem xml:id="thm-extreme-value-theorem">
       <title>Extreme Value Theorem</title>
       <statement>
@@ -109,18 +100,14 @@
           absolute maximum and an absolute minimum.
         </p>
       </statement>
-
       <proof>
-	<p> Let <m>f</m> be continuous on a closed bounded interval
-	<m>[a,b]</m>. Then <m>J:=f([a,b])</m> is nonempty and, by <xref
-	ref="prop-continuous-on-closed-bounded-interval-bounded"/>, is also
-	bounded. So <m>M:=\sup J</m>exists. By <xref
-	  ref="ex-sequences-approximate-sup"/>, there is a sequence
+        <p> Let <m>f</m> be continuous on a closed bounded interval
+	<m>[a,b]</m>. Then <m>J:=f([a,b])</m> is nonempty and, by <xref ref="prop-continuous-on-closed-bounded-interval-bounded"/>, is also
+	bounded. So <m>M:=\sup J</m>exists. By <xref ref="ex-sequences-approximate-sup"/>, there is a sequence
 	  <m>(y_n)</m> in <m>J</m> that converges to <m>M</m>. For each
 	  <m>n</m>, pick <m>x_n \in [a,b]</m> with <m>f(x_n)=y_n</m>.
 	</p>
-
-	<p>
+        <p>
 	  Since <m>[a,b]</m> is bounded, the Bolzano-Weierstrass
 	  theorem <xref ref="thm-bolzano-weierstrass"/> yields a
 	  convergent subsequence <m>(x_{n_k})</m> of <m>(x_n)</m>. Again
@@ -128,13 +115,11 @@
 	  implies the limit of this subsequence, say <m>c</m>, belongs
 	  to <m>[a,b]</m>. Consequently, <m>f</m> is continuous
 	  at <m>c</m> and <md>f(x_{n_k}) \to f(c)</md> according
-	  to the sequential characterization of continuity <xref
-	  ref="prop-sequential-characterization-of-continuity"/>. As a
+	  to the sequential characterization of continuity <xref ref="prop-sequential-characterization-of-continuity"/>. As a
 	  subsequence of <m>(y_n)</m>, <m>f(x_{n_k})=y_{n_k}</m> must converge
 	  to <m>M</m> as well. So by uniqueness of limits <m>f(c)=M</m>. Thus,
 	  <m>f</m> attains its absolute maximum.
 	</p>
-
         <p>
           Applying the same argument to <m>-f</m>, we see that <m>-f</m>
           attains its absolute maximum at some point <m>d \in [a,b]</m>. Then
@@ -142,7 +127,6 @@
         </p>
       </proof>
     </theorem>
-
     <example xml:id="eg-open-interval-no-extrema">
       <statement>
         <p>
@@ -151,7 +135,6 @@
           is continuous and bounded, but it has neither an absolute maximum nor
           an absolute minimum on <m>(0,1)</m>.
         </p>
-
         <figure xml:id="fig-open-interval-no-extrema">
           <caption>The graph of <m>f(x)=x</m> on <m>(0,1)</m> has open
           endpoints, so the values <m>0</m> and <m>1</m> are approached but
@@ -160,7 +143,7 @@
             <shortdescription>The line y equals x on the open
             interval from zero to one, with open circles at both
             endpoints.</shortdescription>
-	    <latex-image>
+            <latex-image>
 \begin{tikzpicture}
 \begin{axis}[
   width=7cm,
@@ -186,10 +169,8 @@
       </statement>
     </example>
   </subsection>
-
   <subsection xml:id="subsec-intermediate-value-theorem">
     <title>Intermediate Value Theorem</title>
-
     <p>
       The extreme value theorem says that a continuous function on
       <m>[a,b]</m> cannot avoid its largest and smallest values. The next
@@ -197,7 +178,6 @@
       every intermediate value. Geometrically, the graph of a continuous
       function on an interval cannot jump across a horizontal line.
     </p>
-
     <proposition xml:id="prop-bolzano-zero">
       <title>Bolzano's Theorem</title>
       <statement>
@@ -207,7 +187,6 @@
           <m>c \in (a,b)</m> such that <m>f(c)=0</m>.
         </p>
       </statement>
-
       <proof>
         <p>
           After replacing <m>f</m> by <m>-f</m> if necessary, we may assume
@@ -217,7 +196,6 @@
           <m>c:=\sup S</m> exists. Since <m>a \in S \subseteq [a,b]</m>, we
           have <m>c \in [a,b]</m>.
         </p>
-
         <p>
           We claim that <m>f(c)=0</m>. Suppose first that <m>f(c) \lt 0</m>.
           Then <m>c \lt b</m>, since <m>f(b) \gt 0</m>. Choose a sequence
@@ -228,7 +206,6 @@
           <m>x_n \in S</m> and <m>x_n \gt c</m>, contradicting the fact that
           <m>c</m> is an upper bound of <m>S</m>.
         </p>
-
         <p>
           Now suppose that <m>f(c) \gt 0</m>. Then <m>a \lt c</m>. For each
           <m>n \in \N</m>, let <m>m_n=c-(c-a)/2^n</m>. Then
@@ -241,7 +218,6 @@
           <m>x_n \in S</m>, so <m>f(x_n) \lt 0</m> for every <m>n</m>, a
           contradiction.
         </p>
-
         <p>
           Therefore <m>f(c)=0</m>. Since <m>f(a) \lt 0</m> and
           <m>f(b) \gt 0</m>, we have <m>c \neq a</m> and <m>c \neq b</m>.
@@ -249,7 +225,6 @@
         </p>
       </proof>
     </proposition>
-
     <theorem xml:id="thm-intermediate-value-theorem">
       <title>Intermediate Value Theorem</title>
       <statement>
@@ -257,10 +232,8 @@
           Let <m>f \colon [a,b] \to \R</m> be continuous, and let
           <m>\gamma</m> be a real number between <m>f(a)</m> and <m>f(b)</m>.
           Then there exists <m>c \in [a,b]</m> such that
-          <md>f(c)=\gamma.</md>
-        </p>
+          <md>f(c)=\gamma.</md></p>
       </statement>
-
       <proof>
         <p>
           Consider the function <m>g(x)=f(x)-\gamma</m>. Then <m>g</m> is
@@ -273,7 +246,6 @@
         </p>
       </proof>
     </theorem>
-
     <example xml:id="eg-ivt-equation-root">
       <statement>
         <p>
@@ -285,7 +257,6 @@
         </p>
       </statement>
     </example>
-
     <example xml:id="eg-ivt-needs-continuity">
       <statement>
         <p>
@@ -297,11 +268,10 @@
           Then <m>f(-1)=-1</m> and <m>f(1)=1</m>, but there is no
           <m>c \in [-1,1]</m> with <m>f(c)=0</m>.
         </p>
-
         <figure xml:id="fig-jump-discontinuity-no-ivt">
           <caption>A jump discontinuity can skip intermediate values.</caption>
           <image width="48%">
-            <shortdescription>The sign function equals negative one to the left of zero and positive one at and to the right of zero, so the graph jumps over zero.</shortdescription>
+            <shortdescription>The sign function is negative left of zero and positive at and right of zero, so its graph jumps over zero.</shortdescription>
             <latex-image>
 \begin{tikzpicture}
 \begin{axis}[
@@ -327,14 +297,12 @@
         </figure>
       </statement>
     </example>
-
     <corollary xml:id="cor-continuous-image-of-interval-is-interval">
       <statement>
         <p>
           The image of an interval under a continuous function is an interval.
         </p>
       </statement>
-
       <proof>
         <p>
           Let <m>I \subseteq \R</m> be an interval, and let
@@ -352,7 +320,6 @@
         </p>
       </proof>
     </corollary>
-
     <corollary xml:id="cor-continuous-image-of-closed-bounded-interval">
       <statement>
         <p>
@@ -360,7 +327,6 @@
           a closed bounded interval.
         </p>
       </statement>
-
       <proof>
         <p>
           Let <m>f \colon [a,b] \to \R</m> be continuous. By
@@ -372,11 +338,9 @@
           <m>f([a,b])</m> is an interval containing <m>m</m> and <m>M</m>, it
           also contains every number between them. Therefore
           <m>[m,M] \subseteq f([a,b])</m>, and so
-          <md>f([a,b])=[m,M].</md>
-        </p>
+          <md>f([a,b])=[m,M].</md></p>
       </proof>
     </corollary>
-
     <p>
       The last corollary is a first glimpse of a more general theorem from
       topology: continuous images of compact sets are compact. For subsets of
@@ -384,18 +348,15 @@
       corollary above is exactly the one-dimensional case of that general
       principle.
     </p>
-
-    <proposition
-    xml:id="prop-injective-continuous-on-interval-has-continuous-inverse">
-    <statement>
+    <proposition xml:id="prop-injective-continuous-on-interval-has-continuous-inverse">
+      <statement>
         <p>
           If <m>f</m> is injective and continuous on an interval <m>I</m>,
           then the inverse of <m>f \colon I \to f(I)</m> is also continuous.
         </p>
       </statement>
-
       <proof>
-	<p>
+        <p>
 	  Clearly, we can assume <m>I</m> is non-degenerated (i.e. has at
 	  least two points). Let <m>g \colon f(I) \to I</m> be the inverse
 	  of <m>f</m>.	We argue that <m>g</m> is continuous at an arbitrary
@@ -403,8 +364,7 @@
 	  <m>f(I)</m> that converges to <m>y_0</m>. Set <m>x_n=g(y_n)</m>
 	  and <m>x_0=g(y_0)</m>. We must show that <m>x_n \to x_0</m>.
 	</p>
-
-	<p>
+        <p>
 	  Suppose, to the contrary, that <m>x_n</m> does not converge to
 	  <m>x_0</m>. Then there exists <m>\varepsilon \gt 0</m> such that
 	  infinitely many terms of the sequence <m>(x_n)</m> lie outside the
@@ -412,8 +372,7 @@
 	  Passing to a subsequence, we may assume that
 	  <m>x_{n_k} \notin I_0</m> for every <m>k</m>. Since <m>x_0</m> is a
 	  point of a non-degenerated interval, it is a cluster point of
-	  <m>I</m>, and hence <m>I_0</m> is also non-degenerated. By <xref
-	  ref="cor-continuous-image-of-interval-is-interval"/>, <m>f(I_0)</m>
+	  <m>I</m>, and hence <m>I_0</m> is also non-degenerated. By <xref ref="cor-continuous-image-of-interval-is-interval"/>, <m>f(I_0)</m>
 	  is an interval containing <m>y_0</m>; it is also non-degenerated
 	  because <m>f</m> is injective. Therefore there exists
 	  <m>\delta \gt 0</m> such that

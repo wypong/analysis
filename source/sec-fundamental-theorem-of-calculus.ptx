@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<section xml:id="sec-fundamental-theorem-of-calculus"
-  xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-fundamental-theorem-of-calculus">
   <title>The Fundamental Theorem of Calculus</title>
-
   <introduction>
     <p>
       We now return to the theme announced at the end of
@@ -12,20 +9,16 @@
       We present the theorem in two standard forms.
     </p>
   </introduction>
-
   <subsection xml:id="subsec-indefinite-integrals">
     <title>Indefinite Integrals</title>
-
     <p>
       Let <m>f \in R[a,b]</m>. For each <m>c \in [a,b]</m>, the function
       <md>
         x \mapsto \int_c^x f(t)\,dt
       </md>
       is called the <term>indefinite integral</term><idx><h>integral</h><h>indefinite</h></idx>
-      of <m>f</m> with <term>base point</term><idx><h>integral</h><h>base point</h></idx>
-      <m>c</m>.
+      of <m>f</m> with <term>base point</term><idx><h>integral</h><h>base point</h></idx><m>c</m>.
     </p>
-
     <theorem xml:id="thm-ftc-second-form">
       <title>Fundamental Theorem of Calculus (Second Form)</title>
       <statement>
@@ -39,17 +32,14 @@
           differentiable at <m>x_0</m> and
           <md>
             F'(x_0)=f(x_0).
-          </md>
-        </p>
+          </md></p>
       </statement>
-
       <proof>
         <p>
           Since <m>f</m> is integrable on <m>[a,b]</m>, it is bounded. Choose
           <m>M \ge 0</m> such that <m>|f(x)| \le M</m> for every
           <m>x \in [a,b]</m>. Let <m>x,x' \in [a,b]</m>. If <m>x \lt x'</m>,
-          then part (3) of <xref ref="thm-basic-properties-riemann-integral"
-          text="title"/> gives
+          then part (3) of <xref ref="thm-basic-properties-riemann-integral" text="title"/> gives
           <md>
             F(x')-F(x)=\int_x^{x'} f(t)\,dt.
           </md>
@@ -65,7 +55,6 @@
           symmetry when <m>x' \lt x</m>. Thus <m>F</m> is Lipschitz
           continuous on <m>[a,b]</m>.
         </p>
-
         <p>
           Now suppose that <m>f</m> is continuous at <m>x_0 \in [a,b]</m>. Let
           <md>
@@ -113,7 +102,6 @@
         </p>
       </proof>
     </theorem>
-
     <corollary xml:id="cor-continuous-functions-have-primitives">
       <statement>
         <p>
@@ -125,7 +113,6 @@
           of <m>f</m> on <m>[a,b]</m>.
         </p>
       </statement>
-
       <proof>
         <p>
           By <xref ref="thm-continuous-function-integrable" text="title"/>,
@@ -135,13 +122,11 @@
         </p>
       </proof>
     </corollary>
-
     <p>
       In general, however, an indefinite integral need not be differentiable
       at every point, and even when it is differentiable at a point, its
       derivative there need not equal the original integrand.
     </p>
-
     <example xml:id="eg-ftc-signum-absolute-value">
       <statement>
         <p>
@@ -165,7 +150,6 @@
         </p>
       </statement>
     </example>
-
     <example xml:id="eg-ftc-thomae-zero-primitive">
       <statement>
         <p>
@@ -190,10 +174,8 @@
       </statement>
     </example>
   </subsection>
-
   <subsection xml:id="subsec-two-forms-ftc">
     <title>The Two Forms of the Theorem</title>
-
     <theorem xml:id="thm-ftc-first-form">
       <title>Fundamental Theorem of Calculus (First Form)</title>
       <statement>
@@ -202,10 +184,8 @@
           <m>[a,b]</m> and that <m>F' \in R[a,b]</m>. Then
           <md>
             \int_a^b F'(x)\,dx = F(b)-F(a).
-          </md>
-        </p>
+          </md></p>
       </statement>
-
       <proof>
         <p>
           Since differentiability implies continuity,
@@ -226,9 +206,7 @@
             F(x_i)-F(x_{i-1})
             \le
             M_i(x_i-x_{i-1}).
-          </md>
-        </p>
-
+          </md></p>
         <p>
           Summing over <m>i</m> gives
           <md>
@@ -241,9 +219,7 @@
           The sum in the middle telescopes, so
           <md>
             L(P,F') \le F(b)-F(a) \le U(P,F').
-          </md>
-        </p>
-
+          </md></p>
         <p>
           Since <m>P</m> was arbitrary, we obtain
           <md>
@@ -257,11 +233,9 @@
           equal. Therefore
           <md>
             \int_a^b F'(x)\,dx = F(b)-F(a).
-          </md>
-        </p>
+          </md></p>
       </proof>
     </theorem>
-
     <corollary xml:id="cor-newton-leibniz-ftc">
       <statement>
         <p>
@@ -269,10 +243,8 @@
           an antiderivative of <m>f</m> on <m>[a,b]</m>. Then
           <md>
             \int_a^b f(x)\,dx = F(b)-F(a).
-          </md>
-        </p>
+          </md></p>
       </statement>
-
       <proof>
         <p>
           By <xref ref="thm-continuous-function-integrable" text="title"/>,
@@ -282,7 +254,6 @@
         </p>
       </proof>
     </corollary>
-
     <p>
       When <m>f</m> is continuous, the first form may also be recovered from
       the second form. Indeed, if
@@ -295,7 +266,6 @@
       <m>F(x)=F_a(x)+F(a)</m>. Evaluating at <m>x=b</m> gives
       <m>\int_a^b f = F(b)-F(a)</m>.
     </p>
-
     <example xml:id="eg-thomae-no-primitive">
       <statement>
         <p>
@@ -311,7 +281,6 @@
         </p>
       </statement>
     </example>
-
     <example xml:id="eg-ftc-sqrt-not-riemann">
       <statement>
         <p>
@@ -331,7 +300,6 @@
         </p>
       </statement>
     </example>
-
     <example xml:id="eg-ftc-bounded-oscillatory-derivative">
       <statement>
         <p>
@@ -363,11 +331,9 @@
             \sin(1)-(-\sin(1))
             =
             2\sin(1).
-          </md>
-        </p>
+          </md></p>
       </statement>
     </example>
-
     <example xml:id="eg-ftc-unbounded-oscillatory-derivative">
       <statement>
         <p>
@@ -393,7 +359,6 @@
         </p>
       </statement>
     </example>
-
     <p>
       For a much broader characterization of Riemann integrability, see
       <xref ref="ap-lebesgue-integrability-criterion"/>. In particular,

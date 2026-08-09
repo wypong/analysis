@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<section xml:id="sec-trigonometric-functions"
-  xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-trigonometric-functions">
   <title>Trigonometric Functions</title>
-
   <introduction>
     <p>
       We now construct sine and cosine from their power series. The basic
@@ -13,27 +10,25 @@
       as Rosenlicht.
     </p>
   </introduction>
-
-  <p>
+  <subsection>
+    <title/>
+    <p>
     For <m>x \in \R</m>, define
     <md>
       \sin x := \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!}
       \qquad\text{and}\qquad
       \cos x := \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!}.
-    </md>
-  </p>
-
-  <proposition xml:id="prop-sine-cosine-series-convergence">
-    <statement>
-      <p>
+    </md></p>
+    <proposition xml:id="prop-sine-cosine-series-convergence">
+      <statement>
+        <p>
         For every <m>R \gt 0</m>, the defining series for <m>\sin x</m> and
         <m>\cos x</m> converge uniformly on <m>[-R,R]</m>. In particular,
         <m>\sin</m> and <m>\cos</m> are continuous on <m>\R</m>.
       </p>
-    </statement>
-
-    <proof>
-      <p>
+      </statement>
+      <proof>
+        <p>
         If <m>|x| \le R</m>, then
         <md>
           \left|\frac{(-1)^n x^{2n+1}}{(2n+1)!}\right|
@@ -49,24 +44,21 @@
         (<xref ref="thm-weierstrass-m-test-functions"/>) gives uniform
         convergence on <m>[-R,R]</m>.
       </p>
-    </proof>
-  </proposition>
-
-  <proposition xml:id="prop-sine-cosine-derivatives">
-    <statement>
-      <p>
+      </proof>
+    </proposition>
+    <proposition xml:id="prop-sine-cosine-derivatives">
+      <statement>
+        <p>
         The functions <m>\sin</m> and <m>\cos</m> are analytic on <m>\R</m>,
         and
         <md>
           (\sin x)'=\cos x,
           \qquad
           (\cos x)'=-\sin x.
-        </md>
-      </p>
-    </statement>
-
-    <proof>
-      <p>
+        </md></p>
+      </statement>
+      <proof>
+        <p>
         Each defining series has radius of convergence <m>\infty</m>, so
         <xref ref="thm-termwise-calculus-power-series"/> allows us to
         differentiate term by term:
@@ -90,10 +82,9 @@
         Analyticity follows because both are power-series functions with
         infinite radius of convergence.
       </p>
-    </proof>
-  </proposition>
-
-  <p>
+      </proof>
+    </proposition>
+    <p>
     The defining series immediately show that
     <md>
       \sin(-x)=-\sin x
@@ -102,19 +93,16 @@
     </md>
     so <m>\sin</m> is odd and <m>\cos</m> is even.
   </p>
-
-  <proposition xml:id="prop-pythagorean-identity">
-    <statement>
-      <p>
+    <proposition xml:id="prop-pythagorean-identity">
+      <statement>
+        <p>
         For every <m>x \in \R</m>,
         <md>
           \sin^2 x+\cos^2 x=1.
-        </md>
-      </p>
-    </statement>
-
-    <proof>
-      <p>
+        </md></p>
+      </statement>
+      <proof>
+        <p>
         Let <m>h(x)=\sin^2 x+\cos^2 x</m>. Using the product rule and
         <xref ref="prop-sine-cosine-derivatives"/>, we get
         <md>
@@ -127,12 +115,11 @@
         </md>
         Hence <m>h(x)=1</m> for all <m>x</m>.
       </p>
-    </proof>
-  </proposition>
-
-  <lemma xml:id="lem-trig-ode-uniqueness">
-    <statement>
-      <p>
+      </proof>
+    </proposition>
+    <lemma xml:id="lem-trig-ode-uniqueness">
+      <statement>
+        <p>
         Let <m>h \in C^2(\R)</m> satisfy
         <md>
           h''(x)=-h(x)
@@ -141,10 +128,9 @@
         together with <m>h(0)=0</m> and <m>h'(0)=0</m>. Then
         <m>h(x)=0</m> for every <m>x \in \R</m>.
       </p>
-    </statement>
-
-    <proof>
-      <p>
+      </statement>
+      <proof>
+        <p>
         Consider the function
         <md>
           E(x)=h(x)^2+h'(x)^2.
@@ -162,13 +148,12 @@
         <m>x</m>. Therefore both <m>h(x)</m> and <m>h'(x)</m> are identically
         zero.
       </p>
-    </proof>
-  </lemma>
-
-  <theorem xml:id="thm-sine-cosine-addition-formulas">
-    <title>Addition Formulas</title>
-    <statement>
-      <p>
+      </proof>
+    </lemma>
+    <theorem xml:id="thm-sine-cosine-addition-formulas">
+      <title>Addition Formulas</title>
+      <statement>
+        <p>
         For all <m>x,a \in \R</m>,
         <md>
           \sin(x+a)=\sin x \cos a+\cos x \sin a,
@@ -176,12 +161,10 @@
         and
         <md>
           \cos(x+a)=\cos x \cos a-\sin x \sin a.
-        </md>
-      </p>
-    </statement>
-
-    <proof>
-      <p>
+        </md></p>
+      </statement>
+      <proof>
+        <p>
         Fix <m>a \in \R</m>. Define
         <md>
           F(x)=\sin(x+a)
@@ -199,8 +182,7 @@
         <xref ref="lem-trig-ode-uniqueness"/>, so <m>H=0</m>. This proves the
         sine addition formula.
       </p>
-
-      <p>
+        <p>
         For cosine, define
         <md>
           \widetilde{F}(x)=\cos(x+a)
@@ -215,21 +197,18 @@
         </md>
         Hence <m>\widetilde{F}=\widetilde{G}</m> by the same lemma.
       </p>
-    </proof>
-  </theorem>
-
-  <proposition xml:id="prop-sine-positive-on-zero-two">
-    <statement>
-      <p>
+      </proof>
+    </theorem>
+    <proposition xml:id="prop-sine-positive-on-zero-two">
+      <statement>
+        <p>
         If <m>0 \lt x \le 2</m>, then
         <md>
           0 \lt \sin x \le x.
-        </md>
-      </p>
-    </statement>
-
-    <proof>
-      <p>
+        </md></p>
+      </statement>
+      <proof>
+        <p>
         For <m>0 \lt x \le 2</m>, the successive term magnitudes in the sine
         series satisfy
         <md>
@@ -245,23 +224,19 @@
         alternating-series test gives
         <md>
           0 \lt \sin x \le x.
-        </md>
-      </p>
-    </proof>
-  </proposition>
-
-  <proposition xml:id="prop-pi-over-two">
-    <statement>
-      <p>
+        </md></p>
+      </proof>
+    </proposition>
+    <proposition xml:id="prop-pi-over-two">
+      <statement>
+        <p>
         There exists a unique number <m>\pi/2 \in (1,2)</m> such that
         <md>
           \cos(\pi/2)=0.
-        </md>
-      </p>
-    </statement>
-
-    <proof>
-      <p>
+        </md></p>
+      </statement>
+      <proof>
+        <p>
         By <xref ref="prop-sine-cosine-derivatives"/> and
         <xref ref="prop-sine-positive-on-zero-two"/>, we have
         <md>
@@ -270,8 +245,7 @@
         </md>
         Hence <m>\cos x</m> is strictly decreasing on <m>[0,2]</m>.
       </p>
-
-      <p>
+        <p>
         Using the alternating-series estimate,
         <md>
           \cos 1
@@ -298,20 +272,17 @@
         <m>\cos x</m> in <m>(1,2)</m>, and strict decrease makes that zero
         unique.
       </p>
-    </proof>
-  </proposition>
-
-  <p>
+      </proof>
+    </proposition>
+    <p>
     We define <m>\pi</m><idx>\pi</idx> to be twice this number:
     <md>
       \pi := 2(\pi/2).
-    </md>
-  </p>
-
-  <theorem xml:id="thm-trig-quarter-turn-periodicity">
-    <title>Quarter-Turn Identities and Periodicity</title>
-    <statement>
-      <p>
+    </md></p>
+    <theorem xml:id="thm-trig-quarter-turn-periodicity">
+      <title>Quarter-Turn Identities and Periodicity</title>
+      <statement>
+        <p>
         For every <m>x \in \R</m>,
         <md>
           \sin\left(x+\frac{\pi}{2}\right)=\cos x,
@@ -329,9 +300,8 @@
           \sin(x+2\pi)=\sin x,
           \qquad
           \cos(x+2\pi)=\cos x.
-        </md>
-      </p>
-      <p>
+        </md></p>
+        <p>
         In particular,
         <md>
           \sin\left(\frac{\pi}{2}\right)=1,
@@ -339,12 +309,10 @@
           \sin(\pi)=0,
           \qquad
           \cos(\pi)=-1.
-        </md>
-      </p>
-    </statement>
-
-    <proof>
-      <p>
+        </md></p>
+      </statement>
+      <proof>
+        <p>
         Since <m>\cos(\pi/2)=0</m> and <m>\sin^2(\pi/2)+\cos^2(\pi/2)=1</m>,
         we have <m>\sin(\pi/2)=1</m>. The addition formulas with
         <m>a=\pi/2</m> therefore give
@@ -370,10 +338,8 @@
             &amp;=
             -\sin x.
           \end{aligned}
-        </md>
-      </p>
-
-      <p>
+        </md></p>
+        <p>
         Putting <m>x=\pi/2</m> into the first identity gives <m>\sin(\pi)=0</m>,
         and then the second identity yields <m>\cos(\pi)=-1</m>. Applying the
         addition formulas with <m>a=\pi</m> gives
@@ -389,14 +355,12 @@
           \sin(x+2\pi)=\sin x,
           \qquad
           \cos(x+2\pi)=\cos x.
-        </md>
-      </p>
-    </proof>
-  </theorem>
-
-  <proposition xml:id="prop-sine-basic-limits">
-    <statement>
-      <p>
+        </md></p>
+      </proof>
+    </theorem>
+    <proposition xml:id="prop-sine-basic-limits">
+      <statement>
+        <p>
         For every <m>x \in \R</m>,
         <md>
           |\sin x| \le |x|,
@@ -406,12 +370,10 @@
           \lim_{x\to 0} \frac{\sin x}{x}=1,
           \qquad
           \lim_{x\to 0} \cos x=1.
-        </md>
-      </p>
-    </statement>
-
-    <proof>
-      <p>
+        </md></p>
+      </statement>
+      <proof>
+        <p>
         By <xref ref="prop-pythagorean-identity"/>, we have
         <m>|\cos x| \le 1</m> for all <m>x</m>. Applying the Mean Value
         Theorem to <m>\sin</m> on the interval between <m>0</m> and <m>x</m>,
@@ -422,8 +384,7 @@
         for some <m>c</m> between <m>0</m> and <m>x</m>. Since
         <m>\sin 0=0</m>, it follows that <m>|\sin x| \le |x|</m>.
       </p>
-
-      <p>
+        <p>
         Dividing the power series for <m>\sin x</m> by <m>x</m> gives
         <md>
           \frac{\sin x}{x}
@@ -434,6 +395,7 @@
         The right-hand side converges to <m>1</m> as <m>x \to 0</m>, and the
         power series for <m>\cos x</m> plainly tends to <m>1</m> as well.
       </p>
-    </proof>
-  </proposition>
+      </proof>
+    </proposition>
+  </subsection>
 </section>

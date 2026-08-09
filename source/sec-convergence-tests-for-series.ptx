@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<section xml:id="sec-convergence-tests-for-series"
-xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-convergence-tests-for-series">
   <title>Convergence Tests for Series</title>
-
   <introduction>
     <p>
       In <xref ref="sec-series"/> we defined convergence of a series and
@@ -11,7 +8,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       Here we develop positive tests that help us decide whether a series
       converges.
     </p>
-
     <p>
       A series <m>\sum x_n</m> is called a <term>Cauchy series</term><idx>Cauchy
       series</idx> if its sequence of partial sums is a Cauchy sequence. By
@@ -20,10 +16,8 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       numbers converges if and only if it is Cauchy.
     </p>
   </introduction>
-
   <subsection xml:id="subsec-series-geometric">
     <title>Geometric Series</title>
-
     <proposition xml:id="prop-geometric-series">
       <title>Geometric Series</title>
       <statement>
@@ -36,7 +30,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           <m>|r|\ge 1</m>.
         </p>
       </statement>
-
       <proof>
         <p>
           Let <m>s_k=\sum_{n=0}^k r^n</m>. If <m>r\ne 1</m>, then
@@ -46,16 +39,13 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           so
           <md>
             s_k=\frac{1-r^{k+1}}{1-r}.
-          </md>
-        </p>
-
+          </md></p>
         <p>
 	  Suppose first that <m>|r|&lt;1</m>. Then <m>|r^n| = |r|^n
 	  \to 0</m> by <xref ref="prop-geometric-sequence-test"/> and so
 	  <m>(r^n)</m> is null. Therefore, <m>s_k\to 1/(1-r)</m>,
 	  and the series converges to that value.
 	</p>
-
         <p>
           If <m>|r| \ge 1</m>, then <m>|r^n|\ge 1</m> for all <m>n</m>,
           so <m>r^n</m> is not a null sequence. Thus, the series diverges
@@ -63,7 +53,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         </p>
       </proof>
     </proposition>
-
     <example xml:id="eg-geometric-series-basic">
       <statement>
         <p>
@@ -82,20 +71,16 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
             \frac{1}{1+\frac12}
             =
             \frac23.
-          </md>
-        </p>
+          </md></p>
       </statement>
     </example>
   </subsection>
-
   <subsection xml:id="subsec-series-positive-terms">
     <title>Series with Nonnegative Terms</title>
-
     <p>
       For a series with nonnegative terms, the sequence of partial sums is
       automatically increasing. This gives a useful criterion.
     </p>
-
     <proposition xml:id="prop-nonnegative-series-criterion">
       <title>Nonnegative Term Criterion</title>
       <statement>
@@ -105,7 +90,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           is bounded above.
         </p>
       </statement>
-
       <proof>
         <p>
           Let <m>s_k=\sum_{n=1}^k x_n</m>. Since each <m>x_n\ge 0</m>, we have
@@ -116,7 +100,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         </p>
       </proof>
     </proposition>
-
     <example xml:id="eg-harmonic-series-diverges">
       <statement>
         <p>
@@ -127,8 +110,7 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           diverges.
         </p>
       </statement>
-
-      <proof>
+      <solution>
         <p>
           Group the terms as
           <md>
@@ -141,14 +123,12 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           <m>1/2</m>. Therefore the partial sums are unbounded above, so the
           series diverges by <xref ref="prop-nonnegative-series-criterion"/>.
         </p>
-      </proof>
+      </solution>
     </example>
-
     <p>
       The previous example is the basic comparison for the
       <term><m>p</m>-series</term><idx>p-series</idx>.
     </p>
-
     <proposition xml:id="prop-p-series-test">
       <title><m>p</m>-Series Test</title>
       <statement>
@@ -160,7 +140,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           converges if and only if <m>p&gt;1</m>.
         </p>
       </statement>
-
       <proof>
         <p>
           If <m>p\le 1</m>, then <m>1/n^p \ge 1/n</m> for all <m>n\in\N</m>.
@@ -170,7 +149,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           <xref ref="eg-harmonic-series-diverges"/>, the series
           <m>\sum 1/n^p</m> also diverges.
         </p>
-
         <p>
           Now suppose <m>p&gt;1</m>. For each <m>k\ge 0</m>, every
           <m>n</m> with <m>2^k\le n \lt 2^{k+1}</m> satisfies
@@ -190,7 +168,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         </p>
       </proof>
     </proposition>
-
     <p>
       For series with non-negative terms, convergence and absolute
       convergence mean the same thing. In general, absolute convergence
@@ -199,7 +176,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       series, for example the alternating series <m>\sum (-1)^{n+1}
       1/n</m> (<xref ref="eg-alternating-harmonic-series"/>).
     </p>
-
     <proposition xml:id="prop-absolute-convergence-implies-convergence">
       <title>Absolute Convergence Test</title>
       <statement>
@@ -208,23 +184,19 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           <m>\sum x_n</m> converges.
         </p>
       </statement>
-
       <proof>
         <p>
           Let <m>u_k=\sum_{n=1}^k |x_n|</m> and <m>s_k=\sum_{n=1}^k x_n</m>.
           Since <m>(u_k)</m> converges, it is Cauchy by
           <xref ref="prop-convergent-implies-cauchy"/>. If <m>m&gt;n</m>, then
-          <md>
-	  <mrow>
+          <md><mrow>
             |s_m-s_n|
             &amp; =
             |x_{n+1}+x_{n+2}+\cdots+x_m|
-	  </mrow>
-	  <mrow>
+	  </mrow><mrow>
             &amp; \le
             |x_{n+1}|+|x_{n+2}|+\cdots+|x_m| = u_m-u_n.
-	  </mrow>
-          </md>
+	  </mrow></md>
           Hence <m>(s_k)</m> is also Cauchy. By
           <xref ref="thm-sequential-completeness-of-reals"/>, the sequence
           <m>(s_k)</m> converges, so <m>\sum x_n</m> converges.
@@ -232,15 +204,12 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       </proof>
     </proposition>
   </subsection>
-
   <subsection xml:id="subsec-series-comparison-tests">
     <title>Comparison Tests</title>
-
     <p>
       The first comparison tool is the <term>comparison
       test</term><idx>comparison test for series</idx>.
     </p>
-
     <proposition xml:id="prop-comparison-test-series">
       <title>Comparison Test</title>
       <statement>
@@ -249,7 +218,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           <m>\sum y_n</m> converges, then <m>\sum x_n</m> converges.
         </p>
       </statement>
-
       <proof>
         <p>
           Let <m>s_k=\sum_{n=1}^k x_n</m> and <m>t_k=\sum_{n=1}^k y_n</m>.
@@ -261,12 +229,10 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         </p>
       </proof>
     </proposition>
-
     <p>
       A useful refinement is the <term>limit comparison test</term><idx>limit
       comparison test</idx>.
     </p>
-
     <proposition xml:id="prop-limit-comparison-test-series">
       <title>Limit Comparison Test</title>
       <statement>
@@ -287,11 +253,9 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           <m>\sum x_n</m>.
         </p>
       </statement>
-
       <proof>
         <p>
-          First suppose <m>L&gt;0</m>. Then for all sufficiently large <m>n</m>
-          <md>
+          First suppose <m>L&gt;0</m>. Then for all sufficiently large <m>n</m><md>
             \frac{L}{2} \lt \frac{x_n}{y_n} \lt \frac{3L}{2}
           </md>
           Since <m>y_n&gt;0</m>, this is equivalent to
@@ -305,16 +269,13 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
 	  and the comparison test applied to <m> y_n \lt (2/L)x_n </m>
 	  shows that <m>\sum y_n</m> converges.
 	</p>
-
         <p>
-          If <m>x_n/y_n\to 0</m>, then for all sufficiently large <m>n</m>
-          <m>x_n/y_n&lt;1</m>. Hence <m>0\lt x_n\lt y_n</m> eventually,
+          If <m>x_n/y_n\to 0</m>, then for all sufficiently large <m>n</m><m>x_n/y_n&lt;1</m>. Hence <m>0\lt x_n\lt y_n</m> eventually,
           so convergence of <m>\sum y_n</m> implies convergence of <m>\sum
           x_n</m> by the comparison test.
         </p>
       </proof>
     </proposition>
-
     <example xml:id="eg-limit-comparison-n-cubed-minus-one">
       <statement>
         <p>
@@ -339,15 +300,12 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       </statement>
     </example>
   </subsection>
-
   <subsection xml:id="subsec-series-ratio-root-tests">
     <title>Ratio and Root Tests</title>
-
     <p>
       The next tests compare a series to a geometric series. The first is
       the <term>ratio test</term><idx>ratio test for series</idx>.
     </p>
-
     <proposition xml:id="prop-ratio-test-series">
       <title>Ratio Test</title>
       <statement>
@@ -361,7 +319,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           <m>L&gt;1</m>, then <m>\sum x_n</m> diverges.
         </p>
       </statement>
-
       <proof>
         <p>
           Suppose <m>L&lt;1</m>. Then <m>L\lt r:=(1+L)/2 \lt 1</m>, so for all
@@ -372,26 +329,19 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
 
 	  By dropping finitely many terms, which does not affect convergence,
 	  we can assume the inequality holds for all <m>n</m>. Hence,
-          <md>
-            <mrow>
+          <md><mrow>
               |x_2| &lt; |x_1|
-            </mrow>
-            <mrow>
+            </mrow><mrow>
               |x_3| &lt; r|x_2| &lt; r^2|x_1|
-            </mrow>
-            <mrow>
+            </mrow><mrow>
               \vdots
-            </mrow>
-            <mrow>
+            </mrow><mrow>
 	    |x_n| &lt; r^{n-1}|x_1|.
-            </mrow>
-          </md>
-	  Since <m>0 \lt r \lt 1</m>, <m>\sum r^k</m> converges by <xref
-	  ref="prop-geometric-series"/> and the comparison test implies that
+            </mrow></md>
+	  Since <m>0 \lt r \lt 1</m>, <m>\sum r^k</m> converges by <xref ref="prop-geometric-series"/> and the comparison test implies that
 	  <m>\sum_{n=N}^\infty |x_n|</m> converges. Therefore <m>\sum x_n</m>
 	  converges absolutely.
 	</p>
-
         <p>
           Now suppose <m>L&gt;1</m>, and set <m>r=(1+L)/2</m>. Then
           <m>1\lt r\lt L</m>, so there exists <m>N</m> such that
@@ -402,7 +352,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         </p>
       </proof>
     </proposition>
-
     <example xml:id="eg-ratio-test-series-polynomial-over-exponential">
       <statement>
         <p>
@@ -417,24 +366,20 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
             \frac{(n+1)^2}{2n^2}
             \to
             \frac12.
-          </md>
-        </p>
+          </md></p>
       </statement>
     </example>
-
     <p>
       If the ratio limit is <m>1</m>, the ratio test gives no conclusion:
       both <m>\sum 1/n</m> and <m>\sum 1/n^2</m> have consecutive-term ratio
       tending to <m>1</m>, but the first diverges and the second converges.
     </p>
-
     <p>
       The <term>root test</term><idx>root test for series</idx> provides
       another way of comparing a series with a geometric series. It is often
       more convenient when an explicit <m>n</m>-th power appears in the
       terms.
     </p>
-
     <proposition xml:id="prop-root-test-series">
       <title>Root Test</title>
       <statement>
@@ -447,9 +392,8 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           <m>L&gt;1</m>, then <m>\sum x_n</m> diverges.
         </p>
       </statement>
-
       <proof>
-	<p>
+        <p>
 	  Suppose <m>L&lt;1</m>. Then for some <m>N</m>,
 	<md>
 	      \sup_{n \ge N} |x_n|^{1/n} &lt; r := \frac{1+L}{2} &lt; 1.
@@ -459,7 +403,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
 	  <m>0 &lt; r &lt; 1</m>, the geometric series <m>\sum r^n</m>
 	  converges, and by the comparison test so does <m>\sum |x_n|</m>.
 	</p>
-
         <p>
 	  Now suppose <m>L&gt;1</m>, and let <m>r := (1+L)/2</m>. Then
 	  <m>r&gt;1</m>. By the definition of limit superior, for every
@@ -477,7 +420,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
 	</p>
       </proof>
     </proposition>
-   
     <example xml:id="eg-root-test-series-nth-power">
       <statement>
         <p>
@@ -494,17 +436,14 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
             \frac34
             &lt;
             1.
-          </md>
-        </p>
+          </md></p>
       </statement>
     </example>
-
     <p>
       The root test is also inconclusive when <m>L=1</m>. For example,
       <m>\sum 1/n</m> diverges while <m>\sum 1/n^2</m> converges, but both
       satisfy <m>\lim |x_n|^{1/n}=1</m>.
     </p>
-
     <p>
       By <xref ref="thm-root-ratio-limsup-inequality"/>, if the limit
       <m>\lim |x_{n+1}|/|x_n|</m> exists, then
@@ -514,7 +453,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       Therefore the root test is at least as strong as the ratio test.
       The following example shows that it is strictly stronger.
     </p>
-
     <example xml:id="eg-root-test-stronger-than-ratio-test">
       <statement>
         <p>
@@ -541,7 +479,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           so <m>\limsup |x_n|^{1/n} = 1/2 &lt; 1</m>. Hence the root test
           shows that <m>\sum x_n</m> converges absolutely.
         </p>
-
         <p>
           On the other hand,
           <md>
@@ -558,17 +495,15 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       </statement>
     </example>
   </subsection>
-
   <subsection xml:id="subsec-series-alternating">
     <title>Alternating Series</title>
-
     <p>
       The final test in this section is the <term>alternating series
       test</term><idx>alternating series test</idx>.
     </p>
-
     <proposition xml:id="prop-alternating-series-test">
-      <title>Alternating Series Test</title> <statement>
+      <title>Alternating Series Test</title>
+      <statement>
         <p>
           Suppose <m>x_n\ge 0</m> for all <m>n</m>, the sequence <m>(x_n)</m>
           is decreasing, and <m>x_n\to 0</m>. Then the alternating series <md>
@@ -576,7 +511,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           </md> converges.
         </p>
       </statement>
-
       <proof>
         <p>
           Let <m>s_k=\sum_{n=1}^k (-1)^{n+1}x_n</m>. Then
@@ -589,7 +523,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           </md>
           so the odd partial sums form a decreasing sequence.
         </p>
-
         <p>
           For every <m>k</m>, we have <m>s_{2k}\le s_{2k+1}\le s_1=x_1</m>.
           Thus <m>(s_{2k})</m> is increasing and bounded above, so it converges
@@ -604,7 +537,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         </p>
       </proof>
     </proposition>
-
     <example xml:id="eg-alternating-harmonic-series">
       <statement>
         <p>
@@ -624,7 +556,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         </p>
       </statement>
     </example>
-
     <p>
       The proof shows more: if <m>L=\sum_{n=1}^\infty (-1)^{n+1}x_n</m>, then
       the error after <m>n</m> terms satisfies
@@ -634,7 +565,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       So the first omitted term controls the truncation error.
     </p>
   </subsection>
-
   <conclusion>
     <p>
       References: compare <xref ref="biblio-lebl-basic-analysis"/>,

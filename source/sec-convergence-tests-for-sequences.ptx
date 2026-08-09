@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<section xml:id="sec-convergence-tests-for-sequences"
-xmlns:xi="http://www.w3.org/2001/XInclude">
-  
-<title>Convergence Tests for Sequences</title>
-
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-convergence-tests-for-sequences">
+  <title>Convergence Tests for Sequences</title>
   <introduction>
     <p>
       In this section we study geometric sequences, sequences of the form
@@ -12,24 +8,20 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       deciding convergence of other sequences.
     </p>
   </introduction>
-
   <subsection xml:id="subsec-sequences-geometric">
     <title>Geometric Sequences</title>
-
     <p>
       We begin with sequences of the form <m>(c^n)</m> for <m>c&gt;0</m>.
       The cases <m>c=0</m> and <m>c=1</m> are constant sequences, so the
       interesting cases are <m>0&lt;c&lt;1</m> and <m>c&gt;1</m>.
     </p>
-
     <proposition xml:id="prop-geometric-sequence-test">
       <statement>
         <p>
           The sequence <m>(c^n)</m> is null if <m>0&lt;c&lt;1</m>, and
           diverges to <m>+\infty</m> if <m>c&gt;1</m>.
-        </p>      
+        </p>
       </statement>
-
       <proof>
         <p>
           First suppose <m>0 \lt c \lt 1</m>. Then
@@ -45,7 +37,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           <xref ref="prop-convergent-sequence-unique-limit"/>, we must have
           <m>r=cr</m>. Because <m>0&lt;c&lt;1</m>, this implies <m>r=0</m>.
         </p>
-
         <p>
           Now suppose <m>c&gt;1</m>. Then <m>0&lt;1/c&lt;1</m>, so the
           first case gives <m>(1/c)^n\to 0</m>. For any <m>B &gt; 0</m>,
@@ -55,7 +46,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         </p>
       </proof>
     </proposition>
-
     <example xml:id="eg-geometric-sequence-negative-base">
       <statement>
         <p>
@@ -73,10 +63,8 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       </statement>
     </example>
   </subsection>
-
   <subsection xml:id="subsec-sequences-nth-root">
     <title><m>n</m>-th Root</title>
-
     <proposition xml:id="prop-nth-root-sequence-test">
       <statement>
         <p>
@@ -92,7 +80,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           converges by <xref ref="thm-monotone-convergence"/>. Let <m>L</m>
           be its limit.
         </p>
-
         <p>
           Every term satisfies <m>c^{1/n}\ge 1</m>, so <m>L\ge 1</m> by
           <xref ref="prop-limit-preserves-nonnegativity"/> applied to the
@@ -104,7 +91,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           <m>c^{1/n}\to L^2</m>. By uniqueness of limits, <m>L=L^2</m>. Since
           <m>L\ge1</m>, it follows that <m>L=1</m>.
         </p>
-
         <p>
           Now suppose <m>0&lt;c\le 1</m>. Then <m>1/c\ge1</m>, so the first part
           shows <m>(1/c)^{1/n}\to 1</m>. Since
@@ -114,15 +100,12 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       </proof>
     </proposition>
   </subsection>
-
   <subsection xml:id="subsec-sequences-ratio-test">
     <title>Ratio Test</title>
-
     <p>
       The next test gives a convenient condition for comparing a sequence with
       a geometric sequence.
     </p>
-
     <proposition xml:id="prop-ratio-test-sequences">
       <title>Ratio Test</title>
       <statement>
@@ -152,7 +135,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           <xref ref="prop-squeeze-lemma"/> shows that <m>(x_n)</m> is also
           null.
         </p>
-
         <p>
           Now suppose <m>L&gt;1</m>. Then <m>1&lt;c:=(1+L)/2&lt;L</m> and
           <m>|x_{n+1}|/|x_n|&gt;c</m> for all but finitely many <m>n</m>.
@@ -166,7 +148,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         </p>
       </proof>
     </proposition>
-
     <example xml:id="eg-ratio-test-inconclusive">
       <statement>
         <p>
@@ -178,19 +159,16 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         </p>
       </statement>
     </example>
-
     <p>
       For positive sequences <m>(a_n)</m> and <m>(b_n)</m>, we write
       <m>a_n \ll b_n</m> if <m>(a_n/b_n)</m> is null.
     </p>
-
     <proposition xml:id="prop-growth-comparison-basic-sequences">
       <title>Growth Comparison</title>
       <statement>
         <p>
           Let <m>a\ge 0</m> and <m>b&gt;1</m>. Then
-          <md>n^a \ll b^n \ll n! \ll n^n.</md>
-        </p>
+          <md>n^a \ll b^n \ll n! \ll n^n.</md></p>
       </statement>
       <proof>
         <p>
@@ -204,7 +182,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           Therefore <m>n^a/b^n\to 0</m> by
           <xref ref="prop-ratio-test-sequences"/>.
         </p>
-
         <p>
           Next,
           <md>
@@ -216,7 +193,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           Hence <m>b^n/n!\to 0</m> by
           <xref ref="prop-ratio-test-sequences"/>.
         </p>
-
         <p>
           Finally,
           <md>
@@ -231,27 +207,24 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         </p>
       </proof>
     </proposition>
-
     <example xml:id="eg-nth-root-of-n">
       <statement>
         <p>
           The sequence <m>(n^{1/n})</m> converges to <m>1</m>. To see this,
           let <m>\varepsilon&gt;0</m> and set <m>b=1+\varepsilon</m>. The
-          growth comparison proposition <xref
-          ref="prop-growth-comparison-basic-sequences"/> with <m>a=1</m>
+          growth comparison proposition <xref ref="prop-growth-comparison-basic-sequences"/> with <m>a=1</m>
           shows that <m>n/b^n\to 0</m>. Hence <m>n&lt;b^n</m> for all
           sufficiently large <m>n</m>. Taking <m>n</m>-th roots, we obtain
           <m>1\le n^{1/n}\lt b = 1+\varepsilon</m> for all sufficiently large
           <m>n</m>.
         </p>
       </statement>
-
-      <proof>
+      <solution>
         <p>
           Thus <m>|n^{1/n}-1|&lt;\varepsilon</m> for all sufficiently large
           <m>n</m>. Therefore <m>n^{1/n}\to 1</m>.
         </p>
-      </proof>
+      </solution>
     </example>
   </subsection>
 </section>

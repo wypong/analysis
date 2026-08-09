@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<section xml:id="sec-bolzano-weierstrass"
-xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-bolzano-weierstrass">
   <title>Bolzano-Weierstrass Theorem</title>
-
   <p>
     Consider a sequence <m>(x_n)</m>. For each <m>k \in \N</m>, let
     <m>S_k := \{x_n : n \ge k\}</m> be the set of all terms of
@@ -25,14 +22,12 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
     of <m>(x_n)</m> is defined to be the limit of the real sequence
     <m>(\inf S_k)_k</m>.
   </p>
-
   <p>
     If the sets <m>S_k</m> are not bounded above, then each
     <m>\sup S_k = +\infty</m>, and we define <m>\limsup x_n = +\infty</m>.
     Likewise, if the sets <m>S_k</m> are not bounded below, then each
     <m>\inf S_k = -\infty</m>, and we define <m>\liminf x_n = -\infty</m>.
   </p>
-
   <proposition xml:id="prop-convergent-iff-limsup-equals-liminf">
     <statement>
       <p>
@@ -59,7 +54,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
 	to <m>L</m> and hence must be <m>L</m>. Likewise, <m>\liminf x_n =
 	L</m> as well.
       </p>
-
       <p>
         Conversely, suppose <m>\liminf x_n = \limsup x_n = L</m>. Since
         <m>x_k\in S_k</m>, we have 
@@ -70,12 +64,10 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       </p>
     </proof>
   </proposition>
-
   <p>
     One of the main ways in which the completeness of <m>\R</m> enters the
     study of sequences is through the following theorem.
   </p>
-
   <theorem xml:id="thm-bolzano-weierstrass">
     <title>Bolzano-Weierstrass Theorem</title>
     <statement>
@@ -91,7 +83,7 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
 	the definition of supremum, there is some natural number <m>n_{k+1}
 	\ge n_k + 1 \gt n_k</m> such that
 	
-	<md number="yes" xml:id='inductive-step'>
+	<md number="yes" xml:id="inductive-step">
             \sup S_{n_k +1} - \frac{1}{k} \le x_{n_{k+1}} \le \sup S_{n_k +
 	    1}.
 	</md>
@@ -99,18 +91,15 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
 	of natural numbers and hence a subsequence <m>(x_{n_k})</m>
 	of <m>(x_n)</m>.
       </p>
-
       <p>
 	As a subsequence of the convergent sequence <m>(\sup S_n)</m>,
-	<m>(\sup S_{n_k+1})</m> also converges to <m>\limsup x_n</m> by <xref
-	ref="prop-subsequence-of-convergent-sequence"/>. Since the sequence
+	<m>(\sup S_{n_k+1})</m> also converges to <m>\limsup x_n</m> by <xref ref="prop-subsequence-of-convergent-sequence"/>. Since the sequence
 	<m>(\sup S_{n_k+1} - 1/k)</m> has the same limit, the squeeze lemma
 	applied to <xref ref="inductive-step"/> shows that <m>x_{n_{k+1}}
 	\to \limsup x_n</m>.
       </p>
     </proof>
   </theorem>
-
   <p>
     In fact, we proved a stronger statement: every bounded sequence
     contains a subsequence that converges to its limit superior, and
@@ -119,7 +108,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
     is not bounded above (respectively, below), then it has a subsequence
     that diverges to <m>+\infty</m> (respectively, <m>-\infty</m>).
   </p>
-
   <proposition xml:id="prop-subsequence-liminf-limsup-inequalities">
     <statement>
       <p>
@@ -127,8 +115,7 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
 	 <md>
              \liminf_n x_n \le \liminf_k x_{n_k} \le \limsup_k x_{n_k} \le
 	     \limsup_n x_n. 
-	 </md>
-      </p>
+	 </md></p>
     </statement>
     <proof>
       <p>
@@ -143,7 +130,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         </md>
         for every <m>k</m>.
       </p>
-
       <p>
         If <m>(x_n)</m> is not bounded above, then
         <m>\sup S_n=+\infty</m> for every <m>n</m>, and so
@@ -156,7 +142,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         <m>\sup T_k \le \sup S_{n_k}</m> for every <m>k</m>, so
         <m>\limsup_k x_{n_k} \le \limsup_n x_n</m>.
       </p>
-
       <p>
         Similarly, if <m>(x_n)</m> is not bounded below, then
         <m>\inf S_n=-\infty</m> for every <m>n</m>, and so
@@ -168,7 +153,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         <m>\inf S_{n_k} \le \inf T_k</m> for every <m>k</m>, so
         <m>\liminf_n x_n \le \liminf_k x_{n_k}</m>.
       </p>
-
       <p>
         Finally, <m>\inf T_k \le \sup T_k</m> for every <m>k</m>, so
         <m>\liminf_k x_{n_k} \le \limsup_k x_{n_k}</m>. Combining the three
@@ -176,7 +160,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       </p>
     </proof>
   </proposition>
-
   <p>
       The follow application of the Bolzano-Weierstrass theorem will be used
       in our discussion of convergence tests for series later.
@@ -189,11 +172,8 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
 	<md> \liminf \left|\frac{x_{n+1}}{x_n}\right| \le \liminf |x_n|^{1/n}
 	\le \limsup |x_n|^{1/n} \le
 	  \limsup \left|\frac{x_{n+1}}{x_n}\right|.
-	</md>
-      
-	</p>
+	</md></p>
     </statement>
-
     <proof>
       <p>
         The middle inequality is trivial. We will proof the right inequality.
@@ -207,7 +187,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         If <m>L = +\infty</m>, then the inequality is automatic, so assume
         that <m>L</m> is finite.
       </p>
-
       <p>
         Let <m>L' \gt L</m>. By the definition of limit superior, there
         exists <m>N\in\N</m> such that
@@ -221,9 +200,7 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
 	<md>
 	  \left| \frac{x_{n}}{x_1}\right| = \left| \frac{x_{n}}{x_n-1}\right|
 	  \cdots \left| \frac{x_{2}}{x_1}\right| \lt (L')^{n-1}.
-	</md> and so <md> |x_n|^{1/n} \lt c_n:=(L')^{1-1/n}|x_1|^{1/n}.  </md>
-      </p> 
-
+	</md> and so <md> |x_n|^{1/n} \lt c_n:=(L')^{1-1/n}|x_1|^{1/n}.  </md></p>
       <p>
 	 Thus, since <m>c_n = L' \left( \frac{|x_1|}{L'} \right)^{1/n}</m>,
 	 <xref ref="prop-nth-root-sequence-test"/> implies that <m>c_n \to
@@ -237,23 +214,21 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       </p>
     </proof>
   </theorem>
-
   <p>
     We conclude this section with a proof of the Bolzano-Weierstrass theorem
     that uses only convergence, not limit superior or limit inferior. Its main
     advantage is that it is more visual.
   </p>
-
   <proposition xml:id="prop-monotone-subsequence">
-    <title>Monotone Subsequence Lemma</title> <statement>
+    <title>Monotone Subsequence Lemma</title>
+    <statement>
       <p>
         Every real sequence has a subsequence that is either increasing
         or decreasing.
       </p>
     </statement>
-
     <proof>
-    <p>
+      <p>
      Let <m>(x_n)</m> be a real sequence. Call <m>n\in\N</m> a
      <term>peak index</term><idx>peak index</idx> if <m>x_n\ge x_m</m> for
      every <m>m\ge n</m>.
@@ -268,7 +243,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         <m>x_{n_k}\ge x_{n_{k+1}}</m> for every <m>k</m>. Hence
         <m>(x_{n_k})</m> is a decreasing subsequence.
       </p>
-
       <p>
         Now suppose there are only finitely many peak indices. Then there is
         some <m>n_1\in\N</m> such that no <m>n\ge n_1</m> is a peak index.
@@ -282,18 +256,15 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         </md>
         Therefore <m>(x_{n_k})</m> is increasing.
       </p>
-
       <p>
         In either case, <m>(x_n)</m> has a monotone subsequence.
       </p>
     </proof>
   </proposition>
-
   <p>
     By the lemma above, every sequence has a monotone subsequence. If the
     original sequence is bounded, then this subsequence is also bounded.
   </p>
-
   <p>
     A bounded monotone sequence converges by
     <xref ref="thm-monotone-convergence"/>. This proves the

@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<chapter xml:id="ch-continuity" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-continuity">
   <title>Continuity</title>
-
-  <xi:include href="sec-definition-of-continuity-examples.ptx" />
-  <xi:include href="sec-limits-and-continuity.ptx" />
-  <xi:include href="sec-basic-properties.ptx" />
-  <xi:include href="sec-continuous-functions-on-intervals.ptx" />
-  <xi:include href="sec-uniform-continuity.ptx" />
-
+  <xi:include href="sec-definition-of-continuity-examples.ptx"/>
+  <xi:include href="sec-limits-and-continuity.ptx"/>
+  <xi:include href="sec-basic-properties.ptx"/>
+  <xi:include href="sec-continuous-functions-on-intervals.ptx"/>
+  <xi:include href="sec-uniform-continuity.ptx"/>
   <exercises xml:id="ex-ch4">
     <title>Exercises</title>
-
     <exercise xml:id="ex-continuity-constant-and-identity">
       <statement>
         <p>
@@ -20,7 +16,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-continuity-functions-on-z">
       <statement>
         <p>
@@ -28,7 +23,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-continuity-cluster-isolated-points-example">
       <statement>
         <p>
@@ -40,7 +34,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-continuity-cluster-point-sequential-characterization">
       <statement>
         <p>
@@ -51,7 +44,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-continuity-direct-proof-square">
       <statement>
         <p>
@@ -65,18 +57,15 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-continuity-direct-proof-extended-limits">
       <statement>
         <p>
           Prove directly from the definitions that
           <md>\lim_{x\to 0} \frac{1}{x^2}=+\infty
             \quad\text{and}\quad
-            \lim_{x\to +\infty} \frac{1}{x}=0.</md>
-        </p>
+            \lim_{x\to +\infty} \frac{1}{x}=0.</md></p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-continuity-piecewise-one-sided-limits">
       <statement>
         <p>
@@ -92,7 +81,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-continuity-removable-discontinuity-example">
       <statement>
         <p>
@@ -107,7 +95,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-continuity-absolute-value-of-continuous-function">
       <statement>
         <p>
@@ -116,7 +103,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-continuity-agree-on-rationals">
       <statement>
         <p>
@@ -126,7 +112,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-continuity-positive-near-positive-point">
       <statement>
         <p>
@@ -139,30 +124,30 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-continuity-evt-hypotheses-necessary">
       <statement>
         <p>
           Give examples showing that each hypothesis of the Extreme Value
           Theorem is necessary.
         </p>
-        <ul>
-          <li>
+        <p>
+          <ul>
+            <li>
             A continuous function on a bounded interval that does not attain an
             absolute maximum or an absolute minimum.
           </li>
-          <li>
+            <li>
             A continuous function on a closed interval that is not bounded
             above.
           </li>
-          <li>
+            <li>
             A function on a closed bounded interval that is not continuous and
             does not attain an absolute maximum or an absolute minimum.
           </li>
-        </ul>
+          </ul>
+        </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-continuity-ivt-cosx-fixed-point">
       <statement>
         <p>
@@ -171,7 +156,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-continuity-image-of-interval-is-interval">
       <statement>
         <p>
@@ -181,7 +165,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-continuity-odd-polynomial-root">
       <statement>
         <p>
@@ -194,7 +177,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-continuity-x-squared-not-uniformly-continuous">
       <statement>
         <p>
@@ -206,7 +188,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-continuity-sin-one-over-x-not-uniformly-continuous">
       <statement>
         <p>

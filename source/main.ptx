@@ -1,27 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+<?xml version="1.0" encoding="UTF-8"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
   <!-- we first include a file which contains the docinfo element: -->
-  <xi:include href="./docinfo.ptx" />
-
+  <xi:include href="./docinfo.ptx"/>
   <book xml:id="analysis-for-beginners">
     <title>Analysis for Beginners</title>
-
     <!-- Include frontmatter -->
-    <xi:include href="./frontmatter.ptx" />
-
+    <xi:include href="./frontmatter.ptx"/>
     <!-- Include chapters -->
-    <xi:include href="./ch-real-numbers.ptx" />
-    <xi:include href="./ch-sequences.ptx" />
-    <xi:include href="./ch-series.ptx" />
-    <xi:include href="./ch-continuity.ptx" />
-    <xi:include href="./ch-differentiation.ptx" />
-    <xi:include href="./ch-power-series.ptx" />
-    <xi:include href="./ch-integration.ptx" />
-    <xi:include href="./ch-interchange-of-limit-operations.ptx" />
-
+    <xi:include href="./ch-real-numbers.ptx"/>
+    <xi:include href="./ch-sequences.ptx"/>
+    <xi:include href="./ch-series.ptx"/>
+    <xi:include href="./ch-continuity.ptx"/>
+    <xi:include href="./ch-differentiation.ptx"/>
+    <xi:include href="./ch-power-series.ptx"/>
+    <xi:include href="./ch-integration.ptx"/>
+    <xi:include href="./ch-interchange-of-limit-operations.ptx"/>
     <!-- Include backmatter -->
-    <xi:include href="./backmatter.ptx" />
-
+    <xi:include href="./backmatter.ptx"/>
   </book>
 </pretext>

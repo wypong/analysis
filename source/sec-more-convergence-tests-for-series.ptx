@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<section xml:id="sec-more-convergence-tests-for-series"
-  xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-more-convergence-tests-for-series">
   <title>More Convergence Tests for Series</title>
-
   <introduction>
     <p>
       The tests in <xref ref="sec-convergence-tests-for-series"/> are enough
@@ -13,10 +10,8 @@
       tends to <m>1</m>.
     </p>
   </introduction>
-
   <subsection xml:id="subsec-series-cauchy-products">
     <title>Cauchy Products</title>
-
     <p>
       Given two series
       <md>
@@ -33,7 +28,6 @@
       The coefficient <m>c_n</m> is the sum of all products whose indices add
       to <m>n</m>.
     </p>
-
     <theorem xml:id="thm-mertens-series">
       <title>Mertens' Theorem</title>
       <statement>
@@ -52,10 +46,8 @@
           converges, and
           <md>
             \sum_{n=0}^\infty c_n = AB.
-          </md>
-        </p>
+          </md></p>
       </statement>
-
       <proof>
         <p>
           We omit the proof. See <xref ref="biblio-rudin-pma"/>, Chapter 3,
@@ -63,7 +55,6 @@
         </p>
       </proof>
     </theorem>
-
     <example xml:id="eg-cauchy-product-geometric-square">
       <statement>
         <p>
@@ -84,11 +75,9 @@
             \left(\sum_{n=0}^\infty x^n\right)^2
             =
             \frac{1}{(1-x)^2}.
-          </md>
-        </p>
+          </md></p>
       </statement>
     </example>
-
     <example xml:id="eg-cauchy-product-conditional-divergence">
       <statement>
         <p>
@@ -104,7 +93,6 @@
           convergent, because <m>\sum 1/\sqrt{n}</m> diverges by the
           <m>p</m>-series test (<xref ref="prop-p-series-test"/>).
         </p>
-
         <p>
           If <m>c_n=\sum_{i+j=n}a_ib_j</m> for <m>n \ge 2</m>, then
           <md>
@@ -129,25 +117,23 @@
       </statement>
     </example>
   </subsection>
-
   <subsection xml:id="subsec-series-raabe-test">
     <title>Raabe's Test</title>
-
     <p>
       The ratio test is inconclusive when
       <m>|x_{n+1}|/|x_n| \to 1</m>. Raabe's test refines that situation by
       measuring how quickly the ratio approaches <m>1</m>.
     </p>
-
     <proposition xml:id="prop-raabe-test-series">
       <title>Raabe's Test</title>
       <statement>
         <p>
           Let <m>(x_n)</m> be a sequence of nonzero real numbers.
         </p>
-        <ol>
-          <li>
-            <p>
+        <p>
+          <ol>
+            <li>
+              <p>
               If there exists <m>a&gt;1</m> such that
               <md>
                 \left|\frac{x_{n+1}}{x_n}\right|
@@ -157,9 +143,9 @@
               for all sufficiently large <m>n</m>, then <m>\sum x_n</m>
               converges absolutely.
             </p>
-          </li>
-          <li>
-            <p>
+            </li>
+            <li>
+              <p>
               If there exists <m>a\le 1</m> such that
               <md>
                 \left|\frac{x_{n+1}}{x_n}\right|
@@ -169,10 +155,10 @@
               for all sufficiently large <m>n</m>, then <m>\sum x_n</m> does
               not converge absolutely.
             </p>
-          </li>
-        </ol>
+            </li>
+          </ol>
+        </p>
       </statement>
-
       <proof>
         <p>
           We first prove part (1). By discarding finitely many terms, we may
@@ -188,9 +174,7 @@
             0 \lt (a-1)|x_n|
             \le
             n|x_n|-(n+1)|x_{n+1}|.
-          </md>
-        </p>
-
+          </md></p>
         <p>
           Summing from <m>n=1</m> to <m>n=N</m>, we obtain
           <md>
@@ -207,7 +191,6 @@
           <m>\sum |x_n|</m> converges. Therefore <m>\sum x_n</m> converges
           absolutely.
         </p>
-
         <p>
           Now consider part (2). Again we may discard finitely many terms and
           assume the inequality holds for all <m>n \ge 1</m>. Then
@@ -231,7 +214,6 @@
         </p>
       </proof>
     </proposition>
-
     <corollary xml:id="cor-raabe-limit-form-series">
       <title>Limit Form of Raabe's Test</title>
       <statement>
@@ -243,12 +225,17 @@
           </md>
           exists.
         </p>
-        <ol>
-          <li><p>If <m>a&gt;1</m>, then <m>\sum x_n</m> converges absolutely.</p></li>
-          <li><p>If <m>a&lt;1</m>, then <m>\sum x_n</m> does not converge absolutely.</p></li>
-        </ol>
+        <p>
+          <ol>
+            <li>
+              <p>If <m>a&gt;1</m>, then <m>\sum x_n</m> converges absolutely.</p>
+            </li>
+            <li>
+              <p>If <m>a&lt;1</m>, then <m>\sum x_n</m> does not converge absolutely.</p>
+            </li>
+          </ol>
+        </p>
       </statement>
-
       <proof>
         <p>
           Suppose <m>a&gt;1</m>. Choose a number <m>a_1</m> with
@@ -265,7 +252,6 @@
           eventually. Part (1) of <xref ref="prop-raabe-test-series"/> now
           shows that <m>\sum x_n</m> converges absolutely.
         </p>
-
         <p>
           Suppose instead that <m>a&lt;1</m>. Choose <m>a_1</m> with
           <m>a \lt a_1 \lt 1</m>. Then for all sufficiently large <m>n</m>,
@@ -284,7 +270,6 @@
         </p>
       </proof>
     </corollary>
-
     <example xml:id="eg-raabe-p-series">
       <statement>
         <p>
@@ -308,7 +293,6 @@
       </statement>
     </example>
   </subsection>
-
   <conclusion>
     <p>
       References: compare <xref ref="biblio-rudin-pma"/>, Chapter 3, for

@@ -4,7 +4,7 @@
   xmlns:exsl="http://exslt.org/common"
   extension-element-prefixes="exsl">
 
-  <xsl:import href="/home/pong/.ptx/2.38.2/core/xsl/pretext-latex.xsl"/>
+  <xsl:import href="core/pretext-latex.xsl"/>
 
   <!-- Avoid polyglossia's unsupported usmax hyphenation variant on this TeX Live. -->
   <xsl:template name="font-support">

@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<appendix xml:id="ap-cardinality" xmlns:xi="http://www.w3.org/2001/XInclude">
+<appendix xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ap-cardinality">
   <title>Cardinality</title>
-
   <section xml:id="sec-cardinality-subsets-real">
     <title>Cardinality</title>
-
     <p>
       For sets <m>A,B</m>, <m>|A|=|B|</m> means there is a bijection between
       them. In that case, we say that <m>A</m> and <m>B</m> have the same
@@ -14,11 +11,9 @@
       infinite</term><idx>countably infinite</idx> if <m>|A|=|\N|</m>. A set is <term>countable</term><idx>countable</idx>
       if it is either finite or countably infinite.
     </p>
-
     <p>
       We begin with standard countable models that will be reused in later proofs.
     </p>
-
     <proposition xml:id="prop-n-plus-zero-countable">
       <statement>
         <p>
@@ -32,7 +27,6 @@
         </p>
       </proof>
     </proposition>
-
     <proposition xml:id="prop-n-times-two-countable">
       <statement>
         <p>
@@ -46,7 +40,6 @@
         </p>
       </proof>
     </proposition>
-
     <proposition xml:id="prop-n-square-countable">
       <statement>
         <p>
@@ -61,11 +54,9 @@
         </p>
       </proof>
     </proposition>
-
     <p>
       The next theorem is the main comparison tool.
     </p>
-
     <theorem xml:id="thm-cantor-bernstein-schroder">
       <title>Cantor-Bernstein-Schroder</title>
       <statement>
@@ -74,18 +65,17 @@
         </p>
       </statement>
     </theorem>
-
     <p>
       Proofs of <xref ref="thm-cantor-bernstein-schroder"/> can be found in
       <xref ref="biblio-garrett-csb"/> and <xref ref="biblio-hyde-csb"/>.
     </p>
-
     <proposition xml:id="prop-countable-union-countable">
       <statement>
         <p>
           A countable union of countable sets is countable.
         </p>
-      </statement> <proof>
+      </statement>
+      <proof>
         <p>
 	  Let <m>A_1,A_2,\ldots</m> be a countable family (indexed by
 	  <m>\N</m>) of countable sets.  For <m>a\in\bigcup_{j\in\N}A_j</m>,
@@ -98,7 +88,6 @@
 	</p>
       </proof>
     </proposition>
-
     <proposition xml:id="prop-q-countable">
       <statement>
         <p>
@@ -115,8 +104,7 @@
         </p>
       </proof>
     </proposition>
-
-        <p>
+    <p>
           Let <m>X</m> be a set and let <m>A\subseteq X</m>.  The
           <term>indicator function</term><idx>indicator function</idx> of <m>A</m> in <m>X</m>,
           denoted <m>1_A^X</m> (or <m>1_A</m> when <m>X</m> is understood), is the map
@@ -126,14 +114,11 @@
             \begin{cases}
               1,&amp;\text{if }x\in A,\\ 0,&amp;\text{if }x\notin A.
             \end{cases}
-          </m>
-        </p>
-
+          </m></p>
     <p>
       For any set <m>X</m>, indicator functions give a bijection
       <m>\mathcal{P}(X)\cong 2^X</m>, where <m>2^X</m> is the set of maps <m>X\to\{0,1\}</m>.
     </p>
-
     <theorem xml:id="thm-cantor-power-set">
       <title>Cantor</title>
       <statement>
@@ -151,13 +136,13 @@
         </p>
       </proof>
     </theorem>
-
     <corollary xml:id="cor-r-uncountable">
       <statement>
         <p>
           The real line <m>\R</m> is uncountable.
         </p>
-      </statement> <proof>
+      </statement>
+      <proof>
         <p>
           By <xref ref="thm-cantor-power-set"/>,
           <m>|\N|&lt;|2^{\N}|</m>.  Define <m>\Psi:2^{\N}\to\R</m> by
@@ -169,13 +154,13 @@
         </p>
       </proof>
     </corollary>
-
     <proposition xml:id="prop-irrationals-uncountable">
       <statement>
         <p>
           The irrational numbers <m>\R\setminus\Q</m> are uncountable.
         </p>
-      </statement> <proof>
+      </statement>
+      <proof>
         <p>
           If <m>\R\setminus\Q</m> were countable, then
           <m>\R=(\R\setminus\Q)\cup\Q</m> would be a union of two countable
@@ -183,19 +168,27 @@
         </p>
       </proof>
     </proposition>
-
   </section>
-
   <section xml:id="sec-cardinality-exercises">
     <title>Exercises</title>
-
-    <ol>
-      <li><p>Show that <m>\N^2\cup\{(0,0)\}</m> is countable.</p></li>
-      <li><p>Show that any subset of a countable set is countable.</p></li>
-      <li><p>Show that <m>(0,1)</m> and <m>\R</m> have the same cardinality by constructing an explicit bijection.</p></li>
-      <li><p>Show that the intersection of two intervals is empty, a singleton, or an interval.</p></li>
-      <li><p>Show that the union of two overlapping intervals is an interval.</p></li>
-    </ol>
+    <p>
+      <ol>
+        <li>
+          <p>Show that <m>\N^2\cup\{(0,0)\}</m> is countable.</p>
+        </li>
+        <li>
+          <p>Show that any subset of a countable set is countable.</p>
+        </li>
+        <li>
+          <p>Show that <m>(0,1)</m> and <m>\R</m> have the same cardinality by constructing an explicit bijection.</p>
+        </li>
+        <li>
+          <p>Show that the intersection of two intervals is empty, a singleton, or an interval.</p>
+        </li>
+        <li>
+          <p>Show that the union of two overlapping intervals is an interval.</p>
+        </li>
+      </ol>
+    </p>
   </section>
-
 </appendix>

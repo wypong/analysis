@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<section xml:id="sec-sets-of-real-numbers"
-xmlns:xi="http://www.w3.org/2001/XInclude">
-
-<title>Sets of Real Numbers</title>
-
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-sets-of-real-numbers">
+  <title>Sets of Real Numbers</title>
   <introduction>
-  <p>
+    <p>
       We use <m>\R</m> to denote the set of real numbers. For
       <m>A,B\subseteq\R</m> and <m>c\in\R</m>, we define:
   </p>
-
-  <ul>
-      <li><m>A+B:=\{a+b : a\in A,\ b\in B\}</m></li>
-
-      <li><m>AB:=\{ab : a\in A,\ b\in B\}</m></li>
-
-      <li><m>cA:=\{c\}A=\{ca : a\in A\}</m></li>
-    </ul>
-  <p>
+    <p>
+      <ul>
+        <li>
+          <m>A+B:=\{a+b : a\in A,\ b\in B\}</m>
+        </li>
+        <li>
+          <m>AB:=\{ab : a\in A,\ b\in B\}</m>
+        </li>
+        <li>
+          <m>cA:=\{c\}A=\{ca : a\in A\}</m>
+        </li>
+      </ul>
+    </p>
+    <p>
       In particular, <m>-A=\{-a : a\in A\}=\{a : -a\in A\}</m>.
   </p>
-
-  <p>
+    <p>
     Some subsets of <m>\R</m> that we will encounter frequently are:
   </p>
-  <ul>
-    <li>The set of natural numbers <m>\N = \{1,2,3, \ldots\}</m></li>
-    <li>The set of integers <m>\Z = \{0,\pm 1, \pm 2, \ldots\} = \N \cup
+    <p>
+      <ul>
+        <li>The set of natural numbers <m>\N = \{1,2,3, \ldots\}</m></li>
+        <li>The set of integers <m>\Z = \{0,\pm 1, \pm 2, \ldots\} = \N \cup
     \{0\} \cup -\N</m>.</li>
-    <li>
+        <li>
     The set of rational numbers 
     <m>\Q = \{m/n \colon m, n \in \Z, n \neq 0\}</m>.
     </li>
-  </ul>
+      </ul>
+    </p>
   </introduction>
-
   <subsection xml:id="subsec-bounded-subsets">
     <title>Bounded Subsets of <m>\R</m></title>
-
     <p>
       A real number <m>b</m> is an <term>upper bound</term><idx><h>upper
       bound</h></idx><idx><h>bound</h><h>upper</h></idx> (resp. a <term>lower
@@ -50,7 +50,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       <m>b</m> is an upper bound of <m>A</m> if and only if <m>-b</m> is a
       lower bound of <m>-A</m>.
     </p>
-
     <p>
       A set <m>A\subseteq\R</m> is <term>bounded
       above</term><idx><h>bounded</h><h>above</h></idx> (resp. <term>bounded
@@ -60,38 +59,32 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       above and bounded below. A real-valued function is
       <term>bounded</term> (resp. bounded above, bounded below) if its range
       is bounded (resp. bounded above, bounded below).
-      <idx><h>function</h><h>bounded</h></idx>
-    </p>
-
+      <idx><h>function</h><h>bounded</h></idx></p>
     <example xml:id="eg-bounded-subsets-examples">
       <statement>
-	<ul>
-	    <li>
+        <p>
+          <ul>
+            <li>
 		The interval <m>(0,1)</m> is bounded; for example, it is
 		bounded above by <m>1</m> and bounded below by <m>0</m>.
 	    </li>
-
-	  <li>
+            <li>
 	    The set <m>\{1/x \colon x \gt 0\}</m> is bounded below by
 	    <m>0</m>, but it is not bounded above.
 	  </li>
-
-	  <li>
-	  <m>\Z</m> is neither bounded below nor above.
+            <li><m>\Z</m> is neither bounded below nor above.
 	  </li>
-
-	  <li>
+            <li>
 	  Every finite set of real numbers is bounded.
 	  </li>
-
-	  <li>
+            <li>
 	    Every real number is both an upper bound and a lower bound of
 	    the empty set <m>\emptyset</m>.
 	  </li>
-	</ul>
+          </ul>
+        </p>
       </statement>
     </example>
-
     <p>
       An upper bound of a set is also an upper bound of every subset of that
       set. Therefore, an intersection of sets that are bounded above is again
@@ -102,15 +95,13 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       bounded below (resp. bounded) is closed under arbitrary intersections
       and finite unions.
     </p>
-
     <proposition xml:id="prop-bounded-iff-abs-bound">
       <statement>
         <p>
 	  A set <m>A \subseteq \R</m> is bounded if and only if there exists
 	  <m>M \ge 0</m> such that <m>A \subseteq [-M,M]</m>.
 	</p>
-      </statement> 
-
+      </statement>
       <proof>
         <p>
           One implication is immediate: if <m>A \subseteq [-M,M]</m>, then
@@ -121,7 +112,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         </p>
       </proof>
     </proposition>
-
     <p>
       A <term>supremum</term><idx><h>supremum</h></idx> of a set
       <m>A\subseteq\R</m>, denoted by <m>\sup A</m>, is the least upper bound
@@ -134,34 +124,29 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       <m>\ell</m>. It is clear that <m>\sup A</m> (likewise <m>\inf A</m>),
       if it exists, is unique.
     </p>
-
     <p>
       A useful reformulation is: <m>u=\sup A</m> if and only if <m>u</m>
       is an upper bound of <m>A</m> and for every <m>\varepsilon&gt;0</m>
       there exists <m>a\in A</m> with <m>u-\varepsilon&lt;a\le u</m>.
     </p>
-
     <example xml:id="eg-inf-and-sup">
       <statement>
-	<ul>
-	   <li>
+        <p>
+          <ul>
+            <li>
 	      The set of upper bounds and the set of lower bounds of
 	      <m>(0,1)</m> are <m>[1,\infty)</m> and <m>(-\infty,0]</m>,
 	      respectively. Hence <m>\sup(0,1) = 1</m> and <m>\inf(0,1)
 	      = 0</m>.	</li>
-
-	   <li>
+            <li>
 	     The set of upper bounds and the set of lower bounds of
 	     <m>H:=\{1/x \colon x \lt 0\}</m> are <m>[0,\infty)</m> and the
 	     empty set, respectively. Hence <m>\sup H = 0</m> and <m>\inf H</m>
 	     does not exist.
 	   </li>
-
-	  <li>
-	  <m>\Z</m> has neither a supremum nor an infimum.
+            <li><m>\Z</m> has neither a supremum nor an infimum.
 	  </li>
-
-		  <li>
+            <li>
 		    The set of upper bounds and the set of lower bounds of
 		    <m>\emptyset</m> are both <m>\R</m>. Conventionally, we write
 		    <m>\sup \emptyset = -\infty</m> and
@@ -169,7 +154,8 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
 		    <m>\sup \emptyset</m> nor <m>\inf \emptyset</m> exists in
 		    <m>\R</m>.
 		  </li>
-	</ul>
+          </ul>
+        </p>
       </statement>
     </example>
   </subsection>

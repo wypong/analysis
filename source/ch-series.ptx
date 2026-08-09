@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<chapter xml:id="ch-series" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-series">
   <title>Series</title>
-
-  <xi:include href="sec-series.ptx" />
-  <xi:include href="sec-convergence-tests-for-series.ptx" />
-  <xi:include href="sec-more-convergence-tests-for-series.ptx" />
-
+  <xi:include href="sec-series.ptx"/>
+  <xi:include href="sec-convergence-tests-for-series.ptx"/>
+  <xi:include href="sec-more-convergence-tests-for-series.ptx"/>
   <exercises xml:id="ex-ch3">
     <title>Exercises</title>
-
     <exercise xml:id="ex-series-geometric-basic">
       <statement>
         <p>
@@ -19,11 +15,9 @@
         <p>
           a) <m>\sum_{n=0}^\infty (2/3)^n</m><m>\qquad</m>
           b) <m>\sum_{n=0}^\infty (-1/4)^n</m><m>\qquad</m>
-          c) <m>\sum_{n=0}^\infty (-2)^n</m>
-        </p>
+          c) <m>\sum_{n=0}^\infty (-2)^n</m></p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-series-comparison-quadratic">
       <statement>
         <p>
@@ -35,7 +29,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-series-p-test-examples">
       <statement>
         <p>
@@ -44,11 +37,9 @@
         <p>
           a) <m>\sum_{n=1}^\infty 1/\sqrt{n}</m><m>\qquad</m>
           b) <m>\sum_{n=1}^\infty 1/n^{3/2}</m><m>\qquad</m>
-          c) <m>\sum_{n=1}^\infty 1/n^{-2}</m>
-        </p>
+          c) <m>\sum_{n=1}^\infty 1/n^{-2}</m></p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-series-limit-comparison-cubic">
       <statement>
         <p>
@@ -60,7 +51,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-series-absolute-conditional-classification">
       <statement>
         <p>
@@ -70,11 +60,9 @@
         <p>
           a) <m>\sum_{n=1}^\infty (-1)^{n+1}/\sqrt{n}</m><m>\qquad</m>
           b) <m>\sum_{n=1}^\infty (-1)^n/n^2</m><m>\qquad</m>
-          c) <m>\sum_{n=1}^\infty (-1)^n</m>
-        </p>
+          c) <m>\sum_{n=1}^\infty (-1)^n</m></p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-series-ratio-test-polynomial-over-exponential">
       <statement>
         <p>
@@ -86,7 +74,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-series-ratio-test-factorial-over-exponential">
       <statement>
         <p>
@@ -98,7 +85,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-series-root-test-nth-power">
       <statement>
         <p>
@@ -110,7 +96,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-series-root-test-inconclusive">
       <statement>
         <p>
@@ -120,7 +105,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-series-alternating-harmonic-error">
       <statement>
         <p>
@@ -131,11 +115,9 @@
           Find <m>N</m> such that
           <md>
             \left|s-\sum_{n=1}^N \frac{(-1)^{n+1}}{n}\right| \lt 0.01.
-          </md>
-        </p>
+          </md></p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-series-cauchy-product-geometric">
       <statement>
         <p>
@@ -144,11 +126,9 @@
           <xref ref="thm-mertens-series"/> to prove that
           <md>
             \sum_{n=0}^\infty (n+1)x^n=\frac{1}{(1-x)^2}.
-          </md>
-        </p>
+          </md></p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-series-raabe-p-series">
       <statement>
         <p>

@@ -1,46 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<chapter xml:id="ch-integration" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-integration">
   <title>Integration</title>
-
-  <xi:include href="sec-definitions-and-examples-of-integration.ptx" />
-  <xi:include href="sec-properties-of-riemann-integrals.ptx" />
-  <xi:include href="sec-fundamental-theorem-of-calculus.ptx" />
-  <xi:include href="sec-integration-by-parts-and-change-of-variables.ptx" />
-
+  <xi:include href="sec-definitions-and-examples-of-integration.ptx"/>
+  <xi:include href="sec-properties-of-riemann-integrals.ptx"/>
+  <xi:include href="sec-fundamental-theorem-of-calculus.ptx"/>
+  <xi:include href="sec-integration-by-parts-and-change-of-variables.ptx"/>
   <exercises xml:id="ex-ch7">
     <title>Exercises</title>
-
     <exercise xml:id="ex-integration-x-squared-uniform-partitions">
       <statement>
         <p>
           Let <m>f(x)=x^2</m> on <m>[0,1]</m>, and let
           <m>P_n=\{0,\frac{1}{n},\frac{2}{n},\dots,1\}</m>.
         </p>
-        <ol>
-          <li>
-            <p>
+        <p>
+          <ol>
+            <li>
+              <p>
               Compute <m>L(P_n,f)</m> and <m>U(P_n,f)</m>.
             </p>
-          </li>
-          <li>
-            <p>
+            </li>
+            <li>
+              <p>
               Show that <m>U(P_n,f)-L(P_n,f)\to 0</m>.
             </p>
-          </li>
-          <li>
-            <p>
+            </li>
+            <li>
+              <p>
               Conclude that <m>f</m> is Riemann integrable on <m>[0,1]</m> and
               that
               <md>
                 \int_0^1 x^2\,dx=\frac13.
-              </md>
-            </p>
-          </li>
-        </ol>
+              </md></p>
+            </li>
+          </ol>
+        </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-integration-step-function-piecewise">
       <statement>
         <p>
@@ -56,11 +52,9 @@
           Show that <m>s</m> is Riemann integrable and compute
           <md>
             \int_0^3 s(x)\,dx.
-          </md>
-        </p>
+          </md></p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-integration-dirichlet-not-integrable">
       <statement>
         <p>
@@ -69,7 +63,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-integration-floor-function">
       <statement>
         <p>
@@ -77,11 +70,9 @@
           integrable on <m>[0,3]</m>, and compute
           <md>
             \int_0^3 \lfloor x \rfloor\,dx.
-          </md>
-        </p>
+          </md></p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-integration-finitely-many-nonzero-points">
       <statement>
         <p>
@@ -90,11 +81,9 @@
           that <m>f \in R[a,b]</m> and that
           <md>
             \int_a^b f(x)\,dx=0.
-          </md>
-        </p>
+          </md></p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-integration-nonnegative-continuous-zero-integral">
       <statement>
         <p>
@@ -107,7 +96,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-integration-indefinite-integral-absolute-value">
       <statement>
         <p>
@@ -120,7 +108,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-integration-indefinite-integral-signum">
       <statement>
         <p>
@@ -134,7 +121,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-integration-by-parts-zero-boundary">
       <statement>
         <p>
@@ -142,11 +128,9 @@
           <m>F' \in R[a,b]</m>, and that <m>F(a)=F(b)=0</m>. Prove that
           <md>
             \int_a^b xF'(x)\,dx=-\int_a^b F(x)\,dx.
-          </md>
-        </p>
+          </md></p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-integration-by-parts-power-integral">
       <statement>
         <p>
@@ -154,22 +138,18 @@
           <m>n \in \N</m> that
           <md>
             \int_0^1 x^n\,dx=\frac{1}{n+1}.
-          </md>
-        </p>
+          </md></p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-integration-change-of-variables-polynomial">
       <statement>
         <p>
           Use <xref ref="thm-change-of-variables"/> to compute
           <md>
             \int_0^1 x(1+x^2)^4\,dx.
-          </md>
-        </p>
+          </md></p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-integration-change-of-variables-closed-loop">
       <statement>
         <p>
@@ -178,11 +158,9 @@
           then
           <md>
             \int_a^b f(\varphi(x))\varphi'(x)\,dx=0.
-          </md>
-        </p>
+          </md></p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-integration-countably-many-discontinuities">
       <statement>
         <p>
@@ -193,7 +171,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-integration-thomae-weighted-zero">
       <statement>
         <p>
@@ -201,8 +178,7 @@
           function <m>x \mapsto xh(x)</m> is Riemann integrable and that
           <md>
             \int_0^1 xh(x)\,dx=0.
-          </md>
-        </p>
+          </md></p>
       </statement>
     </exercise>
   </exercises>

@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<appendix xml:id="ap-lebesgue-integrability-criterion"
-  xmlns:xi="http://www.w3.org/2001/XInclude">
+<appendix xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ap-lebesgue-integrability-criterion">
   <title>Lebesgue Criterion</title>
-
   <section xml:id="sec-lebesgue-integrability-criterion">
     <title>Lebesgue Integrability Criterion</title>
-
     <p>
       We record here a useful criterion for Riemann integrability that goes
       far beyond continuity and monotonicity. A proof can be found in
       <xref ref="biblio-bartle-sherbert"/>.
     </p>
-
     <definition xml:id="def-measure-zero">
       <statement>
         <p>
@@ -29,12 +24,10 @@
         </p>
       </statement>
     </definition>
-
     <p>
       A property is said to hold <term>almost everywhere</term><idx>almost everywhere</idx>
       on an interval if it fails only on a null set.
     </p>
-
     <example xml:id="eg-naturals-null">
       <statement>
         <p>
@@ -56,18 +49,15 @@
             \sum_{k=1}^{\infty} \frac{\varepsilon}{2^k}
             =
             \varepsilon.
-          </md>
-        </p>
+          </md></p>
       </statement>
     </example>
-
     <corollary xml:id="cor-countable-sets-null">
       <statement>
         <p>
           Every countable subset of <m>\R</m> is a null set.
         </p>
       </statement>
-
       <proof>
         <p>
           Let <m>A=\{a_1,a_2,\dots\}</m> be countably infinite. Given
@@ -89,14 +79,12 @@
         </p>
       </proof>
     </corollary>
-
     <proposition xml:id="prop-union-two-null-sets">
       <statement>
         <p>
           The union of two null sets is null.
         </p>
       </statement>
-
       <proof>
         <p>
           Let <m>A</m> and <m>B</m> be null sets, and let
@@ -116,7 +104,6 @@
         </p>
       </proof>
     </proposition>
-
     <theorem xml:id="thm-lebesgue-integrability-criterion">
       <title>Lebesgue Integrability Criterion</title>
       <statement>
@@ -128,7 +115,6 @@
         </p>
       </statement>
     </theorem>
-
     <p>
       The Thomae function from <xref ref="eg-thomae-function"/> illustrates
       this criterion well: it is continuous at every irrational point and
@@ -137,7 +123,6 @@
       discontinuities has measure zero, so the theorem predicts that the
       Thomae function is Riemann integrable.
     </p>
-
     <p>
       The criterion also gives a quick explanation for some earlier results.
       If <m>\phi</m> is continuous and <m>f</m> is integrable, then every

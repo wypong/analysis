@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<section xml:id="sec-calculus-of-power-series"
-  xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-calculus-of-power-series">
   <title>Calculus of Power Series</title>
-
   <introduction>
     <p>
       Inside the interval of convergence, power series behave much like
@@ -13,11 +10,12 @@
       test.
     </p>
   </introduction>
-
-  <proposition xml:id="prop-derived-integrated-power-series-radius">
-    <title>Derived and Integrated Series Have the Same Radius</title>
-    <statement>
-      <p>
+  <subsection>
+    <title/>
+    <proposition xml:id="prop-derived-integrated-power-series-radius">
+      <title>Derived and Integrated Series Have the Same Radius</title>
+      <statement>
+        <p>
         Suppose the power series
         <md>
           \sum_{n=0}^\infty a_n(x-x_0)^n
@@ -32,10 +30,9 @@
         </md>
         also have radius of convergence <m>R</m>.
       </p>
-    </statement>
-
-    <proof>
-      <p>
+      </statement>
+      <proof>
+        <p>
         Let
         <md>
           L=\limsup |a_n|^{1/n},
@@ -51,8 +48,7 @@
         </md>
         Hence the formal derivative has radius <m>R</m>.
       </p>
-
-      <p>
+        <p>
         Likewise, because <m>(n+1)^{1/n}\to 1</m>,
         <md>
           \limsup \left|\frac{a_n}{n+1}\right|^{1/n}
@@ -63,13 +59,12 @@
         </md>
         so the formal integral also has radius <m>R</m>.
       </p>
-    </proof>
-  </proposition>
-
-  <theorem xml:id="thm-termwise-calculus-power-series">
-    <title>Term-by-Term Differentiation and Integration</title>
-    <statement>
-      <p>
+      </proof>
+    </proposition>
+    <theorem xml:id="thm-termwise-calculus-power-series">
+      <title>Term-by-Term Differentiation and Integration</title>
+      <statement>
+        <p>
         Suppose
         <md>
           f(x)=\sum_{n=0}^\infty a_n(x-x_0)^n
@@ -85,12 +80,10 @@
           \int_{x_0}^x f(t)\,dt
           =
           \sum_{n=0}^\infty \frac{a_n}{n+1}(x-x_0)^{n+1}.
-        </md>
-      </p>
-    </statement>
-
-    <proof>
-      <p>
+        </md></p>
+      </statement>
+      <proof>
+        <p>
         Fix <m>r</m> with <m>0 \lt r \lt R</m>, and let
         <m>I_r=[x_0-r,x_0+r]</m>. By
         <xref ref="thm-power-series-uniform-on-compact-subintervals"/>, the
@@ -110,35 +103,30 @@
         <md>
           f'(x)=\sum_{k=1}^\infty ka_k(x-x_0)^{k-1}
           \qquad \text{for } x \in (x_0-r,x_0+r).
-        </md>
-      </p>
-
-      <p>
+        </md></p>
+        <p>
         Likewise, since <m>s_n \to f</m> uniformly on <m>I_r</m>,
         <xref ref="thm-integral-uniform-limit"/> gives
         <md>
-          \int_{x_0}^x f(t)\,dt
-          =
-          \lim_{n\to\infty} \int_{x_0}^x s_n(t)\,dt
-          =
-          \lim_{n\to\infty}
-          \sum_{k=0}^n \frac{a_k}{k+1}(x-x_0)^{k+1}
-          =
-          \sum_{k=0}^\infty \frac{a_k}{k+1}(x-x_0)^{k+1}
+          \begin{aligned}
+            \int_{x_0}^x f(t)\,dt
+            &amp;= \lim_{n\to\infty} \int_{x_0}^x s_n(t)\,dt \\
+            &amp;= \lim_{n\to\infty}
+              \sum_{k=0}^n \frac{a_k}{k+1}(x-x_0)^{k+1} \\
+            &amp;= \sum_{k=0}^\infty \frac{a_k}{k+1}(x-x_0)^{k+1}
+          \end{aligned}
         </md>
         for every <m>x \in (x_0-r,x_0+r)</m>.
       </p>
-
-      <p>
+        <p>
         Since <m>r \lt R</m> was arbitrary, both formulas hold throughout the
         entire interval <m>(x_0-R,x_0+R)</m>.
       </p>
-    </proof>
-  </theorem>
-
-  <example xml:id="eg-power-series-sum-n-over-two-power-n">
-    <statement>
-      <p>
+      </proof>
+    </theorem>
+    <example xml:id="eg-power-series-sum-n-over-two-power-n">
+      <statement>
+        <p>
         We can compute the sum
         <md>
           \sum_{n=1}^\infty \frac{n}{2^n}.
@@ -167,14 +155,12 @@
           \frac{\frac12}{(1-\frac12)^2}
           =
           2.
-        </md>
-      </p>
-    </statement>
-  </example>
-
-  <example xml:id="eg-power-series-log-and-arctan">
-    <statement>
-      <p>
+        </md></p>
+      </statement>
+    </example>
+    <example xml:id="eg-power-series-log-and-arctan">
+      <statement>
+        <p>
         The geometric series also yields familiar expansions. Replacing
         <m>x</m> by <m>-x</m>, we get
         <md>
@@ -185,10 +171,8 @@
         <md>
           \ln(1+x)=\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n}x^n
           \qquad \text{for } |x|&lt;1.
-        </md>
-      </p>
-
-      <p>
+        </md></p>
+        <p>
         Likewise,
         <md>
           \frac{1}{1+x^2}=\sum_{n=0}^\infty (-1)^n x^{2n}
@@ -200,15 +184,13 @@
           =
           \sum_{n=0}^\infty \frac{(-1)^n}{2n+1}x^{2n+1}
           \qquad \text{for } |x|&lt;1.
-        </md>
-      </p>
-    </statement>
-  </example>
-
-  <theorem xml:id="thm-abel-power-series">
-    <title>Abel's Theorem on Power Series</title>
-    <statement>
-      <p>
+        </md></p>
+      </statement>
+    </example>
+    <theorem xml:id="thm-abel-power-series">
+      <title>Abel's Theorem on Power Series</title>
+      <statement>
+        <p>
         Let
         <md>
           f(x)=\sum_{n=0}^\infty a_nx^n
@@ -220,12 +202,10 @@
         converges to <m>L</m>, then
         <md>
           \lim_{x\to 1^-} f(x)=L.
-        </md>
-      </p>
-    </statement>
-
-    <proof>
-      <p>
+        </md></p>
+      </statement>
+      <proof>
+        <p>
         Replacing <m>a_0</m> by <m>a_0-L</m>, we may assume without loss of
         generality that <m>L=0</m>. Let
         <md>
@@ -233,8 +213,7 @@
         </md>
         Then <m>s_k \to 0</m>.
       </p>
-
-      <p>
+        <p>
         For <m>|x|&lt;1</m>, the geometric series
         <m>\sum_{m=0}^\infty x^m</m> converges absolutely by
         <xref ref="prop-geometric-series"/>. Hence Mertens' theorem
@@ -252,10 +231,8 @@
         <md>
           f(x)=(1-x)\sum_{k=0}^\infty s_kx^k
           \qquad \text{for } 0&lt;x&lt;1.
-        </md>
-      </p>
-
-      <p>
+        </md></p>
+        <p>
         Let <m>\varepsilon&gt;0</m>. Since <m>s_k \to 0</m>, there exists
         <m>N</m> such that <m>|s_k|&lt;\varepsilon</m> for all <m>k \ge N</m>.
         Then for <m>0&lt;x&lt;1</m>,
@@ -269,10 +246,8 @@
           \varepsilon x^N
           \le
           \varepsilon.
-        </md>
-      </p>
-
-      <p>
+        </md></p>
+        <p>
         For the remaining finitely many terms, let
         <md>
           B:=\max\{|s_0|,|s_1|,\dots,|s_{N-1}|\}.
@@ -289,24 +264,21 @@
         <m>\delta&gt;0</m> such that
         <m>0&lt;1-x&lt;\delta</m> implies <m>B(1-x^N)&lt;\varepsilon</m>.
       </p>
-
-      <p>
+        <p>
         Combining the two estimates, we obtain <m>|f(x)|&lt;2\varepsilon</m>
         whenever <m>0&lt;1-x&lt;\delta</m>. Thus
         <m>\lim_{x\to 1^-} f(x)=0</m>. Undoing the initial reduction proves
         that <m>\lim_{x\to 1^-} f(x)=L</m>.
       </p>
-    </proof>
-  </theorem>
-
-  <p>
+      </proof>
+    </theorem>
+    <p>
     By a simple change of variables, Abel's theorem also applies at either
     endpoint of a finite interval of convergence.
   </p>
-
-  <example xml:id="eg-abel-ln2">
-    <statement>
-      <p>
+    <example xml:id="eg-abel-ln2">
+      <statement>
+        <p>
         From <xref ref="eg-power-series-log-and-arctan"/>, we know that
         <md>
           \ln(1+x)=\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n}x^n
@@ -321,14 +293,13 @@
           \lim_{x\to 1^-}\ln(1+x)
           =
           \ln 2.
-        </md>
-      </p>
-    </statement>
-  </example>
-
-  <p>
+        </md></p>
+      </statement>
+    </example>
+    <p>
     These examples illustrate a general principle: once a single power series
     is known, algebraic manipulations together with differentiation and
     integration often produce many others.
   </p>
+  </subsection>
 </section>

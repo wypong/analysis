@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<chapter xml:id="ch-sequences" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-sequences">
   <title>Sequences</title>
-
-  <xi:include href="sec-sequences.ptx" />
-  <xi:include href="sec-convergence-tests-for-sequences.ptx" />
-  <xi:include href="sec-bolzano-weierstrass.ptx" />
-  <xi:include href="sec-cauchy-sequences.ptx" />
-
+  <xi:include href="sec-sequences.ptx"/>
+  <xi:include href="sec-convergence-tests-for-sequences.ptx"/>
+  <xi:include href="sec-bolzano-weierstrass.ptx"/>
+  <xi:include href="sec-cauchy-sequences.ptx"/>
   <exercises xml:id="ex-ch2">
     <title>Exercises</title>
-
     <exercise xml:id="ex-sequences-null-basic">
       <statement>
         <p>
@@ -19,7 +15,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-sequences-monotone-bounded-convergent">
       <statement>
         <p>
@@ -28,7 +23,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-sequences-squeeze">
       <statement>
         <p>
@@ -37,7 +31,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-sequences-subsequence-divergent-example">
       <statement>
         <p>
@@ -45,45 +38,59 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-sequences-limsup-liminf-bounded-examples">
       <statement>
         <p>
           For each of the following sequences, compute its limit superior and
           limit inferior.
         </p>
-        <ul>
-          <li><m>((-1)^n)</m></li>
-          <li><m>(1/n)</m></li>
-          <li><m>((-1)^n/n)</m></li>
-          <li><m>((-1/2)^n)</m></li>
-          <li><m>((-1)^n(1-1/n))</m></li>
-        </ul>
+        <p>
+          <ul>
+            <li>
+              <m>((-1)^n)</m>
+            </li>
+            <li>
+              <m>(1/n)</m>
+            </li>
+            <li>
+              <m>((-1)^n/n)</m>
+            </li>
+            <li>
+              <m>((-1/2)^n)</m>
+            </li>
+            <li>
+              <m>((-1)^n(1-1/n))</m>
+            </li>
+          </ul>
+        </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-sequences-null-neg-abs-equiv">
       <statement>
-	<p> Show that the following statements are equivalent: (i) <m>\vx
+        <p> Show that the following statements are equivalent: (i) <m>\vx
 	\approx 0</m>, (ii) <m>-\vx \approx 0</m> and (iii) <m>|\vx|
 	\approx 0</m>.
 	</p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-sequences-limsup-liminf-unbounded-examples">
       <statement>
         <p>
           Compute the limit superior and limit inferior, in the extended real
           numbers, of each of the following sequences.
         </p>
-        <ul>
-          <li><m>((-2)^n)</m></li>
-          <li><m>(5(n+1))</m></li>
-        </ul>
+        <p>
+          <ul>
+            <li>
+              <m>((-2)^n)</m>
+            </li>
+            <li>
+              <m>(5(n+1))</m>
+            </li>
+          </ul>
+        </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-sequences-limsup-liminf-subsequences-example">
       <statement>
         <p>
@@ -96,16 +103,14 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-sequences-approximate-sup">
-    <statement>
-      <p>
+      <statement>
+        <p>
          Suppose <m>\sup S</m> exists. Show that there is a sequence
 	 <m>(x_n)</m> in <m>S</m> that converges to <m>\sup S</m>.
       </p>
-    </statement>
+      </statement>
     </exercise>
-
     <exercise xml:id="ex-sequences-unique-subsequential-limit">
       <statement>
         <p>
@@ -115,7 +120,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-sequences-cauchy-direct">
       <statement>
         <p>
@@ -124,7 +128,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-sequences-cauchy-subsequence">
       <statement>
         <p>
@@ -132,7 +135,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-sequences-bounded-not-cauchy">
       <statement>
         <p>
@@ -141,16 +143,17 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-sequences-q-not-sequentially-complete">
       <statement>
         <p>
           Let <m>x_n</m> be the decimal truncation of <m>\sqrt{2}</m> to
           <m>n</m> decimal places, so that
         </p>
-        <md>
+        <p>
+          <md>
           x_1=1, \qquad x_2=1.4, \qquad x_3=1.41, \qquad x_4=1.414, \dots
         </md>
+        </p>
         <p>
           Show that <m>(x_n)</m> is Cauchy in <m>\Q</m>. Explain why it does
           not converge in <m>\Q</m>, and conclude that <m>\Q</m> is not
@@ -158,21 +161,27 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-sequences-geometric-negative-base">
       <statement>
         <p>
           Determine whether each sequence converges. If it does, find its
           limit.
         </p>
-        <ul>
-          <li><m>((-1/3)^n)</m></li>
-          <li><m>((-2)^n)</m></li>
-          <li><m>((3/2)^n)</m></li>
-        </ul>
+        <p>
+          <ul>
+            <li>
+              <m>((-1/3)^n)</m>
+            </li>
+            <li>
+              <m>((-2)^n)</m>
+            </li>
+            <li>
+              <m>((3/2)^n)</m>
+            </li>
+          </ul>
+        </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-sequences-ratio-test-power-over-exponential">
       <statement>
         <p>
@@ -180,7 +189,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-sequences-ratio-test-factorial">
       <statement>
         <p>
@@ -188,7 +196,6 @@
         </p>
       </statement>
     </exercise>
-
     <exercise xml:id="ex-sequences-ratio-test-inconclusive">
       <statement>
         <p>

@@ -1,28 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<section xml:id="sec-completeness-axiom"
-xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-completeness-axiom">
   <title>The Completeness Axiom</title>
   <introduction>
     <p>
       The following axiom is what sets the real field apart from other
       ordered fields.
-    </p> 
-
+    </p>
     <axiom xml:id="ax-least-upper-bound-property">
-      <title>The Completeness Axiom of <m>\R</m></title> 
-
+      <title>The Completeness Axiom of <m>\R</m></title>
       <statement>
         <p>
           Every non-empty set of real numbers that is bounded above has a
           supremum in <m>\R</m>.
         </p>
       </statement>
-      </axiom> 
-
-      <p>
-        For an ordered set, the <term>least upper bound property</term>
-        <idx><h>least upper bound property</h></idx> means that every
+    </axiom>
+    <p>
+        For an ordered set, the <term>least upper bound property</term><idx><h>least upper bound property</h></idx> means that every
         nonempty subset that is bounded above has a least upper bound, that
         is, a supremum, in the set. Thus, the completeness axiom says that
         <m>\R</m>, with its usual order, has the least upper bound property.
@@ -30,23 +24,19 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         <m>\R</m> that is bounded below has an infimum in <m>\R</m>; see
         <xref ref="ex-ch1-completeness-infimum-equivalent"/>.
       </p>
-   </introduction>
-
+  </introduction>
   <subsection xml:id="subsec-completeness-consequences">
     <title>Consequences</title>
     <p>
-      An ordered field is <term>Archimedean</term>
-      <idx><h>Archimedean</h></idx> if for every <m>x</m> in the field there
+      An ordered field is <term>Archimedean</term><idx><h>Archimedean</h></idx> if for every <m>x</m> in the field there
       exists <m>n \in \N</m> such that <m>x &lt; n</m>.
     </p>
-
     <proposition xml:id="prop-n-unbounded-above">
       <statement>
         <p>
           The ordered field <m>\R</m> is Archimedean.
         </p>
       </statement>
-
       <proof>
         <p>
           By the definition above, it suffices to show that for every
@@ -67,7 +57,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         </p>
       </proof>
     </proposition>
-
     <proposition xml:id="prop-archimedean-property">
       <statement>
         <p>
@@ -75,7 +64,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           exists <m>N \in \N</m> such that <m>N\varepsilon &gt; x</m>.
         </p>
       </statement>
-
       <proof>
         <p>
           Since <m>\varepsilon &gt; 0</m>, the number <m>x/\varepsilon</m> is
@@ -85,7 +73,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         </p>
       </proof>
     </proposition>
-
     <proposition xml:id="prop-reciprocal-archimedean">
       <statement>
         <p>
@@ -93,7 +80,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           that <m>1/n &lt; \varepsilon</m>.
         </p>
       </statement>
-
       <proof>
         <p>
           Apply <xref ref="prop-archimedean-property"/> with <m>x=1</m>. Then
@@ -103,7 +89,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         </p>
       </proof>
     </proposition>
-
     <proposition xml:id="prop-integer-part">
       <statement>
         <p>
@@ -111,7 +96,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           <m>n \le x &lt; n+1</m>.
         </p>
       </statement>
-
       <proof>
         <p>
           By <xref ref="prop-n-unbounded-above"/>, there exists <m>N \in \N</m>
@@ -131,7 +115,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         </p>
       </proof>
     </proposition>
-
     <proposition xml:id="prop-integer-between-reals">
       <statement>
         <p>
@@ -139,7 +122,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           <m>m \in \Z</m> such that <m>x \le m &lt; y</m>.
         </p>
       </statement>
-
       <proof>
         <p>
           By <xref ref="prop-integer-part"/>, there exists <m>n \in \Z</m>
@@ -157,19 +139,15 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         </p>
       </proof>
     </proposition>
-
     <p>
-	A subset <m>D</m> of <m>\R</m> is <term>dense</term> <idx> <h>dense</h>
-	</idx> if between any two real numbers lies an element of <m>D</m>.
-    </p> 
-
+	A subset <m>D</m> of <m>\R</m> is <term>dense</term><idx><h>dense</h></idx> if between any two real numbers lies an element of <m>D</m>.
+    </p>
     <proposition xml:id="prop-q-dense-in-r">
       <statement>
-	<p>
+        <p>
 	  The set <m>\Q</m> is dense in <m>\R</m>.
 	</p>
       </statement>
-
       <proof>
         <p>
           Let <m>x,y \in \R</m> with <m>x&lt;y</m>. Then <m>y-x&gt;0</m>, so by
@@ -188,7 +166,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         </p>
       </proof>
     </proposition>
-
     <theorem xml:id="thm-positive-square-root-existence">
       <title>Existence of Positive Square Roots</title>
       <statement>
@@ -197,13 +174,11 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           <m>u^2=a</m>.
         </p>
       </statement>
-
       <proof>
         <p>
           Uniqueness is immediate because <m>x\mapsto x^2</m> is strictly
           increasing on <m>(0,\infty)</m>.
         </p>
-
         <p>
           For existence, define
           <m>S=\{x\in\R : x&gt;0,\ x^2\le a\}</m>. The set is non-empty:
@@ -212,7 +187,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
           <m>x&gt;M</m> implies <m>x^2&gt;a</m>. By completeness, <m>u:=\sup S</m>
           exists.
         </p>
-
         <p>
           If <m>u^2&lt;a</m>, then for sufficiently small <m>\varepsilon&gt;0</m>,
           we still have <m>(u+\varepsilon)^2\le a</m>, so <m>u+\varepsilon\in S</m>,
@@ -225,7 +199,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         </p>
       </proof>
     </theorem>
-
     <p>
       A standard comparison example is the ordered field
       <m>\Q</m>:
@@ -234,5 +207,4 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
       Therefore <m>\Q</m> does not satisfy the least upper bound property.
     </p>
   </subsection>
-
 </section>
