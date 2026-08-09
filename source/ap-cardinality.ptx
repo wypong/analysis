@@ -67,7 +67,7 @@
     </theorem>
     <p>
       Proofs of <xref ref="thm-cantor-bernstein-schroder"/> can be found in
-      <xref ref="biblio-garrett-csb"/> and <xref ref="biblio-hyde-csb"/>.
+      <xref ref="biblio-garrett-csb"/> and <xref ref="biblio-wikipedia-csb"/>.
     </p>
     <proposition xml:id="prop-countable-union-countable">
       <statement>

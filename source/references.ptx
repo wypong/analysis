@@ -38,7 +38,8 @@
     Paul Garrett, <title>A Proof of the Cantor-Schroeder-Bernstein Theorem</title>.
     <url href="https://www-users.cse.umn.edu/~garrett/m/algebra/cantor_schroeder_bernstein.pdf">Online lecture note</url>.
   </biblio>
-  <biblio xml:id="biblio-hyde-csb" type="raw">
-    Trevor Hyde, <title>A Dynamical Proof of the Cantor-Bernstein Theorem</title>.
+  <biblio xml:id="biblio-wikipedia-csb" type="raw">
+    Wikipedia contributors, <title>Schröder<ndash/>Bernstein theorem</title>.
+    <url href="https://en.wikipedia.org/wiki/Schr%C3%B6der%E2%80%93Bernstein_theorem">Wikipedia</url>.
   </biblio>
 </references>
