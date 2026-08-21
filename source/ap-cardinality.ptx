@@ -1,16 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<appendix xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ap-cardinality">
-  <title>Cardinality</title>
-  <section xml:id="sec-cardinality-subsets-real">
-    <title>Cardinality</title>
-    <p>
+<?xml version="1.0" encoding="UTF-8"?> <appendix
+xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ap-cardinality">
+  <title>Cardinality</title> <section xml:id="sec-cardinality-subsets-real">
+    <title>Cardinality</title> <p>
       For sets <m>A,B</m>, <m>|A|=|B|</m> means there is a bijection between
       them. In that case, we say that <m>A</m> and <m>B</m> have the same
-      <term>cardinality</term><idx>cardinality</idx>. We write <m>|A| \le |B|</m> if there is
-      an injection <m>A \to B</m>.  A set <m>A</m> is <term>countably
-      infinite</term><idx>countably infinite</idx> if <m>|A|=|\N|</m>. A set is <term>countable</term><idx>countable</idx>
-      if it is either finite or countably infinite.
+      <term>cardinality</term><idx>cardinality</idx>. We write <m>|A|
+      \le |B|</m> if there is an injection <m>A \to B</m>.  A set <m>A</m>
+      is <term>countably infinite</term><idx>countably infinite</idx> if
+      <m>|A|=|\N|</m>. A set is <term>countable</term><idx>countable</idx>
+      if it is either finite or countably infinite. In other words, a set
+      <m>A</m> is countable if and only if there is a surjection from
+      <m>\N</m> to <m>A</m>.
     </p>
+
     <p>
       We begin with standard countable models that will be reused in later proofs.
     </p>
@@ -20,63 +22,61 @@
           The set <m>\N\cup\{0\}</m> is countable.
         </p>
       </statement>
+
       <proof>
-        <p>
-          The map <m>f:\N\to \N\cup\{0\}</m>, <m>f(n)=n-1</m>, is bijective, with inverse
-          <m>g(m)=m+1</m>.  Hence <m>|\N\cup\{0\}|=|\N|</m>.
+
+      <p>
+          The map <m>f:\N\to \N\cup\{0\}</m>, <m>f(n)=n-1</m>, is bijective,
+          with inverse <m>g(m)=m+1</m>.  Hence <m>|\N\cup\{0\}|=|\N|</m>.
         </p>
-      </proof>
+
+	</proof>
     </proposition>
+
     <proposition xml:id="prop-n-times-two-countable">
       <statement>
         <p>
           The set <m>\N\times\{0,1\}</m> is countable.
         </p>
-      </statement>
-      <proof>
+      </statement> <proof>
         <p>
-          Define <m>F:\N\times\{0,1\}\to\N</m> by <m>F(n,0)=2n</m> and <m>F(n,1)=2n-1</m>.
-          This is bijective, so <m>|\N\times\{0,1\}|=|\N|</m>.
+          Define <m>F:\N\times\{0,1\}\to\N</m> by <m>F(n,0)=2n</m>
+          and <m>F(n,1)=2n-1</m>.  This is bijective, so
+          <m>|\N\times\{0,1\}|=|\N|</m>.
         </p>
       </proof>
-    </proposition>
-    <proposition xml:id="prop-n-square-countable">
+    </proposition> <proposition xml:id="prop-n-square-countable">
       <statement>
         <p>
           The set <m>\N^2</m> is countable.
         </p>
-      </statement>
-      <proof>
+      </statement> <proof>
         <p>
-          For each <m>s\in\N</m>, the diagonal <m>D_s=\{(m,n)\in\N^2:m+n=s\}</m> is finite.
-          Also <m>\N^2=\bigcup_{s\ge2}D_s</m>.  Enumerating each diagonal in increasing order
-          of <m>s</m> gives an enumeration of <m>\N^2</m>, so <m>\N^2</m> is countable.
-        </p>
+	  For each <m>s\in\N</m>, the diagonal
+	  <m>D_s=\{(m,n)\in\N^2:m+n=s\}</m> is finite.	Also
+	  <m>\N^2=\bigcup_{s\ge2}D_s</m> is the union of a countable
+	  family of countable sets and hence countable by <xref
+	  ref="prop-countable-union-countable"/>.
+	</p>
       </proof>
-    </proposition>
-    <p>
+    </proposition> <p>
       The next theorem is the main comparison tool.
-    </p>
-    <theorem xml:id="thm-cantor-bernstein-schroder">
-      <title>Cantor-Bernstein-Schroder</title>
-      <statement>
-        <p>
-          If <m>|A|\le |B|</m> and <m>|B|\le |A|</m>, then <m>|A|=|B|</m>.
-        </p>
+    </p> <theorem xml:id="thm-cantor-bernstein-schroder">
+      <title>Cantor-Bernstein-Schroder</title> <statement>
+	<p>
+	  If <m>|A|\le |B|</m> and <m>|B|\le |A|</m>, then <m>|A|=|B|</m>.
+	</p>
       </statement>
-    </theorem>
-    <p>
+    </theorem> <p>
       Proofs of <xref ref="thm-cantor-bernstein-schroder"/> can be found in
       <xref ref="biblio-garrett-csb"/> and <xref ref="biblio-wikipedia-csb"/>.
-    </p>
-    <proposition xml:id="prop-countable-union-countable">
+    </p> <proposition xml:id="prop-countable-union-countable">
       <statement>
-        <p>
-          A countable union of countable sets is countable.
-        </p>
-      </statement>
-      <proof>
-        <p>
+	<p>
+	  A countable union of countable sets is countable.
+	</p>
+      </statement> <proof>
+	<p>
 	  Let <m>A_1,A_2,\ldots</m> be a countable family (indexed by
 	  <m>\N</m>) of countable sets.  For <m>a\in\bigcup_{j\in\N}A_j</m>,
 	  let <m>j(a)</m> be the least index with <m>a\in A_{j(a)}</m>.
@@ -87,30 +87,28 @@
 	  Since <m>\N^2</m> is countable, the union is countable.
 	</p>
       </proof>
-    </proposition>
-    <proposition xml:id="prop-q-countable">
+    </proposition> <proposition xml:id="prop-q-countable">
       <statement>
-        <p>
-          The set <m>\Q</m> is countable (hence <m>\Z</m> is countable).
-        </p>
-      </statement>
-      <proof>
-        <p>
-          The map <m>n\mapsto n/1</m> gives an injection <m>\N\to\Q</m>, so
-          <m>|\N|\le |\Q|</m>.  For the reverse inequality, map <m>r\in\Q</m> to
-          <m>(m,n)\in\Z\times\N</m> where <m>r=m/n</m> in lowest terms and <m>n&gt;0</m>.
-          This is injective, and <m>\Z\times\N</m> is countable (as a countable union of countable sets),
-          so <m>|\Q|\le |\N|</m>.  By <xref ref="thm-cantor-bernstein-schroder"/>, <m>|\Q|=|\N|</m>.
-        </p>
+	<p>
+	  The set <m>\Q</m> is countable (hence <m>\Z</m> is countable).
+	</p>
+      </statement> <proof>
+	<p>
+	  The map <m>n\mapsto n/1</m> gives an injection <m>\N\to\Q</m>, so
+	  <m>|\N|\le |\Q|</m>.	For the reverse inequality, map <m>r\in\Q</m>
+	  to <m>(m,n)\in\Z\times\N</m> where <m>r=m/n</m> in lowest terms and
+	  <m>n&gt;0</m>.  This is injective, and <m>\Z\times\N</m> is countable
+	  (as a countable union of countable sets), so <m>|\Q|\le |\N|</m>.
+	  By <xref ref="thm-cantor-bernstein-schroder"/>, <m>|\Q|=|\N|</m>.
+	</p>
       </proof>
-    </proposition>
-    <p>
-          Let <m>X</m> be a set and let <m>A\subseteq X</m>.  The
-          <term>indicator function</term><idx>indicator function</idx> of <m>A</m> in <m>X</m>,
-          denoted <m>1_A^X</m> (or <m>1_A</m> when <m>X</m> is understood), is the map
-          <m>1_A^X:X\to\{0,1\}</m> defined by
-          <m>
-            1_A^X(x)=
+    </proposition> <p>
+	  Let <m>X</m> be a set and let <m>A\subseteq X</m>.  The
+	  <term>indicator function</term><idx>indicator function</idx>
+	  of <m>A</m> in <m>X</m>, denoted <m>1_A^X</m> (or <m>1_A</m>
+	  when <m>X</m> is understood), is the map <m>1_A^X:X\to\{0,1\}</m>
+	  defined by <m>
+	    1_A^X(x)=
             \begin{cases}
               1,&amp;\text{if }x\in A,\\ 0,&amp;\text{if }x\notin A.
             \end{cases}
@@ -169,26 +167,109 @@
       </proof>
     </proposition>
   </section>
-  <section xml:id="sec-cardinality-exercises">
+
+
+  <exercises xml:id="sec-cardinality-exercises">
     <title>Exercises</title>
-    <p>
-      <ol>
-        <li>
-          <p>Show that <m>\N^2\cup\{(0,0)\}</m> is countable.</p>
-        </li>
-        <li>
-          <p>Show that any subset of a countable set is countable.</p>
-        </li>
-        <li>
-          <p>Show that <m>(0,1)</m> and <m>\R</m> have the same cardinality by constructing an explicit bijection.</p>
-        </li>
-        <li>
-          <p>Show that the intersection of two intervals is empty, a singleton, or an interval.</p>
-        </li>
-        <li>
-          <p>Show that the union of two overlapping intervals is an interval.</p>
-        </li>
-      </ol>
-    </p>
-  </section>
+    <exercise xml:id="ex-n-square-explicit-bijection">
+      <statement>
+        <p>
+          Show that <m>\N^2</m> is countable by constructing an explicit
+          bijection from <m>\N</m> to <m>\N^2</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Let <m>T_r=r(r+1)/2</m> for <m>r\geq 0</m>. For
+          <m>k\in\N</m>, set
+          <md>
+            r=r(k)=\left\lceil\frac{\sqrt{8k+1}-1}{2}\right\rceil
+            \quad\text{and}\quad
+            j=j(k)=k-T_{r-1}.
+          </md>
+          Then <m>T_{r-1}&lt;k\leq T_r</m>, so <m>1\leq j\leq r</m>.
+          Define <m>F:\N\to\N^2</m> by
+          <md>
+            F(k)=(r-j+1,j).
+          </md>
+          Thus, <m>F</m> counts the lattice points one diagonal at a time:
+          <md>
+            (1,1),(2,1),(1,2),(3,1),(2,2),(1,3),\ldots.
+          </md>
+        </p>
+        <figure xml:id="fig-n-square-diagonal-counting">
+          <caption>The diagonal counting route. The label <m>k</m> at a
+          lattice point indicates the point <m>F(k)</m>.</caption>
+          <image width="58%">
+
+	  <shortdescription>Positive lattice points labeled from 1 through
+	  15 along successive diagonals, with arrows showing the counting
+	  route.</shortdescription>
+
+	    <latex-image>
+\begin{tikzpicture}[scale=1.05, &gt;=stealth]
+  \draw[step=1, gray!28, very thin] (0.75,0.75) grid (5.25,5.25);
+  \draw[-&gt;, thick] (0.6,0.65) -- (5.55,0.65) node[right] {$m$};
+  \draw[-&gt;, thick] (0.65,0.6) -- (0.65,5.55) node[above] {$n$};
+  \foreach \x in {1,...,5}
+    \node[below=3pt, font=\scriptsize] at (\x,0.65) {$\x$};
+  \foreach \y in {1,...,5}
+    \node[left=3pt, font=\scriptsize] at (0.65,\y) {$\y$};
+  \foreach \xa/\ya/\xb/\yb in {
+    1/1/2/1, 2/1/1/2,
+    1/2/3/1, 3/1/2/2, 2/2/1/3,
+    1/3/4/1, 4/1/3/2, 3/2/2/3, 2/3/1/4,
+    1/4/5/1, 5/1/4/2, 4/2/3/3, 3/3/2/4, 2/4/1/5}
+    \draw[-&gt;, blue!70!black, thick, shorten &lt;=5pt, shorten &gt;=5pt]
+      (\xa,\ya) -- (\xb,\yb);
+  \foreach \x/\y/\k in {
+    1/1/1,
+    2/1/2, 1/2/3,
+    3/1/4, 2/2/5, 1/3/6,
+    4/1/7, 3/2/8, 2/3/9, 1/4/10,
+    5/1/11, 4/2/12, 3/3/13, 2/4/14, 1/5/15}
+    \node[circle, draw=blue!70!black, fill=white, inner sep=1.4pt,
+      font=\scriptsize] at (\x,\y) {$\k$};
+\end{tikzpicture}
+            </latex-image>
+          </image>
+        </figure>
+        <p>
+          To verify that <m>F</m> is bijective, define
+          <m>G:\N^2\to\N</m> by
+          <md>
+            G(m,n)=T_{m+n-2}+n.
+          </md>
+          If <m>F(k)=(m,n)</m>, then <m>m+n-1=r</m> and <m>n=j</m>;
+          hence <m>G(F(k))=T_{r-1}+j=k</m>. Conversely, given
+          <m>(m,n)\in\N^2</m>, set <m>r=m+n-1</m> and
+          <m>k=G(m,n)</m>. Since <m>1\leq n\leq r</m>, we have
+          <m>T_{r-1}&lt;k\leq T_r</m>, and therefore
+          <m>F(k)=(r-n+1,n)=(m,n)</m>. Thus <m>F</m> and <m>G</m> are
+          inverses, so <m>F</m> is a bijection and <m>\N^2</m> is
+          countably infinite.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="ex-subset-of-countable-set">
+      <statement>
+        <p>Show that any subset of a countable set is countable.</p>
+      </statement>
+    </exercise>
+    <exercise xml:id="ex-open-unit-interval-real-bijection">
+      <statement>
+        <p>Show that <m>(0,1)</m> and <m>\R</m> have the same cardinality by constructing an explicit bijection.</p>
+      </statement>
+    </exercise>
+    <exercise xml:id="ex-intersection-two-intervals">
+      <statement>
+        <p>Show that the intersection of two intervals is empty, a singleton, or an interval.</p>
+      </statement>
+    </exercise>
+    <exercise xml:id="ex-union-overlapping-intervals">
+      <statement>
+        <p>Show that the union of two overlapping intervals is an interval.</p>
+      </statement>
+    </exercise>
+  </exercises>
 </appendix>
