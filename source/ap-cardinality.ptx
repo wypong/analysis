@@ -1,20 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?> <appendix
-xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ap-cardinality">
-  <title>Cardinality</title> <section xml:id="sec-cardinality-subsets-real">
-    <title>Cardinality</title> <p>
-      For sets <m>A,B</m>, <m>|A|=|B|</m> means there is a bijection between
-      them. In that case, we say that <m>A</m> and <m>B</m> have the same
+<?xml version="1.0" encoding="UTF-8"?>
+<appendix xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ap-cardinality">
+  <title>Cardinality</title>
+  <section xml:id="sec-cardinality-subsets-real">
+    <title>Cardinality</title>
+    <p>
+      For sets <m>A</m> and <m>B</m>, the equality <m>|A|=|B|</m> means that
+      there is a bijection between them. In this case, we say that <m>A</m>
+      and <m>B</m> have the same
       <term>cardinality</term><idx>cardinality</idx>. We write <m>|A|
-      \le |B|</m> if there is an injection <m>A \to B</m>.  A set <m>A</m>
+      \le |B|</m> if there is an injection <m>A\to B</m>. A set <m>A</m>
       is <term>countably infinite</term><idx>countably infinite</idx> if
       <m>|A|=|\N|</m>. A set is <term>countable</term><idx>countable</idx>
-      if it is either finite or countably infinite. In other words, a set
-      <m>A</m> is countable if and only if there is a surjection from
-      <m>\N</m> to <m>A</m>.
+      if it is either finite or countably infinite.
     </p>
 
     <p>
-      We begin with standard countable models that will be reused in later proofs.
+      We begin with two standard countable sets that will be useful in later
+      proofs.
     </p>
     <proposition xml:id="prop-n-plus-zero-countable">
       <statement>
@@ -24,13 +26,12 @@ xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ap-cardinality">
       </statement>
 
       <proof>
-
-      <p>
+        <p>
           The map <m>f:\N\to \N\cup\{0\}</m>, <m>f(n)=n-1</m>, is bijective,
-          with inverse <m>g(m)=m+1</m>.  Hence <m>|\N\cup\{0\}|=|\N|</m>.
+          with inverse <m>g(m)=m+1</m>. Hence
+          <m>|\N\cup\{0\}|=|\N|</m>.
         </p>
-
-	</proof>
+      </proof>
     </proposition>
 
     <proposition xml:id="prop-n-times-two-countable">
@@ -38,84 +39,228 @@ xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ap-cardinality">
         <p>
           The set <m>\N\times\{0,1\}</m> is countable.
         </p>
-      </statement> <proof>
+      </statement>
+      <proof>
         <p>
           Define <m>F:\N\times\{0,1\}\to\N</m> by <m>F(n,0)=2n</m>
-          and <m>F(n,1)=2n-1</m>.  This is bijective, so
+          and <m>F(n,1)=2n-1</m>. This map is bijective, so
           <m>|\N\times\{0,1\}|=|\N|</m>.
         </p>
       </proof>
-    </proposition> <proposition xml:id="prop-n-square-countable">
+    </proposition>
+
+    <p>
+      The next proposition shows that <m>\N</m> has the smallest infinite
+      cardinality.
+    </p>
+
+    <proposition xml:id="prop-min-countably-infinite">
+      <statement>
+        <p>
+          A set <m>A</m> is infinite if and only if <m>|\N|\le |A|</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          If <m>f:\N\to A</m> is injective, then <m>f(\N)</m> is an
+          infinite subset of <m>A</m>, so <m>A</m> is infinite. Conversely,
+          suppose that <m>A</m> is infinite. Choose <m>a_1\in A</m>, and
+          recursively choose
+          <m>a_{n+1}\in A\setminus\{a_1,\ldots,a_n\}</m>. This is possible
+          at every stage because <m>A</m> is not finite. The map
+          <m>n\mapsto a_n</m> is an injection from <m>\N</m> to <m>A</m>.
+        </p>
+      </proof>
+    </proposition>
+
+    <p>
+      Our main tool for comparing cardinalities is the following theorem.
+    </p>
+    <theorem xml:id="thm-cantor-bernstein-schroder">
+      <title>Cantor-Bernstein-Schroder</title>
+      <statement>
+        <p>
+          If <m>|A|\le |B|</m> and <m>|B|\le |A|</m>, then
+          <m>|A|=|B|</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      Proofs of <xref ref="thm-cantor-bernstein-schroder"/> can be found in
+      <xref ref="biblio-garrett-csb"/> and <xref ref="biblio-wikipedia-csb"/>.
+    </p>
+
+    <proposition xml:id="inf_subset_of_N">
+      <statement>
+        <p>
+          Every infinite subset of <m>\N</m> is countably infinite.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Let <m>A</m> be an infinite subset of <m>\N</m>. The inclusion
+          <m>A\hookrightarrow\N</m> is injective, so <m>|A|\le|\N|</m>.
+          Since <m>A</m> is infinite, <xref
+          ref="prop-min-countably-infinite"/> gives
+          <m>|\N|\le|A|</m>. Therefore <m>|\N|=|A|</m> by <xref
+          ref="thm-cantor-bernstein-schroder"/>.
+        </p>
+      </proof>
+    </proposition>
+    <p>
+      A direct proof of the preceding proposition that does not invoke
+      <xref ref="thm-cantor-bernstein-schroder"/> is left as an exercise.
+    </p>
+
+    <proposition xml:id="prop-countable-equiv">
+      <statement>
+        <p>
+          Let <m>A</m> be nonempty. The following statements are equivalent:
+        </p>
+        <list>
+          <title>Equivalent statements</title>
+          <ol>
+            <li xml:id="prop-countable-equiv-countable">
+              <p><m>A</m> is countable.</p>
+            </li>
+            <li xml:id="prop-countable-equiv-injection">
+              <p>There is an injection from <m>A</m> to <m>\N</m>.</p>
+            </li>
+            <li xml:id="prop-countable-equiv-surjection">
+              <p>There is a surjection from <m>\N</m> to <m>A</m>.</p>
+            </li>
+          </ol>
+        </list>
+      </statement>
+      <proof>
+        <p>
+          (<xref ref="prop-countable-equiv-countable"/> implies <xref
+          ref="prop-countable-equiv-injection"/>.) If <m>A</m> is countably
+          infinite, any bijection from <m>A</m> to <m>\N</m> is an
+          injection. If <m>A=\{a_1,\ldots,a_k\}</m> is finite, the map
+          <m>a_j\mapsto j</m> is injective.
+        </p>
+        <p>
+          (<xref ref="prop-countable-equiv-injection"/> implies <xref
+          ref="prop-countable-equiv-surjection"/>.) Let
+          <m>i\colon A\to\N</m> be injective, and choose <m>a_0\in A</m>.
+          Define <m>s:\N\to A</m> by <m>s(n)=i^{-1}(n)</m> when
+          <m>n\in i(A)</m> and by <m>s(n)=a_0</m> otherwise. Every element
+          of <m>A</m> has the form <m>i^{-1}(n)</m> for some
+          <m>n\in i(A)</m>, so <m>s</m> is surjective.
+        </p>
+        <p>
+          (<xref ref="prop-countable-equiv-surjection"/> implies <xref
+          ref="prop-countable-equiv-countable"/>.) Suppose that
+          <m>s\colon\N\to A</m> is surjective. Assign to each
+          <m>a\in A</m> its least preimage:
+          <m>i(a)=\min\{n\in\N:s(n)=a\}</m>. The resulting map
+          <m>i:A\to\N</m> is injective and hence gives a bijection from
+          <m>A</m> to <m>i(A)</m>. If <m>i(A)</m> is finite, then
+          <m>A</m> is finite. If <m>i(A)</m> is infinite, then <xref
+          ref="inf_subset_of_N"/> shows that <m>i(A)</m> is countably
+          infinite, and therefore so is <m>A</m>. In either case, <m>A</m>
+          is countable.
+        </p>
+      </proof>
+    </proposition>
+
+    <proposition xml:id="prop-n-square-countable">
       <statement>
         <p>
           The set <m>\N^2</m> is countable.
         </p>
-      </statement> <proof>
-        <p>
-	  For each <m>s\in\N</m>, the diagonal
-	  <m>D_s=\{(m,n)\in\N^2:m+n=s\}</m> is finite.	Also
-	  <m>\N^2=\bigcup_{s\ge2}D_s</m> is the union of a countable
-	  family of countable sets and hence countable by <xref
-	  ref="prop-countable-union-countable"/>.
-	</p>
-      </proof>
-    </proposition> <p>
-      The next theorem is the main comparison tool.
-    </p> <theorem xml:id="thm-cantor-bernstein-schroder">
-      <title>Cantor-Bernstein-Schroder</title> <statement>
-	<p>
-	  If <m>|A|\le |B|</m> and <m>|B|\le |A|</m>, then <m>|A|=|B|</m>.
-	</p>
       </statement>
-    </theorem> <p>
-      Proofs of <xref ref="thm-cantor-bernstein-schroder"/> can be found in
-      <xref ref="biblio-garrett-csb"/> and <xref ref="biblio-wikipedia-csb"/>.
-    </p> <proposition xml:id="prop-countable-union-countable">
-      <statement>
-	<p>
-	  A countable union of countable sets is countable.
-	</p>
-      </statement> <proof>
-	<p>
-	  Let <m>A_1,A_2,\ldots</m> be a countable family (indexed by
-	  <m>\N</m>) of countable sets.  For <m>a\in\bigcup_{j\in\N}A_j</m>,
-	  let <m>j(a)</m> be the least index with <m>a\in A_{j(a)}</m>.
-	  Then <m>a\mapsto (a,j(a))</m> is an injection into
-	  <m>\bigcup_j(A_j\times\{j\})</m>.  For each <m>j</m>, choose an
-	  injection <m>f_j:A_j\to\N</m>.  Then <m>(a,j)\mapsto (f_j(a),j)</m>
-	  injects <m>\bigcup_j(A_j\times\{j\})</m> into <m>\N^2</m>.
-	  Since <m>\N^2</m> is countable, the union is countable.
-	</p>
+      <proof>
+        <p>
+          Define <m>P:\N^2\to\N</m> by
+          <m>P(j,m)=2^{j-1}(2m-1)</m>. Every <m>k\in\N</m> has a unique
+          factorization <m>k=2^r q</m>, where <m>r\geq0</m> and <m>q</m>
+          is odd. Thus <m>k=P(j,m)</m> for the unique pair
+          <m>j=r+1</m> and <m>m=(q+1)/2</m>. Therefore <m>P</m> is
+          bijective.
+        </p>
       </proof>
-    </proposition> <proposition xml:id="prop-q-countable">
+    </proposition>
+    <p>
+      See <xref ref="ex-n-square-explicit-bijection"/> for an alternative
+      constructive proof based on diagonal enumeration.
+    </p>
+
+    <p>
+      The countability of <m>\N^2</m> yields an important closure property.
+    </p>
+    <proposition xml:id="prop-countable-union-countable">
       <statement>
-	<p>
-	  The set <m>\Q</m> is countable (hence <m>\Z</m> is countable).
-	</p>
-      </statement> <proof>
-	<p>
-	  The map <m>n\mapsto n/1</m> gives an injection <m>\N\to\Q</m>, so
-	  <m>|\N|\le |\Q|</m>.	For the reverse inequality, map <m>r\in\Q</m>
-	  to <m>(m,n)\in\Z\times\N</m> where <m>r=m/n</m> in lowest terms and
-	  <m>n&gt;0</m>.  This is injective, and <m>\Z\times\N</m> is countable
-	  (as a countable union of countable sets), so <m>|\Q|\le |\N|</m>.
-	  By <xref ref="thm-cantor-bernstein-schroder"/>, <m>|\Q|=|\N|</m>.
-	</p>
+        <p>
+          A countable union of countable sets is countable.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Let <m>A_1,A_2,\ldots</m> be a countable family indexed by
+          <m>\N</m>. For each
+          <m>a\in\bigcup_{j\in\N}A_j</m>, let <m>j(a)</m> be the least
+          index such that <m>a\in A_{j(a)}</m>. For each <m>j</m>, choose
+          an injection <m>f_j:A_j\to\N</m>. Then
+          <m>a\mapsto(f_{j(a)}(a),j(a))</m> is an injection from
+          <m>\bigcup_{j\in\N}A_j</m> into <m>\N^2</m>. Since
+          <m>\N^2</m> is countable, the union is countable.
+        </p>
       </proof>
-    </proposition> <p>
-	  Let <m>X</m> be a set and let <m>A\subseteq X</m>.  The
-	  <term>indicator function</term><idx>indicator function</idx>
-	  of <m>A</m> in <m>X</m>, denoted <m>1_A^X</m> (or <m>1_A</m>
-	  when <m>X</m> is understood), is the map <m>1_A^X:X\to\{0,1\}</m>
-	  defined by <m>
-	    1_A^X(x)=
+    </proposition>
+
+    <p>
+      We now apply these countability results to the rational numbers.
+    </p>
+    <proposition xml:id="prop-q-countable">
+      <statement>
+        <p>
+          The set <m>\Q</m> is countable; consequently, <m>\Z</m> is
+          countable.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          The map <m>n\mapsto n/1</m> is an injection from <m>\N</m> to
+          <m>\Q</m>, so <m>|\N|\le|\Q|</m>. For the reverse inequality,
+          write each <m>r\in\Q</m> uniquely as <m>r=m/n</m> in lowest terms,
+          with <m>m\in\Z</m> and <m>n&gt;0</m>, and map <m>r</m> to
+          <m>(m,n)\in\Z\times\N</m>. This map is injective. The map
+          <m>c:\Z\to\N</m> defined by
+          <m>c(m)=2m+1</m> for <m>m\geq0</m> and
+          <m>c(m)=-2m</m> for <m>m&lt;0</m> is also injective. Hence
+          <m>(m,n)\mapsto(c(m),n)</m> injects
+          <m>\Z\times\N</m> into <m>\N^2</m>. By <xref
+          ref="prop-n-square-countable"/>, <m>\Z\times\N</m> is countable,
+          and therefore <m>|\Q|\le|\N|</m>. It follows that
+          <m>|\Q|=|\N|</m> by <xref
+          ref="thm-cantor-bernstein-schroder"/>. Finally, restricting such
+          a bijection to <m>\Z\subseteq\Q</m> gives an injection from
+          <m>\Z</m> to <m>\N</m>, so <m>\Z</m> is countable.
+        </p>
+      </proof>
+    </proposition>
+    <p>
+      We now turn to uncountable sets.
+    </p>
+    <p>
+      Let <m>X</m> be a set and <m>A\subseteq X</m>. The
+      <term>indicator function</term><idx>indicator function</idx> of
+      <m>A</m> in <m>X</m>, denoted by <m>1_A^X</m> (or simply
+      <m>1_A</m> when <m>X</m> is understood), is the map
+      <m>1_A^X:X\to\{0,1\}</m> defined by
+      <md>
+        1_A^X(x)=
             \begin{cases}
               1,&amp;\text{if }x\in A,\\ 0,&amp;\text{if }x\notin A.
-            \end{cases}
-          </m></p>
+            \end{cases}.
+      </md>
+    </p>
     <p>
-      For any set <m>X</m>, indicator functions give a bijection
-      <m>\mathcal{P}(X)\cong 2^X</m>, where <m>2^X</m> is the set of maps <m>X\to\{0,1\}</m>.
+      Indicator functions give a bijection
+      <m>\mathcal{P}(X)\cong 2^X</m>, where <m>2^X</m> denotes the set of
+      maps from <m>X</m> to <m>\{0,1\}</m>.
     </p>
     <theorem xml:id="thm-cantor-power-set">
       <title>Cantor</title>
@@ -126,11 +271,14 @@ xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ap-cardinality">
       </statement>
       <proof>
         <p>
-          The map <m>x\mapsto 1_{\{x\}}</m> is an injection <m>X\to2^X</m>.  To show there is no
-          surjection <m>X\to2^X</m>, suppose <m>\Phi:X\to2^X</m> is surjective.  Define
-          <m>d:X\to\{0,1\}</m> by <m>d(x)=1-\Phi(x)(x)</m>.  Since <m>\Phi</m> is surjective,
-          <m>d=\Phi(a)</m> for some <m>a\in X</m>.  Evaluating at <m>a</m> gives
-          <m>\Phi(a)(a)=1-\Phi(a)(a)</m>, impossible.  Hence <m>|X|&lt;|2^X|</m>.
+          The map <m>x\mapsto 1_{\{x\}}</m> is an injection from <m>X</m>
+          to <m>2^X</m>. To prove that no surjection exists in the opposite
+          direction, suppose that <m>\Phi:X\to2^X</m> is surjective. Define
+          <m>d:X\to\{0,1\}</m> by <m>d(x)=1-\Phi(x)(x)</m>. Surjectivity
+          gives <m>d=\Phi(a)</m> for some <m>a\in X</m>. Evaluating at
+          <m>a</m> yields
+          <m>\Phi(a)(a)=1-\Phi(a)(a)</m>, a contradiction. Hence
+          <m>|X|&lt;|2^X|</m>.
         </p>
       </proof>
     </theorem>
@@ -143,12 +291,13 @@ xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ap-cardinality">
       <proof>
         <p>
           By <xref ref="thm-cantor-power-set"/>,
-          <m>|\N|&lt;|2^{\N}|</m>.  Define <m>\Psi:2^{\N}\to\R</m> by
-          <m>\Psi((a_k)_{k\ge1})=\sum_{k\ge1}a_k/10^k</m>.  If <m>a\ne
+          <m>|\N|&lt;|2^{\N}|</m>. Define <m>\Psi:2^{\N}\to\R</m> by
+          <m>\Psi((a_k)_{k\ge1})=\sum_{k\ge1}a_k/10^k</m>. If <m>a\ne
           b</m>, let <m>n</m> be the first index with <m>a_n\ne b_n</m>.
-          Then <m>|\Psi(a)-\Psi(b)|\ge 10^{-n}(1-1/9)&gt;0</m>, so <m>\Psi</m>
-          is injective.  Therefore <m>|2^{\N}|\le |\R|</m>, and thus <m>\R</m>
-          cannot be countable.
+          Then <m>|\Psi(a)-\Psi(b)|\ge 10^{-n}(1-1/9)&gt;0</m>, so
+          <m>\Psi</m> is injective. Therefore
+          <m>|2^{\N}|\le|\R|</m>. Since
+          <m>|\N|&lt;|2^{\N}|</m>, the real line cannot be countable.
         </p>
       </proof>
     </corollary>
@@ -162,7 +311,8 @@ xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ap-cardinality">
         <p>
           If <m>\R\setminus\Q</m> were countable, then
           <m>\R=(\R\setminus\Q)\cup\Q</m> would be a union of two countable
-          sets, hence countable, contradicting <xref ref="cor-r-uncountable"/>.
+          sets and therefore countable, contradicting <xref
+          ref="cor-r-uncountable"/>.
         </p>
       </proof>
     </proposition>
@@ -180,8 +330,8 @@ xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ap-cardinality">
       </statement>
       <solution>
         <p>
-          Let <m>T_r=r(r+1)/2</m> for <m>r\geq 0</m>. For
-          <m>k\in\N</m>, set
+          For <m>r\geq0</m>, let <m>T_r=r(r+1)/2</m> be the <m>r</m>-th
+          triangular number. Given <m>k\in\N</m>, set
           <md>
             r=r(k)=\left\lceil\frac{\sqrt{8k+1}-1}{2}\right\rceil
             \quad\text{and}\quad
@@ -192,21 +342,18 @@ xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ap-cardinality">
           <md>
             F(k)=(r-j+1,j).
           </md>
-          Thus, <m>F</m> counts the lattice points one diagonal at a time:
+          The map <m>F</m> counts the lattice points one diagonal at a time:
           <md>
             (1,1),(2,1),(1,2),(3,1),(2,2),(1,3),\ldots.
           </md>
         </p>
         <figure xml:id="fig-n-square-diagonal-counting">
-          <caption>The diagonal counting route. The label <m>k</m> at a
-          lattice point indicates the point <m>F(k)</m>.</caption>
+          <caption>The diagonal counting route. At each lattice point, the
+          label <m>k</m> identifies the point <m>F(k)</m>.</caption>
           <image width="58%">
-
-	  <shortdescription>Positive lattice points labeled from 1 through
-	  15 along successive diagonals, with arrows showing the counting
-	  route.</shortdescription>
-
-	    <latex-image>
+            <shortdescription>Positive lattice points numbered 1 through 15
+            along diagonals, with arrows showing the counting route.</shortdescription>
+            <latex-image>
 \begin{tikzpicture}[scale=1.05, &gt;=stealth]
   \draw[step=1, gray!28, very thin] (0.75,0.75) grid (5.25,5.25);
   \draw[-&gt;, thick] (0.6,0.65) -- (5.55,0.65) node[right] {$m$};
@@ -240,10 +387,10 @@ xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ap-cardinality">
           <md>
             G(m,n)=T_{m+n-2}+n.
           </md>
-          If <m>F(k)=(m,n)</m>, then <m>m+n-1=r</m> and <m>n=j</m>;
-          hence <m>G(F(k))=T_{r-1}+j=k</m>. Conversely, given
+          If <m>F(k)=(m,n)</m>, then <m>m+n-1=r</m> and <m>n=j</m>, so
+          <m>G(F(k))=T_{r-1}+j=k</m>. Conversely, given
           <m>(m,n)\in\N^2</m>, set <m>r=m+n-1</m> and
-          <m>k=G(m,n)</m>. Since <m>1\leq n\leq r</m>, we have
+          <m>k=G(m,n)</m>. Since <m>1\leq n\leq r</m>,
           <m>T_{r-1}&lt;k\leq T_r</m>, and therefore
           <m>F(k)=(r-n+1,n)=(m,n)</m>. Thus <m>F</m> and <m>G</m> are
           inverses, so <m>F</m> is a bijection and <m>\N^2</m> is
@@ -258,12 +405,18 @@ xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ap-cardinality">
     </exercise>
     <exercise xml:id="ex-open-unit-interval-real-bijection">
       <statement>
-        <p>Show that <m>(0,1)</m> and <m>\R</m> have the same cardinality by constructing an explicit bijection.</p>
+        <p>
+          Show that <m>(0,1)</m> and <m>\R</m> have the same cardinality by
+          constructing an explicit bijection.
+        </p>
       </statement>
     </exercise>
     <exercise xml:id="ex-intersection-two-intervals">
       <statement>
-        <p>Show that the intersection of two intervals is empty, a singleton, or an interval.</p>
+        <p>
+          Show that the intersection of two intervals is empty, a singleton,
+          or an interval.
+        </p>
       </statement>
     </exercise>
     <exercise xml:id="ex-union-overlapping-intervals">

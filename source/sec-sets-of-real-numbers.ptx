@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-sets-of-real-numbers">
-  <title>Sets of Real Numbers</title>
-  <introduction>
+<?xml version="1.0" encoding="UTF-8"?> <section
+xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-sets-of-real-numbers">
+  <title>Sets of Real Numbers</title> <introduction>
     <p>
       We use <m>\R</m> to denote the set of real numbers. For
       <m>A,B\subseteq\R</m> and <m>c\in\R</m>, we define:
@@ -10,109 +9,96 @@
       <ul>
         <li>
           <m>A+B:=\{a+b : a\in A,\ b\in B\}</m>
-        </li>
-        <li>
+        </li> <li>
           <m>AB:=\{ab : a\in A,\ b\in B\}</m>
-        </li>
-        <li>
+        </li> <li>
           <m>cA:=\{c\}A=\{ca : a\in A\}</m>
         </li>
       </ul>
-    </p>
-    <p>
+    </p> <p>
       In particular, <m>-A=\{-a : a\in A\}=\{a : -a\in A\}</m>.
   </p>
-    <p>
-    Some subsets of <m>\R</m> that we will encounter frequently are:
+    <p> Some subsets of <m>\R</m> that we will encounter frequently are:
   </p>
     <p>
-      <ul>
-        <li>The set of natural numbers <m>\N = \{1,2,3, \ldots\}</m></li>
+      <ul> <li>The set of positive integers (aka natural numbers) <m>\N =
+      \{1,2,3, \ldots\}</m>. Every non-empty subset of <m>\N</m> has the least
+      member.</li>
+
         <li>The set of integers <m>\Z = \{0,\pm 1, \pm 2, \ldots\} = \N \cup
     \{0\} \cup -\N</m>.</li>
         <li>
-    The set of rational numbers 
-    <m>\Q = \{m/n \colon m, n \in \Z, n \neq 0\}</m>.
-    </li>
-      </ul>
+    The set of rational numbers <m>\Q = \{m/n \colon m, n \in \Z, n \neq
+    0\}</m>.  </li>
+    </ul>
     </p>
+
   </introduction>
   <subsection xml:id="subsec-bounded-subsets">
-    <title>Bounded Subsets of <m>\R</m></title>
-    <p>
+    <title>Bounded Subsets of <m>\R</m></title> <p>
       A real number <m>b</m> is an <term>upper bound</term><idx><h>upper
       bound</h></idx><idx><h>bound</h><h>upper</h></idx> (resp. a <term>lower
       bound</term><idx><h>lower bound</h></idx>) of a set <m>A</m> of real
       numbers if <m>b \ge a</m> (resp. <m>b \le a</m>) for every <m>a \in
       A</m>. We write <m>\ub(A)</m> and <m>\lb(A)</m> for the sets of upper
-      bounds and lower bounds of <m>A</m>, respectively. It is
-      straightforward to check that <m>-\ub(A) = \lb(-A)</m>. In other words,
-      <m>b</m> is an upper bound of <m>A</m> if and only if <m>-b</m> is a
-      lower bound of <m>-A</m>.
-    </p>
-    <p>
+      bounds and lower bounds of <m>A</m>, respectively. It is straightforward
+      to check that <m>-\ub(A) = \lb(-A)</m>. In other words, <m>b</m> is
+      an upper bound of <m>A</m> if and only if <m>-b</m> is a lower bound
+      of <m>-A</m>.
+    </p> <p>
       A set <m>A\subseteq\R</m> is <term>bounded
       above</term><idx><h>bounded</h><h>above</h></idx> (resp. <term>bounded
       below</term><idx><h>bounded</h><h>below</h></idx>) if it
-      has an upper bound (resp. a lower bound). We say <m>A</m> is
-      <term>bounded</term><idx><h>bounded</h></idx> if it is both bounded
-      above and bounded below. A real-valued function is
-      <term>bounded</term> (resp. bounded above, bounded below) if its range
-      is bounded (resp. bounded above, bounded below).
+      has an upper bound (resp. a lower bound). We say <m>A</m>
+      is <term>bounded</term><idx><h>bounded</h></idx> if it is
+      both bounded above and bounded below. A real-valued function
+      is <term>bounded</term> (resp. bounded above, bounded below)
+      if its range is bounded (resp. bounded above, bounded below).
       <idx><h>function</h><h>bounded</h></idx></p>
     <example xml:id="eg-bounded-subsets-examples">
       <statement>
         <p>
-          <ul>
-            <li>
+	  <ul>
+	    <li>
 		The interval <m>(0,1)</m> is bounded; for example, it is
 		bounded above by <m>1</m> and bounded below by <m>0</m>.
-	    </li>
-            <li>
-	    The set <m>\{1/x \colon x \gt 0\}</m> is bounded below by
-	    <m>0</m>, but it is not bounded above.
+	    </li> <li> The set <m>\{1/x \colon x \gt 0\}</m> is bounded
+	    below by <m>0</m>, but it is not bounded above.
 	  </li>
-            <li><m>\Z</m> is neither bounded below nor above.
+	    <li><m>\Z</m> is neither bounded below nor above.
 	  </li>
-            <li>
-	  Every finite set of real numbers is bounded.
-	  </li>
-            <li>
-	    Every real number is both an upper bound and a lower bound of
-	    the empty set <m>\emptyset</m>.
-	  </li>
-          </ul>
-        </p>
+	    <li>
+	  Every finite set of real numbers is bounded.	</li>
+	    <li> Every real number is both an upper bound and a lower bound
+	    of the empty set <m>\emptyset</m>.
+	  </li> </ul>
+	</p>
       </statement>
-    </example>
-    <p>
-      An upper bound of a set is also an upper bound of every subset of that
-      set. Therefore, an intersection of sets that are bounded above is again
-      bounded above. If <m>a</m> and <m>a'</m> are upper bounds of <m>A</m>
-      and <m>A'</m>, respectively, then <m>\max\{a,a'\}</m> is an upper bound
-      of <m>A \cup A'</m>. Thus, a finite union of sets bounded above is
-      bounded above. Likewise, the family of subsets of <m>\R</m> that are
-      bounded below (resp. bounded) is closed under arbitrary intersections
-      and finite unions.
-    </p>
-    <proposition xml:id="prop-bounded-iff-abs-bound">
+    </example> <p>
+      An upper bound of a set is also an upper bound of every subset of
+      that set. Therefore, an intersection of sets that are bounded above
+      is again bounded above. If <m>a</m> and <m>a'</m> are upper bounds of
+      <m>A</m> and <m>A'</m>, respectively, then <m>\max\{a,a'\}</m> is an
+      upper bound of <m>A \cup A'</m>. Thus, a finite union of sets bounded
+      above is bounded above. Likewise, the family of subsets of <m>\R</m>
+      that are bounded below (resp. bounded) is closed under arbitrary
+      intersections and finite unions.
+    </p> <proposition xml:id="prop-bounded-iff-abs-bound">
       <statement>
-        <p>
+	<p>
 	  A set <m>A \subseteq \R</m> is bounded if and only if there exists
 	  <m>M \ge 0</m> such that <m>A \subseteq [-M,M]</m>.
 	</p>
-      </statement>
-      <proof>
-        <p>
-          One implication is immediate: if <m>A \subseteq [-M,M]</m>, then
-          <m>A</m> is bounded. For the other implication, suppose <m>A</m> is
-          bounded. Then so is <m>-A</m>. Hence <m>A \cup -A</m> is bounded
-          above, say by <m>M</m>. Then <m>|a| = \max\{a,-a\} \le M</m> for all
-          <m>a\in A</m>, so <m>A \subseteq [-M,M]</m>.
-        </p>
+      </statement> <proof>
+	<p>
+	  One implication is immediate: if <m>A \subseteq [-M,M]</m>,
+	  then <m>A</m> is bounded. For the other implication, suppose
+	  <m>A</m> is bounded. Then so is <m>-A</m>. Hence <m>A \cup -A</m>
+	  is bounded above, say by <m>M</m>. Then <m>|a| = \max\{a,-a\}
+	  \le M</m> for all <m>a\in A</m>, so <m>A \subseteq [-M,M]</m>.
+	</p>
       </proof>
-    </proposition>
-    <p>
+    </proposition> <p>
       A <term>supremum</term><idx><h>supremum</h></idx> of a set
       <m>A\subseteq\R</m>, denoted by <m>\sup A</m>, is the least upper bound
       of <m>A</m>. In other words, <m>u=\sup A</m> if <m>u</m> is an upper
@@ -123,39 +109,36 @@
       lower bound of <m>A</m> and every lower bound of <m>A</m> is at most
       <m>\ell</m>. It is clear that <m>\sup A</m> (likewise <m>\inf A</m>),
       if it exists, is unique.
-    </p>
-    <p>
+    </p> <p>
       A useful reformulation is: <m>u=\sup A</m> if and only if <m>u</m>
       is an upper bound of <m>A</m> and for every <m>\varepsilon&gt;0</m>
       there exists <m>a\in A</m> with <m>u-\varepsilon&lt;a\le u</m>.
-    </p>
-    <example xml:id="eg-inf-and-sup">
+    </p> <example xml:id="eg-inf-and-sup">
       <statement>
-        <p>
-          <ul>
-            <li>
+	<p>
+	  <ul>
+	    <li>
 	      The set of upper bounds and the set of lower bounds of
 	      <m>(0,1)</m> are <m>[1,\infty)</m> and <m>(-\infty,0]</m>,
 	      respectively. Hence <m>\sup(0,1) = 1</m> and <m>\inf(0,1)
 	      = 0</m>.	</li>
-            <li>
-	     The set of upper bounds and the set of lower bounds of
-	     <m>H:=\{1/x \colon x \lt 0\}</m> are <m>[0,\infty)</m> and the
-	     empty set, respectively. Hence <m>\sup H = 0</m> and <m>\inf H</m>
-	     does not exist.
+	    <li>
+	     The set of upper bounds and the set of lower bounds of <m>H:=\{1/x
+	     \colon x \lt 0\}</m> are <m>[0,\infty)</m> and the empty set,
+	     respectively. Hence <m>\sup H = 0</m> and <m>\inf H</m> does
+	     not exist.
 	   </li>
-            <li><m>\Z</m> has neither a supremum nor an infimum.
+	    <li><m>\Z</m> has neither a supremum nor an infimum.
 	  </li>
-            <li>
+	    <li>
 		    The set of upper bounds and the set of lower bounds of
-		    <m>\emptyset</m> are both <m>\R</m>. Conventionally, we write
-		    <m>\sup \emptyset = -\infty</m> and
-		    <m>\inf \emptyset = +\infty</m>. Note that neither
-		    <m>\sup \emptyset</m> nor <m>\inf \emptyset</m> exists in
-		    <m>\R</m>.
+		    <m>\emptyset</m> are both <m>\R</m>. Conventionally, we
+		    write <m>\sup \emptyset = -\infty</m> and <m>\inf \emptyset
+		    = +\infty</m>. Note that neither <m>\sup \emptyset</m>
+		    nor <m>\inf \emptyset</m> exists in <m>\R</m>.
 		  </li>
-          </ul>
-        </p>
+	  </ul>
+	</p>
       </statement>
     </example>
   </subsection>
