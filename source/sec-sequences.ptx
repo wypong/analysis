@@ -36,49 +36,40 @@
       In words, a sequence <m>\vx = (x_n)</m> is null if the absolute value
       of its terms <m>|x_n|</m> can be arbitrarily close to zero provided
       that the index <m>n</m> of the terms is sufficiently large.
-    </p>
-    <p>
-      It often makes an argument more intuitive by replacing "there exists <m>N
-      \in \N</m> such that for all <m>n \ge N</m>" with either of the
+    </p> <p>
+      It often makes an argument more intuitive by replacing "there exists
+      <m>N \in \N</m> such that for all <m>n \ge N</m>" with either of the
       following phrases:
-    </p>
-    <p>
+    </p> <p>
       <ol>
-        <li>for all sufficiently large <m>n</m>,</li>
-        <li>for all but finitely many <m>n</m>.</li>
+        <li>for all sufficiently large <m>n</m>,</li> <li>for all but finitely
+        many <m>n</m>.</li>
       </ol>
-    </p>
-    <p>
-      We may abbreviate "<m>n</m> is sufficiently large" by <m>n \gg 0</m> or
-      <m>n \approx \infty</m>. For example, the statement <m>\vx \approx 0</m>
-      means that for every <m>\varepsilon \gt 0</m>, we have
-      <m>|x_n| \lt \varepsilon</m> for all <m>n \gg 0</m>.
-    </p>
-    <p>
-      We say that a sequence <m>\vx</m><term>converges</term><idx>convergent
+    </p> <p>
+      We may abbreviate "<m>n</m> is sufficiently large" by <m>n \gg 0</m>
+      or <m>n \approx \infty</m>. For example, the statement <m>\vx \approx
+      0</m> means that for every <m>\varepsilon \gt 0</m>, we have <m>|x_n|
+      \lt \varepsilon</m> for all <m>n \gg 0</m>.
+    </p> <p>
+      We say that a sequence <m>\vx</m> <term>converges</term><idx>convergent
       sequence</idx> to <m>r \in\R</m> or <m>r</m> is a
       <term>limit</term><idx>limit of a sequence</idx> of <m>\vx</m>, if
-      the sequence <m>\vx-r</m> is null. We denote this by
-      <md>
+      the sequence <m>\vx-r</m> is null. We denote this by <md>
         \lim x_n = r, \qquad x_n \to r, \qquad \text{or} \qquad \vx \approx r.
-      </md>
-      The last notation captures the idea that a convergent sequence can be
-      viewed as an approximation to its limit.
-    </p>
-    <p>
-      A sequence is <term>convergent</term><idx>convergent sequence</idx>
-      if it has a limit, otherwise it is <term>divergent</term><idx>divergent
+      </md> The last notation captures the idea that a convergent sequence
+      can be viewed as an approximation to its limit.
+    </p> <p>
+      A sequence is <term>convergent</term><idx>convergent sequence</idx> if
+      it has a limit, otherwise it is <term>divergent</term><idx>divergent
       sequence</idx>. We also distinguish two common types of divergent
-      behavior. We write <m>x_n \to +\infty</m> if for every
-      <m>M \in \R</m> we have <m>x_n \gt M</m> for all sufficiently large
-      <m>n</m>. Similarly, we write <m>x_n \to -\infty</m> if for every
-      <m>M \in \R</m> we have <m>x_n \lt M</m> for all sufficiently large
-      <m>n</m>.
+      behavior. We write <m>x_n \to +\infty</m> if for every <m>M \in \R</m>
+      we have <m>x_n \gt M</m> for all sufficiently large <m>n</m>. Similarly,
+      we write <m>x_n \to -\infty</m> if for every <m>M \in \R</m> we have
+      <m>x_n \lt M</m> for all sufficiently large <m>n</m>.
     </p>
-  </subsection>
-  <subsection xml:id="subsec-sequences-fundamental-results">
-    <title>Fundamental Results</title>
-    <proposition xml:id="prop-null-sequence-basic-operations">
+  </subsection> <subsection xml:id="subsec-sequences-fundamental-results">
+    <title>Fundamental Results</title> <proposition
+    xml:id="prop-null-sequence-basic-operations">
       <statement>
         <p> Suppose <m>(x_n)</m> and <m>(y_n)</m> are null sequences. Then
 
