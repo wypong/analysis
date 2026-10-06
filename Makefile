@@ -1,4 +1,4 @@
-PRETEXT := $(HOME)/pt/bin/pretext
+PRETEXT := $(HOME)/pt/.venv/bin/pretext
 
 .PHONY: check web view print deploy stage clean
 
