@@ -88,7 +88,7 @@
     <theorem xml:id="thm-sequential-completeness-of-reals">
       <statement>
         <p><m>\R</m> is sequentially complete <idx><h>sequentially
-      complete</h></idx>. That is, every Cauchy sequence of real numbers
+      complete</h></idx> . That is, every Cauchy sequence of real numbers
       converges.  
       </p>
       </statement>

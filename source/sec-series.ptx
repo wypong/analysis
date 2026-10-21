@@ -12,7 +12,7 @@
   <p>
     Given an infinite sequence <m>(x_n)</m>, the expression
     <m>\sum_{n=1}^\infty x_n</m> is called an
-    <term>infinite series</term><idx><h>series</h><h>infinite</h></idx>.
+    <term>infinite series</term><idx><h>series</h><h>infinite</h></idx> .
     To make sense of it, we consider its
     <term>sequence of partial sums</term><idx><h>series</h><h>sequence of
     partial sums</h></idx><m>(s_k)</m>, where

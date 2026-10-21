@@ -127,7 +127,7 @@
     </example>
     <p>
       The previous example is the basic comparison for the
-      <term><m>p</m>-series</term><idx>p-series</idx>.
+      <term><m>p</m>-series</term><idx>p-series</idx> .
     </p>
     <proposition xml:id="prop-p-series-test">
       <title><m>p</m>-Series Test</title>
@@ -208,7 +208,7 @@
     <title>Comparison Tests</title>
     <p>
       The first comparison tool is the <term>comparison
-      test</term><idx>comparison test for series</idx>.
+      test</term><idx>comparison test for series</idx> .
     </p>
     <proposition xml:id="prop-comparison-test-series">
       <title>Comparison Test</title>
@@ -231,7 +231,7 @@
     </proposition>
     <p>
       A useful refinement is the <term>limit comparison test</term><idx>limit
-      comparison test</idx>.
+      comparison test</idx> .
     </p>
     <proposition xml:id="prop-limit-comparison-test-series">
       <title>Limit Comparison Test</title>
@@ -304,7 +304,7 @@
     <title>Ratio and Root Tests</title>
     <p>
       The next tests compare a series to a geometric series. The first is
-      the <term>ratio test</term><idx>ratio test for series</idx>.
+      the <term>ratio test</term><idx>ratio test for series</idx> .
     </p>
     <proposition xml:id="prop-ratio-test-series">
       <title>Ratio Test</title>
@@ -499,7 +499,7 @@
     <title>Alternating Series</title>
     <p>
       The final test in this section is the <term>alternating series
-      test</term><idx>alternating series test</idx>.
+      test</term><idx>alternating series test</idx> .
     </p>
     <proposition xml:id="prop-alternating-series-test">
       <title>Alternating Series Test</title>

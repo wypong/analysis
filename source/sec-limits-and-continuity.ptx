@@ -208,7 +208,7 @@
           <m>f</m> is not continuous at <m>1</m>. If we redefine the value at
           <m>1</m> to be <m>2</m>, then the resulting function becomes
           continuous at <m>1</m>. This is the basic model of a
-          <term>removable discontinuity</term><idx>removable discontinuity</idx>.
+          <term>removable discontinuity</term><idx>removable discontinuity</idx> .
         </p>
       </statement>
     </example>
@@ -220,7 +220,7 @@
       approached or the limiting value is allowed to be <m>+\infty</m> or
       <m>-\infty</m>. The set
       <m>\R \cup \{-\infty,+\infty\}</m> is called the
-      <term>extended real line</term><idx>extended real line</idx>.
+      <term>extended real line</term><idx>extended real line</idx> .
     </p>
     <p>
       First suppose <m>c \in \R</m> is a cluster point of <m>S</m>. We write

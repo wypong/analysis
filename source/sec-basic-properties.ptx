@@ -189,29 +189,32 @@
         </p>
       </proof>
     </corollary>
+
     <proposition xml:id="prop-sign-preserved-near-nonzero-point">
       <statement>
         <p>
-          Let <m>S \subseteq \R</m>, let <m>f \colon S \to \R</m>, and let
-          <m>c \in S</m>. If <m>f</m> is continuous at <m>c</m> and
-          <m>f(c) \neq 0</m>, then there exists <m>\delta \gt 0</m> such that
-          <m>f(x)</m> has the same sign as <m>f(c)</m> whenever
-          <m>x \in S</m> and <m>|x-c| \lt \delta</m>.
+          Suppose <m>f \colon S \to \R</m> is continuous at <m>c</m> and
+          that <m>f(c) \gt 0</m>. Then <m>f(x) \gt 0</m> near <m>c</m>.
+	  That is, there exists <m>\delta \gt 0</m> such that <m>f(x) \gt
+          0</m> for all <m>x \in
+	  S</m> with <m>|x-c| \lt \delta</m>
         </p>
-      </statement>
-      <proof>
+      </statement> <proof>
         <p>
-          Let <m>\varepsilon = |f(c)|/2</m>. Since <m>f</m> is continuous at
-          <m>c</m>, there exists <m>\delta \gt 0</m> such that
-          <md>|f(x)-f(c)| \lt \frac{|f(c)|}{2}</md>
-          whenever <m>x \in S</m> and <m>|x-c| \lt \delta</m>. If
-          <m>f(c) \gt 0</m>, then
-          <md>f(x) \gt f(c)-\frac{|f(c)|}{2}=\frac{f(c)}{2}\gt 0.</md>
-          If <m>f(c) \lt 0</m>, then
-          <md>f(x) \lt f(c)+\frac{|f(c)|}{2}=\frac{f(c)}{2}\lt 0.</md>
-          In either case, <m>f(x)</m> has the same sign as <m>f(c)</m>.
-        </p>
+	Since <m>f(c) \gt 0</m>, by continuity of <m>f</m> at <m>c</m>, then
+	exists <m>\delta \gt 0</m> such that for all <m>x \in S</m> with
+	<m>|x-c| \lt \delta</m>,
+	   <md number="no"> -\frac{f(c)}{2} \lt f(x) - f(c).  </md>
+	That is <m>f(x) \gt f(c)/2 \gt 0</m> near <m>c</m>.  </p>
       </proof>
     </proposition>
+    
+    <p>
+       More generally, if <m>f(x)</m> is continuous at <m>c</m> and <m>f(c)
+       \neq 0</m>, then the function <m>g(x)=f(c)f(x)</m> is continuous at
+       <m>c</m> and <m>g(c) = (f(c))^2 \gt 0</m>. So by the above proposition
+       <m>f(c)f(x) = g(x) \gt 0</m> near <m>c</m>. In other words, <m>f(x)</m>
+       has the same sign as <m>f(c)</m> near <m>c</m>.
+    </p>
   </subsection>
 </section>

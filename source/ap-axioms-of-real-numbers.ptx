@@ -49,10 +49,10 @@
       </p>
       <p>
         To characterize the real numbers, we add the <term>least upper bound
-        property</term><idx>least upper bound property</idx>: every nonempty subset of
+        property</term><idx>least upper bound property</idx> : every nonempty subset of
         <m>\R</m> that is bounded above has a least upper bound in <m>\R</m>.
         An ordered field with this property is a <term>complete ordered
-        field</term><idx>complete ordered field</idx>.
+        field</term><idx>complete ordered field</idx> .
       </p>
     </subsection>
     <subsection xml:id="subsec-axioms-isomorphism-reference">

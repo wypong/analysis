@@ -63,7 +63,7 @@
     </p> <p>
       A sequence is <term>convergent</term><idx>convergent sequence</idx> if
       it has a limit, otherwise it is <term>divergent</term><idx>divergent
-      sequence</idx>. We also distinguish two common types of divergent
+      sequence</idx> . We also distinguish two common types of divergent
       behavior. We write <m>x_n \to +\infty</m> if for every <m>M \in \R</m>
       we have <m>x_n \gt M</m> for all sufficiently large <m>n</m>. Similarly,
       we write <m>x_n \to -\infty</m> if for every <m>M \in \R</m> we have

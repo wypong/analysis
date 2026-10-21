@@ -69,7 +69,7 @@
           f(x)=P_n(x;x_0)+\frac{f^{(n+1)}(c)}{(n+1)!}(x-x_0)^{n+1}.
         </md></p>
         <p>
-        The final term is called the <term>Lagrange remainder</term><idx>Lagrange remainder</idx>.
+        The final term is called the <term>Lagrange remainder</term><idx>Lagrange remainder</idx> .
       </p>
       </statement>
       <proof>
@@ -164,7 +164,7 @@
         </md></p>
         <p>
         The final term is called the <term>integral form of the
-        remainder</term><idx>integral remainder</idx>.
+        remainder</term><idx>integral remainder</idx> .
       </p>
       </statement>
       <proof>

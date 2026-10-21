@@ -7,7 +7,7 @@
       For sets <m>A</m> and <m>B</m>, the equality <m>|A|=|B|</m> means that
       there is a bijection between them. In this case, we say that <m>A</m>
       and <m>B</m> have the same
-      <term>cardinality</term><idx>cardinality</idx>. We write <m>|A|
+      <term>cardinality</term><idx>cardinality</idx> . We write <m>|A|
       \le |B|</m> if there is an injection <m>A\to B</m>. A set <m>A</m>
       is <term>countably infinite</term><idx>countably infinite</idx> if
       <m>|A|=|\N|</m>. A set is <term>countable</term><idx>countable</idx>

@@ -8,7 +8,7 @@
       is another global strengthening of continuity that will be useful later:
       a single choice of <m>\delta</m> can control the oscillation of the
       function at every point of the domain at once. This is the idea of
-      <term>uniform continuity</term><idx>uniform continuity</idx>.
+      <term>uniform continuity</term><idx>uniform continuity</idx> .
     </p>
   </introduction>
   <subsection xml:id="subsec-definition-of-uniform-continuity">

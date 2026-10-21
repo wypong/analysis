@@ -20,7 +20,7 @@
             \sum_{k=1}^{\infty} |I_k| \le \varepsilon,
           </md>
           where <m>|I_k|</m> denotes the length of <m>I_k</m>. A set of
-          measure zero is also called a <term>null set</term><idx>null set</idx>.
+          measure zero is also called a <term>null set</term><idx>null set</idx> .
         </p>
       </statement>
     </definition>

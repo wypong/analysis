@@ -38,7 +38,7 @@ xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-sets-of-real-numbers">
     <title>Bounded Subsets of <m>\R</m></title> <p>
       A real number <m>b</m> is an <term>upper bound</term><idx><h>upper
       bound</h></idx><idx><h>bound</h><h>upper</h></idx> (resp. a <term>lower
-      bound</term><idx><h>lower bound</h></idx>) of a set <m>A</m> of real
+      bound</term><idx><h>lower bound</h></idx> ) of a set <m>A</m> of real
       numbers if <m>b \ge a</m> (resp. <m>b \le a</m>) for every <m>a \in
       A</m>. We write <m>\ub(A)</m> and <m>\lb(A)</m> for the sets of upper
       bounds and lower bounds of <m>A</m>, respectively. It is straightforward
@@ -48,7 +48,7 @@ xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-sets-of-real-numbers">
     </p> <p>
       A set <m>A\subseteq\R</m> is <term>bounded
       above</term><idx><h>bounded</h><h>above</h></idx> (resp. <term>bounded
-      below</term><idx><h>bounded</h><h>below</h></idx>) if it
+      below</term><idx><h>bounded</h><h>below</h></idx> ) if it
       has an upper bound (resp. a lower bound). We say <m>A</m>
       is <term>bounded</term><idx><h>bounded</h></idx> if it is
       both bounded above and bounded below. A real-valued function

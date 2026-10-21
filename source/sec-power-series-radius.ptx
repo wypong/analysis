@@ -125,7 +125,7 @@
       (x_0-R,x_0+R)
     </md>
     is called its <term>interval of convergence</term><idx>interval of
-    convergence</idx>. The theorem says nothing about the boundary points
+    convergence</idx> . The theorem says nothing about the boundary points
     <m>x_0-R</m> and <m>x_0+R</m>; these must be checked separately.
   </p>
     <example xml:id="eg-power-series-endpoint-behavior">

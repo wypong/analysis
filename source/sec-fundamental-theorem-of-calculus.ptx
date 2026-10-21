@@ -109,7 +109,7 @@
           <md>
             F(x)=\int_a^x f(t)\,dt
           </md>
-          is an antiderivative, or <term>primitive</term><idx>primitive</idx>,
+          is an antiderivative, or <term>primitive</term><idx>primitive</idx> ,
           of <m>f</m> on <m>[a,b]</m>.
         </p>
       </statement>
