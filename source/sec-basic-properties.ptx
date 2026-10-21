@@ -208,7 +208,7 @@
 	That is <m>f(x) \gt f(c)/2 \gt 0</m> near <m>c</m>.  </p>
       </proof>
     </proposition>
-    
+
     <p>
        More generally, if <m>f(x)</m> is continuous at <m>c</m> and <m>f(c)
        \neq 0</m>, then the function <m>g(x)=f(c)f(x)</m> is continuous at

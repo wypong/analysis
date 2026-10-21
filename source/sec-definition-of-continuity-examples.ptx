@@ -51,7 +51,7 @@ xml:id="sec-definition-of-continuity-examples">
     </p> <example xml:id="eg-cluster-and-isolated-points">
       <statement>
         <p>
-          <ul>  
+          <ul>
 	  <li> The set of cluster points of an open interval <m>(a,b)</m>
 	    is the close interval <m>[a,b]</m>.
 	  </li>
@@ -66,7 +66,7 @@ xml:id="sec-definition-of-continuity-examples">
           </li> </ul>
         </p>
       </statement>
-    </example> 
+    </example>
 
     <proposition xml:id="prop-isolated-points-are-continuity-points">
       <statement>
