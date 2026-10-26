@@ -21,6 +21,7 @@
   \newcommand{\vx}{\mathbf{x}} \newcommand{\va}{\mathbf{a}}
  \newcommand{\vb}{\mathbf{b}} \newcommand{\vc}{\mathbf{c}}
  \newcommand{\vy}{\mathbf{y}} \newcommand{\vz}{\mathbf{z}}
+  \newcommand{\ve}{\varepsilon}
   </macros>
   <!-- If you put any latex-image elements you can include preambles -->
   <!-- for those in the next element. -->
