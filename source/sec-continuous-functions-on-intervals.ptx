@@ -369,7 +369,7 @@
 	  and hence so is its inverse <m>g \colon f(I) \to I</m>. So if
 	  <m>g</m> were discontinuous at some <m>y_0 \in J:=f(I)</m> then
 	  at least one of <m>g(y_0^-)</m> and <m>g(y_0^+)</m> must differ
-	  from <m>y_0</m>.  Without loss of generality, <m>g(y_0^-)</m>,
+	  from <m>g(y_0)</m>.  Without loss of generality, <m>g(y_0^-)</m>,
 	  which is the supremum of the set <m>\{g(y) \colon y \in J, y \lt
 	  y_0\}</m>, is strictly less than <m>g(y_0)</m>. From this, it
 	  is easy to see that <m>g(y_0^-) \in I</m> and so must <m> x ':=
