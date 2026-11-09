@@ -101,25 +101,30 @@
         </p>
       </statement>
       <proof>
+
         <p> Let <m>f</m> be continuous on a closed bounded interval
-	<m>[a,b]</m>. Then <m>J:=f([a,b])</m> is nonempty and, by <xref ref="prop-continuous-on-closed-bounded-interval-bounded"/>, is also
-	bounded. So <m>M:=\sup J</m>exists. By <xref ref="ex-sequences-approximate-sup"/>, there is a sequence
+	<m>[a,b]</m>. Then <m>J:=f([a,b])</m> is nonempty and, by <xref
+	ref="prop-continuous-on-closed-bounded-interval-bounded"/>, is also
+	bounded. So <m>M:=\sup J</m>exists. By <xref ref="ex-sequences-approximate-sup"/>,
+	there is a sequence
 	  <m>(y_n)</m> in <m>J</m> that converges to <m>M</m>. For each
 	  <m>n</m>, pick <m>x_n \in [a,b]</m> with <m>f(x_n)=y_n</m>.
 	</p>
+
         <p>
-	  Since <m>[a,b]</m> is bounded, the Bolzano-Weierstrass
-	  theorem <xref ref="thm-bolzano-weierstrass"/> yields a
-	  convergent subsequence <m>(x_{n_k})</m> of <m>(x_n)</m>. Again
-	  <xref ref="prop-closed-interval-contains-cluster-points"/>
-	  implies the limit of this subsequence, say <m>c</m>, belongs
-	  to <m>[a,b]</m>. Consequently, <m>f</m> is continuous
-	  at <m>c</m> and <md>f(x_{n_k}) \to f(c)</md> according
-	  to the sequential characterization of continuity <xref ref="prop-sequential-characterization-of-continuity"/>. As a
-	  subsequence of <m>(y_n)</m>, <m>f(x_{n_k})=y_{n_k}</m> must converge
-	  to <m>M</m> as well. So by uniqueness of limits <m>f(c)=M</m>. Thus,
-	  <m>f</m> attains its absolute maximum.
+	  Since <m>[a,b]</m> is bounded, the Bolzano-Weierstrass theorem <xref
+	  ref="thm-bolzano-weierstrass"/> yields a convergent subsequence
+	  <m>(x_{n_k})</m> of <m>(x_n)</m>. Again <xref
+	  ref="prop-closed-interval-contains-cluster-points"/> implies the
+	  limit of this subsequence, say <m>c</m>, belongs to <m>[a,b]</m>.
+	  Consequently, <m>f</m> is continuous at <m>c</m> and <md>f(x_{n_k})
+	  \to f(c)</md> according to the sequential characterization of
+	  continuity <xref ref="prop-sequential-characterization-of-continuity"/>.
+	  As a subsequence of <m>(y_n)</m>, <m>f(x_{n_k})=y_{n_k}</m>
+	  must converge to <m>M</m> as well. So by uniqueness of limits
+	  <m>f(c)=M</m>. Thus, <m>f</m> attains its absolute maximum.
 	</p>
+
         <p>
           Applying the same argument to <m>-f</m>, we see that <m>-f</m>
           attains its absolute maximum at some point <m>d \in [a,b]</m>. Then
@@ -348,42 +353,31 @@
       corollary above is exactly the one-dimensional case of that general
       principle.
     </p>
+
     <proposition xml:id="prop-injective-continuous-on-interval-has-continuous-inverse">
       <statement>
         <p>
           If <m>f</m> is injective and continuous on an interval <m>I</m>,
           then the inverse of <m>f \colon I \to f(I)</m> is also continuous.
         </p>
-      </statement>
-      <proof>
+      </statement> <proof>
         <p>
-	  Clearly, we can assume <m>I</m> is non-degenerated (i.e. has at
-	  least two points). Let <m>g \colon f(I) \to I</m> be the inverse
-	  of <m>f</m>.	We argue that <m>g</m> is continuous at an arbitrary
-	  point <m>y_0 \in f(I)</m>. Let <m>(y_n)</m> be a sequence in
-	  <m>f(I)</m> that converges to <m>y_0</m>. Set <m>x_n=g(y_n)</m>
-	  and <m>x_0=g(y_0)</m>. We must show that <m>x_n \to x_0</m>.
+	  The statement is trivial if <m>I</m> is degenerated so let us assume
+	  <m>I</m> has at least two points. Since <m>f</m> is continuous
+	  and injective on an interval <m>I</m>, it is strictly monotone
+	  on <m>I</m>, say <m>f</m> is strictly increasing on <m>I</m>
+	  and hence so is its inverse <m>g \colon f(I) \to I</m>. So if
+	  <m>g</m> were discontinuous at some <m>y_0 \in J:=f(I)</m> then
+	  at least one of <m>g(y_0^-)</m> and <m>g(y_0^+)</m> must differ
+	  from <m>y_0</m>.  Without loss of generality, <m>g(y_0^-)</m>,
+	  which is the supremum of the set <m>\{g(y) \colon y \in J, y \lt
+	  y_0\}</m>, is strictly less than <m>g(y_0)</m>. From this, it
+	  is easy to see that <m>g(y_0^-) \in I</m> and so must <m> x ':=
+	  (g(y_0^-)+g(y_0))/2</m>. We then have <m>y' \in J, y' \lt y_0</m>
+	  with <m>g(y') = x'</m> contradicting the fact that <m>g(y_0^-)</m>
+	  is the supreme of <m>g(J \cap (-\infty,y_0))</m>.
 	</p>
-        <p>
-	  Suppose, to the contrary, that <m>x_n</m> does not converge to
-	  <m>x_0</m>. Then there exists <m>\varepsilon \gt 0</m> such that
-	  infinitely many terms of the sequence <m>(x_n)</m> lie outside the
-	  interval <m>I_0 := (x_0-\varepsilon, x_0+\varepsilon) \cap I</m>.
-	  Passing to a subsequence, we may assume that
-	  <m>x_{n_k} \notin I_0</m> for every <m>k</m>. Since <m>x_0</m> is a
-	  point of a non-degenerated interval, it is a cluster point of
-	  <m>I</m>, and hence <m>I_0</m> is also non-degenerated. By <xref ref="cor-continuous-image-of-interval-is-interval"/>, <m>f(I_0)</m>
-	  is an interval containing <m>y_0</m>; it is also non-degenerated
-	  because <m>f</m> is injective. Therefore there exists
-	  <m>\delta \gt 0</m> such that
-	  <md>(y_0-\delta,y_0+\delta)\cap f(I) \subseteq f(I_0).</md>
-	  But <m>y_{n_k}=f(x_{n_k})</m> and <m>x_{n_k} \notin I_0</m>, so
-	  <m>y_{n_k} \notin f(I_0)</m> for every <m>k</m>. On the other hand,
-	  since <m>y_{n_k} \to y_0</m> and each <m>y_{n_k}</m> lies in
-	  <m>f(I)</m>, we have <m>y_{n_k} \in f(I_0)</m> for all sufficiently
-	  large <m>k</m>, a contradiction.
-	</p>
-      </proof>
+       </proof>
     </proposition>
   </subsection>
 </section>
