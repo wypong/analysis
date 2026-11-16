@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title>Analysis for Beginners favicon</title>
+  <desc>A rounded blue square with a geometric letter A and an ascending curve.</desc>
+  <defs>
+    <linearGradient id="bg" x1="8" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#154b73"/>
+      <stop offset="1" stop-color="#0b2941"/>
+    </linearGradient>
+    <linearGradient id="curve" x1="10" y1="44" x2="54" y2="20" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d98b1f"/>
+      <stop offset="1" stop-color="#f0c15a"/>
+    </linearGradient>
+  </defs>
+  <rect x="3" y="3" width="58" height="58" rx="13" fill="url(#bg)"/>
+  <path
+    d="M12 43 C18 46, 24 44, 28 38 S40 24, 52 20"
+    fill="none"
+    stroke="url(#curve)"
+    stroke-linecap="round"
+    stroke-width="6"
+  />
+  <path
+    d="M20 50 L32 16 L44 50 M25 37 H39"
+    fill="none"
+    stroke="#f6f1e5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="7"
+  />
+</svg>
