@@ -450,6 +450,31 @@
           twice on <m>[a_n,b_n]</m>. As these intervals shrink to <m>0</m>,
           no neighborhood of <m>0</m> can be one-to-one.
         </p>
+        <figure xml:id="fig-inverse-theorem-oscillating-function">
+          <caption>The graph of <m>f(x)=x+x^2\sin(1/x)</m>, with <m>f(0)=0</m>.</caption>
+          <image width="44%">
+            <shortdescription>A blue curve passes through the origin and oscillates around the line y equals x, with oscillations shrinking toward the origin.</shortdescription>
+            <latex-image>
+\begin{tikzpicture}
+\begin{axis}[
+  width=7cm,
+  height=5.8cm,
+  axis lines=middle,
+  xmin=-0.52, xmax=0.52,
+  ymin=-0.65, ymax=0.65,
+  xtick={-0.5,0,0.5},
+  ytick={-0.5,0,0.5},
+  xlabel={$x$},
+  ylabel={$y$}
+]
+  \addplot[blue, thick, domain=-0.5:-0.005, samples=800] {x+x^2*sin(deg(1/x))};
+  \addplot[blue, thick, domain=0.005:0.5, samples=800] {x+x^2*sin(deg(1/x))};
+  \addplot[blue, thick] coordinates {(-0.005,-0.005) (0.005,0.005)};
+\end{axis}
+\end{tikzpicture}
+            </latex-image>
+          </image>
+        </figure>
       </statement>
     </example>
   </subsection>
