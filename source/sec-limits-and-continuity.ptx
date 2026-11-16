@@ -212,6 +212,28 @@
         </p>
       </statement>
     </example>
+    <example xml:id="eg-sine-over-argument-limit">
+      <statement>
+        <p>
+          With angles measured in radians,
+          <md>\lim_{h\to 0}\frac{\sin h}{h}=1.</md>
+          For <m>0 \lt h \lt \pi/2</m>, consider
+          <xref ref="fig-unit-circle-sine-continuity"/>. The triangle
+          <m>OQP</m> lies inside the sector <m>OAP</m>, which lies inside
+          the triangle <m>OAT</m>. Comparing their areas gives
+          <md>\frac12\sin h\cos h \le \frac12 h \le \frac12\tan h.</md>
+          Since all terms are positive, rearranging yields
+          <md>\cos h \le \frac{\sin h}{h} \le \frac{1}{\cos h}.</md>
+        </p>
+        <p>
+          The chord <m>AP</m> has length at most the arc length <m>h</m>.
+          Thus <m>0 \le 1-\cos h \le h</m>, so <m>\cos h\to 1</m> as
+          <m>h\to 0^+</m>. The squeeze lemma now gives
+          <m>\sin h/h\to 1</m> as <m>h\to 0^+</m>. The quotient is even,
+          so its left limit is also <m>1</m>, proving the stated limit.
+        </p>
+      </statement>
+    </example>
   </subsection>
   <subsection xml:id="subsec-extended-real-limits">
     <title>Limits Involving <m>\pm\infty</m></title>

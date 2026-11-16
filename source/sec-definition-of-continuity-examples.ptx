@@ -132,39 +132,37 @@ xml:id="sec-definition-of-continuity-examples">
       leave the justification of these statements as an exercise.
     </p>
 
-      <proposition xml:id="prop-mx-continuous">
+      <example xml:id="prop-mx-continuous">
       <statement>
       <p>
          For any <m>m \in \R</m>, the function <m>x \mapsto mx</m>
 	 is continuous.
       </p>
-      </statement>
 
-      <proof>
         <p>
 	Fix <m>x_0 \in \R</m>. Given <m>\ve \gt 0</m>, choose
 	<m>\delta = \ve/(1+|m|)</m>. Then <m>\delta \gt 0</m>, and whenever
 	<m>|x-x_0| \lt \delta</m>, <md number="no"> |mx-mx_0| = |m||x-x_0|
 	\lt (1+|m|)\delta = \ve.  </md> </p>
-      </proof> </proposition>
+      </statement> </example>
 
     <exercise xml:id="prop-absolute-value-continuous">
       <statement>
         <p>
           The absolute value function is continuous on <m>\R</m>.
         </p>
-      </statement> <hint> <p>The preceding proposition implies that the absolute
+      </statement> <hint> <p>The preceding example implies that the absolute
       value function is continuous at every nonzero real number. It remains
       to show that it is also continuous at <m>x=0</m>. </p> </hint>
     </exercise>
 
-    <proposition xml:id="prop-reciprocal-continuous">
+    <example xml:id="prop-reciprocal-continuous">
       <statement>
         <p>
           The reciprocal function <m>f(x)=1/x</m> is continuous on <m>\R
           \setminus \{0\}</m>.
         </p>
-      </statement> <proof>
+
         <p>
 	Fix <m>x_0 \neq 0</m>. Since <m>x_0^2 \gt 0</m>, the
 	continuity of the function <m>x \mapsto x_0x</m> (<xref
@@ -178,9 +176,73 @@ xml:id="sec-definition-of-continuity-examples">
 	<m>x\to x_0</m>. Finally, since <m>x_0 \neq 0</m> is arbitrary, we
 	conclude that <m>x \mapsto 1/x</m> is continuous.
         </p>
-      </proof>
+      </statement>
 
-    </proposition> <example xml:id="eg-continuous-functions-on-discrete-domains">
+    </example>
+    <example xml:id="eg-square-root-continuous">
+      <statement>
+        <p>
+          The function <m>f(x)=\sqrt{x}</m> is continuous on its domain
+          <m>[0,\infty)</m>. For <m>x,c \ge 0</m>,
+          <md>|x-c|=|\sqrt{x}-\sqrt{c}|(\sqrt{x}+\sqrt{c})
+            \ge |\sqrt{x}-\sqrt{c}|^2.</md>
+          Given <m>\varepsilon \gt 0</m>, choose <m>\delta=\varepsilon^2</m>.
+          Then for any <m>x \ge 0</m> with <m>|x-c| \lt \delta</m>,
+          <md>|\sqrt{x}-\sqrt{c}|^2 \le |x-c| \lt \varepsilon^2,</md>
+          so <m>|\sqrt{x}-\sqrt{c}| \lt \varepsilon</m>. This holds for
+          every <m>c \in [0,\infty)</m>, including the endpoint <m>0</m>.
+        </p>
+      </statement>
+    </example>
+    <example xml:id="eg-sine-continuous-at-zero">
+      <statement>
+        <p>
+          The sine function is continuous at <m>0</m>. Measure angles in
+          radians. For <m>0 \lt h \lt \pi/2</m>, let <m>O</m> be the
+          center of the unit circle, <m>A=(1,0)</m>, and
+          <m>P=(\cos h,\sin h)</m>. Let <m>Q=(\cos h,0)</m>, and let
+          the ray <m>OP</m> meet the tangent line at <m>A</m> at <m>T</m>.
+        </p>
+        <figure xml:id="fig-unit-circle-sine-continuity">
+          <caption>A unit-circle sector and its inscribed and circumscribed right triangles.</caption>
+          <image width="50%">
+            <shortdescription>The unit circular sector OAP lies between triangles OQP and OAT. Q lies below P on OA; T lies above A on the tangent line and on the ray OP. The angle AOP is h.</shortdescription>
+            <latex-image>
+\begin{tikzpicture}[scale=4]
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (1,0);
+  \coordinate (P) at ({cos(40)},{sin(40)});
+  \coordinate (Q) at ({cos(40)},0);
+  \coordinate (T) at (1,{tan(40)});
+  \fill[blue!10] (O) -- (A) arc (0:40:1) -- cycle;
+  \fill[blue!25] (O) -- (Q) -- (P) -- cycle;
+  \draw[blue, thick] (A) arc (0:40:1);
+  \draw (O) -- (A) -- (T) -- cycle;
+  \draw (P) -- (Q);
+  \draw (0.22,0) arc (0:40:0.22);
+  \node at (0.31,0.11) {$h$};
+  \node[below left] at (O) {$O$};
+  \node[below] at (A) {$A$};
+  \node[above left] at (P) {$P$};
+  \node[below] at (Q) {$Q$};
+  \node[above] at (T) {$T$};
+\end{tikzpicture}
+            </latex-image>
+          </image>
+        </figure>
+        <p>
+          The length <m>PQ=\sin h</m> is at most the chord length
+          <m>PA</m>, which is at most the arc length <m>h</m>. Thus
+          <m>0 \le \sin h \le h</m>. Since sine is odd, it follows that
+          <m>|\sin h| \le |h|</m> whenever <m>|h| \lt \pi/2</m>.
+          Given <m>\varepsilon \gt 0</m>, take
+          <m>\delta=\min\{\varepsilon,\pi/2\}</m>. If
+          <m>|h| \lt \delta</m>, then
+          <md>|\sin h-\sin 0|=|\sin h|\le |h|\lt\varepsilon.</md>
+          Hence sine is continuous at <m>0</m>.
+        </p>
+      </statement>
+    </example> <example xml:id="eg-continuous-functions-on-discrete-domains">
       <statement>
         <p>
           If the domain consists entirely of isolated points, then every

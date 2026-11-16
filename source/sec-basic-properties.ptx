@@ -140,6 +140,35 @@
         </p>
       </proof>
     </corollary>
+    <example xml:id="eg-cosine-continuous-at-zero">
+      <statement>
+        <p>
+          The cosine function is continuous at <m>0</m>. By
+          <xref ref="eg-sine-continuous-at-zero"/>, sine is continuous at
+          <m>0</m>, so <xref ref="prop-algebra-of-continuous-functions"/>
+          shows that <m>x\mapsto 1-\sin^2 x</m> is continuous at <m>0</m>.
+          This function takes values in <m>[0,\infty)</m> and has value
+          <m>1</m> at <m>0</m>. Since the square root function is continuous
+          there by <xref ref="eg-square-root-continuous"/>,
+          <xref ref="prop-composition-preserves-continuity"/> shows that
+          <md>x\mapsto \sqrt{1-\sin^2 x}=|\cos x|</md>
+          is continuous at <m>0</m>. Geometrically, <m>\cos x \gt 0</m> for
+          <m>|x| \lt \pi/2</m>, so <m>\cos x=|\cos x|</m> on a neighborhood
+          of <m>0</m>. Therefore cosine is continuous at <m>0</m>.
+        </p>
+        <p>
+          We can now show that sine is continuous at every <m>c \in \R</m>.
+          By the angle-sum formula,
+          <md>\sin(c+h)=\sin c\cos h+\cos c\sin h.</md>
+          As <m>h\to 0</m>, continuity of sine and cosine at <m>0</m>
+          gives <m>\sin h\to 0</m> and <m>\cos h\to 1</m>. Therefore
+          <md>\sin(c+h)\to \sin c.</md>
+          Since <m>c</m> is arbitrary, sine is continuous on <m>\R</m>.
+          The continuity of cosine everywhere follows similarly from
+          <m>\cos(c+h)=\cos c\cos h-\sin c\sin h</m>.
+        </p>
+      </statement>
+    </example>
   </subsection>
   <subsection xml:id="subsec-consequences-of-continuity">
     <title>Some Consequences</title>
